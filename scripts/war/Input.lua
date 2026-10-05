@@ -1,0 +1,109 @@
+local UI=require("urhox-libs/UI")
+local D,U,R,C,W=require("war.Data"),require("war.Util"),require("war.Render"),require("war.Commands"),require("war.World")
+local I={}
+local Motion=require("war.Motion")
+function I.ids(g)
+ local ids={} for id in pairs(g.selection) do local e=g.state.entities[id];if U.alive(e) and e.faction==1 then ids[#ids+1]=id else g.selection[id]=nil end end table.sort(ids);return ids
+end
+function I.selectKind(g,kind)
+ g.selection={};for id,e in pairs(g.state.entities) do if e.faction==1 and e.category=="unit" and U.alive(e) and (kind=="army" and e.kind~="worker" or e.kind==kind) then g.selection[id]=true end end;g.state.selectedOnce=true
+end
+function I.coords(e) local factor=UI.GetScale()/graphics:GetDPR();return e.x*factor,e.y*factor end
+function I.pick(g,x,y)
+ local best,dd=false,math.huge
+ for _,e in pairs(g.state.entities) do if U.alive(e) and (e.faction==1 or W.visible(g.state,1,e)) then
+  local wx,wy=Motion.position(g,e);local px,py=R.project(g,wx,wy);local size=e.category=="building" and 54*g.zoom or 25*g.zoom
+  local d=((px-x)^2+(py-20*g.zoom-y)^2)^.5
+  if d<size and d<dd then best,dd=e,d end
+ end end return best
+end
+function I.issue(g,kind,x,y,target)
+ local ids=I.ids(g)
+ if #ids==0 then U.message(g.state,"先选择单位再下达命令");return end
+ C.submit(g.state,{kind=kind,faction=1,ids=ids,x=x,y=y,target=target,append=g.append or input:GetKeyDown(KEY_LSHIFT)})
+ g.marker={x=x or g.camera.x,y=y or g.camera.y};if g.audio then g.audio("command") end
+ if g.paused then U.message(g.state,"命令已排队，恢复时间后执行") end
+end
+function I.tap(g,x,y,secondary)
+ local wx,wy=R.unproject(g,x,y);g.pointer={wx=wx,wy=wy};local s=g.state
+ if g.placement then I.issue(g,"build",wx,wy);local cmd=s.commands[#s.commands];if cmd and cmd.kind=="build" then cmd.building=g.placement end;g.placement=false;g.tab=false;return end
+ if g.mode=="rally" then local id=I.ids(g)[1];C.submit(s,{kind="rally",faction=1,target=id,x=wx,y=wy});g.mode=false;return end
+ local picked=I.pick(g,x,y)
+ local workerSelected=false
+ for _,id in ipairs(I.ids(g)) do if s.entities[id].kind=="worker" then workerSelected=true;break end end
+ local workTarget=picked and picked.faction==1 and picked.category=="building" and workerSelected and (not picked.complete or picked.kind=="farm" or picked.fire>0 or picked.hp<picked.maxHp)
+ if not secondary and picked and picked.faction==1 and not g.mode and not workTarget then
+  if not g.append and not input:GetKeyDown(KEY_LSHIFT) then g.selection={} end
+  if g.append and g.selection[picked.id] then g.selection[picked.id]=nil else g.selection[picked.id]=true end
+  s.selectedOnce=true;if g.audio then g.audio("command") end;return
+ end
+ local kind=g.mode or "move";local target=false
+ if picked then
+  if picked.faction~=1 then kind="attack";target=picked.id
+  elseif picked.category=="building" then kind=picked.fire>0 and "extinguish" or (not picked.complete and "build" or (picked.kind=="farm" and "farm" or "repair"));target=picked.id end
+ else
+  local key=U.key(U.clamp(wx,1,D.MAP),U.clamp(wy,1,D.MAP));local r=s.resources[key]
+  if not r then
+   for dy=-1,1 do for dx=-1,1 do local k=U.key(math.floor(wx)+dx,math.floor(wy)+dy);local v=s.resources[k];if not r and v and v.amount>0 and s.factions[1].seen[k] then r=v;key=k end end end
+  end
+  if r and r.amount>0 and not g.mode then kind="gather";target=key end
+ end
+ if #I.ids(g)>0 then I.issue(g,kind,wx,wy,target) else g.selection={} end
+ g.mode=false
+end
+function I.down(g,e)
+ if not g.started or g.modal then return end
+ local x,y=I.coords(e)
+ if not e.isPrimary then g.drag=false;return end
+ g.drag={x=x,y=y,tx=x,ty=y,pointer=e.pointerId,secondary=e.button==MOUSEB_RIGHT,moved=false,box=g.box or (e.pointerType=="mouse" and e.button==MOUSEB_LEFT and not g.placement and not g.mode)}
+ g.pointer.wx,g.pointer.wy=R.unproject(g,x,y)
+end
+function I.move(g,e)
+ local x,y=I.coords(e);g.pointer.wx,g.pointer.wy=R.unproject(g,x,y)
+ local a=g.drag;if not a or a.pointer~=e.pointerId then return end
+ if math.abs(x-a.x)+math.abs(y-a.y)>7 then a.moved=true end
+ if not a.box and a.moved then R.pan(g,x-a.tx,y-a.ty) end
+ a.tx,a.ty=x,y
+end
+function I.up(g,e)
+ local a=g.drag;if not a or a.pointer~=e.pointerId then return end
+ local x,y=I.coords(e);g.drag=false
+ -- Some native hosts coalesce motion while dragging. The release position
+ -- remains authoritative, including when no intermediate move was delivered.
+ if math.abs(x-a.x)+math.abs(y-a.y)>7 then a.moved=true end
+ if a.moved and not a.box then R.pan(g,x-a.tx,y-a.ty) end
+ if a.box and a.moved then
+  if not g.append and not input:GetKeyDown(KEY_LSHIFT) then g.selection={} end
+  for id,u in pairs(g.state.entities) do if U.alive(u) and u.faction==1 and u.category=="unit" then
+   local wx,wy=Motion.position(g,u);local px,py=R.project(g,wx,wy)
+   if px>=math.min(a.x,x) and px<=math.max(a.x,x) and py>=math.min(a.y,y) and py<=math.max(a.y,y) then g.selection[id]=true end
+  end end;g.state.selectedOnce=true
+ elseif not a.moved then I.tap(g,x,y,a.secondary) end
+end
+function I.group(g,index,save)
+ if save then g.groups[index]=I.ids(g);U.message(g.state,"已保存编队"..index)
+ else g.selection={};for _,id in ipairs(g.groups[index] or {}) do local e=g.state.entities[id];if U.alive(e) and e.faction==1 then g.selection[id]=true end end
+  if next(g.selection) then local e=g.state.entities[next(g.selection)];g.camera.x,g.camera.y=e.x,e.y end
+ end
+end
+function I.key(g,key)
+ if key==KEY_ESCAPE then if g.modal then g.closeModal() elseif g.tab then g.tab=false;g.placement=false;g.refreshSidebar() else g.placement=false;g.mode=false;g.selection={} end;return end
+ if not g.started or g.modal then return end
+ if key==KEY_SPACE then g.paused=not g.paused
+ elseif key==KEY_1 then I.group(g,1,input:GetKeyDown(KEY_LCTRL))
+ elseif key==KEY_2 then I.group(g,2,input:GetKeyDown(KEY_LCTRL))
+ elseif key==KEY_3 then I.group(g,3,input:GetKeyDown(KEY_LCTRL))
+ elseif key==KEY_A then g.mode="attackmove"
+ elseif key==KEY_S then I.issue(g,"stop")
+ elseif key==KEY_B then g.tab=g.tab=="build" and false or "build";g.refreshSidebar()
+ elseif key==KEY_H then R.home(g)
+ elseif key==KEY_M then g.openMap()
+ elseif key==KEY_R then I.issue(g,"retreat")
+ end
+end
+function I.update(g,dt)
+ if not g.started or g.modal then return end
+ local dx,dy=0,0;if input:GetKeyDown(KEY_LEFT) then dx=dx+350*dt end;if input:GetKeyDown(KEY_RIGHT) then dx=dx-350*dt end;if input:GetKeyDown(KEY_UP) then dy=dy+350*dt end;if input:GetKeyDown(KEY_DOWN) then dy=dy-350*dt end
+ if dx~=0 or dy~=0 then R.pan(g,dx,dy) end
+end
+return I
