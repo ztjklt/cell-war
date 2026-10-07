@@ -2,8 +2,8 @@ local D=require("war.Data")
 local U={}
 function U.clamp(x,a,b) return math.max(a,math.min(b,x)) end
 function U.dist(a,b) local x,y=a.x-b.x,a.y-b.y return math.sqrt(x*x+y*y) end
-function U.key(x,y) return (math.floor(y)-1)*D.MAP+math.floor(x) end
-function U.xy(k) return ((k-1)%D.MAP)+1,math.floor((k-1)/D.MAP)+1 end
+function U.key(x,y) return (math.floor(y)-1)*D.INDEX_STRIDE+math.floor(x) end
+function U.xy(k) return ((k-1)%D.INDEX_STRIDE)+1,math.floor((k-1)/D.INDEX_STRIDE)+1 end
 function U.noise(x,y,seed)
  local ix,iy=math.floor(x),math.floor(y);local fx,fy=x-ix,y-iy
  fx=fx*fx*(3-2*fx);fy=fy*fy*(3-2*fy)

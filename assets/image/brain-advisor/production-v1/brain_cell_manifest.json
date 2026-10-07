@@ -1,0 +1,31 @@
+{
+  "name": "Brain Cell Production Asset Pack",
+  "version": "1.0",
+  "target": "TapTap Maker / Codex MCP",
+  "source": "AI-generated master sprite sheet with actual RGBA alpha",
+  "recommended_root": "BrainCell",
+  "layers": [
+    "body",
+    "tentacles",
+    "eyes",
+    "mouth",
+    "tablet",
+    "fx"
+  ],
+  "states": [
+    "Idle",
+    "Happy",
+    "Thinking",
+    "Talking",
+    "Alert",
+    "Worried",
+    "Sleep",
+    "Analyze"
+  ],
+  "notes": [
+    "All exported PNG files preserve the source RGBA alpha channel.",
+    "No labels or filenames from a design sheet are included in the exported sprites.",
+    "Parts are tightly cropped; Maker should set pivots explicitly when assembling tentacles and face parts.",
+    "Use poses/ as visual references or standalone UI sprites; use modular folders for procedural animation."
+  ]
+}

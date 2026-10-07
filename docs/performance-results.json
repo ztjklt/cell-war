@@ -1,0 +1,198 @@
+{
+  "backend": "Lua 5.4 / NanoVG no-op; CPU times, not native FPS or GPU measurements",
+  "seed": 73,
+  "logicalSize": [
+    1920,
+    1080
+  ],
+  "renderIncludesMinimap": true,
+  "framesPerView": 30,
+  "fogRefreshSamples": 10,
+  "simulationSteps": 100,
+  "before": {
+    "campaign_render_1": {
+      "war.NasalArt.draw": 1.8738666666666681,
+      "ms": 3.826466666666669,
+      "war.CurvedVesselArt.draw": 0.33350000000000507,
+      "war.SmoothTerrain.draw": 0.9058666666666659,
+      "war.SmoothTerrain.fog": 0.47440000000001553
+    },
+    "campaign_render_0.24": {
+      "war.NasalArt.draw": 1.928933333333327,
+      "ms": 4.941633333333336,
+      "war.CurvedVesselArt.draw": 0.37396666666667705,
+      "war.SmoothTerrain.draw": 1.8653999999999948,
+      "war.SmoothTerrain.fog": 0.7256000000000077
+    },
+    "campaign_render_0.0064": {
+      "war.NasalArt.draw": 0.41319999999998025,
+      "ms": 2.974833333333334,
+      "war.CurvedVesselArt.draw": 0.41440000000003696,
+      "war.SmoothTerrain.draw": 1.6376666666666706,
+      "war.SmoothTerrain.fog": 0.477299999999999
+    },
+    "campaign_fog_refresh_render": {
+      "war.NasalArt.draw": 1.9100999999999815,
+      "ms": 14.300099999999992,
+      "war.SmoothTerrain.fog": 10.501000000000005,
+      "war.SmoothTerrain.draw": 0.451699999999966,
+      "war.CurvedVesselArt.draw": 0.15420000000003764,
+      "war.World.fog": 1.2504999999999766
+    },
+    "campaign_simulation": {
+      "war.Path.update": 0.0004599999999932436,
+      "ms": 0.17278000000000127,
+      "war.CellCollision.resolve": 0.017419999999999103,
+      "war.World.fog": 0.12126000000000081
+    },
+    "sandbox_render_1": {
+      "war.NasalArt.draw": 0.000766666666610997,
+      "ms": 2.351266666666666,
+      "war.CurvedVesselArt.draw": 0.3633666666666979,
+      "war.SmoothTerrain.draw": 1.3148333333333244,
+      "war.SmoothTerrain.fog": 0.09663333333332542
+    },
+    "sandbox_render_0.24": {
+      "war.NasalArt.draw": 0.00039999999996709334,
+      "ms": 1.5180666666666582,
+      "war.CurvedVesselArt.draw": 0.32596666666669566,
+      "war.SmoothTerrain.draw": 1.0809333333332414,
+      "war.SmoothTerrain.fog": 0.06426666666681236
+    },
+    "sandbox_render_0.0064": {
+      "war.NasalArt.draw": 0.0005666666666274504,
+      "ms": 1.4007666666666643,
+      "war.CurvedVesselArt.draw": 0.37540000000004053,
+      "war.SmoothTerrain.draw": 0.928500000000021,
+      "war.SmoothTerrain.fog": 0.06513333333333371
+    },
+    "sandbox_fog_refresh_render": {
+      "war.NasalArt.draw": 0.00029999999999752447,
+      "ms": 5.396999999999963,
+      "war.SmoothTerrain.fog": 0.9746000000000254,
+      "war.SmoothTerrain.draw": 0.37389999999986046,
+      "war.CurvedVesselArt.draw": 0.13970000000012028,
+      "war.World.fog": 3.8709999999999134
+    },
+    "sandbox_simulation": {
+      "war.Path.update": 19.350530000000017,
+      "ms": 20.47653,
+      "war.CellCollision.resolve": 0.058939999999978454,
+      "war.World.fog": 0.7283799999999907
+    }
+  },
+  "after": {
+    "campaign_render_1": {
+      "war.SmoothTerrain.fog": 0.4754000000000147,
+      "ms": 2.3647666666666662,
+      "war.SmoothTerrain.draw": 0.88870000000002,
+      "war.CurvedVesselArt.draw": 0.3266666666666492,
+      "war.NasalArt.draw": 0.44466666666666727
+    },
+    "campaign_render_0.24": {
+      "war.SmoothTerrain.fog": 0.6447333333333435,
+      "ms": 2.680366666666667,
+      "war.SmoothTerrain.draw": 1.1482666666666714,
+      "war.CurvedVesselArt.draw": 0.3279666666666718,
+      "war.NasalArt.draw": 0.5221333333333262
+    },
+    "campaign_render_0.0064": {
+      "war.SmoothTerrain.fog": 0.4673999999999697,
+      "ms": 2.893633333333334,
+      "war.SmoothTerrain.draw": 1.605700000000032,
+      "war.CurvedVesselArt.draw": 0.3887000000000011,
+      "war.NasalArt.draw": 0.40086666666666976
+    },
+    "campaign_fog_refresh_render": {
+      "war.SmoothTerrain.fog": 0.3263000000000238,
+      "ms": 2.2283000000000053,
+      "war.NasalArt.draw": 0.526099999999996,
+      "war.CurvedVesselArt.draw": 0.13879999999999448,
+      "war.World.fog": 0.771400000000011,
+      "war.SmoothTerrain.draw": 0.4399000000000375
+    },
+    "campaign_simulation": {
+      "war.CellCollision.resolve": 0.016879999999999118,
+      "war.World.fog": 0.07510999999999823,
+      "ms": 0.12485999999999997,
+      "war.Path.update": 0.0006700000000048334
+    },
+    "sandbox_render_1": {
+      "war.SmoothTerrain.fog": 0.09056666666669895,
+      "ms": 1.8579333333333354,
+      "war.SmoothTerrain.draw": 0.9722666666666768,
+      "war.CurvedVesselArt.draw": 0.3289666666666635,
+      "war.NasalArt.draw": 0.0005333333333264653
+    },
+    "sandbox_render_0.24": {
+      "war.SmoothTerrain.fog": 0.06666666666659271,
+      "ms": 1.3805333333333298,
+      "war.SmoothTerrain.draw": 0.9236333333333402,
+      "war.CurvedVesselArt.draw": 0.34049999999998065,
+      "war.NasalArt.draw": 0.00046666666669488893
+    },
+    "sandbox_render_0.0064": {
+      "war.SmoothTerrain.fog": 0.06743333333332953,
+      "ms": 1.4471666666666658,
+      "war.SmoothTerrain.draw": 0.9583666666666806,
+      "war.CurvedVesselArt.draw": 0.38806666666665696,
+      "war.NasalArt.draw": 0.0003666666666587067
+    },
+    "sandbox_fog_refresh_render": {
+      "war.SmoothTerrain.fog": 0.021700000000013375,
+      "ms": 3.1182000000000043,
+      "war.NasalArt.draw": 0.0005000000000032756,
+      "war.CurvedVesselArt.draw": 0.14020000000003474,
+      "war.World.fog": 2.5362000000000107,
+      "war.SmoothTerrain.draw": 0.3840999999999761
+    },
+    "sandbox_simulation": {
+      "war.CellCollision.resolve": 0.05889000000000255,
+      "war.World.fog": 0.4208600000000074,
+      "ms": 4.261260000000002,
+      "war.Path.update": 3.453260000000018
+    }
+  },
+  "regression": {
+    "syntax": [],
+    "passed": 71,
+    "total": 71
+  },
+  "performanceChecks": [
+    {
+      "name": "静止视野复用迷雾轮廓",
+      "pass": true,
+      "error": ""
+    },
+    {
+      "name": "已探索区域内移动仅重建可见轮廓",
+      "pass": true,
+      "error": ""
+    },
+    {
+      "name": "直接揭示新区域同时更新两层迷雾",
+      "pass": true,
+      "error": ""
+    },
+    {
+      "name": "空间索引与逐个膜口查询一致",
+      "pass": true,
+      "error": ""
+    },
+    {
+      "name": "寻路可暂停继续，取消旧任务，待寻路状态可存读",
+      "pass": true,
+      "error": ""
+    },
+    {
+      "name": "主菜单跳过隐藏世界绘制并保留逻辑尺寸",
+      "pass": true,
+      "error": ""
+    }
+  ],
+  "nativePerformance": "UNVERIFIED: preview missing Cube/Day/DaySpecularHDR_QualityLow.dds; screenshots unsupported",
+  "lsp": {
+    "newErrors": 0,
+    "existingErrors": 16
+  }
+}

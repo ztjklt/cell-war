@@ -1,0 +1,988 @@
+{
+  "schemaVersion": 1,
+  "model": "gpt",
+  "generator": "Maker GPT Image 2",
+  "status": "blocked",
+  "reason": "INSUFFICIENT_BALANCE",
+  "executionState": "unknown",
+  "samples": [
+    {
+      "name": "anatomy2_heart_outer",
+      "prompt": "《细胞战争》二维人体地图生产素材。人体正面正交展开，无透视；可爱、圆润、精细的手绘生物游戏风格，柔润半透明膜层、细腻组织纹理、克制高光，与现有青绿细胞和深紫组织背景协调。单个对象完整居中，四周留至少8%透明边距，真实透明alpha背景。无文字、无标注、无棋盘格、无地面投影、无血腥、无拟人脸。1024×1024。参考图只用于柔润精细材质，不要照搬脸或圆盘外形。主体：完整人类心脏外形，圆润略梨形，上宽下窄，心尖朝画面右下（人体左），温暖珊瑚粉与玫瑰红。保留心房耳、心室外轮廓、前室间沟及细腻表面冠脉。上缘只保留简短干净的大血管接口：画面左侧上腔静脉，偏中肺动脉干及主动脉，画面右侧肺静脉接口。不是传统爱心符号，不是一个红色圆球。",
+      "model": "gpt",
+      "transparent": true,
+      "quality": "high",
+      "resolution": "1K",
+      "aspect_ratio": "1:1",
+      "target_size": "1024x1024",
+      "reference_images": [
+        "assets/image/cells-v3/red-cell.png"
+      ]
+    },
+    {
+      "name": "anatomy2_lung_r_outer",
+      "prompt": "《细胞战争》二维人体地图生产素材。人体正面正交展开，无透视；可爱、圆润、精细的手绘生物游戏风格，柔润半透明膜层、细腻组织纹理、克制高光，与现有青绿细胞和深紫组织背景协调。单个对象完整居中，四周留至少8%透明边距，真实透明alpha背景。无文字、无标注、无棋盘格、无地面投影、无血腥、无拟人脸。1024×1024。参考图只用于柔润精细材质，不要照搬脸或圆盘外形。主体：人体右肺，放在全身图画面左侧的一片肺。尖圆肺尖在上，底部宽圆，外侧（画面左）凸圆，内侧（画面右）有肺门凹口。右肺必须有清晰但柔和的水平裂和斜裂，形成上、中、下三个肺叶；不含心切迹。嫩桃粉色带细腻海绵状肺泡纹理，边缘浅粉膜层，肺门只保留短小动静脉接口。不要生成一对肺，不要气管、不含心脏。",
+      "model": "gpt",
+      "transparent": true,
+      "quality": "high",
+      "resolution": "1K",
+      "aspect_ratio": "1:1",
+      "target_size": "1024x1024",
+      "reference_images": [
+        "assets/image/cells-v3/red-cell.png"
+      ]
+    },
+    {
+      "name": "anatomy2_artery_atlas",
+      "prompt": "《细胞战争》二维人体地图生产素材。人体正面正交展开，无透视；可爱、圆润、精细的手绘生物游戏风格，柔润半透明膜层、细腻组织纹理、克制高光，与现有青绿细胞和深紫组织背景协调。单个对象完整居中，四周留至少8%透明边距，真实透明alpha背景。无文字、无标注、无棋盘格、无地面投影、无血腥、无拟人脸。1024×1024。参考图只用于柔润精细材质，不要照搬脸或圆盘外形。主体：血管可拼接素材图集，严格2列×2行四个等大格，每格一个部件，透明分隔，无可见网格。左上：水平直行血管段，开放的暗红管腔在中间，上下两条圆润珊瑚粉膜状管壁，不画封闭端盖；材质沿水平方向可无缝延伸。右上：柔和90度弧形管段；左下：流畅Y形分叉，上方双支与下方主干平滑相接；右下：器官血管入口的短管与柔软组织连接套环。严格平面剖开俯视，管腔清晰宽敞，精细微血管膜纹理，所有血管同样粗细、同样受光，不含红细胞、箭头、文字。珊瑚粉动脉管壁及暗玫瑰色管腔。",
+      "model": "gpt",
+      "transparent": true,
+      "quality": "high",
+      "resolution": "1K",
+      "aspect_ratio": "1:1",
+      "target_size": "1024x1024",
+      "reference_images": [
+        "assets/image/cells-v3/red-cell.png"
+      ]
+    }
+  ],
+  "requests": [
+    {
+      "id": "brain",
+      "state": "outer",
+      "destination": "assets/image/anatomy-v2/brain-outer.png",
+      "status": "pending",
+      "request": {
+        "name": "anatomy2_brain_outer",
+        "prompt": "《细胞战争》二维人体地图生产素材。人体正面正交展开，无透视；可爱、圆润、精细的手绘生物游戏风格，柔润半透明膜层、细腻组织纹理、克制高光，与现有青绿细胞和深紫组织背景协调。单个对象完整居中，四周留至少8%透明边距，真实透明alpha背景。无文字、无标注、无棋盘格、无地面投影、无血腥、无拟人脸。1024×1024。参考图只用于柔润精细材质，不要照搬脸或圆盘外形。主体：完整人脑的前方正投影视图，双半球与清晰中线，圆润脑回与脑沟，上部宽圆，下缘两侧饱满。淡薰衣草紫与粉色，软膜包覆，不含头骨。全身定位：人体正面，屏幕左对应人体右。器官供血与回流接口按器官边界短小保留，其余周边血管都不画。接口与地图归一化位置参考（x从左向右、y从上向下）：{\"artery\": [0.4524, 0.47], \"vein\": [0.5476, 0.59]}。主体轮廓保持留白，不裁切。",
+        "model": "gpt",
+        "transparent": true,
+        "quality": "high",
+        "resolution": "1K",
+        "target_size": "1024x1024",
+        "aspect_ratio": "1:1",
+        "reference_images": [
+          "assets/image/cells-v3/red-cell.png"
+        ]
+      },
+      "styleReferencesAfterSamples": [
+        "assets/image/anatomy-v2/heart-outer.png",
+        "assets/image/anatomy-v2/lung_r-outer.png"
+      ],
+      "ports": {
+        "artery": [
+          0.4524,
+          0.47
+        ],
+        "vein": [
+          0.5476,
+          0.59
+        ]
+      }
+    },
+    {
+      "id": "brain",
+      "state": "cutaway",
+      "destination": "assets/image/anatomy-v2/brain-cutaway.png",
+      "status": "pending",
+      "request": {
+        "name": "anatomy2_brain_cutaway",
+        "prompt": "《细胞战争》二维人体地图生产素材。人体正面正交展开，无透视；可爱、圆润、精细的手绘生物游戏风格，柔润半透明膜层、细腻组织纹理、克制高光，与现有青绿细胞和深紫组织背景协调。单个对象完整居中，四周留至少8%透明边距，真实透明alpha背景。无文字、无标注、无棋盘格、无地面投影、无血腥、无拟人脸。1024×1024。参考图只用于柔润精细材质，不要照搬脸或圆盘外形。主体：完整人脑的前方正投影视图，双半球与清晰中线，圆润脑回与脑沟，上部宽圆，下缘两侧饱满。淡薰衣草紫与粉色，软膜包覆，不含头骨。全身定位：人体正面，屏幕左对应人体右。器官供血与回流接口按器官边界短小保留，其余周边血管都不画。接口与地图归一化位置参考（x从左向右、y从上向下）：{\"artery\": [0.4524, 0.47], \"vein\": [0.5476, 0.59]}。主体轮廓保持留白，不裁切。以该器官的完整外形图为严格参考，只去掉正面薄膜以露出内部剖面。必须保持完全相同的轮廓、位置、尺度、朝向、色彩、接口和透明边缘。显示左右皮质薄层、白质与中央小型脑室，脑底六段动脉环的接口位置保持。",
+        "model": "gpt",
+        "transparent": true,
+        "quality": "high",
+        "resolution": "1K",
+        "target_size": "1024x1024",
+        "aspect_ratio": "1:1",
+        "reference_images": [
+          "assets/image/anatomy-v2/brain-outer.png"
+        ]
+      },
+      "styleReferencesAfterSamples": [
+        "assets/image/anatomy-v2/heart-outer.png",
+        "assets/image/anatomy-v2/lung_r-outer.png"
+      ],
+      "ports": {
+        "artery": [
+          0.4524,
+          0.47
+        ],
+        "vein": [
+          0.5476,
+          0.59
+        ]
+      }
+    },
+    {
+      "id": "lung_r",
+      "state": "outer",
+      "destination": "assets/image/anatomy-v2/lung_r-outer.png",
+      "status": "pending",
+      "request": {
+        "name": "anatomy2_lung_r_outer",
+        "prompt": "《细胞战争》二维人体地图生产素材。人体正面正交展开，无透视；可爱、圆润、精细的手绘生物游戏风格，柔润半透明膜层、细腻组织纹理、克制高光，与现有青绿细胞和深紫组织背景协调。单个对象完整居中，四周留至少8%透明边距，真实透明alpha背景。无文字、无标注、无棋盘格、无地面投影、无血腥、无拟人脸。1024×1024。参考图只用于柔润精细材质，不要照搬脸或圆盘外形。主体：人体右肺，位于全身画面左侧。上尖圆、下宽圆，画面左侧凸圆，右侧肺门凹口。水平裂与斜裂形成三个肺叶，无心切迹。只画一片肺。桃粉色肺泡组织。全身定位：人体正面，屏幕左对应人体右。器官供血与回流接口按器官边界短小保留，其余周边血管都不画。接口与地图归一化位置参考（x从左向右、y从上向下）：{\"artery\": [0.75, 0.4766], \"vein\": [0.7381, 0.5938]}。主体轮廓保持留白，不裁切。",
+        "model": "gpt",
+        "transparent": true,
+        "quality": "high",
+        "resolution": "1K",
+        "target_size": "1024x1024",
+        "aspect_ratio": "1:1",
+        "reference_images": [
+          "assets/image/cells-v3/red-cell.png"
+        ]
+      },
+      "styleReferencesAfterSamples": [
+        "assets/image/anatomy-v2/heart-outer.png",
+        "assets/image/anatomy-v2/lung_r-outer.png"
+      ],
+      "ports": {
+        "artery": [
+          0.75,
+          0.4766
+        ],
+        "vein": [
+          0.7381,
+          0.5938
+        ]
+      }
+    },
+    {
+      "id": "lung_r",
+      "state": "cutaway",
+      "destination": "assets/image/anatomy-v2/lung_r-cutaway.png",
+      "status": "pending",
+      "request": {
+        "name": "anatomy2_lung_r_cutaway",
+        "prompt": "《细胞战争》二维人体地图生产素材。人体正面正交展开，无透视；可爱、圆润、精细的手绘生物游戏风格，柔润半透明膜层、细腻组织纹理、克制高光，与现有青绿细胞和深紫组织背景协调。单个对象完整居中，四周留至少8%透明边距，真实透明alpha背景。无文字、无标注、无棋盘格、无地面投影、无血腥、无拟人脸。1024×1024。参考图只用于柔润精细材质，不要照搬脸或圆盘外形。主体：人体右肺，位于全身画面左侧。上尖圆、下宽圆，画面左侧凸圆，右侧肺门凹口。水平裂与斜裂形成三个肺叶，无心切迹。只画一片肺。桃粉色肺泡组织。全身定位：人体正面，屏幕左对应人体右。器官供血与回流接口按器官边界短小保留，其余周边血管都不画。接口与地图归一化位置参考（x从左向右、y从上向下）：{\"artery\": [0.75, 0.4766], \"vein\": [0.7381, 0.5938]}。主体轮廓保持留白，不裁切。以该器官的完整外形图为严格参考，只去掉正面薄膜以露出内部剖面。必须保持完全相同的轮廓、位置、尺度、朝向、色彩、接口和透明边缘。保留三肺叶与两条肺裂，显示圆润支气管分支和聚合肺泡交换区域，低氧入流、高氧出流的接口区分。不要逐个画数千肺泡。",
+        "model": "gpt",
+        "transparent": true,
+        "quality": "high",
+        "resolution": "1K",
+        "target_size": "1024x1024",
+        "aspect_ratio": "1:1",
+        "reference_images": [
+          "assets/image/anatomy-v2/lung_r-outer.png"
+        ]
+      },
+      "styleReferencesAfterSamples": [
+        "assets/image/anatomy-v2/heart-outer.png",
+        "assets/image/anatomy-v2/lung_r-outer.png"
+      ],
+      "ports": {
+        "artery": [
+          0.75,
+          0.4766
+        ],
+        "vein": [
+          0.7381,
+          0.5938
+        ]
+      }
+    },
+    {
+      "id": "lung_l",
+      "state": "outer",
+      "destination": "assets/image/anatomy-v2/lung_l-outer.png",
+      "status": "pending",
+      "request": {
+        "name": "anatomy2_lung_l_outer",
+        "prompt": "《细胞战争》二维人体地图生产素材。人体正面正交展开，无透视；可爱、圆润、精细的手绘生物游戏风格，柔润半透明膜层、细腻组织纹理、克制高光，与现有青绿细胞和深紫组织背景协调。单个对象完整居中，四周留至少8%透明边距，真实透明alpha背景。无文字、无标注、无棋盘格、无地面投影、无血腥、无拟人脸。1024×1024。参考图只用于柔润精细材质，不要照搬脸或圆盘外形。主体：人体左肺，位于全身画面右侧。上尖圆、下宽圆，右侧外缘凸圆；画面左侧内缘有心切迹及肺门。斜裂形成两个肺叶。只画一片肺，不要照镜像复制三叶右肺。全身定位：人体正面，屏幕左对应人体右。器官供血与回流接口按器官边界短小保留，其余周边血管都不画。接口与地图归一化位置参考（x从左向右、y从上向下）：{\"artery\": [0.2639, 0.4141], \"vein\": [0.2639, 0.5625]}。主体轮廓保持留白，不裁切。",
+        "model": "gpt",
+        "transparent": true,
+        "quality": "high",
+        "resolution": "1K",
+        "target_size": "1024x1024",
+        "aspect_ratio": "1:1",
+        "reference_images": [
+          "assets/image/cells-v3/red-cell.png"
+        ]
+      },
+      "styleReferencesAfterSamples": [
+        "assets/image/anatomy-v2/heart-outer.png",
+        "assets/image/anatomy-v2/lung_r-outer.png"
+      ],
+      "ports": {
+        "artery": [
+          0.2639,
+          0.4141
+        ],
+        "vein": [
+          0.2639,
+          0.5625
+        ]
+      }
+    },
+    {
+      "id": "lung_l",
+      "state": "cutaway",
+      "destination": "assets/image/anatomy-v2/lung_l-cutaway.png",
+      "status": "pending",
+      "request": {
+        "name": "anatomy2_lung_l_cutaway",
+        "prompt": "《细胞战争》二维人体地图生产素材。人体正面正交展开，无透视；可爱、圆润、精细的手绘生物游戏风格，柔润半透明膜层、细腻组织纹理、克制高光，与现有青绿细胞和深紫组织背景协调。单个对象完整居中，四周留至少8%透明边距，真实透明alpha背景。无文字、无标注、无棋盘格、无地面投影、无血腥、无拟人脸。1024×1024。参考图只用于柔润精细材质，不要照搬脸或圆盘外形。主体：人体左肺，位于全身画面右侧。上尖圆、下宽圆，右侧外缘凸圆；画面左侧内缘有心切迹及肺门。斜裂形成两个肺叶。只画一片肺，不要照镜像复制三叶右肺。全身定位：人体正面，屏幕左对应人体右。器官供血与回流接口按器官边界短小保留，其余周边血管都不画。接口与地图归一化位置参考（x从左向右、y从上向下）：{\"artery\": [0.2639, 0.4141], \"vein\": [0.2639, 0.5625]}。主体轮廓保持留白，不裁切。以该器官的完整外形图为严格参考，只去掉正面薄膜以露出内部剖面。必须保持完全相同的轮廓、位置、尺度、朝向、色彩、接口和透明边缘。保留两肺叶、心切迹和斜裂，显示支气管树与聚合肺泡区，低氧入流、高氧出流接口区分。",
+        "model": "gpt",
+        "transparent": true,
+        "quality": "high",
+        "resolution": "1K",
+        "target_size": "1024x1024",
+        "aspect_ratio": "1:1",
+        "reference_images": [
+          "assets/image/anatomy-v2/lung_l-outer.png"
+        ]
+      },
+      "styleReferencesAfterSamples": [
+        "assets/image/anatomy-v2/heart-outer.png",
+        "assets/image/anatomy-v2/lung_r-outer.png"
+      ],
+      "ports": {
+        "artery": [
+          0.2639,
+          0.4141
+        ],
+        "vein": [
+          0.2639,
+          0.5625
+        ]
+      }
+    },
+    {
+      "id": "heart",
+      "state": "outer",
+      "destination": "assets/image/anatomy-v2/heart-outer.png",
+      "status": "pending",
+      "request": {
+        "name": "anatomy2_heart_outer",
+        "prompt": "《细胞战争》二维人体地图生产素材。人体正面正交展开，无透视；可爱、圆润、精细的手绘生物游戏风格，柔润半透明膜层、细腻组织纹理、克制高光，与现有青绿细胞和深紫组织背景协调。单个对象完整居中，四周留至少8%透明边距，真实透明alpha背景。无文字、无标注、无棋盘格、无地面投影、无血腥、无拟人脸。1024×1024。参考图只用于柔润精细材质，不要照搬脸或圆盘外形。主体：人体心脏，心尖朝画面右下（人体左侧），上宽下窄略梨形；可辨心房耳、心室外轮廓、前室间沟和独立细小冠状动脉及静脉。不是爱心图标。全身定位：人体正面，屏幕左对应人体右。器官供血与回流接口按器官边界短小保留，其余周边血管都不画。接口与地图归一化位置参考（x从左向右、y从上向下）：{\"artery\": [0.7429, 0.7609], \"vein\": [0.6, 0.8696]}。主体轮廓保持留白，不裁切。",
+        "model": "gpt",
+        "transparent": true,
+        "quality": "high",
+        "resolution": "1K",
+        "target_size": "1024x1024",
+        "aspect_ratio": "1:1",
+        "reference_images": [
+          "assets/image/cells-v3/red-cell.png"
+        ]
+      },
+      "styleReferencesAfterSamples": [
+        "assets/image/anatomy-v2/heart-outer.png",
+        "assets/image/anatomy-v2/lung_r-outer.png"
+      ],
+      "ports": {
+        "artery": [
+          0.7429,
+          0.7609
+        ],
+        "vein": [
+          0.6,
+          0.8696
+        ]
+      }
+    },
+    {
+      "id": "heart",
+      "state": "cutaway",
+      "destination": "assets/image/anatomy-v2/heart-cutaway.png",
+      "status": "pending",
+      "request": {
+        "name": "anatomy2_heart_cutaway",
+        "prompt": "《细胞战争》二维人体地图生产素材。人体正面正交展开，无透视；可爱、圆润、精细的手绘生物游戏风格，柔润半透明膜层、细腻组织纹理、克制高光，与现有青绿细胞和深紫组织背景协调。单个对象完整居中，四周留至少8%透明边距，真实透明alpha背景。无文字、无标注、无棋盘格、无地面投影、无血腥、无拟人脸。1024×1024。参考图只用于柔润精细材质，不要照搬脸或圆盘外形。主体：人体心脏，心尖朝画面右下（人体左侧），上宽下窄略梨形；可辨心房耳、心室外轮廓、前室间沟和独立细小冠状动脉及静脉。不是爱心图标。全身定位：人体正面，屏幕左对应人体右。器官供血与回流接口按器官边界短小保留，其余周边血管都不画。接口与地图归一化位置参考（x从左向右、y从上向下）：{\"artery\": [0.7429, 0.7609], \"vein\": [0.6, 0.8696]}。主体轮廓保持留白，不裁切。以该器官的完整外形图为严格参考，只去掉正面薄膜以露出内部剖面。必须保持完全相同的轮廓、位置、尺度、朝向、色彩、接口和透明边缘。清楚显示四个独立心腔：画面左方是右心房在上、右心室在下；画面右方是左心房在上、左心室在下。中央连续室间及房间隔，左心室壁更厚；房室瓣在各侧房室之间，肺动脉瓣及主动脉瓣在流出道。心腔腔体宽敞可用于地图，绝不可合成一个共通大洞。",
+        "model": "gpt",
+        "transparent": true,
+        "quality": "high",
+        "resolution": "1K",
+        "target_size": "1024x1024",
+        "aspect_ratio": "1:1",
+        "reference_images": [
+          "assets/image/anatomy-v2/heart-outer.png"
+        ]
+      },
+      "styleReferencesAfterSamples": [
+        "assets/image/anatomy-v2/heart-outer.png",
+        "assets/image/anatomy-v2/lung_r-outer.png"
+      ],
+      "ports": {
+        "artery": [
+          0.7429,
+          0.7609
+        ],
+        "vein": [
+          0.6,
+          0.8696
+        ]
+      }
+    },
+    {
+      "id": "liver",
+      "state": "outer",
+      "destination": "assets/image/anatomy-v2/liver-outer.png",
+      "status": "pending",
+      "request": {
+        "name": "anatomy2_liver_outer",
+        "prompt": "《细胞战争》二维人体地图生产素材。人体正面正交展开，无透视；可爱、圆润、精细的手绘生物游戏风格，柔润半透明膜层、细腻组织纹理、克制高光，与现有青绿细胞和深紫组织背景协调。单个对象完整居中，四周留至少8%透明边距，真实透明alpha背景。无文字、无标注、无棋盘格、无地面投影、无血腥、无拟人脸。1024×1024。参考图只用于柔润精细材质，不要照搬脸或圆盘外形。主体：完整肝脏前面观，画面左侧是人体右侧的大肝叶，画面右侧小肝叶，识别肝叶分界、上部圆凸及下部柔和倾斜缘。暖紫红与玫瑰棕色，不含胆囊或周围器官。全身定位：人体正面，屏幕左对应人体右。器官供血与回流接口按器官边界短小保留，其余周边血管都不画。接口与地图归一化位置参考（x从左向右、y从上向下）：{\"portal\": [0.8942, 0.4385], \"artery\": [0.8077, 0.5308], \"vein\": [0.6923, 0.1769]}。主体轮廓保持留白，不裁切。",
+        "model": "gpt",
+        "transparent": true,
+        "quality": "high",
+        "resolution": "1K",
+        "target_size": "1024x1024",
+        "aspect_ratio": "1:1",
+        "reference_images": [
+          "assets/image/cells-v3/red-cell.png"
+        ]
+      },
+      "styleReferencesAfterSamples": [
+        "assets/image/anatomy-v2/heart-outer.png",
+        "assets/image/anatomy-v2/lung_r-outer.png"
+      ],
+      "ports": {
+        "portal": [
+          0.8942,
+          0.4385
+        ],
+        "artery": [
+          0.8077,
+          0.5308
+        ],
+        "vein": [
+          0.6923,
+          0.1769
+        ]
+      }
+    },
+    {
+      "id": "liver",
+      "state": "cutaway",
+      "destination": "assets/image/anatomy-v2/liver-cutaway.png",
+      "status": "pending",
+      "request": {
+        "name": "anatomy2_liver_cutaway",
+        "prompt": "《细胞战争》二维人体地图生产素材。人体正面正交展开，无透视；可爱、圆润、精细的手绘生物游戏风格，柔润半透明膜层、细腻组织纹理、克制高光，与现有青绿细胞和深紫组织背景协调。单个对象完整居中，四周留至少8%透明边距，真实透明alpha背景。无文字、无标注、无棋盘格、无地面投影、无血腥、无拟人脸。1024×1024。参考图只用于柔润精细材质，不要照搬脸或圆盘外形。主体：完整肝脏前面观，画面左侧是人体右侧的大肝叶，画面右侧小肝叶，识别肝叶分界、上部圆凸及下部柔和倾斜缘。暖紫红与玫瑰棕色，不含胆囊或周围器官。全身定位：人体正面，屏幕左对应人体右。器官供血与回流接口按器官边界短小保留，其余周边血管都不画。接口与地图归一化位置参考（x从左向右、y从上向下）：{\"portal\": [0.8942, 0.4385], \"artery\": [0.8077, 0.5308], \"vein\": [0.6923, 0.1769]}。主体轮廓保持留白，不裁切。以该器官的完整外形图为严格参考，只去掉正面薄膜以露出内部剖面。必须保持完全相同的轮廓、位置、尺度、朝向、色彩、接口和透明边缘。显示大块肝小叶分区和两个独立供血入口（肝动脉及门静脉），汇入肝内聚合交换区，另设肝静脉出口。不要把门静脉画成直接绕过肝脏。",
+        "model": "gpt",
+        "transparent": true,
+        "quality": "high",
+        "resolution": "1K",
+        "target_size": "1024x1024",
+        "aspect_ratio": "1:1",
+        "reference_images": [
+          "assets/image/anatomy-v2/liver-outer.png"
+        ]
+      },
+      "styleReferencesAfterSamples": [
+        "assets/image/anatomy-v2/heart-outer.png",
+        "assets/image/anatomy-v2/lung_r-outer.png"
+      ],
+      "ports": {
+        "portal": [
+          0.8942,
+          0.4385
+        ],
+        "artery": [
+          0.8077,
+          0.5308
+        ],
+        "vein": [
+          0.6923,
+          0.1769
+        ]
+      }
+    },
+    {
+      "id": "stomach",
+      "state": "outer",
+      "destination": "assets/image/anatomy-v2/stomach-outer.png",
+      "status": "pending",
+      "request": {
+        "name": "anatomy2_stomach_outer",
+        "prompt": "《细胞战争》二维人体地图生产素材。人体正面正交展开，无透视；可爱、圆润、精细的手绘生物游戏风格，柔润半透明膜层、细腻组织纹理、克制高光，与现有青绿细胞和深紫组织背景协调。单个对象完整居中，四周留至少8%透明边距，真实透明alpha背景。无文字、无标注、无棋盘格、无地面投影、无血腥、无拟人脸。1024×1024。参考图只用于柔润精细材质，不要照搬脸或圆盘外形。主体：完整胃，入口在上偏画面左方，胃底上侧圆鼓，宽阔胃体向画面右方凸出形成大弯；内侧小弯凹入，幽门端短而向画面左下弯曲。温暖桃粉色。全身定位：人体正面，屏幕左对应人体右。器官供血与回流接口按器官边界短小保留，其余周边血管都不画。接口与地图归一化位置参考（x从左向右、y从上向下）：{\"artery\": [0.3246, 0.1949], \"vein\": [0.5877, 0.822]}。主体轮廓保持留白，不裁切。",
+        "model": "gpt",
+        "transparent": true,
+        "quality": "high",
+        "resolution": "1K",
+        "target_size": "1024x1024",
+        "aspect_ratio": "1:1",
+        "reference_images": [
+          "assets/image/cells-v3/red-cell.png"
+        ]
+      },
+      "styleReferencesAfterSamples": [
+        "assets/image/anatomy-v2/heart-outer.png",
+        "assets/image/anatomy-v2/lung_r-outer.png"
+      ],
+      "ports": {
+        "artery": [
+          0.3246,
+          0.1949
+        ],
+        "vein": [
+          0.5877,
+          0.822
+        ]
+      }
+    },
+    {
+      "id": "stomach",
+      "state": "cutaway",
+      "destination": "assets/image/anatomy-v2/stomach-cutaway.png",
+      "status": "pending",
+      "request": {
+        "name": "anatomy2_stomach_cutaway",
+        "prompt": "《细胞战争》二维人体地图生产素材。人体正面正交展开，无透视；可爱、圆润、精细的手绘生物游戏风格，柔润半透明膜层、细腻组织纹理、克制高光，与现有青绿细胞和深紫组织背景协调。单个对象完整居中，四周留至少8%透明边距，真实透明alpha背景。无文字、无标注、无棋盘格、无地面投影、无血腥、无拟人脸。1024×1024。参考图只用于柔润精细材质，不要照搬脸或圆盘外形。主体：完整胃，入口在上偏画面左方，胃底上侧圆鼓，宽阔胃体向画面右方凸出形成大弯；内侧小弯凹入，幽门端短而向画面左下弯曲。温暖桃粉色。全身定位：人体正面，屏幕左对应人体右。器官供血与回流接口按器官边界短小保留，其余周边血管都不画。接口与地图归一化位置参考（x从左向右、y从上向下）：{\"artery\": [0.3246, 0.1949], \"vein\": [0.5877, 0.822]}。主体轮廓保持留白，不裁切。以该器官的完整外形图为严格参考，只去掉正面薄膜以露出内部剖面。必须保持完全相同的轮廓、位置、尺度、朝向、色彩、接口和透明边缘。显示胃腔、连续柔和黏膜皱襞和较厚胃壁，边缘保留完整入口与出口。",
+        "model": "gpt",
+        "transparent": true,
+        "quality": "high",
+        "resolution": "1K",
+        "target_size": "1024x1024",
+        "aspect_ratio": "1:1",
+        "reference_images": [
+          "assets/image/anatomy-v2/stomach-outer.png"
+        ]
+      },
+      "styleReferencesAfterSamples": [
+        "assets/image/anatomy-v2/heart-outer.png",
+        "assets/image/anatomy-v2/lung_r-outer.png"
+      ],
+      "ports": {
+        "artery": [
+          0.3246,
+          0.1949
+        ],
+        "vein": [
+          0.5877,
+          0.822
+        ]
+      }
+    },
+    {
+      "id": "spleen",
+      "state": "outer",
+      "destination": "assets/image/anatomy-v2/spleen-outer.png",
+      "status": "pending",
+      "request": {
+        "name": "anatomy2_spleen_outer",
+        "prompt": "《细胞战争》二维人体地图生产素材。人体正面正交展开，无透视；可爱、圆润、精细的手绘生物游戏风格，柔润半透明膜层、细腻组织纹理、克制高光，与现有青绿细胞和深紫组织背景协调。单个对象完整居中，四周留至少8%透明边距，真实透明alpha背景。无文字、无标注、无棋盘格、无地面投影、无血腥、无拟人脸。1024×1024。参考图只用于柔润精细材质，不要照搬脸或圆盘外形。主体：单个完整脾，长卵圆、略豆形，长轴竖向，画面左侧是凹入脾门，外缘饱满圆滑。柔和暗玫瑰紫，不画肾脏形状。全身定位：人体正面，屏幕左对应人体右。器官供血与回流接口按器官边界短小保留，其余周边血管都不画。接口与地图归一化位置参考（x从左向右、y从上向下）：{\"artery\": [0.14, 0.2955], \"vein\": [0.22, 0.75]}。主体轮廓保持留白，不裁切。",
+        "model": "gpt",
+        "transparent": true,
+        "quality": "high",
+        "resolution": "1K",
+        "target_size": "1024x1024",
+        "aspect_ratio": "1:1",
+        "reference_images": [
+          "assets/image/cells-v3/red-cell.png"
+        ]
+      },
+      "styleReferencesAfterSamples": [
+        "assets/image/anatomy-v2/heart-outer.png",
+        "assets/image/anatomy-v2/lung_r-outer.png"
+      ],
+      "ports": {
+        "artery": [
+          0.14,
+          0.2955
+        ],
+        "vein": [
+          0.22,
+          0.75
+        ]
+      }
+    },
+    {
+      "id": "spleen",
+      "state": "cutaway",
+      "destination": "assets/image/anatomy-v2/spleen-cutaway.png",
+      "status": "pending",
+      "request": {
+        "name": "anatomy2_spleen_cutaway",
+        "prompt": "《细胞战争》二维人体地图生产素材。人体正面正交展开，无透视；可爱、圆润、精细的手绘生物游戏风格，柔润半透明膜层、细腻组织纹理、克制高光，与现有青绿细胞和深紫组织背景协调。单个对象完整居中，四周留至少8%透明边距，真实透明alpha背景。无文字、无标注、无棋盘格、无地面投影、无血腥、无拟人脸。1024×1024。参考图只用于柔润精细材质，不要照搬脸或圆盘外形。主体：单个完整脾，长卵圆、略豆形，长轴竖向，画面左侧是凹入脾门，外缘饱满圆滑。柔和暗玫瑰紫，不画肾脏形状。全身定位：人体正面，屏幕左对应人体右。器官供血与回流接口按器官边界短小保留，其余周边血管都不画。接口与地图归一化位置参考（x从左向右、y从上向下）：{\"artery\": [0.14, 0.2955], \"vein\": [0.22, 0.75]}。主体轮廓保持留白，不裁切。以该器官的完整外形图为严格参考，只去掉正面薄膜以露出内部剖面。必须保持完全相同的轮廓、位置、尺度、朝向、色彩、接口和透明边缘。显示内部分区红髓、白髓团块和脾门连接处。",
+        "model": "gpt",
+        "transparent": true,
+        "quality": "high",
+        "resolution": "1K",
+        "target_size": "1024x1024",
+        "aspect_ratio": "1:1",
+        "reference_images": [
+          "assets/image/anatomy-v2/spleen-outer.png"
+        ]
+      },
+      "styleReferencesAfterSamples": [
+        "assets/image/anatomy-v2/heart-outer.png",
+        "assets/image/anatomy-v2/lung_r-outer.png"
+      ],
+      "ports": {
+        "artery": [
+          0.14,
+          0.2955
+        ],
+        "vein": [
+          0.22,
+          0.75
+        ]
+      }
+    },
+    {
+      "id": "pancreas",
+      "state": "outer",
+      "destination": "assets/image/anatomy-v2/pancreas-outer.png",
+      "status": "pending",
+      "request": {
+        "name": "anatomy2_pancreas_outer",
+        "prompt": "《细胞战争》二维人体地图生产素材。人体正面正交展开，无透视；可爱、圆润、精细的手绘生物游戏风格，柔润半透明膜层、细腻组织纹理、克制高光，与现有青绿细胞和深紫组织背景协调。单个对象完整居中，四周留至少8%透明边距，真实透明alpha背景。无文字、无标注、无棋盘格、无地面投影、无血腥、无拟人脸。1024×1024。参考图只用于柔润精细材质，不要照搬脸或圆盘外形。主体：横向细长胰腺，画面左方人体右侧胰头饱满，向画面右方逐渐变细为胰尾。柔和分叶腺泡，淡奶茶桃粉色，不能画成长条血管。全身定位：人体正面，屏幕左对应人体右。器官供血与回流接口按器官边界短小保留，其余周边血管都不画。接口与地图归一化位置参考（x从左向右、y从上向下）：{\"artery\": [0.2571, 0.4583], \"vein\": [0.7, 0.4167]}。主体轮廓保持留白，不裁切。",
+        "model": "gpt",
+        "transparent": true,
+        "quality": "high",
+        "resolution": "1K",
+        "target_size": "1024x1024",
+        "aspect_ratio": "1:1",
+        "reference_images": [
+          "assets/image/cells-v3/red-cell.png"
+        ]
+      },
+      "styleReferencesAfterSamples": [
+        "assets/image/anatomy-v2/heart-outer.png",
+        "assets/image/anatomy-v2/lung_r-outer.png"
+      ],
+      "ports": {
+        "artery": [
+          0.2571,
+          0.4583
+        ],
+        "vein": [
+          0.7,
+          0.4167
+        ]
+      }
+    },
+    {
+      "id": "pancreas",
+      "state": "cutaway",
+      "destination": "assets/image/anatomy-v2/pancreas-cutaway.png",
+      "status": "pending",
+      "request": {
+        "name": "anatomy2_pancreas_cutaway",
+        "prompt": "《细胞战争》二维人体地图生产素材。人体正面正交展开，无透视；可爱、圆润、精细的手绘生物游戏风格，柔润半透明膜层、细腻组织纹理、克制高光，与现有青绿细胞和深紫组织背景协调。单个对象完整居中，四周留至少8%透明边距，真实透明alpha背景。无文字、无标注、无棋盘格、无地面投影、无血腥、无拟人脸。1024×1024。参考图只用于柔润精细材质，不要照搬脸或圆盘外形。主体：横向细长胰腺，画面左方人体右侧胰头饱满，向画面右方逐渐变细为胰尾。柔和分叶腺泡，淡奶茶桃粉色，不能画成长条血管。全身定位：人体正面，屏幕左对应人体右。器官供血与回流接口按器官边界短小保留，其余周边血管都不画。接口与地图归一化位置参考（x从左向右、y从上向下）：{\"artery\": [0.2571, 0.4583], \"vein\": [0.7, 0.4167]}。主体轮廓保持留白，不裁切。以该器官的完整外形图为严格参考，只去掉正面薄膜以露出内部剖面。必须保持完全相同的轮廓、位置、尺度、朝向、色彩、接口和透明边缘。显示胰腺分叶腺泡与少量胰岛，胰头胰尾保持原图方向。",
+        "model": "gpt",
+        "transparent": true,
+        "quality": "high",
+        "resolution": "1K",
+        "target_size": "1024x1024",
+        "aspect_ratio": "1:1",
+        "reference_images": [
+          "assets/image/anatomy-v2/pancreas-outer.png"
+        ]
+      },
+      "styleReferencesAfterSamples": [
+        "assets/image/anatomy-v2/heart-outer.png",
+        "assets/image/anatomy-v2/lung_r-outer.png"
+      ],
+      "ports": {
+        "artery": [
+          0.2571,
+          0.4583
+        ],
+        "vein": [
+          0.7,
+          0.4167
+        ]
+      }
+    },
+    {
+      "id": "kidney_r",
+      "state": "outer",
+      "destination": "assets/image/anatomy-v2/kidney_r-outer.png",
+      "status": "pending",
+      "request": {
+        "name": "anatomy2_kidney_r_outer",
+        "prompt": "《细胞战争》二维人体地图生产素材。人体正面正交展开，无透视；可爱、圆润、精细的手绘生物游戏风格，柔润半透明膜层、细腻组织纹理、克制高光，与现有青绿细胞和深紫组织背景协调。单个对象完整居中，四周留至少8%透明边距，真实透明alpha背景。无文字、无标注、无棋盘格、无地面投影、无血腥、无拟人脸。1024×1024。参考图只用于柔润精细材质，不要照搬脸或圆盘外形。主体：人体右肾，画面左侧使用，豆形竖向，画面左外缘凸圆，画面右内缘为明显肾门凹口。柔和玫瑰紫皮质，不画另一侧肾、不画长输尿管。全身定位：人体正面，屏幕左对应人体右。器官供血与回流接口按器官边界短小保留，其余周边血管都不画。接口与地图归一化位置参考（x从左向右、y从上向下）：{\"artery\": [0.8529, 0.5], \"vein\": [0.7647, 0.75]}。主体轮廓保持留白，不裁切。",
+        "model": "gpt",
+        "transparent": true,
+        "quality": "high",
+        "resolution": "1K",
+        "target_size": "1024x1024",
+        "aspect_ratio": "1:1",
+        "reference_images": [
+          "assets/image/cells-v3/red-cell.png"
+        ]
+      },
+      "styleReferencesAfterSamples": [
+        "assets/image/anatomy-v2/heart-outer.png",
+        "assets/image/anatomy-v2/lung_r-outer.png"
+      ],
+      "ports": {
+        "artery": [
+          0.8529,
+          0.5
+        ],
+        "vein": [
+          0.7647,
+          0.75
+        ]
+      }
+    },
+    {
+      "id": "kidney_r",
+      "state": "cutaway",
+      "destination": "assets/image/anatomy-v2/kidney_r-cutaway.png",
+      "status": "pending",
+      "request": {
+        "name": "anatomy2_kidney_r_cutaway",
+        "prompt": "《细胞战争》二维人体地图生产素材。人体正面正交展开，无透视；可爱、圆润、精细的手绘生物游戏风格，柔润半透明膜层、细腻组织纹理、克制高光，与现有青绿细胞和深紫组织背景协调。单个对象完整居中，四周留至少8%透明边距，真实透明alpha背景。无文字、无标注、无棋盘格、无地面投影、无血腥、无拟人脸。1024×1024。参考图只用于柔润精细材质，不要照搬脸或圆盘外形。主体：人体右肾，画面左侧使用，豆形竖向，画面左外缘凸圆，画面右内缘为明显肾门凹口。柔和玫瑰紫皮质，不画另一侧肾、不画长输尿管。全身定位：人体正面，屏幕左对应人体右。器官供血与回流接口按器官边界短小保留，其余周边血管都不画。接口与地图归一化位置参考（x从左向右、y从上向下）：{\"artery\": [0.8529, 0.5], \"vein\": [0.7647, 0.75]}。主体轮廓保持留白，不裁切。以该器官的完整外形图为严格参考，只去掉正面薄膜以露出内部剖面。必须保持完全相同的轮廓、位置、尺度、朝向、色彩、接口和透明边缘。肾门在画面右边，显示外侧皮质、内侧三角肾锥体髓质、汇集肾盏与肾盂；不同分区清晰可辨。",
+        "model": "gpt",
+        "transparent": true,
+        "quality": "high",
+        "resolution": "1K",
+        "target_size": "1024x1024",
+        "aspect_ratio": "1:1",
+        "reference_images": [
+          "assets/image/anatomy-v2/kidney_r-outer.png"
+        ]
+      },
+      "styleReferencesAfterSamples": [
+        "assets/image/anatomy-v2/heart-outer.png",
+        "assets/image/anatomy-v2/lung_r-outer.png"
+      ],
+      "ports": {
+        "artery": [
+          0.8529,
+          0.5
+        ],
+        "vein": [
+          0.7647,
+          0.75
+        ]
+      }
+    },
+    {
+      "id": "kidney_l",
+      "state": "outer",
+      "destination": "assets/image/anatomy-v2/kidney_l-outer.png",
+      "status": "pending",
+      "request": {
+        "name": "anatomy2_kidney_l_outer",
+        "prompt": "《细胞战争》二维人体地图生产素材。人体正面正交展开，无透视；可爱、圆润、精细的手绘生物游戏风格，柔润半透明膜层、细腻组织纹理、克制高光，与现有青绿细胞和深紫组织背景协调。单个对象完整居中，四周留至少8%透明边距，真实透明alpha背景。无文字、无标注、无棋盘格、无地面投影、无血腥、无拟人脸。1024×1024。参考图只用于柔润精细材质，不要照搬脸或圆盘外形。主体：人体左肾，画面右侧使用，豆形竖向，画面右外缘凸圆，画面左内缘为明显肾门凹口。柔和玫瑰紫皮质，不画另一侧肾、不画长输尿管。全身定位：人体正面，屏幕左对应人体右。器官供血与回流接口按器官边界短小保留，其余周边血管都不画。接口与地图归一化位置参考（x从左向右、y从上向下）：{\"artery\": [0.0882, 0.4286], \"vein\": [0.2059, 0.6429]}。主体轮廓保持留白，不裁切。",
+        "model": "gpt",
+        "transparent": true,
+        "quality": "high",
+        "resolution": "1K",
+        "target_size": "1024x1024",
+        "aspect_ratio": "1:1",
+        "reference_images": [
+          "assets/image/cells-v3/red-cell.png"
+        ]
+      },
+      "styleReferencesAfterSamples": [
+        "assets/image/anatomy-v2/heart-outer.png",
+        "assets/image/anatomy-v2/lung_r-outer.png"
+      ],
+      "ports": {
+        "artery": [
+          0.0882,
+          0.4286
+        ],
+        "vein": [
+          0.2059,
+          0.6429
+        ]
+      }
+    },
+    {
+      "id": "kidney_l",
+      "state": "cutaway",
+      "destination": "assets/image/anatomy-v2/kidney_l-cutaway.png",
+      "status": "pending",
+      "request": {
+        "name": "anatomy2_kidney_l_cutaway",
+        "prompt": "《细胞战争》二维人体地图生产素材。人体正面正交展开，无透视；可爱、圆润、精细的手绘生物游戏风格，柔润半透明膜层、细腻组织纹理、克制高光，与现有青绿细胞和深紫组织背景协调。单个对象完整居中，四周留至少8%透明边距，真实透明alpha背景。无文字、无标注、无棋盘格、无地面投影、无血腥、无拟人脸。1024×1024。参考图只用于柔润精细材质，不要照搬脸或圆盘外形。主体：人体左肾，画面右侧使用，豆形竖向，画面右外缘凸圆，画面左内缘为明显肾门凹口。柔和玫瑰紫皮质，不画另一侧肾、不画长输尿管。全身定位：人体正面，屏幕左对应人体右。器官供血与回流接口按器官边界短小保留，其余周边血管都不画。接口与地图归一化位置参考（x从左向右、y从上向下）：{\"artery\": [0.0882, 0.4286], \"vein\": [0.2059, 0.6429]}。主体轮廓保持留白，不裁切。以该器官的完整外形图为严格参考，只去掉正面薄膜以露出内部剖面。必须保持完全相同的轮廓、位置、尺度、朝向、色彩、接口和透明边缘。肾门在画面左边，显示皮质、肾锥体髓质、汇集肾盏与肾盂。",
+        "model": "gpt",
+        "transparent": true,
+        "quality": "high",
+        "resolution": "1K",
+        "target_size": "1024x1024",
+        "aspect_ratio": "1:1",
+        "reference_images": [
+          "assets/image/anatomy-v2/kidney_l-outer.png"
+        ]
+      },
+      "styleReferencesAfterSamples": [
+        "assets/image/anatomy-v2/heart-outer.png",
+        "assets/image/anatomy-v2/lung_r-outer.png"
+      ],
+      "ports": {
+        "artery": [
+          0.0882,
+          0.4286
+        ],
+        "vein": [
+          0.2059,
+          0.6429
+        ]
+      }
+    },
+    {
+      "id": "large_intestine",
+      "state": "outer",
+      "destination": "assets/image/anatomy-v2/large_intestine-outer.png",
+      "status": "pending",
+      "request": {
+        "name": "anatomy2_large_intestine_outer",
+        "prompt": "《细胞战争》二维人体地图生产素材。人体正面正交展开，无透视；可爱、圆润、精细的手绘生物游戏风格，柔润半透明膜层、细腻组织纹理、克制高光，与现有青绿细胞和深紫组织背景协调。单个对象完整居中，四周留至少8%透明边距，真实透明alpha背景。无文字、无标注、无棋盘格、无地面投影、无血腥、无拟人脸。1024×1024。参考图只用于柔润精细材质，不要照搬脸或圆盘外形。主体：完整结肠，人体右侧的升结肠在画面左边，横结肠在上，降结肠在画面右边，下方乙状结肠弯向中间并接直肠。外圈框形轮廓，中间大面积真实透明留空以容纳独立小肠。可辨结肠袋，无小肠。全身定位：人体正面，屏幕左对应人体右。器官供血与回流接口按器官边界短小保留，其余周边血管都不画。接口与地图归一化位置参考（x从左向右、y从上向下）：{\"artery\": [0.084, 0.3051], \"vein\": [0.092, 0.5932]}。主体轮廓保持留白，不裁切。",
+        "model": "gpt",
+        "transparent": true,
+        "quality": "high",
+        "resolution": "1K",
+        "target_size": "1024x1024",
+        "aspect_ratio": "1:1",
+        "reference_images": [
+          "assets/image/cells-v3/red-cell.png"
+        ]
+      },
+      "styleReferencesAfterSamples": [
+        "assets/image/anatomy-v2/heart-outer.png",
+        "assets/image/anatomy-v2/lung_r-outer.png"
+      ],
+      "ports": {
+        "artery": [
+          0.084,
+          0.3051
+        ],
+        "vein": [
+          0.092,
+          0.5932
+        ]
+      }
+    },
+    {
+      "id": "large_intestine",
+      "state": "cutaway",
+      "destination": "assets/image/anatomy-v2/large_intestine-cutaway.png",
+      "status": "pending",
+      "request": {
+        "name": "anatomy2_large_intestine_cutaway",
+        "prompt": "《细胞战争》二维人体地图生产素材。人体正面正交展开，无透视；可爱、圆润、精细的手绘生物游戏风格，柔润半透明膜层、细腻组织纹理、克制高光，与现有青绿细胞和深紫组织背景协调。单个对象完整居中，四周留至少8%透明边距，真实透明alpha背景。无文字、无标注、无棋盘格、无地面投影、无血腥、无拟人脸。1024×1024。参考图只用于柔润精细材质，不要照搬脸或圆盘外形。主体：完整结肠，人体右侧的升结肠在画面左边，横结肠在上，降结肠在画面右边，下方乙状结肠弯向中间并接直肠。外圈框形轮廓，中间大面积真实透明留空以容纳独立小肠。可辨结肠袋，无小肠。全身定位：人体正面，屏幕左对应人体右。器官供血与回流接口按器官边界短小保留，其余周边血管都不画。接口与地图归一化位置参考（x从左向右、y从上向下）：{\"artery\": [0.084, 0.3051], \"vein\": [0.092, 0.5932]}。主体轮廓保持留白，不裁切。以该器官的完整外形图为严格参考，只去掉正面薄膜以露出内部剖面。必须保持完全相同的轮廓、位置、尺度、朝向、色彩、接口和透明边缘。原有外围框形结肠与中间透明空洞保持，显示升、横、降与乙状结肠内部宽敞肠腔及黏膜皱褶。",
+        "model": "gpt",
+        "transparent": true,
+        "quality": "high",
+        "resolution": "1K",
+        "target_size": "1024x1024",
+        "aspect_ratio": "1:1",
+        "reference_images": [
+          "assets/image/anatomy-v2/large_intestine-outer.png"
+        ]
+      },
+      "styleReferencesAfterSamples": [
+        "assets/image/anatomy-v2/heart-outer.png",
+        "assets/image/anatomy-v2/lung_r-outer.png"
+      ],
+      "ports": {
+        "artery": [
+          0.084,
+          0.3051
+        ],
+        "vein": [
+          0.092,
+          0.5932
+        ]
+      }
+    },
+    {
+      "id": "small_intestine",
+      "state": "outer",
+      "destination": "assets/image/anatomy-v2/small_intestine-outer.png",
+      "status": "pending",
+      "request": {
+        "name": "anatomy2_small_intestine_outer",
+        "prompt": "《细胞战争》二维人体地图生产素材。人体正面正交展开，无透视；可爱、圆润、精细的手绘生物游戏风格，柔润半透明膜层、细腻组织纹理、克制高光，与现有青绿细胞和深紫组织背景协调。单个对象完整居中，四周留至少8%透明边距，真实透明alpha背景。无文字、无标注、无棋盘格、无地面投影、无血腥、无拟人脸。1024×1024。参考图只用于柔润精细材质，不要照搬脸或圆盘外形。主体：盘绕紧凑的小肠，数条圆润肠袢错落堆叠，完整团块近椭圆，整体宽度略小于高度。细腻桃粉半透明肠壁，区分多条连续肠袢，不能画成乱线团；不含外围结肠。全身定位：人体正面，屏幕左对应人体右。器官供血与回流接口按器官边界短小保留，其余周边血管都不画。接口与地图归一化位置参考（x从左向右、y从上向下）：{\"artery\": [0.4125, 0.22], \"vein\": [0.525, 0.62]}。主体轮廓保持留白，不裁切。",
+        "model": "gpt",
+        "transparent": true,
+        "quality": "high",
+        "resolution": "1K",
+        "target_size": "1024x1024",
+        "aspect_ratio": "1:1",
+        "reference_images": [
+          "assets/image/cells-v3/red-cell.png"
+        ]
+      },
+      "styleReferencesAfterSamples": [
+        "assets/image/anatomy-v2/heart-outer.png",
+        "assets/image/anatomy-v2/lung_r-outer.png"
+      ],
+      "ports": {
+        "artery": [
+          0.4125,
+          0.22
+        ],
+        "vein": [
+          0.525,
+          0.62
+        ]
+      }
+    },
+    {
+      "id": "small_intestine",
+      "state": "cutaway",
+      "destination": "assets/image/anatomy-v2/small_intestine-cutaway.png",
+      "status": "pending",
+      "request": {
+        "name": "anatomy2_small_intestine_cutaway",
+        "prompt": "《细胞战争》二维人体地图生产素材。人体正面正交展开，无透视；可爱、圆润、精细的手绘生物游戏风格，柔润半透明膜层、细腻组织纹理、克制高光，与现有青绿细胞和深紫组织背景协调。单个对象完整居中，四周留至少8%透明边距，真实透明alpha背景。无文字、无标注、无棋盘格、无地面投影、无血腥、无拟人脸。1024×1024。参考图只用于柔润精细材质，不要照搬脸或圆盘外形。主体：盘绕紧凑的小肠，数条圆润肠袢错落堆叠，完整团块近椭圆，整体宽度略小于高度。细腻桃粉半透明肠壁，区分多条连续肠袢，不能画成乱线团；不含外围结肠。全身定位：人体正面，屏幕左对应人体右。器官供血与回流接口按器官边界短小保留，其余周边血管都不画。接口与地图归一化位置参考（x从左向右、y从上向下）：{\"artery\": [0.4125, 0.22], \"vein\": [0.525, 0.62]}。主体轮廓保持留白，不裁切。以该器官的完整外形图为严格参考，只去掉正面薄膜以露出内部剖面。必须保持完全相同的轮廓、位置、尺度、朝向、色彩、接口和透明边缘。原有肠袢的位置不变，剖开可见宽敞局部肠腔、黏膜及简化绒毛带，不要变成独立散开的小圈。",
+        "model": "gpt",
+        "transparent": true,
+        "quality": "high",
+        "resolution": "1K",
+        "target_size": "1024x1024",
+        "aspect_ratio": "1:1",
+        "reference_images": [
+          "assets/image/anatomy-v2/small_intestine-outer.png"
+        ]
+      },
+      "styleReferencesAfterSamples": [
+        "assets/image/anatomy-v2/heart-outer.png",
+        "assets/image/anatomy-v2/lung_r-outer.png"
+      ],
+      "ports": {
+        "artery": [
+          0.4125,
+          0.22
+        ],
+        "vein": [
+          0.525,
+          0.62
+        ]
+      }
+    },
+    {
+      "id": "bladder",
+      "state": "outer",
+      "destination": "assets/image/anatomy-v2/bladder-outer.png",
+      "status": "pending",
+      "request": {
+        "name": "anatomy2_bladder_outer",
+        "prompt": "《细胞战争》二维人体地图生产素材。人体正面正交展开，无透视；可爱、圆润、精细的手绘生物游戏风格，柔润半透明膜层、细腻组织纹理、克制高光，与现有青绿细胞和深紫组织背景协调。单个对象完整居中，四周留至少8%透明边距，真实透明alpha背景。无文字、无标注、无棋盘格、无地面投影、无血腥、无拟人脸。1024×1024。参考图只用于柔润精细材质，不要照搬脸或圆盘外形。主体：完整膀胱，圆润囊状，顶部宽圆，底部略收窄为膀胱颈，下缘短小出口。淡桃粉弹性囊壁。左右对称，不画输尿管长线、不画生殖器。全身定位：人体正面，屏幕左对应人体右。器官供血与回流接口按器官边界短小保留，其余周边血管都不画。接口与地图归一化位置参考（x从左向右、y从上向下）：{\"artery\": [0.3256, 0.378], \"vein\": [0.659, 0.5976]}。主体轮廓保持留白，不裁切。",
+        "model": "gpt",
+        "transparent": true,
+        "quality": "high",
+        "resolution": "1K",
+        "target_size": "1024x1024",
+        "aspect_ratio": "1:1",
+        "reference_images": [
+          "assets/image/cells-v3/red-cell.png"
+        ]
+      },
+      "styleReferencesAfterSamples": [
+        "assets/image/anatomy-v2/heart-outer.png",
+        "assets/image/anatomy-v2/lung_r-outer.png"
+      ],
+      "ports": {
+        "artery": [
+          0.3256,
+          0.378
+        ],
+        "vein": [
+          0.659,
+          0.5976
+        ]
+      }
+    },
+    {
+      "id": "bladder",
+      "state": "cutaway",
+      "destination": "assets/image/anatomy-v2/bladder-cutaway.png",
+      "status": "pending",
+      "request": {
+        "name": "anatomy2_bladder_cutaway",
+        "prompt": "《细胞战争》二维人体地图生产素材。人体正面正交展开，无透视；可爱、圆润、精细的手绘生物游戏风格，柔润半透明膜层、细腻组织纹理、克制高光，与现有青绿细胞和深紫组织背景协调。单个对象完整居中，四周留至少8%透明边距，真实透明alpha背景。无文字、无标注、无棋盘格、无地面投影、无血腥、无拟人脸。1024×1024。参考图只用于柔润精细材质，不要照搬脸或圆盘外形。主体：完整膀胱，圆润囊状，顶部宽圆，底部略收窄为膀胱颈，下缘短小出口。淡桃粉弹性囊壁。左右对称，不画输尿管长线、不画生殖器。全身定位：人体正面，屏幕左对应人体右。器官供血与回流接口按器官边界短小保留，其余周边血管都不画。接口与地图归一化位置参考（x从左向右、y从上向下）：{\"artery\": [0.3256, 0.378], \"vein\": [0.659, 0.5976]}。主体轮廓保持留白，不裁切。以该器官的完整外形图为严格参考，只去掉正面薄膜以露出内部剖面。必须保持完全相同的轮廓、位置、尺度、朝向、色彩、接口和透明边缘。显示围绕宽敞中央腔体的膀胱壁、内壁柔和皱褶和下方三角区；保留膀胱颈。",
+        "model": "gpt",
+        "transparent": true,
+        "quality": "high",
+        "resolution": "1K",
+        "target_size": "1024x1024",
+        "aspect_ratio": "1:1",
+        "reference_images": [
+          "assets/image/anatomy-v2/bladder-outer.png"
+        ]
+      },
+      "styleReferencesAfterSamples": [
+        "assets/image/anatomy-v2/heart-outer.png",
+        "assets/image/anatomy-v2/lung_r-outer.png"
+      ],
+      "ports": {
+        "artery": [
+          0.3256,
+          0.378
+        ],
+        "vein": [
+          0.659,
+          0.5976
+        ]
+      }
+    },
+    {
+      "id": "artery",
+      "state": "atlas",
+      "destination": "assets/image/anatomy-v2/artery-atlas.png",
+      "status": "pending",
+      "request": {
+        "name": "anatomy2_artery_atlas",
+        "prompt": "《细胞战争》二维人体地图生产素材。人体正面正交展开，无透视；可爱、圆润、精细的手绘生物游戏风格，柔润半透明膜层、细腻组织纹理、克制高光，与现有青绿细胞和深紫组织背景协调。单个对象完整居中，四周留至少8%透明边距，真实透明alpha背景。无文字、无标注、无棋盘格、无地面投影、无血腥、无拟人脸。1024×1024。参考图只用于柔润精细材质，不要照搬脸或圆盘外形。主体：血管可拼接素材图集，严格2列×2行四个等大格，每格一个部件，透明分隔，无可见网格。左上：水平直行血管段，开放的暗红管腔在中间，上下两条圆润珊瑚粉膜状管壁，不画封闭端盖；材质沿水平方向可无缝延伸。右上：柔和90度弧形管段；左下：流畅Y形分叉，上方双支与下方主干平滑相接；右下：器官血管入口的短管与柔软组织连接套环。严格平面剖开俯视，管腔清晰宽敞，精细微血管膜纹理，所有血管同样粗细、同样受光，不含红细胞、箭头、文字。珊瑚粉动脉管壁与暗玫瑰红管腔。",
+        "model": "gpt",
+        "transparent": true,
+        "quality": "high",
+        "resolution": "1K",
+        "target_size": "1024x1024",
+        "aspect_ratio": "1:1",
+        "reference_images": [
+          "assets/image/cells-v3/red-cell.png"
+        ]
+      }
+    },
+    {
+      "id": "vein",
+      "state": "atlas",
+      "destination": "assets/image/anatomy-v2/vein-atlas.png",
+      "status": "pending",
+      "request": {
+        "name": "anatomy2_vein_atlas",
+        "prompt": "《细胞战争》二维人体地图生产素材。人体正面正交展开，无透视；可爱、圆润、精细的手绘生物游戏风格，柔润半透明膜层、细腻组织纹理、克制高光，与现有青绿细胞和深紫组织背景协调。单个对象完整居中，四周留至少8%透明边距，真实透明alpha背景。无文字、无标注、无棋盘格、无地面投影、无血腥、无拟人脸。1024×1024。参考图只用于柔润精细材质，不要照搬脸或圆盘外形。主体：血管可拼接素材图集，严格2列×2行四个等大格，每格一个部件，透明分隔，无可见网格。左上：水平直行血管段，开放的暗红管腔在中间，上下两条圆润珊瑚粉膜状管壁，不画封闭端盖；材质沿水平方向可无缝延伸。右上：柔和90度弧形管段；左下：流畅Y形分叉，上方双支与下方主干平滑相接；右下：器官血管入口的短管与柔软组织连接套环。严格平面剖开俯视，管腔清晰宽敞，精细微血管膜纹理，所有血管同样粗细、同样受光，不含红细胞、箭头、文字。蓝紫静脉管壁与深靛紫管腔。",
+        "model": "gpt",
+        "transparent": true,
+        "quality": "high",
+        "resolution": "1K",
+        "target_size": "1024x1024",
+        "aspect_ratio": "1:1",
+        "reference_images": [
+          "assets/image/cells-v3/red-cell.png"
+        ]
+      }
+    },
+    {
+      "id": "portal",
+      "state": "atlas",
+      "destination": "assets/image/anatomy-v2/portal-atlas.png",
+      "status": "pending",
+      "request": {
+        "name": "anatomy2_portal_atlas",
+        "prompt": "《细胞战争》二维人体地图生产素材。人体正面正交展开，无透视；可爱、圆润、精细的手绘生物游戏风格，柔润半透明膜层、细腻组织纹理、克制高光，与现有青绿细胞和深紫组织背景协调。单个对象完整居中，四周留至少8%透明边距，真实透明alpha背景。无文字、无标注、无棋盘格、无地面投影、无血腥、无拟人脸。1024×1024。参考图只用于柔润精细材质，不要照搬脸或圆盘外形。主体：血管可拼接素材图集，严格2列×2行四个等大格，每格一个部件，透明分隔，无可见网格。左上：水平直行血管段，开放的暗红管腔在中间，上下两条圆润珊瑚粉膜状管壁，不画封闭端盖；材质沿水平方向可无缝延伸。右上：柔和90度弧形管段；左下：流畅Y形分叉，上方双支与下方主干平滑相接；右下：器官血管入口的短管与柔软组织连接套环。严格平面剖开俯视，管腔清晰宽敞，精细微血管膜纹理，所有血管同样粗细、同样受光，不含红细胞、箭头、文字。柔和灰紫门静脉管壁与深葡萄紫管腔。",
+        "model": "gpt",
+        "transparent": true,
+        "quality": "high",
+        "resolution": "1K",
+        "target_size": "1024x1024",
+        "aspect_ratio": "1:1",
+        "reference_images": [
+          "assets/image/cells-v3/red-cell.png"
+        ]
+      }
+    }
+  ],
+  "assetCount": 29,
+  "deliveredCount": 0,
+  "resources": {},
+  "sources": [
+    "https://openstax.org/books/anatomy-and-physiology/pages/20-5-circulatory-pathways",
+    "https://openstax.org/books/anatomy-and-physiology-2e/pages/22-2-the-lungs"
+  ],
+  "validationRequired": [
+    "1024x1024 RGBA and genuine alpha",
+    "transparent edge margin and no checkerboard",
+    "front-view orientation and named anatomical structures",
+    "outline/port consistency in outer-cutaway pair",
+    "vessel tile seams and branching silhouettes"
+  ]
+}

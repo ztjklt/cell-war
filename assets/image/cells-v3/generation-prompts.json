@@ -1,0 +1,54 @@
+{
+  "tool": "OpenAI built-in imagegen",
+  "transparent_background": true,
+  "prompts": [
+    {
+      "key": "red-cell",
+      "prompt": "Use case: stylized-concept. Asset type: finished transparent top-down 2D game character sprite for a microscopic cell strategy game. Primary request: redesign a RED BLOOD CELL as a slightly cute, beautiful, rounded living cell, with NO limbs, which floats and turns by rotating its entire body. Subject: one soft coral-red / strawberry-red biconcave disc, distinctly a red blood cell, shallow depressed center (not a hole), pillowy thick rounded rim, smooth satin jelly membrane with restrained broad highlights. Add two small dark friendly eyes and a tiny subtle smile on the upper surface, expressive but not babyish. Style: polished hand-painted 3D-like casual game asset, simple clean silhouette and appealing readable large shapes, tasteful pastel color, no busy internal organelles, no tiny sparkles. Camera: strictly overhead orthographic top-down, disc lies flat, no horizon, no side view. Composition: exactly one character centered in a square transparent canvas, symmetric center of mass; outer body fits within a circle whose diameter is 80% of canvas width, generous transparent margin on all four sides; no crop. Keep the membrane edge crisp and clearly defined. Lighting: soft top-left highlights within the body only, subtle dimensional shading. Constraints: actual transparent alpha background, no cast ground shadow, no outer glow halo, no text, no labels, no watermark, no equipment, no arms, no hands, no legs, no feet, no fins, no tail, no antennae, no tentacles, no spiky silhouette. The red disc must be immediately recognizable. It will be rotated in game, so include no directional ground cue."
+    },
+    {
+      "key": "white-cell",
+      "prompt": "Use case: stylized-concept. Asset type: finished transparent top-down 2D game character sprite for a microscopic cell strategy game. Primary request: redesign a WHITE BLOOD CELL as a slightly cute, beautiful, rounded living immune cell, with NO limbs, which floats and turns by rotating its entire body. Subject: one soft ivory-white / pearl-white round membrane, softly scalloped but almost circular; faint lavender translucent interior and ONE large rounded purple lobed nucleus visible through the upper surface. Add two small dark friendly eyes and a tiny confident smile on the upper surface, expressive but not babyish. Style: polished hand-painted 3D-like casual game asset, simple clean silhouette and appealing readable large shapes, tasteful pastel color, restrained broad glossy highlights, minimal tiny detail. Camera: strictly overhead orthographic top-down, cell lies flat, no horizon, no side view. Composition: exactly one character centered in a square transparent canvas, symmetric center of mass; outer body fits within a circle whose diameter is 80% of canvas width, generous transparent margin on all four sides; no crop. Keep the membrane edge crisp and clearly defined. Lighting: soft top-left highlights within the body only, subtle dimensional shading. Constraints: actual transparent alpha background, no cast ground shadow, no outer glow halo, no text, no labels, no watermark, no equipment, no arms, no hands, no legs, no feet, no fins, no tail, no antennae, no tentacles, no spikes. It must remain distinctly a white blood cell, not a fantasy sea monster or a transparent teal bubble. It will be rotated in game, so include no directional ground cue."
+    },
+    {
+      "key": "platelet",
+      "prompt": "Use case: stylized-concept. Asset type: finished transparent top-down 2D game character sprite for a microscopic cell strategy game. Primary request: redesign a PLATELET as a slightly cute, beautiful, small rounded cell fragment, with NO limbs, which floats and turns by rotating its entire body. Subject: one softly irregular rounded pebble / rounded triangular disc, a platelet fragment rather than a nucleated whole cell; warm pale golden apricot surface, tiny soft orange granules visible inside, NO nucleus. Slightly asymmetrical organic contour with broad rounded corners, compact solid shape without spikes. Add two small dark friendly eyes and a tiny relaxed smile on the upper surface, expressive but not babyish. Style: polished hand-painted 3D-like casual game asset, simple clean silhouette and appealing readable large shapes, tasteful pastel color, satin jelly material with restrained broad highlights and minimal detail. Camera: strictly overhead orthographic top-down, fragment lies flat, no horizon, no side view. Composition: exactly one character centered in a square transparent canvas, its center of mass at the canvas center; outer body fits within a circle whose diameter is 78% of canvas width, generous transparent margin on all four sides; no crop. The platelet will be rendered physically smaller than the other cells. Lighting: soft top-left highlights within the body only, subtle dimensional shading. Constraints: actual transparent alpha background, no cast ground shadow, no outer glow halo, no text, no labels, no watermark, no equipment, no arms, no hands, no legs, no feet, no fins, no tail, no antennae, no tentacles, no spikes, no purple nucleus, no teal bubble. It will be rotated in game, so include no directional ground cue."
+    }
+  ],
+  "framing": {
+    "red-cell": {
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "occupancy": 0.755281
+    },
+    "white-cell": {
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "occupancy": 0.737882
+    },
+    "platelet": {
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "occupancy": 0.47115
+    }
+  },
+  "rendering": "Source PNGs stay unchanged; NanoVG scales the full image using radial alpha occupancy. Circular collision radii match the maximum rotating artwork footprint."
+}

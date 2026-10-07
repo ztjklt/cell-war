@@ -1,0 +1,3325 @@
+{
+  "status": "research_prototype_not_runtime",
+  "date": "2026-10-05",
+  "map": {
+    "width": 4096,
+    "height": 8192,
+    "units": "logical_cells",
+    "area": 33554432,
+    "orientation": "anterior body projection, screen left = anatomical right",
+    "depth_rule": "crossings are not connections without shared graph node; hidden-depth links use designated portals"
+  },
+  "sources": [
+    {
+      "title": "OpenStax 20.5 Circulatory Pathways",
+      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/20-5-circulatory-pathways"
+    },
+    {
+      "title": "OpenStax 19.1 Heart Anatomy",
+      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy"
+    }
+  ],
+  "heart": {
+    "bounds": [
+      1740,
+      2180,
+      1010,
+      1270
+    ],
+    "center": [
+      2245,
+      2815
+    ],
+    "chambers": [
+      "ra",
+      "rv",
+      "la",
+      "lv"
+    ],
+    "phase_period_seconds_proposed": 1.2,
+    "design_note": "fictional traversable scale; four chambers and valve directions retained; coronary circulation separate from chamber contents"
+  },
+  "nodes": [
+    {
+      "id": "ra",
+      "x": 1960,
+      "y": 2590,
+      "label": "右心房",
+      "kind": "heart"
+    },
+    {
+      "id": "rv",
+      "x": 2010,
+      "y": 2960,
+      "label": "右心室",
+      "kind": "heart"
+    },
+    {
+      "id": "la",
+      "x": 2410,
+      "y": 2540,
+      "label": "左心房",
+      "kind": "heart"
+    },
+    {
+      "id": "lv",
+      "x": 2390,
+      "y": 3030,
+      "label": "左心室",
+      "kind": "heart"
+    },
+    {
+      "id": "pulmonary_trunk",
+      "x": 2070,
+      "y": 2250,
+      "label": "肺动脉干",
+      "kind": "junction"
+    },
+    {
+      "id": "aortic_root",
+      "x": 2550,
+      "y": 2770,
+      "label": "主动脉根部",
+      "kind": "junction"
+    },
+    {
+      "id": "arch",
+      "x": 2300,
+      "y": 2020,
+      "label": "主动脉弓",
+      "kind": "junction"
+    },
+    {
+      "id": "thoracic_aorta",
+      "x": 2390,
+      "y": 3340,
+      "label": "胸主动脉",
+      "kind": "junction"
+    },
+    {
+      "id": "celiac",
+      "x": 2380,
+      "y": 3680,
+      "label": "腹腔干分支点",
+      "kind": "junction"
+    },
+    {
+      "id": "mesenteric_upper",
+      "x": 2370,
+      "y": 3940,
+      "label": "肠系膜上动脉分支点",
+      "kind": "junction"
+    },
+    {
+      "id": "renal_aorta",
+      "x": 2370,
+      "y": 4180,
+      "label": "肾动脉分支点",
+      "kind": "junction"
+    },
+    {
+      "id": "mesenteric_lower",
+      "x": 2370,
+      "y": 4500,
+      "label": "肠系膜下动脉分支点",
+      "kind": "junction"
+    },
+    {
+      "id": "aortic_bifurcation",
+      "x": 2350,
+      "y": 5010,
+      "label": "主动脉分叉",
+      "kind": "junction"
+    },
+    {
+      "id": "svc",
+      "x": 1770,
+      "y": 2160,
+      "label": "上腔静脉",
+      "kind": "junction"
+    },
+    {
+      "id": "ivc_upper",
+      "x": 1790,
+      "y": 3360,
+      "label": "下腔静脉心端",
+      "kind": "junction"
+    },
+    {
+      "id": "hepatic_return",
+      "x": 1790,
+      "y": 3820,
+      "label": "肝静脉汇入点",
+      "kind": "junction"
+    },
+    {
+      "id": "renal_return",
+      "x": 1790,
+      "y": 4260,
+      "label": "肾静脉汇入点",
+      "kind": "junction"
+    },
+    {
+      "id": "ivc_lower",
+      "x": 1790,
+      "y": 4910,
+      "label": "下腔静脉下段",
+      "kind": "junction"
+    },
+    {
+      "id": "brachiocephalic",
+      "x": 1690,
+      "y": 1900,
+      "label": "头臂干",
+      "kind": "junction"
+    },
+    {
+      "id": "carotid_r",
+      "x": 1810,
+      "y": 1190,
+      "label": "右颈总与颈内动脉",
+      "kind": "junction"
+    },
+    {
+      "id": "carotid_l",
+      "x": 2280,
+      "y": 1190,
+      "label": "左颈总与颈内动脉",
+      "kind": "junction"
+    },
+    {
+      "id": "subclavian_r",
+      "x": 1080,
+      "y": 2110,
+      "label": "右锁骨下动脉",
+      "kind": "junction"
+    },
+    {
+      "id": "subclavian_l",
+      "x": 3070,
+      "y": 2110,
+      "label": "左锁骨下动脉",
+      "kind": "junction"
+    },
+    {
+      "id": "vertebral_r",
+      "x": 1940,
+      "y": 1240,
+      "label": "右椎动脉",
+      "kind": "junction"
+    },
+    {
+      "id": "vertebral_l",
+      "x": 2160,
+      "y": 1240,
+      "label": "左椎动脉",
+      "kind": "junction"
+    },
+    {
+      "id": "basilar",
+      "x": 2048,
+      "y": 1060,
+      "label": "基底动脉",
+      "kind": "junction"
+    },
+    {
+      "id": "willis",
+      "x": 2048,
+      "y": 870,
+      "label": "脑底动脉环",
+      "kind": "junction"
+    },
+    {
+      "id": "jugular_r",
+      "x": 1660,
+      "y": 1450,
+      "label": "右颈静脉",
+      "kind": "junction"
+    },
+    {
+      "id": "jugular_l",
+      "x": 2440,
+      "y": 1450,
+      "label": "左颈静脉",
+      "kind": "junction"
+    },
+    {
+      "id": "brachio_vein_r",
+      "x": 1450,
+      "y": 2150,
+      "label": "右头臂静脉",
+      "kind": "junction"
+    },
+    {
+      "id": "brachio_vein_l",
+      "x": 2650,
+      "y": 2150,
+      "label": "左头臂静脉",
+      "kind": "junction"
+    },
+    {
+      "id": "portal_junction",
+      "x": 1930,
+      "y": 3860,
+      "label": "肝门静脉汇流",
+      "kind": "junction"
+    },
+    {
+      "id": "coronary_sinus",
+      "x": 1900,
+      "y": 3160,
+      "label": "冠状窦",
+      "kind": "junction"
+    },
+    {
+      "id": "brain.a",
+      "x": 1998,
+      "y": 630,
+      "label": "脑入流",
+      "kind": "capillary_in"
+    },
+    {
+      "id": "brain.v",
+      "x": 2098,
+      "y": 750,
+      "label": "脑出流",
+      "kind": "capillary_out"
+    },
+    {
+      "id": "lung_r.a",
+      "x": 1350,
+      "y": 2570,
+      "label": "右肺入流",
+      "kind": "capillary_in"
+    },
+    {
+      "id": "lung_r.v",
+      "x": 1450,
+      "y": 2690,
+      "label": "右肺出流",
+      "kind": "capillary_out"
+    },
+    {
+      "id": "lung_l.a",
+      "x": 2910,
+      "y": 2570,
+      "label": "左肺入流",
+      "kind": "capillary_in"
+    },
+    {
+      "id": "lung_l.v",
+      "x": 3010,
+      "y": 2690,
+      "label": "左肺出流",
+      "kind": "capillary_out"
+    },
+    {
+      "id": "liver.a",
+      "x": 1460,
+      "y": 3570,
+      "label": "肝入流",
+      "kind": "capillary_in"
+    },
+    {
+      "id": "liver.v",
+      "x": 1560,
+      "y": 3690,
+      "label": "肝出流",
+      "kind": "capillary_out"
+    },
+    {
+      "id": "stomach.a",
+      "x": 2690,
+      "y": 3570,
+      "label": "胃入流",
+      "kind": "capillary_in"
+    },
+    {
+      "id": "stomach.v",
+      "x": 2790,
+      "y": 3690,
+      "label": "胃出流",
+      "kind": "capillary_out"
+    },
+    {
+      "id": "spleen.a",
+      "x": 3080,
+      "y": 3620,
+      "label": "脾入流",
+      "kind": "capillary_in"
+    },
+    {
+      "id": "spleen.v",
+      "x": 3180,
+      "y": 3740,
+      "label": "脾出流",
+      "kind": "capillary_out"
+    },
+    {
+      "id": "gut.a",
+      "x": 2010,
+      "y": 4450,
+      "label": "肠入流",
+      "kind": "capillary_in"
+    },
+    {
+      "id": "gut.v",
+      "x": 2110,
+      "y": 4570,
+      "label": "肠出流",
+      "kind": "capillary_out"
+    },
+    {
+      "id": "kidney_r.a",
+      "x": 1340,
+      "y": 4150,
+      "label": "右肾入流",
+      "kind": "capillary_in"
+    },
+    {
+      "id": "kidney_r.v",
+      "x": 1440,
+      "y": 4270,
+      "label": "右肾出流",
+      "kind": "capillary_out"
+    },
+    {
+      "id": "kidney_l.a",
+      "x": 2910,
+      "y": 4150,
+      "label": "左肾入流",
+      "kind": "capillary_in"
+    },
+    {
+      "id": "kidney_l.v",
+      "x": 3010,
+      "y": 4270,
+      "label": "左肾出流",
+      "kind": "capillary_out"
+    },
+    {
+      "id": "myocardium.a",
+      "x": 2380,
+      "y": 3230,
+      "label": "心肌入流",
+      "kind": "capillary_in"
+    },
+    {
+      "id": "myocardium.v",
+      "x": 2480,
+      "y": 3350,
+      "label": "心肌出流",
+      "kind": "capillary_out"
+    },
+    {
+      "id": "pelvis.a",
+      "x": 2010,
+      "y": 5170,
+      "label": "盆腔入流",
+      "kind": "capillary_in"
+    },
+    {
+      "id": "pelvis.v",
+      "x": 2110,
+      "y": 5290,
+      "label": "盆腔出流",
+      "kind": "capillary_out"
+    },
+    {
+      "id": "axillary_r",
+      "x": 890,
+      "y": 2580,
+      "label": "右腋动脉",
+      "kind": "junction"
+    },
+    {
+      "id": "brachial_r",
+      "x": 680,
+      "y": 3260,
+      "label": "右肱动脉",
+      "kind": "junction"
+    },
+    {
+      "id": "radial_r",
+      "x": 360,
+      "y": 4190,
+      "label": "右桡动脉",
+      "kind": "junction"
+    },
+    {
+      "id": "ulnar_r",
+      "x": 610,
+      "y": 4150,
+      "label": "右尺动脉",
+      "kind": "junction"
+    },
+    {
+      "id": "palmar_r",
+      "x": 470,
+      "y": 4440,
+      "label": "右掌动脉弓",
+      "kind": "junction"
+    },
+    {
+      "id": "arm_vein_r",
+      "x": 850,
+      "y": 3240,
+      "label": "右肱与腋静脉",
+      "kind": "junction"
+    },
+    {
+      "id": "hand_vein_r",
+      "x": 610,
+      "y": 4370,
+      "label": "右手静脉汇流",
+      "kind": "junction"
+    },
+    {
+      "id": "iliac_r",
+      "x": 1520,
+      "y": 5430,
+      "label": "右髂与股动脉",
+      "kind": "junction"
+    },
+    {
+      "id": "popliteal_r",
+      "x": 1410,
+      "y": 6580,
+      "label": "右腘动脉",
+      "kind": "junction"
+    },
+    {
+      "id": "tibial_anterior_r",
+      "x": 1300,
+      "y": 7350,
+      "label": "右胫前动脉",
+      "kind": "junction"
+    },
+    {
+      "id": "tibial_posterior_r",
+      "x": 1610,
+      "y": 7350,
+      "label": "右胫后动脉",
+      "kind": "junction"
+    },
+    {
+      "id": "foot_arch_r",
+      "x": 1410,
+      "y": 7740,
+      "label": "右足部动脉弓",
+      "kind": "junction"
+    },
+    {
+      "id": "leg_vein_r",
+      "x": 1590,
+      "y": 6520,
+      "label": "右腘与股静脉",
+      "kind": "junction"
+    },
+    {
+      "id": "iliac_vein_r",
+      "x": 1660,
+      "y": 5380,
+      "label": "右髂静脉",
+      "kind": "junction"
+    },
+    {
+      "id": "hand_r.a",
+      "x": 400,
+      "y": 4500,
+      "label": "右手入流",
+      "kind": "capillary_in"
+    },
+    {
+      "id": "hand_r.v",
+      "x": 500,
+      "y": 4620,
+      "label": "右手出流",
+      "kind": "capillary_out"
+    },
+    {
+      "id": "foot_r.a",
+      "x": 1360,
+      "y": 7780,
+      "label": "右足入流",
+      "kind": "capillary_in"
+    },
+    {
+      "id": "foot_r.v",
+      "x": 1460,
+      "y": 7900,
+      "label": "右足出流",
+      "kind": "capillary_out"
+    },
+    {
+      "id": "marrow_r.a",
+      "x": 1660,
+      "y": 5940,
+      "label": "右股骨骨髓入流",
+      "kind": "capillary_in"
+    },
+    {
+      "id": "marrow_r.v",
+      "x": 1760,
+      "y": 6060,
+      "label": "右股骨骨髓出流",
+      "kind": "capillary_out"
+    },
+    {
+      "id": "axillary_l",
+      "x": 3206,
+      "y": 2580,
+      "label": "左腋动脉",
+      "kind": "junction"
+    },
+    {
+      "id": "brachial_l",
+      "x": 3416,
+      "y": 3260,
+      "label": "左肱动脉",
+      "kind": "junction"
+    },
+    {
+      "id": "radial_l",
+      "x": 3736,
+      "y": 4190,
+      "label": "左桡动脉",
+      "kind": "junction"
+    },
+    {
+      "id": "ulnar_l",
+      "x": 3486,
+      "y": 4150,
+      "label": "左尺动脉",
+      "kind": "junction"
+    },
+    {
+      "id": "palmar_l",
+      "x": 3626,
+      "y": 4440,
+      "label": "左掌动脉弓",
+      "kind": "junction"
+    },
+    {
+      "id": "arm_vein_l",
+      "x": 3246,
+      "y": 3240,
+      "label": "左肱与腋静脉",
+      "kind": "junction"
+    },
+    {
+      "id": "hand_vein_l",
+      "x": 3486,
+      "y": 4370,
+      "label": "左手静脉汇流",
+      "kind": "junction"
+    },
+    {
+      "id": "iliac_l",
+      "x": 2576,
+      "y": 5430,
+      "label": "左髂与股动脉",
+      "kind": "junction"
+    },
+    {
+      "id": "popliteal_l",
+      "x": 2686,
+      "y": 6580,
+      "label": "左腘动脉",
+      "kind": "junction"
+    },
+    {
+      "id": "tibial_anterior_l",
+      "x": 2796,
+      "y": 7350,
+      "label": "左胫前动脉",
+      "kind": "junction"
+    },
+    {
+      "id": "tibial_posterior_l",
+      "x": 2486,
+      "y": 7350,
+      "label": "左胫后动脉",
+      "kind": "junction"
+    },
+    {
+      "id": "foot_arch_l",
+      "x": 2686,
+      "y": 7740,
+      "label": "左足部动脉弓",
+      "kind": "junction"
+    },
+    {
+      "id": "leg_vein_l",
+      "x": 2506,
+      "y": 6520,
+      "label": "左腘与股静脉",
+      "kind": "junction"
+    },
+    {
+      "id": "iliac_vein_l",
+      "x": 2436,
+      "y": 5380,
+      "label": "左髂静脉",
+      "kind": "junction"
+    },
+    {
+      "id": "hand_l.a",
+      "x": 3596,
+      "y": 4500,
+      "label": "左手入流",
+      "kind": "capillary_in"
+    },
+    {
+      "id": "hand_l.v",
+      "x": 3696,
+      "y": 4620,
+      "label": "左手出流",
+      "kind": "capillary_out"
+    },
+    {
+      "id": "foot_l.a",
+      "x": 2636,
+      "y": 7780,
+      "label": "左足入流",
+      "kind": "capillary_in"
+    },
+    {
+      "id": "foot_l.v",
+      "x": 2736,
+      "y": 7900,
+      "label": "左足出流",
+      "kind": "capillary_out"
+    },
+    {
+      "id": "marrow_l.a",
+      "x": 2336,
+      "y": 5940,
+      "label": "左股骨骨髓入流",
+      "kind": "capillary_in"
+    },
+    {
+      "id": "marrow_l.v",
+      "x": 2436,
+      "y": 6060,
+      "label": "左股骨骨髓出流",
+      "kind": "capillary_out"
+    }
+  ],
+  "edges": [
+    {
+      "id": "brain.a--brain.v--0",
+      "from": "brain.a",
+      "to": "brain.v",
+      "label": "脑微循环",
+      "system": "capillary",
+      "points": [
+        [
+          1998,
+          630
+        ],
+        [
+          2098,
+          750
+        ]
+      ],
+      "width_cells": 4,
+      "length_cells": 156.2,
+      "represented": "aggregate_bed"
+    },
+    {
+      "id": "lung_r.a--lung_r.v--1",
+      "from": "lung_r.a",
+      "to": "lung_r.v",
+      "label": "右肺微循环",
+      "system": "capillary",
+      "points": [
+        [
+          1350,
+          2570
+        ],
+        [
+          1450,
+          2690
+        ]
+      ],
+      "width_cells": 4,
+      "length_cells": 156.2,
+      "represented": "aggregate_bed"
+    },
+    {
+      "id": "lung_l.a--lung_l.v--2",
+      "from": "lung_l.a",
+      "to": "lung_l.v",
+      "label": "左肺微循环",
+      "system": "capillary",
+      "points": [
+        [
+          2910,
+          2570
+        ],
+        [
+          3010,
+          2690
+        ]
+      ],
+      "width_cells": 4,
+      "length_cells": 156.2,
+      "represented": "aggregate_bed"
+    },
+    {
+      "id": "liver.a--liver.v--3",
+      "from": "liver.a",
+      "to": "liver.v",
+      "label": "肝微循环",
+      "system": "capillary",
+      "points": [
+        [
+          1460,
+          3570
+        ],
+        [
+          1560,
+          3690
+        ]
+      ],
+      "width_cells": 4,
+      "length_cells": 156.2,
+      "represented": "aggregate_bed"
+    },
+    {
+      "id": "stomach.a--stomach.v--4",
+      "from": "stomach.a",
+      "to": "stomach.v",
+      "label": "胃微循环",
+      "system": "capillary",
+      "points": [
+        [
+          2690,
+          3570
+        ],
+        [
+          2790,
+          3690
+        ]
+      ],
+      "width_cells": 4,
+      "length_cells": 156.2,
+      "represented": "aggregate_bed"
+    },
+    {
+      "id": "spleen.a--spleen.v--5",
+      "from": "spleen.a",
+      "to": "spleen.v",
+      "label": "脾微循环",
+      "system": "capillary",
+      "points": [
+        [
+          3080,
+          3620
+        ],
+        [
+          3180,
+          3740
+        ]
+      ],
+      "width_cells": 4,
+      "length_cells": 156.2,
+      "represented": "aggregate_bed"
+    },
+    {
+      "id": "gut.a--gut.v--6",
+      "from": "gut.a",
+      "to": "gut.v",
+      "label": "肠微循环",
+      "system": "capillary",
+      "points": [
+        [
+          2010,
+          4450
+        ],
+        [
+          2110,
+          4570
+        ]
+      ],
+      "width_cells": 4,
+      "length_cells": 156.2,
+      "represented": "aggregate_bed"
+    },
+    {
+      "id": "kidney_r.a--kidney_r.v--7",
+      "from": "kidney_r.a",
+      "to": "kidney_r.v",
+      "label": "右肾微循环",
+      "system": "capillary",
+      "points": [
+        [
+          1340,
+          4150
+        ],
+        [
+          1440,
+          4270
+        ]
+      ],
+      "width_cells": 4,
+      "length_cells": 156.2,
+      "represented": "aggregate_bed"
+    },
+    {
+      "id": "kidney_l.a--kidney_l.v--8",
+      "from": "kidney_l.a",
+      "to": "kidney_l.v",
+      "label": "左肾微循环",
+      "system": "capillary",
+      "points": [
+        [
+          2910,
+          4150
+        ],
+        [
+          3010,
+          4270
+        ]
+      ],
+      "width_cells": 4,
+      "length_cells": 156.2,
+      "represented": "aggregate_bed"
+    },
+    {
+      "id": "myocardium.a--myocardium.v--9",
+      "from": "myocardium.a",
+      "to": "myocardium.v",
+      "label": "心肌微循环",
+      "system": "capillary",
+      "points": [
+        [
+          2380,
+          3230
+        ],
+        [
+          2480,
+          3350
+        ]
+      ],
+      "width_cells": 4,
+      "length_cells": 156.2,
+      "represented": "aggregate_bed"
+    },
+    {
+      "id": "pelvis.a--pelvis.v--10",
+      "from": "pelvis.a",
+      "to": "pelvis.v",
+      "label": "盆腔微循环",
+      "system": "capillary",
+      "points": [
+        [
+          2010,
+          5170
+        ],
+        [
+          2110,
+          5290
+        ]
+      ],
+      "width_cells": 4,
+      "length_cells": 156.2,
+      "represented": "aggregate_bed"
+    },
+    {
+      "id": "ra--rv--11",
+      "from": "ra",
+      "to": "rv",
+      "label": "三尖瓣",
+      "system": "valve",
+      "points": [
+        [
+          1960,
+          2590
+        ],
+        [
+          2010,
+          2960
+        ]
+      ],
+      "width_cells": 24,
+      "length_cells": 373.36,
+      "flow_gate": "tricuspid"
+    },
+    {
+      "id": "rv--pulmonary_trunk--12",
+      "from": "rv",
+      "to": "pulmonary_trunk",
+      "label": "肺动脉瓣与肺动脉干",
+      "system": "pulmonary",
+      "points": [
+        [
+          2010,
+          2960
+        ],
+        [
+          2070,
+          2250
+        ]
+      ],
+      "width_cells": 18,
+      "length_cells": 712.53,
+      "flow_gate": "pulmonary",
+      "oxygen": "low"
+    },
+    {
+      "id": "pulmonary_trunk--lung_r.a--13",
+      "from": "pulmonary_trunk",
+      "to": "lung_r.a",
+      "label": "右肺动脉",
+      "system": "pulmonary",
+      "points": [
+        [
+          2070,
+          2250
+        ],
+        [
+          1350,
+          2570
+        ]
+      ],
+      "width_cells": 18,
+      "length_cells": 787.91,
+      "oxygen": "low"
+    },
+    {
+      "id": "lung_r.v--la--14",
+      "from": "lung_r.v",
+      "to": "la",
+      "label": "右肺静脉对",
+      "system": "pulmonary",
+      "points": [
+        [
+          1450,
+          2690
+        ],
+        [
+          1720,
+          2820
+        ],
+        [
+          2410,
+          2540
+        ]
+      ],
+      "width_cells": 18,
+      "length_cells": 1044.31,
+      "oxygen": "high",
+      "represented_vessels": 2
+    },
+    {
+      "id": "pulmonary_trunk--lung_l.a--15",
+      "from": "pulmonary_trunk",
+      "to": "lung_l.a",
+      "label": "左肺动脉",
+      "system": "pulmonary",
+      "points": [
+        [
+          2070,
+          2250
+        ],
+        [
+          2910,
+          2570
+        ]
+      ],
+      "width_cells": 18,
+      "length_cells": 898.89,
+      "oxygen": "low"
+    },
+    {
+      "id": "lung_l.v--la--16",
+      "from": "lung_l.v",
+      "to": "la",
+      "label": "左肺静脉对",
+      "system": "pulmonary",
+      "points": [
+        [
+          3010,
+          2690
+        ],
+        [
+          2750,
+          2790
+        ],
+        [
+          2410,
+          2540
+        ]
+      ],
+      "width_cells": 18,
+      "length_cells": 700.59,
+      "oxygen": "high",
+      "represented_vessels": 2
+    },
+    {
+      "id": "la--lv--17",
+      "from": "la",
+      "to": "lv",
+      "label": "二尖瓣",
+      "system": "valve",
+      "points": [
+        [
+          2410,
+          2540
+        ],
+        [
+          2390,
+          3030
+        ]
+      ],
+      "width_cells": 24,
+      "length_cells": 490.41,
+      "flow_gate": "mitral"
+    },
+    {
+      "id": "lv--aortic_root--18",
+      "from": "lv",
+      "to": "aortic_root",
+      "label": "主动脉瓣",
+      "system": "valve",
+      "points": [
+        [
+          2390,
+          3030
+        ],
+        [
+          2550,
+          2770
+        ]
+      ],
+      "width_cells": 24,
+      "length_cells": 305.29,
+      "flow_gate": "aortic"
+    },
+    {
+      "id": "aortic_root--arch--19",
+      "from": "aortic_root",
+      "to": "arch",
+      "label": "升主动脉及主动脉弓",
+      "system": "artery",
+      "points": [
+        [
+          2550,
+          2770
+        ],
+        [
+          2660,
+          2440
+        ],
+        [
+          2600,
+          2100
+        ],
+        [
+          2300,
+          2020
+        ]
+      ],
+      "width_cells": 48,
+      "length_cells": 1003.59
+    },
+    {
+      "id": "arch--thoracic_aorta--20",
+      "from": "arch",
+      "to": "thoracic_aorta",
+      "label": "降胸主动脉",
+      "system": "artery",
+      "points": [
+        [
+          2300,
+          2020
+        ],
+        [
+          2480,
+          2210
+        ],
+        [
+          2530,
+          3220
+        ],
+        [
+          2390,
+          3340
+        ]
+      ],
+      "width_cells": 40,
+      "length_cells": 1457.35
+    },
+    {
+      "id": "thoracic_aorta--celiac--21",
+      "from": "thoracic_aorta",
+      "to": "celiac",
+      "label": "腹主动脉",
+      "system": "artery",
+      "points": [
+        [
+          2390,
+          3340
+        ],
+        [
+          2380,
+          3680
+        ]
+      ],
+      "width_cells": 40,
+      "length_cells": 340.15
+    },
+    {
+      "id": "celiac--mesenteric_upper--22",
+      "from": "celiac",
+      "to": "mesenteric_upper",
+      "label": "腹主动脉",
+      "system": "artery",
+      "points": [
+        [
+          2380,
+          3680
+        ],
+        [
+          2370,
+          3940
+        ]
+      ],
+      "width_cells": 40,
+      "length_cells": 260.19
+    },
+    {
+      "id": "mesenteric_upper--renal_aorta--23",
+      "from": "mesenteric_upper",
+      "to": "renal_aorta",
+      "label": "腹主动脉",
+      "system": "artery",
+      "points": [
+        [
+          2370,
+          3940
+        ],
+        [
+          2370,
+          4180
+        ]
+      ],
+      "width_cells": 40,
+      "length_cells": 240.0
+    },
+    {
+      "id": "renal_aorta--mesenteric_lower--24",
+      "from": "renal_aorta",
+      "to": "mesenteric_lower",
+      "label": "腹主动脉",
+      "system": "artery",
+      "points": [
+        [
+          2370,
+          4180
+        ],
+        [
+          2370,
+          4500
+        ]
+      ],
+      "width_cells": 40,
+      "length_cells": 320.0
+    },
+    {
+      "id": "mesenteric_lower--aortic_bifurcation--25",
+      "from": "mesenteric_lower",
+      "to": "aortic_bifurcation",
+      "label": "腹主动脉",
+      "system": "artery",
+      "points": [
+        [
+          2370,
+          4500
+        ],
+        [
+          2350,
+          5010
+        ]
+      ],
+      "width_cells": 40,
+      "length_cells": 510.39
+    },
+    {
+      "id": "arch--brachiocephalic--26",
+      "from": "arch",
+      "to": "brachiocephalic",
+      "label": "头臂干",
+      "system": "artery",
+      "points": [
+        [
+          2300,
+          2020
+        ],
+        [
+          1690,
+          1900
+        ]
+      ],
+      "width_cells": 20,
+      "length_cells": 621.69
+    },
+    {
+      "id": "brachiocephalic--carotid_r--27",
+      "from": "brachiocephalic",
+      "to": "carotid_r",
+      "label": "右颈总动脉",
+      "system": "artery",
+      "points": [
+        [
+          1690,
+          1900
+        ],
+        [
+          1810,
+          1190
+        ]
+      ],
+      "width_cells": 20,
+      "length_cells": 720.07
+    },
+    {
+      "id": "brachiocephalic--subclavian_r--28",
+      "from": "brachiocephalic",
+      "to": "subclavian_r",
+      "label": "右锁骨下动脉",
+      "system": "artery",
+      "points": [
+        [
+          1690,
+          1900
+        ],
+        [
+          1080,
+          2110
+        ]
+      ],
+      "width_cells": 20,
+      "length_cells": 645.14
+    },
+    {
+      "id": "arch--carotid_l--29",
+      "from": "arch",
+      "to": "carotid_l",
+      "label": "左颈总动脉",
+      "system": "artery",
+      "points": [
+        [
+          2300,
+          2020
+        ],
+        [
+          2280,
+          1190
+        ]
+      ],
+      "width_cells": 20,
+      "length_cells": 830.24
+    },
+    {
+      "id": "arch--subclavian_l--30",
+      "from": "arch",
+      "to": "subclavian_l",
+      "label": "左锁骨下动脉",
+      "system": "artery",
+      "points": [
+        [
+          2300,
+          2020
+        ],
+        [
+          3070,
+          2110
+        ]
+      ],
+      "width_cells": 20,
+      "length_cells": 775.24
+    },
+    {
+      "id": "carotid_r--willis--31",
+      "from": "carotid_r",
+      "to": "willis",
+      "label": "右颈内动脉",
+      "system": "artery",
+      "points": [
+        [
+          1810,
+          1190
+        ],
+        [
+          2048,
+          870
+        ]
+      ],
+      "width_cells": 20,
+      "length_cells": 398.8
+    },
+    {
+      "id": "subclavian_r--vertebral_r--32",
+      "from": "subclavian_r",
+      "to": "vertebral_r",
+      "label": "右椎动脉",
+      "system": "artery",
+      "points": [
+        [
+          1080,
+          2110
+        ],
+        [
+          1940,
+          1240
+        ]
+      ],
+      "width_cells": 20,
+      "length_cells": 1223.32
+    },
+    {
+      "id": "vertebral_r--basilar--33",
+      "from": "vertebral_r",
+      "to": "basilar",
+      "label": "椎动脉汇入基底动脉",
+      "system": "artery",
+      "points": [
+        [
+          1940,
+          1240
+        ],
+        [
+          2048,
+          1060
+        ]
+      ],
+      "width_cells": 20,
+      "length_cells": 209.91
+    },
+    {
+      "id": "carotid_l--willis--34",
+      "from": "carotid_l",
+      "to": "willis",
+      "label": "左颈内动脉",
+      "system": "artery",
+      "points": [
+        [
+          2280,
+          1190
+        ],
+        [
+          2048,
+          870
+        ]
+      ],
+      "width_cells": 20,
+      "length_cells": 395.25
+    },
+    {
+      "id": "subclavian_l--vertebral_l--35",
+      "from": "subclavian_l",
+      "to": "vertebral_l",
+      "label": "左椎动脉",
+      "system": "artery",
+      "points": [
+        [
+          3070,
+          2110
+        ],
+        [
+          2160,
+          1240
+        ]
+      ],
+      "width_cells": 20,
+      "length_cells": 1258.97
+    },
+    {
+      "id": "vertebral_l--basilar--36",
+      "from": "vertebral_l",
+      "to": "basilar",
+      "label": "椎动脉汇入基底动脉",
+      "system": "artery",
+      "points": [
+        [
+          2160,
+          1240
+        ],
+        [
+          2048,
+          1060
+        ]
+      ],
+      "width_cells": 20,
+      "length_cells": 212.0
+    },
+    {
+      "id": "basilar--willis--37",
+      "from": "basilar",
+      "to": "willis",
+      "label": "基底动脉至脑底动脉环",
+      "system": "artery",
+      "points": [
+        [
+          2048,
+          1060
+        ],
+        [
+          2048,
+          870
+        ]
+      ],
+      "width_cells": 20,
+      "length_cells": 190.0
+    },
+    {
+      "id": "willis--brain.a--38",
+      "from": "willis",
+      "to": "brain.a",
+      "label": "脑动脉组",
+      "system": "artery",
+      "points": [
+        [
+          2048,
+          870
+        ],
+        [
+          1998,
+          630
+        ]
+      ],
+      "width_cells": 12,
+      "length_cells": 245.15,
+      "represented": "arterial_circle_and_cerebral_branches"
+    },
+    {
+      "id": "brain.v--jugular_r--39",
+      "from": "brain.v",
+      "to": "jugular_r",
+      "label": "颅内静脉窦至颈内静脉",
+      "system": "vein",
+      "points": [
+        [
+          2098,
+          750
+        ],
+        [
+          1660,
+          1450
+        ]
+      ],
+      "width_cells": 24,
+      "length_cells": 825.74
+    },
+    {
+      "id": "jugular_r--brachio_vein_r--40",
+      "from": "jugular_r",
+      "to": "brachio_vein_r",
+      "label": "颈内静脉回流",
+      "system": "vein",
+      "points": [
+        [
+          1660,
+          1450
+        ],
+        [
+          1450,
+          2150
+        ]
+      ],
+      "width_cells": 24,
+      "length_cells": 730.82
+    },
+    {
+      "id": "brachio_vein_r--svc--41",
+      "from": "brachio_vein_r",
+      "to": "svc",
+      "label": "头臂静脉回流",
+      "system": "vein",
+      "points": [
+        [
+          1450,
+          2150
+        ],
+        [
+          1770,
+          2160
+        ]
+      ],
+      "width_cells": 24,
+      "length_cells": 320.16
+    },
+    {
+      "id": "brain.v--jugular_l--42",
+      "from": "brain.v",
+      "to": "jugular_l",
+      "label": "颅内静脉窦至颈内静脉",
+      "system": "vein",
+      "points": [
+        [
+          2098,
+          750
+        ],
+        [
+          2440,
+          1450
+        ]
+      ],
+      "width_cells": 24,
+      "length_cells": 779.08
+    },
+    {
+      "id": "jugular_l--brachio_vein_l--43",
+      "from": "jugular_l",
+      "to": "brachio_vein_l",
+      "label": "颈内静脉回流",
+      "system": "vein",
+      "points": [
+        [
+          2440,
+          1450
+        ],
+        [
+          2650,
+          2150
+        ]
+      ],
+      "width_cells": 24,
+      "length_cells": 730.82
+    },
+    {
+      "id": "brachio_vein_l--svc--44",
+      "from": "brachio_vein_l",
+      "to": "svc",
+      "label": "头臂静脉回流",
+      "system": "vein",
+      "points": [
+        [
+          2650,
+          2150
+        ],
+        [
+          1770,
+          2160
+        ]
+      ],
+      "width_cells": 24,
+      "length_cells": 880.06
+    },
+    {
+      "id": "svc--ra--45",
+      "from": "svc",
+      "to": "ra",
+      "label": "上腔静脉入右房",
+      "system": "vein",
+      "points": [
+        [
+          1770,
+          2160
+        ],
+        [
+          1960,
+          2590
+        ]
+      ],
+      "width_cells": 44,
+      "length_cells": 470.11
+    },
+    {
+      "id": "ivc_lower--renal_return--46",
+      "from": "ivc_lower",
+      "to": "renal_return",
+      "label": "下腔静脉",
+      "system": "vein",
+      "points": [
+        [
+          1790,
+          4910
+        ],
+        [
+          1790,
+          4260
+        ]
+      ],
+      "width_cells": 44,
+      "length_cells": 650.0
+    },
+    {
+      "id": "renal_return--hepatic_return--47",
+      "from": "renal_return",
+      "to": "hepatic_return",
+      "label": "下腔静脉",
+      "system": "vein",
+      "points": [
+        [
+          1790,
+          4260
+        ],
+        [
+          1790,
+          3820
+        ]
+      ],
+      "width_cells": 44,
+      "length_cells": 440.0
+    },
+    {
+      "id": "hepatic_return--ivc_upper--48",
+      "from": "hepatic_return",
+      "to": "ivc_upper",
+      "label": "下腔静脉",
+      "system": "vein",
+      "points": [
+        [
+          1790,
+          3820
+        ],
+        [
+          1790,
+          3360
+        ]
+      ],
+      "width_cells": 44,
+      "length_cells": 460.0
+    },
+    {
+      "id": "ivc_upper--ra--49",
+      "from": "ivc_upper",
+      "to": "ra",
+      "label": "下腔静脉入右房",
+      "system": "vein",
+      "points": [
+        [
+          1790,
+          3360
+        ],
+        [
+          1960,
+          2590
+        ]
+      ],
+      "width_cells": 44,
+      "length_cells": 788.54
+    },
+    {
+      "id": "celiac--liver.a--50",
+      "from": "celiac",
+      "to": "liver.a",
+      "label": "肝动脉",
+      "system": "artery",
+      "points": [
+        [
+          2380,
+          3680
+        ],
+        [
+          1460,
+          3570
+        ]
+      ],
+      "width_cells": 20,
+      "length_cells": 926.55
+    },
+    {
+      "id": "celiac--stomach.a--51",
+      "from": "celiac",
+      "to": "stomach.a",
+      "label": "胃动脉组",
+      "system": "artery",
+      "points": [
+        [
+          2380,
+          3680
+        ],
+        [
+          2690,
+          3570
+        ]
+      ],
+      "width_cells": 20,
+      "length_cells": 328.94
+    },
+    {
+      "id": "celiac--spleen.a--52",
+      "from": "celiac",
+      "to": "spleen.a",
+      "label": "脾动脉",
+      "system": "artery",
+      "points": [
+        [
+          2380,
+          3680
+        ],
+        [
+          3080,
+          3620
+        ]
+      ],
+      "width_cells": 20,
+      "length_cells": 702.57
+    },
+    {
+      "id": "mesenteric_upper--gut.a--53",
+      "from": "mesenteric_upper",
+      "to": "gut.a",
+      "label": "肠系膜上动脉",
+      "system": "artery",
+      "points": [
+        [
+          2370,
+          3940
+        ],
+        [
+          2010,
+          4450
+        ]
+      ],
+      "width_cells": 20,
+      "length_cells": 624.26
+    },
+    {
+      "id": "mesenteric_lower--gut.a--54",
+      "from": "mesenteric_lower",
+      "to": "gut.a",
+      "label": "肠系膜下动脉",
+      "system": "artery",
+      "points": [
+        [
+          2370,
+          4500
+        ],
+        [
+          2190,
+          4750
+        ],
+        [
+          2010,
+          4450
+        ]
+      ],
+      "width_cells": 20,
+      "length_cells": 657.92
+    },
+    {
+      "id": "renal_aorta--kidney_r.a--55",
+      "from": "renal_aorta",
+      "to": "kidney_r.a",
+      "label": "右肾动脉",
+      "system": "artery",
+      "points": [
+        [
+          2370,
+          4180
+        ],
+        [
+          1340,
+          4150
+        ]
+      ],
+      "width_cells": 20,
+      "length_cells": 1030.44
+    },
+    {
+      "id": "kidney_r.v--renal_return--56",
+      "from": "kidney_r.v",
+      "to": "renal_return",
+      "label": "右肾静脉",
+      "system": "vein",
+      "points": [
+        [
+          1440,
+          4270
+        ],
+        [
+          1790,
+          4260
+        ]
+      ],
+      "width_cells": 24,
+      "length_cells": 350.14
+    },
+    {
+      "id": "renal_aorta--kidney_l.a--57",
+      "from": "renal_aorta",
+      "to": "kidney_l.a",
+      "label": "左肾动脉",
+      "system": "artery",
+      "points": [
+        [
+          2370,
+          4180
+        ],
+        [
+          2910,
+          4150
+        ]
+      ],
+      "width_cells": 20,
+      "length_cells": 540.83
+    },
+    {
+      "id": "kidney_l.v--renal_return--58",
+      "from": "kidney_l.v",
+      "to": "renal_return",
+      "label": "左肾静脉",
+      "system": "vein",
+      "points": [
+        [
+          3010,
+          4270
+        ],
+        [
+          1790,
+          4260
+        ]
+      ],
+      "width_cells": 24,
+      "length_cells": 1220.04
+    },
+    {
+      "id": "gut.v--portal_junction--59",
+      "from": "gut.v",
+      "to": "portal_junction",
+      "label": "肠系膜静脉组",
+      "system": "portal",
+      "points": [
+        [
+          2110,
+          4570
+        ],
+        [
+          1930,
+          3860
+        ]
+      ],
+      "width_cells": 16,
+      "length_cells": 732.46
+    },
+    {
+      "id": "stomach.v--portal_junction--60",
+      "from": "stomach.v",
+      "to": "portal_junction",
+      "label": "胃静脉组",
+      "system": "portal",
+      "points": [
+        [
+          2790,
+          3690
+        ],
+        [
+          1930,
+          3860
+        ]
+      ],
+      "width_cells": 16,
+      "length_cells": 876.64
+    },
+    {
+      "id": "spleen.v--portal_junction--61",
+      "from": "spleen.v",
+      "to": "portal_junction",
+      "label": "脾静脉",
+      "system": "portal",
+      "points": [
+        [
+          3180,
+          3740
+        ],
+        [
+          1930,
+          3860
+        ]
+      ],
+      "width_cells": 16,
+      "length_cells": 1255.75
+    },
+    {
+      "id": "portal_junction--liver.a--62",
+      "from": "portal_junction",
+      "to": "liver.a",
+      "label": "肝门静脉至肝窦",
+      "system": "portal",
+      "points": [
+        [
+          1930,
+          3860
+        ],
+        [
+          1460,
+          3570
+        ]
+      ],
+      "width_cells": 20,
+      "length_cells": 552.27
+    },
+    {
+      "id": "liver.v--hepatic_return--63",
+      "from": "liver.v",
+      "to": "hepatic_return",
+      "label": "肝静脉",
+      "system": "vein",
+      "points": [
+        [
+          1560,
+          3690
+        ],
+        [
+          1790,
+          3820
+        ]
+      ],
+      "width_cells": 24,
+      "length_cells": 264.2
+    },
+    {
+      "id": "aortic_bifurcation--pelvis.a--64",
+      "from": "aortic_bifurcation",
+      "to": "pelvis.a",
+      "label": "内髂动脉组",
+      "system": "artery",
+      "points": [
+        [
+          2350,
+          5010
+        ],
+        [
+          2010,
+          5170
+        ]
+      ],
+      "width_cells": 20,
+      "length_cells": 375.77
+    },
+    {
+      "id": "pelvis.v--ivc_lower--65",
+      "from": "pelvis.v",
+      "to": "ivc_lower",
+      "label": "盆腔静脉组",
+      "system": "vein",
+      "points": [
+        [
+          2110,
+          5290
+        ],
+        [
+          1790,
+          4910
+        ]
+      ],
+      "width_cells": 24,
+      "length_cells": 496.79
+    },
+    {
+      "id": "aortic_root--myocardium.a--66",
+      "from": "aortic_root",
+      "to": "myocardium.a",
+      "label": "左冠状动脉组",
+      "system": "coronary",
+      "points": [
+        [
+          2550,
+          2770
+        ],
+        [
+          2690,
+          2910
+        ],
+        [
+          2720,
+          3210
+        ],
+        [
+          2380,
+          3230
+        ]
+      ],
+      "width_cells": 6,
+      "length_cells": 840.07
+    },
+    {
+      "id": "aortic_root--myocardium.a--67",
+      "from": "aortic_root",
+      "to": "myocardium.a",
+      "label": "右冠状动脉组",
+      "system": "coronary",
+      "points": [
+        [
+          2550,
+          2770
+        ],
+        [
+          1870,
+          2480
+        ],
+        [
+          1740,
+          2870
+        ],
+        [
+          1900,
+          3280
+        ],
+        [
+          2380,
+          3230
+        ]
+      ],
+      "width_cells": 6,
+      "length_cells": 2073.06
+    },
+    {
+      "id": "myocardium.v--coronary_sinus--68",
+      "from": "myocardium.v",
+      "to": "coronary_sinus",
+      "label": "心静脉组",
+      "system": "coronary",
+      "points": [
+        [
+          2480,
+          3350
+        ],
+        [
+          1900,
+          3160
+        ]
+      ],
+      "width_cells": 6,
+      "length_cells": 610.33
+    },
+    {
+      "id": "coronary_sinus--ra--69",
+      "from": "coronary_sinus",
+      "to": "ra",
+      "label": "冠状窦入右房",
+      "system": "coronary",
+      "points": [
+        [
+          1900,
+          3160
+        ],
+        [
+          1960,
+          2590
+        ]
+      ],
+      "width_cells": 6,
+      "length_cells": 573.15
+    },
+    {
+      "id": "hand_r.a--hand_r.v--70",
+      "from": "hand_r.a",
+      "to": "hand_r.v",
+      "label": "右手微循环",
+      "system": "capillary",
+      "points": [
+        [
+          400,
+          4500
+        ],
+        [
+          500,
+          4620
+        ]
+      ],
+      "width_cells": 4,
+      "length_cells": 156.2,
+      "represented": "aggregate_bed"
+    },
+    {
+      "id": "foot_r.a--foot_r.v--71",
+      "from": "foot_r.a",
+      "to": "foot_r.v",
+      "label": "右足微循环",
+      "system": "capillary",
+      "points": [
+        [
+          1360,
+          7780
+        ],
+        [
+          1460,
+          7900
+        ]
+      ],
+      "width_cells": 4,
+      "length_cells": 156.2,
+      "represented": "aggregate_bed"
+    },
+    {
+      "id": "marrow_r.a--marrow_r.v--72",
+      "from": "marrow_r.a",
+      "to": "marrow_r.v",
+      "label": "右股骨骨髓微循环",
+      "system": "capillary",
+      "points": [
+        [
+          1660,
+          5940
+        ],
+        [
+          1760,
+          6060
+        ]
+      ],
+      "width_cells": 4,
+      "length_cells": 156.2,
+      "represented": "aggregate_bed"
+    },
+    {
+      "id": "subclavian_r--axillary_r--73",
+      "from": "subclavian_r",
+      "to": "axillary_r",
+      "label": "右腋动脉",
+      "system": "artery",
+      "points": [
+        [
+          1080,
+          2110
+        ],
+        [
+          890,
+          2580
+        ]
+      ],
+      "width_cells": 20,
+      "length_cells": 506.95
+    },
+    {
+      "id": "axillary_r--brachial_r--74",
+      "from": "axillary_r",
+      "to": "brachial_r",
+      "label": "右肱动脉",
+      "system": "artery",
+      "points": [
+        [
+          890,
+          2580
+        ],
+        [
+          680,
+          3260
+        ]
+      ],
+      "width_cells": 20,
+      "length_cells": 711.69
+    },
+    {
+      "id": "brachial_r--radial_r--75",
+      "from": "brachial_r",
+      "to": "radial_r",
+      "label": "右桡动脉",
+      "system": "artery",
+      "points": [
+        [
+          680,
+          3260
+        ],
+        [
+          360,
+          4190
+        ]
+      ],
+      "width_cells": 20,
+      "length_cells": 983.51
+    },
+    {
+      "id": "radial_r--palmar_r--76",
+      "from": "radial_r",
+      "to": "palmar_r",
+      "label": "掌弓连接",
+      "system": "artery",
+      "points": [
+        [
+          360,
+          4190
+        ],
+        [
+          470,
+          4440
+        ]
+      ],
+      "width_cells": 10,
+      "length_cells": 273.13
+    },
+    {
+      "id": "brachial_r--ulnar_r--77",
+      "from": "brachial_r",
+      "to": "ulnar_r",
+      "label": "右尺动脉",
+      "system": "artery",
+      "points": [
+        [
+          680,
+          3260
+        ],
+        [
+          610,
+          4150
+        ]
+      ],
+      "width_cells": 20,
+      "length_cells": 892.75
+    },
+    {
+      "id": "ulnar_r--palmar_r--78",
+      "from": "ulnar_r",
+      "to": "palmar_r",
+      "label": "掌弓连接",
+      "system": "artery",
+      "points": [
+        [
+          610,
+          4150
+        ],
+        [
+          470,
+          4440
+        ]
+      ],
+      "width_cells": 10,
+      "length_cells": 322.02
+    },
+    {
+      "id": "palmar_r--hand_r.a--79",
+      "from": "palmar_r",
+      "to": "hand_r.a",
+      "label": "指动脉组",
+      "system": "artery",
+      "points": [
+        [
+          470,
+          4440
+        ],
+        [
+          400,
+          4500
+        ]
+      ],
+      "width_cells": 6,
+      "length_cells": 92.2
+    },
+    {
+      "id": "hand_r.v--hand_vein_r--80",
+      "from": "hand_r.v",
+      "to": "hand_vein_r",
+      "label": "指静脉组",
+      "system": "vein",
+      "points": [
+        [
+          500,
+          4620
+        ],
+        [
+          610,
+          4370
+        ]
+      ],
+      "width_cells": 8,
+      "length_cells": 273.13
+    },
+    {
+      "id": "hand_vein_r--arm_vein_r--81",
+      "from": "hand_vein_r",
+      "to": "arm_vein_r",
+      "label": "上肢深静脉回流",
+      "system": "vein",
+      "points": [
+        [
+          610,
+          4370
+        ],
+        [
+          850,
+          3240
+        ]
+      ],
+      "width_cells": 24,
+      "length_cells": 1155.21
+    },
+    {
+      "id": "arm_vein_r--brachio_vein_r--82",
+      "from": "arm_vein_r",
+      "to": "brachio_vein_r",
+      "label": "腋与锁骨下静脉",
+      "system": "vein",
+      "points": [
+        [
+          850,
+          3240
+        ],
+        [
+          1450,
+          2150
+        ]
+      ],
+      "width_cells": 24,
+      "length_cells": 1244.23
+    },
+    {
+      "id": "aortic_bifurcation--iliac_r--83",
+      "from": "aortic_bifurcation",
+      "to": "iliac_r",
+      "label": "右总髂至外髂动脉",
+      "system": "artery",
+      "points": [
+        [
+          2350,
+          5010
+        ],
+        [
+          1520,
+          5430
+        ]
+      ],
+      "width_cells": 20,
+      "length_cells": 930.22
+    },
+    {
+      "id": "iliac_r--popliteal_r--84",
+      "from": "iliac_r",
+      "to": "popliteal_r",
+      "label": "右股动脉",
+      "system": "artery",
+      "points": [
+        [
+          1520,
+          5430
+        ],
+        [
+          1410,
+          6580
+        ]
+      ],
+      "width_cells": 20,
+      "length_cells": 1155.25
+    },
+    {
+      "id": "popliteal_r--tibial_anterior_r--85",
+      "from": "popliteal_r",
+      "to": "tibial_anterior_r",
+      "label": "右胫前动脉",
+      "system": "artery",
+      "points": [
+        [
+          1410,
+          6580
+        ],
+        [
+          1300,
+          7350
+        ]
+      ],
+      "width_cells": 12,
+      "length_cells": 777.82
+    },
+    {
+      "id": "tibial_anterior_r--foot_arch_r--86",
+      "from": "tibial_anterior_r",
+      "to": "foot_arch_r",
+      "label": "足弓连接",
+      "system": "artery",
+      "points": [
+        [
+          1300,
+          7350
+        ],
+        [
+          1410,
+          7740
+        ]
+      ],
+      "width_cells": 8,
+      "length_cells": 405.22
+    },
+    {
+      "id": "popliteal_r--tibial_posterior_r--87",
+      "from": "popliteal_r",
+      "to": "tibial_posterior_r",
+      "label": "右胫后动脉",
+      "system": "artery",
+      "points": [
+        [
+          1410,
+          6580
+        ],
+        [
+          1610,
+          7350
+        ]
+      ],
+      "width_cells": 12,
+      "length_cells": 795.55
+    },
+    {
+      "id": "tibial_posterior_r--foot_arch_r--88",
+      "from": "tibial_posterior_r",
+      "to": "foot_arch_r",
+      "label": "足弓连接",
+      "system": "artery",
+      "points": [
+        [
+          1610,
+          7350
+        ],
+        [
+          1410,
+          7740
+        ]
+      ],
+      "width_cells": 8,
+      "length_cells": 438.29
+    },
+    {
+      "id": "foot_arch_r--foot_r.a--89",
+      "from": "foot_arch_r",
+      "to": "foot_r.a",
+      "label": "足部微动脉组",
+      "system": "artery",
+      "points": [
+        [
+          1410,
+          7740
+        ],
+        [
+          1360,
+          7780
+        ]
+      ],
+      "width_cells": 6,
+      "length_cells": 64.03
+    },
+    {
+      "id": "foot_r.v--leg_vein_r--90",
+      "from": "foot_r.v",
+      "to": "leg_vein_r",
+      "label": "下肢深静脉回流",
+      "system": "vein",
+      "points": [
+        [
+          1460,
+          7900
+        ],
+        [
+          1590,
+          6520
+        ]
+      ],
+      "width_cells": 24,
+      "length_cells": 1386.11
+    },
+    {
+      "id": "leg_vein_r--iliac_vein_r--91",
+      "from": "leg_vein_r",
+      "to": "iliac_vein_r",
+      "label": "股至髂静脉",
+      "system": "vein",
+      "points": [
+        [
+          1590,
+          6520
+        ],
+        [
+          1660,
+          5380
+        ]
+      ],
+      "width_cells": 24,
+      "length_cells": 1142.15
+    },
+    {
+      "id": "iliac_vein_r--ivc_lower--92",
+      "from": "iliac_vein_r",
+      "to": "ivc_lower",
+      "label": "总髂静脉汇入下腔静脉",
+      "system": "vein",
+      "points": [
+        [
+          1660,
+          5380
+        ],
+        [
+          1790,
+          4910
+        ]
+      ],
+      "width_cells": 24,
+      "length_cells": 487.65
+    },
+    {
+      "id": "iliac_r--marrow_r.a--93",
+      "from": "iliac_r",
+      "to": "marrow_r.a",
+      "label": "股骨营养动脉",
+      "system": "artery",
+      "points": [
+        [
+          1520,
+          5430
+        ],
+        [
+          1660,
+          5940
+        ]
+      ],
+      "width_cells": 6,
+      "length_cells": 528.87
+    },
+    {
+      "id": "marrow_r.v--leg_vein_r--94",
+      "from": "marrow_r.v",
+      "to": "leg_vein_r",
+      "label": "骨髓静脉回流",
+      "system": "vein",
+      "points": [
+        [
+          1760,
+          6060
+        ],
+        [
+          1590,
+          6520
+        ]
+      ],
+      "width_cells": 8,
+      "length_cells": 490.41
+    },
+    {
+      "id": "hand_l.a--hand_l.v--95",
+      "from": "hand_l.a",
+      "to": "hand_l.v",
+      "label": "左手微循环",
+      "system": "capillary",
+      "points": [
+        [
+          3596,
+          4500
+        ],
+        [
+          3696,
+          4620
+        ]
+      ],
+      "width_cells": 4,
+      "length_cells": 156.2,
+      "represented": "aggregate_bed"
+    },
+    {
+      "id": "foot_l.a--foot_l.v--96",
+      "from": "foot_l.a",
+      "to": "foot_l.v",
+      "label": "左足微循环",
+      "system": "capillary",
+      "points": [
+        [
+          2636,
+          7780
+        ],
+        [
+          2736,
+          7900
+        ]
+      ],
+      "width_cells": 4,
+      "length_cells": 156.2,
+      "represented": "aggregate_bed"
+    },
+    {
+      "id": "marrow_l.a--marrow_l.v--97",
+      "from": "marrow_l.a",
+      "to": "marrow_l.v",
+      "label": "左股骨骨髓微循环",
+      "system": "capillary",
+      "points": [
+        [
+          2336,
+          5940
+        ],
+        [
+          2436,
+          6060
+        ]
+      ],
+      "width_cells": 4,
+      "length_cells": 156.2,
+      "represented": "aggregate_bed"
+    },
+    {
+      "id": "subclavian_l--axillary_l--98",
+      "from": "subclavian_l",
+      "to": "axillary_l",
+      "label": "左腋动脉",
+      "system": "artery",
+      "points": [
+        [
+          3070,
+          2110
+        ],
+        [
+          3206,
+          2580
+        ]
+      ],
+      "width_cells": 20,
+      "length_cells": 489.28
+    },
+    {
+      "id": "axillary_l--brachial_l--99",
+      "from": "axillary_l",
+      "to": "brachial_l",
+      "label": "左肱动脉",
+      "system": "artery",
+      "points": [
+        [
+          3206,
+          2580
+        ],
+        [
+          3416,
+          3260
+        ]
+      ],
+      "width_cells": 20,
+      "length_cells": 711.69
+    },
+    {
+      "id": "brachial_l--radial_l--100",
+      "from": "brachial_l",
+      "to": "radial_l",
+      "label": "左桡动脉",
+      "system": "artery",
+      "points": [
+        [
+          3416,
+          3260
+        ],
+        [
+          3736,
+          4190
+        ]
+      ],
+      "width_cells": 20,
+      "length_cells": 983.51
+    },
+    {
+      "id": "radial_l--palmar_l--101",
+      "from": "radial_l",
+      "to": "palmar_l",
+      "label": "掌弓连接",
+      "system": "artery",
+      "points": [
+        [
+          3736,
+          4190
+        ],
+        [
+          3626,
+          4440
+        ]
+      ],
+      "width_cells": 10,
+      "length_cells": 273.13
+    },
+    {
+      "id": "brachial_l--ulnar_l--102",
+      "from": "brachial_l",
+      "to": "ulnar_l",
+      "label": "左尺动脉",
+      "system": "artery",
+      "points": [
+        [
+          3416,
+          3260
+        ],
+        [
+          3486,
+          4150
+        ]
+      ],
+      "width_cells": 20,
+      "length_cells": 892.75
+    },
+    {
+      "id": "ulnar_l--palmar_l--103",
+      "from": "ulnar_l",
+      "to": "palmar_l",
+      "label": "掌弓连接",
+      "system": "artery",
+      "points": [
+        [
+          3486,
+          4150
+        ],
+        [
+          3626,
+          4440
+        ]
+      ],
+      "width_cells": 10,
+      "length_cells": 322.02
+    },
+    {
+      "id": "palmar_l--hand_l.a--104",
+      "from": "palmar_l",
+      "to": "hand_l.a",
+      "label": "指动脉组",
+      "system": "artery",
+      "points": [
+        [
+          3626,
+          4440
+        ],
+        [
+          3596,
+          4500
+        ]
+      ],
+      "width_cells": 6,
+      "length_cells": 67.08
+    },
+    {
+      "id": "hand_l.v--hand_vein_l--105",
+      "from": "hand_l.v",
+      "to": "hand_vein_l",
+      "label": "指静脉组",
+      "system": "vein",
+      "points": [
+        [
+          3696,
+          4620
+        ],
+        [
+          3486,
+          4370
+        ]
+      ],
+      "width_cells": 8,
+      "length_cells": 326.5
+    },
+    {
+      "id": "hand_vein_l--arm_vein_l--106",
+      "from": "hand_vein_l",
+      "to": "arm_vein_l",
+      "label": "上肢深静脉回流",
+      "system": "vein",
+      "points": [
+        [
+          3486,
+          4370
+        ],
+        [
+          3246,
+          3240
+        ]
+      ],
+      "width_cells": 24,
+      "length_cells": 1155.21
+    },
+    {
+      "id": "arm_vein_l--brachio_vein_l--107",
+      "from": "arm_vein_l",
+      "to": "brachio_vein_l",
+      "label": "腋与锁骨下静脉",
+      "system": "vein",
+      "points": [
+        [
+          3246,
+          3240
+        ],
+        [
+          2650,
+          2150
+        ]
+      ],
+      "width_cells": 24,
+      "length_cells": 1242.3
+    },
+    {
+      "id": "aortic_bifurcation--iliac_l--108",
+      "from": "aortic_bifurcation",
+      "to": "iliac_l",
+      "label": "左总髂至外髂动脉",
+      "system": "artery",
+      "points": [
+        [
+          2350,
+          5010
+        ],
+        [
+          2576,
+          5430
+        ]
+      ],
+      "width_cells": 20,
+      "length_cells": 476.94
+    },
+    {
+      "id": "iliac_l--popliteal_l--109",
+      "from": "iliac_l",
+      "to": "popliteal_l",
+      "label": "左股动脉",
+      "system": "artery",
+      "points": [
+        [
+          2576,
+          5430
+        ],
+        [
+          2686,
+          6580
+        ]
+      ],
+      "width_cells": 20,
+      "length_cells": 1155.25
+    },
+    {
+      "id": "popliteal_l--tibial_anterior_l--110",
+      "from": "popliteal_l",
+      "to": "tibial_anterior_l",
+      "label": "左胫前动脉",
+      "system": "artery",
+      "points": [
+        [
+          2686,
+          6580
+        ],
+        [
+          2796,
+          7350
+        ]
+      ],
+      "width_cells": 12,
+      "length_cells": 777.82
+    },
+    {
+      "id": "tibial_anterior_l--foot_arch_l--111",
+      "from": "tibial_anterior_l",
+      "to": "foot_arch_l",
+      "label": "足弓连接",
+      "system": "artery",
+      "points": [
+        [
+          2796,
+          7350
+        ],
+        [
+          2686,
+          7740
+        ]
+      ],
+      "width_cells": 8,
+      "length_cells": 405.22
+    },
+    {
+      "id": "popliteal_l--tibial_posterior_l--112",
+      "from": "popliteal_l",
+      "to": "tibial_posterior_l",
+      "label": "左胫后动脉",
+      "system": "artery",
+      "points": [
+        [
+          2686,
+          6580
+        ],
+        [
+          2486,
+          7350
+        ]
+      ],
+      "width_cells": 12,
+      "length_cells": 795.55
+    },
+    {
+      "id": "tibial_posterior_l--foot_arch_l--113",
+      "from": "tibial_posterior_l",
+      "to": "foot_arch_l",
+      "label": "足弓连接",
+      "system": "artery",
+      "points": [
+        [
+          2486,
+          7350
+        ],
+        [
+          2686,
+          7740
+        ]
+      ],
+      "width_cells": 8,
+      "length_cells": 438.29
+    },
+    {
+      "id": "foot_arch_l--foot_l.a--114",
+      "from": "foot_arch_l",
+      "to": "foot_l.a",
+      "label": "足部微动脉组",
+      "system": "artery",
+      "points": [
+        [
+          2686,
+          7740
+        ],
+        [
+          2636,
+          7780
+        ]
+      ],
+      "width_cells": 6,
+      "length_cells": 64.03
+    },
+    {
+      "id": "foot_l.v--leg_vein_l--115",
+      "from": "foot_l.v",
+      "to": "leg_vein_l",
+      "label": "下肢深静脉回流",
+      "system": "vein",
+      "points": [
+        [
+          2736,
+          7900
+        ],
+        [
+          2506,
+          6520
+        ]
+      ],
+      "width_cells": 24,
+      "length_cells": 1399.04
+    },
+    {
+      "id": "leg_vein_l--iliac_vein_l--116",
+      "from": "leg_vein_l",
+      "to": "iliac_vein_l",
+      "label": "股至髂静脉",
+      "system": "vein",
+      "points": [
+        [
+          2506,
+          6520
+        ],
+        [
+          2436,
+          5380
+        ]
+      ],
+      "width_cells": 24,
+      "length_cells": 1142.15
+    },
+    {
+      "id": "iliac_vein_l--ivc_lower--117",
+      "from": "iliac_vein_l",
+      "to": "ivc_lower",
+      "label": "总髂静脉汇入下腔静脉",
+      "system": "vein",
+      "points": [
+        [
+          2436,
+          5380
+        ],
+        [
+          1790,
+          4910
+        ]
+      ],
+      "width_cells": 24,
+      "length_cells": 798.88
+    },
+    {
+      "id": "iliac_l--marrow_l.a--118",
+      "from": "iliac_l",
+      "to": "marrow_l.a",
+      "label": "股骨营养动脉",
+      "system": "artery",
+      "points": [
+        [
+          2576,
+          5430
+        ],
+        [
+          2336,
+          5940
+        ]
+      ],
+      "width_cells": 6,
+      "length_cells": 563.65
+    },
+    {
+      "id": "marrow_l.v--leg_vein_l--119",
+      "from": "marrow_l.v",
+      "to": "leg_vein_l",
+      "label": "骨髓静脉回流",
+      "system": "vein",
+      "points": [
+        [
+          2436,
+          6060
+        ],
+        [
+          2506,
+          6520
+        ]
+      ],
+      "width_cells": 8,
+      "length_cells": 465.3
+    }
+  ],
+  "organs": [
+    {
+      "id": "brain",
+      "label": "脑",
+      "center": [
+        2048,
+        690
+      ],
+      "radii": [
+        530,
+        510
+      ],
+      "inlet": "brain.a",
+      "outlet": "brain.v",
+      "drain": "systemic"
+    },
+    {
+      "id": "lung_r",
+      "label": "右肺",
+      "center": [
+        1400,
+        2630
+      ],
+      "radii": [
+        500,
+        690
+      ],
+      "inlet": "lung_r.a",
+      "outlet": "lung_r.v",
+      "drain": "pulmonary"
+    },
+    {
+      "id": "lung_l",
+      "label": "左肺",
+      "center": [
+        2960,
+        2630
+      ],
+      "radii": [
+        470,
+        690
+      ],
+      "inlet": "lung_l.a",
+      "outlet": "lung_l.v",
+      "drain": "pulmonary"
+    },
+    {
+      "id": "liver",
+      "label": "肝",
+      "center": [
+        1510,
+        3630
+      ],
+      "radii": [
+        620,
+        360
+      ],
+      "inlet": "liver.a",
+      "outlet": "liver.v",
+      "drain": "portal"
+    },
+    {
+      "id": "stomach",
+      "label": "胃",
+      "center": [
+        2740,
+        3630
+      ],
+      "radii": [
+        300,
+        220
+      ],
+      "inlet": "stomach.a",
+      "outlet": "stomach.v",
+      "drain": "portal"
+    },
+    {
+      "id": "spleen",
+      "label": "脾",
+      "center": [
+        3130,
+        3680
+      ],
+      "radii": [
+        160,
+        250
+      ],
+      "inlet": "spleen.a",
+      "outlet": "spleen.v",
+      "drain": "portal"
+    },
+    {
+      "id": "gut",
+      "label": "肠",
+      "center": [
+        2060,
+        4510
+      ],
+      "radii": [
+        650,
+        530
+      ],
+      "inlet": "gut.a",
+      "outlet": "gut.v",
+      "drain": "portal"
+    },
+    {
+      "id": "kidney_r",
+      "label": "右肾",
+      "center": [
+        1390,
+        4210
+      ],
+      "radii": [
+        190,
+        300
+      ],
+      "inlet": "kidney_r.a",
+      "outlet": "kidney_r.v",
+      "drain": "systemic"
+    },
+    {
+      "id": "kidney_l",
+      "label": "左肾",
+      "center": [
+        2960,
+        4210
+      ],
+      "radii": [
+        190,
+        300
+      ],
+      "inlet": "kidney_l.a",
+      "outlet": "kidney_l.v",
+      "drain": "systemic"
+    },
+    {
+      "id": "myocardium",
+      "label": "心肌",
+      "center": [
+        2430,
+        3290
+      ],
+      "radii": [
+        110,
+        120
+      ],
+      "inlet": "myocardium.a",
+      "outlet": "myocardium.v",
+      "drain": "systemic"
+    },
+    {
+      "id": "pelvis",
+      "label": "盆腔",
+      "center": [
+        2060,
+        5230
+      ],
+      "radii": [
+        300,
+        180
+      ],
+      "inlet": "pelvis.a",
+      "outlet": "pelvis.v",
+      "drain": "systemic"
+    },
+    {
+      "id": "hand_r",
+      "label": "右手",
+      "center": [
+        450,
+        4560
+      ],
+      "radii": [
+        210,
+        210
+      ],
+      "inlet": "hand_r.a",
+      "outlet": "hand_r.v",
+      "drain": "systemic"
+    },
+    {
+      "id": "foot_r",
+      "label": "右足",
+      "center": [
+        1410,
+        7840
+      ],
+      "radii": [
+        260,
+        150
+      ],
+      "inlet": "foot_r.a",
+      "outlet": "foot_r.v",
+      "drain": "systemic"
+    },
+    {
+      "id": "marrow_r",
+      "label": "右股骨骨髓",
+      "center": [
+        1710,
+        6000
+      ],
+      "radii": [
+        90,
+        350
+      ],
+      "inlet": "marrow_r.a",
+      "outlet": "marrow_r.v",
+      "drain": "systemic"
+    },
+    {
+      "id": "hand_l",
+      "label": "左手",
+      "center": [
+        3646,
+        4560
+      ],
+      "radii": [
+        210,
+        210
+      ],
+      "inlet": "hand_l.a",
+      "outlet": "hand_l.v",
+      "drain": "systemic"
+    },
+    {
+      "id": "foot_l",
+      "label": "左足",
+      "center": [
+        2686,
+        7840
+      ],
+      "radii": [
+        260,
+        150
+      ],
+      "inlet": "foot_l.a",
+      "outlet": "foot_l.v",
+      "drain": "systemic"
+    },
+    {
+      "id": "marrow_l",
+      "label": "左股骨骨髓",
+      "center": [
+        2386,
+        6000
+      ],
+      "radii": [
+        90,
+        350
+      ],
+      "inlet": "marrow_l.a",
+      "outlet": "marrow_l.v",
+      "drain": "systemic"
+    }
+  ]
+}

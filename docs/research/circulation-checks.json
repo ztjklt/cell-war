@@ -1,0 +1,265 @@
+{
+  "status": "graph_and_calculation_only",
+  "passed": 41,
+  "total": 41,
+  "nodes": 95,
+  "edges": 120,
+  "organ_beds": 17,
+  "checks": [
+    {
+      "name": "all node and polyline coordinates within rectangular bounds",
+      "pass": true
+    },
+    {
+      "name": "all nodes participate in circulation from left ventricle and back",
+      "pass": true
+    },
+    {
+      "name": "脑 has arterial supply",
+      "pass": true
+    },
+    {
+      "name": "脑 has venous return",
+      "pass": true
+    },
+    {
+      "name": "肝 has arterial supply",
+      "pass": true
+    },
+    {
+      "name": "肝 has venous return",
+      "pass": true
+    },
+    {
+      "name": "胃 has arterial supply",
+      "pass": true
+    },
+    {
+      "name": "胃 has venous return",
+      "pass": true
+    },
+    {
+      "name": "脾 has arterial supply",
+      "pass": true
+    },
+    {
+      "name": "脾 has venous return",
+      "pass": true
+    },
+    {
+      "name": "肠 has arterial supply",
+      "pass": true
+    },
+    {
+      "name": "肠 has venous return",
+      "pass": true
+    },
+    {
+      "name": "右肾 has arterial supply",
+      "pass": true
+    },
+    {
+      "name": "右肾 has venous return",
+      "pass": true
+    },
+    {
+      "name": "左肾 has arterial supply",
+      "pass": true
+    },
+    {
+      "name": "左肾 has venous return",
+      "pass": true
+    },
+    {
+      "name": "心肌 has arterial supply",
+      "pass": true
+    },
+    {
+      "name": "心肌 has venous return",
+      "pass": true
+    },
+    {
+      "name": "盆腔 has arterial supply",
+      "pass": true
+    },
+    {
+      "name": "盆腔 has venous return",
+      "pass": true
+    },
+    {
+      "name": "右手 has arterial supply",
+      "pass": true
+    },
+    {
+      "name": "右手 has venous return",
+      "pass": true
+    },
+    {
+      "name": "右足 has arterial supply",
+      "pass": true
+    },
+    {
+      "name": "右足 has venous return",
+      "pass": true
+    },
+    {
+      "name": "右股骨骨髓 has arterial supply",
+      "pass": true
+    },
+    {
+      "name": "右股骨骨髓 has venous return",
+      "pass": true
+    },
+    {
+      "name": "左手 has arterial supply",
+      "pass": true
+    },
+    {
+      "name": "左手 has venous return",
+      "pass": true
+    },
+    {
+      "name": "左足 has arterial supply",
+      "pass": true
+    },
+    {
+      "name": "左足 has venous return",
+      "pass": true
+    },
+    {
+      "name": "左股骨骨髓 has arterial supply",
+      "pass": true
+    },
+    {
+      "name": "左股骨骨髓 has venous return",
+      "pass": true
+    },
+    {
+      "name": "right ventricle reaches left atrium only through a lung capillary bed",
+      "pass": true
+    },
+    {
+      "name": "gut and spleen return depend on portal-liver route",
+      "pass": true
+    },
+    {
+      "name": "right hand retains ulnar route after radial route blockage",
+      "pass": true
+    },
+    {
+      "name": "major right femoral blockage isolates right foot arterial supply",
+      "pass": true
+    },
+    {
+      "name": "rectangular key roundtrip 1,1",
+      "pass": true
+    },
+    {
+      "name": "rectangular key roundtrip 4096,1",
+      "pass": true
+    },
+    {
+      "name": "rectangular key roundtrip 1,8192",
+      "pass": true
+    },
+    {
+      "name": "rectangular key roundtrip 4096,8192",
+      "pass": true
+    },
+    {
+      "name": "rectangular key roundtrip 2048,4096",
+      "pass": true
+    }
+  ],
+  "routes": [
+    {
+      "from": "lv",
+      "to": "brain.a",
+      "length_cells": 2780,
+      "passive_transport_seconds_at_28_cells_per_second": 99.3,
+      "route": [
+        "lv--aortic_root--18",
+        "aortic_root--arch--19",
+        "arch--carotid_l--29",
+        "carotid_l--willis--34",
+        "willis--brain.a--38"
+      ]
+    },
+    {
+      "from": "lv",
+      "to": "hand_r.a",
+      "length_cells": 5101,
+      "passive_transport_seconds_at_28_cells_per_second": 182.2,
+      "route": [
+        "lv--aortic_root--18",
+        "aortic_root--arch--19",
+        "arch--brachiocephalic--26",
+        "brachiocephalic--subclavian_r--28",
+        "subclavian_r--axillary_r--73",
+        "axillary_r--brachial_r--74",
+        "brachial_r--ulnar_r--77",
+        "ulnar_r--palmar_r--78",
+        "palmar_r--hand_r.a--79"
+      ]
+    },
+    {
+      "from": "lv",
+      "to": "foot_r.a",
+      "length_cells": 7770,
+      "passive_transport_seconds_at_28_cells_per_second": 277.5,
+      "route": [
+        "lv--aortic_root--18",
+        "aortic_root--arch--19",
+        "arch--thoracic_aorta--20",
+        "thoracic_aorta--celiac--21",
+        "celiac--mesenteric_upper--22",
+        "mesenteric_upper--renal_aorta--23",
+        "renal_aorta--mesenteric_lower--24",
+        "mesenteric_lower--aortic_bifurcation--25",
+        "aortic_bifurcation--iliac_r--83",
+        "iliac_r--popliteal_r--84",
+        "popliteal_r--tibial_anterior_r--85",
+        "tibial_anterior_r--foot_arch_r--86",
+        "foot_arch_r--foot_r.a--89"
+      ]
+    },
+    {
+      "from": "lv",
+      "to": "gut.a",
+      "length_cells": 3991,
+      "passive_transport_seconds_at_28_cells_per_second": 142.5,
+      "route": [
+        "lv--aortic_root--18",
+        "aortic_root--arch--19",
+        "arch--thoracic_aorta--20",
+        "thoracic_aorta--celiac--21",
+        "celiac--mesenteric_upper--22",
+        "mesenteric_upper--gut.a--53"
+      ]
+    }
+  ],
+  "chunks32": [
+    128,
+    256,
+    32768
+  ],
+  "overview_bins16": [
+    256,
+    512,
+    131072
+  ],
+  "visual_review": {
+    "browser": "Codex in-app browser",
+    "full_body": "read screenshot",
+    "heart_pulmonary_filter": "read screenshot; four chambers and lung paths visible",
+    "abdomen_portal_filter": "read screenshot; gut, stomach and spleen join portal route to liver",
+    "vessel_click": "right pulmonary artery updates direction and width detail",
+    "console_errors": 0,
+    "not_verified": [
+      "native game world generation",
+      "runtime transport",
+      "mobile performance",
+      "keyboard activation"
+    ]
+  }
+}
