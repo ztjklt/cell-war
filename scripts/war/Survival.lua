@@ -12,7 +12,7 @@ function V.update(s,dt)
    b.lit=fa.stock.fuel>=use;if b.lit then fa.stock.fuel=fa.stock.fuel-use end
   end
   if b.fire>0 then b.hp=b.hp-dt*(rain and .8 or 4);b.fire=math.max(0,b.fire-dt*(rain and .1 or .008)) end
-  if climate.fireRisk and b.kind~="fire" and b.kind~="wall" and U.rand(s)<dt*climate.fireRisk then b.fire=1;U.message(s,"胞群发生灼伤！选择工细胞灭火",b.faction) end
+  if climate.fireRisk and b.kind~="fire" and b.kind~="wall" and U.rand(s)<dt*climate.fireRisk then b.fire=1;U.message(s,"胞群发生灼伤！选择红细胞灭火",b.faction) end
  end end
  for _,e in pairs(s.entities) do if U.alive(e) and e.category=="unit" and e.faction>0 then
   local fa=s.factions[e.faction];local supply,lit,shelter,heal,cooked=false,false,false,false,false
@@ -42,7 +42,7 @@ function V.update(s,dt)
   if shelter and e.satiety>60 and (not e.orders[1] or e.returning) then e.hp=math.min(e.maxHp,e.hp+dt*.15) end
   if e.sanity<18 then
    e.panic=(e.panic or 0)+dt
-   if e.panic>40 then e.panic=0;local n=C.spawn(s,"unit","shadow",0,e.x+3,e.y+3);n.home={x=e.x,y=e.y};n.life=35;U.message(s,"应激孢子出现：将单位撤回荧光腺附近",e.faction) end
+   if e.panic>40 then e.panic=0;local n=C.spawn(s,"unit","shadow",0,e.x+3,e.y+3);if n then n.home={x=e.x,y=e.y};n.life=35 end;U.message(s,"应激孢子出现：将单位撤回荧光腺附近",e.faction) end
   end
  end end
 end

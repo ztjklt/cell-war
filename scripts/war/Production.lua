@@ -23,8 +23,10 @@ function B.update(s,dt)
        end
       end
       if x then
-       local u=C.spawn(s,"unit",q.unit,b.faction,x,y);C.order(s,u,{kind="move",x=b.rally.x,y=b.rally.y});table.remove(b.queue,1)
-       if b.faction==1 then s.trained=(s.trained or 0)+1 end
+       local u=C.spawn(s,"unit",q.unit,b.faction,x,y)
+       if u then C.order(s,u,{kind="move",x=b.rally.x,y=b.rally.y});table.remove(b.queue,1)
+        if b.faction==1 then s.trained=(s.trained or 0)+1 end
+       end
       end
      end
     else

@@ -22,10 +22,11 @@ function F.hit(s,e,t,damage)
 end
 function F.fight(s,e,t,dt,chase)
  local d=D.units[e.kind] or D.buildings[e.kind];local radius=(t.category=="building" and (D.buildings[t.kind].size or 1)*.5 or 0)
- if U.dist(e,t)<=d.range+radius then
+ local clear=not (s.campaign and s.campaign.terrainVersion==2) or require("war.Path").clear(s,e.x,e.y,t.x,t.y,e.faction,e.vesselLane)
+ if U.dist(e,t)<=d.range+radius and clear then
   if e.cooldown<=0 then F.hit(s,e,t,d.damage);e.cooldown=d.cool end
   return true
- elseif chase and e.category=="unit" then C.go(s,e,t.x,t.y,dt,d.range+radius-.1);return true end return false
+ elseif chase and e.category=="unit" then C.go(s,e,t.x,t.y,dt,clear and d.range+radius-.1 or .5);return true end return false
 end
 function F.updateTower(s,b,dt)
  b.cooldown=math.max(0,b.cooldown-dt);if b.complete and b.kind=="tower" then local t=F.enemy(s,b,10,true);if t and b.cooldown<=0 then F.hit(s,b,t,19);b.cooldown=1.5 end end

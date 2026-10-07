@@ -2,6 +2,12 @@ local UI=require("urhox-libs/UI")
 local D,U,R,C,W=require("war.Data"),require("war.Util"),require("war.Render"),require("war.Commands"),require("war.World")
 local I={}
 local Motion=require("war.Motion")
+local Cells,BodyArt=require("war.Cells"),require("war.BodyArt")
+-- Temporary map inspection; never changes faction vision or saved exploration.
+function I.toggleFog(g)
+ g.fogDisabled=not g.fogDisabled
+ U.message(g.state,g.fogDisabled and "迷雾已关闭 · 全图查看 · F恢复" or "迷雾已恢复")
+end
 function I.ids(g)
  local ids={} for id in pairs(g.selection) do local e=g.state.entities[id];if U.alive(e) and e.faction==1 then ids[#ids+1]=id else g.selection[id]=nil end end table.sort(ids);return ids
 end
@@ -12,21 +18,32 @@ function I.coords(e) local factor=UI.GetScale()/graphics:GetDPR();return e.x*fac
 function I.pick(g,x,y)
  local best,dd=false,math.huge
  for _,e in pairs(g.state.entities) do if U.alive(e) and (e.faction==1 or W.visible(g.state,1,e)) then
-  local wx,wy=Motion.position(g,e);local px,py=R.project(g,wx,wy);local size=e.category=="building" and 54*g.zoom or 25*g.zoom
-  local d=((px-x)^2+(py-20*g.zoom-y)^2)^.5
+  local wx,wy=Motion.position(g,e);local px,py=R.project(g,wx,wy);local size=(e.category=="building" and BodyArt.radius(e.kind) or Cells.radius(e.kind)+5)*g.zoom
+  if g.zoom<.14 then size=6 end
+  local d=((px-x)^2+(py-y)^2)^.5
   if d<size and d<dd then best,dd=e,d end
  end end return best
 end
 function I.issue(g,kind,x,y,target)
+ if g.state.campaign and x and y and not require("war.Campaign").allowed(g.state,x,y) then U.message(g.state,"这片组织尚未开放");return false end
  local ids=I.ids(g)
- if #ids==0 then U.message(g.state,"先选择单位再下达命令");return end
+ if #ids==0 then U.message(g.state,"先选择单位再下达命令");return false end
  C.submit(g.state,{kind=kind,faction=1,ids=ids,x=x,y=y,target=target,append=g.append or input:GetKeyDown(KEY_LSHIFT)})
- g.marker={x=x or g.camera.x,y=y or g.camera.y};if g.audio then g.audio("command") end
+ if x and y then g.marker={x=x,y=y,born=g.realTime,kind=kind} end
+ if g.audio then g.audio("command") end
  if g.paused then U.message(g.state,"命令已排队，恢复时间后执行") end
+ return true
 end
 function I.tap(g,x,y,secondary)
  local wx,wy=R.unproject(g,x,y);g.pointer={wx=wx,wy=wy};local s=g.state
- if g.placement then I.issue(g,"build",wx,wy);local cmd=s.commands[#s.commands];if cmd and cmd.kind=="build" then cmd.building=g.placement end;g.placement=false;g.tab=false;return end
+ if g.placement then
+  local bx=math.floor(wx)+(D.buildings[g.placement].size%2==0 and 0 or .5)
+  local by=math.floor(wy)+(D.buildings[g.placement].size%2==0 and 0 or .5)
+  local valid,why=W.canBuild(s,g.placement,bx,by,1)
+  if not valid then U.message(s,why or "此处无法生长 · 选择其他组织");return end
+  if I.issue(g,"build",wx,wy) then local cmd=s.commands[#s.commands];cmd.building=g.placement;g.placement=false;g.tab=false end
+  return
+ end
  if g.mode=="rally" then local id=I.ids(g)[1];C.submit(s,{kind="rally",faction=1,target=id,x=wx,y=wy});g.mode=false;return end
  local picked=I.pick(g,x,y)
  local workerSelected=false
@@ -42,7 +59,7 @@ function I.tap(g,x,y,secondary)
   if picked.faction~=1 then kind="attack";target=picked.id
   elseif picked.category=="building" then kind=picked.fire>0 and "extinguish" or (not picked.complete and "build" or (picked.kind=="farm" and "farm" or "repair"));target=picked.id end
  else
-  local key=U.key(U.clamp(wx,1,D.MAP),U.clamp(wy,1,D.MAP));local r=s.resources[key]
+  local key=U.key(U.clamp(wx,1,D.width(s)),U.clamp(wy,1,D.height(s)));local r=s.resources[key]
   if not r then
    for dy=-1,1 do for dx=-1,1 do local k=U.key(math.floor(wx)+dx,math.floor(wy)+dy);local v=s.resources[k];if not r and v and v.amount>0 and s.factions[1].seen[k] then r=v;key=k end end end
   end
@@ -87,7 +104,8 @@ function I.group(g,index,save)
  end
 end
 function I.key(g,key)
- if key==KEY_ESCAPE then if g.modal then g.closeModal() elseif g.tab then g.tab=false;g.placement=false;g.refreshSidebar() else g.placement=false;g.mode=false;g.selection={} end;return end
+ if key==KEY_ESCAPE then if g.modal then g.closeModal() elseif g.tab then g.tab=false;g.placement=false;g.refreshSidebar() elseif (g.brainChatOpen or g.brainBubble) and g.closeBrain then g.closeBrain() else g.placement=false;g.mode=false;g.selection={} end;return end
+ if g.started and not g.modal and key==KEY_F then I.toggleFog(g);return end
  if not g.started or g.modal then return end
  if key==KEY_SPACE then g.paused=not g.paused
  elseif key==KEY_1 then I.group(g,1,input:GetKeyDown(KEY_LCTRL))
@@ -95,7 +113,7 @@ function I.key(g,key)
  elseif key==KEY_3 then I.group(g,3,input:GetKeyDown(KEY_LCTRL))
  elseif key==KEY_A then g.mode="attackmove"
  elseif key==KEY_S then I.issue(g,"stop")
- elseif key==KEY_B then g.tab=g.tab=="build" and false or "build";g.refreshSidebar()
+ elseif key==KEY_B and not g.state.campaign then g.tab=g.tab=="build" and false or "build";g.refreshSidebar()
  elseif key==KEY_H then R.home(g)
  elseif key==KEY_M then g.openMap()
  elseif key==KEY_R then I.issue(g,"retreat")

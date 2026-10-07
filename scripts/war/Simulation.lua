@@ -1,6 +1,8 @@
 local D,U,W,C,P,E,B,V,J,A=require("war.Data"),require("war.Util"),require("war.World"),require("war.Commands"),require("war.Path"),require("war.Economy"),require("war.Production"),require("war.Survival"),require("war.Workers"),require("war.AI")
 local S={}
+local Collision,Motion=require("war.CellCollision"),require("war.Motion")
 local function spawnWildChunks(s)
+ if s.campaign then s.newChunks={};return end
  local added=false
  for _,id in ipairs(s.newChunks) do if not s.spawnedChunks[id] then
   s.spawnedChunks[id]=true;local c=s.chunks[id]
@@ -8,12 +10,12 @@ local function spawnWildChunks(s)
    for attempt=1,6 do
     local x=c.x1+4+math.floor(U.hash(c.cx+attempt,c.cy,s.seed+101)*(D.CHUNK-9))
     local y=c.y1+4+math.floor(U.hash(c.cx,c.cy+attempt,s.seed+102)*(D.CHUNK-9))
-    local clear=true
-    for _,b in ipairs(D.factions) do if U.dist(b,{x=x,y=y})<28 then clear=false end end
+    local clear=not (W.hasVessels(s) and W.terrain(s,x,y)>=13)
+    for _,b in ipairs(W.starts(s)) do if U.dist(b,{x=x,y=y})<28 then clear=false end end
     for yy=y-1,y+3 do for xx=x-1,x+3 do if not W.walkable(s,xx,yy,0) then clear=false end end end
     if clear then
      local nest=C.spawn(s,"building","nest",0,x+.5,y+.5);nest.spawnTimer=70
-     for j=1,2 do local wolf=C.spawn(s,"unit","wolf",0,x+2+j*.5,y+2.5);wolf.home={x=x,y=y} end
+     for j=1,2 do local wolf=C.spawn(s,"unit","wolf",0,x+2+j*.5,y+2.5);if wolf then wolf.home={x=x,y=y} end end
      added=true;break
     end
    end
@@ -21,8 +23,18 @@ local function spawnWildChunks(s)
  end end
  s.newChunks={};if added then W.rebuild(s) end
 end
-function S.new(seed)
- P.reset();local s=W.generate(seed)
+function S.new(seed,mode,anatomyVersion)
+ P.reset();local s=W.generate(seed,nil,nil,mode or "campaign",anatomyVersion)
+ if s.campaign then
+  local home=require("war.CampaignData").forState(s).home
+  for i=1,6 do C.spawn(s,"unit","spear",1,home.x-8+(i%3)*2,home.y-4+math.floor(i/3)*2) end
+  for i=1,2 do C.spawn(s,"unit","scout",1,home.x-2,home.y+2+i*2) end
+  W.rebuild(s);W.fog(s)
+  -- The whole battlefield is charted; enemy visibility still uses live vision.
+  local N=require("war.CampaignData").forState(s);for y=N.bounds.y,N.bounds.y+N.bounds.h-1 do for x=N.bounds.x,N.bounds.x+N.bounds.w-1 do if W.land(s,x,y) then local k=U.key(x,y);s.factions[1].seen[k]=true;W.mapMark(s,s.factions[1],x,y) end end end
+  s.factions[1].seenRevision=(s.factions[1].seenRevision or 0)+1
+  require("war.Campaign").checkpoint(s);return s
+ end
  for f,v in ipairs(D.factions) do
   C.spawn(s,"building","core",f,v.x+.5,v.y+.5)
   C.spawn(s,"building","fire",f,v.x-4.5,v.y+.5)
@@ -34,7 +46,8 @@ end
 function S.step(s,dt)
  if s.outcome=="defeat" then return end
  C.process(s);spawnWildChunks(s);s.time=s.time+dt;s.tick=s.tick+1;s.messageTime=math.max(0,s.messageTime-dt)
- W.rebuild(s);P.update(s,500)
+ if s.campaign then require("war.Campaign").beforeStep(s,dt) end
+ W.rebuild(s);P.update(s,500,.003)
  local list={} for id,e in pairs(s.entities) do if U.alive(e) then list[#list+1]=id end end
  table.sort(list)
  for _,id in ipairs(list) do local e=s.entities[id]
@@ -45,13 +58,14 @@ function S.step(s,dt)
    local _,fraction=V.clock(s)
    if e.spawnTimer<=0 and fraction>=.75 then
     e.spawnTimer=100;local count=0 for _,u in ipairs(W.neighbors(s,e.x,e.y,18)) do if u.category=="unit" and u.faction==0 then count=count+1 end end
-    if count<4 then local n=C.spawn(s,"unit","wolf",0,e.x+3,e.y+3);n.home={x=e.x,y=e.y} end
+    if count<4 then local n=C.spawn(s,"unit","wolf",0,e.x+3,e.y+3);if n then n.home={x=e.x,y=e.y} end end
    end
   end
  end
  B.update(s,dt)
  if s.tick%10==0 then
-  V.update(s,1);E.spoil(s);W.fog(s)
+  if not s.campaign then V.update(s,1);E.spoil(s) end;W.fog(s)
+  if not s.campaign then
   for f,fa in ipairs(s.factions) do
    local units,production,workers,cores=0,0,0,0
    for _,e in pairs(s.entities) do if U.alive(e) and e.faction==f then
@@ -72,8 +86,12 @@ function S.step(s,dt)
   if s.tutorial==3 and E.count(s,1,"fire")>1 then s.tutorial=4 end
   if s.tutorial==4 and (s.farmed or 0)>0 then s.tutorial=5 end
   if s.tutorial==5 and (s.trained or 0)>0 then s.tutorial=6 end
+  end
  end
- A.update(s,dt)
+ Collision.resolve(s)
+ for _,e in ipairs(Collision.units(s)) do Motion.record(e) end
+ W.rebuild(s)
+ if s.campaign then require("war.Campaign").afterStep(s,dt) else A.update(s,dt) end
  for i=#s.effects,1,-1 do s.effects[i].ttl=s.effects[i].ttl-dt;if s.effects[i].ttl<=0 then table.remove(s.effects,i) end end
  -- Dead entities are pruned after effects, avoiding unbounded state growth.
  local ruins={}

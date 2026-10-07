@@ -13,7 +13,8 @@ function J.update(s,e,dt)
  local workDt=dt*((e.satiety<20 or e.sanity<25 or e.temp<5 or e.temp>35) and .55 or 1)
  if e.life then e.life=e.life-dt;if e.life<=0 then e.hp=0;return end end
  local o=e.orders[1]
- if e.faction>0 and (e.returning or e.satiety<30 or e.hp<e.maxHp*.22) then
+ if s.campaign and e.kind=="virus" then require("war.Campaign").virus(s,e,dt);return end
+ if not s.campaign and e.faction>0 and (e.returning or e.satiety<30 or e.hp<e.maxHp*.22) then
   local home=U.nearest(s,e.x,e.y,function(b) return b.faction==e.faction and b.category=="building" and b.complete and D.buildings[b.kind].supply end)
   if home and U.dist(e,home)>7 then
    e.returning=true;C.go(s,e,home.x,home.y,dt,5);return

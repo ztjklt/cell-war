@@ -1,0 +1,92 @@
+{
+  "logs": {
+    "exit": 0,
+    "session": "eb20419a-f8aa-4987-a86f-d33620c79f90",
+    "reload": 15,
+    "processAlive": true,
+    "ready": false,
+    "screenshotSupported": false,
+    "errors": [
+      "[2026-10-07 02_43_38_570][0] ERROR: Could not find resource Cube/Day/DaySpecularHDR_QualityLow.dds"
+    ],
+    "logs": [
+      {
+        "cursor": 1,
+        "text": "[2026-10-07 02_43_38_570][0] ERROR: Could not find resource Cube/Day/DaySpecularHDR_QualityLow.dds"
+      },
+      {
+        "cursor": 2,
+        "text": "2026-10-07 02:43:38.810 UrhoXRuntime[55406:14380081] TSM AdjustCapsLockLEDForKeyTransitionHandling - _ISSetPhysicalKeyboardCapsLockLED Inhibit"
+      },
+      {
+        "cursor": 3,
+        "text": "2026-10-07 02:43:38.813 UrhoXRuntime[55406:14380081] error messaging the mach port for IMKCFRunLoopWakeUpReliable"
+      }
+    ]
+  },
+  "check": {
+    "exit": 1,
+    "session": "eb20419a-f8aa-4987-a86f-d33620c79f90",
+    "reload": 15,
+    "processAlive": true,
+    "ready": false,
+    "result": "FAIL",
+    "errors": [
+      "[2026-10-07 02_43_38_570][0] ERROR: Could not find resource Cube/Day/DaySpecularHDR_QualityLow.dds"
+    ],
+    "reason": "Runtime reported a failure."
+  },
+  "rawLua": {
+    "runtimePid": 55406,
+    "path": "/Users/jitian/.taptap-maker/runtime/runtime-a3589e34-437d-4631-9dbc-17b5df962b05/logs/lua/lua-2026-10-07 02_43_38_928.log",
+    "ready": true,
+    "records": [
+      {
+        "t": "2026-10-07 02_43_39_469",
+        "f": 52,
+        "l": "INFO",
+        "m": "[i18n] loadConfig: uuid='Q4M3GntfTmiNZCdTeiz5Kg' engine='Q4M3GntfTmiNZCdTeiz5Kg' match=true"
+      },
+      {
+        "t": "2026-10-07 02_43_39_469",
+        "f": 52,
+        "l": "INFO",
+        "m": "[i18n] loadConfig: engine fallback, support_langs='zh_CN'"
+      },
+      {
+        "t": "2026-10-07 02_43_39_469",
+        "f": 52,
+        "l": "INFO",
+        "m": "[i18n] PreloadI18nStep: resolved='zh_CN'"
+      },
+      {
+        "t": "2026-10-07 02_43_42_143",
+        "f": 83,
+        "l": "RAW",
+        "m": "[2026-10-07 02_43_42_143][83][Script] [Cells] GPT red/white/platelet textures loaded | 3/3\n"
+      },
+      {
+        "t": "2026-10-07 02_43_42_143",
+        "f": 83,
+        "l": "RAW",
+        "m": "[2026-10-07 02_43_42_143][83][Script] [Render] graphics ready\n"
+      },
+      {
+        "t": "2026-10-07 02_43_42_336",
+        "f": 83,
+        "l": "RAW",
+        "m": "[2026-10-07 02_43_42_336][83][Script] [Cells] GPT red/white/platelet textures loaded | 3/3\n"
+      },
+      {
+        "t": "2026-10-07 02_43_42_341",
+        "f": 83,
+        "l": "RAW",
+        "m": "[2026-10-07 02_43_42_341][83][Script] [细胞战争] READY | view=topdown2d | world=body | map=2048x4096 | vessels=12 | walls=sealed | mode=campaign | event=nasal | nasalTerrain=2 | zones=3 | controllable=cells | fixedStep=0.1\n"
+      }
+    ]
+  },
+  "visual": {
+    "nativeScreenshotVerified": false,
+    "offlineImage": "docs/previews/nasal/body-circulation-restored.png"
+  }
+}

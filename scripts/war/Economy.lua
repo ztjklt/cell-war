@@ -8,7 +8,9 @@ function E.population(s,f,queues)
   if e.category=="unit" then n=n+D.units[e.kind].pop
   elseif e.complete then cap=cap+(D.buildings[e.kind].pop or 0) end
   if queues and e.queue then for _,q in ipairs(e.queue) do if q.unit then n=n+D.units[q.unit].pop end end end
- end end return n,math.min(40,cap)
+ end end
+ if s.campaign and f==1 then if queues then for _,q in ipairs(s.campaign.reinforcements.queue) do n=n+q.remaining end end;cap=D.MAX_POP end
+ return n,math.min(40,cap)
 end
 function E.stock(s,f,k) if k=="food" then return E.food(s,f) end return s.factions[f].stock[k] or 0 end
 function E.afford(s,f,c) for k,n in pairs(c) do if E.stock(s,f,k)<n then return false,"缺少"..D.names[k] end end return true end

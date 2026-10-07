@@ -101,7 +101,7 @@ function A.think(s,f)
  end
  for _,u in ipairs(scouts) do if not u.orders[1] or u.pathFailed then
   u.pathFailed=false;local x,y=base.x,base.y
-  for _=1,20 do x,y=5+U.rand(s)*(D.MAP-10),5+U.rand(s)*(D.MAP-10);if W.land(s,math.floor(x),math.floor(y)) and not fa.seen[U.key(x,y)] then break end end
+  for _=1,20 do x,y=5+U.rand(s)*(D.width(s)-10),5+U.rand(s)*(D.height(s)-10);if W.land(s,math.floor(x),math.floor(y)) and not fa.seen[U.key(x,y)] then break end end
   C.order(s,u,{kind="move",x=x,y=y})
  end end
  local enemy=false;local distance=math.huge

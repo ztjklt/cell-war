@@ -1,0 +1,42 @@
+{
+  "backend": "Lua 5.4 + no-op NanoVG; CPU work and draw command counts, not native FPS",
+  "viewport": [
+    1920,
+    1080
+  ],
+  "seed": 73,
+  "camera": [
+    1179,
+    1753
+  ],
+  "worldPreparationSeconds": 0.267,
+  "comparison": [
+    {
+      "zoom": 1,
+      "beforeWarmMs": 35.297000000000025,
+      "afterWarmMs": 2.5569999999999204,
+      "beforeFill": 5311,
+      "afterFill": 977,
+      "beforeTerrainQueries": 13420,
+      "afterTerrainQueries": 64
+    },
+    {
+      "zoom": 0.5,
+      "beforeWarmMs": 2.5330000000000075,
+      "afterWarmMs": 1.5129999999999866,
+      "beforeFill": 139,
+      "afterFill": 189,
+      "beforeTerrainQueries": 96,
+      "afterTerrainQueries": 64
+    },
+    {
+      "zoom": 0.24,
+      "beforeWarmMs": 2.5470000000000215,
+      "afterWarmMs": 1.5729999999999356,
+      "beforeFill": 140,
+      "afterFill": 141,
+      "beforeTerrainQueries": 96,
+      "afterTerrainQueries": 64
+    }
+  ]
+}
