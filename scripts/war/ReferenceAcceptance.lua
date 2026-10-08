@@ -131,8 +131,8 @@ function Q.run()
   for _,size in ipairs({{1440,900},{844,390},{430,932},{360,780}}) do Render.w,Render.h=size[1],size[2]
    local g={state=s,camera={x=0,y=0},zoom=1};Render.nasalOverview(g)
    local x,y=Render.project(g,G.bounds.x,G.bounds.y);local xx,yy=Render.project(g,G.bounds.x+G.bounds.w,G.bounds.y+G.bounds.h)
-   local layout=require('war.UIModel').layout(Render.w,Render.h)
-   assert(x>=10 and xx<=Render.w-10 and y>=90 and yy<=Render.h-layout.dock-12)
+   local stage=require('war.UIModel').battle(Render.w,Render.h,1,true).stage
+   assert(x>=stage.x and xx<=stage.x+stage.w and y>=stage.y and yy<=stage.y+stage.h)
   end
  end)
  test('损坏版本与气管事件混用被拒绝，顾问无鼻腔残留提示',function()

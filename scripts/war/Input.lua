@@ -70,6 +70,7 @@ function I.tap(g,x,y,secondary)
  g.mode=false
 end
 function I.down(g,e)
+ g.pointerKind=e.pointerType or g.pointerKind
  if not g.started or g.modal then return end
  local x,y=I.coords(e)
  if not e.isPrimary then g.drag=false;return end
@@ -77,6 +78,7 @@ function I.down(g,e)
  g.pointer.wx,g.pointer.wy=R.unproject(g,x,y)
 end
 function I.move(g,e)
+ g.pointerKind=e.pointerType or g.pointerKind
  local x,y=I.coords(e);g.pointer.wx,g.pointer.wy=R.unproject(g,x,y)
  local a=g.drag;if not a or a.pointer~=e.pointerId then return end
  if math.abs(x-a.x)+math.abs(y-a.y)>7 then a.moved=true end
@@ -105,10 +107,11 @@ function I.group(g,index,save)
  end
 end
 function I.key(g,key)
- if key==KEY_ESCAPE then if g.modal then g.closeModal() elseif g.tab then g.tab=false;g.placement=false;g.refreshSidebar() elseif (g.brainChatOpen or g.brainBubble) and g.closeBrain then g.closeBrain() else g.placement=false;g.mode=false;g.selection={} end;return end
+ if key==KEY_ESCAPE then if g.modal then g.closeModal() elseif g.closeBattlePopups and g.closeBattlePopups() then elseif g.tab then g.tab=false;g.placement=false;g.refreshSidebar() elseif (g.brainChatOpen or g.brainBubble) and g.closeBrain then g.closeBrain() else g.placement=false;g.mode=false;g.selection={} end;return end
  if g.started and not g.modal and key==KEY_F then I.toggleFog(g);return end
  if not g.started or g.modal then return end
  if key==KEY_SPACE then g.paused=not g.paused
+ elseif key==KEY_F3 or key==KEY_BACKQUOTE then g.debugFps=not g.debugFps
  elseif key==KEY_1 then I.group(g,1,input:GetKeyDown(KEY_LCTRL))
  elseif key==KEY_2 then I.group(g,2,input:GetKeyDown(KEY_LCTRL))
  elseif key==KEY_3 then I.group(g,3,input:GetKeyDown(KEY_LCTRL))

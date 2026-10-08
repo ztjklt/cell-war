@@ -51,4 +51,20 @@ function T.active(button,active)
  button:SetStyle{backgroundColor=active and {213,231,253,255} or {248,251,255,230},
   borderColor=active and {115,155,209,190} or T.border,textColor=active and {43,93,155,255} or T.paper}
 end
+-- Battle HUD only: same pearl palette with firmer edges, so panels hold against the
+-- saturated anatomy map. Semantic colors are shared by the zone gauge and pads.
+T.hud={border={142,163,201,175},shadow={{x=0,y=6,blur=18,color={38,56,96,48}}},
+ friendly=T.teal,hostile=T.danger,contested=T.gold,neutral=T.quiet,
+ accentFrom={79,123,178,255},accentTo={49,83,135,255},onAccent={250,253,255,255}}
+function T.hudPanel(props)
+ local p={backgroundColor={250,252,255,244},borderColor=T.hud.border,borderRadius=14,boxShadow=T.hud.shadow}
+ for k,v in pairs(props or {}) do p[k]=v end
+ return T.panel(p)
+end
+-- "armed": waiting for a map target or switched on; solid accent with white text.
+function T.tone(button,armed)
+ button:SetStyle{backgroundColor=armed and {57,94,145,255} or {248,251,255,236},
+  backgroundGradient=armed and {direction="to-bottom",from=T.hud.accentFrom,to=T.hud.accentTo} or false,
+  borderColor=armed and {126,174,227,200} or T.hud.border,textColor=armed and T.hud.onAccent or T.paper}
+end
 return T

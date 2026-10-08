@@ -144,13 +144,22 @@ function A.attach(g,H,_top,play)
   strips={},history={},full="",elapsed=0,lastShown=0,active=false,voiceActive=false,autoSeen=false,duration=0}
  play:AddChild(bubble);g.closeBrain=function() A.close(g,H) end
 end
-function A.layout(H,l,w,h)
- local size=l.short and 88 or l.narrow and (w<400 and 104 or 116) or 176
- H.brainSize=size;H.brainWidth=math.min(l.short and 304 or 356,w-24)
- H.brainChatTop=l.narrow and math.max(size+18,l.toolbarY+86) or size+18
- H.brainAvailable=math.max(94,h-l.dock-24-H.brainChatTop)
- H.refs.brainAvatar:SetStyle{width=size,height=size,left=12,top=8};H.refs.brainCharacter:SetStyle{width=size,height=size}
- H.refs.brainBubble:SetStyle{top=H.brainChatTop,width=H.brainWidth,height=math.min(160,H.brainAvailable)}
+---@param battle table|nil UIModel.battle layout in campaign (advisor rect, chatWidth, chatBottom); nil in the sandbox
+function A.layout(H,l,w,h,battle)
+ local size,left,top
+ if battle then
+  size,left,top=battle.advisor.w,battle.advisor.x,battle.advisor.y
+  H.brainWidth=math.min(battle.chatWidth,w-24);H.brainChatTop=top+size+battle.gap
+  H.brainAvailable=math.max(94,battle.chatBottom-H.brainChatTop)
+ else
+  size,left,top=l.short and 88 or l.narrow and (w<400 and 104 or 116) or 176,12,8
+  H.brainWidth=math.min(l.short and 304 or 356,w-24)
+  H.brainChatTop=l.narrow and math.max(size+18,l.toolbarY+86) or size+18
+  H.brainAvailable=math.max(94,h-l.dock-24-H.brainChatTop)
+ end
+ H.brainSize=size;H.brainBattle=battle~=nil
+ H.refs.brainAvatar:SetStyle{width=size,height=size,left=left,top=top};H.refs.brainCharacter:SetStyle{width=size,height=size}
+ H.refs.brainBubble:SetStyle{left=left,top=H.brainChatTop,width=H.brainWidth,height=math.min(160,H.brainAvailable)}
  local d=H.refs.brainDialogue
  if d.active then local elapsed=d.elapsed;build(H);d.elapsed=elapsed end
 end
@@ -158,7 +167,7 @@ function A.fit(g,H)
  local d=H.refs.brainDialogue
  local visible=g.started and not g.modal and not g.tab and d.active and (g.brainChatOpen or g.brainBubble~=false and g.brainBubble~=nil)
  H.refs.brainBubble:SetVisible(visible);H.refs.brainControls:SetVisible(g.brainChatOpen==true)
- if H.metrics.narrow then H.refs.goalBox:SetVisible(not H.metrics.short and not g.tab and not visible) end
+ if H.metrics.narrow and not H.brainBattle then H.refs.goalBox:SetVisible(not H.metrics.short and not g.tab and not visible) end
 end
 function A.update(g,H,dt)
  local d=H.refs.brainDialogue
