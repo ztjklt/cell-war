@@ -2,7 +2,7 @@
 
 TapTap Maker 原创单人细胞 RTS。新游戏从鼻腔开始：指挥免疫细胞守住后鼻屏障，抵御三波病毒并夺回三块组织区域。沿用同一张 2048×4096 人体地图，后续路线为鼻腔 → 咽喉 → 双肺 → 肠道 → 血流扩散；本轮仅鼻腔可玩。旧存档保留长期生存沙盒规则。横屏手机优先，兼容电脑键鼠。
 
-项目 ID：`99c42b81-6612-4d02-a15a-1efa4bf0eebf`。入口：`scripts/main.lua`。运行于 Maker Lua 5.4、NanoVG 与原生 `urhox-libs/UI`。未执行远端提交或构建。
+入口：`scripts/main.lua`。运行于 Maker Lua 5.4、NanoVG 与原生 `urhox-libs/UI`。
 
 ## 试玩
 

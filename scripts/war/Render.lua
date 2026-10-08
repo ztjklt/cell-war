@@ -3,6 +3,7 @@ local D,U,V,W=require("war.Data"),require("war.Util"),require("war.Survival"),re
 local Cells,Art=require("war.Cells"),require("war.TerrainArt")
 local BodyArt=require("war.BodyArt")
 local Motion,Bloodstream=require("war.Motion"),require("war.Bloodstream")
+local ChangeLevel=require("war.ChangeLevel")
 local View=require("war.View")
 local VesselArt=require("war.VesselArt")
 local Smooth=require("war.SmoothTerrain")
@@ -30,6 +31,106 @@ function R.unproject(g,x,y) return View.unproject(g,R.w,R.h,x,y) end
 function R.pan(g,dx,dy) View.pan(g,dx,dy) end
 function R.zoom(g,factor,x,y)
  local wx,wy=R.unproject(g,x or R.w/2,y or R.h/2);g.zoom=U.clamp(g.zoom*factor,View.minZoom(g.state,R.w,R.h),2.8);local ax,ay=R.unproject(g,x or R.w/2,y or R.h/2);g.camera.x=U.clamp(g.camera.x+wx-ax,3,D.width(g.state)-3);g.camera.y=U.clamp(g.camera.y+wy-ay,3,D.height(g.state)-3)
+end
+local function destination(g,e)
+ local path=e.path and e.path[e.pathIndex or 1]
+ if e.pathGoal and (e.pathPending or path or e.returning or e.delivering) then return e.pathGoal.x,e.pathGoal.y end
+ local o=e.orders and e.orders[1];if not o then return end
+ if o.kind=="attack" or o.kind=="build" or o.kind=="repair" or o.kind=="farm" or o.kind=="extinguish" then
+  local target=g.state.entities[o.target];if U.alive(target) then return target.x,target.y end
+ elseif o.kind=="gather" then
+  local target=g.state.resources[o.target];if target and target.amount>0 then return target.x,target.y end
+ end
+ return o.x,o.y
+end
+local function combatSpec(e)
+ if e.category=="unit" then return D.units[e.kind] end
+ if e.category=="building" then return D.buildings[e.kind] end
+end
+local function strokeCircle(x,y,r,color,width,alpha)
+ nvgBeginPath(R.vg);nvgCircle(R.vg,x,y,r);nvgStrokeWidth(R.vg,width);nvgStrokeColor(R.vg,nvgRGBA(color[1],color[2],color[3],alpha));nvgStroke(R.vg)
+end
+local function selectionRanges(g)
+ local selected={}
+ for id in pairs(g.selection) do
+  local e=g.state.entities[id];local d=U.alive(e) and combatSpec(e)
+ if d and d.damage and d.range then
+  local wx,wy=Motion.position(g,e);local x,y=R.project(g,wx,wy)
+   local radius=d.range*View.CELL*g.zoom
+   strokeCircle(x,y,radius,{74,230,175},1.6,185)
+   selected[#selected+1]={e=e,x=wx,y=wy}
+   if e.kind=="scout" and d.vision then
+    local visionRadius=d.vision*View.CELL*g.zoom
+    strokeCircle(x,y,visionRadius,{246,205,103},1.35,170)
+    R.text(x,y-visionRadius-10*g.zoom,"瞭望 "..math.floor(d.vision).." 格",math.max(8,9*g.zoom),{246,220,142})
+   end
+  end
+ end
+ local inspected=g.inspectTarget
+ if U.alive(inspected) and inspected.faction~=1 then
+  local x,y=R.project(g,inspected.x,inspected.y);local d=combatSpec(inspected)
+  if d and d.range then strokeCircle(x,y,d.range*View.CELL*g.zoom,{242,103,105},2,220) end
+ end
+ if #selected==0 then return end
+ -- Only show red threat circles for visible enemies whose weapon can reach a selected object.
+ local redrawn={}
+ for _,enemy in pairs(g.state.entities) do
+  local d=U.alive(enemy) and enemy.faction~=1 and combatSpec(enemy)
+  local visible=d and (g.fogDisabled and g.state.anatomyVersion~=3 or W.visible(g.state,1,enemy))
+  if visible and d.damage and d.range and not redrawn[enemy.id] then
+   for _,target in ipairs(selected) do
+    if U.dist(enemy,target.e)<=d.range+1.5 then
+     local x,y=R.project(g,enemy.x,enemy.y)
+     strokeCircle(x,y,d.range*View.CELL*g.zoom,{242,103,105},1.35,180);redrawn[enemy.id]=true;break
+    end
+   end
+  end
+ end
+end
+local function selectionDestinations(g)
+ for id in pairs(g.selection) do
+  local e=g.state.entities[id]
+  if U.alive(e) and e.category=="unit" then
+   local tx,ty=destination(g,e)
+   if tx and ty then
+    local wx,wy=Motion.position(g,e);local x,y=R.project(g,wx,wy);local dx,dy=R.project(g,tx,ty)
+    R.line(x,y,dx,dy,{12,45,28},4,155)
+    R.line(x,y,dx,dy,{82,232,142},1.7,235)
+   end
+  end
+ end
+end
+local function orderIcons(g)
+ local seen={}
+ for _,e in pairs(g.state.entities) do
+  if U.alive(e) and e.faction==1 and e.category=="unit" and e.orders and e.orders[1] then
+   local o=e.orders[1];local x,y=o.x,o.y
+   if o.target then local target=g.state.entities[o.target];if U.alive(target) then x,y=target.x,target.y end end
+   if x and y and (o.kind=="guard" or o.kind=="attack" or o.kind=="attackmove") then
+    local key=string.format("%s:%.1f:%.1f",o.kind,x,y)
+    if not seen[key] then
+     seen[key]=true;local px,py=R.project(g,x,y);local color=o.kind=="guard" and {255,205,104} or {255,118,128};local iconR=math.max(7,10*g.zoom)
+     nvgBeginPath(R.vg);nvgCircle(R.vg,px,py,iconR);nvgStrokeWidth(R.vg,2);nvgStrokeColor(R.vg,nvgRGBA(color[1],color[2],color[3],220));nvgStroke(R.vg)
+     R.text(px,py,o.kind=="guard" and "守" or "攻",math.max(10,12*g.zoom),color)
+    end
+   end
+  end
+ end
+end
+local function changelevelRegions(g)
+ if not g.state.campaign then return end
+ local Registry=require("war.MapRegistry");local id=Registry.currentId(g.state);local data=Registry.definition(id)
+ for _,trigger in ipairs(data.exits or {}) do
+  local target=Registry.stage(trigger.target)
+  local x1,y1=R.project(g,trigger.x,trigger.y);local x2,y2=R.project(g,trigger.x+trigger.w,trigger.y+trigger.h)
+  local left,top=math.min(x1,x2),math.min(y1,y2);local width,height=math.abs(x2-x1),math.abs(y2-y1);local unlocked=not trigger.requiresComplete or g.state.campaign.event.status=="completed";local available=target and target.implemented and unlocked
+  R.rect(left,top,width,height,available and {72,193,143} or {218,171,88},available and 48 or 34)
+  R.line(left,top,left+width,top,available and {108,242,181} or {240,195,111},2,220);R.line(left+width,top,left+width,top+height,available and {108,242,181} or {240,195,111},2,220);R.line(left+width,top+height,left,top+height,available and {108,242,181} or {240,195,111},2,220);R.line(left,top+height,left,top,available and {108,242,181} or {240,195,111},2,220)
+  if width>24 and height>12 then
+   local text=not target or not target.implemented and "下一关尚未开放" or unlocked and "进入下一关" or "完成当前关卡后开放"
+   R.text(left+width*.5,top+height*.5,text,math.max(9,10*g.zoom),available and {206,255,224} or {255,230,174})
+  end
+ end
 end
 local function building(g,e,x,y)
  BodyArt.structure(R,g,e,x,y)
@@ -99,6 +200,9 @@ function R.draw(g)
   VesselArt.draw(R,g,s,xmin,xmax,ymin,ymax)
  end
  require("war.NasalArt").draw(R,g)
+ selectionRanges(g)
+ selectionDestinations(g)
+ orderIcons(g)
  for _,e in pairs(s.entities) do if U.alive(e) and (reveal or e.faction==1 or fa.visible[U.key(e.x,e.y)]) then
   local wx,wy=Motion.position(g,e);local x,y=R.project(g,wx,wy);if x>-150 and y>-150 and x<R.w+150 and y<R.h+150 then sorted[#sorted+1]={entity=e,x=x,y=y,layer=e.category=="building" and 2 or 3,order=e.id} end
  end end
@@ -133,8 +237,10 @@ function R.draw(g)
   nvgBeginPath(R.vg);nvgCircle(R.vg,x,y,radius);nvgStrokeWidth(R.vg,2);nvgStrokeColor(R.vg,nvgRGBA(c[1],c[2],c[3],alpha));nvgStroke(R.vg)
   R.line(x-4,y,x+4,y,c,1.5,alpha);R.line(x,y-4,x,y+4,c,1.5,alpha)
  end
+ changelevelRegions(g)
  -- A faint cool edge wash keeps the map airy without obscuring the tissue.
  nvgBeginPath(R.vg);nvgRect(R.vg,0,0,R.w,R.h);nvgFillPaint(R.vg,nvgRadialGradient(R.vg,R.w*.5,R.h*.45,R.h*.25,R.w*.7,nvgRGBA(231,235,255,0),nvgRGBA(161,180,220,g.state.anatomyVersion==3 and 0 or 30)));nvgFill(R.vg)
+ ChangeLevel.draw(R,g)
  nvgEndFrame(R.vg)
 end
 -- The battle HUD stores its free battlefield rect in world pixels (g.stage);
@@ -163,7 +269,7 @@ function R.focus(g,wx,wy)
 end
 function R.home(g)
  if g.state.campaign then
-  if g.state.campaign.event.id=="trachea" then
+  if require("war.MapRegistry").isTrachea(g.state) then
    -- Fit the airway width between the thumb pads; the barrier sits low in the free column.
    local home=require("war.TracheaTerrain").home;local stage=R.stage(g,true)
    g.zoom=math.min(.4,math.max(.14,(stage.w-16)/(36*32)))
@@ -199,7 +305,7 @@ function R.minimap(vg,g,l,overview)
   R.rect(px+(bin.x-1)*scale,py+(bin.y-1)*scale,D.MAP_BIN*scale+.4,D.MAP_BIN*scale+.4,c,s.factions[1].visible[bin.sample] and 220 or 125)
  end end
  VesselArt.atlas(R,s,px,py,scale,overview or g.fogDisabled)
- if s.campaign and s.campaign.event.id=="trachea" then
+ if s.campaign and require("war.MapRegistry").isTrachea(s) then
   require("war.TracheaArt").atlas(R,g,px,py,scale)
   local home=require("war.CampaignData").forState(s).home
   R.text(px+home.x*scale+16,py+home.y*scale,"气管 · 已开放",11,{30,132,133})

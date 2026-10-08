@@ -92,6 +92,16 @@ function P.request(s,e,x,y,forceFine)
   gx,gy=best.x,best.y
  end
  e.pathResolved={x=gx+.5,y=gy+.5,adjusted=adjusted}
+ -- Campaign arenas are compact and mostly open. Resolve a clear destination
+ -- immediately so a tactical move starts on the next simulation tick; blocked
+ -- routes still fall through to the normal vessel-aware A* search below.
+ if s.campaign then
+  local clear,nextLane=P.clear(s,e.x,e.y,x,y,e.faction,e.vesselLane)
+  if clear then
+   e.pathPending=false;e.pathFailed=false;e.path={{x=x,y=y,lane=nextLane}};e.pathIndex=1;e.vesselLane=nextLane or e.vesselLane
+   return
+  end
+ end
  local route=e.longRoute
  if route and ((route.x-x)^2+(route.y-y)^2>1 or not route.points[route.index]) then e.longRoute=nil;route=nil end
  if route then local p=route.points[route.index];job(s,e,math.floor(e.x),math.floor(e.y),math.floor(p.x),math.floor(p.y),"fine",24000,route.index,p.lane);return end

@@ -21,7 +21,7 @@ function R.request(s)
  local N=N.forState(s)
  local r=s.campaign.reinforcements;r.supply=r.supply-N.supply.cost;r.cooldown=N.supply.cooldown
  r.queue[#r.queue+1]={remaining=N.supply.count,eta=N.supply.arrival}
- U.message(s,s.campaign.event.id=="trachea" and "白细胞援军正在从气管下端调入" or "白细胞援军正在从后鼻侧调入");return true
+ U.message(s,require("war.MapRegistry").isTrachea(s) and "白细胞援军正在从气管下端调入" or "白细胞援军正在从后鼻侧调入");return true
 end
 function R.update(s,dt)
  local N=N.forState(s)
