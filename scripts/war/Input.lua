@@ -3,6 +3,9 @@ local D,U,R,C,W=require("war.Data"),require("war.Util"),require("war.Render"),re
 local I={}
 local Motion=require("war.Motion")
 local Cells,BodyArt=require("war.Cells"),require("war.BodyArt")
+local DOUBLE_TAP_SECONDS=.34
+local DOUBLE_TAP_PIXELS=24
+local DOUBLE_SELECT_RADIUS=12
 -- Temporary map inspection; never changes faction vision or saved exploration.
 function I.toggleFog(g)
  if g.state.anatomyVersion==3 then U.message(g.state,"全身地图始终可查看 · 敌人和未发现资源仍遵守迷雾");return end
@@ -14,6 +17,25 @@ function I.ids(g)
 end
 function I.selectKind(g,kind)
  g.selection={};for id,e in pairs(g.state.entities) do if e.faction==1 and e.category=="unit" and U.alive(e) and (kind=="army" and e.kind~="worker" or e.kind==kind) then g.selection[id]=true end end;g.state.selectedOnce=true
+end
+function I.doubleSelect(g,x,y)
+ local picked=I.pick(g,x,y)
+ if picked and picked.faction~=1 then g.inspectTarget=picked else g.inspectTarget=false end
+ if not picked or picked.faction~=1 or picked.category~="unit" then return false end
+ local radius2=DOUBLE_SELECT_RADIUS*DOUBLE_SELECT_RADIUS
+ if not g.append and not input:GetKeyDown(KEY_LSHIFT) then g.selection={} end
+ local count=0
+ for id,e in pairs(g.state.entities) do
+  if U.alive(e) and e.faction==1 and e.category=="unit" and e.kind==picked.kind then
+   local dx,dy=e.x-picked.x,e.y-picked.y
+   if dx*dx+dy*dy<=radius2 then g.selection[id]=true;count=count+1 end
+  end
+ end
+ if count>0 then
+  g.state.selectedOnce=true
+  U.message(g.state,"已选择附近"..(D.units[picked.kind] and D.units[picked.kind].name or picked.kind).." "..count.."个")
+ end
+ return count>0
 end
 function I.coords(e) local factor=UI.GetScale()/graphics:GetDPR();return e.x*factor,e.y*factor end
 function I.pick(g,x,y)
@@ -47,6 +69,7 @@ function I.tap(g,x,y,secondary)
  end
  if g.mode=="rally" then local id=I.ids(g)[1];C.submit(s,{kind="rally",faction=1,target=id,x=wx,y=wy});g.mode=false;return end
  local picked=I.pick(g,x,y)
+ g.inspectTarget=picked and picked.faction~=1 and picked or false
  local workerSelected=false
  for _,id in ipairs(I.ids(g)) do if s.entities[id].kind=="worker" then workerSelected=true;break end end
  local workTarget=picked and picked.faction==1 and picked.category=="building" and workerSelected and (not picked.complete or picked.kind=="farm" or picked.fire>0 or picked.hp<picked.maxHp)
@@ -64,7 +87,18 @@ function I.tap(g,x,y,secondary)
   if not r then
    for dy=-1,1 do for dx=-1,1 do local k=U.key(math.floor(wx)+dx,math.floor(wy)+dy);local v=s.resources[k];if not r and v and v.amount>0 and s.factions[1].seen[k] then r=v;key=k end end end
   end
-  if r and r.amount>0 and not g.mode then kind="gather";target=key end
+  if r and r.amount>0 and not g.mode then
+   kind="gather";target=key
+   local resourceName=D.names[r.kind] or r.kind
+   local resourceForm=({wood="蛋白束",stone="钙晶",flint="盐晶",fiber="胶原束",metal="铁质矿",food="葡萄糖团",fuel="脂滴",relic="基因片段"})[r.kind] or "资源"
+   local hasWorker=false
+   for _,id in ipairs(I.ids(g)) do if s.entities[id].kind=="worker" then hasWorker=true;break end end
+   if hasWorker then
+    U.message(s,resourceName.."（"..resourceForm.."） · 储量 "..math.floor(r.amount).." · 已下达采集，运回胞巢后入库")
+   else
+    U.message(s,resourceName.."（"..resourceForm.."） · 储量 "..math.floor(r.amount).." · 先选择"..D.units.worker.name.."再采集")
+   end
+  end
  end
  if #I.ids(g)>0 then I.issue(g,kind,wx,wy,target) else g.selection={} end
  g.mode=false
@@ -98,7 +132,12 @@ function I.up(g,e)
    local wx,wy=Motion.position(g,u);local px,py=R.project(g,wx,wy)
    if px>=math.min(a.x,x) and px<=math.max(a.x,x) and py>=math.min(a.y,y) and py<=math.max(a.y,y) then g.selection[id]=true end
   end end;g.state.selectedOnce=true
- elseif not a.moved then I.tap(g,x,y,a.secondary) end
+ elseif not a.moved then
+  local now=g.realTime or 0;local last=g.lastTap
+  local close=last and now-last.time<=DOUBLE_TAP_SECONDS and (x-last.x)^2+(y-last.y)^2<=DOUBLE_TAP_PIXELS*DOUBLE_TAP_PIXELS
+  local handled=close and not a.secondary and not g.mode and not g.placement and I.doubleSelect(g,x,y)
+  if handled then g.lastTap=false else I.tap(g,x,y,a.secondary);g.lastTap=(not a.secondary and not g.mode and not g.placement) and {x=x,y=y,time=now} or false end
+ end
 end
 function I.group(g,index,save)
  if save then g.groups[index]=I.ids(g);U.message(g.state,"已保存编队"..index)
@@ -117,8 +156,9 @@ function I.key(g,key)
  elseif key==KEY_3 then I.group(g,3,input:GetKeyDown(KEY_LCTRL))
  elseif key==KEY_A then g.mode="attackmove"
  elseif key==KEY_S then I.issue(g,"stop")
- elseif key==KEY_B and not g.state.campaign then g.tab=g.tab=="build" and false or "build";g.refreshSidebar()
- elseif key==KEY_H then R.home(g)
+ elseif key==KEY_B then
+  if g.state.campaign then U.message(g.state,"战役模式暂不开放建造，使用调援补充部队") else g.tab=g.tab=="build" and false or "build";g.refreshSidebar() end
+ elseif key==KEY_H then if g.returnHome then g.returnHome() end
  elseif key==KEY_M then g.openMap()
  elseif key==KEY_R then I.issue(g,"retreat")
  end
