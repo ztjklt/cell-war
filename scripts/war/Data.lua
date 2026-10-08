@@ -1,5 +1,5 @@
 -- All tuning lives here; simulation uses seconds and map cells.
-local D = { VERSION=7, MAP=2048, MAP_HEIGHT=4096, INDEX_STRIDE=4096, WORLD_SCALE=.5, CHUNK=32, MAP_BIN=16, STEP=0.1, DAY=360, SEASON_DAYS=8, MAX_POP=40 }
+local D = { VERSION=8, MAP=2048, MAP_HEIGHT=4096, INDEX_STRIDE=4096, WORLD_SCALE=.5, CHUNK=32, MAP_BIN=16, STEP=0.1, DAY=360, SEASON_DAYS=8, MAX_POP=40 }
 D.resources={"wood","stone","flint","fiber","metal","food","fuel","relic"}
 D.names={wood="蛋白质",stone="钙质",flint="盐晶",fiber="胶原",metal="铁质",food="葡萄糖",fuel="脂质",relic="基因片段"}
 D.seasons={"平衡","低代谢","复苏","高代谢"}
@@ -43,6 +43,7 @@ D.biomes[23]={name="胰腺分叶",color={240,215,176},resources={{"food",.065},{
 D.biomes[24]={name="肾皮质与髓质",color={208,177,211},resources={{"flint",.05},{"fiber",.085}},detail="kidney"}
 D.biomes[25]={name="结肠组织",color={225,194,216},resources={{"food",.075},{"wood",.075},{"relic",.008}},detail="colon"}
 D.biomes[26]={name="膀胱壁",color={241,208,222},resources={{"fiber",.09},{"flint",.03}},detail="bladder"}
+D.biomes[27]={name="气管黏膜",color={135,191,206},resources={},detail="trachea"}
 D.cellRadii={virus=18/32,worker=19/32,scout=14/32,spear=22/32,archer=22/32,heavy=27/32,siege=34/32,wolf=19/32,shadow=17/32}
 D.units={
  virus={name="入侵病毒",hp=100,speed=2.7,damage=11,range=1.5,cool=1.2,pop=0,vision=10,sprite="virus"},

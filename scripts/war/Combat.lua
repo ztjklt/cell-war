@@ -2,7 +2,7 @@ local D,U,W,C,E=require("war.Data"),require("war.Util"),require("war.World"),req
 local F={}
 function F.enemy(s,e,r,buildings)
  local best,dd=false,math.huge
- for _,t in ipairs(W.neighbors(s,e.x,e.y,r)) do if U.alive(t) and t.faction~=e.faction and (t.faction~=0 or e.faction~=0) and (t.category=="unit" or buildings) and (e.faction==0 or W.visible(s,e.faction,t)) then
+ for _,t in ipairs(W.neighbors(s,e.x,e.y,r)) do if U.alive(t) and t.faction~=e.faction and (t.faction~=0 or e.faction~=0) and (t.category=="unit" or buildings) and (e.faction==0 or W.visible(s,e.faction,t)) and (not s.campaign or require("war.Campaign").allowed(s,t.x,t.y)) then
   local d=U.dist(e,t);if d<r and d<dd then best,dd=t,d end
  end end return best,dd
 end
@@ -21,8 +21,9 @@ function F.hit(s,e,t,damage)
  end
 end
 function F.fight(s,e,t,dt,chase)
+ if s.campaign and (not require("war.Campaign").allowed(s,e.x,e.y) or not require("war.Campaign").allowed(s,t.x,t.y)) then return false end
  local d=D.units[e.kind] or D.buildings[e.kind];local radius=(t.category=="building" and (D.buildings[t.kind].size or 1)*.5 or 0)
- local clear=not (s.campaign and s.campaign.terrainVersion==2) or require("war.Path").clear(s,e.x,e.y,t.x,t.y,e.faction,e.vesselLane)
+ local clear=not (s.campaign and (s.campaign.terrainVersion==2 or s.campaign.terrainVersion==3)) or require("war.Path").clear(s,e.x,e.y,t.x,t.y,e.faction,e.vesselLane)
  if U.dist(e,t)<=d.range+radius and clear then
   if e.cooldown<=0 then F.hit(s,e,t,d.damage);e.cooldown=d.cool end
   return true

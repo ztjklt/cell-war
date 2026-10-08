@@ -19,7 +19,7 @@ function Start()
  SubscribeToEvent("Update","HandleUpdate")
  SubscribeToEvent("KeyDown","HandleKeyDown")
  SubscribeToEvent("MouseWheel","HandleWheel")
- print("[细胞战争] READY | view=topdown2d | world=body | map=2048x4096 | vessels=12 | walls=sealed | mode=campaign | event=nasal | nasalTerrain=2 | zones=3 | controllable=cells | fixedStep=0.1")
+ print("[细胞战争] READY | view=topdown2d | world=body | map=2048x4096 | anatomy=3 | walls=sealed | mode=campaign | event=trachea | terrain=3 | zones=3 | controllable=cells | fixedStep=0.1")
 end
 function Stop() Audio.stop();require("war.Cells").release(UI.GetNVGContext());require("war.UIArt").release(UI.GetNVGContext());require("war.OrganArt").release(UI.GetNVGContext());require("war.BrainRig").release(UI.GetNVGContext());R.close();UI.Shutdown() end
 ---@param eventType string

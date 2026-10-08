@@ -1,7 +1,8 @@
+-- Historical anatomy-v2 fixtures are explicit; ReferenceAcceptance covers the new default.
 -- Real navigation, collision and combat checks for the expanded nasal battlefield.
 local S,W,P,C,U,G,Save=require('war.Simulation'),require('war.World'),require('war.Path'),require('war.Commands'),require('war.Util'),require('war.NasalTerrain'),require('war.Save')
 local Q={}
-local function empty() local s=S.new(73);s.entities={};W.rebuild(s);return s end
+local function empty() local s=S.new(73,"campaign",2);s.entities={};W.rebuild(s);return s end
 local function move(s,e,x,y)
  C.execute(s,{kind='move',faction=1,ids={e.id},x=x,y=y})
  for _=1,1600 do
@@ -58,14 +59,14 @@ function Q.run()
   assert(e and f);F.fight(s,e,f,.1,false);assert(f.hp<f.maxHp,'open combat blocked')
  end)
  test('新地形存读档与失败重试保持几何和血管通路',function()
-  local s=S.new(73);C.execute(s,{kind='reinforce',faction=1});local q=Save.restore(Save.snapshot(s))
+  local s=S.new(73,"campaign",2);C.execute(s,{kind='reinforce',faction=1});local q=Save.restore(Save.snapshot(s))
   assert(q.campaign.terrainVersion==2 and #W.vessels(q).edges==12 and #q.campaign.reinforcements.queue==1)
   require('war.Campaign').fail(q);q=require('war.Campaign').retry(q)
   assert(q.campaign.terrainVersion==2 and q.time==0)
   local count=0;for _,e in pairs(q.entities) do count=count+1;assert(W.land(q,math.floor(e.x),math.floor(e.y))) end;assert(count==8)
  end)
  test('全身血管显示保留，鼻腔通路与锁定规则不受影响',function()
-  local V=require('war.Vessels');local s=S.new(73);local body=V.forDisplay(s)
+  local V=require('war.Vessels');local s=S.new(73,"campaign",2);local body=V.forDisplay(s)
   assert(body.version==2 and #body.edges>120)
   assert(W.vessels(s)~=body and #W.vessels(s).edges==12)
   local outside=false
@@ -92,7 +93,7 @@ function Q.run()
   for id,e in pairs(s.entities) do assert(q.entities[id].viralSide==e.viralSide,'viral side lost') end
  end)
  test('鼻腔全景适配桌面与手机可见区域',function()
-  local R=require('war.Render');local s=S.new(73)
+  local R=require('war.Render');local s=S.new(73,"campaign",2)
   for _,size in ipairs({{1440,900},{844,390},{430,932},{360,780}}) do
    R.w,R.h=size[1],size[2];local g={state=s,camera={x=0,y=0},zoom=1};R.nasalOverview(g)
    local left,top=R.project(g,G.bounds.x,G.bounds.y);local right,bottom=R.project(g,G.bounds.x+G.bounds.w,G.bounds.y+G.bounds.h)

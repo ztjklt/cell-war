@@ -5,6 +5,7 @@ local Motion=require("war.Motion")
 local Cells,BodyArt=require("war.Cells"),require("war.BodyArt")
 -- Temporary map inspection; never changes faction vision or saved exploration.
 function I.toggleFog(g)
+ if g.state.anatomyVersion==3 then U.message(g.state,"全身地图始终可查看 · 敌人和未发现资源仍遵守迷雾");return end
  g.fogDisabled=not g.fogDisabled
  U.message(g.state,g.fogDisabled and "迷雾已关闭 · 全图查看 · F恢复" or "迷雾已恢复")
 end

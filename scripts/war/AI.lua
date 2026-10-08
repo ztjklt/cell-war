@@ -1,6 +1,6 @@
 local D,U,W,E,C=require("war.Data"),require("war.Util"),require("war.World"),require("war.Economy"),require("war.Commands")
 local A={}
-local function building(s,f,kind) return U.nearest(s,D.factions[f].x,D.factions[f].y,function(e) return e.faction==f and e.kind==kind and e.category=="building" and e.complete end) end
+local function building(s,f,kind) return U.nearest(s,W.starts(s)[f].x,W.starts(s)[f].y,function(e) return e.faction==f and e.kind==kind and e.category=="building" and e.complete end) end
 local function nextTech(fa)
  if fa.tier==1 then return "tier2" end
  if not fa.tech.storage then return "storage" end
@@ -16,7 +16,7 @@ end
 function A.think(s,f)
  local fa=s.factions[f];if fa.lost then return end;local ai=fa.ai
  local workers,idle,troops,scouts={},{},{},{}
- local base=building(s,f,"core") or building(s,f,"store") or D.factions[f]
+ local base=building(s,f,"core") or building(s,f,"store") or W.starts(s)[f]
  for _,e in pairs(s.entities) do if U.alive(e) and e.faction==f and e.category=="unit" then
   if e.kind=="worker" then workers[#workers+1]=e;if not e.orders[1] or e.pathFailed then idle[#idle+1]=e end
   elseif e.kind=="scout" then scouts[#scouts+1]=e else troops[#troops+1]=e end

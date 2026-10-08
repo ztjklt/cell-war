@@ -1,0 +1,515 @@
+{
+  "ReferenceAcceptance": {
+    "results": [
+      {
+        "error": "",
+        "pass": true,
+        "name": "原图等比例映射，头、手指、脚趾和器官位于身体内"
+      },
+      {
+        "error": "",
+        "pass": true,
+        "name": "新开局为气管守卫，八名守卫都在合法气管格内"
+      },
+      {
+        "error": "",
+        "pass": true,
+        "name": "气管纵向三区连通，真实单位往返不穿管壁"
+      },
+      {
+        "error": "",
+        "pass": true,
+        "name": "全身结构可浏览，锁区仍拒绝移动、攻击目标、出生与寻路"
+      },
+      {
+        "error": "",
+        "pass": true,
+        "name": "三波在10、45、90秒派发总计24病毒，全部从上段进入"
+      },
+      {
+        "error": "",
+        "pass": true,
+        "name": "真实模拟中的病毒沿气管推进，不沿旧鼻道寻路"
+      },
+      {
+        "error": "",
+        "pass": true,
+        "name": "三区争夺、双方暂停及下段屏障失守优先失败"
+      },
+      {
+        "error": "",
+        "pass": true,
+        "name": "调援消耗、冷却、到达与10秒回复保持原规则"
+      },
+      {
+        "error": "",
+        "pass": true,
+        "name": "20秒稳固胜利，奖励不重复，下一关双肺暂不开启"
+      },
+      {
+        "error": "",
+        "pass": true,
+        "name": "移动中v8读档、失败重试及旧v7鼻腔检查点保持各自几何"
+      },
+      {
+        "error": "",
+        "pass": true,
+        "name": "沙盒出生区可建设和采集，AI使用新的阵营出生点"
+      },
+      {
+        "error": "",
+        "pass": true,
+        "name": "三次血管曲线与采样一致、交叉不允许换道"
+      },
+      {
+        "error": "",
+        "pass": true,
+        "name": "新地图膜口双向通行、非膜口管壁封闭"
+      },
+      {
+        "error": "",
+        "pass": true,
+        "name": "v6原鼻腔地形与检查点恢复原规则"
+      },
+      {
+        "error": "",
+        "pass": true,
+        "name": "桌面与手机横竖屏气管全景不被HUD遮挡"
+      },
+      {
+        "error": "",
+        "pass": true,
+        "name": "损坏版本与气管事件混用被拒绝，顾问无鼻腔残留提示"
+      }
+    ],
+    "passed": 16,
+    "total": 16
+  },
+  "ReferenceRenderAcceptance": {
+    "results": [
+      {
+        "error": "",
+        "name": "DPR 1/2/3 使用逻辑画幅、真实像素比及相同投影",
+        "pass": true
+      },
+      {
+        "error": "",
+        "name": "连续缩放裁剪、绘制预算和缓存有界，浏览不改存档",
+        "pass": true
+      },
+      {
+        "error": "",
+        "name": "全身浏览及强制旧全图标志不泄露敌人和未发现资源",
+        "pass": true
+      },
+      {
+        "error": "",
+        "name": "回营近景在手机竖屏保留两侧管壁和可选单位比例",
+        "pass": true
+      }
+    ],
+    "total": 4,
+    "passed": 4
+  },
+  "AnatomyAcceptance": {
+    "passed": 10,
+    "results": [
+      {
+        "error": "",
+        "name": "每个器官都有供血、聚合交换区和回流",
+        "pass": true
+      },
+      {
+        "error": "",
+        "name": "肺循环与冠脉形成正确的定向环路和氧合状态",
+        "pass": true
+      },
+      {
+        "error": "",
+        "name": "胃肠脾胰必须先经肝脏，再回下腔静脉",
+        "pass": true
+      },
+      {
+        "error": "",
+        "name": "主动脉弓左右不对称，椎动脉汇入基底与六段脑底环",
+        "pass": true
+      },
+      {
+        "error": "",
+        "name": "曲线采样保持管腔连续，所有主路线位于身体内",
+        "pass": true
+      },
+      {
+        "error": "",
+        "name": "组织膜口双向通行，普通管壁与心腔隔壁封闭",
+        "pass": true
+      },
+      {
+        "error": "",
+        "name": "非共享节点的平面交叉不能换道",
+        "pass": true
+      },
+      {
+        "error": "",
+        "name": "跨器官路线与移动中 v7 存读档保留新增通路",
+        "pass": true
+      },
+      {
+        "error": "",
+        "name": "v6 记录仍保留旧生成器、坐标和 120 条边",
+        "pass": true
+      },
+      {
+        "error": "",
+        "name": "13 个器官剖面按逻辑尺寸平滑切换，缩放不改通行",
+        "pass": true
+      }
+    ],
+    "total": 10
+  },
+  "NasalAcceptance": {
+    "total": 15,
+    "passed": 15,
+    "results": [
+      {
+        "error": "",
+        "name": "开局兵力、资源与鼻腔连通",
+        "pass": true
+      },
+      {
+        "error": "",
+        "name": "单人40秒翻转与中立阶段",
+        "pass": true
+      },
+      {
+        "error": "",
+        "name": "三人20秒翻转、速度封顶",
+        "pass": true
+      },
+      {
+        "error": "",
+        "name": "双方暂停、无人保留与死亡不计数",
+        "pass": true
+      },
+      {
+        "error": "",
+        "name": "完整失守触发失败、胜败同帧优先失败",
+        "pass": true
+      },
+      {
+        "error": "",
+        "name": "调援执行校验、重复请求与预留人口",
+        "pass": true
+      },
+      {
+        "error": "",
+        "name": "补给回复、暂停与固定模拟时间",
+        "pass": true
+      },
+      {
+        "error": "",
+        "name": "锁区检查覆盖命令、寻路、出生和建造",
+        "pass": true
+      },
+      {
+        "error": "",
+        "name": "三波有限入侵且无需经营",
+        "pass": true
+      },
+      {
+        "error": "",
+        "name": "进攻寻路连接三个区域",
+        "pass": true
+      },
+      {
+        "error": "",
+        "name": "战斗存读档不重复波次或援军",
+        "pass": true
+      },
+      {
+        "error": "",
+        "name": "失败重试恢复世界且此前记录保持",
+        "pass": true
+      },
+      {
+        "error": "",
+        "name": "胜利20秒稳固、奖励仅一次、后续不开空关",
+        "pass": true
+      },
+      {
+        "error": "",
+        "name": "损坏战役数据保留拒绝语义",
+        "pass": true
+      },
+      {
+        "error": "",
+        "name": "v5沙盒往返保持三阵营和人体地形",
+        "pass": true
+      }
+    ]
+  },
+  "NasalTerrainAcceptance": {
+    "passed": 9,
+    "results": [
+      {
+        "pass": true,
+        "name": "左右鼻道与上中下鼻甲、鼻中隔共同阻挡",
+        "error": ""
+      },
+      {
+        "pass": true,
+        "name": "全部可行走格可从后鼻调入口到达",
+        "error": ""
+      },
+      {
+        "pass": true,
+        "name": "实际细胞经膜口穿行血管、绕鼻甲走遍左右鼻腔",
+        "error": ""
+      },
+      {
+        "pass": true,
+        "name": "血管壁不可横穿，指定交换膜口可以进出",
+        "error": ""
+      },
+      {
+        "pass": true,
+        "name": "鼻甲和封闭管壁阻挡攻击，开放黏膜内可以交战",
+        "error": ""
+      },
+      {
+        "pass": true,
+        "name": "新地形存读档与失败重试保持几何和血管通路",
+        "error": ""
+      },
+      {
+        "pass": true,
+        "name": "全身血管显示保留，鼻腔通路与锁定规则不受影响",
+        "error": ""
+      },
+      {
+        "pass": true,
+        "name": "三波分左右鼻腔调入且病毒路线随存档保留",
+        "error": ""
+      },
+      {
+        "pass": true,
+        "name": "鼻腔全景适配桌面与手机可见区域",
+        "error": ""
+      }
+    ],
+    "total": 9
+  },
+  "VesselAcceptance": {
+    "results": [
+      {
+        "name": "普通管壁阻止穿越，通行口双向开放",
+        "pass": true,
+        "error": ""
+      },
+      {
+        "name": "通行口外缘的小数坐标可退出管腔",
+        "pass": true,
+        "error": ""
+      },
+      {
+        "name": "调兵命令绕行通行口，逐帧不穿墙",
+        "pass": true,
+        "error": ""
+      },
+      {
+        "name": "平面交叉血管不能直接换道",
+        "pass": true,
+        "error": ""
+      },
+      {
+        "name": "管腔、管壁、通行口禁止建筑",
+        "pass": true,
+        "error": ""
+      },
+      {
+        "name": "全身尺寸、下半身索引与总览定位",
+        "pass": true,
+        "error": ""
+      },
+      {
+        "name": "血管内存档恢复保留通路和管壁限制",
+        "pass": true,
+        "error": ""
+      }
+    ],
+    "total": 7,
+    "passed": 7
+  },
+  "SmoothAcceptance": {
+    "total": 3,
+    "results": [
+      {
+        "error": "",
+        "name": "轮廓保留内部空洞，裁剪排除屏幕外几何",
+        "pass": true
+      },
+      {
+        "error": "",
+        "name": "地图曲线按世界和种子缓存，旧尺寸仍可准备",
+        "pass": true
+      },
+      {
+        "error": "",
+        "name": "远景保留二次曲线，取消大格矩形，DPR 不改变投影",
+        "pass": true
+      }
+    ],
+    "passed": 3
+  },
+  "ZoomAcceptance": {
+    "results": [
+      {
+        "pass": true,
+        "name": "缩小、全身与平移时绘制量不随地图格数爆炸",
+        "error": ""
+      },
+      {
+        "pass": true,
+        "name": "远景与全身总览不修改资源、探索、随机数或存档",
+        "error": ""
+      },
+      {
+        "pass": true,
+        "name": "大地图与旧地图均能缩到全貌，指针缩放锚点保持",
+        "error": ""
+      },
+      {
+        "pass": true,
+        "name": "重新放大恢复近景，回营恢复可操作比例",
+        "error": ""
+      },
+      {
+        "pass": true,
+        "name": "战略视图可以点选玩家单位，敌方仍受迷雾限制",
+        "error": ""
+      }
+    ],
+    "passed": 5,
+    "total": 5
+  },
+  "Acceptance": {
+    "total": 22,
+    "results": [
+      {
+        "name": "随机种子与出生资源",
+        "pass": true,
+        "error": ""
+      },
+      {
+        "name": "暂停队列与执行时资源检查",
+        "pass": true,
+        "error": ""
+      },
+      {
+        "name": "采集、运输、枯竭与取消退款",
+        "pass": true,
+        "error": ""
+      },
+      {
+        "name": "人口限制、训练与研究",
+        "pass": true,
+        "error": ""
+      },
+      {
+        "name": "稳态周期、腐败、饥饿与荧光",
+        "pass": true,
+        "error": ""
+      },
+      {
+        "name": "培养床、灼伤处理与维修",
+        "pass": true,
+        "error": ""
+      },
+      {
+        "name": "不可达寻路与目标失效",
+        "pass": true,
+        "error": ""
+      },
+      {
+        "name": "返营重寻路与环境效率",
+        "pass": true,
+        "error": ""
+      },
+      {
+        "name": "敌方迷雾与自主发展",
+        "pass": true,
+        "error": ""
+      },
+      {
+        "name": "存档往返与损坏保护",
+        "pass": true,
+        "error": ""
+      },
+      {
+        "name": "云存档回调、失败重试与超时",
+        "pass": true,
+        "error": ""
+      },
+      {
+        "name": "基地重建、战败与胜利",
+        "pass": true,
+        "error": ""
+      },
+      {
+        "name": "鼠标框选、触屏拖镜头与命令追加",
+        "pass": true,
+        "error": ""
+      },
+      {
+        "name": "大世界地形、分块加载与跨区寻路",
+        "pass": true,
+        "error": ""
+      },
+      {
+        "name": "区块资源增量存档与稀疏迷雾",
+        "pass": true,
+        "error": ""
+      },
+      {
+        "name": "人体器官分布、组织多样性与血管通行",
+        "pass": true,
+        "error": ""
+      },
+      {
+        "name": "组织存档与旧版大地图拓扑兼容",
+        "pass": true,
+        "error": ""
+      },
+      {
+        "name": "逐帧移动、变速、暂停与状态替换",
+        "pass": true,
+        "error": ""
+      },
+      {
+        "name": "路径点连续消耗与禁止穿角",
+        "pass": true,
+        "error": ""
+      },
+      {
+        "name": "渲染沿拐角路径且不写入存档",
+        "pass": true,
+        "error": ""
+      },
+      {
+        "name": "正俯视投影、平移与缩放锚点",
+        "pass": true,
+        "error": ""
+      },
+      {
+        "name": "细胞旋转冻结、尺寸约束与缓慢转向",
+        "pass": true,
+        "error": ""
+      }
+    ],
+    "passed": 22
+  },
+  "syntax": {
+    "files": 73,
+    "errors": []
+  }
+}

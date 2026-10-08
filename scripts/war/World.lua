@@ -8,6 +8,7 @@ function W.vessels(s) return Vessels.forState(s) end
 function W.worldScale(s) return s.terrainStyle=="body-v4" and 1 or D.WORLD_SCALE end
 function W.starts(s)
  if s and s.campaign then return require("war.CampaignData").forState(s).starts or require("war.CampaignData").starts end
+ if s and s.anatomyVersion==3 then return require("war.ReferenceMap").starts end
  if s and s.terrainStyle=="body-v4" then return D.v4Factions end
  return s and s.terrainStyle~="body" and oldBases or D.factions
 end
@@ -93,19 +94,21 @@ end
 function W.generate(seed,legacy,style,mode,anatomyVersion)
  local s={version=D.VERSION,seed=seed,rng=seed,time=0,tick=0,nextId=1,mapSize=style=="body-v4" and 4096 or style and style~="body" and 1024 or D.MAP,mapWidth=style=="body-v4" and 4096 or style and style~="body" and 1024 or D.MAP,mapHeight=style=="body-v4" and 8192 or style and style~="body" and 1024 or D.MAP_HEIGHT,entities={},resources={},tiles={},factions={},commands={},effects={},tutorial=1,outcome="playing",message="",messageTime=0,generated={},newChunks={},spawnedChunks={},legacyTerrain=legacy or nil,terrainStyle=style or "body"}
  s.mode=mode or "sandbox"
- s.anatomyVersion=(s.terrainStyle=='body') and (anatomyVersion or 2) or 1
- if s.mode=="campaign" then s.campaign=require("war.Campaign").create() end
+ s.anatomyVersion=(s.terrainStyle=='body') and (anatomyVersion or 3) or 1
+ if s.mode=="campaign" then s.campaign=require("war.Campaign").create(s.anatomyVersion) end
  local tileCache={}
  setmetatable(s.tiles,{__index=function(t,k)
   local slot=k%65521+1;local old=tileCache[slot];if old and old.key==k then return old.biome end
   local x,y=U.xy(k);local biome
   if s.campaign and require("war.Territory").zone(x+.5,y+.5,s) then
-   local G=require("war.NasalTerrain")
-   if s.campaign.terrainVersion==2 then
+   local G=require("war.CampaignData").forState(s)
+   if s.campaign.terrainVersion==3 then biome=G.blocked(x+.5,y+.5) and 17 or 27
+   elseif s.campaign.terrainVersion==2 then
     local tube=W.vessels(s).sample(x,y)
     biome=G.blocked(x+.5,y+.5) and 21 or tube.biome>0 and tube.biome or 20
    else biome=20 end
   elseif s.legacyTerrain and x<=192 and y<=192 then biome=W.legacyTile(x,y,s.seed)
+  elseif s.anatomyVersion==3 then biome=require('war.ReferenceMap').tile(x,y,s.seed)
   elseif s.anatomyVersion==2 then biome=require('war.AnatomyV2').tile(x,y,s.seed)
   elseif s.terrainStyle=="body-v4" then biome=Anatomy.tile(x,y,s.seed,1)
   elseif s.terrainStyle=="body-v3" then biome=require("war.AnatomyV3").tile(x,y,s.seed)
@@ -177,7 +180,7 @@ function W.walkable(s,x,y,f)
  return not b or (b.kind=="gate" and b.faction==f)
 end
 function W.canBuild(s,kind,x,y,f)
- if s.campaign then return false,"鼻腔事件尚未开放建造" end
+ if s.campaign then return false,"当前守卫事件尚未开放建造" end
  local d=D.buildings[kind] --[[@as table?]]
  if not d then return false,"未知建筑" end
  if not s.factions[f].seen[U.key(x,y)] then return false,"请先探索这片区域" end

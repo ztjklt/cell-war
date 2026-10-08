@@ -13,12 +13,14 @@ end
 function T.zone(x,y,s)
  for i,z in ipairs((s and N.forState(s) or N).zones) do if T.contains(z.polygon,x,y) then return i end end
 end
-function T.new()
+function T.new(s)
+ local N=N.forState(s)
  local zones={}
  for i,z in ipairs(N.zones) do zones[i]={id=z.id,control=i==1 and -100 or 100,owner=i==1 and 2 or 1,friendly=0,hostile=0,contested=false} end
  return zones
 end
 function T.update(s,dt)
+ local N=N.forState(s)
  local zones=s.campaign.event.zones
  for _,z in ipairs(zones) do z.friendly=0;z.hostile=0 end
  for _,e in pairs(s.entities) do if U.alive(e) and e.category=="unit" and (e.faction==1 and e.kind~="worker" or e.faction==2 and e.kind=="virus") then

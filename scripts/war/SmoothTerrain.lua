@@ -16,6 +16,7 @@ end
 function S.beginFrame() S.budget=64;S.frame=S.frame+1 end
 -- Build only on entering a new world, independent of pan/zoom/DPR.
 function S.prepare(s)
+ if s.anatomyVersion==3 then return require('war.ReferenceArt').prepare() end
  if not W.hasVessels(s) then return end
  local c=cache(s);if c.body then return end
  local scale=W.worldScale(s);local step=16*scale;local cells,fat,inner={},{},{}
@@ -70,6 +71,7 @@ local function patch(s,x,y,step)
  return p
 end
 function S.draw(R,g,s,x1,x2,y1,y2)
+ if s.anatomyVersion==3 then return require('war.ReferenceArt').draw(R,g,s,x1,x2,y1,y2) end
  S.prepare(s);local c=cache(s);local scale=W.worldScale(s)
  local ox,oy=R.project(g,0,0);local z=32*g.zoom
  body(R,g,s,c,x1,x2,y1,y2)
@@ -102,7 +104,7 @@ local function fogPaths(set)
  return C.build(cells,1)
 end
 function S.fog(R,g,s,x1,x2,y1,y2)
- if g.fogDisabled or g.vesselSurvey then return end
+ if s.anatomyVersion==3 or g.fogDisabled or g.vesselSurvey then return end
  local c=cache(s);local fa=s.factions[1]
  -- Exploration grows independently of live visibility; do not rebuild it on every vision tick.
  local seenRevision=fa.seenRevision or s.fogRevision or 0
@@ -118,6 +120,7 @@ function S.fog(R,g,s,x1,x2,y1,y2)
  mask(c.visible,Palette.shade,95);mask(c.seen,Palette.fog,255)
 end
 function S.detail(R,g,s,x1,x2,y1,y2)
+ if s.anatomyVersion==3 then return require('war.ReferenceArt').details(R,g,s,x1,x2,y1,y2) end
  if g.zoom<=.65 then return end
  local step=math.max(1,math.ceil(2/g.zoom));local c=cache(s);local count=0
  for y=math.floor(y1/step)*step,y2,step do for x=math.floor(x1/step)*step,x2,step do

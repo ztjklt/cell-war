@@ -298,9 +298,15 @@ function current.forScale(scale)
 end
 local nasal
 local anatomical
+local reference
+local trachea
 -- The body atlas and background keep the original circulation network.
 -- NasalArt draws the local overlay; navigation uses forState below.
 function current.forDisplay(s)
+ if s.anatomyVersion==3 then
+  if not reference then reference=create(1,require('war.ReferenceVessels')) end
+  return reference
+ end
  if s.anatomyVersion==2 then
   if not anatomical then anatomical=create(D.WORLD_SCALE,require('war.VesselLayoutV2')) end
   return anatomical
@@ -308,6 +314,9 @@ function current.forDisplay(s)
  return current.forScale(s.terrainStyle=='body-v4' and 1 or D.WORLD_SCALE)
 end
 function current.forState(s)
+ if s.campaign and s.campaign.event.id=='trachea' then
+  if not trachea then trachea=create(1,require('war.TracheaTerrain').vascular) end;return trachea
+ end
  if s.campaign and s.campaign.terrainVersion==2 then
   if not nasal then nasal=create(1,require('war.NasalTerrain').vascular) end;return nasal
  end
