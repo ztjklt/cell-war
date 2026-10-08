@@ -1,3 +1,4 @@
+-- Historical anatomy-v2 fixtures are explicit; ReferenceAcceptance covers the new default.
 -- Geometry, fog, cache and resolution regressions for the continuous surface.
 local QA={}
 function QA.run()
@@ -13,13 +14,13 @@ function QA.run()
   for _,q in ipairs(clipped.points) do assert(q[1]>=-2 and q[1]<=2 and q[2]>=-3 and q[2]<=3) end
  end)
  test('地图曲线按世界和种子缓存，旧尺寸仍可准备',function()
-  for _,s in ipairs({W.generate(73),W.generate(73,false,'body-v4')}) do
+  for _,s in ipairs({W.generate(73,nil,nil,nil,2),W.generate(73,false,'body-v4')}) do
    S.prepare(s);local a=S.caches[s].body;assert(#a>0);S.prepare(s);assert(S.caches[s].body==a,'zoom should not rebuild body')
    for _,p in ipairs(a) do assert(p.x1>=0 and p.x2<=D.width(s) and p.y1>=0 and p.y2<=D.height(s)) end
   end
  end)
  test('远景保留二次曲线，取消大格矩形，DPR 不改变投影',function()
-  local R,View=require('war.Render'),require('war.View');local s=W.generate(73);W.rebuild(s)
+  local R,View=require('war.Render'),require('war.View');local s=W.generate(73,nil,nil,nil,2);W.rebuild(s)
   local g={state=s,camera={x=D.width(s)*.5,y=D.height(s)*.5},zoom=View.minZoom(s,1280,800),selection={},fogDisabled=true,vesselSurvey=true,accumulator=0,realTime=0}
   local oldGraphics,oldVG,oldQuad,oldRect=graphics,R.vg,nvgQuadTo,nvgRect;local originals={};local names={'nvgBeginPath','nvgMoveTo','nvgLineTo','nvgBezierTo','nvgClosePath','nvgPathWinding','nvgLineCap','nvgLineJoin','nvgEllipse','nvgCircle','nvgFillColor','nvgStrokeColor','nvgStrokeWidth','nvgFillPaint','nvgFill','nvgStroke','nvgSave','nvgRestore','nvgTranslate','nvgScale','nvgRotate','nvgBeginFrame','nvgEndFrame','nvgFontFaceId','nvgFontSize','nvgTextAlign','nvgText','nvgIntersectScissor','nvgRGBA','nvgLinearGradient','nvgRadialGradient','NVG_SOLID','NVG_HOLE','NVG_ROUND','NVG_ALIGN_CENTER','NVG_ALIGN_MIDDLE'}
   local quad,rect=0,0

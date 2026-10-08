@@ -76,15 +76,16 @@ function Save.restore(snap,isCheckpoint,validateOnly)
  assert(style=="body" or style=="body-v4" or style=="body-v3" or style=="continent","组织地图数据损坏")
  assert((style=="body" and width==D.MAP and height==D.MAP_HEIGHT) or (style=="body-v4" and width==4096 and height==8192) or ((style=="body-v3" or style=="continent") and width==1024 and height==1024),"组织尺寸不匹配")
  local anatomyVersion=snap.version>=7 and snap.anatomyVersion or 1
- assert(anatomyVersion==1 or anatomyVersion==2 and style=='body','人体解剖版本不支持')
+ assert(anatomyVersion==1 or (anatomyVersion==2 or anatomyVersion==3 and snap.version>=8) and style=='body','人体解剖版本不支持')
  local campaign=snap.version>=6 and snap.mode=="campaign"
  if campaign then
   assert(style=="body" and type(snap.campaign)=="table","战役数据损坏")
   local c=snap.campaign;local ev=c.event
-  assert(c.terrainVersion==nil or c.terrainVersion==2,"鼻腔地形版本不支持")
-  local N=require("war.CampaignData")
+  assert(c.terrainVersion==nil or c.terrainVersion==2 or c.terrainVersion==3 and anatomyVersion==3,"战场版本不支持")
+  assert((anatomyVersion==3)==(c.terrainVersion==3),"人体与战场版本不匹配")
+  local N=require("war.CampaignData").forState({campaign=c})
   assert(finite(c.stage) and c.stage%1==0 and c.stage>=1 and c.stage<=#N.stages+1 and type(c.completed)=="table" and type(c.unlocked)=="table" and type(c.rewards)=="table" and type(c.randomEnabled)=="boolean","战役进度损坏")
-  assert(type(ev)=="table" and ev.id=="nasal" and (ev.status=="active" or ev.status=="failed" or ev.status=="completed") and (ev.phase=="defend" or ev.phase=="counterattack"),"事件状态损坏")
+  assert(type(ev)=="table" and ev.id==(c.terrainVersion==3 and "trachea" or "nasal") and (ev.status=="active" or ev.status=="failed" or ev.status=="completed") and (ev.phase=="defend" or ev.phase=="counterattack"),"事件状态损坏")
   numbers(ev,{"elapsed","wave","pendingViruses","spawnTimer","secure"},"入侵状态损坏")
   assert(ev.elapsed>=0 and ev.wave%1==0 and ev.wave>=0 and ev.wave<=#N.waves and ev.pendingViruses%1==0 and ev.pendingViruses>=0 and ev.pendingViruses<=24 and ev.secure>=0 and type(ev.zones)=="table" and #ev.zones==#N.zones,"入侵数据损坏")
   for i,z in ipairs(ev.zones) do
@@ -125,7 +126,7 @@ function Save.restore(snap,isCheckpoint,validateOnly)
   for _,q in ipairs(e.queue) do assert(type(q)=="table" and ((q.unit and D.units[q.unit]) or (q.tech and D.tech[q.tech])) and finite(q.remaining) and finite(q.total) and type(q.cost)=="table","生产队列损坏") end
   if campaign then
    assert(e.category=="unit" and require("war.Campaign").allowed(s,e.x,e.y),"单位位于未开放组织")
-   if s.campaign.terrainVersion==2 then assert(W.land(s,math.floor(e.x),math.floor(e.y)) and e.vesselLane<=#W.vessels(s).edges,"单位位于鼻腔障碍或未知血管") end
+   if s.campaign.terrainVersion==2 or s.campaign.terrainVersion==3 then assert(W.land(s,math.floor(e.x),math.floor(e.y)) and e.vesselLane<=#W.vessels(s).edges,"单位位于战场障碍或未知血管") end
   end
   e=U.copy(e);e.path={};e.longRoute=nil;e.pathGoal=nil;e.pathResolved=nil;e.routeEnd=nil;e.pathPending=false;e.pathIndex=1;e.pathFailed=false;convertOrders(e.orders,stride);if previous then e.vesselLane=0 else assert(finite(e.vesselLane) and e.vesselLane%1==0 and e.vesselLane>=0 and e.vesselLane<=(W.hasVessels(s) and #W.vessels(s).edges or 0),"血管通路状态损坏") end;s.entities[id]=e
  end
@@ -138,7 +139,7 @@ function Save.restore(snap,isCheckpoint,validateOnly)
   local f=U.copy(fa);assert(type(f.seen)=="string" and type(f.stock)=="table" and type(f.food)=="table" and type(f.tech)=="table" and type(f.ai)=="table" and finite(f.ai.timer) and finite(f.tier) and f.tier>=1 and f.tier<=3,"阵营数据损坏")
   numbers(f.stock,D.resources,"库存数据损坏")
   for _,batch in ipairs(f.food) do assert(type(batch)=="table" and finite(batch.amount) and batch.amount>=0 and finite(batch.born),"食物批次损坏") end
-  f.seen=unpackSeen(f.seen,old,stride,width,height);f.visible={};f.mapSeen=nil;f.name=campaign and require("war.CampaignData").starts[i].name or D.factions[i].name;s.factions[i]=f
+  f.seen=unpackSeen(f.seen,old,stride,width,height);f.visible={};f.mapSeen=nil;f.name=campaign and require("war.CampaignData").forState(s).starts[i].name or D.factions[i].name;s.factions[i]=f
  end
  s.effects={};s.message=old and "旧版胞群已恢复原地图，单位已成为细胞" or "存档已恢复";s.messageTime=8;if not validateOnly then P.reset() end;W.rebuild(s);require("war.CellCollision").resolve(s);W.rebuild(s);W.fog(s);return s
 end

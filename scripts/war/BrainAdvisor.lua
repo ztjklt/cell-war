@@ -16,7 +16,8 @@ local function danger(ev)
  local z=ev.zones[3]
  return z and (z.control<60 or z.hostile>0)
 end
-function B.reply(s,topic)
+function B.replyOriginal(s,topic)
+ local N=N.forState(s)
  local count,hurt=troops(s)
  local c=s.campaign
  if not c then
@@ -57,8 +58,16 @@ function B.reply(s,topic)
  return {title="人体当前情况",text=text.."其余器官的事件尚未开放；当前没有它们的感染监测数据。"}
 end
 
+local function mapText(s,text)
+ if not s.campaign or s.campaign.event.id~="trachea" then return text end
+ return text:gsub("后鼻屏障","下段屏障"):gsub("鼻腔","气管"):gsub("咽喉、双肺","双肺"):gsub("可沿上下鼻道绕开鼻甲，也可从黄色膜口走血管侧路。","沿气管纵向通道移动，先稳住下段屏障，再向上段入口反攻。")
+end
+function B.reply(s,topic)
+ local reply=B.replyOriginal(s,topic);reply.text=mapText(s,reply.text);return reply
+end
 -- Observe edges once, prioritizing danger. No timers advance while paused/in a modal.
 function B.poll(g,dt)
+ local N=N.forState(g.state)
  if g.brainState~=g.state then
   g.brainState=g.state;g.brainMemory={};g.brainBubble=false;g.brainBubbleTime=0;g.brainIntro=0
  end
@@ -85,6 +94,6 @@ function B.poll(g,dt)
   m.introduced=true
   message=message or "我是小脑，负责汇报人体情况。点击我，或在下方选个话题和我聊聊。"
  end
- if message then g.brainBubble=message;g.brainBubbleTime=8 end
+ if message then g.brainBubble=mapText(s,message);g.brainBubbleTime=8 end
 end
 return B

@@ -27,7 +27,8 @@ function C.execute(s,c)
  if s.campaign then
   if s.campaign.event.status=="failed" then return false end
   if kind=="reinforce" then return f==1 and require("war.Reinforcements").request(s) end
-  if ({build=true,train=true,research=true,gather=true,farm=true,repair=true,rally=true,extinguish=true,cancel=true})[kind] then U.message(s,"鼻腔事件仅开放战术指挥",f);return false end
+  if ({build=true,train=true,research=true,gather=true,farm=true,repair=true,rally=true,extinguish=true,cancel=true})[kind] then U.message(s,s.campaign.event.id=="trachea" and "气管事件仅开放战术指挥" or "鼻腔事件仅开放战术指挥",f);return false end
+  if kind=="attack" and c.target then local t=s.entities[c.target];if t and not require("war.Campaign").allowed(s,t.x,t.y) then return false end end
   if c.x and c.y and not require("war.Campaign").allowed(s,c.x,c.y) then U.message(s,"这片组织尚未开放",f);return false end
  end
  if kind=="build" then

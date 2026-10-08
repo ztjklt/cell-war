@@ -1,9 +1,10 @@
+-- Historical anatomy-v2 fixtures are explicit; ReferenceAcceptance covers the new default.
 -- Behavioral checks for the anterior organ map and its circulation/navigation contract.
 local Q={}
 function Q.run()
  local W,V,O,A,P,C,S,Save,D,U=require('war.World'),require('war.Vessels'),require('war.Organs'),require('war.AnatomyV2'),require('war.Path'),require('war.Commands'),require('war.Simulation'),require('war.Save'),require('war.Data'),require('war.Util')
  local results={};local function test(name,fn) local ok,err=pcall(fn);results[#results+1]={name=name,pass=ok,error=ok and '' or tostring(err)} end
- local s=W.generate(73);W.rebuild(s);local v=W.vessels(s)
+ local s=W.generate(73,nil,nil,nil,2);W.rebuild(s);local v=W.vessels(s)
  local function reach(start,goal,banned)
   local queue={start};local seen={[start]=true};local cursor=1
   while queue[cursor] do local n=queue[cursor];cursor=cursor+1;if n==goal then return true end
@@ -85,7 +86,7 @@ function Q.run()
   local goal=e.points[#e.points];C.order(s,unit,{kind='move',x=goal[1],y=goal[2]})
   for _=1,30 do s.time=s.time+.1;P.update(s,1000);C.go(s,unit,goal[1],goal[2],.1,.7) end
   local snap=Save.snapshot(s);local q=Save.restore(snap);local restored=q.entities[unit.id]
-  assert(q.anatomyVersion==2 and snap.version==7 and restored.vesselLane==edge and restored.x==unit.x and restored.y==unit.y and #restored.orders==1)
+  assert(q.anatomyVersion==2 and snap.version==D.VERSION and restored.vesselLane==edge and restored.x==unit.x and restored.y==unit.y and #restored.orders==1)
   assert(v.route(unit.x,unit.y,O.byId.brain.x*.5,O.byId.brain.y*.5,edge),'cross-organ route missing')
   local arrived=false;for _=1,1000 do q.time=q.time+.1;P.update(q,1000);if C.go(q,restored,goal[1],goal[2],.1,.7) then arrived=true;break end end;assert(arrived,'restored moving unit stuck')
   snap.entities[tostring(unit.id)].vesselLane=#v.edges+1;assert(not pcall(Save.restore,snap),'unknown lane accepted')

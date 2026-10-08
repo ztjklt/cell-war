@@ -1,3 +1,4 @@
+-- Historical anatomy-v2 fixtures are explicit; ReferenceAcceptance covers the new default.
 -- Render-budget regression checks; no-op NanoVG counts commands, not native FPS.
 local QA={}
 function QA.run()
@@ -16,7 +17,7 @@ function QA.run()
  W.terrain=function(...) counters.terrain=counters.terrain+1;return terrain(...) end
  W.ensureChunk=function(...) counters.generate=counters.generate+1;return ensure(...) end
  R.vg={}
- local s=require('war.Simulation').new(73,'sandbox')
+ local s=require('war.Simulation').new(73,'sandbox',2)
  local g={state=s,camera={x=1187,y=1753},zoom=.24,selection={},accumulator=0,realTime=0,vesselSurvey=true,fogDisabled=true}
  local results={};local function test(name,fn) local ok,err=pcall(fn);results[#results+1]={name=name,pass=ok,error=ok and '' or tostring(err)} end
  local function expect(ok,message) assert(ok,message) end

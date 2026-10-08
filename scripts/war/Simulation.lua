@@ -35,7 +35,7 @@ function S.new(seed,mode,anatomyVersion)
   s.factions[1].seenRevision=(s.factions[1].seenRevision or 0)+1
   require("war.Campaign").checkpoint(s);return s
  end
- for f,v in ipairs(D.factions) do
+ for f,v in ipairs(W.starts(s)) do
   C.spawn(s,"building","core",f,v.x+.5,v.y+.5)
   C.spawn(s,"building","fire",f,v.x-4.5,v.y+.5)
   for i=1,6 do C.spawn(s,"unit","worker",f,v.x-4+(i%3)*1.1,v.y+4+math.floor(i/3)*1.1) end

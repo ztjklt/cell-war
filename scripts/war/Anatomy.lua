@@ -6,6 +6,7 @@ local A={regions=regions}
 local originalRegions=U.copy(A.regions)
 for _,r in ipairs(A.regions) do r.x,r.y=r.x*D.WORLD_SCALE,r.y*D.WORLD_SCALE end
 function A.regionsFor(s)
+ if s.anatomyVersion==3 then return require('war.ReferenceMap').regions() end
  if s.anatomyVersion==2 then return require('war.AnatomyV2').regions(require('war.Data').WORLD_SCALE) end
  return s.terrainStyle=='body-v4' and originalRegions or A.regions
 end

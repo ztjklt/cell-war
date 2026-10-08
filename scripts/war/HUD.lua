@@ -9,6 +9,10 @@ local FX=require("war.UIMotion")
 ---@field cards table[]
 local H={root=false,refs={},cards={},lastTab=false,tick=0,lastLayout="",modalKind=false}
 local label,panel,btn=T.label,T.panel,T.button
+local function battleText(s,text)
+ if not s.campaign or s.campaign.event.id~="trachea" then return text end
+ return text:gsub("后鼻屏障","下段屏障"):gsub("后鼻侧","气管下端"):gsub("鼻腔","气管"):gsub("咽喉防线","双肺净化"):gsub("咽喉尚未开放","双肺尚未开放")
+end
 local function textRef(name,text,size,color,props)
  local l=label(text,size,color,props);H.refs[name]=l;return l
 end
@@ -49,6 +53,8 @@ function H.openPanel(g,title,subtitle,body,footer,width)
  return box
 end
 function H.dialog(g,title,lines,buttons)
+ title=battleText(g.state,title)
+ local mapped={};for i,text in ipairs(lines) do mapped[i]=battleText(g.state,text) end;lines=mapped
  local body=UI.Panel{gap=12,paddingVertical=8}
  for _,text in ipairs(lines) do body:AddChild(label(text,13,T.muted,{whiteSpace="normal",maxLines=6})) end
  local actions={}
@@ -73,6 +79,11 @@ function H.help(g)
  {"05  调援","消耗 2 补给调来两个白细胞，3 秒后从后鼻侧进入。冷却 20 秒，每 10 秒回复 1 补给，上限 6，援军预留人口。"},
  {"06  胜败与重试","完成三波入侵、清除病毒并完全控制三块区域保持 20 秒即可成功。病毒完全夺下后鼻屏障就失败，可以重试本次事件。"},
  {"07  人体进程","鼻腔之后依次是咽喉、双肺、肠道和血流事件。后续内容尚未开放；关闭迷雾也不能进入锁定组织。"}} end
+ if g.state.campaign and g.state.campaign.event.id=="trachea" then
+  for _,item in ipairs(sections) do item[1]=battleText(g.state,item[1]);item[2]=battleText(g.state,item[2]) end
+  sections[4]={"04  气管通道","沿纵向气管黏膜移动，管壁阻挡通行与攻击。上段入口、中段通道、下段屏障依次排列。点击「气管图」查看战场，打开地图可浏览全身，其余器官暂不可进入。"}
+  sections[7]={"07  人体进程","气管之后是双肺、肠道和血流事件。后续内容尚未开放；全身可浏览，关闭迷雾也不能进入锁定组织。"}
+ end
  for _,item in ipairs(sections) do body:AddChild(panel{backgroundColor=T.surface,padding=14,gap=7,boxShadow={},children={label(item[1],15,T.teal),label(item[2],12,T.muted,{whiteSpace="normal",maxLines=8})}}) end
  H.openPanel(g,"指挥手册","从一名红细胞，到一支远征胞群。",body)
 end
@@ -112,11 +123,12 @@ end
 function H.campaignMenu(g)
  local c=g.state.campaign;if not c then H.mapMenu(g);return end
  local body=UI.Panel{gap=12}
- for i,stage in ipairs(require("war.CampaignData").stages) do
+ local N=require("war.CampaignData").forState(g.state)
+ for i,stage in ipairs(N.stages) do
   local status=c.completed[stage.id] and "已完成" or i==c.stage and stage.implemented and "进行中" or "尚未开放"
-  body:AddChild(panel{padding=14,gap=5,children={label(i.." / 5 · "..stage.name,16,T.paper),label(status,12,c.completed[stage.id] and T.teal or T.gold)}})
+  body:AddChild(panel{padding=14,gap=5,children={label(i.." / "..#N.stages.." · "..stage.name,16,T.paper),label(status,12,c.completed[stage.id] and T.teal or T.gold)}})
  end
- body:AddChild(label("完成前期五个事件后开放全人体随机攻防。当前仅鼻腔可玩。",12,T.muted,{whiteSpace="normal",maxLines=4}))
+ body:AddChild(label(g.state.campaign.event.id=="trachea" and "全身地图可浏览。当前开放气管守卫，下一事件：双肺净化（尚未开放）。" or "完成前期五个事件后开放全人体随机攻防。当前仅鼻腔可玩。",12,T.muted,{whiteSpace="normal",maxLines=4}))
  H.openPanel(g,"人体进程","同一人体持续推进 · 已夺回组织与部队保留",body)
 end
 function H.mapMenu(g)
@@ -134,13 +146,14 @@ function H.mapMenu(g)
  end
  local hint=label("",11,T.gold,{whiteSpace="normal",maxLines=2})
  local function updateHint()
-  if g.state.campaign then hint:SetText("鼻腔已开放 · 其余组织锁定 · 点击地图定位不会解锁组织");return end
+  if g.state.campaign then hint:SetText(battleText(g.state,"鼻腔已开放 · 全身可浏览 · 其余组织暂不可进入"));return end
+  if g.state.anatomyVersion==3 then hint:SetText("全身结构始终可浏览 · 敌人和未发现资源仍受迷雾限制");return end
   hint:SetText(g.fogDisabled and "全图查看 · 迷雾已临时关闭，恢复后继续探索" or overview and "组织总览 · 身体结构示意，黄色膜口允许通行" or "探索地图 · 未探索组织隐藏；切换总览查看身体结构")
  end
  updateHint()
  local toggle=btn(overview and "探索地图" or "组织总览",function() end,114)
  toggle.props.onClick=function() overview=not overview;toggle:SetText(overview and "探索地图" or "组织总览");T.active(toggle,overview);updateHint() end
- local fog=btn(g.fogDisabled and "恢复迷雾" or "查看全图",function() I.toggleFog(g);updateHint() end,114);H.refs.mapFog=fog
+ local fog=btn(g.fogDisabled and "恢复迷雾" or "查看全图",function() if g.state.anatomyVersion==3 then g.camera={x=1024,y=2048};g.zoom=require("war.View").minZoom(g.state,R.w,R.h) else I.toggleFog(g) end;updateHint() end,114);H.refs.mapFog=fog
  local legend=UI.ScrollView{width=vw<720 and 0 or 158,visible=vw>=720,scrollY=true,height="100%",children={UI.Panel{gap=2,children=legendRows}}}
  H.refs.mapLegend=legend
  local box=panel{width="94%",maxWidth=1060,height="93%",maxHeight=840,padding=16,gap=10,children={
@@ -356,7 +369,7 @@ function H.create(g)
  local clockBox=UI.Panel{width=176,gap=5,pointerEvents="none",children={textRef("clock","第1天 · 平衡",12,T.gold),textRef("phase","活跃 · 余烬胞群",10,T.muted)}};H.refs.clockBox=clockBox
  local top=UI.Panel{position="absolute",left=12,right=12,top=10,height=82,padding=10,flexDirection="row",gap=18,alignItems="center",children={brand,grid,clockBox}}
  local cards={};H.refs.zones={}
- for i,z in ipairs(require("war.CampaignData").zones) do
+ for i,z in ipairs(require("war.CampaignData").forState(g.state).zones) do
   local title=label(z.name,11,T.paper,{lineHeight=1});local status=label("",10,T.teal,{lineHeight=1});local bar=UI.ProgressBar{value=100,max=100,height=4,fillColor=T.teal}
   local card=panel{flexGrow=1,flexBasis=0,padding=7,gap=4,borderRadius=14,pointerEvents="none",children={title,status,bar}}
   FX.spotlight(card)
@@ -369,7 +382,7 @@ function H.create(g)
  Brain.attach(g,H,top,play)
  local pause=btn("Ⅱ 暂停",function() g.paused=not g.paused end,92);H.refs.pause=pause
  local speed=btn("1×",function() g.speed=g.speed==1 and 2 or 1 end,44);H.refs.speed=speed
- local fog=btn("全图",function() if g.state.campaign then R.nasalOverview(g) else I.toggleFog(g) end end,60);H.refs.fog=fog
+ local fog=btn("全图",function() if g.state.campaign then R.nasalOverview(g) elseif g.state.anatomyVersion==3 then H.mapMenu(g) else I.toggleFog(g) end end,60);H.refs.fog=fog
  local toolbar=row({pause,speed,fog,btn("地图",function() H.mapMenu(g) end,60),btn("存档",function() H.saveMenu(g) end,60),btn("?",function() H.help(g) end,44)},{position="absolute",right=12,top=110,gap=5});H.refs.toolbar=toolbar;play:AddChild(toolbar)
  local goal=panel{position="absolute",left=12,top=110,width=410,padding=12,gap=6,pointerEvents="none",children={
   textRef("goal","目标 · 维持稳态，击败两个敌群",12,T.paper),
@@ -413,10 +426,10 @@ function H.create(g)
   row({icon("buildings","emblem",44),label("微观生命  /  宏观战场",11,T.teal,{letterSpacing=2})}),
   textRef("menuTitle","细胞战争",64,T.paper),
   label("一具身体，就是整个世界。",20,T.paper,{whiteSpace="normal",maxLines=2}),
-  label("病毒已侵入鼻腔，最后一道屏障需要你的守卫。",13,T.muted,{whiteSpace="normal",maxLines=2}),
-  label("调动免疫细胞，守住防线，再反攻夺回整片鼻腔。",13,T.muted,{whiteSpace="normal",maxLines=3}),
+  label("病毒已侵入气管，下段屏障需要你的守卫。",13,T.muted,{whiteSpace="normal",maxLines=2}),
+  label("调动免疫细胞，守住防线，再反攻夺回气管。",13,T.muted,{whiteSpace="normal",maxLines=3}),
   row({label("守卫",11,T.gold),label("/",11,T.quiet),label("调援",11,T.gold),label("/",11,T.quiet),label("夺回",11,T.gold)},{marginTop=8}),
-  btn("守卫鼻腔  →",function() g.newGame("campaign");menu:SetVisible(false);H.refs.play:SetVisible(true) end,230,true,{height=56,fontSize=16}),
+  btn("守卫气管  →",function() g.newGame("campaign");menu:SetVisible(false);H.refs.play:SetVisible(true) end,230,true,{height=56,fontSize=16}),
   row({btn("全身沙盒",function() g.newGame("sandbox");menu:SetVisible(false);H.refs.play:SetVisible(true) end,126),btn("继续记录",function() H.saveMenu(g) end,126),btn("指挥手册",function() H.help(g) end,126)},{flexWrap="wrap"}),
   label("三块组织区域 · 自动争夺 · 战术暂停 · 失败重试",10,T.muted,{whiteSpace="normal",maxLines=3}),
  }}
@@ -450,22 +463,24 @@ function H.update(g,dt)
  end
  refs.clock:SetText("第"..day.."天 · "..D.seasons[season])
  local key=U.key(g.camera.x,g.camera.y)
- local region=(g.fogDisabled or s.factions[1].seen[key]) and D.biomes[W.terrain(s,math.floor(g.camera.x),math.floor(g.camera.y))].name or "未探索"
+ local region=(s.anatomyVersion==3 or g.fogDisabled or s.factions[1].seen[key]) and D.biomes[W.terrain(s,math.floor(g.camera.x),math.floor(g.camera.y))].name or "未探索"
  refs.phase:SetText(phase.." · "..region)
  if s.campaign then
-  local ev=s.campaign.event;local r=s.campaign.reinforcements;local N=require("war.CampaignData")
+  local ev=s.campaign.event;local r=s.campaign.reinforcements;local N=require("war.CampaignData").forState(s)
   for i,z in ipairs(ev.zones) do
+   ---@type number[]
    local c=z.contested and T.gold or z.owner==2 and T.danger or T.teal
+   refs.zones[i].title:SetText(i.." · "..N.zones[i].name)
    refs.zones[i].status:SetText(require("war.Territory").status(z).." "..math.floor(math.abs(z.control)).."%");refs.zones[i].status:SetStyle{fontColor=c}
    refs.zones[i].card:SetStyle{borderColor={c[1],c[2],c[3],65}}
    refs.zones[i].bar:SetValue((z.control+100)*.5);refs.zones[i].bar:SetStyle{fillColor=c}
   end
   local waiting=0;for _,q in ipairs(r.queue) do waiting=waiting+q.remaining end
-  refs.nasalSupply:SetText("入侵 "..ev.wave.." / 3 波 · 补给 "..r.supply.." / "..N.supply.max.." · "..(ev.status=="completed" and "鼻腔已夺回 · 咽喉尚未开放" or "回复 "..math.ceil(N.supply.period-r.regen).."秒 · "..(r.cooldown>0 and "调援冷却 "..math.ceil(r.cooldown).."秒" or "可调援")..(waiting>0 and " · "..waiting.."援军调入中" or "")))
+  refs.nasalSupply:SetText(battleText(s,"入侵 "..ev.wave.." / 3 波 · 补给 "..r.supply.." / "..N.supply.max.." · "..(ev.status=="completed" and "鼻腔已夺回 · 咽喉尚未开放" or "回复 "..math.ceil(N.supply.period-r.regen).."秒 · "..(r.cooldown>0 and "调援冷却 "..math.ceil(r.cooldown).."秒" or "可调援")..(waiting>0 and " · "..waiting.."援军调入中" or ""))))
   local b=refs.commandButtons.reinforce;if b then local ok,why=require("war.Reinforcements").available(s);b:SetDisabled(not ok);b:SetText(ok and "调援 +2" or ev.status=="completed" and "战斗结束" or r.cooldown>0 and "冷却 "..math.ceil(r.cooldown).."s" or why) end
  end
- refs.fog:SetText(s.campaign and "鼻腔图" or g.fogDisabled and "迷雾" or "全图");T.active(refs.fog,not s.campaign and g.fogDisabled)
- if refs.mapFog then refs.mapFog:SetText(g.fogDisabled and "恢复迷雾" or "查看全图");T.active(refs.mapFog,g.fogDisabled) end
+ refs.fog:SetText(s.campaign and battleText(s,"鼻腔图") or g.fogDisabled and "迷雾" or "全图");T.active(refs.fog,not s.campaign and g.fogDisabled)
+ if refs.mapFog then refs.mapFog:SetText(s.anatomyVersion==3 and "全身定位" or g.fogDisabled and "恢复迷雾" or "查看全图");T.active(refs.mapFog,g.fogDisabled) end
  refs.pause:SetText(g.paused and "▶ 继续" or "Ⅱ 暂停");T.active(refs.pause,g.paused);refs.speed:SetText(g.speed.."×")
  for tab,b in pairs(refs.tabButtons) do T.active(b,g.tab==tab) end
  for name,b in pairs(refs.commandButtons) do
@@ -493,15 +508,15 @@ function H.update(g,dt)
  else
   refs.selected:SetText(s.campaign and "免疫守卫" or "余烬胞群");refs.hp:SetValue(cap>0 and pop/cap or 0);refs.hp:SetStyle{fillColor=pop>=cap and T.gold or T.teal}
   refs.selectedDetail:SetText("人口 "..pop.." / "..cap..(s.campaign and " · 免疫部队" or " · 科技 T"..s.factions[1].tier))
-  refs.selectedStats:SetText(s.campaign and "守住后鼻屏障 · 夺回鼻腔" or phase.." · "..region);refs.queue:SetText(Save.status)
+  refs.selectedStats:SetText(s.campaign and battleText(s,"守住后鼻屏障 · 夺回鼻腔") or phase.." · "..region);refs.queue:SetText(Save.status)
  end
  local tutorials={"01 选择红细胞 · 点击单位或红细胞按钮","02 点击蛋白束 / 钙晶，采集并送回胞巢","03 建造第二座荧光腺，扩大休息期安全区","04 建造培养床，安排红细胞生产食物","05 建造分裂兵巢，训练第一支军队","06 探索器官 · 发展科技 · 进攻敌群"}
  refs.tutorial:SetText(tutorials[s.tutorial] or tutorials[6]);refs.tutorialProgress:SetValue(math.min(s.tutorial or 1,6))
  refs.goal:SetText(s.outcome=="victory" and "内域已控制 · 自由探索仍在继续" or s.outcome=="defeat" and "胞群已失去活性 · 可读取记录" or "目标 · 维持稳态，击败两个敌群")
  if s.campaign then
   local ev=s.campaign.event
-  refs.goal:SetText(ev.status=="failed" and "鼻腔失守 · 重试本次事件" or ev.status=="completed" and "鼻腔已夺回 · 下一事件尚未开放" or "鼻腔事件 · 守住后鼻屏障")
-  refs.tutorial:SetText(ev.status=="completed" and "已完成 1 / 5 · 保留部队与记录" or ev.secure>0 and "全域净化 · 稳固 "..math.floor(ev.secure).." / 20 秒" or "入侵 "..ev.wave.." / 3 波 · "..(ev.phase=="defend" and "选择部队、守卫与调援" or "反攻夺回三块组织区域"))
+  refs.goal:SetText(battleText(s,ev.status=="failed" and "鼻腔失守 · 重试本次事件" or ev.status=="completed" and "鼻腔已夺回 · 下一事件尚未开放" or "鼻腔事件 · 守住后鼻屏障"))
+  refs.tutorial:SetText(ev.status=="completed" and "已完成 1 / "..#require("war.CampaignData").forState(s).stages.." · 保留部队与记录" or ev.secure>0 and "全域净化 · 稳固 "..math.floor(ev.secure).." / 20 秒" or "入侵 "..ev.wave.." / 3 波 · "..(ev.phase=="defend" and "选择部队、守卫与调援" or "反攻夺回三块组织区域"))
   refs.tutorialProgress:SetValue(ev.wave*2)
  end
  local modes={move="移动",attackmove="进攻移动",guard="驻守",rally="集结点"}

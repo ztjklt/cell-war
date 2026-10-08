@@ -60,6 +60,7 @@ local function strokeEdge(R,e,x,y,scale,c,width,alpha)
 end
 -- Coarse vessel strokes never query fine wall geometry or animate subpixel cells.
 function A.coarse(R,g,s,x1,x2,y1,y2)
+ if s.anatomyVersion==3 then return require('war.ReferenceArt').vessels(R,g,s,x1,x2,y1,y2) end
  if s.anatomyVersion==2 then return require('war.CurvedVesselArt').draw(R,g,s,x1,x2,y1,y2) end
  if s.terrainStyle~='body' and s.terrainStyle~='body-v4' then return end
  local V=V.forDisplay(s)
@@ -98,6 +99,7 @@ function A.coarse(R,g,s,x1,x2,y1,y2)
 end
 -- Near detail stays bounded by visible screen space; no wall resampling.
 function A.details(R,g,s,x1,x2,y1,y2)
+ if s.anatomyVersion==3 then return require('war.ReferenceArt').flow(R,g,s,x1,x2,y1,y2) end
  if s.anatomyVersion==2 then return require('war.CurvedVesselArt').details(R,g,s,x1,x2,y1,y2) end
  if g.zoom<.5 or not (s.terrainStyle=='body' or s.terrainStyle=='body-v4') then return end
  local net=V.forDisplay(s);local z=g.zoom;local time=g.flowTime or s.time;local count=0
@@ -122,6 +124,7 @@ function A.details(R,g,s,x1,x2,y1,y2)
  end end
 end
 function A.atlas(R,s,x,y,scale,all)
+ if s.anatomyVersion==3 then return end
  if s.anatomyVersion==2 then return require('war.CurvedVesselArt').atlas(R,s,x,y,scale,all) end
  if s.terrainStyle~='body' and s.terrainStyle~='body-v4' then return end
  local V=V.forDisplay(s)
