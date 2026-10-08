@@ -52,6 +52,7 @@ function S.changeMap(oldState,targetMapId,spawnId)
   maxId=math.max(maxId,tonumber(id) or 0)
   if e.category=="unit" and e.faction==1 and U.alive(e) then units[#units+1]=U.copy(e) end
  end
+ table.sort(units,function(a,b) return a.id<b.id end)
  local nextState=W.generate(oldState.seed,oldState.legacyTerrain,"body","campaign",3,targetMapId)
  nextState.time=oldState.time;nextState.tick=oldState.tick;nextState.rng=oldState.rng;nextState.tutorial=oldState.tutorial;nextState.outcome="playing";nextState.nextId=math.max(nextState.nextId,maxId+1)
  for i=1,math.min(#oldState.factions,#nextState.factions) do
@@ -65,11 +66,15 @@ function S.changeMap(oldState,targetMapId,spawnId)
  for i,old in ipairs(units) do
   local angle=(i-1)*2.399;local radius=math.min(18,4+math.floor((i-1)/6)*3);local e=C.spawn(nextState,"unit",old.kind,1,home.x+math.cos(angle)*radius,home.y+math.sin(angle)*radius)
   if not e then return nil,"Unable to place player unit at target spawn" end
-  local id=e.id;for k,v in pairs(old) do if k~="id" and k~="x" and k~="y" and k~="orders" and k~="path" then e[k]=U.copy(v) end end;e.id=old.id;e.x,e.y=home.x+math.cos(angle)*radius,home.y+math.sin(angle)*radius;e.hp=math.min(e.hp,e.maxHp);e.orders={};e.path={};e.pathIndex=1;e.pathPending=false;e.pathFailed=false;nextState.entities[id]=nil;nextState.entities[old.id]=e
+  local id=e.id
+  local transient={id=true,x=true,y=true,orders=true,path=true,longRoute=true,pathGoal=true,pathResolved=true,routeEnd=true,vesselLane=true,returning=true,delivering=true,cellDetour=true,contactStall=true,travelSpeed=true}
+  for k,v in pairs(old) do if not transient[k] then e[k]=U.copy(v) end end
+  e.id=old.id;e.hp=math.min(e.hp,e.maxHp);e.orders={};e.path={};e.pathIndex=1;e.pathPending=false;e.pathFailed=false
+  nextState.entities[id]=nil;nextState.entities[old.id]=e
  end
  W.rebuild(nextState);W.fog(nextState)
  local N=require("war.CampaignData").forState(nextState);for y=N.bounds.y,N.bounds.y+N.bounds.h-1 do for x=N.bounds.x,N.bounds.x+N.bounds.w-1 do if W.land(nextState,x,y) then local k=U.key(x,y);nextState.factions[1].seen[k]=true;W.mapMark(nextState,nextState.factions[1],x,y) end end end
- nextState.factions[1].seenRevision=(nextState.factions[1].seenRevision or 0)+1;require("war.Campaign").checkpoint(nextState);return nextState
+ P.reset();nextState.factions[1].seenRevision=(nextState.factions[1].seenRevision or 0)+1;require("war.Campaign").checkpoint(nextState);return nextState
 end
 function S.step(s,dt)
  if s.outcome=="defeat" then return end

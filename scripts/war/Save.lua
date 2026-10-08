@@ -116,7 +116,7 @@ function Save.restore(snap,isCheckpoint,validateOnly)
   assert((anatomyVersion==3)==(c.terrainVersion==3),"人体与战场版本不匹配")
   local N=require("war.CampaignData").forState({campaign=c})
   assert(finite(c.stage) and c.stage%1==0 and c.stage>=1 and c.stage<=#N.stages+1 and type(c.completed)=="table" and type(c.unlocked)=="table" and type(c.rewards)=="table" and type(c.randomEnabled)=="boolean","战役进度损坏")
-  local expectedLegacy=c.terrainVersion==3 and c.map_id=="trachea_01" and "trachea" or c.terrainVersion==2 and "nasal" or nil
+  local expectedLegacy=c.terrainVersion==3 and c.map_id=="trachea_01" and "trachea" or c.terrainVersion~=3 and "nasal" or nil
   local validEvent=type(ev)=="table" and (ev.id==expectedLegacy or (c.terrainVersion==3 and Registry.exists(ev.id) and ev.id==c.map_id))
   assert(validEvent and (ev.status=="active" or ev.status=="failed" or ev.status=="completed") and (ev.phase=="defend" or ev.phase=="counterattack"),"事件状态损坏")
   numbers(ev,{"elapsed","wave","pendingViruses","spawnTimer","secure"},"入侵状态损坏")

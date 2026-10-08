@@ -8,7 +8,7 @@ function M.forState(s)
  local c=s and s.campaign
  if not c then return Trachea end
  -- Old nasal saves have no stable map id and must retain their historical geometry.
- if c.terrainVersion==2 or (not c.map_id and c.event and c.event.id=="nasal") then return Legacy.forState(s) end
+ if c.terrainVersion~=3 and c.event and c.event.id=="nasal" then return Legacy.forState(s) end
  local id=Registry.currentId(s) or "trachea_01"
  return Registry.definition(id)
 end

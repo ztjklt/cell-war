@@ -45,8 +45,8 @@ function C.update(g,dt)
   if not state then
    g.transition=nil;g.paused=false;g.state.message=err or "地图加载失败";g.state.messageTime=3;return
   end
-  g.state=state;g.transition.phase="fadein";g.transition.timer=0;g.accumulator=0;g.selection={};g.groups={{},{},{}};g.camera={x=state.factions[1].x,y=state.factions[1].y};g.zoom=1
-  require("war.Motion").reset(g);require("war.Render").prepare(state);if g.refreshSidebar then g.refreshSidebar() end
+  g.state=state;g.transition.phase="fadein";g.transition.timer=0;g.accumulator=0;g.selection={};g.groups={{},{},{}};g.inspectTarget=false;g.lastTap=false;local home=Registry.forState(state).home;g.camera={x=home.x,y=home.y};g.zoom=1
+  require("war.Motion").reset(g);require("war.Render").prepare(state);if g.refreshSidebar then g.refreshSidebar() end;require("war.Render").home(g)
  elseif tr.phase=="fadein" and tr.timer>=.35 then
   g.transition=nil;g.paused=false
  end

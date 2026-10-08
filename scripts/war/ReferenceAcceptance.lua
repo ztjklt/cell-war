@@ -64,11 +64,11 @@ function Q.run()
   s.campaign.reinforcements.supply=0;s.campaign.reinforcements.regen=0
   for _=1,100 do R.update(s,.1) end;assert(s.campaign.reinforcements.supply==1)
  end)
- test('20秒稳固胜利，奖励不重复，下一关双肺暂不开启',function()
+ test('20秒稳固胜利，奖励不重复，双肺地图出口解锁',function()
   local s=empty();local ev=s.campaign.event;ev.wave=3
   for _,z in ipairs(ev.zones) do z.control=100;z.owner=1 end
   for _=1,199 do Camp.afterStep(s,.1) end;assert(ev.status=='active');Camp.afterStep(s,.1)
-  assert(ev.status=='completed' and s.campaign.completed.trachea and s.campaign.stage==2 and s.campaign.awaitingContent)
+  assert(ev.status=='completed' and s.campaign.completed.trachea and s.campaign.completed.trachea_01 and s.campaign.stage==4 and not s.campaign.awaitingContent)
   local reward=s.factions[1].stock.relic;Camp.succeed(s);assert(reward==1 and s.factions[1].stock.relic==reward)
   assert(not Camp.start(s,'lungs') and #Camp.randomCandidates(s)==0)
  end)

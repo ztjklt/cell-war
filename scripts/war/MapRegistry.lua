@@ -2,9 +2,9 @@
 local M={}
 
 M.stages={
- {id="nasal_01",name="鼻腔",region="nasal",index=1,implemented=true},
+ {id="nasal_01",name="鼻腔",region="nasal",index=1,implemented=true,unlocks={"nasal"},reward={relic=1}},
  {id="pharynx_01",name="咽喉",region="pharynx",index=2,implemented=false},
- {id="trachea_01",name="气管",region="trachea",index=3,implemented=true},
+ {id="trachea_01",name="气管",region="trachea",index=3,implemented=true,unlocks={"trachea"},reward={relic=1}},
  {id="lungs_01",name="双肺",region="lungs",index=4,implemented=true},
  {id="blood_01",name="血流",region="blood",index=5,implemented=false},
  {id="esophagus_01",name="食道",region="esophagus",index=6,implemented=false},
