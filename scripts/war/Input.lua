@@ -69,6 +69,7 @@ function I.tap(g,x,y,secondary)
  end
  if g.mode=="rally" then local id=I.ids(g)[1];C.submit(s,{kind="rally",faction=1,target=id,x=wx,y=wy});g.mode=false;return end
  local picked=I.pick(g,x,y)
+ g.inspectTarget=picked and picked.faction~=1 and picked or false
  local workerSelected=false
  for _,id in ipairs(I.ids(g)) do if s.entities[id].kind=="worker" then workerSelected=true;break end end
  local workTarget=picked and picked.faction==1 and picked.category=="building" and workerSelected and (not picked.complete or picked.kind=="farm" or picked.fire>0 or picked.hp<picked.maxHp)

@@ -117,7 +117,7 @@ function H.help(g)
  if g.state.campaign and require("war.MapRegistry").isTrachea(g.state) then
   for _,item in ipairs(sections) do item[1]=battleText(g.state,item[1]);item[2]=battleText(g.state,item[2]) end
   sections[4]={"04  气管通道","沿纵向气管黏膜移动，管壁阻挡通行与攻击。上段入口、中段通道、下段屏障依次排列。点击「气管图」查看战场，打开地图可浏览全身，其余器官暂不可进入。"}
-  sections[7]={"07  人体进程","气管之后是双肺、肠道和血流事件。后续内容尚未开放；全身可浏览，关闭迷雾也不能进入锁定组织。"}
+  sections[7]={"07  人体进程","气管夺回后，移动部队到地图出口进入双肺净化。血流和肠道等后续关卡尚未开放；全身可浏览，锁定组织不可进入。"}
  end
  for _,item in ipairs(sections) do body:AddChild(panel{backgroundColor=T.surface,padding=14,gap=7,boxShadow={},children={label(item[1],15,T.teal),label(item[2],12,T.muted,{whiteSpace="normal",maxLines=8})}}) end
  H.openPanel(g,"指挥手册","从一名红细胞，到一支远征胞群。",body)
@@ -163,7 +163,7 @@ function H.campaignMenu(g)
   local status=c.completed[stage.id] and "已完成" or i==c.stage and stage.implemented and "进行中" or "尚未开放"
   body:AddChild(panel{padding=14,gap=5,children={label(i.." / "..#N.stages.." · "..stage.name,16,T.paper),label(status,12,c.completed[stage.id] and T.teal or T.gold)}})
  end
- body:AddChild(label(require("war.MapRegistry").isTrachea(g.state) and "全身地图可浏览。当前开放气管守卫，下一事件：双肺净化（尚未开放）。" or "完成前期五个事件后开放全人体随机攻防。当前仅鼻腔可玩。",12,T.muted,{whiteSpace="normal",maxLines=4}))
+ body:AddChild(label(c.terrainVersion==3 and "当前开放气管守卫与双肺净化。夺回气管后，从地图出口进入双肺；血流及其他后续关卡尚未开放。" or "当前鼻腔存档保留原有进度。下一关咽喉防线尚未开放。",12,T.muted,{whiteSpace="normal",maxLines=4}))
  H.openPanel(g,"人体进程","同一人体持续推进 · 已夺回组织与部队保留",body)
 end
 function H.mapMenu(g)

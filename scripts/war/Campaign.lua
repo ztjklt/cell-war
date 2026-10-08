@@ -76,10 +76,19 @@ function C.autopilot(s,dt)
 end
 function C.succeed(s)
  local data=N.forState(s);local c=s.campaign;local spec=stageFor(c) or data.stages[c.stage];if not spec or c.event.status~="active" then return end
- local key=c.map_id or spec.id;c.event.status="completed";c.completed[key]=true;C.unlock(s,spec.unlocks)
- if not c.rewards[key] then for k,n in pairs(spec.reward or {}) do require("war.Economy").add(s,1,k,n) end;c.rewards[key]=true end
- local nextId=Registry.next(c.map_id);local current=Registry.stage(key);c.stage=math.min((current and current.index or c.stage)+1,Registry.stageCount()+1);c.randomEnabled=nextId==nil;c.awaitingContent=nextId and not Registry.stage(nextId).implemented or false;c.reinforcements.queue={};s.needsAutosave=true
- U.message(s,nextId and ("Map complete. Enter the visible changelevel trigger for "..Registry.stage(nextId).name) or "Campaign complete")
+ local key=mapId(c);local legacyKey=c.event.id
+ c.event.status="completed";c.completed[key]=true
+ if legacyKey=="trachea" or legacyKey=="nasal" then c.completed[legacyKey]=true end
+ C.unlock(s,spec.unlocks)
+ if not c.rewards[key] and not c.rewards[legacyKey] then
+  for k,n in pairs(spec.reward or {}) do require("war.Economy").add(s,1,k,n) end
+ end
+ c.rewards[key]=true;c.rewards[legacyKey]=true
+ local nextId=Registry.next(key);local current=Registry.stage(key)
+ c.stage=math.min((current and current.index or c.stage)+1,Registry.stageCount()+1)
+ c.randomEnabled=nextId==nil;c.awaitingContent=nextId and not Registry.implemented(nextId) or false
+ c.reinforcements.queue={};s.needsAutosave=true
+ U.message(s,nextId and ("地图已夺回 · 下一关："..Registry.stage(nextId).name..(c.awaitingContent and "（尚未开放）" or "，从地图出口进入")) or "战役已完成")
 end
 function C.randomCandidates(s)
  local data=N.forState(s);local out={};if not s.campaign or not s.campaign.randomEnabled then return out end
@@ -89,7 +98,22 @@ function C.retry(s)
  if not s.campaign or s.campaign.event.status~="failed" or not s.campaign.checkpoint then return false end
  local checkpoint=U.copy(s.campaign.checkpoint);local restored=require("war.Save").restore(checkpoint,true);restored.campaign.checkpoint=checkpoint;return restored
 end
+local function airwayVirus(s,e,dt)
+ local F,Cmd=require("war.Combat"),require("war.Commands")
+ local target=F.enemy(s,e,8,false)
+ if target then F.fight(s,e,target,dt,true);return end
+ local index=3
+ for i,z in ipairs(s.campaign.event.zones) do if z.control>-100 then index=i;break end end
+ local geometry=N.forState(s);local z=geometry.zones[index]
+ if geometry.entries and not e.viralSide then e.viralSide=e.y<geometry.bounds.y+80 and 2 or 1 end
+ local sideY=geometry.entries and e.viralSide==2 and (index==3 and 430 or 410) or z.y
+ local x=z.x+(e.id%5-2)*1.6;local y=sideY+(math.floor(e.id/5)%5-2)*1.6
+ if e.viralZone~=index or e.pathFailed then e.viralZone=index;e.pathFailed=false;e.pathPending=false;e.path={};e.longRoute=nil;e.orderToken=e.orderToken+1 end
+ Cmd.go(s,e,x,y,dt,1)
+end
+
 function C.virus(s,e,dt)
+ if Registry.currentId(s)~="lungs_01" then return airwayVirus(s,e,dt) end
  local F,Cmd=require("war.Combat"),require("war.Commands")
  local geometry=N.forState(s);local index=math.floor(e.viralZone or 1);local z=geometry.zones[index] or geometry.zones[1]
  if not z then return end
@@ -112,13 +136,23 @@ function C.beforeStep(s,dt)
  while ev.wave<#data.waves and ev.elapsed>=data.waves[ev.wave+1].at-.000001 do ev.wave=ev.wave+1;enqueueWave(ev,data.waves[ev.wave],ev.wave);U.message(s,"Virus wave "..ev.wave.." / "..#data.waves) end
  ev.phase=ev.wave==#data.waves and "counterattack" or "defend";ev.spawnTimer=ev.spawnTimer-dt
  if ev.pendingViruses>0 and ev.spawnTimer<=0 then
-  local geometry=N.forState(s);ev.spawnQueue=ev.spawnQueue or {};local index=table.remove(ev.spawnQueue,1) or math.min(#geometry.zones,math.max(1,ev.spawnZone or ev.wave));local zone=geometry.zones[index] or geometry.zones[1]
+  local geometry=N.forState(s);ev.spawnQueue=ev.spawnQueue or {}
+  local index=ev.spawnQueue[1] or math.min(#geometry.zones,math.max(1,ev.spawnZone or ev.wave))
+  local zone=geometry.zones[index] or geometry.zones[1]
   local x,y=zone.x+(ev.pendingViruses%5-2)*1.6,zone.y+(math.floor(ev.pendingViruses/5)%5-2)*1.6
-  if geometry.terrainVersion==2 and geometry.entries then
-   local entries=geometry.entries;local entry=entries[ev.wave==2 and 2 or ev.wave==3 and ev.pendingViruses%2+1 or 1];x,y=entry.x,entry.y+(ev.pendingViruses%5-2)*2
+  ---@type table?
+  local entry
+  if Registry.currentId(s)~="lungs_01" then
+   entry=geometry.entry
+   if geometry.entries then entry=geometry.entries[ev.wave==2 and 2 or ev.wave==3 and ev.pendingViruses%2+1 or 1] end
+   x,y=entry.x,entry.y+(ev.pendingViruses%5-2)*2
   end
   local e=require("war.Commands").spawn(s,"unit","virus",2,x,y)
- if e then e.viralZone=index;e.viralWave=ev.wave;if geometry.terrainVersion==2 and geometry.entries then e.viralSide=e.y<geometry.bounds.y+80 and 2 or 1 end;ev.pendingViruses=#ev.spawnQueue;ev.spawnTimer=.7 end
+  if e then
+   e.viralZone=index;e.viralWave=ev.wave
+   if geometry.entries then e.viralSide=entry==geometry.entries[2] and 2 or 1 end
+   table.remove(ev.spawnQueue,1);ev.pendingViruses=#ev.spawnQueue;ev.spawnTimer=.7
+  end
  end
  C.autopilot(s,dt)
 end
