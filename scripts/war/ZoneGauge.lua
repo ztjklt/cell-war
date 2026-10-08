@@ -24,8 +24,14 @@ function Z.presence(z)
  if z.friendly==0 and z.hostile==0 then return "无人" end
  return "我 "..z.friendly.." · 敌 "..z.hostile
 end
--- Same rule as BrainAdvisor: the barrier is losing control or has viruses inside.
-local function danger(ev,i,z) return ev.status=="active" and i==#ev.zones and (z.control<60 or z.hostile>0) end
+-- A map can designate more than one critical zone (the two lungs share the
+-- failure condition); older maps continue to use their final zone.
+local function danger(ev,i,z,N)
+ if ev.status~="active" then return false end
+ local critical=false
+ for _,index in ipairs(N.failureZones or {#ev.zones}) do if index==i then critical=true;break end end
+ return critical and (z.control<60 or z.hostile>0)
+end
 ---@class WarZoneGauge
 ---@field cards table[]
 ---@field state {vertical:boolean}
@@ -79,7 +85,7 @@ function Z.create(g,actions)
    end
    ---@type number[]?
    local warn=nil
-   if z.contested then warn=T.hud.contested elseif danger(ev,i,z) then warn=bad end
+   if z.contested then warn=T.hud.contested elseif danger(ev,i,z,require("war.CampaignData").forState(g.state)) then warn=bad end
    if warn then
     local alpha=math.floor(120+90*math.sin((g.realTime or 0)*6))
     nvgBeginPath(vg);nvgRoundedRect(vg,l.x+1,l.y+1,l.w-2,l.h-2,11)

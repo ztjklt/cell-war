@@ -4,16 +4,20 @@ local UI=require("urhox-libs/UI")
 local Sim=require("war.Simulation")
 local D=require("war.Data")
 local Motion=require("war.Motion")
-local R,H,I,Save,Audio=require("war.Render"),require("war.HUD"),require("war.Input"),require("war.Save"),require("war.Audio")
-local game={state={},selection={},groups={{},{},{}},camera={x=D.factions[1].x,y=D.factions[1].y},zoom=1,started=false,paused=false,fogDisabled=false,speed=1,accumulator=0,realTime=0,pointer={wx=D.factions[1].x,wy=D.factions[1].y},box=false,append=false,placement=false,mode=false,tab=false,modal=false,fps=0,frameCount=0,frameTime=0}
+local R,H,I,Save,Audio,ChangeLevel=require("war.Render"),require("war.HUD"),require("war.Input"),require("war.Save"),require("war.Audio"),require("war.ChangeLevel")
+local game={state={},selection={},groups={{},{},{}},inspectTarget=false,camera={x=D.factions[1].x,y=D.factions[1].y},zoom=1,started=false,paused=false,fogDisabled=false,speed=1,accumulator=0,realTime=0,lastTap=false,pointer={wx=D.factions[1].x,wy=D.factions[1].y},box=false,append=false,placement=false,mode=false,tab=false,modal=false,fps=0,frameCount=0,frameTime=0}
 function Start()
  engine.maxFps=60;engine.maxInactiveFps=30
  graphics.windowTitle="细胞战争"
  input.mouseMode=MM_ABSOLUTE
  game.state=Sim.new(math.floor(os.time()%2000000000))
  Motion.reset(game)
- game.newGame=function(mode) mode=mode or (game.state.campaign and "campaign" or "sandbox");assert(mode=="campaign" or mode=="sandbox","未知游戏模式");game.vesselSurvey=false;game.state=Sim.new(math.floor(os.time()%2000000000),mode);R.prepare(game.state);game.selection={};game.groups={{},{},{}};game.camera={x=D.factions[1].x,y=D.factions[1].y};game.zoom=1;game.started=true;game.paused=false;game.defeatShown=false;game.victoryShown=false;game.accumulator=0;game.mode=false;game.placement=false;game.tab=false;H.lastLayout="";H.sidebar(game);R.home(game) end
- game.replaceState=function(state) game.vesselSurvey=false;game.state=state;R.prepare(game.state);game.selection={};game.groups={{},{},{}};game.accumulator=0;game.started=true;game.paused=false;game.defeatShown=false;game.victoryShown=false;game.mode=false;game.placement=false;game.tab=false;H.lastLayout="";H.sidebar(game);R.home(game);H.refs.menu:SetVisible(false) end
+ game.returnHome=function()
+  if game.closeModal then game.closeModal() end
+  game.transition=nil;game.modal=false;game.paused=true;game.started=false;game.selection={};game.inspectTarget=false;game.mode=false;game.placement=false;game.tab=false;game.lastTap=false
+ end
+ game.newGame=function(mode) mode=mode or (game.state.campaign and "campaign" or "sandbox");assert(mode=="campaign" or mode=="sandbox","未知游戏模式");game.vesselSurvey=false;game.state=Sim.new(math.floor(os.time()%2000000000),mode);R.prepare(game.state);game.selection={};game.inspectTarget=false;game.groups={{},{},{}};game.lastTap=false;game.camera={x=D.factions[1].x,y=D.factions[1].y};game.zoom=1;game.started=true;game.paused=false;game.defeatShown=false;game.victoryShown=false;game.accumulator=0;game.mode=false;game.placement=false;game.tab=false;H.lastLayout="";H.sidebar(game);R.home(game);H.startGuide(game) end
+ game.replaceState=function(state) game.vesselSurvey=false;game.lastTap=false;game.inspectTarget=false;game.state=state;R.prepare(game.state);game.selection={};game.groups={{},{},{}};game.accumulator=0;game.started=true;game.paused=false;game.defeatShown=false;game.victoryShown=false;game.mode=false;game.placement=false;game.tab=false;H.lastLayout="";H.sidebar(game);R.home(game);H.refs.menu:SetVisible(false) end
  R.init();R.prepare(game.state);H.create(game);R.home(game);Audio.init();game.audio=Audio.play;Audio.play("ambient")
  SubscribeToEvent(R.vg,"NanoVGRender","HandleWorldRender")
  SubscribeToEvent("Update","HandleUpdate")
@@ -29,7 +33,8 @@ function HandleUpdate(eventType,eventData)
  game.frameCount=game.frameCount+1;game.frameTime=game.frameTime+dt
  if game.frameTime>=1 then game.fps=math.floor(game.frameCount/game.frameTime);game.frameTime=0;game.frameCount=0 end
  I.update(game,dt);Save.update(dt)
- if game.started and not game.paused and not game.modal then
+ ChangeLevel.update(game,dt)
+ if game.started and not game.transition and not game.paused and not game.modal then
   game.accumulator=math.min(game.accumulator+dt*game.speed,1)
   local steps=0
   local deadline=os.clock()+.006
