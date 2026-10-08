@@ -174,7 +174,13 @@ end
 function R.mood(g,H)
  local d=H.refs.brainDialogue;local ev=g.state.campaign and g.state.campaign.event
  if ev and ev.status=="completed" then return "happy" end
- if ev and ev.status=="active" and (ev.zones[3].hostile>0 or ev.zones[3].control<60) then return "alert" end
+ if ev and ev.status=="active" then
+  local data=require("war.CampaignData").forState(g.state)
+  for _,index in ipairs(data.failureZones or {#ev.zones}) do
+   local z=ev.zones[index]
+   if z and (z.hostile>0 or z.control<60) then return "alert" end
+  end
+ end
  if d and d.topic=="defense" then return "thinking" end
  return "idle"
 end

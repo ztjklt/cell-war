@@ -314,7 +314,7 @@ function current.forDisplay(s)
  return current.forScale(s.terrainStyle=='body-v4' and 1 or D.WORLD_SCALE)
 end
 function current.forState(s)
- if s.campaign and s.campaign.event.id=='trachea' then
+ if s.campaign and require('war.MapRegistry').isTrachea(s) then
   if not trachea then trachea=create(1,require('war.TracheaTerrain').vascular) end;return trachea
  end
  if s.campaign and s.campaign.terrainVersion==2 then

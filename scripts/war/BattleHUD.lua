@@ -6,7 +6,7 @@ local UI=require("urhox-libs/UI")
 local T,M,FX=require("war.UITheme"),require("war.UIModel"),require("war.UIMotion")
 local I,C,U,D=require("war.Input"),require("war.Commands"),require("war.Util"),require("war.Data")
 local R,Z=require("war.Render"),require("war.ZoneGauge")
-local CampaignData,Reinforce=require("war.CampaignData"),require("war.Reinforcements")
+local CampaignData,Reinforce,Campaign=require("war.CampaignData"),require("war.Reinforcements"),require("war.Campaign")
 local Platform=require("urhox-libs.Platform.PlatformUtils")
 local B={}
 local label=T.label
@@ -31,6 +31,18 @@ end
 local function setText(entry,key,widget,text)
  entry.last=entry.last or {}
  if entry.last[key]~=text then entry.last[key]=text;widget:SetText(text) end
+end
+local orderNames={move="移动",attack="攻击",attackmove="进攻移动",guard="驻守",rally="集结",retreat="撤退",stop="停止"}
+local function queueText(ids,s)
+ local first=ids[1] and s.entities[ids[1]]
+ if not first then return "命令队列\n未选择单位" end
+ local orders=first.orders or {};if #orders==0 then return "命令队列\n空闲" end
+ local lines={"命令队列"}
+ for i,o in ipairs(orders) do
+  lines[#lines+1]=i..". "..(orderNames[o.kind] or o.kind)
+  if i>=5 then if #orders>i then lines[#lines+1]="… 还有 "..(#orders-i).." 项" end;break end
+ end
+ return table.concat(lines,"\n")
 end
 -- Supply pips: filled pips are ready supply; the next pip fills while supply regenerates.
 local function pips(g)
@@ -72,6 +84,14 @@ function B.create(g,H,play)
  -- Top bar: pause / speed / wave clock / supply / menu.
  refs.pause=plain("pause","Ⅱ 暂停",function() g.paused=not g.paused end)
  refs.speed=plain("speed","1×",function() g.speed=g.speed==1 and 2 or 1 end)
+ refs.skipWave=plain("skipWave","下一波",function()
+  local ok,reason=require("war.Campaign").skipWave(g.state)
+  if not ok then U.message(g.state,reason) end
+ end)
+ refs.autoplay=plain("autoplay","挂机",function()
+  local ok,reason=Campaign.toggleAutoplay(g.state)
+  if ok==false and reason then U.message(g.state,reason) end
+ end)
  refs.waveTitle=label("",12,T.muted,{lineHeight=1.1});refs.waveTime=label("",18,T.paper,{fontWeight="bold",lineHeight=1.1})
  local wave=UI.Panel{justifyContent="center",flexShrink=1,pointerEvents="none",children={refs.waveTitle,refs.waveTime}}
  refs.supplyLabel=label("补给",12,T.muted);refs.pips=pips(g);refs.supplyText=label("",13,T.paper)
@@ -91,12 +111,12 @@ function B.create(g,H,play)
  refs.barZoomIn=plain("barZoomIn","＋",actions.zoomIn);refs.barZoomOut=plain("barZoomOut","－",actions.zoomOut)
  refs.tools=UI.Panel{flexDirection="row",alignItems="center",gap=6,flexShrink=0,pointerEvents="box-none",
   children={refs.barOverview,refs.barHome,refs.barZoomIn,refs.barZoomOut}}
- refs.rowA=UI.Panel{flexDirection="row",alignItems="center",gap=8,flexGrow=1,flexShrink=1,pointerEvents="box-none",children={refs.pause,refs.speed,wave}}
+ refs.rowA=UI.Panel{flexDirection="row",alignItems="center",gap=8,flexGrow=1,flexShrink=1,pointerEvents="box-none",children={refs.pause,refs.speed,refs.skipWave,refs.autoplay,wave}}
  refs.rowB=UI.Panel{flexDirection="row",alignItems="center",gap=10,flexShrink=0,pointerEvents="box-none",children={supply,refs.tools,refs.menuButton}}
  refs.bar=T.hudPanel{position="absolute",flexDirection="row",alignItems="center",children={refs.rowA,refs.rowB}}
  -- Menu: the modal screens keep pausing the simulation; the dropdown itself does not.
  local function item(key,text,fn) return plain(key,text,function() B.closePopups(g,H);fn() end) end
- refs.menuItems={item("map","地图",function() H.mapMenu(g) end),item("progress","人体进程",function() H.campaignMenu(g) end),
+ refs.menuItems={item("map","地图",function() H.mapMenu(g) end),item("home","返回首页",function() if g.returnHome then g.returnHome() end end),item("progress","人体进程",function() H.campaignMenu(g) end),
   item("save","存档",function() H.saveMenu(g) end),item("help","指挥手册",function() H.help(g) end)}
  refs.menu=T.hudPanel{position="absolute",zIndex=12,visible=false,padding=6,gap=6,children=refs.menuItems}
  -- Zone gauge: battlefield order, tap a card to look there.
@@ -117,8 +137,12 @@ function B.create(g,H,play)
  refs.leftB=UI.Panel{flexDirection="row",gap=6,pointerEvents="box-none",children={refs.groups[1],refs.groups[2],refs.groups[3],refs.more}}
  refs.left=UI.Panel{position="absolute",gap=6,pointerEvents="box-none",children={refs.leftA,refs.leftB}}
  refs.box=plain("box","框选",function() g.box=not g.box end)
- refs.append=plain("append","追加",function() g.append=not g.append end)
- refs.morePanel=T.hudPanel{position="absolute",zIndex=12,visible=false,flexDirection="row",gap=6,padding=6,children={refs.box,refs.append}}
+ refs.append=plain("append","追加命令",function() g.append=not g.append end)
+ refs.orderQueue=label("命令队列\n未选择单位",11,T.paper,{whiteSpace="normal",maxLines=6,lineHeight=1.1})
+ refs.queueHint=label("第1项为当前命令；其余追加命令可删除",10,T.muted,{whiteSpace="normal"})
+ refs.queueEdit=UI.Panel{flexDirection="row",flexWrap="wrap",gap=4,visible=false}
+ refs.moreActions=UI.Panel{flexDirection="row",gap=6,children={refs.box,refs.append}}
+ refs.morePanel=T.hudPanel{position="absolute",zIndex=12,visible=false,flexDirection="column",gap=6,padding=8,children={refs.moreActions,refs.orderQueue,refs.queueHint,refs.queueEdit}}
  -- Selection summary above the left pad.
  refs.chipText=label("",12,T.paper,{flexGrow=1,flexShrink=1})
  refs.chipHp=UI.ProgressBar{value=1,max=1,height=4,width=56,flexShrink=0,fillColor=T.hud.friendly}
@@ -203,10 +227,14 @@ function B.layout(H,g,w,h,safe)
  refs.rowB:SetStyle{gap=pt(10),justifyContent=two and "space-between" or "flex-start"}
  refs.pause:SetStyle{height=barBtn,width=pt(L.phone and 64 or 78),fontSize=pt(13)}
  refs.speed:SetStyle{height=barBtn,width=pt(40),fontSize=pt(13)}
+ refs.skipWave:SetStyle{height=barBtn,width=pt(L.phone and 74 or 82),fontSize=pt(13)}
+ refs.autoplay:SetStyle{height=barBtn,width=pt(L.phone and 60 or 66),fontSize=pt(13)}
  refs.menuButton:SetStyle{height=barBtn,width=pt(44),fontSize=pt(18)}
  refs.waveTitle:SetStyle{fontSize=pt(11)};refs.waveTime:SetStyle{fontSize=pt(two and 14 or 16)}
  -- Camera tools live in a single-row bar; a wrapped bar leaves them on the tall zone gauge.
- local toolsInBar=not two;local overviewText=s.campaign.event.id=="trachea" and "气管图" or "鼻腔图"
+ local toolsInBar=not two
+ local mapId=require("war.MapRegistry").currentId(s)
+ local overviewText=mapId=="trachea_01" and "气管图" or mapId=="lungs_01" and "双肺图" or "鼻腔图"
  refs.tools:SetVisible(toolsInBar);refs.tools:SetStyle{gap=pt(6)}
  refs.barOverview:SetText(overviewText)
  refs.barOverview:SetStyle{height=barBtn,width=pt(64),fontSize=pt(13)};refs.barHome:SetStyle{height=barBtn,width=pt(52),fontSize=pt(13)}
@@ -216,11 +244,11 @@ function B.layout(H,g,w,h,safe)
  -- Menu dropdown under the menu button.
  local menuW=pt(mouse and 176 or 160)
  refs.menu:SetStyle{left=L.bar.x+L.bar.w-menuW,top=L.bar.y+L.bar.h+L.gap,width=menuW,padding=pt(6),gap=pt(6)}
- local keys={map="  M",help="",progress="",save=""}
- for i,key in ipairs({"map","progress","save","help"}) do
+ local keys={map="  M",help="",progress="",save="",home="  H"}
+ for i,key in ipairs({"map","home","progress","save","help"}) do
   local b=refs.menuItems[i] --[[@as Button]]
   b:SetStyle{height=L.secondary,width=menuW-pt(12),fontSize=pt(13)}
-  b:SetText(({map="地图",progress="人体进程",save="存档",help="指挥手册"})[key]..(mouse and keys[key] or ""))
+  b:SetText(({map="地图",home="返回首页",progress="人体进程",save="存档",help="指挥手册"})[key]..(mouse and keys[key] or ""))
  end
  -- Zone gauge.
  Z.layout(refs.gauge,L,mouse,overviewText,not toolsInBar)
@@ -238,9 +266,12 @@ function B.layout(H,g,w,h,safe)
  end
  -- Switches above the left pad: box select only matters for touch (mouse drag already boxes).
  refs.box:SetVisible(not mouse)
- local moreW=pt(mouse and 104 or 196)
- refs.morePanel:SetStyle{left=L.left.x,top=L.chip.y-L.gap-L.secondary-pt(12),width=moreW,padding=pt(6),gap=pt(6)}
+ local moreW=pt(mouse and 220 or 250)
+ refs.morePanel:SetStyle{left=L.left.x,top=L.chip.y-L.gap-pt(170),width=moreW,padding=pt(8),gap=pt(6)}
  for _,b in ipairs({refs.box,refs.append}) do b:SetStyle{height=L.secondary,width=pt(92),fontSize=pt(13)} end
+ refs.orderQueue:SetStyle{fontSize=pt(11),maxLines=6}
+ refs.queueHint:SetStyle{fontSize=pt(10)}
+ refs.queueEdit:SetStyle{gap=pt(4)}
  -- Selection chip, toast and debug counter.
  rect(refs.chip,L.chip);refs.chip:SetStyle{paddingHorizontal=pt(10),gap=pt(8)}
  refs.chipText:SetStyle{fontSize=pt(12)};refs.chipHp:SetStyle{width=pt(56),height=pt(4)}
@@ -286,6 +317,11 @@ function B.update(H,g)
  -- Pause / speed.
  setText(refs,"pause",refs.pause,g.paused and "▶ 继续" or "Ⅱ 暂停");setTone(e.pause,g.paused and "armed" or "normal")
  setText(refs,"speed",refs.speed,g.speed.."×");setTone(e.speed,g.speed>1 and "armed" or "normal")
+ local canSkip,skipReason=require("war.Campaign").canSkipWave(s)
+ setText(refs,"skipWave",refs.skipWave,canSkip and "下一波" or (ev.wave>=waves and "最终波" or "等待清场"))
+ setTone(e.skipWave,canSkip and "normal" or "disabled")
+ setText(refs,"autoplay",refs.autoplay,c.autoplay and "挂机中" or "挂机")
+ setTone(e.autoplay,c.autoplay and "armed" or "normal")
  -- Zone gauge.
  Z.update(refs.gauge,g,N)
  -- Army counts and the current selection.
@@ -294,6 +330,8 @@ function B.update(H,g)
   kinds[u.kind]=(kinds[u.kind] or 0)+1;if u.kind~="worker" then army=army+1 end
  end end
  local ids=I.ids(g);local picked,hp,maxHp=0,0,0;local selected={}
+ local inspect=g.inspectTarget
+ if inspect and not U.alive(inspect) then g.inspectTarget=false;inspect=false end
  for _,id in ipairs(ids) do local u=s.entities[id];selected[u.kind]=(selected[u.kind] or 0)+1;hp=hp+u.hp;maxHp=maxHp+u.maxHp;picked=picked+1 end
  local only=function(kind) return picked>0 and selected[kind]==picked end
  setText(refs,"all",refs.all,"全军 "..army);setTone(e.all,picked>0 and picked==army and not selected.worker and "armed" or "normal")
@@ -305,8 +343,29 @@ function B.update(H,g)
  end
  setTone(e.more,(refs.morePanel:IsVisible() or g.box or g.append) and "armed" or "normal")
  setTone(e.box,g.box and "armed" or "normal");setTone(e.append,g.append and "armed" or "normal")
- refs.chip:SetVisible(picked>0)
- if picked>0 then
+ refs.orderQueue:SetText(queueText(ids,s))
+ local first=ids[1] and s.entities[ids[1]];local orders=first and first.orders or {};local signature=table.concat(ids,",").."/"..#orders
+ for i,o in ipairs(orders) do signature=signature.."/"..i..":"..tostring(o.kind) end
+ if refs.queueSignature~=signature then
+  refs.queueSignature=signature;refs.queueEdit:RemoveAllChildren()
+  if #orders>1 then
+   for i=2,#orders do local index=i
+    refs.queueEdit:AddChild(T.button("删除第"..index.."项",function()
+     if C.removeQueued(g.state,I.ids(g),index) then U.message(g.state,"已删除第"..index.."项追加命令") end
+    end,nil,false,{height=26,fontSize=11,paddingHorizontal=6}))
+   end
+  end
+ end
+ refs.queueEdit:SetVisible(#orders>1)
+ local enemyInspect=inspect and inspect.faction~=1 and inspect
+ refs.chip:SetVisible(picked>0 or enemyInspect~=false and enemyInspect~=nil)
+ if enemyInspect then
+  local d=enemyInspect.category=="unit" and D.units[enemyInspect.kind] or D.buildings[enemyInspect.kind]
+  local attack=d.damage and d.range and ("攻击 "..string.format("%.1f",d.range).." 格 · 伤害 "..math.floor(d.damage)) or "不具备攻击能力"
+  setText(refs,"chip",refs.chipText,"敌方 · "..d.name.." · 生命 "..math.floor(enemyInspect.hp).."/"..enemyInspect.maxHp.." · "..attack)
+  refs.chipHp:SetValue(enemyInspect.maxHp>0 and enemyInspect.hp/enemyInspect.maxHp or 0)
+  refs.chipHp:SetStyle{fillColor=T.hud.hostile}
+ elseif picked>0 then
   local parts={"已选 "..picked}
   for _,kind in ipairs(D.unitOrder) do if selected[kind] then parts[#parts+1]=D.units[kind].name.." "..selected[kind] end end
   setText(refs,"chip",refs.chipText,table.concat(parts," · "))

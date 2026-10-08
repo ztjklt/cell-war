@@ -18,8 +18,23 @@ end
 function C.submit(s,c) s.commands[#s.commands+1]=U.copy(c) end
 function C.order(s,e,o,append)
  if s.campaign and o.x and o.y and not require("war.Campaign").allowed(s,o.x,o.y) then return false end
- if not append then e.cellDetour=nil;e.contactStall=0;e.orders={};e.path={};e.longRoute=nil;e.pathPending=false;e.pathFailed=false;e.orderToken=e.orderToken+1 end
+ if not append then
+  e.cellDetour=nil;e.contactStall=0;e.orders={};e.path={};e.longRoute=nil;e.pathGoal=nil;e.pathResolved=nil;e.routeEnd=nil;e.pathPending=false;e.pathFailed=false;e.travelSpeed=0;e.orderToken=e.orderToken+1
+ end
  e.orders[#e.orders+1]=U.copy(o)
+end
+-- Remove an order that has not started yet. The first order is intentionally
+-- protected because it may already be moving, fighting, or performing work.
+function C.removeQueued(s,ids,index)
+ if not index or index<=1 then return false end
+ local changed=false
+ for _,id in ipairs(ids or {}) do
+  local e=s.entities[id]
+  if U.alive(e) and e.faction==1 and e.orders and e.orders[index] then
+   table.remove(e.orders,index);changed=true
+  end
+ end
+ return changed
 end
 function C.execute(s,c)
  local f=c.faction or 1;local fa=s.factions[f];if not fa or fa.lost then return false end
@@ -27,7 +42,7 @@ function C.execute(s,c)
  if s.campaign then
   if s.campaign.event.status=="failed" then return false end
   if kind=="reinforce" then return f==1 and require("war.Reinforcements").request(s) end
-  if ({build=true,train=true,research=true,gather=true,farm=true,repair=true,rally=true,extinguish=true,cancel=true})[kind] then U.message(s,s.campaign.event.id=="trachea" and "气管事件仅开放战术指挥" or "鼻腔事件仅开放战术指挥",f);return false end
+  if ({build=true,train=true,research=true,gather=true,farm=true,repair=true,rally=true,extinguish=true,cancel=true})[kind] then U.message(s,require("war.MapRegistry").isTrachea(s) and "气管事件仅开放战术指挥" or "鼻腔事件仅开放战术指挥",f);return false end
   if kind=="attack" and c.target then local t=s.entities[c.target];if t and not require("war.Campaign").allowed(s,t.x,t.y) then return false end end
   if c.x and c.y and not require("war.Campaign").allowed(s,c.x,c.y) then U.message(s,"这片组织尚未开放",f);return false end
  end
@@ -68,8 +83,7 @@ function C.execute(s,c)
  elseif kind=="rally" then
   local b=s.entities[c.target];if U.alive(b) and b.faction==f and b.category=="building" then b.rally={x=U.clamp(c.x,2,D.width(s)-1),y=U.clamp(c.y,2,D.height(s)-1)};return true end return false
  end
- local n=0;local spacing=1.4
- for _,id in ipairs(c.ids or {}) do local u=s.entities[id];if u and u.category=="unit" then spacing=math.max(spacing,Collision.radius(u)*2+.15) end end
+ local n=0
  for i,id in ipairs(c.ids or {}) do
   local e=s.entities[id]
   if U.alive(e) and e.faction==f and e.category=="unit" then
@@ -78,7 +92,10 @@ function C.execute(s,c)
    if kind=="gather" then local r=s.resources[c.target];if not r or r.amount<=0 or not fa.seen[c.target] then o.kind="move" else o.x,o.y=r.x,r.y end end
    if kind=="retreat" then local b=U.nearest(s,e.x,e.y,function(v) return v.faction==f and v.category=="building" and v.complete and D.buildings[v.kind].supply end);if b then o.kind="move";o.x,o.y=b.rally.x,b.rally.y end end
    if kind=="retreat" and s.campaign then local home=require("war.CampaignData").forState(s).home;o.kind="move";o.x,o.y=home.x,home.y end
-   if kind=="move" or o.kind=="attackmove" then o.x=U.clamp((o.x or e.x)+((i-1)%5)*spacing,2,D.width(s)-1);o.y=U.clamp((o.y or e.y)+math.floor((i-1)/5)*spacing,2,D.height(s)-1) end
+   -- Every selected unit receives the exact same destination. Collision.resolve
+   -- keeps the formation from overlapping while moving, instead of silently
+   -- changing each unit's move target into parallel lanes.
+   if kind=="move" or o.kind=="attackmove" then o.x=U.clamp(o.x or e.x,2,D.width(s)-1);o.y=U.clamp(o.y or e.y,2,D.height(s)-1) end
    if s.campaign and o.x and o.y and not require("war.Campaign").allowed(s,o.x,o.y) then o.x,o.y=c.x or e.x,c.y or e.y end
    if kind=="stop" then e.orders={};e.path={};e.longRoute=nil;e.pathPending=false;e.orderToken=e.orderToken+1
    elseif (kind=="gather" or kind=="build" or kind=="repair" or kind=="farm" or kind=="extinguish") and e.kind~="worker" then

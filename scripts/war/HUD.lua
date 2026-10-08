@@ -12,8 +12,19 @@ local Battle=require("war.BattleHUD")
 ---@field commandMode fun(g:table,mode:string)
 local H={root=false,refs={},cards={},lastTab=false,tick=0,lastLayout="",modalKind=false}
 local label,panel,btn=T.label,T.panel,T.button
+local orderNames={gather="采集",build="施工",farm="培育",repair="修复",guard="驻守",move="移动",attack="攻击",attackmove="进攻移动",extinguish="灭火",rally="集结",retreat="撤退"}
+local function orderQueueText(e)
+ local orders=e and e.orders or {}
+ if #orders==0 then return "命令队列\n空闲" end
+ local lines={"命令队列"}
+ for i,o in ipairs(orders) do
+  lines[#lines+1]=i..". "..(orderNames[o.kind] or o.kind)
+  if i>=5 then if #orders>i then lines[#lines+1]="… 还有 "..(#orders-i).." 项" end;break end
+ end
+ return table.concat(lines,"\n")
+end
 local function battleText(s,text)
- if not s.campaign or s.campaign.event.id~="trachea" then return text end
+ if not s.campaign or not require("war.MapRegistry").isTrachea(s) then return text end
  return text:gsub("后鼻屏障","下段屏障"):gsub("后鼻侧","气管下端"):gsub("鼻腔","气管"):gsub("咽喉防线","双肺净化"):gsub("咽喉尚未开放","双肺尚未开放")
 end
 local function textRef(name,text,size,color,props)
@@ -64,12 +75,33 @@ function H.dialog(g,title,lines,buttons)
  for _,spec in ipairs(buttons or {}) do actions[#actions+1]=btn(spec[1],spec[2],spec[3] or 130,spec[4]) end
  H.openPanel(g,title,"胞群指挥中心",body,row(actions,{flexWrap="wrap",justifyContent="flex-end"}))
 end
+-- The first screen after choosing a mode is a short, actionable briefing.
+-- Keep it separate from the full handbook so new players understand the unit roles
+-- and control groups before the battlefield starts accepting commands.
+function H.startGuide(g)
+ local campaign=g.state.campaign~=nil
+ local body=UI.Panel{gap=10,paddingVertical=6}
+ local function section(title,text)
+  body:AddChild(panel{backgroundColor=T.surface,padding=12,gap=5,boxShadow={},children={
+   label(title,15,T.teal),label(text,12,T.muted,{whiteSpace="normal",maxLines=5})
+  }})
+ end
+ section("01  先认识三类细胞",
+  "白细胞：主力战斗单位，用来清除病毒、进攻敌方并守住区域。血小板：速度快、视野大，适合先行侦察、快速占位和支援危险区域。红细胞：沙盒模式的采集与建设单位，负责搬运资源、修建和维持胞群。")
+ section("02  编队 1 / 2 / 3",
+  "选中单位后按 Ctrl+1、Ctrl+2 或 Ctrl+3 保存编队；之后按 1、2、3 立即召回对应编队。鼠标可拖动框选，手机端可连续点选或使用底部编队按钮。")
+ section("03  第一个动作",
+  campaign and "战役：先选白细胞守住防线，再让血小板探路；点击地图下达移动或进攻命令，遇到压力可按 R 撤回，按 S 停止。" or "沙盒：先选红细胞采集资源并送回胞巢，再建造生产设施；用编队键把采集队和战斗队分开管理。")
+ local start=btn("开始行动",function() H.closeModal(g) end,130,true)
+ local handbook=btn("查看指挥手册",function() H.help(g) end,140)
+ H.openPanel(g,"开局指引",campaign and "战役模式 · 先守住，再反攻" or "全身沙盒 · 采集、建设与发展",body,row({handbook,start},{flexWrap="wrap",justifyContent="flex-end"}))
+end
 function H.help(g)
  local body=UI.Panel{gap=12}
  local sections={
   {"01  建立稳态","选择红细胞，点击蛋白束或钙晶采集。建造培养床并安排红细胞生产葡萄糖；荧光腺与补给维持休息期安全。"},
-  {"02  触屏指挥","单击选兵，拖动空地移动镜头，双指缩放。开启框选后拖动选择部队；选中部队后点击目的地，或先选择移动 / 进攻。"},
-  {"03  鼠标与键盘","左键拖动框选，右键下令；Shift 追加命令。方向键移动镜头，滚轮缩放。空格暂停，A 进攻，S 停止，R 撤退，B 建造，H 回营，M 地图。"},
+  {"02  触屏指挥","单击选兵，双击细胞选择附近同类，拖动空地移动镜头，双指缩放。开启框选后拖动选择部队；选中部队后点击目的地，或先选择移动 / 进攻。"},
+  {"03  鼠标与键盘","左键拖动框选，双击细胞选择附近同类，右键下令；Shift 追加命令。方向键移动镜头，滚轮缩放。空格暂停，A 进攻，S 停止，R 撤退，B 建造，H 返回首页，M 地图。"},
   {"04  编队与生产","Ctrl+1/2/3 保存编队，1/2/3 召回；触屏长按编队按钮保存。核心胞巢培育红细胞，其他生产建筑训练对应兵种；选中建筑查看队列。"},
   {"05  血管与迷雾","管壁不可穿越，黄色膜通行口允许穿行。地图可点击定位；F 临时查看全图，再按一次恢复探索迷雾。"},
   {"06  生存与存档","活跃期扩建与采集，休息期保持温度、饱食与精神。每个黎明自动存档，也可使用三个手动槽。主基地被毁仍可重建；单位与生产建筑全部损失才结束。"},
@@ -77,12 +109,12 @@ function H.help(g)
  if g.state.campaign then sections={
  {"01  守卫与反攻","入口黏膜已经感染。选择白细胞或军队，守住后鼻屏障，再反攻夺回三块组织区域。"},
  {"02  区域争夺","战斗单位进入整片区域即可争夺。双方在场时暂停进度，无人在场保留进度；清除敌军后继续夺回。"},
- {"03  指挥部队","电脑左键框选、右键下令，A 进攻、S 停止、R 回防。手机选中细胞后点击目标，框选与追加在更多面板中。"},
+  {"03  指挥部队","电脑左键框选、双击细胞选择附近同类、右键下令，A 进攻、S 停止、R 回防，H 返回首页。手机选中细胞后点击目标，框选与追加在更多面板中。"},
  {"04  鼻道与血管","鼻甲与鼻中隔阻挡通行和攻击。上下黏膜道路可以绕行，血管是快速侧路；只有黄色膜口可以穿越管壁。点击「鼻腔图」查看整个战场，再缩放选择部队。"},
  {"05  调援","消耗 2 补给调来两个白细胞，3 秒后从后鼻侧进入。冷却 20 秒，每 10 秒回复 1 补给，上限 6，援军预留人口。"},
  {"06  胜败与重试","完成三波入侵、清除病毒并完全控制三块区域保持 20 秒即可成功。病毒完全夺下后鼻屏障就失败，可以重试本次事件。"},
  {"07  人体进程","鼻腔之后依次是咽喉、双肺、肠道和血流事件。后续内容尚未开放；关闭迷雾也不能进入锁定组织。"}} end
- if g.state.campaign and g.state.campaign.event.id=="trachea" then
+ if g.state.campaign and require("war.MapRegistry").isTrachea(g.state) then
   for _,item in ipairs(sections) do item[1]=battleText(g.state,item[1]);item[2]=battleText(g.state,item[2]) end
   sections[4]={"04  气管通道","沿纵向气管黏膜移动，管壁阻挡通行与攻击。上段入口、中段通道、下段屏障依次排列。点击「气管图」查看战场，打开地图可浏览全身，其余器官暂不可进入。"}
   sections[7]={"07  人体进程","气管之后是双肺、肠道和血流事件。后续内容尚未开放；全身可浏览，关闭迷雾也不能进入锁定组织。"}
@@ -131,7 +163,7 @@ function H.campaignMenu(g)
   local status=c.completed[stage.id] and "已完成" or i==c.stage and stage.implemented and "进行中" or "尚未开放"
   body:AddChild(panel{padding=14,gap=5,children={label(i.." / "..#N.stages.." · "..stage.name,16,T.paper),label(status,12,c.completed[stage.id] and T.teal or T.gold)}})
  end
- body:AddChild(label(g.state.campaign.event.id=="trachea" and "全身地图可浏览。当前开放气管守卫，下一事件：双肺净化（尚未开放）。" or "完成前期五个事件后开放全人体随机攻防。当前仅鼻腔可玩。",12,T.muted,{whiteSpace="normal",maxLines=4}))
+ body:AddChild(label(require("war.MapRegistry").isTrachea(g.state) and "全身地图可浏览。当前开放气管守卫，下一事件：双肺净化（尚未开放）。" or "完成前期五个事件后开放全人体随机攻防。当前仅鼻腔可玩。",12,T.muted,{whiteSpace="normal",maxLines=4}))
  H.openPanel(g,"人体进程","同一人体持续推进 · 已夺回组织与部队保留",body)
 end
 function H.mapMenu(g)
@@ -163,7 +195,7 @@ function H.mapMenu(g)
   row({UI.Panel{flexGrow=1,flexBasis=0,gap=4,children={label("人体内域",24),label(D.width(g.state).." × "..D.height(g.state).." · "..#D.biomes.."类组织 · 点击地图定位",11,T.muted)}},btn("×",function() H.closeModal(g) end,44)}),
   row({map,legend},{flexGrow=1,flexBasis=0,alignItems="stretch"}),
   hint,
-  row({toggle,fog,btn("回到胞群",function() R.home(g);H.closeModal(g) end,114,true),btn("关闭地图",function() H.closeModal(g) end,114)},{flexWrap="wrap"}),
+  row({toggle,fog,btn("返回首页",function() H.closeModal(g);if g.returnHome then g.returnHome() end end,114,true),btn("关闭地图",function() H.closeModal(g) end,114)},{flexWrap="wrap"}),
  }}
  H.refs.modal:AddChild(box);H.refs.modal:SetVisible(true);fadeIn(box)
 end
@@ -222,8 +254,16 @@ local function commandMode(g,mode)
 end
 H.commandMode=commandMode
 function H.cancel(g)
- if g.mode or g.placement or g.tab then g.mode=false;g.placement=false;g.tab=false;H.sidebar(g);return end
+ local hadAction=g.mode or g.placement or g.tab
+ g.mode=false;g.placement=false;g.tab=false
  local ids=I.ids(g);local e=ids[1] and g.state.entities[ids[1]]
+ if #ids>0 or g.inspectTarget then
+  g.selection={};g.inspectTarget=false
+  end
+ if hadAction then
+  H.sidebar(g)
+  return
+ end
  if e and e.category=="building" then C.submit(g.state,{kind="cancel",faction=1,target=e.id}) end
 end
 function H.more(g)
@@ -272,7 +312,7 @@ function H.commands(g,narrow)
  end
  if not narrow then
   first[#first+1]=command("框选","box",function() g.box=not g.box end)
-  first[#first+1]=command("追加","append",function() g.append=not g.append end)
+   first[#first+1]=command("追加命令","append",function() g.append=not g.append end)
  end
  host:AddChild(row(first))
  local second={command("移动","move",function() commandMode(g,"move") end),command("进攻 [A]","attackmove",function() commandMode(g,"attackmove") end)}
@@ -402,7 +442,7 @@ function H.create(g)
   UI.ProgressBar{value=1,max=6,height=3,fillColor=T.teal},
  }};H.refs.goalBox=goal;H.refs.tutorialProgress=goal:GetChildAt(3);play:AddChild(goal)
  FX.spotlight(goal)
- local zoom=row({btn("＋",function() R.zoom(g,1.2) end,44),btn("－",function() R.zoom(g,1/1.2) end,44),btn("回营",function() R.home(g) end,60),btn("通路",function() H.survey(g) end,60)},{position="absolute",left=12,bottom=194,gap=5});H.refs.zoomTools=zoom;H.refs.surveyButton=zoom:GetChildAt(4);play:AddChild(zoom)
+ local zoom=row({btn("＋",function() R.zoom(g,1.2) end,44),btn("－",function() R.zoom(g,1/1.2) end,44),btn("返回首页",function() if g.returnHome then g.returnHome() end end,78),btn("通路",function() H.survey(g) end,60)},{position="absolute",left=12,bottom=194,gap=5});H.refs.zoomTools=zoom;H.refs.surveyButton=zoom:GetChildAt(4);play:AddChild(zoom)
  local sidebar=panel{position="absolute",left=12,top=188,bottom=196,width=390,padding=14,gap=10,zIndex=5,visible=false};H.refs.sidebar=sidebar;play:AddChild(sidebar)
  local portrait=UI.Panel{width=66,height=66,pointerEvents="none"}
  ---@param vg NVGContextWrapper
@@ -414,7 +454,7 @@ function H.create(g)
  H.refs.portrait=portrait
  local hp=UI.ProgressBar{height=4,value=1,max=1,fillColor=T.teal};H.refs.hp=hp
  local production=UI.ProgressBar{height=3,value=0,max=1,fillColor=T.gold};H.refs.production=production
- local selectedText=UI.Panel{flexGrow=1,flexBasis=0,gap=4,children={textRef("selected","胞群指挥",16),hp,textRef("selectedDetail","选中细胞查看状态",10,T.muted),textRef("selectedStats","人口 9 / 10",10,T.gold),textRef("queue","点击资源可采集",9,T.muted),production}}
+ local selectedText=UI.Panel{flexGrow=1,flexBasis=0,gap=4,children={textRef("selected","胞群指挥",16),hp,textRef("selectedDetail","选中细胞查看状态",10,T.muted),textRef("selectedStats","人口 9 / 10",10,T.gold),textRef("queue","命令队列\n点击目标下令",9,T.muted,{whiteSpace="normal",maxLines=6,lineHeight=1.1}),production}}
  H.refs.selectionText=selectedText
  local selected=panel{flexDirection="row",width=244,height="100%",gap=8,pointerEvents="none",children={portrait,selectedText}};H.refs.selectionCard=selected
  local commands=panel{flexGrow=1,flexBasis=0,gap=6,padding=6};H.refs.commands=commands
@@ -478,7 +518,8 @@ function H.update(g,dt)
  local key=U.key(g.camera.x,g.camera.y)
  local region=(s.anatomyVersion==3 or g.fogDisabled or s.factions[1].seen[key]) and D.biomes[W.terrain(s,math.floor(g.camera.x),math.floor(g.camera.y))].name or "未探索"
  refs.phase:SetText(phase.." · "..region)
- if s.campaign then
+  if s.campaign then local map=require("war.MapRegistry").stage(require("war.MapRegistry").currentId(s));if map then region=map.name.." / "..map.id end end
+  if s.campaign then
   local ev=s.campaign.event;local r=s.campaign.reinforcements;local N=require("war.CampaignData").forState(s)
   for i,z in ipairs(ev.zones) do
    ---@type number[]
@@ -500,19 +541,27 @@ function H.update(g,dt)
   if name=="box" then T.active(b,g.box) elseif name=="append" then T.active(b,g.append)
   elseif name=="move" or name=="attackmove" or name=="guard" or name=="rally" then T.active(b,g.mode==name) end
  end
- local ids=I.ids(g);local e=ids[1] and s.entities[ids[1]];local pop,cap=E.population(s,1,false)
+ local ids=I.ids(g);local inspect=g.inspectTarget
+ if inspect and not U.alive(inspect) then g.inspectTarget=false;inspect=false end
+ local e=(inspect and inspect.faction~=1 and inspect) or (ids[1] and s.entities[ids[1]]);local pop,cap=E.population(s,1,false)
  refs.production:SetVisible(false)
  if e then
-  local d=e.category=="unit" and D.units[e.kind] or D.buildings[e.kind]
-  refs.selected:SetText(#ids>1 and (#ids.."个单位已选中") or e.salvaged and "残存储运囊" or d.name)
+ local d=e.category=="unit" and D.units[e.kind] or D.buildings[e.kind]
+  local combat=(d.damage and d.range) and (" · 攻击 "..string.format("%.1f",d.range).." 格") or " · 不具备攻击能力"
+  local enemy=e.faction~=1
+  refs.selected:SetText(enemy and "敌方 · "..d.name or #ids>1 and (#ids.."个单位已选中") or e.salvaged and "残存储运囊" or d.name)
   refs.hp:SetValue(e.hp/e.maxHp);refs.hp:SetStyle{fillColor=e.hp/e.maxHp<.3 and T.danger or T.teal}
-  if e.category=="unit" then
-   refs.selectedDetail:SetText("生命 "..math.floor(e.hp).."/"..e.maxHp..(s.campaign and "" or " · 饱食 "..math.floor(e.satiety)))
-   refs.selectedStats:SetText(s.campaign and ("免疫兵力 "..pop.." / "..cap.." · 调援补充") or "体温 "..math.floor(e.temp).."° · 精神 "..math.floor(e.sanity))
-   local names={gather="采集",build="施工",farm="培育",repair="修复",guard="驻守",move="移动",attack="攻击",attackmove="进攻",extinguish="灭火"}
-   local o=e.orders[1];refs.queue:SetText(e.pathFailed and "道路不通 · 重新下令" or e.delivering and "运送营养 → 储运囊" or o and (names[o.kind] or o.kind).." · "..#e.orders.."项指令" or "待命 · 选择目标下令")
+  if enemy then
+   refs.selectedDetail:SetText("生命 "..math.floor(e.hp).."/"..e.maxHp..((d.damage and d.range) and (" · 攻击 "..string.format("%.1f",d.range).." 格 · 伤害 "..math.floor(d.damage)) or " · 不具备攻击能力"))
+   refs.selectedStats:SetText("红圈=攻击范围 · 点击己方部队后可下令攻击")
+   refs.queue:SetText("敌方单位 · 当前可见")
+ elseif e.category=="unit" then
+   refs.selectedDetail:SetText("生命 "..math.floor(e.hp).."/"..e.maxHp..combat..(s.campaign and "" or " · 饱食 "..math.floor(e.satiety)))
+   local scoutInfo=e.kind=="scout" and ("瞭望 "..math.floor(d.vision or 0).." 格 · 敌方情报") or ""
+   refs.selectedStats:SetText(s.campaign and (scoutInfo..(scoutInfo~="" and " · " or "").."免疫兵力 "..pop.." / "..cap.." · 红圈=反击范围") or scoutInfo..(scoutInfo~="" and " · " or "").."体温 "..math.floor(e.temp).."° · 精神 "..math.floor(e.sanity))
+   refs.queue:SetText(e.pathFailed and "命令队列\n道路不通 · 重新下令\n"..orderQueueText(e):gsub("^命令队列\n","") or orderQueueText(e))
   else
-   refs.selectedDetail:SetText("耐久 "..math.floor(e.hp).."/"..e.maxHp)
+   refs.selectedDetail:SetText("耐久 "..math.floor(e.hp).."/"..e.maxHp..combat)
    refs.selectedStats:SetText(e.complete and "人口 "..pop.."/"..cap.." · T"..s.factions[1].tier or "生长中 · "..math.floor(e.progress*100).."%")
    local q=e.queue[1];local _,pending=M.pending(s);local waiting=pending[e.id] or 0
    refs.queue:SetText(q and ((q.unit and D.units[q.unit].name or D.tech[q.tech].name).." · "..math.ceil(q.remaining).."秒 · "..(#e.queue+waiting).."项") or waiting>0 and "待执行 · "..waiting.."项生产命令" or "空闲 · 点击训练 / 科技")

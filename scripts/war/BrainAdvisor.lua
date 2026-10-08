@@ -12,9 +12,14 @@ local function troops(s)
  end
  return count,hurt
 end
-local function danger(ev)
- local z=ev.zones[3]
- return z and (z.control<60 or z.hostile>0)
+local function danger(s)
+ local ev=s.campaign and s.campaign.event;if not ev then return false end
+ local data=require("war.CampaignData").forState(s)
+ for _,index in ipairs(data.failureZones or {#ev.zones}) do
+  local z=ev.zones[index]
+  if z and (z.control<60 or z.hostile>0) then return true end
+ end
+ return false
 end
 function B.replyOriginal(s,topic)
  local N=N.forState(s)
@@ -43,7 +48,7 @@ function B.replyOriginal(s,topic)
   local text
   if ev.status=="failed" then text="后鼻屏障已完全失守。这次防守失败了。关闭对话后可重试事件，恢复事件开始时的部队与补给。"
   elseif ev.status=="completed" then text="鼻腔已经夺回，部队和已完成记录会保留。咽喉、双肺、肠道与血流的后续事件尚未开放。"
-  elseif danger(ev) then text="优先回防后鼻屏障！那里有病毒进入或控制正在下降。让白细胞清除敌军、留在区域内夺回控制，补给充足时调援。完全失守会结束本次事件。"
+  elseif danger(s) then text="优先回防关键区域！那里有病毒进入或控制正在下降。让白细胞清除敌军、留在区域内夺回控制，补给充足时调援。完全失守会结束本次事件。"
   elseif ev.secure>0 then text="全部区域已净化，正在稳固："..math.floor(ev.secure).." / "..N.secureSeconds.." 秒。维持区域完全控制，防止病毒重新进入。"
   elseif ev.phase=="counterattack" then text="三波入侵都已启动。守住后方，逐步清除病毒并夺回三块区域。全部控制后还需稳定 "..N.secureSeconds.." 秒；双方同在区域时争夺进度会暂停。"
   else text="先守住后鼻屏障，再反攻入口黏膜。选择白细胞，点击进攻目标；可沿上下鼻道绕开鼻甲，也可从黄色膜口走血管侧路。" end
@@ -59,7 +64,7 @@ function B.replyOriginal(s,topic)
 end
 
 local function mapText(s,text)
- if not s.campaign or s.campaign.event.id~="trachea" then return text end
+ if not s.campaign or not require("war.MapRegistry").isTrachea(s) then return text end
  return text:gsub("后鼻屏障","下段屏障"):gsub("鼻腔","气管"):gsub("咽喉、双肺","双肺"):gsub("可沿上下鼻道绕开鼻甲，也可从黄色膜口走血管侧路。","沿气管纵向通道移动，先稳住下段屏障，再向上段入口反攻。")
 end
 function B.reply(s,topic)
@@ -77,7 +82,7 @@ function B.poll(g,dt)
  local s,m=g.state,g.brainMemory
  local message=false
  if s.campaign then
-  local ev=s.campaign.event;local urgent=danger(ev)
+  local ev=s.campaign.event;local urgent=danger(s)
   if urgent and not m.danger and ev.status=="active" then message="后鼻屏障告急！先回防，再调援。"
   elseif ev.wave~=m.wave and ev.wave>0 and ev.status=="active" then message="第 "..ev.wave.." 波病毒已入侵。点我查看防线建议。"
   elseif ev.secure>0 and not m.secure then message="鼻腔已净化！继续稳守 "..N.secureSeconds.." 秒。"
