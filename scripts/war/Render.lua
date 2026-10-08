@@ -137,22 +137,37 @@ function R.draw(g)
  nvgBeginPath(R.vg);nvgRect(R.vg,0,0,R.w,R.h);nvgFillPaint(R.vg,nvgRadialGradient(R.vg,R.w*.5,R.h*.45,R.h*.25,R.w*.7,nvgRGBA(231,235,255,0),nvgRGBA(161,180,220,g.state.anatomyVersion==3 and 0 or 30)));nvgFill(R.vg)
  nvgEndFrame(R.vg)
 end
+-- The battle HUD stores its free battlefield rect in world pixels (g.stage);
+-- tests and the first frame fall back to the same layout model at density 1.
+function R.stage(g,tall)
+ return g.stage or require("war.UIModel").battle(R.w,R.h,1,tall).stage
+end
+-- Put world point (wx,wy) at screen point (sx,sy) for the current zoom.
+local function aim(g,wx,wy,sx,sy)
+ local scale=32*g.zoom
+ g.camera.x=wx+(R.w*.5-sx)/scale;g.camera.y=wy+(R.h*.47-sy)/scale
+end
 function R.nasalOverview(g)
  if not g.state.campaign then return end
- local N=require("war.CampaignData").forState(g.state)
- local layout=require("war.UIModel").layout(R.w,R.h)
- local top=layout.narrow and 254 or layout.short and 148 or 180
- local availableH=math.max(64,R.h-layout.dock-20-top)
- g.zoom=math.min((R.w-40)/((N.bounds.w+14)*32),availableH/((N.bounds.h+28)*32))
- g.camera.x=N.bounds.x+N.bounds.w*.5
- -- Keep the battlefield between the HUD and command dock on portrait and landscape.
- local centerY=top+availableH*.5
- g.camera.y=N.bounds.y+N.bounds.h*.5+(R.h*.47-centerY)/(32*g.zoom)
+ local b=require("war.CampaignData").forState(g.state).bounds --[[@as {x:number,y:number,w:number,h:number}]]
+ local stage=R.stage(g,b.h>b.w)
+ g.zoom=math.min((stage.w-16)/((b.w+14)*32),(stage.h-16)/((b.h+28)*32))
+ aim(g,b.x+b.w*.5,b.y+b.h*.5,stage.x+stage.w*.5,stage.y+stage.h*.5)
+end
+-- Center a world point in the free battlefield area; leave a body-scale overview first.
+function R.focus(g,wx,wy)
+ local b=require("war.CampaignData").forState(g.state).bounds --[[@as {x:number,y:number,w:number,h:number}]]
+ local stage=R.stage(g,b.h>b.w)
+ if g.zoom<.12 then g.zoom=math.min(.4,math.max(.14,(stage.w-16)/(math.min(b.w,b.h)*32))) end
+ aim(g,wx,wy,stage.x+stage.w*.5,stage.y+stage.h*.5)
 end
 function R.home(g)
  if g.state.campaign then
   if g.state.campaign.event.id=="trachea" then
-   local home=require("war.TracheaTerrain").home;g.camera.x,g.camera.y=home.x,home.y-18;g.zoom=math.min(.4,math.max(.14,(R.w-48)/(36*32)));return
+   -- Fit the airway width between the thumb pads; the barrier sits low in the free column.
+   local home=require("war.TracheaTerrain").home;local stage=R.stage(g,true)
+   g.zoom=math.min(.4,math.max(.14,(stage.w-16)/(36*32)))
+   aim(g,home.x,home.y,stage.x+stage.w*.5,stage.y+stage.h*.68);return
   end
   local N=require("war.CampaignData").forState(g.state);g.camera.x,g.camera.y=N.home.x-17,N.home.y
   g.zoom=math.min(.6,math.max(.24,math.min((R.w-32)/(76*32),math.max(160,R.h-270)/(72*32))))

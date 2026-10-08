@@ -97,8 +97,8 @@ function Q.run()
   for _,size in ipairs({{1440,900},{844,390},{430,932},{360,780}}) do
    R.w,R.h=size[1],size[2];local g={state=s,camera={x=0,y=0},zoom=1};R.nasalOverview(g)
    local left,top=R.project(g,G.bounds.x,G.bounds.y);local right,bottom=R.project(g,G.bounds.x+G.bounds.w,G.bounds.y+G.bounds.h)
-   local l=require('war.UIModel').layout(R.w,R.h)
-   assert(left>=10 and right<=R.w-10 and top>=90 and bottom<=R.h-l.dock-12,'battlefield under HUD')
+   local stage=require('war.UIModel').battle(R.w,R.h,1,false).stage
+   assert(left>=stage.x and right<=stage.x+stage.w and top>=stage.y and bottom<=stage.y+stage.h,'battlefield under HUD')
   end
  end)
  local passed=0;for _,r in ipairs(results) do if r.pass then passed=passed+1 end end

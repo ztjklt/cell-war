@@ -4,9 +4,12 @@ local Cells,W=require("war.Cells"),require("war.World")
 local T,Art,M=require("war.UITheme"),require("war.UIArt"),require("war.UIModel")
 local Brain=require("war.BrainUI")
 local FX=require("war.UIMotion")
+local Battle=require("war.BattleHUD")
 ---@class WarHUD
 ---@field refs table<string, any>
 ---@field cards table[]
+---@field battle table|nil
+---@field commandMode fun(g:table,mode:string)
 local H={root=false,refs={},cards={},lastTab=false,tick=0,lastLayout="",modalKind=false}
 local label,panel,btn=T.label,T.panel,T.button
 local function battleText(s,text)
@@ -201,7 +204,8 @@ end
 function H.sidebar(g)
  local host=H.refs.sidebar;if not host then return end
  host:RemoveAllChildren();H.cards={};H.lastTab=g.tab
- H.refs.goalBox:SetVisible(not g.tab and not H.metrics.short);H.refs.zoomTools:SetVisible(not g.tab)
+ local battle=g.state.campaign~=nil
+ H.refs.goalBox:SetVisible(not battle and not g.tab and not H.metrics.short);H.refs.zoomTools:SetVisible(not battle and not g.tab)
  if not g.tab then host:SetVisible(false);return end
  host:SetVisible(true)
  local title=({build="胞群蓝图",train="细胞培育",tech="核酸研究"})[g.tab]
@@ -216,6 +220,7 @@ local function commandMode(g,mode)
  if #I.ids(g)==0 then U.message(g.state,"先选择单位，再下达命令");return end
  g.placement=false;g.mode=g.mode==mode and false or mode
 end
+H.commandMode=commandMode
 function H.cancel(g)
  if g.mode or g.placement or g.tab then g.mode=false;g.placement=false;g.tab=false;H.sidebar(g);return end
  local ids=I.ids(g);local e=ids[1] and g.state.entities[ids[1]]
@@ -285,7 +290,7 @@ end
 function H.layout(g)
  local vw,vh=UI.GetViewportSize();local safe=UI.GetSafeAreaInsets()
  local w,h=vw-safe.left-safe.right,vh-safe.top-safe.bottom
- local signature=string.format("%.0f:%.0f:%s",w,h,tostring(g.state.campaign~=nil))
+ local signature=string.format("%.0f:%.0f:%s:%s",w,h,tostring(g.state.campaign and g.state.campaign.event.id),tostring(g.pointerKind))
  if H.refs.mapLegend then H.refs.mapLegend:SetVisible(w>=720);H.refs.mapLegend:SetStyle{width=w>=720 and 158 or 0} end
  if signature==H.lastLayout then return end;H.lastLayout=signature
  local l=M.layout(w,h);local campaign=g.state.campaign~=nil
@@ -316,7 +321,7 @@ function H.layout(g)
  refs.selectionText:SetStyle{gap=l.short and 2 or 4}
  refs.selected:SetStyle{fontSize=(l.short or l.narrow) and 14 or 16}
  refs.mapShell:SetVisible(not l.compact);refs.mapShell:SetStyle{width=l.mapWidth}
- refs.notice:SetStyle{bottom=l.dock+26,left=l.narrow and 12 or 230,right=12}
+ refs.noticeBox:SetStyle{bottom=l.dock+26,left=l.narrow and 12 or 230,right=12}
  refs.sidebar:SetStyle{left=12,top=l.sidebarTop,bottom=l.sidebarBottom,width=math.min(l.narrow and w-24 or 390,w-24)}
  refs.menuTitle:SetStyle{fontSize=l.narrow and 42 or l.short and 48 or 64}
  refs.menuContent:SetStyle{width=l.narrow and "92%" or "56%",paddingLeft=l.narrow and 20 or 48,paddingTop=l.short and 22 or 56,paddingBottom=l.short and 16 or 30,gap=l.short and 10 or 18}
@@ -340,8 +345,14 @@ function H.layout(g)
  end
  local goalWidth=math.min(statusWidth,campaign and 340 or 410)
  refs.goalBox:SetStyle{left=w-goalWidth-12,right=12,top=l.toolbarY+(l.narrow and 74 or 52),width=goalWidth}
+ -- Campaign battles use the thumb-zone battle HUD; the sandbox keeps the dock layout.
+ for _,ref in ipairs({refs.top,refs.toolbar,refs.dock}) do ref:SetVisible(not campaign) end
+ refs.zoomTools:SetVisible(not campaign and not g.tab)
+ if campaign then refs.goalBox:SetVisible(false) end
+ local battle=nil
+ if campaign then battle=Battle.layout(H,g,w,h,safe) elseif H.battle then H.battle.root:SetVisible(false);g.stage=nil end
  H.commands(g,l.narrow)
- Brain.layout(H,l,w,h)
+ Brain.layout(H,l,w,h,battle)
 end
 function H.create(g)
  T.init();Cells.init(UI.GetNVGContext());Art.init(UI.GetNVGContext())
@@ -380,6 +391,7 @@ function H.create(g)
  H.refs.nasalGrid=nasalGrid;top:AddChild(nasalGrid)
  H.refs.top=top;play:AddChild(top)
  Brain.attach(g,H,top,play)
+ Battle.create(g,H,play)
  local pause=btn("Ⅱ 暂停",function() g.paused=not g.paused end,92);H.refs.pause=pause
  local speed=btn("1×",function() g.speed=g.speed==1 and 2 or 1 end,44);H.refs.speed=speed
  local fog=btn("全图",function() if g.state.campaign then R.nasalOverview(g) elseif g.state.anatomyVersion==3 then H.mapMenu(g) else I.toggleFog(g) end end,60);H.refs.fog=fog
@@ -450,7 +462,7 @@ function H.update(g,dt)
  if H.uiState~=g.state then H.uiCounters={};H.uiState=g.state;H.wasStarted=false end
  FX.update(H,dt)
  if g.started and not H.wasStarted then
-  FX.enter(H.refs.top,8);FX.enter(H.refs.toolbar,6);FX.enter(H.refs.goalBox,10);FX.enter(H.refs.dock,16)
+  if g.state.campaign then Battle.enter(H) else FX.enter(H.refs.top,8);FX.enter(H.refs.toolbar,6);FX.enter(H.refs.goalBox,10);FX.enter(H.refs.dock,16) end
  end
  H.wasStarted=g.started
  Brain.update(g,H,dt)
@@ -458,6 +470,7 @@ function H.update(g,dt)
  H.refs.play:SetVisible(g.started);H.refs.menu:SetVisible(not g.started)
  H.tick=H.tick+dt;if H.tick<.2 then return end;H.tick=0
  local s,refs=g.state,H.refs;local day,fraction,season,phase=V.clock(s)
+ if s.campaign then Battle.update(H,g) end
  for _,k in ipairs(D.resources) do
   local amount=math.floor(E.stock(s,1,k));FX.counter(H,k,refs[k],amount);refs[k]:SetStyle{fontColor=amount==0 and T.danger or k=="food" and T.gold or T.paper}
  end
@@ -521,8 +534,13 @@ function H.update(g,dt)
  end
  local modes={move="移动",attackmove="进攻移动",guard="驻守",rally="集结点"}
  local notice=g.placement and "放置"..D.buildings[g.placement].name.." · 点击地图确认 / Esc取消" or g.mode and (modes[g.mode] or "指令").." · 点击地图选择目标 / Esc取消" or s.messageTime>0 and s.message or g.paused and "战术暂停 · 命令将在继续后执行" or ""
- if notice~="" and notice~=H.lastNotice then FX.enter(refs.noticeBox,8) end
- H.lastNotice=notice;refs.notice:SetText(notice);refs.noticeBox:SetVisible(notice~="")
+ -- Campaign notices use the battle HUD toast under the status bar; the sandbox keeps the dock toast.
+ local box,text,battle=refs.noticeBox,refs.notice,H.battle
+ if battle then
+  if s.campaign then box,text=battle.noticeBox,battle.notice;refs.noticeBox:SetVisible(false) else battle.noticeBox:SetVisible(false) end
+ end
+ if notice~="" and notice~=H.lastNotice then FX.enter(box,8) end
+ H.lastNotice=notice;text:SetText(notice);box:SetVisible(notice~="")
  local units=0;for _,u in pairs(s.entities) do if u.category=="unit" and u.faction>0 and U.alive(u) then units=units+1 end end
  refs.fps:SetText(string.format("%d FPS · %d单位",g.fps or 0,units))
  if H.lastTab~=g.tab then H.sidebar(g) end
