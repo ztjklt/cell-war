@@ -37,12 +37,9 @@ function Start()
  SubscribeToEvent("Update","HandleUpdate")
  SubscribeToEvent("KeyDown","HandleKeyDown")
  SubscribeToEvent("MouseWheel","HandleWheel")
- print("[细胞战争] READY | view=topdown2d | world=body | map=2048x4096 | anatomy="..tostring(game.state.anatomyVersion).." | walls=sealed | mode=campaign | event=trachea | terrain=3 | zones=3 | controllable=cells | fixedStep=0.1")
- _FullBodyCameraObserver=ScriptObject();_FullBodyCameraObserverNode=Node();local cameraObserver=assert(_FullBodyCameraObserverNode:CreateScriptObject('_FullBodyCameraObserver'))
- local nativeRun;local function frameNativeCamera()local row=nativeRun and nativeRun.cases[#nativeRun.cases];game.camera.x=row and row.index==3 and 1221 or 1125;game.camera.y=row and row.index==3 and 1578 or 1570 end
- cameraObserver:SubscribeToEvent('Update',frameNativeCamera)
- cameraObserver:SubscribeToEvent('NanoVGRender',frameNativeCamera)
- nativeRun=require('qa.FullBodyMapNativeTrafficMovement016').start(game,R,H,{outputDir='qa/organ-atlas-native/fullbody-movement-018'})
+ -- Enter the integrated full-body battlefield with its normal interactive camera.
+ game.startFullBodyMap()
+ print("[细胞战争] READY | view=topdown2d | world=body | map=2048x4096 | anatomy="..tostring(game.state.anatomyVersion).." | walls=sealed | mode=fullbody | camera=free | zoom="..tostring(game.zoom).." | controllable=cells | fixedStep=0.1")
 end
 function Stop() Audio.stop();require('war.FullBodyMapArt').release(UI.GetNVGContext());require('war.OrganAtlasArt').release(UI.GetNVGContext());require('war.GastricArt').release(UI.GetNVGContext());require("war.BodyLife").release(UI.GetNVGContext());require("war.ReferenceArt").release(UI.GetNVGContext());require("war.LegacyReferenceArtV3").release(UI.GetNVGContext());require("war.Cells").release(UI.GetNVGContext());require("war.UIArt").release(UI.GetNVGContext());require("war.OrganArt").release(UI.GetNVGContext());require("war.BrainRig").release(UI.GetNVGContext());R.close();UI.Shutdown() end
 ---@param eventType string
