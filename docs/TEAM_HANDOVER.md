@@ -32,7 +32,7 @@ GitHub 仓库：https://github.com/ztjklt/cell-war 。此次整合合入后，ma
 - 全身存档兼容检查通过。旧 clearance 探针遇到与最新几何不匹配的 oracle 数据，不作为当前净空已验收的证据。
 - 本次在独立目录整合；该目录没有运行中的预览，因此没有自动启动窗口。未宣称整合版本已通过原生画面、手机或长期性能验收。
 
-结果文件：`integration-regression-results.json`、`body-life/vascular-art-study/fullbody-015/qa/resources-report.json`、`body-life/vascular-art-study/fullbody-015/qa/compatibility-report.json`。
+结果文件：`integration-regression-results.json`、`body-life/vascular-art-study/fullbody-015/qa/resource-report.json`、`body-life/vascular-art-study/fullbody-015/qa/compatibility-report.json`。
 
 ## 已知限制
 
