@@ -142,7 +142,7 @@ function H.mapMenu(g)
  end}
  H.refs.fullMap=map
  ---@param vg NVGContextWrapper
- function map:Render(vg) R.minimap(vg,g,self:GetAbsoluteLayout(),overview) end
+ function map:Render(vg) R.minimap(vg,g,self:GetAbsoluteLayout(),overview,false) end
  local legendRows={}
  for _,biome in ipairs(D.biomes) do local c=biome.color
   legendRows[#legendRows+1]=row({UI.Panel{width=9,height=9,borderRadius=3,backgroundColor={c[1],c[2],c[3],255}},label(biome.name,10,T.muted)},{height=22,gap=7})
@@ -150,13 +150,13 @@ function H.mapMenu(g)
  local hint=label("",11,T.gold,{whiteSpace="normal",maxLines=2})
  local function updateHint()
   if g.state.campaign then hint:SetText(battleText(g.state,"鼻腔已开放 · 全身可浏览 · 其余组织暂不可进入"));return end
-  if g.state.anatomyVersion==3 then hint:SetText("全身结构始终可浏览 · 敌人和未发现资源仍受迷雾限制");return end
+  if (g.state.anatomyVersion==3 or g.state.anatomyVersion==4) then hint:SetText("全身结构始终可浏览 · 敌人和未发现资源仍受迷雾限制");return end
   hint:SetText(g.fogDisabled and "全图查看 · 迷雾已临时关闭，恢复后继续探索" or overview and "组织总览 · 身体结构示意，黄色膜口允许通行" or "探索地图 · 未探索组织隐藏；切换总览查看身体结构")
  end
  updateHint()
  local toggle=btn(overview and "探索地图" or "组织总览",function() end,114)
  toggle.props.onClick=function() overview=not overview;toggle:SetText(overview and "探索地图" or "组织总览");T.active(toggle,overview);updateHint() end
- local fog=btn(g.fogDisabled and "恢复迷雾" or "查看全图",function() if g.state.anatomyVersion==3 then g.camera={x=1024,y=2048};g.zoom=require("war.View").minZoom(g.state,R.w,R.h) else I.toggleFog(g) end;updateHint() end,114);H.refs.mapFog=fog
+ local fog=btn(g.fogDisabled and "恢复迷雾" or "查看全图",function() if (g.state.anatomyVersion==3 or g.state.anatomyVersion==4) then g.camera={x=1024,y=2048};g.zoom=require("war.View").minZoom(g.state,R.w,R.h) else I.toggleFog(g) end;updateHint() end,114);H.refs.mapFog=fog
  local legend=UI.ScrollView{width=vw<720 and 0 or 158,visible=vw>=720,scrollY=true,height="100%",children={UI.Panel{gap=2,children=legendRows}}}
  H.refs.mapLegend=legend
  local box=panel{width="94%",maxWidth=1060,height="93%",maxHeight=840,padding=16,gap=10,children={
@@ -354,8 +354,17 @@ function H.layout(g)
  H.commands(g,l.narrow)
  Brain.layout(H,l,w,h,battle)
 end
+function H.prepareBattlefield(s)
+ local vg=UI.GetNVGContext()
+ local atlas=require('war.OrganAtlasArt');local gastric=require('war.GastricArt')
+ local full=require('war.FullBodyMapArt')
+ if full.enabled(s)then full.prepare(vg) else full.release(vg) end
+ if s.organBattlefieldVersion==1 then atlas.prepare(vg) else atlas.release(vg) end
+ if not full.enabled(s)and require('war.OrganBattlefield').enabled(s) then gastric.prepare(vg) else gastric.release(vg) end
+end
 function H.create(g)
  T.init();Cells.init(UI.GetNVGContext());Art.init(UI.GetNVGContext())
+ H.prepareBattlefield(g.state)
  H.refs={};H.lastLayout="";H.tick=0;H.uiCounters={};H.uiState=g.state;H.wasStarted=false
  H.root=UI.Panel{width="100%",height="100%",pointerEvents="box-none",children={}}
  local inputLayer=UI.Panel{id="worldInput",position="absolute",left=0,top=0,right=0,bottom=0,
@@ -394,7 +403,7 @@ function H.create(g)
  Battle.create(g,H,play)
  local pause=btn("Ⅱ 暂停",function() g.paused=not g.paused end,92);H.refs.pause=pause
  local speed=btn("1×",function() g.speed=g.speed==1 and 2 or 1 end,44);H.refs.speed=speed
- local fog=btn("全图",function() if g.state.campaign then R.nasalOverview(g) elseif g.state.anatomyVersion==3 then H.mapMenu(g) else I.toggleFog(g) end end,60);H.refs.fog=fog
+ local fog=btn("全图",function() if g.state.campaign then R.nasalOverview(g) elseif (g.state.anatomyVersion==3 or g.state.anatomyVersion==4) then H.mapMenu(g) else I.toggleFog(g) end end,60);H.refs.fog=fog
  local toolbar=row({pause,speed,fog,btn("地图",function() H.mapMenu(g) end,60),btn("存档",function() H.saveMenu(g) end,60),btn("?",function() H.help(g) end,44)},{position="absolute",right=12,top=110,gap=5});H.refs.toolbar=toolbar;play:AddChild(toolbar)
  local goal=panel{position="absolute",left=12,top=110,width=410,padding=12,gap=6,pointerEvents="none",children={
   textRef("goal","目标 · 维持稳态，击败两个敌群",12,T.paper),
@@ -422,7 +431,7 @@ function H.create(g)
   g.camera.x,g.camera.y=R.mapPoint(H.refs.map:GetAbsoluteLayout(),e.x,e.y,g.state)
  end}
  ---@param vg NVGContextWrapper
- function map:Render(vg) R.minimap(vg,g,self:GetAbsoluteLayout()) end
+ function map:Render(vg) R.minimap(vg,g,self:GetAbsoluteLayout(),nil,true) end
  H.refs.map=map
  local mapShell=panel{width=150,padding=8,gap=4,children={label("内域导航  /  M",9,T.quiet),map}};H.refs.mapShell=mapShell
  local dock=UI.Panel{position="absolute",left=12,right=12,bottom=12,height=168,padding=12,flexDirection="row",gap=12,pointerEvents="box-none",children={selected,commands,mapShell}};H.refs.dock=dock;play:AddChild(dock)
@@ -442,6 +451,8 @@ function H.create(g)
   label("调动免疫细胞，守住防线，再反攻夺回气管。",13,T.muted,{whiteSpace="normal",maxLines=3}),
   row({label("守卫",11,T.gold),label("/",11,T.quiet),label("调援",11,T.gold),label("/",11,T.quiet),label("夺回",11,T.gold)},{marginTop=8}),
   btn("守卫气管  →",function() g.newGame("campaign");menu:SetVisible(false);H.refs.play:SetVisible(true) end,230,true,{height=56,fontSize=16}),
+  btn("全身地图 · 0.15",function() g.startFullBodyMap() end,230,false,{height=42,fontSize=14}),
+  btn("胃部战场试验",function() g.startGastricTrial() end,230,false,{height=42,fontSize=14}),
   row({btn("全身沙盒",function() g.newGame("sandbox");menu:SetVisible(false);H.refs.play:SetVisible(true) end,126),btn("继续记录",function() H.saveMenu(g) end,126),btn("指挥手册",function() H.help(g) end,126)},{flexWrap="wrap"}),
   label("三块组织区域 · 自动争夺 · 战术暂停 · 失败重试",10,T.muted,{whiteSpace="normal",maxLines=3}),
  }}
@@ -476,7 +487,7 @@ function H.update(g,dt)
  end
  refs.clock:SetText("第"..day.."天 · "..D.seasons[season])
  local key=U.key(g.camera.x,g.camera.y)
- local region=(s.anatomyVersion==3 or g.fogDisabled or s.factions[1].seen[key]) and D.biomes[W.terrain(s,math.floor(g.camera.x),math.floor(g.camera.y))].name or "未探索"
+ local region=((s.anatomyVersion==3 or s.anatomyVersion==4) or g.fogDisabled or s.factions[1].seen[key]) and D.biomes[W.terrain(s,math.floor(g.camera.x),math.floor(g.camera.y))].name or "未探索"
  refs.phase:SetText(phase.." · "..region)
  if s.campaign then
   local ev=s.campaign.event;local r=s.campaign.reinforcements;local N=require("war.CampaignData").forState(s)
@@ -493,7 +504,7 @@ function H.update(g,dt)
   local b=refs.commandButtons.reinforce;if b then local ok,why=require("war.Reinforcements").available(s);b:SetDisabled(not ok);b:SetText(ok and "调援 +2" or ev.status=="completed" and "战斗结束" or r.cooldown>0 and "冷却 "..math.ceil(r.cooldown).."s" or why) end
  end
  refs.fog:SetText(s.campaign and battleText(s,"鼻腔图") or g.fogDisabled and "迷雾" or "全图");T.active(refs.fog,not s.campaign and g.fogDisabled)
- if refs.mapFog then refs.mapFog:SetText(s.anatomyVersion==3 and "全身定位" or g.fogDisabled and "恢复迷雾" or "查看全图");T.active(refs.mapFog,g.fogDisabled) end
+ if refs.mapFog then refs.mapFog:SetText((s.anatomyVersion==3 or s.anatomyVersion==4) and "全身定位" or g.fogDisabled and "恢复迷雾" or "查看全图");T.active(refs.mapFog,g.fogDisabled) end
  refs.pause:SetText(g.paused and "▶ 继续" or "Ⅱ 暂停");T.active(refs.pause,g.paused);refs.speed:SetText(g.speed.."×")
  for tab,b in pairs(refs.tabButtons) do T.active(b,g.tab==tab) end
  for name,b in pairs(refs.commandButtons) do
@@ -526,6 +537,15 @@ function H.update(g,dt)
  local tutorials={"01 选择红细胞 · 点击单位或红细胞按钮","02 点击蛋白束 / 钙晶，采集并送回胞巢","03 建造第二座荧光腺，扩大休息期安全区","04 建造培养床，安排红细胞生产食物","05 建造分裂兵巢，训练第一支军队","06 探索器官 · 发展科技 · 进攻敌群"}
  refs.tutorial:SetText(tutorials[s.tutorial] or tutorials[6]);refs.tutorialProgress:SetValue(math.min(s.tutorial or 1,6))
  refs.goal:SetText(s.outcome=="victory" and "内域已控制 · 自由探索仍在继续" or s.outcome=="defeat" and "胞群已失去活性 · 可读取记录" or "目标 · 维持稳态，击败两个敌群")
+ if require('war.FullBodyBattlefield').enabled(s) then
+  refs.goal:SetText("全身地图 · 指挥细胞沿血管进出器官")
+  refs.tutorial:SetText("组织入口连接器官地面 · 四肢沿血管通行")
+  if #ids==0 then
+   refs.selected:SetText("全身细胞")
+   refs.selectedDetail:SetText("选择细胞 · 右键下令 / 点击移动目标")
+   refs.selectedStats:SetText(phase.." · "..region)
+  end
+ end
  if s.campaign then
   local ev=s.campaign.event
   refs.goal:SetText(battleText(s,ev.status=="failed" and "鼻腔失守 · 重试本次事件" or ev.status=="completed" and "鼻腔已夺回 · 下一事件尚未开放" or "鼻腔事件 · 守住后鼻屏障"))
@@ -535,7 +555,9 @@ function H.update(g,dt)
  local modes={move="移动",attackmove="进攻移动",guard="驻守",rally="集结点"}
  local notice=g.placement and "放置"..D.buildings[g.placement].name.." · 点击地图确认 / Esc取消" or g.mode and (modes[g.mode] or "指令").." · 点击地图选择目标 / Esc取消" or s.messageTime>0 and s.message or g.paused and "战术暂停 · 命令将在继续后执行" or ""
  -- Campaign notices use the battle HUD toast under the status bar; the sandbox keeps the dock toast.
- local box,text,battle=refs.noticeBox,refs.notice,H.battle
+ local box,text=refs.noticeBox,refs.notice
+ ---@type table<string, any>|nil
+ local battle=H.battle
  if battle then
   if s.campaign then box,text=battle.noticeBox,battle.notice;refs.noticeBox:SetVisible(false) else battle.noticeBox:SetVisible(false) end
  end

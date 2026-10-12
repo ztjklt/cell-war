@@ -44,6 +44,9 @@ function S.new(seed,mode,anatomyVersion)
  W.rebuild(s);W.fog(s);spawnWildChunks(s);return s
 end
 function S.step(s,dt)
+ if s.fullbodyBattlefieldVersion==1 then return require('war.FullBodyBattlefield').step(s,dt) end
+ if s.organBattlefieldVersion==1 then return require('war.OrganTrial').step(s,dt) end
+ if s.gastricBattlefieldVersion==1 then return require('war.GastricTrial').step(s,dt) end
  if s.outcome=="defeat" then return end
  C.process(s);spawnWildChunks(s);s.time=s.time+dt;s.tick=s.tick+1;s.messageTime=math.max(0,s.messageTime-dt)
  if s.campaign then require("war.Campaign").beforeStep(s,dt) end

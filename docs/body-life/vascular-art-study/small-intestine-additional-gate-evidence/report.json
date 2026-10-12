@@ -1,0 +1,5691 @@
+{
+  "experimentalGateCount": 24,
+  "addedGate": {
+    "edgeId": "e188",
+    "outsideWorld": [
+      1081.4146480572342,
+      1898.1612040432565
+    ],
+    "lumenAnchorWorld": [
+      1077.0530077691453,
+      1896.4121198668147
+    ],
+    "basis": "Projection of unchanged deep target onto existing same-organ e188; standard gate size, no new vessel edge",
+    "normal": [
+      0.9281514094401471,
+      0.37220284947091475
+    ],
+    "lumenAnchorSource": [
+      538.5265038845727,
+      692.2060599334073
+    ]
+  },
+  "adapterStats": {
+    "directRoutes": 12,
+    "explicitRequests": 18,
+    "rejectedCenterlines": 0,
+    "centerlineRoutes": 6,
+    "prior": {
+      "directRoutes": 0,
+      "centerlineRoutes": 0,
+      "laneSelections": 0
+    }
+  },
+  "routes": [
+    {
+      "seconds": 65.34999999999843,
+      "zone": "small_intestine",
+      "targetSource": [
+        543,
+        694
+      ],
+      "kind": "scout",
+      "id": "small_intestine",
+      "startSource": [
+        492.0,
+        673.0
+      ],
+      "name": "小肠",
+      "stages": [
+        {
+          "startLegal": true,
+          "fromSource": [
+            492.0,
+            673.0
+          ],
+          "endLegal": true,
+          "seconds": 30.1,
+          "toSource": [
+            538.5265038845727,
+            692.2060599334073
+          ],
+          "id": "original-gate-to-candidate-lumen",
+          "radiusViolations": 0,
+          "arrived": true,
+          "invalidSteps": 0,
+          "pass": true,
+          "endLane": 188,
+          "startLane": 131
+        },
+        {
+          "startLegal": true,
+          "fromSource": [
+            538.3783222189874,
+            692.5755762387276
+          ],
+          "endLegal": true,
+          "seconds": 1.4000000000000001,
+          "toSource": [
+            540.7073240286171,
+            693.0806020216282
+          ],
+          "id": "candidate-outward",
+          "radiusViolations": 0,
+          "arrived": true,
+          "invalidSteps": 0,
+          "pass": true,
+          "endLane": 0,
+          "startLane": 188
+        },
+        {
+          "startLegal": true,
+          "fromSource": [
+            540.7073240286171,
+            693.0806020216282
+          ],
+          "endLegal": true,
+          "seconds": 1.25,
+          "toSource": [
+            543.0,
+            694.0
+          ],
+          "id": "candidate-to-fixed-deep-target",
+          "radiusViolations": 0,
+          "arrived": true,
+          "invalidSteps": 0,
+          "pass": true,
+          "endLane": 0,
+          "startLane": 0
+        },
+        {
+          "startLegal": true,
+          "fromSource": [
+            542.649514052284,
+            693.8594497976164
+          ],
+          "endLegal": true,
+          "seconds": 1.05,
+          "toSource": [
+            540.7073240286171,
+            693.0806020216282
+          ],
+          "id": "fixed-deep-target-to-candidate",
+          "radiusViolations": 0,
+          "arrived": true,
+          "invalidSteps": 0,
+          "pass": true,
+          "endLane": 0,
+          "startLane": 0
+        },
+        {
+          "startLegal": true,
+          "fromSource": [
+            541.0594356752254,
+            693.2218041540244
+          ],
+          "endLegal": true,
+          "seconds": 1.3,
+          "toSource": [
+            538.5265038845727,
+            692.2060599334073
+          ],
+          "id": "candidate-inward",
+          "radiusViolations": 0,
+          "arrived": true,
+          "invalidSteps": 0,
+          "pass": true,
+          "endLane": 188,
+          "startLane": 0
+        },
+        {
+          "startLegal": true,
+          "fromSource": [
+            538.8929702667343,
+            692.3530185333606
+          ],
+          "endLegal": true,
+          "seconds": 30.25,
+          "toSource": [
+            492.0,
+            673.0
+          ],
+          "id": "candidate-lumen-to-original-gate",
+          "radiusViolations": 0,
+          "arrived": true,
+          "invalidSteps": 0,
+          "pass": true,
+          "endLane": 131,
+          "startLane": 188
+        }
+      ],
+      "trace": [
+        {
+          "x": 984,
+          "y": 1858,
+          "lane": 131,
+          "t": 0
+        },
+        {
+          "t": 0.49999999999999994,
+          "lane": 131,
+          "x": 985.2252090225824,
+          "y": 1858.7978105263328,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 1.0000000000000002,
+          "lane": 131,
+          "x": 986.7989429202322,
+          "y": 1859.8225674829418,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 1.5000000000000007,
+          "lane": 131,
+          "x": 988.4437600355326,
+          "y": 1860.8936111859282,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 2.000000000000001,
+          "lane": 131,
+          "x": 990.1317831535429,
+          "y": 1861.992789030214,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 2.499999999999999,
+          "lane": 131,
+          "x": 991.8211484640035,
+          "y": 1863.0928408602813,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 2.9999999999999973,
+          "lane": 131,
+          "x": 993.5105515110904,
+          "y": 1864.1929172630355,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 3.4999999999999956,
+          "lane": 131,
+          "x": 995.1999556191673,
+          "y": 1865.2929943566671,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 3.999999999999994,
+          "lane": 131,
+          "x": 996.8893597570744,
+          "y": 1866.3930714697233,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 4.499999999999992,
+          "lane": 131,
+          "x": 998.5787638958205,
+          "y": 1867.4931485833254,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 4.99999999999999,
+          "lane": 131,
+          "x": 1000.2681680345902,
+          "y": 1868.5932256969427,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 5.4999999999999885,
+          "lane": 131,
+          "x": 1001.9575721733609,
+          "y": 1869.69330281056,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 5.999999999999987,
+          "lane": 131,
+          "x": 1003.6469763121315,
+          "y": 1870.7933799241773,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 6.499999999999985,
+          "lane": 131,
+          "x": 1005.3363804509022,
+          "y": 1871.8934570377946,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 6.999999999999983,
+          "lane": 131,
+          "x": 1007.0257845896729,
+          "y": 1872.993534151412,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 7.499999999999981,
+          "lane": 131,
+          "x": 1008.7151887284435,
+          "y": 1874.0936112650293,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 7.99999999999998,
+          "lane": 131,
+          "x": 1010.4045928672142,
+          "y": 1875.1936883786466,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 8.499999999999986,
+          "lane": 131,
+          "x": 1012.0939970059849,
+          "y": 1876.293765492264,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 8.999999999999993,
+          "lane": 131,
+          "x": 1013.7834011447555,
+          "y": 1877.3938426058812,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 9.5,
+          "lane": 131,
+          "x": 1015.4728052835262,
+          "y": 1878.4939197194985,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 10.000000000000007,
+          "lane": 131,
+          "x": 1017.1622094222969,
+          "y": 1879.5939968331159,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 10.500000000000014,
+          "lane": 131,
+          "x": 1018.8516135610676,
+          "y": 1880.6940739467332,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 11.000000000000021,
+          "lane": 131,
+          "x": 1020.5410176998382,
+          "y": 1881.7941510603505,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 11.500000000000028,
+          "lane": 131,
+          "x": 1022.2304218386089,
+          "y": 1882.8942281739678,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 12.000000000000036,
+          "lane": 131,
+          "x": 1023.9198259773796,
+          "y": 1883.9943052875851,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 12.500000000000043,
+          "lane": 131,
+          "x": 1025.609230116149,
+          "y": 1885.0943824012024,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 13.00000000000005,
+          "lane": 131,
+          "x": 1027.2986342549186,
+          "y": 1886.1944595148198,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 13.500000000000057,
+          "lane": 131,
+          "x": 1028.9880383936882,
+          "y": 1887.294536628437,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 14.000000000000064,
+          "lane": 131,
+          "x": 1030.6774425324577,
+          "y": 1888.3946137420544,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 14.500000000000071,
+          "lane": 131,
+          "x": 1032.3668466712272,
+          "y": 1889.4946908556717,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 15.000000000000078,
+          "lane": 131,
+          "x": 1034.0562508099968,
+          "y": 1890.594767969289,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 15.500000000000085,
+          "lane": 131,
+          "x": 1035.7456549487663,
+          "y": 1891.6948450829063,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 16.000000000000092,
+          "lane": 131,
+          "x": 1037.4350590875358,
+          "y": 1892.7949221965237,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 16.5000000000001,
+          "lane": 131,
+          "x": 1039.1244632263054,
+          "y": 1893.894999310141,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 17.000000000000107,
+          "lane": 131,
+          "x": 1040.8138673650749,
+          "y": 1894.9950764237583,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 17.500000000000114,
+          "lane": 131,
+          "x": 1042.5032715038444,
+          "y": 1896.0951535373756,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 18.00000000000012,
+          "lane": 131,
+          "x": 1044.192675642614,
+          "y": 1897.195230650993,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 18.500000000000128,
+          "lane": 131,
+          "x": 1045.8820797813835,
+          "y": 1898.2953077646102,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 19.000000000000135,
+          "lane": 131,
+          "x": 1047.571483920153,
+          "y": 1899.395384878228,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 19.500000000000142,
+          "lane": 131,
+          "x": 1049.2608880589225,
+          "y": 1900.4954619918462,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 20.00000000000015,
+          "lane": 131,
+          "x": 1050.950292197692,
+          "y": 1901.5955391054645,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 20.500000000000156,
+          "lane": 131,
+          "x": 1052.6396963364616,
+          "y": 1902.6956162190827,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 21.000000000000163,
+          "lane": 131,
+          "x": 1054.3291004752311,
+          "y": 1903.795693332701,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 21.50000000000017,
+          "lane": 131,
+          "x": 1056.0185046140007,
+          "y": 1904.8957704463191,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 22.000000000000178,
+          "lane": 131,
+          "x": 1057.7079087527702,
+          "y": 1905.9958475599374,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 22.500000000000185,
+          "lane": 131,
+          "x": 1059.3973128915397,
+          "y": 1907.0959246735556,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 23.000000000000192,
+          "lane": 131,
+          "x": 1061.0867170303093,
+          "y": 1908.1960017871738,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 23.5000000000002,
+          "lane": 131,
+          "x": 1062.7761211690788,
+          "y": 1909.2960789007918,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 24.000000000000206,
+          "lane": 131,
+          "x": 1064.4655253078483,
+          "y": 1910.39615601441,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 24.500000000000213,
+          "lane": 131,
+          "x": 1066.1549294466179,
+          "y": 1911.4962331280283,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 25.00000000000022,
+          "lane": 131,
+          "x": 1067.8443335853874,
+          "y": 1912.5963102416465,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 25.500000000000227,
+          "lane": 131,
+          "x": 1069.533737724157,
+          "y": 1913.6963873552647,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 25.65000000000023,
+          "lane": 188,
+          "x": 1070.0180145550607,
+          "y": 1913.9550776285191,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 26.000000000000234,
+          "lane": 188,
+          "x": 1070.553038391996,
+          "y": 1912.6209042629964,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 26.50000000000024,
+          "lane": 188,
+          "x": 1071.3231247379297,
+          "y": 1910.7005623623782,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 27.00000000000025,
+          "lane": 188,
+          "x": 1072.0935741336605,
+          "y": 1908.7793151350497,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 27.500000000000256,
+          "lane": 188,
+          "x": 1072.8640337367758,
+          "y": 1906.8580424538638,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 28.000000000000263,
+          "lane": 188,
+          "x": 1073.634493626878,
+          "y": 1904.9367690570261,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 28.50000000000027,
+          "lane": 188,
+          "x": 1074.404953525049,
+          "y": 1903.015495640067,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 29.000000000000277,
+          "lane": 188,
+          "x": 1075.175413423447,
+          "y": 1901.0942222225424,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 29.500000000000284,
+          "lane": 188,
+          "x": 1075.9458733218519,
+          "y": 1899.172948805002,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 30.00000000000029,
+          "lane": 188,
+          "x": 1076.661808657826,
+          "y": 1897.3876417013703,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 30.6000000000003,
+          "lane": 188,
+          "x": 1078.4343489090334,
+          "y": 1897.514949538698,
+          "stage": "candidate-outward"
+        },
+        {
+          "t": 31.100000000000307,
+          "lane": 188,
+          "x": 1080.2766606091116,
+          "y": 1897.9144403870228,
+          "stage": "candidate-outward"
+        },
+        {
+          "t": 31.500000000000313,
+          "lane": 0,
+          "x": 1081.4146480572342,
+          "y": 1898.1612040432565,
+          "stage": "candidate-outward"
+        },
+        {
+          "t": 32.00000000000032,
+          "lane": 0,
+          "x": 1082.9531658978967,
+          "y": 1898.7781731265677,
+          "stage": "candidate-to-fixed-deep-target"
+        },
+        {
+          "t": 32.50000000000029,
+          "lane": 0,
+          "x": 1084.6448063832404,
+          "y": 1899.4565467222133,
+          "stage": "candidate-to-fixed-deep-target"
+        },
+        {
+          "t": 33.25000000000025,
+          "lane": 0,
+          "x": 1083.8078360699792,
+          "y": 1899.1209088808548,
+          "stage": "fixed-deep-target-to-candidate"
+        },
+        {
+          "t": 33.75000000000022,
+          "lane": 0,
+          "x": 1082.2129860259174,
+          "y": 1898.4813497261296,
+          "stage": "fixed-deep-target-to-candidate"
+        },
+        {
+          "t": 34.30000000000019,
+          "lane": 0,
+          "x": 1080.5487579197631,
+          "y": 1897.8139689119866,
+          "stage": "candidate-inward"
+        },
+        {
+          "t": 34.80000000000016,
+          "lane": 0,
+          "x": 1078.799727644569,
+          "y": 1897.1125811366549,
+          "stage": "candidate-inward"
+        },
+        {
+          "t": 35.050000000000146,
+          "lane": 188,
+          "x": 1077.9227491891445,
+          "y": 1896.7608994210277,
+          "stage": "candidate-inward"
+        },
+        {
+          "t": 35.600000000000115,
+          "lane": 188,
+          "x": 1076.6785203867255,
+          "y": 1897.3459681495578,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 36.10000000000009,
+          "lane": 188,
+          "x": 1075.9760427026065,
+          "y": 1899.0977162985628,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 36.60000000000006,
+          "lane": 188,
+          "x": 1075.2207798536087,
+          "y": 1900.9810932764437,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 37.10000000000003,
+          "lane": 188,
+          "x": 1074.4507472302744,
+          "y": 1902.9013012105816,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 37.6,
+          "lane": 188,
+          "x": 1073.6802993449903,
+          "y": 1904.8225446713539,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 38.09999999999997,
+          "lane": 188,
+          "x": 1072.9098397843422,
+          "y": 1906.7438172466407,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 38.599999999999945,
+          "lane": 188,
+          "x": 1072.1393798954339,
+          "y": 1908.6650906405016,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 39.099999999999916,
+          "lane": 188,
+          "x": 1071.3689199972955,
+          "y": 1910.5863640573764,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 39.59999999999989,
+          "lane": 188,
+          "x": 1070.5984600988984,
+          "y": 1912.5076374748987,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 39.999999999999865,
+          "lane": 131,
+          "x": 1069.959681343826,
+          "y": 1913.9737459913285,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 40.09999999999986,
+          "lane": 131,
+          "x": 1069.6164190962877,
+          "y": 1913.7502263882802,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 40.59999999999983,
+          "lane": 131,
+          "x": 1067.9219991506338,
+          "y": 1912.6468831678542,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 41.0999999999998,
+          "lane": 131,
+          "x": 1066.2324539891442,
+          "y": 1911.5467142254886,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 41.599999999999774,
+          "lane": 131,
+          "x": 1064.543045885427,
+          "y": 1910.4466345300448,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 42.099999999999746,
+          "lane": 131,
+          "x": 1062.8536416351794,
+          "y": 1909.3465573438373,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 42.59999999999972,
+          "lane": 131,
+          "x": 1061.1642374932746,
+          "y": 1908.2464802281784,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 43.09999999999969,
+          "lane": 131,
+          "x": 1059.4748333544167,
+          "y": 1907.1464031145033,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 43.59999999999966,
+          "lane": 131,
+          "x": 1057.7854292156437,
+          "y": 1906.0463260008842,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 44.09999999999963,
+          "lane": 131,
+          "x": 1056.0960250768742,
+          "y": 1904.9462488872668,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 44.5999999999996,
+          "lane": 131,
+          "x": 1054.4066209381047,
+          "y": 1903.8461717736495,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 45.099999999999575,
+          "lane": 131,
+          "x": 1052.7172167993351,
+          "y": 1902.7460946600322,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 45.59999999999955,
+          "lane": 131,
+          "x": 1051.0278126605656,
+          "y": 1901.646017546415,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 46.09999999999952,
+          "lane": 131,
+          "x": 1049.338408521796,
+          "y": 1900.5459404327976,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 46.59999999999949,
+          "lane": 131,
+          "x": 1047.6490043830265,
+          "y": 1899.4458633191803,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 47.09999999999946,
+          "lane": 131,
+          "x": 1045.959600244257,
+          "y": 1898.345786205563,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 47.59999999999943,
+          "lane": 131,
+          "x": 1044.2701961054875,
+          "y": 1897.2457090919456,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 48.099999999999405,
+          "lane": 131,
+          "x": 1042.580791966718,
+          "y": 1896.1456319783283,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 48.599999999999376,
+          "lane": 131,
+          "x": 1040.8913878279484,
+          "y": 1895.045554864711,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 49.09999999999935,
+          "lane": 131,
+          "x": 1039.2019836891789,
+          "y": 1893.9454777510937,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 49.59999999999932,
+          "lane": 131,
+          "x": 1037.5125795504093,
+          "y": 1892.8454006374764,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 50.09999999999929,
+          "lane": 131,
+          "x": 1035.8231754116398,
+          "y": 1891.745323523859,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 50.59999999999926,
+          "lane": 131,
+          "x": 1034.1337712728703,
+          "y": 1890.6452464102417,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 51.099999999999234,
+          "lane": 131,
+          "x": 1032.4443671341007,
+          "y": 1889.5451692966244,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 51.599999999999206,
+          "lane": 131,
+          "x": 1030.7549629953312,
+          "y": 1888.445092183007,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 52.09999999999918,
+          "lane": 131,
+          "x": 1029.0655588565617,
+          "y": 1887.3450150693898,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 52.59999999999915,
+          "lane": 131,
+          "x": 1027.3761547177921,
+          "y": 1886.2449379557725,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 53.09999999999912,
+          "lane": 131,
+          "x": 1025.6867505790226,
+          "y": 1885.1448608421551,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 53.59999999999909,
+          "lane": 131,
+          "x": 1023.997346440253,
+          "y": 1884.0447837285378,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 54.09999999999906,
+          "lane": 131,
+          "x": 1022.3079423014823,
+          "y": 1882.9447066149205,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 54.599999999999035,
+          "lane": 131,
+          "x": 1020.6185381627116,
+          "y": 1881.8446295013032,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 55.09999999999901,
+          "lane": 131,
+          "x": 1018.929134023941,
+          "y": 1880.7445523876859,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 55.59999999999898,
+          "lane": 131,
+          "x": 1017.2397298851703,
+          "y": 1879.6444752740686,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 56.09999999999895,
+          "lane": 131,
+          "x": 1015.5503257463996,
+          "y": 1878.5443981604512,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 56.59999999999892,
+          "lane": 131,
+          "x": 1013.8609216076289,
+          "y": 1877.444321046834,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 57.09999999999889,
+          "lane": 131,
+          "x": 1012.1715174688583,
+          "y": 1876.3442439332166,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 57.599999999998865,
+          "lane": 131,
+          "x": 1010.4821133300883,
+          "y": 1875.2441668195993,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 58.099999999998836,
+          "lane": 131,
+          "x": 1008.7927091913187,
+          "y": 1874.144089705982,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 58.59999999999881,
+          "lane": 131,
+          "x": 1007.1033050525492,
+          "y": 1873.0440125923647,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 59.09999999999878,
+          "lane": 131,
+          "x": 1005.4139009137797,
+          "y": 1871.9439354787473,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 59.59999999999875,
+          "lane": 131,
+          "x": 1003.7244967750102,
+          "y": 1870.84385836513,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 60.09999999999872,
+          "lane": 131,
+          "x": 1002.0350926362406,
+          "y": 1869.7437812515127,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 60.599999999998694,
+          "lane": 131,
+          "x": 1000.3456884974711,
+          "y": 1868.6437041378954,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 61.099999999998666,
+          "lane": 131,
+          "x": 998.6562843587016,
+          "y": 1867.543627024278,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 61.59999999999864,
+          "lane": 131,
+          "x": 996.966880219932,
+          "y": 1866.4435499106598,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 62.09999999999861,
+          "lane": 131,
+          "x": 995.2774760811625,
+          "y": 1865.3434727970416,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 62.59999999999858,
+          "lane": 131,
+          "x": 993.588071942393,
+          "y": 1864.2433956834234,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 63.09999999999855,
+          "lane": 131,
+          "x": 991.8986678036234,
+          "y": 1863.1433185698052,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 63.59999999999852,
+          "lane": 131,
+          "x": 990.2092636648539,
+          "y": 1862.043241456187,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 64.0999999999985,
+          "lane": 131,
+          "x": 988.5198595260844,
+          "y": 1860.9431643425687,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 64.59999999999847,
+          "lane": 131,
+          "x": 986.8336264776794,
+          "y": 1859.845152125002,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 65.09999999999845,
+          "lane": 131,
+          "x": 985.2330829162656,
+          "y": 1858.802937712918,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "x": 984.6149528913614,
+          "y": 1858.400434440887,
+          "lane": 131,
+          "t": 65.34999999999843
+        }
+      ],
+      "pass": true
+    },
+    {
+      "seconds": 98.14999999999657,
+      "zone": "small_intestine",
+      "targetSource": [
+        543,
+        694
+      ],
+      "kind": "worker",
+      "id": "small_intestine",
+      "startSource": [
+        492.0,
+        673.0
+      ],
+      "name": "小肠",
+      "stages": [
+        {
+          "startLegal": true,
+          "fromSource": [
+            492.0,
+            673.0
+          ],
+          "endLegal": true,
+          "seconds": 45.150000000000006,
+          "toSource": [
+            538.5265038845727,
+            692.2060599334073
+          ],
+          "id": "original-gate-to-candidate-lumen",
+          "radiusViolations": 0,
+          "arrived": true,
+          "invalidSteps": 0,
+          "pass": true,
+          "endLane": 188,
+          "startLane": 131
+        },
+        {
+          "startLegal": true,
+          "fromSource": [
+            538.3816849515288,
+            692.5671906904911
+          ],
+          "endLegal": true,
+          "seconds": 2.1,
+          "toSource": [
+            540.7073240286171,
+            693.0806020216282
+          ],
+          "id": "candidate-outward",
+          "radiusViolations": 0,
+          "arrived": true,
+          "invalidSteps": 0,
+          "pass": true,
+          "endLane": 0,
+          "startLane": 188
+        },
+        {
+          "startLegal": true,
+          "fromSource": [
+            540.7073240286171,
+            693.0806020216282
+          ],
+          "endLegal": true,
+          "seconds": 1.9000000000000001,
+          "toSource": [
+            543.0,
+            694.0
+          ],
+          "id": "candidate-to-fixed-deep-target",
+          "radiusViolations": 0,
+          "arrived": true,
+          "invalidSteps": 0,
+          "pass": true,
+          "endLane": 0,
+          "startLane": 0
+        },
+        {
+          "startLegal": true,
+          "fromSource": [
+            542.6414718324622,
+            693.8562247449975
+          ],
+          "endLegal": true,
+          "seconds": 1.6,
+          "toSource": [
+            540.7073240286171,
+            693.0806020216282
+          ],
+          "id": "fixed-deep-target-to-candidate",
+          "radiusViolations": 0,
+          "arrived": true,
+          "invalidSteps": 0,
+          "pass": true,
+          "endLane": 0,
+          "startLane": 0
+        },
+        {
+          "startLegal": true,
+          "fromSource": [
+            541.0628100403627,
+            693.2231573258308
+          ],
+          "endLegal": true,
+          "seconds": 2.0,
+          "toSource": [
+            538.5265038845727,
+            692.2060599334073
+          ],
+          "id": "candidate-inward",
+          "radiusViolations": 0,
+          "arrived": true,
+          "invalidSteps": 0,
+          "pass": true,
+          "endLane": 188,
+          "startLane": 0
+        },
+        {
+          "startLegal": true,
+          "fromSource": [
+            538.8719073289185,
+            692.3445719745409
+          ],
+          "endLegal": true,
+          "seconds": 45.400000000000006,
+          "toSource": [
+            492.0,
+            673.0
+          ],
+          "id": "candidate-lumen-to-original-gate",
+          "radiusViolations": 0,
+          "arrived": true,
+          "invalidSteps": 0,
+          "pass": true,
+          "endLane": 131,
+          "startLane": 188
+        }
+      ],
+      "trace": [
+        {
+          "x": 984,
+          "y": 1858,
+          "lane": 131,
+          "t": 0
+        },
+        {
+          "t": 0.49999999999999994,
+          "lane": 131,
+          "x": 984.816806015055,
+          "y": 1858.531873684222,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 1.0000000000000002,
+          "lane": 131,
+          "x": 985.8659619468215,
+          "y": 1859.215044988628,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 1.5000000000000007,
+          "lane": 131,
+          "x": 986.921650549789,
+          "y": 1859.902470125444,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 2.000000000000001,
+          "lane": 131,
+          "x": 988.0251352848425,
+          "y": 1860.621018325014,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 2.499999999999999,
+          "lane": 131,
+          "x": 989.1507641040755,
+          "y": 1861.3539859282353,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 2.9999999999999973,
+          "lane": 131,
+          "x": 990.2770155188447,
+          "y": 1862.0873589425034,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 3.4999999999999956,
+          "lane": 131,
+          "x": 991.4032844382983,
+          "y": 1862.8207433551709,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 3.999999999999994,
+          "lane": 131,
+          "x": 992.5295538499076,
+          "y": 1863.5541280883117,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 4.499999999999992,
+          "lane": 131,
+          "x": 993.655823275354,
+          "y": 1864.2875128304631,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 4.99999999999999,
+          "lane": 131,
+          "x": 994.7820927011895,
+          "y": 1865.0208975728676,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 5.4999999999999885,
+          "lane": 131,
+          "x": 995.9083621270362,
+          "y": 1865.7542823152792,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 5.999999999999987,
+          "lane": 131,
+          "x": 997.0346315528833,
+          "y": 1866.4876670576907,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 6.499999999999985,
+          "lane": 131,
+          "x": 998.1609009787304,
+          "y": 1867.2210518001023,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 6.999999999999983,
+          "lane": 131,
+          "x": 999.2871704045775,
+          "y": 1867.9544365425138,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 7.499999999999981,
+          "lane": 131,
+          "x": 1000.4134398304246,
+          "y": 1868.6878212849253,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 7.99999999999998,
+          "lane": 131,
+          "x": 1001.5397092562717,
+          "y": 1869.421206027337,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 8.499999999999986,
+          "lane": 131,
+          "x": 1002.6659786821189,
+          "y": 1870.1545907697484,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 8.999999999999993,
+          "lane": 131,
+          "x": 1003.792248107966,
+          "y": 1870.88797551216,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 9.5,
+          "lane": 131,
+          "x": 1004.9185175338131,
+          "y": 1871.6213602545715,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 10.000000000000007,
+          "lane": 131,
+          "x": 1006.0447869596602,
+          "y": 1872.354744996983,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 10.500000000000014,
+          "lane": 131,
+          "x": 1007.1710563855073,
+          "y": 1873.0881297393946,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 11.000000000000021,
+          "lane": 131,
+          "x": 1008.2973258113544,
+          "y": 1873.8215144818062,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 11.500000000000028,
+          "lane": 131,
+          "x": 1009.4235952372015,
+          "y": 1874.5548992242177,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 12.000000000000036,
+          "lane": 131,
+          "x": 1010.5498646630487,
+          "y": 1875.2882839666293,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 12.500000000000043,
+          "lane": 131,
+          "x": 1011.6761340888958,
+          "y": 1876.0216687090408,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 13.00000000000005,
+          "lane": 131,
+          "x": 1012.8024035147429,
+          "y": 1876.7550534514523,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 13.500000000000057,
+          "lane": 131,
+          "x": 1013.92867294059,
+          "y": 1877.4884381938639,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 14.000000000000064,
+          "lane": 131,
+          "x": 1015.0549423664371,
+          "y": 1878.2218229362754,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 14.500000000000071,
+          "lane": 131,
+          "x": 1016.1812117922842,
+          "y": 1878.955207678687,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 15.000000000000078,
+          "lane": 131,
+          "x": 1017.3074812181313,
+          "y": 1879.6885924210985,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 15.500000000000085,
+          "lane": 131,
+          "x": 1018.4337506439784,
+          "y": 1880.42197716351,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 16.000000000000092,
+          "lane": 131,
+          "x": 1019.5600200698256,
+          "y": 1881.1553619059216,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 16.5000000000001,
+          "lane": 131,
+          "x": 1020.6862894956727,
+          "y": 1881.8887466483332,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 17.000000000000107,
+          "lane": 131,
+          "x": 1021.8125589215198,
+          "y": 1882.6221313907447,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 17.500000000000114,
+          "lane": 131,
+          "x": 1022.9388283473669,
+          "y": 1883.3555161331562,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 18.00000000000012,
+          "lane": 131,
+          "x": 1024.065097773214,
+          "y": 1884.0889008755678,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 18.500000000000128,
+          "lane": 131,
+          "x": 1025.191367199061,
+          "y": 1884.8222856179793,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 19.000000000000135,
+          "lane": 131,
+          "x": 1026.3176366249081,
+          "y": 1885.5556703603909,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 19.500000000000142,
+          "lane": 131,
+          "x": 1027.4439060507552,
+          "y": 1886.2890551028024,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 20.00000000000015,
+          "lane": 131,
+          "x": 1028.5701754766023,
+          "y": 1887.022439845214,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 20.500000000000156,
+          "lane": 131,
+          "x": 1029.6964449024495,
+          "y": 1887.7558245876255,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 21.000000000000163,
+          "lane": 131,
+          "x": 1030.8227143282966,
+          "y": 1888.489209330037,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 21.50000000000017,
+          "lane": 131,
+          "x": 1031.9489837541437,
+          "y": 1889.2225940724486,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 22.000000000000178,
+          "lane": 131,
+          "x": 1033.0752531799908,
+          "y": 1889.9559788148601,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 22.500000000000185,
+          "lane": 131,
+          "x": 1034.201522605838,
+          "y": 1890.6893635572717,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 23.000000000000192,
+          "lane": 131,
+          "x": 1035.327792031685,
+          "y": 1891.4227482996832,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 23.5000000000002,
+          "lane": 131,
+          "x": 1036.4540614575321,
+          "y": 1892.1561330420948,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 24.000000000000206,
+          "lane": 131,
+          "x": 1037.5803308833792,
+          "y": 1892.8895177845063,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 24.500000000000213,
+          "lane": 131,
+          "x": 1038.7066003092264,
+          "y": 1893.6229025269179,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 25.00000000000022,
+          "lane": 131,
+          "x": 1039.8328697350735,
+          "y": 1894.3562872693294,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 25.500000000000227,
+          "lane": 131,
+          "x": 1040.9591391609206,
+          "y": 1895.089672011741,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 26.000000000000234,
+          "lane": 131,
+          "x": 1042.0854085867677,
+          "y": 1895.8230567541525,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 26.50000000000024,
+          "lane": 131,
+          "x": 1043.2116780126148,
+          "y": 1896.556441496564,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 27.00000000000025,
+          "lane": 131,
+          "x": 1044.337947438462,
+          "y": 1897.2898262389756,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 27.500000000000256,
+          "lane": 131,
+          "x": 1045.464216864309,
+          "y": 1898.0232109813871,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 28.000000000000263,
+          "lane": 131,
+          "x": 1046.5904862901562,
+          "y": 1898.7565957237996,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 28.50000000000027,
+          "lane": 131,
+          "x": 1047.7167557160033,
+          "y": 1899.489980466213,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 29.000000000000277,
+          "lane": 131,
+          "x": 1048.8430251418504,
+          "y": 1900.223365208626,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 29.500000000000284,
+          "lane": 131,
+          "x": 1049.9692945676975,
+          "y": 1900.9567499510392,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 30.00000000000029,
+          "lane": 131,
+          "x": 1051.0955639935446,
+          "y": 1901.6901346934524,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 30.5000000000003,
+          "lane": 131,
+          "x": 1052.2218334193917,
+          "y": 1902.4235194358655,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 31.000000000000306,
+          "lane": 131,
+          "x": 1053.3481028452388,
+          "y": 1903.1569041782786,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 31.500000000000313,
+          "lane": 131,
+          "x": 1054.474372271086,
+          "y": 1903.890288920692,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 32.00000000000032,
+          "lane": 131,
+          "x": 1055.600641696933,
+          "y": 1904.6236736631051,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 32.50000000000029,
+          "lane": 131,
+          "x": 1056.7269111227802,
+          "y": 1905.3570584055183,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 33.00000000000026,
+          "lane": 131,
+          "x": 1057.8531805486273,
+          "y": 1906.0904431479314,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 33.500000000000234,
+          "lane": 131,
+          "x": 1058.9794499744744,
+          "y": 1906.8238278903445,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 34.000000000000206,
+          "lane": 131,
+          "x": 1060.1057194003215,
+          "y": 1907.5572126327577,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 34.50000000000018,
+          "lane": 131,
+          "x": 1061.2319888261686,
+          "y": 1908.290597375171,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 35.00000000000015,
+          "lane": 131,
+          "x": 1062.3582582520157,
+          "y": 1909.0239821175842,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 35.50000000000012,
+          "lane": 131,
+          "x": 1063.4845276778628,
+          "y": 1909.7573668599973,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 36.00000000000009,
+          "lane": 131,
+          "x": 1064.61079710371,
+          "y": 1910.4907516024105,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 36.500000000000064,
+          "lane": 131,
+          "x": 1065.737066529557,
+          "y": 1911.2241363448236,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 37.000000000000036,
+          "lane": 131,
+          "x": 1066.8633359554042,
+          "y": 1911.9575210872367,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 37.50000000000001,
+          "lane": 131,
+          "x": 1067.9896053812513,
+          "y": 1912.69090582965,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 37.99999999999998,
+          "lane": 131,
+          "x": 1069.1158748070984,
+          "y": 1913.4242905720632,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 38.399999999999956,
+          "lane": 188,
+          "x": 1070.0075019689014,
+          "y": 1913.9812925585627,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 38.49999999999995,
+          "lane": 188,
+          "x": 1070.1086364912696,
+          "y": 1913.729096344556,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 38.99999999999992,
+          "lane": 188,
+          "x": 1070.6207912191792,
+          "y": 1912.4519510104028,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 39.49999999999989,
+          "lane": 188,
+          "x": 1071.1343893939484,
+          "y": 1911.1712061948385,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 39.999999999999865,
+          "lane": 188,
+          "x": 1071.6480281521783,
+          "y": 1909.8903601774796,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 40.49999999999984,
+          "lane": 188,
+          "x": 1072.1616680514392,
+          "y": 1908.6095113147655,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 40.99999999999981,
+          "lane": 188,
+          "x": 1072.675307982781,
+          "y": 1907.3286623720521,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 41.49999999999978,
+          "lane": 188,
+          "x": 1073.1889479150248,
+          "y": 1906.0478134270895,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 41.99999999999975,
+          "lane": 188,
+          "x": 1073.7025878472937,
+          "y": 1904.766964482064,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 42.49999999999972,
+          "lane": 188,
+          "x": 1074.2162277795628,
+          "y": 1903.4861155370363,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 42.999999999999694,
+          "lane": 188,
+          "x": 1074.729867711832,
+          "y": 1902.2052665920087,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 43.499999999999666,
+          "lane": 188,
+          "x": 1075.2435076441022,
+          "y": 1900.924417646981,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 43.99999999999964,
+          "lane": 188,
+          "x": 1075.7571475763727,
+          "y": 1899.6435687019534,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 44.49999999999961,
+          "lane": 188,
+          "x": 1076.2571160275352,
+          "y": 1898.3968119313347,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 44.99999999999958,
+          "lane": 188,
+          "x": 1076.6968865201197,
+          "y": 1897.300169057422,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 45.649999999999544,
+          "lane": 188,
+          "x": 1077.8236482061864,
+          "y": 1897.3684499001893,
+          "stage": "candidate-outward"
+        },
+        {
+          "t": 46.149999999999515,
+          "lane": 188,
+          "x": 1079.0492409433164,
+          "y": 1897.6390134647602,
+          "stage": "candidate-outward"
+        },
+        {
+          "t": 46.64999999999949,
+          "lane": 188,
+          "x": 1080.2794816048245,
+          "y": 1897.9106031116091,
+          "stage": "candidate-outward"
+        },
+        {
+          "t": 47.14999999999946,
+          "lane": 188,
+          "x": 1081.3265432962949,
+          "y": 1898.1417539131658,
+          "stage": "candidate-outward"
+        },
+        {
+          "t": 47.24999999999945,
+          "lane": 0,
+          "x": 1081.4146480572342,
+          "y": 1898.1612040432565,
+          "stage": "candidate-outward"
+        },
+        {
+          "t": 47.749999999999424,
+          "lane": 0,
+          "x": 1082.4115768372444,
+          "y": 1898.560987665697,
+          "stage": "candidate-to-fixed-deep-target"
+        },
+        {
+          "t": 48.249999999999396,
+          "lane": 0,
+          "x": 1083.5637855230937,
+          "y": 1899.023040895048,
+          "stage": "candidate-to-fixed-deep-target"
+        },
+        {
+          "t": 48.74999999999937,
+          "lane": 0,
+          "x": 1084.680452608,
+          "y": 1899.470841401178,
+          "stage": "candidate-to-fixed-deep-target"
+        },
+        {
+          "t": 49.64999999999932,
+          "lane": 0,
+          "x": 1084.3298737928126,
+          "y": 1899.330253957524,
+          "stage": "fixed-deep-target-to-candidate"
+        },
+        {
+          "t": 50.14999999999929,
+          "lane": 0,
+          "x": 1083.2206106203114,
+          "y": 1898.8854225330183,
+          "stage": "fixed-deep-target-to-candidate"
+        },
+        {
+          "t": 50.64999999999926,
+          "lane": 0,
+          "x": 1082.219985669861,
+          "y": 1898.4841566899445,
+          "stage": "fixed-deep-target-to-candidate"
+        },
+        {
+          "t": 51.249999999999226,
+          "lane": 0,
+          "x": 1081.1226928797419,
+          "y": 1898.0441255710643,
+          "stage": "candidate-inward"
+        },
+        {
+          "t": 51.7499999999992,
+          "lane": 0,
+          "x": 1079.9579045863327,
+          "y": 1897.5770277275144,
+          "stage": "candidate-inward"
+        },
+        {
+          "t": 52.24999999999917,
+          "lane": 0,
+          "x": 1078.7885654615222,
+          "y": 1897.1081049312706,
+          "stage": "candidate-inward"
+        },
+        {
+          "t": 52.59999999999915,
+          "lane": 188,
+          "x": 1077.969939414309,
+          "y": 1896.7798234199515,
+          "stage": "candidate-inward"
+        },
+        {
+          "t": 52.74999999999914,
+          "lane": 188,
+          "x": 1077.743814657837,
+          "y": 1896.6891439490819,
+          "stage": "candidate-inward"
+        },
+        {
+          "t": 53.24999999999911,
+          "lane": 188,
+          "x": 1076.9136404670055,
+          "y": 1896.7596560506315,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 53.74999999999908,
+          "lane": 188,
+          "x": 1076.4461433163142,
+          "y": 1897.9254400846341,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 54.249999999999055,
+          "lane": 188,
+          "x": 1075.9772092932867,
+          "y": 1899.094807205348,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 54.74999999999903,
+          "lane": 188,
+          "x": 1075.473683420217,
+          "y": 1900.3504350154074,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 55.249999999999,
+          "lane": 188,
+          "x": 1074.960327851394,
+          "y": 1901.6305748515856,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 55.74999999999897,
+          "lane": 188,
+          "x": 1074.4466959141898,
+          "y": 1902.9114038595499,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 56.24999999999894,
+          "lane": 188,
+          "x": 1073.9330562067064,
+          "y": 1904.1922522440339,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 56.74999999999891,
+          "lane": 188,
+          "x": 1073.4194162807566,
+          "y": 1905.4731011733013,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 57.249999999998884,
+          "lane": 188,
+          "x": 1072.9057763486646,
+          "y": 1906.7539501178858,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 57.749999999998856,
+          "lane": 188,
+          "x": 1072.3921364163998,
+          "y": 1908.034799062901,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 58.24999999999883,
+          "lane": 188,
+          "x": 1071.8784964841307,
+          "y": 1909.3156480079283,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 58.7499999999988,
+          "lane": 188,
+          "x": 1071.3648565518615,
+          "y": 1910.596496952956,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 59.24999999999877,
+          "lane": 188,
+          "x": 1070.8512166195912,
+          "y": 1911.8773458979836,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 59.74999999999874,
+          "lane": 188,
+          "x": 1070.3375766873207,
+          "y": 1913.1581948430112,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 60.09999999999872,
+          "lane": 131,
+          "x": 1069.9505326779743,
+          "y": 1913.9677887205414,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 60.249999999998714,
+          "lane": 131,
+          "x": 1069.60803092851,
+          "y": 1913.7447643255416,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 60.749999999998685,
+          "lane": 131,
+          "x": 1068.479421887777,
+          "y": 1913.0098561129712,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 61.24999999999866,
+          "lane": 131,
+          "x": 1067.3530866821143,
+          "y": 1912.2764285371904,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 61.74999999999863,
+          "lane": 131,
+          "x": 1066.2268154068245,
+          "y": 1911.54304259049,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 62.2499999999986,
+          "lane": 131,
+          "x": 1065.1005459289793,
+          "y": 1910.809657814219,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 62.74999999999857,
+          "lane": 131,
+          "x": 1063.9742765016704,
+          "y": 1910.0762730708554,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 63.24999999999854,
+          "lane": 131,
+          "x": 1062.8480070757828,
+          "y": 1909.3428883284166,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 63.749999999998515,
+          "lane": 131,
+          "x": 1061.721737649935,
+          "y": 1908.6095035860042,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 64.2499999999985,
+          "lane": 131,
+          "x": 1060.5954682240879,
+          "y": 1907.8761188435926,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 64.74999999999847,
+          "lane": 131,
+          "x": 1059.4691987982408,
+          "y": 1907.142734101181,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 65.24999999999844,
+          "lane": 131,
+          "x": 1058.3429293723937,
+          "y": 1906.4093493587695,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 65.74999999999841,
+          "lane": 131,
+          "x": 1057.2166599465465,
+          "y": 1905.675964616358,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 66.24999999999838,
+          "lane": 131,
+          "x": 1056.0903905206994,
+          "y": 1904.9425798739464,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 66.74999999999835,
+          "lane": 131,
+          "x": 1054.9641210948523,
+          "y": 1904.209195131535,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 67.24999999999832,
+          "lane": 131,
+          "x": 1053.8378516690052,
+          "y": 1903.4758103891234,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 67.7499999999983,
+          "lane": 131,
+          "x": 1052.711582243158,
+          "y": 1902.7424256467118,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 68.24999999999827,
+          "lane": 131,
+          "x": 1051.585312817311,
+          "y": 1902.0090409043003,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 68.74999999999824,
+          "lane": 131,
+          "x": 1050.4590433914639,
+          "y": 1901.2756561618887,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 69.24999999999821,
+          "lane": 131,
+          "x": 1049.3327739656168,
+          "y": 1900.5422714194772,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 69.74999999999818,
+          "lane": 131,
+          "x": 1048.2065045397696,
+          "y": 1899.8088866770656,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 70.24999999999815,
+          "lane": 131,
+          "x": 1047.0802351139225,
+          "y": 1899.075501934654,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 70.74999999999812,
+          "lane": 131,
+          "x": 1045.9539656880754,
+          "y": 1898.3421171922425,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 71.2499999999981,
+          "lane": 131,
+          "x": 1044.8276962622283,
+          "y": 1897.608732449831,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 71.74999999999807,
+          "lane": 131,
+          "x": 1043.7014268363812,
+          "y": 1896.8753477074195,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 72.24999999999804,
+          "lane": 131,
+          "x": 1042.575157410534,
+          "y": 1896.141962965008,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 72.74999999999801,
+          "lane": 131,
+          "x": 1041.448887984687,
+          "y": 1895.4085782225964,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 73.24999999999798,
+          "lane": 131,
+          "x": 1040.3226185588398,
+          "y": 1894.6751934801848,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 73.74999999999795,
+          "lane": 131,
+          "x": 1039.1963491329927,
+          "y": 1893.9418087377733,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 74.24999999999793,
+          "lane": 131,
+          "x": 1038.0700797071456,
+          "y": 1893.2084239953617,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 74.7499999999979,
+          "lane": 131,
+          "x": 1036.9438102812985,
+          "y": 1892.4750392529502,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 75.24999999999787,
+          "lane": 131,
+          "x": 1035.8175408554514,
+          "y": 1891.7416545105386,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 75.74999999999784,
+          "lane": 131,
+          "x": 1034.6912714296043,
+          "y": 1891.008269768127,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 76.24999999999781,
+          "lane": 131,
+          "x": 1033.5650020037572,
+          "y": 1890.2748850257155,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 76.74999999999778,
+          "lane": 131,
+          "x": 1032.43873257791,
+          "y": 1889.541500283304,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 77.24999999999775,
+          "lane": 131,
+          "x": 1031.312463152063,
+          "y": 1888.8081155408925,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 77.74999999999773,
+          "lane": 131,
+          "x": 1030.1861937262158,
+          "y": 1888.074730798481,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 78.2499999999977,
+          "lane": 131,
+          "x": 1029.0599243003687,
+          "y": 1887.3413460560694,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 78.74999999999767,
+          "lane": 131,
+          "x": 1027.9336548745216,
+          "y": 1886.6079613136578,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 79.24999999999764,
+          "lane": 131,
+          "x": 1026.8073854486745,
+          "y": 1885.8745765712463,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 79.74999999999761,
+          "lane": 131,
+          "x": 1025.6811160228274,
+          "y": 1885.1411918288347,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 80.24999999999758,
+          "lane": 131,
+          "x": 1024.5548465969803,
+          "y": 1884.4078070864232,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 80.74999999999756,
+          "lane": 131,
+          "x": 1023.4285771711332,
+          "y": 1883.6744223440116,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 81.24999999999753,
+          "lane": 131,
+          "x": 1022.302307745286,
+          "y": 1882.9410376016,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 81.7499999999975,
+          "lane": 131,
+          "x": 1021.1760383194389,
+          "y": 1882.2076528591886,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 82.24999999999747,
+          "lane": 131,
+          "x": 1020.0497688935918,
+          "y": 1881.474268116777,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 82.74999999999744,
+          "lane": 131,
+          "x": 1018.9234994677447,
+          "y": 1880.7408833743655,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 83.24999999999741,
+          "lane": 131,
+          "x": 1017.7972300418976,
+          "y": 1880.007498631954,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 83.74999999999739,
+          "lane": 131,
+          "x": 1016.6709606160514,
+          "y": 1879.2741138895424,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 84.24999999999736,
+          "lane": 131,
+          "x": 1015.5446911902054,
+          "y": 1878.5407291471308,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 84.74999999999733,
+          "lane": 131,
+          "x": 1014.4184217643594,
+          "y": 1877.8073444047193,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 85.2499999999973,
+          "lane": 131,
+          "x": 1013.2921523385135,
+          "y": 1877.0739596623077,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 85.74999999999727,
+          "lane": 131,
+          "x": 1012.1658829126675,
+          "y": 1876.3405749198962,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 86.24999999999724,
+          "lane": 131,
+          "x": 1011.0396134868215,
+          "y": 1875.6071901774847,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 86.74999999999721,
+          "lane": 131,
+          "x": 1009.9133440609755,
+          "y": 1874.873805435073,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 87.24999999999719,
+          "lane": 131,
+          "x": 1008.7870746351296,
+          "y": 1874.1404206926616,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 87.74999999999716,
+          "lane": 131,
+          "x": 1007.6608052092836,
+          "y": 1873.40703595025,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 88.24999999999713,
+          "lane": 131,
+          "x": 1006.5345357834376,
+          "y": 1872.6736512078385,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 88.7499999999971,
+          "lane": 131,
+          "x": 1005.4082663575916,
+          "y": 1871.940266465427,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 89.24999999999707,
+          "lane": 131,
+          "x": 1004.2819969317457,
+          "y": 1871.2068817230154,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 89.74999999999704,
+          "lane": 131,
+          "x": 1003.1557275058997,
+          "y": 1870.4734969806038,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 90.24999999999702,
+          "lane": 131,
+          "x": 1002.0294580800537,
+          "y": 1869.740112238192,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 90.74999999999699,
+          "lane": 131,
+          "x": 1000.9031886542077,
+          "y": 1869.0067274957796,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 91.24999999999696,
+          "lane": 131,
+          "x": 999.7769192283617,
+          "y": 1868.2733427533672,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 91.74999999999693,
+          "lane": 131,
+          "x": 998.6506498025158,
+          "y": 1867.5399580109547,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 92.2499999999969,
+          "lane": 131,
+          "x": 997.5243803766698,
+          "y": 1866.8065732685423,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 92.74999999999687,
+          "lane": 131,
+          "x": 996.3981109508238,
+          "y": 1866.07318852613,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 93.24999999999685,
+          "lane": 131,
+          "x": 995.2718415249778,
+          "y": 1865.3398037837176,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 93.74999999999682,
+          "lane": 131,
+          "x": 994.1455720991319,
+          "y": 1864.6064190413051,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 94.24999999999679,
+          "lane": 131,
+          "x": 993.0193026732859,
+          "y": 1863.8730342988927,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 94.74999999999676,
+          "lane": 131,
+          "x": 991.8930332474399,
+          "y": 1863.1396495564802,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 95.24999999999673,
+          "lane": 131,
+          "x": 990.7667638215939,
+          "y": 1862.4062648140678,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 95.7499999999967,
+          "lane": 131,
+          "x": 989.640494395748,
+          "y": 1861.6728800716553,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 96.24999999999667,
+          "lane": 131,
+          "x": 988.514224969902,
+          "y": 1860.9394953292428,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 96.74999999999665,
+          "lane": 131,
+          "x": 987.387955544056,
+          "y": 1860.2061105868304,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 97.24999999999662,
+          "lane": 131,
+          "x": 986.2894459811241,
+          "y": 1859.4908020342225,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 97.74999999999659,
+          "lane": 131,
+          "x": 985.2316985492314,
+          "y": 1858.802036264617,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "x": 984.6414548874102,
+          "y": 1858.4176915545934,
+          "lane": 131,
+          "t": 98.14999999999657
+        }
+      ],
+      "pass": true
+    },
+    {
+      "seconds": 181.8000000000071,
+      "zone": "small_intestine",
+      "targetSource": [
+        543,
+        694
+      ],
+      "kind": "siege",
+      "id": "small_intestine",
+      "startSource": [
+        492.0,
+        673.0
+      ],
+      "name": "小肠",
+      "stages": [
+        {
+          "startLegal": true,
+          "fromSource": [
+            492.0,
+            673.0
+          ],
+          "endLegal": true,
+          "seconds": 83.4,
+          "toSource": [
+            538.5265038845727,
+            692.2060599334073
+          ],
+          "id": "original-gate-to-candidate-lumen",
+          "radiusViolations": 0,
+          "arrived": true,
+          "invalidSteps": 0,
+          "pass": true,
+          "endLane": 188,
+          "startLane": 131
+        },
+        {
+          "startLegal": true,
+          "fromSource": [
+            538.378024925761,
+            692.5763175901909
+          ],
+          "endLegal": true,
+          "seconds": 4.1000000000000005,
+          "toSource": [
+            540.7073240286171,
+            693.0806020216282
+          ],
+          "id": "candidate-outward",
+          "radiusViolations": 0,
+          "arrived": true,
+          "invalidSteps": 0,
+          "pass": true,
+          "endLane": 0,
+          "startLane": 188
+        },
+        {
+          "startLegal": true,
+          "fromSource": [
+            540.7073240286171,
+            693.0806020216282
+          ],
+          "endLegal": true,
+          "seconds": 3.6500000000000004,
+          "toSource": [
+            543.0,
+            694.0
+          ],
+          "id": "candidate-to-fixed-deep-target",
+          "radiusViolations": 0,
+          "arrived": true,
+          "invalidSteps": 0,
+          "pass": true,
+          "endLane": 0,
+          "startLane": 0
+        },
+        {
+          "startLegal": true,
+          "fromSource": [
+            542.6353424399997,
+            693.8537667652793
+          ],
+          "endLegal": true,
+          "seconds": 3.0500000000000003,
+          "toSource": [
+            540.7073240286171,
+            693.0806020216282
+          ],
+          "id": "fixed-deep-target-to-candidate",
+          "radiusViolations": 0,
+          "arrived": true,
+          "invalidSteps": 0,
+          "pass": true,
+          "endLane": 0,
+          "startLane": 0
+        },
+        {
+          "startLegal": true,
+          "fromSource": [
+            541.0721780194558,
+            693.2269140281068
+          ],
+          "endLegal": true,
+          "seconds": 3.6500000000000004,
+          "toSource": [
+            538.5265038845727,
+            692.2060599334073
+          ],
+          "id": "candidate-inward",
+          "radiusViolations": 0,
+          "arrived": true,
+          "invalidSteps": 0,
+          "pass": true,
+          "endLane": 188,
+          "startLane": 0
+        },
+        {
+          "startLegal": true,
+          "fromSource": [
+            538.8893445555022,
+            692.3515645679425
+          ],
+          "endLegal": true,
+          "seconds": 83.95,
+          "toSource": [
+            492.0,
+            673.0
+          ],
+          "id": "candidate-lumen-to-original-gate",
+          "radiusViolations": 0,
+          "arrived": true,
+          "invalidSteps": 0,
+          "pass": true,
+          "endLane": 131,
+          "startLane": 188
+        }
+      ],
+      "trace": [
+        {
+          "x": 984,
+          "y": 1858,
+          "lane": 131,
+          "t": 0
+        },
+        {
+          "t": 0.49999999999999994,
+          "lane": 131,
+          "x": 984.4424365914882,
+          "y": 1858.2880982456202,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 1.0000000000000002,
+          "lane": 131,
+          "x": 985.010729387862,
+          "y": 1858.6581493688398,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 1.5000000000000007,
+          "lane": 131,
+          "x": 985.5825607144694,
+          "y": 1859.0305046512815,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 2.000000000000001,
+          "lane": 131,
+          "x": 986.1544915291888,
+          "y": 1859.40292471668,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 2.499999999999999,
+          "lane": 131,
+          "x": 986.7264251410821,
+          "y": 1859.7753466034944,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 2.9999999999999973,
+          "lane": 131,
+          "x": 987.3100298579725,
+          "y": 1860.1553682796095,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 3.4999999999999956,
+          "lane": 131,
+          "x": 987.9186448823975,
+          "y": 1860.5516757373748,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 3.999999999999994,
+          "lane": 131,
+          "x": 988.5286667883628,
+          "y": 1860.94889930405,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 4.499999999999992,
+          "lane": 131,
+          "x": 989.1387282497308,
+          "y": 1861.3461486277317,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 4.99999999999999,
+          "lane": 131,
+          "x": 989.748790823225,
+          "y": 1861.7433986755889,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 5.4999999999999885,
+          "lane": 131,
+          "x": 990.3588534279877,
+          "y": 1862.1406487438062,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 5.999999999999987,
+          "lane": 131,
+          "x": 990.9689160336293,
+          "y": 1862.5378988125958,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 6.499999999999985,
+          "lane": 131,
+          "x": 991.5789786392957,
+          "y": 1862.935148881402,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 6.999999999999983,
+          "lane": 131,
+          "x": 992.1890412449629,
+          "y": 1863.3323989502085,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 7.499999999999981,
+          "lane": 131,
+          "x": 992.7991038506302,
+          "y": 1863.729649019015,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 7.99999999999998,
+          "lane": 131,
+          "x": 993.4091664562975,
+          "y": 1864.1268990878214,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 8.499999999999986,
+          "lane": 131,
+          "x": 994.0192290619648,
+          "y": 1864.5241491566278,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 8.999999999999993,
+          "lane": 131,
+          "x": 994.6292916676321,
+          "y": 1864.9213992254342,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 9.5,
+          "lane": 131,
+          "x": 995.2393542732993,
+          "y": 1865.3186492942407,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 10.000000000000007,
+          "lane": 131,
+          "x": 995.8494168789666,
+          "y": 1865.7158993630471,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 10.500000000000014,
+          "lane": 131,
+          "x": 996.4594794846339,
+          "y": 1866.1131494318536,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 11.000000000000021,
+          "lane": 131,
+          "x": 997.0695420903012,
+          "y": 1866.51039950066,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 11.500000000000028,
+          "lane": 131,
+          "x": 997.6796046959685,
+          "y": 1866.9076495694665,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 12.000000000000036,
+          "lane": 131,
+          "x": 998.2896673016357,
+          "y": 1867.304899638273,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 12.500000000000043,
+          "lane": 131,
+          "x": 998.899729907303,
+          "y": 1867.7021497070793,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 13.00000000000005,
+          "lane": 131,
+          "x": 999.5097925129703,
+          "y": 1868.0993997758858,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 13.500000000000057,
+          "lane": 131,
+          "x": 1000.1198551186376,
+          "y": 1868.4966498446922,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 14.000000000000064,
+          "lane": 131,
+          "x": 1000.7299177243049,
+          "y": 1868.8938999134987,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 14.500000000000071,
+          "lane": 131,
+          "x": 1001.3399803299721,
+          "y": 1869.2911499823051,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 15.000000000000078,
+          "lane": 131,
+          "x": 1001.9500429356394,
+          "y": 1869.6884000511116,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 15.500000000000085,
+          "lane": 131,
+          "x": 1002.5601055413067,
+          "y": 1870.085650119918,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 16.000000000000092,
+          "lane": 131,
+          "x": 1003.170168146974,
+          "y": 1870.4829001887244,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 16.5000000000001,
+          "lane": 131,
+          "x": 1003.7802307526413,
+          "y": 1870.8801502575309,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 17.000000000000107,
+          "lane": 131,
+          "x": 1004.3902933583086,
+          "y": 1871.2774003263373,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 17.500000000000114,
+          "lane": 131,
+          "x": 1005.0003559639758,
+          "y": 1871.6746503951438,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 18.00000000000012,
+          "lane": 131,
+          "x": 1005.6104185696431,
+          "y": 1872.0719004639502,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 18.500000000000128,
+          "lane": 131,
+          "x": 1006.2204811753104,
+          "y": 1872.4691505327567,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 19.000000000000135,
+          "lane": 131,
+          "x": 1006.8305437809777,
+          "y": 1872.866400601563,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 19.500000000000142,
+          "lane": 131,
+          "x": 1007.440606386645,
+          "y": 1873.2636506703695,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 20.00000000000015,
+          "lane": 131,
+          "x": 1008.0506689923122,
+          "y": 1873.660900739176,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 20.500000000000156,
+          "lane": 131,
+          "x": 1008.6607315979795,
+          "y": 1874.0581508079824,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 21.000000000000163,
+          "lane": 131,
+          "x": 1009.2707942036468,
+          "y": 1874.4554008767889,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 21.50000000000017,
+          "lane": 131,
+          "x": 1009.8808568093141,
+          "y": 1874.8526509455953,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 22.000000000000178,
+          "lane": 131,
+          "x": 1010.4909194149814,
+          "y": 1875.2499010144018,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 22.500000000000185,
+          "lane": 131,
+          "x": 1011.1009820206486,
+          "y": 1875.6471510832082,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 23.000000000000192,
+          "lane": 131,
+          "x": 1011.7110446263159,
+          "y": 1876.0444011520146,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 23.5000000000002,
+          "lane": 131,
+          "x": 1012.3211072319832,
+          "y": 1876.441651220821,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 24.000000000000206,
+          "lane": 131,
+          "x": 1012.9311698376505,
+          "y": 1876.8389012896275,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 24.500000000000213,
+          "lane": 131,
+          "x": 1013.5412324433178,
+          "y": 1877.236151358434,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 25.00000000000022,
+          "lane": 131,
+          "x": 1014.151295048985,
+          "y": 1877.6334014272404,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 25.500000000000227,
+          "lane": 131,
+          "x": 1014.7613576546523,
+          "y": 1878.0306514960469,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 26.000000000000234,
+          "lane": 131,
+          "x": 1015.3714202603196,
+          "y": 1878.4279015648533,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 26.50000000000024,
+          "lane": 131,
+          "x": 1015.9814828659869,
+          "y": 1878.8251516336597,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 27.00000000000025,
+          "lane": 131,
+          "x": 1016.5915454716542,
+          "y": 1879.2224017024662,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 27.500000000000256,
+          "lane": 131,
+          "x": 1017.2016080773215,
+          "y": 1879.6196517712726,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 28.000000000000263,
+          "lane": 131,
+          "x": 1017.8116706829887,
+          "y": 1880.016901840079,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 28.50000000000027,
+          "lane": 131,
+          "x": 1018.421733288656,
+          "y": 1880.4141519088855,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 29.000000000000277,
+          "lane": 131,
+          "x": 1019.0317958943233,
+          "y": 1880.811401977692,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 29.500000000000284,
+          "lane": 131,
+          "x": 1019.6418584999906,
+          "y": 1881.2086520464984,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 30.00000000000029,
+          "lane": 131,
+          "x": 1020.2519211056579,
+          "y": 1881.6059021153048,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 30.5000000000003,
+          "lane": 131,
+          "x": 1020.8619837113251,
+          "y": 1882.0031521841113,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 31.000000000000306,
+          "lane": 131,
+          "x": 1021.4720463169924,
+          "y": 1882.4004022529177,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 31.500000000000313,
+          "lane": 131,
+          "x": 1022.0821089226597,
+          "y": 1882.7976523217242,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 32.00000000000032,
+          "lane": 131,
+          "x": 1022.692171528327,
+          "y": 1883.1949023905306,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 32.50000000000029,
+          "lane": 131,
+          "x": 1023.3022341339943,
+          "y": 1883.592152459337,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 33.00000000000026,
+          "lane": 131,
+          "x": 1023.9122967396615,
+          "y": 1883.9894025281435,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 33.500000000000234,
+          "lane": 131,
+          "x": 1024.5223593453288,
+          "y": 1884.38665259695,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 34.000000000000206,
+          "lane": 131,
+          "x": 1025.132421950996,
+          "y": 1884.7839026657564,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 34.50000000000018,
+          "lane": 131,
+          "x": 1025.7424845566634,
+          "y": 1885.1811527345628,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 35.00000000000015,
+          "lane": 131,
+          "x": 1026.3525471623307,
+          "y": 1885.5784028033693,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 35.50000000000012,
+          "lane": 131,
+          "x": 1026.962609767998,
+          "y": 1885.9756528721757,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 36.00000000000009,
+          "lane": 131,
+          "x": 1027.5726723736652,
+          "y": 1886.3729029409822,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 36.500000000000064,
+          "lane": 131,
+          "x": 1028.1827349793325,
+          "y": 1886.7701530097886,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 37.000000000000036,
+          "lane": 131,
+          "x": 1028.7927975849998,
+          "y": 1887.167403078595,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 37.50000000000001,
+          "lane": 131,
+          "x": 1029.402860190667,
+          "y": 1887.5646531474015,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 37.99999999999998,
+          "lane": 131,
+          "x": 1030.0129227963344,
+          "y": 1887.961903216208,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 38.49999999999995,
+          "lane": 131,
+          "x": 1030.6229854020016,
+          "y": 1888.3591532850144,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 38.99999999999992,
+          "lane": 131,
+          "x": 1031.233048007669,
+          "y": 1888.7564033538208,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 39.49999999999989,
+          "lane": 131,
+          "x": 1031.8431106133362,
+          "y": 1889.1536534226273,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 39.999999999999865,
+          "lane": 131,
+          "x": 1032.4531732190035,
+          "y": 1889.5509034914337,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 40.49999999999984,
+          "lane": 131,
+          "x": 1033.0632358246708,
+          "y": 1889.9481535602401,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 40.99999999999981,
+          "lane": 131,
+          "x": 1033.673298430338,
+          "y": 1890.3454036290466,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 41.49999999999978,
+          "lane": 131,
+          "x": 1034.2833610360053,
+          "y": 1890.742653697853,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 41.99999999999975,
+          "lane": 131,
+          "x": 1034.8934236416726,
+          "y": 1891.1399037666595,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 42.49999999999972,
+          "lane": 131,
+          "x": 1035.5034862473399,
+          "y": 1891.537153835466,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 42.999999999999694,
+          "lane": 131,
+          "x": 1036.1135488530072,
+          "y": 1891.9344039042724,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 43.499999999999666,
+          "lane": 131,
+          "x": 1036.7236114586744,
+          "y": 1892.3316539730788,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 43.99999999999964,
+          "lane": 131,
+          "x": 1037.3336740643417,
+          "y": 1892.7289040418852,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 44.49999999999961,
+          "lane": 131,
+          "x": 1037.943736670009,
+          "y": 1893.1261541106917,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 44.99999999999958,
+          "lane": 131,
+          "x": 1038.5537992756763,
+          "y": 1893.5234041794981,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 45.49999999999955,
+          "lane": 131,
+          "x": 1039.1638618813436,
+          "y": 1893.9206542483046,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 45.999999999999524,
+          "lane": 131,
+          "x": 1039.7739244870108,
+          "y": 1894.317904317111,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 46.499999999999496,
+          "lane": 131,
+          "x": 1040.3839870926781,
+          "y": 1894.7151543859175,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 46.99999999999947,
+          "lane": 131,
+          "x": 1040.9940496983454,
+          "y": 1895.112404454724,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 47.49999999999944,
+          "lane": 131,
+          "x": 1041.6041123040127,
+          "y": 1895.5096545235303,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 47.99999999999941,
+          "lane": 131,
+          "x": 1042.21417490968,
+          "y": 1895.9069045923368,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 48.49999999999938,
+          "lane": 131,
+          "x": 1042.8242375153472,
+          "y": 1896.3041546611432,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 48.99999999999935,
+          "lane": 131,
+          "x": 1043.4343001210145,
+          "y": 1896.7014047299497,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 49.499999999999325,
+          "lane": 131,
+          "x": 1044.0443627266818,
+          "y": 1897.0986547987561,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 49.9999999999993,
+          "lane": 131,
+          "x": 1044.654425332349,
+          "y": 1897.4959048675626,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 50.49999999999927,
+          "lane": 131,
+          "x": 1045.2644879380164,
+          "y": 1897.893154936369,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 50.99999999999924,
+          "lane": 131,
+          "x": 1045.8745505436837,
+          "y": 1898.2904050051754,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 51.49999999999921,
+          "lane": 131,
+          "x": 1046.484613149351,
+          "y": 1898.687655073982,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 51.99999999999918,
+          "lane": 131,
+          "x": 1047.0946757550182,
+          "y": 1899.0849051427883,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 52.499999999999154,
+          "lane": 131,
+          "x": 1047.7047383606855,
+          "y": 1899.4821552115948,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 52.999999999999126,
+          "lane": 131,
+          "x": 1048.3148009663528,
+          "y": 1899.8794052804012,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 53.4999999999991,
+          "lane": 131,
+          "x": 1048.92486357202,
+          "y": 1900.2766553492077,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 53.99999999999907,
+          "lane": 131,
+          "x": 1049.5349261776873,
+          "y": 1900.673905418014,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 54.49999999999904,
+          "lane": 131,
+          "x": 1050.1449887833546,
+          "y": 1901.0711554868205,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 54.99999999999901,
+          "lane": 131,
+          "x": 1050.755051389022,
+          "y": 1901.468405555627,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 55.499999999998984,
+          "lane": 131,
+          "x": 1051.3651139946892,
+          "y": 1901.8656556244334,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 55.999999999998956,
+          "lane": 131,
+          "x": 1051.9751766003565,
+          "y": 1902.2629056932399,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 56.49999999999893,
+          "lane": 131,
+          "x": 1052.5852392060237,
+          "y": 1902.6601557620463,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 56.9999999999989,
+          "lane": 131,
+          "x": 1053.195301811691,
+          "y": 1903.0574058308528,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 57.49999999999887,
+          "lane": 131,
+          "x": 1053.8053644173583,
+          "y": 1903.4546558996592,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 57.99999999999884,
+          "lane": 131,
+          "x": 1054.4154270230256,
+          "y": 1903.8519059684656,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 58.49999999999881,
+          "lane": 131,
+          "x": 1055.0254896286929,
+          "y": 1904.249156037272,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 58.999999999998785,
+          "lane": 131,
+          "x": 1055.6355522343601,
+          "y": 1904.6464061060785,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 59.49999999999876,
+          "lane": 131,
+          "x": 1056.2456148400274,
+          "y": 1905.043656174885,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 59.99999999999873,
+          "lane": 131,
+          "x": 1056.8556774456947,
+          "y": 1905.4409062436914,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 60.4999999999987,
+          "lane": 131,
+          "x": 1057.465740051362,
+          "y": 1905.8381563124979,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 60.99999999999867,
+          "lane": 131,
+          "x": 1058.0758026570293,
+          "y": 1906.2354063813043,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 61.49999999999864,
+          "lane": 131,
+          "x": 1058.6858652626966,
+          "y": 1906.6326564501107,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 61.999999999998614,
+          "lane": 131,
+          "x": 1059.2959278683638,
+          "y": 1907.0299065189172,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 62.499999999998586,
+          "lane": 131,
+          "x": 1059.9059904740311,
+          "y": 1907.4271565877236,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 62.99999999999856,
+          "lane": 131,
+          "x": 1060.5160530796984,
+          "y": 1907.82440665653,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 63.49999999999853,
+          "lane": 131,
+          "x": 1061.1261156853657,
+          "y": 1908.2216567253365,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 63.9999999999985,
+          "lane": 131,
+          "x": 1061.736178291033,
+          "y": 1908.618906794143,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 64.49999999999848,
+          "lane": 131,
+          "x": 1062.3462408967002,
+          "y": 1909.0161568629494,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 64.99999999999845,
+          "lane": 131,
+          "x": 1062.9563035023675,
+          "y": 1909.4134069317558,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 65.49999999999842,
+          "lane": 131,
+          "x": 1063.5663661080348,
+          "y": 1909.8106570005639,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 65.9999999999984,
+          "lane": 131,
+          "x": 1064.176428713702,
+          "y": 1910.207907069372,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 66.49999999999837,
+          "lane": 131,
+          "x": 1064.7864913193694,
+          "y": 1910.6051571381802,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 66.99999999999834,
+          "lane": 131,
+          "x": 1065.3965539250366,
+          "y": 1911.0024072069884,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 67.49999999999831,
+          "lane": 131,
+          "x": 1066.006616530704,
+          "y": 1911.3996572757967,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 67.99999999999828,
+          "lane": 131,
+          "x": 1066.6166791363712,
+          "y": 1911.7969073446047,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 68.49999999999825,
+          "lane": 131,
+          "x": 1067.2267417420385,
+          "y": 1912.194157413413,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 68.99999999999822,
+          "lane": 131,
+          "x": 1067.8368043477058,
+          "y": 1912.5914074822213,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 69.4999999999982,
+          "lane": 131,
+          "x": 1068.446866953373,
+          "y": 1912.9886575510295,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 69.99999999999817,
+          "lane": 131,
+          "x": 1069.0569295590403,
+          "y": 1913.3859076198376,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 70.49999999999814,
+          "lane": 131,
+          "x": 1069.6669921647076,
+          "y": 1913.7831576886458,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 70.79999999999812,
+          "lane": 188,
+          "x": 1070.014670390235,
+          "y": 1913.9634168749833,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 70.99999999999811,
+          "lane": 188,
+          "x": 1070.1246733795267,
+          "y": 1913.6891056232055,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 71.49999999999808,
+          "lane": 188,
+          "x": 1070.4025011802437,
+          "y": 1912.996294525215,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 71.99999999999805,
+          "lane": 188,
+          "x": 1070.6807117374537,
+          "y": 1912.3025289585014,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 72.49999999999802,
+          "lane": 188,
+          "x": 1070.9589330561155,
+          "y": 1911.60873655627,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 72.999999999998,
+          "lane": 188,
+          "x": 1071.237154677342,
+          "y": 1910.91494339954,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 73.49999999999797,
+          "lane": 188,
+          "x": 1071.515376307075,
+          "y": 1910.2211502215973,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 73.99999999999794,
+          "lane": 188,
+          "x": 1071.7935979370475,
+          "y": 1909.5273570430584,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 74.49999999999791,
+          "lane": 188,
+          "x": 1072.0718195670265,
+          "y": 1908.8335638645021,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 74.99999999999788,
+          "lane": 188,
+          "x": 1072.350041197007,
+          "y": 1908.1397706859452,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 75.49999999999785,
+          "lane": 188,
+          "x": 1072.6282628269867,
+          "y": 1907.4459775073883,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 75.99999999999783,
+          "lane": 188,
+          "x": 1072.9064844569664,
+          "y": 1906.7521843288314,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 76.4999999999978,
+          "lane": 188,
+          "x": 1073.1847060869459,
+          "y": 1906.0583911502745,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 76.99999999999777,
+          "lane": 188,
+          "x": 1073.4629277169256,
+          "y": 1905.3645979717176,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 77.49999999999774,
+          "lane": 188,
+          "x": 1073.7411493469053,
+          "y": 1904.6708047931606,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 77.99999999999771,
+          "lane": 188,
+          "x": 1074.0193709768848,
+          "y": 1903.9770116146037,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 78.49999999999768,
+          "lane": 188,
+          "x": 1074.2975926068646,
+          "y": 1903.2832184360468,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 78.99999999999766,
+          "lane": 188,
+          "x": 1074.5758142368443,
+          "y": 1902.58942525749,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 79.49999999999763,
+          "lane": 188,
+          "x": 1074.854035866824,
+          "y": 1901.895632078933,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 79.9999999999976,
+          "lane": 188,
+          "x": 1075.1322574968035,
+          "y": 1901.201838900376,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 80.49999999999757,
+          "lane": 188,
+          "x": 1075.4104791267832,
+          "y": 1900.5080457218191,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 80.99999999999754,
+          "lane": 188,
+          "x": 1075.688700756763,
+          "y": 1899.8142525432622,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 81.49999999999751,
+          "lane": 188,
+          "x": 1075.9669223867425,
+          "y": 1899.1204593647053,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 81.99999999999748,
+          "lane": 188,
+          "x": 1076.2311020455459,
+          "y": 1898.4616822408545,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 82.49999999999746,
+          "lane": 188,
+          "x": 1076.485445095613,
+          "y": 1897.827434381827,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 82.99999999999743,
+          "lane": 188,
+          "x": 1076.6903362792373,
+          "y": 1897.3165032024087,
+          "stage": "original-gate-to-candidate-lumen"
+        },
+        {
+          "t": 83.89999999999738,
+          "lane": 188,
+          "x": 1077.3087163563746,
+          "y": 1897.2722853849573,
+          "stage": "candidate-outward"
+        },
+        {
+          "t": 84.39999999999735,
+          "lane": 188,
+          "x": 1077.9725470504347,
+          "y": 1897.4160022153608,
+          "stage": "candidate-outward"
+        },
+        {
+          "t": 84.89999999999732,
+          "lane": 188,
+          "x": 1078.639503199015,
+          "y": 1897.560395694828,
+          "stage": "candidate-outward"
+        },
+        {
+          "t": 85.39999999999729,
+          "lane": 188,
+          "x": 1079.3065472218113,
+          "y": 1897.7048081987298,
+          "stage": "candidate-outward"
+        },
+        {
+          "t": 85.89999999999726,
+          "lane": 188,
+          "x": 1079.973593715249,
+          "y": 1897.8492212375158,
+          "stage": "candidate-outward"
+        },
+        {
+          "t": 86.39999999999723,
+          "lane": 188,
+          "x": 1080.6406402781504,
+          "y": 1897.9936342913406,
+          "stage": "candidate-outward"
+        },
+        {
+          "t": 86.8999999999972,
+          "lane": 188,
+          "x": 1081.1871621066398,
+          "y": 1898.1119541967619,
+          "stage": "candidate-outward"
+        },
+        {
+          "t": 87.39999999999718,
+          "lane": 188,
+          "x": 1081.395743108625,
+          "y": 1898.1571111935023,
+          "stage": "candidate-outward"
+        },
+        {
+          "t": 87.49999999999717,
+          "lane": 0,
+          "x": 1081.4146480572342,
+          "y": 1898.1612040432565,
+          "stage": "candidate-outward"
+        },
+        {
+          "t": 87.99999999999714,
+          "lane": 0,
+          "x": 1081.9370942007804,
+          "y": 1898.3707129028512,
+          "stage": "candidate-to-fixed-deep-target"
+        },
+        {
+          "t": 88.49999999999712,
+          "lane": 0,
+          "x": 1082.5674362160876,
+          "y": 1898.6234896501066,
+          "stage": "candidate-to-fixed-deep-target"
+        },
+        {
+          "t": 88.99999999999709,
+          "lane": 0,
+          "x": 1083.1963827793927,
+          "y": 1898.8757067998583,
+          "stage": "candidate-to-fixed-deep-target"
+        },
+        {
+          "t": 89.49999999999706,
+          "lane": 0,
+          "x": 1083.8020181095867,
+          "y": 1899.118575790139,
+          "stage": "candidate-to-fixed-deep-target"
+        },
+        {
+          "t": 89.99999999999703,
+          "lane": 0,
+          "x": 1084.405382229603,
+          "y": 1899.3605339905519,
+          "stage": "candidate-to-fixed-deep-target"
+        },
+        {
+          "t": 90.499999999997,
+          "lane": 0,
+          "x": 1084.9684863509274,
+          "y": 1899.5863473183927,
+          "stage": "candidate-to-fixed-deep-target"
+        },
+        {
+          "t": 90.99999999999697,
+          "lane": 0,
+          "x": 1085.2272761161494,
+          "y": 1899.6901259552076,
+          "stage": "candidate-to-fixed-deep-target"
+        },
+        {
+          "t": 91.64999999999694,
+          "lane": 0,
+          "x": 1084.7721152553058,
+          "y": 1899.507599518626,
+          "stage": "fixed-deep-target-to-candidate"
+        },
+        {
+          "t": 92.14999999999691,
+          "lane": 0,
+          "x": 1084.171761358236,
+          "y": 1899.2668484634557,
+          "stage": "fixed-deep-target-to-candidate"
+        },
+        {
+          "t": 92.64999999999688,
+          "lane": 0,
+          "x": 1083.568545729196,
+          "y": 1899.0249498101857,
+          "stage": "fixed-deep-target-to-candidate"
+        },
+        {
+          "t": 93.14999999999685,
+          "lane": 0,
+          "x": 1082.965249640674,
+          "y": 1898.7830188914381,
+          "stage": "fixed-deep-target-to-candidate"
+        },
+        {
+          "t": 93.64999999999682,
+          "lane": 0,
+          "x": 1082.3998504419665,
+          "y": 1898.5562852026164,
+          "stage": "fixed-deep-target-to-candidate"
+        },
+        {
+          "t": 94.1499999999968,
+          "lane": 0,
+          "x": 1082.1593907633103,
+          "y": 1898.4598572096527,
+          "stage": "fixed-deep-target-to-candidate"
+        },
+        {
+          "t": 94.69999999999676,
+          "lane": 0,
+          "x": 1081.620279741808,
+          "y": 1898.2436654802177,
+          "stage": "candidate-inward"
+        },
+        {
+          "t": 95.19999999999673,
+          "lane": 0,
+          "x": 1080.9898918936583,
+          "y": 1897.9908703532947,
+          "stage": "candidate-inward"
+        },
+        {
+          "t": 95.6999999999967,
+          "lane": 0,
+          "x": 1080.3565150261118,
+          "y": 1897.7368765840756,
+          "stage": "candidate-inward"
+        },
+        {
+          "t": 96.19999999999668,
+          "lane": 0,
+          "x": 1079.723054120313,
+          "y": 1897.4828491142375,
+          "stage": "candidate-inward"
+        },
+        {
+          "t": 96.69999999999665,
+          "lane": 0,
+          "x": 1079.0895908517232,
+          "y": 1897.2288206968838,
+          "stage": "candidate-inward"
+        },
+        {
+          "t": 97.19999999999662,
+          "lane": 0,
+          "x": 1078.4561275167023,
+          "y": 1896.9747922528907,
+          "stage": "candidate-inward"
+        },
+        {
+          "t": 97.5999999999966,
+          "lane": 188,
+          "x": 1077.9493568472005,
+          "y": 1896.7715694971007,
+          "stage": "candidate-inward"
+        },
+        {
+          "t": 97.69999999999659,
+          "lane": 188,
+          "x": 1077.8596650590946,
+          "y": 1896.7356017242055,
+          "stage": "candidate-inward"
+        },
+        {
+          "t": 98.34999999999656,
+          "lane": 188,
+          "x": 1077.237269309109,
+          "y": 1896.4860115503534,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 98.84999999999653,
+          "lane": 188,
+          "x": 1076.873908781079,
+          "y": 1896.8587337990807,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 99.3499999999965,
+          "lane": 188,
+          "x": 1076.6199095139923,
+          "y": 1897.4921243765,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 99.84999999999647,
+          "lane": 188,
+          "x": 1076.3658818895783,
+          "y": 1898.1255856677606,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 100.34999999999644,
+          "lane": 188,
+          "x": 1076.1118534678794,
+          "y": 1898.7590489471877,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 100.84999999999641,
+          "lane": 188,
+          "x": 1075.8504196381639,
+          "y": 1899.4109788769852,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 101.34999999999638,
+          "lane": 188,
+          "x": 1075.573116513267,
+          "y": 1900.1024816061586,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 101.84999999999636,
+          "lane": 188,
+          "x": 1075.294920707664,
+          "y": 1900.7962103872194,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 102.34999999999633,
+          "lane": 188,
+          "x": 1075.0166998037537,
+          "y": 1901.4900017551977,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 102.8499999999963,
+          "lane": 188,
+          "x": 1074.7384781941878,
+          "y": 1902.1837948828486,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 103.34999999999627,
+          "lane": 188,
+          "x": 1074.4602565647822,
+          "y": 1902.8775880599744,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 103.84999999999624,
+          "lane": 188,
+          "x": 1074.1820349348186,
+          "y": 1903.5713812384909,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 104.34999999999621,
+          "lane": 188,
+          "x": 1073.90381330484,
+          "y": 1904.2651744170464,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 104.84999999999619,
+          "lane": 188,
+          "x": 1073.6255916748594,
+          "y": 1904.9589675956033,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 105.34999999999616,
+          "lane": 188,
+          "x": 1073.3473700448797,
+          "y": 1905.6527607741602,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 105.84999999999613,
+          "lane": 188,
+          "x": 1073.0691484149002,
+          "y": 1906.3465539527172,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 106.3499999999961,
+          "lane": 188,
+          "x": 1072.7909267849204,
+          "y": 1907.040347131274,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 106.84999999999607,
+          "lane": 188,
+          "x": 1072.5127051549407,
+          "y": 1907.734140309831,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 107.34999999999604,
+          "lane": 188,
+          "x": 1072.234483524961,
+          "y": 1908.427933488388,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 107.84999999999602,
+          "lane": 188,
+          "x": 1071.9562618949815,
+          "y": 1909.1217266669448,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 108.34999999999599,
+          "lane": 188,
+          "x": 1071.6780402650018,
+          "y": 1909.8155198455017,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 108.84999999999596,
+          "lane": 188,
+          "x": 1071.399818635022,
+          "y": 1910.5093130240587,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 109.34999999999593,
+          "lane": 188,
+          "x": 1071.1215970050425,
+          "y": 1911.2031062026156,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 109.8499999999959,
+          "lane": 188,
+          "x": 1070.8433753750628,
+          "y": 1911.8968993811725,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 110.34999999999587,
+          "lane": 188,
+          "x": 1070.565153745083,
+          "y": 1912.5906925597294,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 110.84999999999584,
+          "lane": 188,
+          "x": 1070.2869321151034,
+          "y": 1913.2844857382863,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 111.34999999999582,
+          "lane": 188,
+          "x": 1070.0087104851239,
+          "y": 1913.9782789168432,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 111.39999999999581,
+          "lane": 131,
+          "x": 1069.95697091122,
+          "y": 1913.9719810584688,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 111.84999999999579,
+          "lane": 131,
+          "x": 1069.4042605926334,
+          "y": 1913.6120766649706,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 112.34999999999576,
+          "lane": 131,
+          "x": 1068.7940493093963,
+          "y": 1913.214729782863,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 112.84999999999573,
+          "lane": 131,
+          "x": 1068.183982523561,
+          "y": 1912.817476992087,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 113.3499999999957,
+          "lane": 131,
+          "x": 1067.5739198003657,
+          "y": 1912.4202268467504,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 113.84999999999567,
+          "lane": 131,
+          "x": 1066.9638571913943,
+          "y": 1912.0229767757921,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 114.34999999999565,
+          "lane": 131,
+          "x": 1066.3537945856344,
+          "y": 1911.625726706925,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 114.84999999999562,
+          "lane": 131,
+          "x": 1065.743731979965,
+          "y": 1911.228476638117,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 115.34999999999559,
+          "lane": 131,
+          "x": 1065.1336693742978,
+          "y": 1910.8312265693105,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 115.84999999999556,
+          "lane": 131,
+          "x": 1064.5236067686305,
+          "y": 1910.433976500504,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 116.34999999999553,
+          "lane": 131,
+          "x": 1063.9135441629633,
+          "y": 1910.0367264316976,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 116.8499999999955,
+          "lane": 131,
+          "x": 1063.303481557296,
+          "y": 1909.6394763628912,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 117.34999999999548,
+          "lane": 131,
+          "x": 1062.6934189516287,
+          "y": 1909.2422262940847,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 117.84999999999545,
+          "lane": 131,
+          "x": 1062.0833563459614,
+          "y": 1908.8449762252783,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 118.34999999999542,
+          "lane": 131,
+          "x": 1061.4732937402941,
+          "y": 1908.4477261564718,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 118.84999999999539,
+          "lane": 131,
+          "x": 1060.8632311346269,
+          "y": 1908.0504760876654,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 119.34999999999536,
+          "lane": 131,
+          "x": 1060.2531685289596,
+          "y": 1907.653226018859,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 119.84999999999533,
+          "lane": 131,
+          "x": 1059.6431059232923,
+          "y": 1907.2559759500525,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 120.3499999999953,
+          "lane": 131,
+          "x": 1059.033043317625,
+          "y": 1906.858725881246,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 120.84999999999528,
+          "lane": 131,
+          "x": 1058.4229807119577,
+          "y": 1906.4614758124396,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 121.34999999999525,
+          "lane": 131,
+          "x": 1057.8129181062905,
+          "y": 1906.0642257436332,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 121.84999999999522,
+          "lane": 131,
+          "x": 1057.2028555006232,
+          "y": 1905.6669756748267,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 122.34999999999519,
+          "lane": 131,
+          "x": 1056.592792894956,
+          "y": 1905.2697256060203,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 122.84999999999516,
+          "lane": 131,
+          "x": 1055.9827302892886,
+          "y": 1904.8724755372139,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 123.34999999999513,
+          "lane": 131,
+          "x": 1055.3726676836213,
+          "y": 1904.4752254684074,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 123.8499999999951,
+          "lane": 131,
+          "x": 1054.762605077954,
+          "y": 1904.077975399601,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 124.34999999999508,
+          "lane": 131,
+          "x": 1054.1525424722868,
+          "y": 1903.6807253307945,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 124.84999999999505,
+          "lane": 131,
+          "x": 1053.5424798666195,
+          "y": 1903.283475261988,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 125.34999999999502,
+          "lane": 131,
+          "x": 1052.9324172609522,
+          "y": 1902.8862251931816,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 125.84999999999499,
+          "lane": 131,
+          "x": 1052.322354655285,
+          "y": 1902.4889751243752,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 126.34999999999496,
+          "lane": 131,
+          "x": 1051.7122920496176,
+          "y": 1902.0917250555688,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 126.84999999999494,
+          "lane": 131,
+          "x": 1051.1022294439504,
+          "y": 1901.6944749867623,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 127.3499999999949,
+          "lane": 131,
+          "x": 1050.492166838283,
+          "y": 1901.2972249179559,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 127.84999999999488,
+          "lane": 131,
+          "x": 1049.8821042326158,
+          "y": 1900.8999748491494,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 128.34999999999494,
+          "lane": 131,
+          "x": 1049.2720416269485,
+          "y": 1900.502724780343,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 128.84999999999505,
+          "lane": 131,
+          "x": 1048.6619790212812,
+          "y": 1900.1054747115365,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 129.34999999999516,
+          "lane": 131,
+          "x": 1048.051916415614,
+          "y": 1899.70822464273,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 129.84999999999528,
+          "lane": 131,
+          "x": 1047.4418538099467,
+          "y": 1899.3109745739237,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 130.3499999999954,
+          "lane": 131,
+          "x": 1046.8317912042794,
+          "y": 1898.9137245051172,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 130.8499999999955,
+          "lane": 131,
+          "x": 1046.2217285986121,
+          "y": 1898.5164744363108,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 131.34999999999562,
+          "lane": 131,
+          "x": 1045.6116659929448,
+          "y": 1898.1192243675043,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 131.84999999999573,
+          "lane": 131,
+          "x": 1045.0016033872776,
+          "y": 1897.721974298698,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 132.34999999999584,
+          "lane": 131,
+          "x": 1044.3915407816103,
+          "y": 1897.3247242298914,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 132.84999999999596,
+          "lane": 131,
+          "x": 1043.781478175943,
+          "y": 1896.927474161085,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 133.34999999999607,
+          "lane": 131,
+          "x": 1043.1714155702757,
+          "y": 1896.5302240922786,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 133.8499999999962,
+          "lane": 131,
+          "x": 1042.5613529646084,
+          "y": 1896.1329740234721,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 134.3499999999963,
+          "lane": 131,
+          "x": 1041.9512903589412,
+          "y": 1895.7357239546657,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 134.8499999999964,
+          "lane": 131,
+          "x": 1041.3412277532739,
+          "y": 1895.3384738858592,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 135.34999999999653,
+          "lane": 131,
+          "x": 1040.7311651476066,
+          "y": 1894.9412238170528,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 135.84999999999664,
+          "lane": 131,
+          "x": 1040.1211025419393,
+          "y": 1894.5439737482463,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 136.34999999999675,
+          "lane": 131,
+          "x": 1039.511039936272,
+          "y": 1894.14672367944,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 136.84999999999687,
+          "lane": 131,
+          "x": 1038.9009773306047,
+          "y": 1893.7494736106335,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 137.34999999999698,
+          "lane": 131,
+          "x": 1038.2909147249375,
+          "y": 1893.352223541827,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 137.8499999999971,
+          "lane": 131,
+          "x": 1037.6808521192702,
+          "y": 1892.9549734730206,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 138.3499999999972,
+          "lane": 131,
+          "x": 1037.070789513603,
+          "y": 1892.5577234042141,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 138.84999999999732,
+          "lane": 131,
+          "x": 1036.4607269079356,
+          "y": 1892.1604733354077,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 139.34999999999744,
+          "lane": 131,
+          "x": 1035.8506643022683,
+          "y": 1891.7632232666012,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 139.84999999999755,
+          "lane": 131,
+          "x": 1035.240601696601,
+          "y": 1891.3659731977948,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 140.34999999999766,
+          "lane": 131,
+          "x": 1034.6305390909338,
+          "y": 1890.9687231289884,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 140.84999999999778,
+          "lane": 131,
+          "x": 1034.0204764852665,
+          "y": 1890.571473060182,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 141.3499999999979,
+          "lane": 131,
+          "x": 1033.4104138795992,
+          "y": 1890.1742229913755,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 141.849999999998,
+          "lane": 131,
+          "x": 1032.800351273932,
+          "y": 1889.776972922569,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 142.34999999999812,
+          "lane": 131,
+          "x": 1032.1902886682647,
+          "y": 1889.3797228537626,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 142.84999999999823,
+          "lane": 131,
+          "x": 1031.5802260625974,
+          "y": 1888.9824727849561,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 143.34999999999835,
+          "lane": 131,
+          "x": 1030.97016345693,
+          "y": 1888.5852227161497,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 143.84999999999846,
+          "lane": 131,
+          "x": 1030.3601008512628,
+          "y": 1888.1879726473433,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 144.34999999999857,
+          "lane": 131,
+          "x": 1029.7500382455955,
+          "y": 1887.7907225785368,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 144.8499999999987,
+          "lane": 131,
+          "x": 1029.1399756399283,
+          "y": 1887.3934725097304,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 145.3499999999988,
+          "lane": 131,
+          "x": 1028.529913034261,
+          "y": 1886.996222440924,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 145.84999999999891,
+          "lane": 131,
+          "x": 1027.9198504285937,
+          "y": 1886.5989723721175,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 146.34999999999903,
+          "lane": 131,
+          "x": 1027.3097878229264,
+          "y": 1886.201722303311,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 146.84999999999914,
+          "lane": 131,
+          "x": 1026.6997252172591,
+          "y": 1885.8044722345046,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 147.34999999999926,
+          "lane": 131,
+          "x": 1026.0896626115918,
+          "y": 1885.4072221656982,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 147.84999999999937,
+          "lane": 131,
+          "x": 1025.4796000059246,
+          "y": 1885.0099720968917,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 148.34999999999948,
+          "lane": 131,
+          "x": 1024.8695374002573,
+          "y": 1884.6127220280853,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 148.8499999999996,
+          "lane": 131,
+          "x": 1024.25947479459,
+          "y": 1884.2154719592788,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 149.3499999999997,
+          "lane": 131,
+          "x": 1023.6494121889227,
+          "y": 1883.8182218904724,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 149.84999999999982,
+          "lane": 131,
+          "x": 1023.0393495832554,
+          "y": 1883.420971821666,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 150.34999999999994,
+          "lane": 131,
+          "x": 1022.4292869775882,
+          "y": 1883.0237217528595,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 150.85000000000005,
+          "lane": 131,
+          "x": 1021.8192243719209,
+          "y": 1882.626471684053,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 151.35000000000016,
+          "lane": 131,
+          "x": 1021.2091617662536,
+          "y": 1882.2292216152466,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 151.85000000000028,
+          "lane": 131,
+          "x": 1020.5990991605863,
+          "y": 1881.8319715464402,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 152.3500000000004,
+          "lane": 131,
+          "x": 1019.989036554919,
+          "y": 1881.4347214776337,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 152.8500000000005,
+          "lane": 131,
+          "x": 1019.3789739492518,
+          "y": 1881.0374714088273,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 153.35000000000062,
+          "lane": 131,
+          "x": 1018.7689113435845,
+          "y": 1880.6402213400208,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 153.85000000000073,
+          "lane": 131,
+          "x": 1018.1588487379172,
+          "y": 1880.2429712712144,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 154.35000000000085,
+          "lane": 131,
+          "x": 1017.5487861322499,
+          "y": 1879.845721202408,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 154.85000000000096,
+          "lane": 131,
+          "x": 1016.9387235265826,
+          "y": 1879.4484711336015,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 155.35000000000107,
+          "lane": 131,
+          "x": 1016.3286609209154,
+          "y": 1879.051221064795,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 155.8500000000012,
+          "lane": 131,
+          "x": 1015.7185983152481,
+          "y": 1878.6539709959886,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 156.3500000000013,
+          "lane": 131,
+          "x": 1015.1085357095808,
+          "y": 1878.2567209271822,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 156.85000000000142,
+          "lane": 131,
+          "x": 1014.4984731039135,
+          "y": 1877.8594708583757,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 157.35000000000153,
+          "lane": 131,
+          "x": 1013.8884104982462,
+          "y": 1877.4622207895693,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 157.85000000000164,
+          "lane": 131,
+          "x": 1013.278347892579,
+          "y": 1877.0649707207629,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 158.35000000000176,
+          "lane": 131,
+          "x": 1012.6682852869117,
+          "y": 1876.6677206519564,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 158.85000000000187,
+          "lane": 131,
+          "x": 1012.0582226812444,
+          "y": 1876.27047058315,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 159.35000000000198,
+          "lane": 131,
+          "x": 1011.4481600755771,
+          "y": 1875.8732205143435,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 159.8500000000021,
+          "lane": 131,
+          "x": 1010.8380974699098,
+          "y": 1875.475970445537,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 160.3500000000022,
+          "lane": 131,
+          "x": 1010.2280348642425,
+          "y": 1875.0787203767306,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 160.85000000000232,
+          "lane": 131,
+          "x": 1009.6179722585753,
+          "y": 1874.6814703079242,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 161.35000000000244,
+          "lane": 131,
+          "x": 1009.007909652908,
+          "y": 1874.2842202391178,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 161.85000000000255,
+          "lane": 131,
+          "x": 1008.3978470472407,
+          "y": 1873.8869701703113,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 162.35000000000267,
+          "lane": 131,
+          "x": 1007.7877844415734,
+          "y": 1873.4897201015049,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 162.85000000000278,
+          "lane": 131,
+          "x": 1007.1777218359061,
+          "y": 1873.0924700326984,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 163.3500000000029,
+          "lane": 131,
+          "x": 1006.5676592302389,
+          "y": 1872.695219963892,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 163.850000000003,
+          "lane": 131,
+          "x": 1005.9575966245716,
+          "y": 1872.2979698950855,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 164.35000000000312,
+          "lane": 131,
+          "x": 1005.3475340189043,
+          "y": 1871.900719826279,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 164.85000000000323,
+          "lane": 131,
+          "x": 1004.737471413237,
+          "y": 1871.5034697574727,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 165.35000000000335,
+          "lane": 131,
+          "x": 1004.1274088075697,
+          "y": 1871.1062196886662,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 165.85000000000346,
+          "lane": 131,
+          "x": 1003.5173462019025,
+          "y": 1870.7089696198598,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 166.35000000000358,
+          "lane": 131,
+          "x": 1002.9072835962352,
+          "y": 1870.3117195510533,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 166.8500000000037,
+          "lane": 131,
+          "x": 1002.2972209905679,
+          "y": 1869.914469482247,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 167.3500000000038,
+          "lane": 131,
+          "x": 1001.6871583849006,
+          "y": 1869.5172194134404,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 167.85000000000392,
+          "lane": 131,
+          "x": 1001.0770957792333,
+          "y": 1869.119969344634,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 168.35000000000403,
+          "lane": 131,
+          "x": 1000.467033173566,
+          "y": 1868.7227192758276,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 168.85000000000414,
+          "lane": 131,
+          "x": 999.8569705678988,
+          "y": 1868.3254692070211,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 169.35000000000426,
+          "lane": 131,
+          "x": 999.2469079622315,
+          "y": 1867.9282191382147,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 169.85000000000437,
+          "lane": 131,
+          "x": 998.6368453565642,
+          "y": 1867.5309690694082,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 170.35000000000448,
+          "lane": 131,
+          "x": 998.0267827508978,
+          "y": 1867.1337190006018,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 170.8500000000046,
+          "lane": 131,
+          "x": 997.4167201452317,
+          "y": 1866.7364689317953,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 171.3500000000047,
+          "lane": 131,
+          "x": 996.8066575395655,
+          "y": 1866.339218862989,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 171.85000000000483,
+          "lane": 131,
+          "x": 996.1965949338994,
+          "y": 1865.9419687941825,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 172.35000000000494,
+          "lane": 131,
+          "x": 995.5865323282333,
+          "y": 1865.544718725376,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 172.85000000000505,
+          "lane": 131,
+          "x": 994.9764697225671,
+          "y": 1865.1474686565696,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 173.35000000000517,
+          "lane": 131,
+          "x": 994.366407116901,
+          "y": 1864.7502185877631,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 173.85000000000528,
+          "lane": 131,
+          "x": 993.7563445112348,
+          "y": 1864.3529685189567,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 174.3500000000054,
+          "lane": 131,
+          "x": 993.1462819055687,
+          "y": 1863.9557184501502,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 174.8500000000055,
+          "lane": 131,
+          "x": 992.5362192999025,
+          "y": 1863.5584683813438,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 175.35000000000562,
+          "lane": 131,
+          "x": 991.9261566942364,
+          "y": 1863.1612183125374,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 175.85000000000574,
+          "lane": 131,
+          "x": 991.3160940885703,
+          "y": 1862.763968243731,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 176.35000000000585,
+          "lane": 131,
+          "x": 990.7060314829041,
+          "y": 1862.3667181749245,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 176.85000000000596,
+          "lane": 131,
+          "x": 990.095968877238,
+          "y": 1861.969468106118,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 177.35000000000608,
+          "lane": 131,
+          "x": 989.4859062715718,
+          "y": 1861.5722180373116,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 177.8500000000062,
+          "lane": 131,
+          "x": 988.8758436659057,
+          "y": 1861.1749679685051,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 178.3500000000063,
+          "lane": 131,
+          "x": 988.2657810602395,
+          "y": 1860.7777178996987,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 178.85000000000642,
+          "lane": 131,
+          "x": 987.6557184545734,
+          "y": 1860.3804678308923,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 179.35000000000653,
+          "lane": 131,
+          "x": 987.0456558489072,
+          "y": 1859.9832177620858,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 179.85000000000664,
+          "lane": 131,
+          "x": 986.4613833266752,
+          "y": 1859.6027612359799,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 180.35000000000676,
+          "lane": 131,
+          "x": 985.8891027195332,
+          "y": 1859.2301133987698,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 180.85000000000687,
+          "lane": 131,
+          "x": 985.3171592729955,
+          "y": 1858.8576851080002,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "t": 181.350000000007,
+          "lane": 131,
+          "x": 984.836899933447,
+          "y": 1858.5449580962,
+          "stage": "candidate-lumen-to-original-gate"
+        },
+        {
+          "x": 984.6645370103098,
+          "y": 1858.4327217741568,
+          "lane": 131,
+          "t": 181.8000000000071
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "gridStats": {
+    "unresolvedGoals": 0,
+    "startConnectors": 0,
+    "goalConnectors": 0,
+    "unresolvedStarts": 0
+  },
+  "edgeCount": 202,
+  "originalGateCount": 23,
+  "originalGates": [
+    {
+      "edge": 4,
+      "px": 878,
+      "py": 1212,
+      "nx": -0.9238795325112868,
+      "ny": -0.38268343236508967,
+      "x": 873.5653782439458,
+      "y": 1210.1631195246475,
+      "name": "lung_r.tissue_access",
+      "radius": 3.8
+    },
+    {
+      "edge": 7,
+      "px": 1160,
+      "py": 1212,
+      "nx": -1.0,
+      "ny": 1.2246467991473532e-16,
+      "x": 1155.2,
+      "y": 1212.0,
+      "name": "lung_l.tissue_access",
+      "radius": 3.8
+    },
+    {
+      "edge": 160,
+      "px": 992.0,
+      "py": 702.0,
+      "nx": -0.7071067811865477,
+      "ny": -0.7071067811865475,
+      "x": 990.0201010126776,
+      "y": 700.0201010126776,
+      "name": "brain_r.tissue_access",
+      "radius": 3.8
+    },
+    {
+      "edge": 201,
+      "px": 656.0,
+      "py": 1442.0,
+      "nx": 6.123233995736766e-17,
+      "ny": 1.0,
+      "x": 656.0,
+      "y": 1444.3,
+      "name": "arm_r.tissue_access",
+      "radius": 3.8
+    },
+    {
+      "edge": 64,
+      "px": 860.3529411764706,
+      "py": 2294.9411764705883,
+      "nx": -0.3826834323650897,
+      "ny": 0.9238795325112867,
+      "x": 859.2814275658484,
+      "y": 2297.5280391616197,
+      "name": "leg_r.tissue_access",
+      "radius": 3.8
+    },
+    {
+      "edge": 162,
+      "px": 1042.0,
+      "py": 702.0,
+      "nx": -0.3826834323650897,
+      "ny": 0.9238795325112867,
+      "x": 1040.9284863893777,
+      "y": 704.5868626910316,
+      "name": "brain_l.tissue_access",
+      "radius": 3.8
+    },
+    {
+      "edge": 111,
+      "px": 1384.75,
+      "py": 1444.8125,
+      "nx": -0.9238795325112867,
+      "ny": 0.3826834323650899,
+      "x": 1382.1631373089683,
+      "y": 1445.8840136106223,
+      "name": "arm_l.tissue_access",
+      "radius": 3.8
+    },
+    {
+      "edge": 114,
+      "px": 1175.5294117647059,
+      "py": 2294.9411764705883,
+      "nx": -1.0,
+      "ny": 1.2246467991473532e-16,
+      "x": 1172.729411764706,
+      "y": 2294.9411764705883,
+      "name": "leg_l.tissue_access",
+      "radius": 3.8
+    },
+    {
+      "edge": 118,
+      "px": 962,
+      "py": 1504,
+      "nx": 0.7071067811865474,
+      "ny": -0.7071067811865477,
+      "x": 963.9798989873224,
+      "y": 1502.0201010126777,
+      "name": "liver.tissue_access",
+      "radius": 3.8
+    },
+    {
+      "edge": 124,
+      "px": 1132,
+      "py": 1518,
+      "nx": -0.7071067811865475,
+      "ny": 0.7071067811865476,
+      "x": 1130.0201010126777,
+      "y": 1519.9798989873223,
+      "name": "stomach.tissue_access",
+      "radius": 3.8
+    },
+    {
+      "edge": 126,
+      "px": 1094,
+      "py": 1676,
+      "nx": -0.38268343236509034,
+      "ny": -0.9238795325112865,
+      "x": 1092.9284863893777,
+      "y": 1673.4131373089683,
+      "name": "pancreas.tissue_access",
+      "radius": 3.8
+    },
+    {
+      "edge": 131,
+      "px": 984,
+      "py": 1858,
+      "nx": -0.3826834323650897,
+      "ny": 0.9238795325112867,
+      "x": 982.9284863893778,
+      "y": 1860.5868626910317,
+      "name": "small_intestine.tissue_access",
+      "radius": 3.8
+    },
+    {
+      "edge": 133,
+      "px": 902,
+      "py": 1826,
+      "nx": -1.0,
+      "ny": 1.2246467991473532e-16,
+      "x": 899.2,
+      "y": 1826.0,
+      "name": "colon_proximal.tissue_access",
+      "radius": 3.8
+    },
+    {
+      "edge": 135,
+      "px": 1134,
+      "py": 1844,
+      "nx": -0.7071067811865477,
+      "ny": -0.7071067811865475,
+      "x": 1132.0201010126777,
+      "y": 1842.0201010126777,
+      "name": "colon_distal.tissue_access",
+      "radius": 3.8
+    },
+    {
+      "edge": 137,
+      "px": 852,
+      "py": 1692,
+      "nx": -1.0,
+      "ny": 1.2246467991473532e-16,
+      "x": 849.2,
+      "y": 1692.0,
+      "name": "kidney_r.tissue_access",
+      "radius": 3.8
+    },
+    {
+      "edge": 140,
+      "px": 1182,
+      "py": 1692,
+      "nx": -1.0,
+      "ny": 1.2246467991473532e-16,
+      "x": 1179.2,
+      "y": 1692.0,
+      "name": "kidney_l.tissue_access",
+      "radius": 3.8
+    },
+    {
+      "edge": 143,
+      "px": 1046,
+      "py": 2024,
+      "nx": -1.0,
+      "ny": 1.2246467991473532e-16,
+      "x": 1043.2,
+      "y": 2024.0,
+      "name": "bladder.tissue_access",
+      "radius": 3.8
+    },
+    {
+      "edge": 145,
+      "px": 1048,
+      "py": 1314,
+      "nx": -0.9238795325112868,
+      "ny": -0.38268343236508967,
+      "x": 1045.4131373089683,
+      "y": 1312.9284863893777,
+      "name": "coronary.tissue_access",
+      "radius": 3.8
+    },
+    {
+      "edge": 148,
+      "px": 779.855421686747,
+      "py": 1690.9638554216867,
+      "nx": -1.0,
+      "ny": 1.2246467991473532e-16,
+      "x": 777.0554216867471,
+      "y": 1690.9638554216867,
+      "name": "trunk.tissue_access",
+      "radius": 3.8
+    },
+    {
+      "edge": 184,
+      "px": 1110.0,
+      "py": 1568.551724137931,
+      "nx": 0.45942291887376663,
+      "ny": -0.8882176431559489,
+      "x": 1111.2863841728465,
+      "y": 1566.0647147370942,
+      "name": "study.stomach.portal_bank.inner",
+      "radius": 3.8
+    },
+    {
+      "edge": 184,
+      "px": 1110.0,
+      "py": 1568.551724137931,
+      "nx": -0.45942291887376663,
+      "ny": 0.8882176431559489,
+      "x": 1108.7136158271535,
+      "y": 1571.0387335387677,
+      "name": "study.stomach.portal_bank.lower",
+      "radius": 3.8
+    },
+    {
+      "edge": 202,
+      "px": 1152,
+      "py": 1574,
+      "nx": 0.0,
+      "ny": -1.0,
+      "x": 1152.0,
+      "y": 1571.7,
+      "name": "study.stomach.wall_service.inner",
+      "radius": 3.8
+    },
+    {
+      "edge": 202,
+      "px": 1222,
+      "py": 1578,
+      "nx": 0.0,
+      "ny": -1.0,
+      "x": 1222.0,
+      "y": 1575.7,
+      "name": "study.stomach.wall_service.outer",
+      "radius": 3.8
+    }
+  ],
+  "withoutAddedGateControls": [
+    {
+      "direction": "outward",
+      "kind": "scout",
+      "rejected": true
+    },
+    {
+      "direction": "inward",
+      "kind": "scout",
+      "rejected": true
+    },
+    {
+      "direction": "outward",
+      "kind": "worker",
+      "rejected": true
+    },
+    {
+      "direction": "inward",
+      "kind": "worker",
+      "rejected": true
+    },
+    {
+      "direction": "outward",
+      "kind": "siege",
+      "rejected": true
+    },
+    {
+      "direction": "inward",
+      "kind": "siege",
+      "rejected": true
+    }
+  ],
+  "originalGatesUnchanged": true,
+  "originalEdgeCountUnchanged": true,
+  "candidateFileSha256": "a59dbb3c21392d5fc1221681e03f02c55a70c61248c5f2cd78b7a89097095e97",
+  "productionInstalled": false,
+  "nativeEvidence": false,
+  "fixtureBasis": "One additional declared aperture on unchanged e188, original gate and old deep target preserved; forward and reverse stages use actual movement",
+  "qaScriptSha256": "0c87b7e7c8e2011ff955b2d27aef0ef6d80045b07c6c39369b613e9f032a65ec",
+  "inputHashes": {
+    "interface-contract.json": "86878d45e150353b439fb0ea8e12ad22649185ff143d5dff4a8465cea8fa8253",
+    "passages-data.json": "37c4cfcaa565a15bccf8d23bd5ad26151f14c13562aeb375320a4e80f1998ae5",
+    "navigation-fix-evidence/report.json": "f225382f3e4b8b74a91bdfae0cc90156d43c5bd1141c80d806865a2388fc7a2d"
+  },
+  "testedModuleHashes": {
+    "PassageCollisionStudy.lua": "b81f3fc1e72a56036fc71b73dd12c15433c1b70726db92e85b88b0c0f6441f9d",
+    "World.lua": "2a789fe9178b06d62d6c19f36b64785624efb3c32f9b0cbf0226cb32c6a17359",
+    "Path.lua": "fcb01be11c85b89564337639e14cb9e914a345da1f56428fd5474906290be014",
+    "Vessels.lua": "24850819241d673fff976e75d2ddd8183edf96271829434153747af11fa5a4cd",
+    "Workers.lua": "77181ac098a5e5aacb2f652fba604aac69bf4a5b7d8dfedbcd90270cfe67a287",
+    "Commands.lua": "e6152c85f5cfa1f2d41f22bc65862c567782a1e61e7067d834ad8671e4fe452a",
+    "CellCollision.lua": "99f15e06fc6715b1e65d00cdc68d2356c41a59d7cf8ccb38046b0696c4184992",
+    "Data.lua": "6aa40613c149a254391e68d5ffca3ef5f6b7d4dbba8a4861b6b8adb7983d5f33",
+    "StomachConnectivityStudy.lua": "a033e365cb3712acc101dbac24e1d4bb39261135207800e771a39badf22697c7",
+    "PassageNavigationStudy.lua": "f2b342dfe79a9cb1b264be4fb1e7e278646e85530c3e2f0c4273f12e9e9638f4",
+    "OrganRouteNavigationStudy.lua": "ce6de9cee78a48d4ddb4c542863546ec9af7848e735e43798145c47701c1cabc",
+    "OrganRouteCollisionStudy.lua": "82e80251492a26de7915e61333047e30bef2a57b8d5e7d7cb0f3cf912820bc30",
+    "OrganRouteGridConnectorStudy.lua": "0bddd20317314495bd4bc6cf56c460eab8d539b53f39e1449f7cbd394e65da76"
+  },
+  "startModuleHashes": {
+    "OrganRouteNavigationStudy.lua": "ce6de9cee78a48d4ddb4c542863546ec9af7848e735e43798145c47701c1cabc",
+    "OrganRouteCollisionStudy.lua": "82e80251492a26de7915e61333047e30bef2a57b8d5e7d7cb0f3cf912820bc30",
+    "OrganRouteGridConnectorStudy.lua": "0bddd20317314495bd4bc6cf56c460eab8d539b53f39e1449f7cbd394e65da76"
+  },
+  "sourceLayerSha256": "43c5adbd65f481e64642242f3bc57b9fcc3c981633b70f86b014606ac49edb3d",
+  "summary": {
+    "routes": 3,
+    "passed": 3,
+    "stages": 18,
+    "stagesPassed": 18
+  }
+}

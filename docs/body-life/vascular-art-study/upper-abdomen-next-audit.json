@@ -1,0 +1,601 @@
+{
+  "schema": "independent_upper_abdomen_next_step_audit_v1",
+  "date": "2026-10-10",
+  "status": "ART_PILOT_CONTINUATION_REQUIRED_NOT_FULL_BODY_FINAL",
+  "inputHashes": {
+    "assets/image/anatomy-reference/reference.png": "9a04e39961c07073cd9fdcfcdc2c98253ccc25d968e97dbea1f36669e06b5d9f",
+    "docs/body-life/vascular-art-study/final-reference-data.json": "3890744e2fcaf9e9907c85513e170e479f67b7fbb1fbf06385ac02bd80e8550c",
+    "docs/body-life/vascular-art-study/upper-abdomen-inputs/registration.json": "7d334ced8b039e0cef416a3534b618fee036ffb841f4a4799acfb1c9fc6532cd",
+    "docs/body-life/vascular-art-study/upper-abdomen-generation.json": "5f67df264cc86299d6bd52a496453aae1b32d8b1029aefd96b9323e199652da0",
+    "docs/body-life/vascular-art-study/upper-abdomen-output/registered-full-body.png": "16e4c1a98f96aca5affbf710ed3e5611520e4226ca62e4f6556fd0c9509731c4",
+    "docs/body-life/vascular-art-study/upper-abdomen-output/registered-upper-abdomen.png": "781a967fcdacb251980a182874e27f3476863695fb2ac7f67e787bdb41affa74",
+    "docs/body-life/vascular-art-study/upper-abdomen-output/registered-full-body.svg": "9d7e947a9bacceca134ad97c5ba2cbdc53eb374f34f2586725fda1ca30e8c98c",
+    "scripts/qa/build_upper_abdomen_gpt_sample.py": "2e724bac718d8f256db3b3e7236ab450f60538710473c88d1152a2ccc71fb3a2",
+    "docs/body-life/vascular-art-study/navigation-fix-evidence/report.json": "f225382f3e4b8b74a91bdfae0cc90156d43c5bd1141c80d806865a2388fc7a2d",
+    "docs/body-life/vascular-art-study/final-reference.js": "f40393868758cb100b21d8337b0766392b2f1753e7676b69298dae9eaba8a1ee"
+  },
+  "scope": "Read-only independent inspection of the registered full-body/crop PNGs, exact art graph crop crossings and two gastric gate design candidates; this file is the only write. No image generation, runtime install or geometry edits.",
+  "imagesActuallyViewed": [
+    "docs/body-life/vascular-art-study/upper-abdomen-output/registered-full-body.png",
+    "docs/body-life/vascular-art-study/upper-abdomen-output/registered-upper-abdomen.png",
+    "assets/image/anatomy-reference/reference.png"
+  ],
+  "coordinateSpace": {
+    "sourceBox": [
+      350,
+      450,
+      674,
+      666
+    ],
+    "sourceImageSize": [
+      1024,
+      1536
+    ],
+    "logicalPixelsPerSourceAtZoom015": 9.6,
+    "basis": "final-reference.js uses 64 * zoom; worldScale 2 is not the complete screen projection"
+  },
+  "identityChecks": {
+    "outsideCropChangedPixels": 0,
+    "outsideCropPixelIdentical": true,
+    "brainAndLimbsOriginalPixels": true,
+    "localEdgeCount": 59,
+    "visibleLocalEdgeCount": 56,
+    "hiddenOnlyLocalEdges": [
+      "e011",
+      "e012",
+      "e128"
+    ],
+    "metadataAndRegistrationMatchFinalReference": true
+  },
+  "borderCenterlineCrossings": {
+    "top": [
+      {
+        "edgeId": "e009",
+        "a": "arch",
+        "b": "aorta_upper",
+        "system": "artery",
+        "pointSource": [
+          548.777948,
+          450.0
+        ],
+        "arcDistanceSource": 121.352351,
+        "visiblePieces": [],
+        "hiddenIntervalsAtBoundary": [
+          [
+            0.0,
+            150.51485465650018
+          ]
+        ],
+        "isNamedEdgeEndpoint": false,
+        "lumenWidthSource": 7
+      },
+      {
+        "edgeId": "e015",
+        "a": "cava_upper",
+        "b": "heart.v",
+        "system": "vein",
+        "pointSource": [
+          479.975189,
+          450.0
+        ],
+        "arcDistanceSource": 71.106852,
+        "visiblePieces": [
+          0
+        ],
+        "hiddenIntervalsAtBoundary": [],
+        "isNamedEdgeEndpoint": false,
+        "lumenWidthSource": 7
+      }
+    ],
+    "bottom": [
+      {
+        "edgeId": "e012",
+        "a": "aorta_abd",
+        "b": "iliac.a",
+        "system": "artery",
+        "pointSource": [
+          518.446035,
+          666.0
+        ],
+        "arcDistanceSource": 31.00432,
+        "visiblePieces": [],
+        "hiddenIntervalsAtBoundary": [
+          [
+            0.0,
+            113.08089279269576
+          ]
+        ],
+        "isNamedEdgeEndpoint": false,
+        "lumenWidthSource": 7
+      },
+      {
+        "edgeId": "e013",
+        "a": "iliac.v",
+        "b": "cava_abdominal",
+        "system": "vein",
+        "pointSource": [
+          478.43504,
+          666.0
+        ],
+        "arcDistanceSource": 103.605074,
+        "visiblePieces": [],
+        "hiddenIntervalsAtBoundary": [
+          [
+            0.0,
+            143.80466044728945
+          ]
+        ],
+        "isNamedEdgeEndpoint": false,
+        "lumenWidthSource": 7
+      },
+      {
+        "edgeId": "e132",
+        "a": "mesenteric_upper",
+        "b": "colon_proximal.entry",
+        "system": "artery",
+        "pointSource": [
+          459.958366,
+          666.0
+        ],
+        "arcDistanceSource": 87.762052,
+        "visiblePieces": [],
+        "hiddenIntervalsAtBoundary": [
+          [
+            87.13540217250049,
+            99.30838507989857
+          ]
+        ],
+        "isNamedEdgeEndpoint": false,
+        "lumenWidthSource": 3
+      },
+      {
+        "edgeId": "e133",
+        "a": "colon_proximal.a",
+        "b": "colon_proximal.v",
+        "system": "capillary",
+        "pointSource": [
+          445.348442,
+          666.0
+        ],
+        "arcDistanceSource": 11.140733,
+        "visiblePieces": [
+          0
+        ],
+        "hiddenIntervalsAtBoundary": [],
+        "isNamedEdgeEndpoint": false,
+        "lumenWidthSource": 2
+      },
+      {
+        "edgeId": "e134",
+        "a": "mesenteric_lower",
+        "b": "colon_distal.entry",
+        "system": "artery",
+        "pointSource": [
+          543.802568,
+          666.0
+        ],
+        "arcDistanceSource": 19.2758,
+        "visiblePieces": [],
+        "hiddenIntervalsAtBoundary": [
+          [
+            0.0,
+            27.19108584539078
+          ]
+        ],
+        "isNamedEdgeEndpoint": false,
+        "lumenWidthSource": 3
+      },
+      {
+        "edgeId": "e134",
+        "a": "mesenteric_lower",
+        "b": "colon_distal.entry",
+        "system": "artery",
+        "pointSource": [
+          530.071098,
+          666.0
+        ],
+        "arcDistanceSource": 5.508833,
+        "visiblePieces": [],
+        "hiddenIntervalsAtBoundary": [
+          [
+            0.0,
+            27.19108584539078
+          ]
+        ],
+        "isNamedEdgeEndpoint": false,
+        "lumenWidthSource": 3
+      },
+      {
+        "edgeId": "e135",
+        "a": "colon_distal.a",
+        "b": "colon_distal.v",
+        "system": "capillary",
+        "pointSource": [
+          567.0,
+          666.0
+        ],
+        "arcDistanceSource": 0.0,
+        "visiblePieces": [
+          0
+        ],
+        "hiddenIntervalsAtBoundary": [],
+        "isNamedEdgeEndpoint": true,
+        "lumenWidthSource": 2
+      },
+      {
+        "edgeId": "e167",
+        "a": "colon_proximal.exit",
+        "b": "mesenteric_vein",
+        "system": "vein",
+        "pointSource": [
+          483.296521,
+          666.0
+        ],
+        "arcDistanceSource": 71.265477,
+        "visiblePieces": [],
+        "hiddenIntervalsAtBoundary": [
+          [
+            0.0,
+            79.27858127250148
+          ]
+        ],
+        "isNamedEdgeEndpoint": false,
+        "lumenWidthSource": 3
+      },
+      {
+        "edgeId": "e168",
+        "a": "colon_distal.exit",
+        "b": "hindgut_vein",
+        "system": "vein",
+        "pointSource": [
+          591.216107,
+          666.0
+        ],
+        "arcDistanceSource": 90.904923,
+        "visiblePieces": [],
+        "hiddenIntervalsAtBoundary": [
+          [
+            77.9920827592708,
+            98.44786789272541
+          ]
+        ],
+        "isNamedEdgeEndpoint": false,
+        "lumenWidthSource": 3
+      },
+      {
+        "edgeId": "e187",
+        "a": "small_intestine.entry",
+        "b": "small_intestine.a",
+        "system": "artery",
+        "pointSource": [
+          486.964923,
+          666.0
+        ],
+        "arcDistanceSource": 11.386203,
+        "visiblePieces": [],
+        "hiddenIntervalsAtBoundary": [
+          [
+            7.2826947260885655,
+            19.413517575160014
+          ]
+        ],
+        "isNamedEdgeEndpoint": false,
+        "lumenWidthSource": 2
+      },
+      {
+        "edgeId": "e188",
+        "a": "small_intestine.v",
+        "b": "small_intestine.exit",
+        "system": "vein",
+        "pointSource": [
+          549.229998,
+          666.0
+        ],
+        "arcDistanceSource": 39.233652,
+        "visiblePieces": [
+          0
+        ],
+        "hiddenIntervalsAtBoundary": [],
+        "isNamedEdgeEndpoint": false,
+        "lumenWidthSource": 2
+      },
+      {
+        "edgeId": "e189",
+        "a": "colon_proximal.entry",
+        "b": "colon_proximal.a",
+        "system": "artery",
+        "pointSource": [
+          457.238517,
+          666.0
+        ],
+        "arcDistanceSource": 8.760349,
+        "visiblePieces": [
+          0
+        ],
+        "hiddenIntervalsAtBoundary": [],
+        "isNamedEdgeEndpoint": false,
+        "lumenWidthSource": 2
+      },
+      {
+        "edgeId": "e191",
+        "a": "colon_distal.entry",
+        "b": "colon_distal.a",
+        "system": "artery",
+        "pointSource": [
+          567.0,
+          666.0
+        ],
+        "arcDistanceSource": 8.150737,
+        "visiblePieces": [
+          0
+        ],
+        "hiddenIntervalsAtBoundary": [],
+        "isNamedEdgeEndpoint": true,
+        "lumenWidthSource": 2
+      }
+    ],
+    "left": [],
+    "right": []
+  },
+  "borderLumenTouches": {
+    "top": [
+      "e009",
+      "e015"
+    ],
+    "bottom": [
+      "e012",
+      "e013",
+      "e132",
+      "e133",
+      "e134",
+      "e135",
+      "e166",
+      "e167",
+      "e168",
+      "e187",
+      "e188",
+      "e189",
+      "e191"
+    ],
+    "left": [],
+    "right": []
+  },
+  "findings": [
+    {
+      "id": "top-trunk-depth",
+      "severity": "informational",
+      "sourceCoordinates": [
+        [
+          479.9752,
+          450
+        ],
+        [
+          480.10365,
+          470.67726
+        ],
+        [
+          548.7779,
+          450
+        ]
+      ],
+      "edges": [
+        "e015",
+        "e009"
+      ],
+      "finding": "Only e015 is a visible cross-top vein; its fade around y465-471 is the beginning of the existing liver projection occlusion, not a missing logical connection. e009 crosses top already hidden. The original broad blue trunk narrows into the pilot material in the internal 10 px blend; this is an art transition, not a newly certified full-body vessel.",
+      "minimalAction": "Retain hidden spans and fixed centerlines; do not add a bridge across the liver silhouette simply because the blue trunk fades."
+    },
+    {
+      "id": "bottom-visible-registration",
+      "severity": "needs-next-art-pass",
+      "edges": [
+        "e133",
+        "e135",
+        "e188",
+        "e189",
+        "e191"
+      ],
+      "sourceCoordinates": [
+        [
+          445.3484,
+          666
+        ],
+        [
+          567,
+          666
+        ],
+        [
+          549.23,
+          666
+        ],
+        [
+          457.2385,
+          666
+        ]
+      ],
+      "finding": "These visible intervals meet the bottom boundary; e135 and e191 share the named node at (567,666). At their retained source coordinates, the unchanged image below the crop is bowel tissue rather than the matching reviewed tube. The inner 10 px alpha blend eliminates the rectangular crop edge but does not establish vessel continuity into the unmodified lower-abdomen painting. This is a real art-registration limit, not a disconnected graph. e188 ends at small_intestine.exit (549.22,665.54), only 0.46 px above the boundary; it must not become a new blind endpoint in the crop.",
+      "minimalAction": "Extend the next lower-abdomen art strip along these same frozen intervals and named junctions. Use one narrow registered continuation crop, preserving organs and all head/limb pixels. Do not bend the new paths toward unrelated old AI vessel pigment. Occlude only where the final art graph already says hidden."
+    },
+    {
+      "id": "side-boundaries",
+      "severity": "informational",
+      "finding": "Neither centerlines nor their lumen buffers meet x350 or x674 within y450-666. There is no blood-vessel side seam to invent.",
+      "minimalAction": "Keep side blend and original body silhouette; do not add lateral connector branches."
+    },
+    {
+      "id": "internal-short-fragments",
+      "severity": "informational-with-style-limit",
+      "finding": "Several residual blue/red stubs inside the crop are exact visible pieces separated by foreground organs, protected food conduits or unnamed crossing occlusions. The existing 17 short-glimpse pieces are 12% opacity; their quieter paint is appropriate as a depth cue. They are not a license to reconnect across the hidden interval. Full-strength longer segments still have blunt silhouette changes at some occlusion boundaries, so the pilot should retain a technical hidden-path overlay during review.",
+      "minimalAction": "Keep the topology overlay separate. If further paint cleanup is needed, soften only inside each visible interval or with the existing front-cover edge; never extend into a hidden interval to make a loop look uninterrupted."
+    },
+    {
+      "id": "gastric-gates-single-file",
+      "severity": "design-pass-runtime-unconfirmed",
+      "finding": "Both reprojected gastric wall exits are on visible stomach.a→stomach.v service curve pieces, point from blood toward stomach tissue and have enough pure geometry clearance for the existing largest siege disk on the local direct exit segment. The 1.5 source px tube is a single-file candidate; two siege cells, or siege and worker, cannot pass side-by-side at this width.",
+      "minimalAction": "Keep the single directed wall-service loop. Test gate-specific actual A* and membrane crossing in an isolated QA copy using these exact anchors, including both directions through each gate, and use waiting/reservations instead of extra bypass branches."
+    },
+    {
+      "id": "gastric-art-mark-vs-gate",
+      "severity": "design-clarification",
+      "finding": "At zoom0.15 each gate diameter is 36.48 logical px; the quiet raster mark is only 10.56 px long and 4.608 px thick. The mark is an art indicator, not the collision aperture. Do not infer runtime hole width from this 1.1 source px paint stroke.",
+      "minimalAction": "Bind selection/command affordance and passability to the explicit gate data, not painted colors. If visual readability needs adjustment, change only the gate mark around its frozen wallSource and keep the organ outline and lumen centerline fixed."
+    }
+  ],
+  "stomachService": {
+    "edgeId": "study.stomach.wall_service",
+    "a": "stomach.a",
+    "b": "stomach.v",
+    "lumenWidthSource": 1.5,
+    "lumenWidthLogicalAt015": 14.399999999999999,
+    "sourceShapeAndNamedPortsPreserved": true,
+    "twoSiegeCombinedWidthSource": 2.125,
+    "siegeAndWorkerCombinedWidthSource": 1.65625,
+    "gates": [
+      {
+        "id": "study.stomach.wall_service.inner",
+        "pipeCenterSource": [
+          571.3938412930886,
+          539.9630801451746
+        ],
+        "wallSource": [
+          570.3766951048128,
+          540.4996559848058
+        ],
+        "tissueTargetSource": [
+          567.6790465185161,
+          541.9227484290453
+        ],
+        "normal": [
+          -0.8844749463267864,
+          0.4665876866358867
+        ],
+        "normalLength": 1.0,
+        "normalDirection": "from lumen toward tissue; unchanged source geometry",
+        "gateRadiusSource": 1.9,
+        "gateDiameterLogicalAt015": 36.48,
+        "artMarkLengthLogicalAt015": 10.56,
+        "artMarkThicknessLogicalAt015": 4.608,
+        "exitSegmentLengthSource": 4.200000000000028,
+        "exitSegmentLengthLogicalAt015": 40.32000000000026,
+        "foodCenterlineClearanceSource": 6.497146115199173,
+        "gateCircleFoodClearanceSource": 5.372692141079764,
+        "otherVesselWallClearanceSource": 4.973647541851234,
+        "nearestOtherVessel": "e184",
+        "gateCircleInsideStomach": true,
+        "pipeCenterOnVisibleInterval": true,
+        "distanceToJunctionSource": 6.041675467624984,
+        "unitDiskCandidates": [
+          {
+            "kind": "scout",
+            "radiusSource": 0.21875,
+            "radiusLogicalAt015": 2.1,
+            "centerlineTubeWallMarginSource": 0.53125,
+            "exitSweptDiskInsideStomach": true,
+            "exitSweptDiskFoodMarginSource": 6.278396115199173
+          },
+          {
+            "kind": "worker",
+            "radiusSource": 0.296875,
+            "radiusLogicalAt015": 2.85,
+            "centerlineTubeWallMarginSource": 0.453125,
+            "exitSweptDiskInsideStomach": true,
+            "exitSweptDiskFoodMarginSource": 6.200271115199173
+          },
+          {
+            "kind": "siege",
+            "radiusSource": 0.53125,
+            "radiusLogicalAt015": 5.1,
+            "centerlineTubeWallMarginSource": 0.21875,
+            "exitSweptDiskInsideStomach": true,
+            "exitSweptDiskFoodMarginSource": 5.965896115199173
+          }
+        ],
+        "movementCertified": false
+      },
+      {
+        "id": "study.stomach.wall_service.outer",
+        "pipeCenterSource": [
+          608.5787126984799,
+          531.911639360188
+        ],
+        "wallSource": [
+          609.6278060313562,
+          532.3827053629036
+        ],
+        "tissueTargetSource": [
+          612.4101840011587,
+          533.6320543266276
+        ],
+        "normal": [
+          0.9122550720663735,
+          0.40962261105702624
+        ],
+        "normalLength": 1.0,
+        "normalDirection": "from lumen toward tissue; unchanged source geometry",
+        "gateRadiusSource": 1.9,
+        "gateDiameterLogicalAt015": 36.48,
+        "artMarkLengthLogicalAt015": 10.56,
+        "artMarkThicknessLogicalAt015": 4.608,
+        "exitSegmentLengthSource": 4.200000000000019,
+        "exitSegmentLengthLogicalAt015": 40.32000000000018,
+        "foodCenterlineClearanceSource": 5.422612817549606,
+        "gateCircleFoodClearanceSource": 4.668460725984989,
+        "otherVesselWallClearanceSource": 39.69613654483086,
+        "nearestOtherVessel": "e184",
+        "gateCircleInsideStomach": true,
+        "pipeCenterOnVisibleInterval": true,
+        "distanceToJunctionSource": 58.600000000000044,
+        "unitDiskCandidates": [
+          {
+            "kind": "scout",
+            "radiusSource": 0.21875,
+            "radiusLogicalAt015": 2.1,
+            "centerlineTubeWallMarginSource": 0.53125,
+            "exitSweptDiskInsideStomach": true,
+            "exitSweptDiskFoodMarginSource": 5.203862817549606
+          },
+          {
+            "kind": "worker",
+            "radiusSource": 0.296875,
+            "radiusLogicalAt015": 2.85,
+            "centerlineTubeWallMarginSource": 0.453125,
+            "exitSweptDiskInsideStomach": true,
+            "exitSweptDiskFoodMarginSource": 5.125737817549606
+          },
+          {
+            "kind": "siege",
+            "radiusSource": 0.53125,
+            "radiusLogicalAt015": 5.1,
+            "centerlineTubeWallMarginSource": 0.21875,
+            "exitSweptDiskInsideStomach": true,
+            "exitSweptDiskFoodMarginSource": 4.891362817549606
+          }
+        ],
+        "movementCertified": false
+      }
+    ]
+  },
+  "nextStepAcceptance": {
+    "art": [
+      "Same final graph and named junction coordinates across upper/lower crop",
+      "No false blood-to-food connection and no extra short connector invented at an occlusion",
+      "Continuous pan/zoom inspection over the y650-685 transition after the next strip is painted",
+      "Original body/brain/limb pixels stay untouched outside the explicitly registered central art area"
+    ],
+    "runtime": [
+      "Isolated QA build must explicitly adopt the user-reversed stomach service edge and the reprojected gate fields; current production is not adopted",
+      "scout/worker/siege enter and leave through both exact gate anchors under disk clearance",
+      "Directed circulation and mouth reservations prevent opposite-moving large cells from attempting to pass in the 1.5 px service lumen",
+      "Sim pause, view zoom and original-source art layering do not change production topology/save data"
+    ]
+  },
+  "limits": [
+    "This is a game projection design review, not a clinical anatomy claim.",
+    "The images are an upper-abdomen crop pilot, not a fully corrected full-body map.",
+    "Local swept-disk and clearances are necessary geometric conditions; they do not certify actual pathfinder, membrane rules, gate activation, traffic, or renderer sampling.",
+    "No runtime test was run in this independent read-only task.",
+    "The original unchanged lower-abdomen pigment cannot prove matching path geometry; it requires the next registered art strip."
+  ],
+  "productionInstalled": false,
+  "newMovementCertified": false
+}

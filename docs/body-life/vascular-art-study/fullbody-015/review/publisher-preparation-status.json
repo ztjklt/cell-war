@@ -1,0 +1,130 @@
+{
+  "schema": "fullbody-publisher-preparation/v1",
+  "status": "PREPARED_WAITING_CURRENT_EVIDENCE",
+  "timestamp": "2026-10-11T18:59:12.822902+00:00",
+  "publisher": {
+    "path": "scripts/qa/publish_fullbody_015.py",
+    "sha256": "3cdd80b1b48a98414fd9716ba4465f2429768987704dd4a3f9ddc1be313a3ce2"
+  },
+  "nativeAcceptance": false,
+  "publicationPerformed": false,
+  "previewLifecyclePerformed": false,
+  "scope": {
+    "excludedVisualRegions": [
+      "heart",
+      "lung_l",
+      "lung_r"
+    ],
+    "requiredDetailViews": [
+      "ankle-left-z0.15",
+      "ankle-right-z0.15",
+      "brain-entry-left-z0.15",
+      "brain-entry-right-z0.15",
+      "calf-left-z0.15",
+      "calf-right-z0.15",
+      "elbow-left-z0.15",
+      "elbow-right-z0.15",
+      "fingers-left-z0.15",
+      "fingers-right-z0.15",
+      "forearm-left-z0.15",
+      "forearm-right-z0.15",
+      "hand-left-z0.15",
+      "hand-right-z0.15",
+      "head-entry-z0.15",
+      "heel-left-z0.15",
+      "heel-right-z0.15",
+      "knee-left-z0.15",
+      "knee-right-z0.15",
+      "neck-upper-z0.15",
+      "shin-left-z0.15",
+      "shin-right-z0.15",
+      "wrist-left-z0.15",
+      "wrist-right-z0.15"
+    ],
+    "requiredDetailCount": 24,
+    "nativeTotalGate": "Complete declared total from captured phases and driver; planned final driver has 56, and every new view must be actually inspected."
+  },
+  "gateChecks": [
+    {
+      "name": "External runtime resource override",
+      "positive": 3,
+      "negative": 47,
+      "mode": "isolated fixture; includes19 malformed metadata rejection cases"
+    },
+    {
+      "name": "Scoped24-detail acceptance",
+      "positive": 1,
+      "negative": 70,
+      "mode": "isolated fixture; every required label and unresolved/deferred finding checked"
+    },
+    {
+      "name": "TerminalACKv2",
+      "positive": 1,
+      "negative": 12,
+      "mode": "isolated copies; nonce/PID/window/manifest/path/hash/arm/mirror and original required"
+    },
+    {
+      "name": "Complete native timing P95",
+      "positive": 4,
+      "negative": 36,
+      "mode": "isolated fixture using historical source samples, no preview or actual new measurement",
+      "contract": "Two different bound cameras, two own input records, four180-sample off/on phases, original-sample P95 recomputation, current runtime images in both contexts; historical valid measurements retained"
+    },
+    {
+      "name": "Temporary output only dry build",
+      "result": "PASS_FAIL_CLOSED",
+      "mode": "No evidence asset copied to live review or public page",
+      "observedCurrentNativeStills": 0,
+      "observedCurrentOfflineViews": 0,
+      "overallVisualAccepted": false,
+      "scopedVisualAccepted": false,
+      "coverageAccepted": false,
+      "actualRegisteredDecodedBytes": null,
+      "manifestBaselineDecodedBytes": 265055880
+    },
+    {
+      "name": "Python compilation and generated JavaScript syntax",
+      "result": "PASS"
+    }
+  ],
+  "pending": [
+    "Private stomach E has not been promoted or independently accepted.",
+    "External heart resource and shared runtime inputs must freeze and receive a real runtime-resource-overrides record.",
+    "Final native batch009: all declared views including24 required head/limb details must be independently actually viewed and bound to their original PNG SHA.",
+    "Fresh normal1x movement007: four cases, >=15seconds and terminalACKv2 with original image and byte-identical runtime mirror.",
+    "Fresh full-frame native performance006/007 and restored normal menu003."
+  ],
+  "historicalFailuresPreserved": [
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/review/native-005-visual-review.json",
+      "sha256": "ba65f75c281a418d81cd1bb66140f423472d2ccba325bab4368fa5c954f419e8"
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/review/native-006-visual-review.json",
+      "sha256": "f12cfd0a4b89edc72061e4310597c1b0cc24eacd42f3adf8728c600d1e041039"
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/review/native-007-visual-review.json",
+      "sha256": "394ec8501a86d436b49d7f09c084eeed40d5ea82ce2d24bb176d56d650a34453"
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/review/native-visual-review.json",
+      "sha256": "f12cfd0a4b89edc72061e4310597c1b0cc24eacd42f3adf8728c600d1e041039"
+    }
+  ],
+  "existingPublicOutputUnmodified": [
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015.html",
+      "sha256": "7461b0aea269cbc524e15b6f6cf5758432798d95b86cd7f6baf6fd5c298bc1da"
+    },
+    {
+      "path": "docs/body-life/previews/visible-life/vascular-art-study/fullbody-015.html",
+      "sha256": "7461b0aea269cbc524e15b6f6cf5758432798d95b86cd7f6baf6fd5c298bc1da"
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/review/page-data.json",
+      "sha256": "ff11ea778684964b628dd856fe09d5fa7b19645aa37756ab921eb7cb9524c9b3"
+    }
+  ],
+  "existingPublicOutputHashesPreserved": true
+}

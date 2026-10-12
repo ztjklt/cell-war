@@ -1,0 +1,166 @@
+{
+  "nativeEvidence": false,
+  "checks": {
+    "regression": {
+      "passed": 182,
+      "total": 182
+    },
+    "integration": {
+      "passed": 8,
+      "total": 8
+    },
+    "resources": {
+      "passed": 11,
+      "total": 11
+    },
+    "lungPixels": {
+      "passed": 6,
+      "total": 6
+    },
+    "primaryVisibility": {
+      "passed": 3,
+      "total": 3
+    },
+    "fullbodyVisibility": {
+      "passed": 6,
+      "total": 6
+    }
+  },
+  "totalPassed": 216,
+  "totalChecks": 216,
+  "videos": [
+    {
+      "file": "whole-15s.mp4",
+      "durationSeconds": 15,
+      "frames": 180,
+      "fps": 12,
+      "size": [
+        720,
+        600
+      ],
+      "webp": "whole-15s.webp"
+    },
+    {
+      "file": "digestive-15s.mp4",
+      "durationSeconds": 15,
+      "frames": 180,
+      "fps": 12,
+      "size": [
+        720,
+        600
+      ],
+      "webp": "digestive-15s.webp"
+    },
+    {
+      "file": "legs-15s.mp4",
+      "durationSeconds": 15,
+      "frames": 180,
+      "fps": 12,
+      "size": [
+        720,
+        600
+      ],
+      "webp": "legs-15s.webp"
+    }
+  ],
+  "keyframePngs": 32,
+  "microscopyPngs": 6,
+  "deviceLogicalSizes": [
+    [
+      1440,
+      900
+    ],
+    [
+      1024,
+      768
+    ],
+    [
+      844,
+      390
+    ],
+    [
+      430,
+      932
+    ],
+    [
+      360,
+      780
+    ]
+  ],
+  "visuallyInspected": [
+    "whole-0.13.png",
+    "digestive-1.92.png",
+    "legs-1.92.png",
+    "muscle-1.png",
+    "marrow-1.png"
+  ],
+  "visualObservations": [
+    "No additional hard-edged shading patches observed in inspected source-atlas views.",
+    "Fixed silhouette, joints and organ placements retained in inspected frames.",
+    "Close-up muscle and marrow motifs change while intensity-zero checks are static.",
+    "Actual continuous playback review is owned by the root agent; this report does not substitute still-image inspection for native playback."
+  ],
+  "exportSourceChanges": [],
+  "currentSourceMismatches": [],
+  "fullbodyLuma": {
+    "whole/stomach": {
+      "meanPixelLumaRange": 9.544262886047363,
+      "p95PixelLumaRange": 14.846405029296875,
+      "fractionAtLeast2Luma": 0.894356005788712,
+      "samples": 25,
+      "seconds": 12
+    },
+    "whole/small_intestine": {
+      "meanPixelLumaRange": 6.77573299407959,
+      "p95PixelLumaRange": 10.063009262084961,
+      "fractionAtLeast2Luma": 0.9168173598553345,
+      "samples": 25,
+      "seconds": 12
+    },
+    "whole/large_intestine": {
+      "meanPixelLumaRange": 5.707202911376953,
+      "p95PixelLumaRange": 10.06298828125,
+      "fractionAtLeast2Luma": 0.8284923928077456,
+      "samples": 25,
+      "seconds": 12
+    },
+    "digestive/stomach": {
+      "meanPixelLumaRange": 11.052383422851562,
+      "p95PixelLumaRange": 15.2086181640625,
+      "fractionAtLeast2Luma": 0.9726877141005462,
+      "samples": 25,
+      "seconds": 12
+    },
+    "digestive/small_intestine": {
+      "meanPixelLumaRange": 12.507464408874512,
+      "p95PixelLumaRange": 18.203393936157227,
+      "fractionAtLeast2Luma": 0.9870242214532872,
+      "samples": 25,
+      "seconds": 12
+    },
+    "digestive/large_intestine": {
+      "meanPixelLumaRange": 6.829086780548096,
+      "p95PixelLumaRange": 10.063003540039062,
+      "fractionAtLeast2Luma": 0.9471502590673575,
+      "samples": 25,
+      "seconds": 12
+    }
+  },
+  "legFlow": {
+    "sourceYMinimum": 840,
+    "tissueMeanTemporalStd": 0.003676557680591941,
+    "flowMeanTemporalStd": 0.006018594838678837,
+    "flowToTissue": 1.6370190165790677,
+    "tissuePeakTemporalStd": 2.384848117828369,
+    "flowPeakTemporalStd": 38.737701416015625,
+    "tissuePixelsStdAtLeast2": 29,
+    "flowPixelsStdAtLeast2": 215
+  },
+  "limitations": [
+    "Cairo is offline evidence, not native NanoVG AA or performance evidence.",
+    "Brain, kidneys and bladder may be unchanged at 8-bit whole-view output. Secondary near-view presence does not establish human-readable pulsation.",
+    "Initial uniform 0.5s sampling was replaced by fixed nonuniform sampling to avoid phase aliasing.",
+    "Leg-flow measurement excludes source y<840 because the requested leg crop includes digestive organs. Full-canvas mean temporal std was flow .009972/tissue .010807 before this anatomical restriction; no runtime was changed to satisfy the test.",
+    "No native frame-time claim is made."
+  ]
+}

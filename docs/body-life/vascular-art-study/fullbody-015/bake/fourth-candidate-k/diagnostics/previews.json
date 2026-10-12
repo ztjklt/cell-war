@@ -1,0 +1,200 @@
+{
+  "schema": "candidate-k-native011-same-camera-straight-model/v1",
+  "candidateManifestSha256": "f2dd7bb5757576e37d18e78154730b1a106a18afed3837d95b2c400cc79a1750",
+  "baselineJManifestSha256": "4f7c350a5629ab4cb34acf0a2fc1257e661c80b28be1acd73b97a3566bb960b0",
+  "quietBodySourcePath": "assets/image/anatomy-reference/vascular-study/fullbody-gpt-source/quiet-body-registered-v2.png",
+  "quietBodySourceSha256": "ef4cb61f0a4013a5f23ddbc8a23a3de54f43a333d664c5397349e6d45c8c3a47",
+  "nativeEvidenceForK": false,
+  "sampling": "RGBA independent bands, BOX mip downsample and bilinear/trilinear interpolation at native011 .15 DPR2 camera. This is an approximation of GPU image sampling; it excludes dynamic cells/runtime overlays and does not replace native K evidence.",
+  "cameraMapping": "source_x=camera.x/2+(px-W/2)/(64*zoom*2); source_y=(camera.y-512)/2+(py-64-(H-64)*.47)/(64*zoom*2)",
+  "cases": [
+    {
+      "id": "large-gut-blue-in-red",
+      "sourceBox": [
+        546.8916294368947,
+        663.2972005929264,
+        560.4332961035614,
+        667.7242839262597
+      ],
+      "physicalPixelCrop": [
+        910,
+        520,
+        1170,
+        605
+      ],
+      "physicalPixelsPerSource": 19.2,
+      "samplingPixelSize": [
+        260,
+        85
+      ],
+      "nativeReferencePath": "docs/body-life/vascular-art-study/fullbody-015/native-011/09-large_intestine-z0.15.png",
+      "nativeReferenceSha256": "dae3e85a3c9a9ed6e41e589d7115e24c448fe3477fa55aaa02207d9b228912cd",
+      "nativeCandidate": "J",
+      "comparisonPath": "docs/body-life/vascular-art-study/fullbody-015/bake/fourth-candidate-k/diagnostics/large-gut-blue-in-red-compare.png",
+      "comparisonSha256": "634863345459203894ea26e2d3fcf929ce7fb9558ebed6a5f0e40cdcbaacc816",
+      "beforePath": "docs/body-life/vascular-art-study/fullbody-015/bake/fourth-candidate-k/diagnostics/large-gut-blue-in-red-J-straight-before.png",
+      "beforeSha256": "2edbe0fad87b4da2845f58094ae8308eeae239cc1385341e3f0625c45a983008",
+      "afterPath": "docs/body-life/vascular-art-study/fullbody-015/bake/fourth-candidate-k/diagnostics/large-gut-blue-in-red-K-straight-after.png",
+      "afterSha256": "8062d777f23a5c119deeaf10f0f3264bbe92ce1b8530bb711cd0b0041bbaf786",
+      "modelChangedPixels": 868,
+      "nativeEvidenceForK": false
+    },
+    {
+      "id": "small-intestine-exit",
+      "sourceBox": [
+        545.1610699741406,
+        661.8689201996132,
+        555.5777366408072,
+        671.2439201996132
+      ],
+      "physicalPixelCrop": [
+        2100,
+        80,
+        2300,
+        260
+      ],
+      "physicalPixelsPerSource": 19.2,
+      "samplingPixelSize": [
+        200,
+        180
+      ],
+      "nativeReferencePath": "docs/body-life/vascular-art-study/fullbody-015/native-011/10-small_intestine-z0.15.png",
+      "nativeReferenceSha256": "87ac53ac72d01048d2871f1da993a479c1ce0c79325055461995ca8256b50bce",
+      "nativeCandidate": "J",
+      "comparisonPath": "docs/body-life/vascular-art-study/fullbody-015/bake/fourth-candidate-k/diagnostics/small-intestine-exit-compare.png",
+      "comparisonSha256": "71a9d908b42f14e4279358525bd97427ea0645b70dfea34ed1fd200ea098a465",
+      "beforePath": "docs/body-life/vascular-art-study/fullbody-015/bake/fourth-candidate-k/diagnostics/small-intestine-exit-J-straight-before.png",
+      "beforeSha256": "6f324da66aa63c1629a43bc65ad44c680c9ff38a5b5ee5358fa1cbbf5ad93bfb",
+      "afterPath": "docs/body-life/vascular-art-study/fullbody-015/bake/fourth-candidate-k/diagnostics/small-intestine-exit-K-straight-after.png",
+      "afterSha256": "163115ded45a7fa67943060d8dd8ce747f88336b07f564a1caa3486c57076da5",
+      "modelChangedPixels": 838,
+      "nativeEvidenceForK": false
+    },
+    {
+      "id": "celiac-triangle-and-crossing",
+      "sourceBox": [
+        516.4270833333334,
+        480.1625,
+        531.0104166666666,
+        496.04791666666665
+      ],
+      "physicalPixelCrop": [
+        950,
+        535,
+        1230,
+        840
+      ],
+      "physicalPixelsPerSource": 19.2,
+      "samplingPixelSize": [
+        280,
+        305
+      ],
+      "nativeReferencePath": "docs/body-life/vascular-art-study/fullbody-015/native-011/21-celiac-stomach-z0.15.png",
+      "nativeReferenceSha256": "93c6468603a1b49a3fcb98c228b9f8eaa18b3302f840a7adf9b7468f402739b5",
+      "nativeCandidate": "J",
+      "comparisonPath": "docs/body-life/vascular-art-study/fullbody-015/bake/fourth-candidate-k/diagnostics/celiac-triangle-and-crossing-compare.png",
+      "comparisonSha256": "1aaf891496f13c59865eca7262e9bb625e6927feb2967c1c9bbeb6b59635e281",
+      "beforePath": "docs/body-life/vascular-art-study/fullbody-015/bake/fourth-candidate-k/diagnostics/celiac-triangle-and-crossing-J-straight-before.png",
+      "beforeSha256": "c9f5922d661e2c33fd459b9d7e9d38a6054052241640febd878c4f134a57f060",
+      "afterPath": "docs/body-life/vascular-art-study/fullbody-015/bake/fourth-candidate-k/diagnostics/celiac-triangle-and-crossing-K-straight-after.png",
+      "afterSha256": "9a95f51b808ad659cb012b5dbb8a7e3cca26b939b9fb7383409ecbdb4a801ade",
+      "modelChangedPixels": 967,
+      "nativeEvidenceForK": false
+    },
+    {
+      "id": "stomach-same-celiac-site",
+      "sourceBox": [
+        516.3835227272727,
+        477.3490530303031,
+        532.529356060606,
+        495.0573863636364
+      ],
+      "physicalPixelCrop": [
+        500,
+        410,
+        810,
+        750
+      ],
+      "physicalPixelsPerSource": 19.2,
+      "samplingPixelSize": [
+        310,
+        340
+      ],
+      "nativeReferencePath": "docs/body-life/vascular-art-study/fullbody-015/native-011/02-stomach-z0.15.png",
+      "nativeReferenceSha256": "4b89da89bf157b85385fca780ba22f598eb9d9923c25a8c6c4e709bd5d9df7cb",
+      "nativeCandidate": "J",
+      "comparisonPath": "docs/body-life/vascular-art-study/fullbody-015/bake/fourth-candidate-k/diagnostics/stomach-same-celiac-site-compare.png",
+      "comparisonSha256": "61e2b1cab98c0012bb8a7d1451c04728a24a42f8faf429f7e97fb5ed3e4fb27e",
+      "beforePath": "docs/body-life/vascular-art-study/fullbody-015/bake/fourth-candidate-k/diagnostics/stomach-same-celiac-site-J-straight-before.png",
+      "beforeSha256": "f53a50d02e0cd58774c4fbf9a47c89a34eed7f248d136824c8a261bc0598270a",
+      "afterPath": "docs/body-life/vascular-art-study/fullbody-015/bake/fourth-candidate-k/diagnostics/stomach-same-celiac-site-K-straight-after.png",
+      "afterSha256": "09abc505bfcaac99d8f9097c44a87f2e79a06fb13327df88646d8d2f713155c8",
+      "modelChangedPixels": 1125,
+      "nativeEvidenceForK": false
+    },
+    {
+      "id": "wrist-right-blue-inner-line",
+      "sourceBox": [
+        227.28125,
+        725.4229166666667,
+        241.86458333333334,
+        745.2145833333333
+      ],
+      "physicalPixelCrop": [
+        1120,
+        540,
+        1400,
+        920
+      ],
+      "physicalPixelsPerSource": 19.2,
+      "samplingPixelSize": [
+        280,
+        380
+      ],
+      "nativeReferencePath": "docs/body-life/vascular-art-study/fullbody-015/native-011/43-wrist-right-z0.15.png",
+      "nativeReferenceSha256": "d12aadb0ae32836e0d35f2f8577c74f18047c50241e606348f4c23a9ce552d1a",
+      "nativeCandidate": "J",
+      "comparisonPath": "docs/body-life/vascular-art-study/fullbody-015/bake/fourth-candidate-k/diagnostics/wrist-right-blue-inner-line-compare.png",
+      "comparisonSha256": "dffa9fb164457a35b93973f387f46fa363c4a336df1fd0965619f67cf5b09c32",
+      "beforePath": "docs/body-life/vascular-art-study/fullbody-015/bake/fourth-candidate-k/diagnostics/wrist-right-blue-inner-line-J-straight-before.png",
+      "beforeSha256": "4bc5a0226bb9b6dd2454a1118f9a244e7a66b32079155b72472ccee3838d4dae",
+      "afterPath": "docs/body-life/vascular-art-study/fullbody-015/bake/fourth-candidate-k/diagnostics/wrist-right-blue-inner-line-K-straight-after.png",
+      "afterSha256": "a723edb9ca79f035426f06764533fb3a54900c35e1d879befb60435984fa5b76",
+      "modelChangedPixels": 1363,
+      "nativeEvidenceForK": false
+    },
+    {
+      "id": "wrist-left-blue-inner-line",
+      "sourceBox": [
+        774.5104166666666,
+        723.3395833333333,
+        791.6979166666666,
+        746.7770833333333
+      ],
+      "physicalPixelCrop": [
+        990,
+        500,
+        1320,
+        950
+      ],
+      "physicalPixelsPerSource": 19.2,
+      "samplingPixelSize": [
+        330,
+        450
+      ],
+      "nativeReferencePath": "docs/body-life/vascular-art-study/fullbody-015/native-011/44-wrist-left-z0.15.png",
+      "nativeReferenceSha256": "d9a906b0ad58957d96a6dbe2db2711bfe959a69ffb2ce2dedde3f1c741e252d0",
+      "nativeCandidate": "J",
+      "comparisonPath": "docs/body-life/vascular-art-study/fullbody-015/bake/fourth-candidate-k/diagnostics/wrist-left-blue-inner-line-compare.png",
+      "comparisonSha256": "6b01e3420f502328d911eb56d506269fe0ddb0b73d9df8314e95c812148724e6",
+      "beforePath": "docs/body-life/vascular-art-study/fullbody-015/bake/fourth-candidate-k/diagnostics/wrist-left-blue-inner-line-J-straight-before.png",
+      "beforeSha256": "fc19da8017465b37f627e82b8b1aab745480d234d27a782fc41de25145de00ee",
+      "afterPath": "docs/body-life/vascular-art-study/fullbody-015/bake/fourth-candidate-k/diagnostics/wrist-left-blue-inner-line-K-straight-after.png",
+      "afterSha256": "52a358e79fab36cbe97f0b6ac2617a7be05d1089c33ca1532842dc03b16d60c6",
+      "modelChangedPixels": 1303,
+      "nativeEvidenceForK": false
+    }
+  ],
+  "contactSheetPath": "docs/body-life/vascular-art-study/fullbody-015/bake/fourth-candidate-k/diagnostics/native011-key-crops-model-contact.png",
+  "contactSheetSha256": "b192e7c63c40b8c27c4a4092fdd88ddd593b34c185973d7eb714b8badcb55625"
+}

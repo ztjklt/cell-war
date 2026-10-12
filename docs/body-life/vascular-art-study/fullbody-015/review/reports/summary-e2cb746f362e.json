@@ -1,0 +1,403 @@
+{
+  "schema": "fullbody-015-offline-acceptance-summary/v1",
+  "createdAt": "2026-10-11T20:11:47.792323+08:00",
+  "status": "PASS_OFFLINE_FULLBODY",
+  "scope": {
+    "organs": [
+      "brain",
+      "lung_r",
+      "lung_l",
+      "liver",
+      "stomach",
+      "pancreas",
+      "kidney_r",
+      "kidney_l",
+      "large_intestine",
+      "small_intestine",
+      "bladder",
+      "heart"
+    ],
+    "frozenVesselEdges": 202,
+    "peripheralTissueDomainsAdded": 0,
+    "trueZoom": 0.15
+  },
+  "manifestSha256": "ccc8e18ee68bd53863c43084ac710e1aa0644d7a818d1a197de0101a34667e14",
+  "runtimeHashes": {
+    "scripts/war/FullBodyBattlefield.lua": "46a9281dee121e56f5d233dc8e8180fee7b89ff1b20212d362a2530f88d41176",
+    "scripts/war/FullBodyMapArt.lua": "b3435305d96bb3180773439285fe93747801e66d6c0ed73e43aab39af5c7c2c1",
+    "scripts/war/FullBodyMapArtData.lua": "a022620d7cb4fa92b0e864ff716b8b808f2f9a22c7f77386eb8593a8c6df13df",
+    "scripts/war/OrganBattlefield.lua": "cd0194aa8016f2a0487c9fbaabe689b0de73fcf9dc1294a25bce37ee9520756b",
+    "scripts/war/OrganBattlefieldCore.lua": "40c670d25c69281b0d5663c684dcb699b6871c806000fd2e8f013601218c6b8d",
+    "scripts/war/OrganBattlefieldData.lua": "047dce28da8aa19d893a9116258631cf71c039ecb44b7c63478d40043cd9c273",
+    "scripts/war/GastricBattlefield.lua": "789066936c29437cfcbc47490a7527288700e82c02b88b3e19458f69906b2b46",
+    "scripts/war/GastricBattlefieldData.lua": "81cbe1eedd29506a13fa19a7edd079d7f93b3eb58b4a9e4282e98277854b279d",
+    "scripts/war/OrganTrial.lua": "2448272435d422dc9c10f13c54382727b93da03b9bce177235f0d58d7eb803fd",
+    "scripts/war/OrganTraffic.lua": "901ece0eb1bb68d22089d99c2b669c42270f34d66539f6daa1d1bb02786dab0f",
+    "scripts/war/GastricTraffic.lua": "d04b89128fedb033d67b9eef01a72f5c2733b5942a0e87656e00d9b883ee3e6d",
+    "scripts/war/Commands.lua": "d03717fefdd1aeb43d7d21948a6af149b5ba3401466b78c14cba1200c0d4655a",
+    "scripts/war/Path.lua": "a41c95130db4c45a96956c09ad122432055bd3cc0588835ae9cae5a321283929",
+    "scripts/war/Simulation.lua": "2df8aa4f850caa950c2abc48477cf0bdc71c3a7418d64c95567eb326b460ff43",
+    "scripts/war/CellCollision.lua": "a11dc894c9cf91347ff89e290301c0bb0889c520593d60cbe4c1bf122201d30f",
+    "scripts/war/Motion.lua": "7fe39b4a715b5b0b5398e5ef7e6f0fe2bd8987e47359e6083d46a5db467829a5",
+    "scripts/war/Save.lua": "29655d752131e7993d943f3996a3fe4d07ab02cf52065216594c48a8f21df36d",
+    "scripts/war/World.lua": "020f77336ced2aa0a4f7907aa79385c438eda38d76e2bc639d49ca864b70166c",
+    "scripts/war/Vessels.lua": "5302854eda3d7b29a238394db9b50662835ad2a76f69d0e3b9c42431c53b8d6e",
+    "scripts/war/Data.lua": "6aa40613c149a254391e68d5ffca3ef5f6b7d4dbba8a4861b6b8adb7983d5f33",
+    "scripts/war/Util.lua": "bd35c4e904854a00b98825fe2cc422eaa74d4f87308c8a336f25f9cd76131c0d"
+  },
+  "phases": {
+    "motion": {
+      "status": "PASS",
+      "file": "qa/fullbody-motion-report.json",
+      "sha256": "cc92ceab6bea3f4c35bff28c3b3346954f68a51a24e9643b2c0f0155ae7d6921",
+      "total": 970,
+      "passed": 970,
+      "changedOrMissing": []
+    },
+    "compatibility": {
+      "status": "PASS",
+      "file": "qa/compatibility-report.json",
+      "sha256": "f4b8cde0b8a12916a67676711e7fad0099fa3b1572d976464265a43778d56586",
+      "total": null,
+      "passed": null,
+      "changedOrMissing": []
+    },
+    "clearance": {
+      "status": "PASS",
+      "file": "qa/clearance-report.json",
+      "sha256": "3d20c4b7b77aeb45a0825161d91b8db85ab31638c831a83a3e3e20bba96f44fd",
+      "total": 36,
+      "passed": 36,
+      "changedOrMissing": []
+    },
+    "pixels": {
+      "status": "PASS",
+      "file": "qa/pixel-report.json",
+      "sha256": "12d614b1a2494d7a9f81b2cb4cd9780f1bd35a9351f21d617b585cf27daa8002",
+      "total": 341,
+      "passed": 341,
+      "changedOrMissing": []
+    },
+    "resources": {
+      "status": "PASS",
+      "file": "qa/resource-report.json",
+      "sha256": "094e121c58c506f0f19be57290a66dd6c2bec47e3026e497466559ebf2a96369",
+      "total": 737,
+      "passed": 737,
+      "changedOrMissing": []
+    },
+    "quietBase": {
+      "status": "PASS",
+      "file": "qa/quiet-base-report.json",
+      "sha256": "1cc880facdaa14a81d8498c78a743a8c6327da8f8079a3c47e88e4fc2cbc02b3",
+      "total": 66,
+      "passed": 66,
+      "changedOrMissing": []
+    },
+    "visibility": {
+      "status": "PASS",
+      "file": "qa/visibility-report.json",
+      "sha256": "296e15a94e2b7d6ae7e37fac3b613eaaf5006f11d0c5740f0dd6743d118f0790",
+      "total": 7028,
+      "passed": 7028,
+      "changedOrMissing": []
+    },
+    "render": {
+      "status": "PASS",
+      "file": "qa/render-report.json",
+      "sha256": "dc0f8818fc19a8e66486f9887c2421fca215fbe393b4ade77e13197eb1797738",
+      "total": null,
+      "passed": null,
+      "changedOrMissing": []
+    }
+  },
+  "nativeEvidence": true,
+  "nativeMovement": "PASS_SELECTED_REALTIME_CASES_4_OF_4",
+  "nativeP95": "PASS_MEASURED_PAUSED_VIEWS",
+  "limits": [
+    "Wholebody production navigation, clearance, integration, save compatibility and the captured CCC art batch are evidenced. Overall visual acceptance still needs refinement.",
+    "Native movement is four selected complete ordinary-speed production cases, not a native repeat of all 970 routes.",
+    "Native P95 comparison covers paused stomach and aortic-arch views at DPR2/17 entities/60 FPS cap, toggling32 foreground map layers while quietBase stays enabled. It excludes active-combat crowds, DPR1/3, tablet/mobile native layouts and standalone GPU time.",
+    "The third authorized visual correction is in progress; its future manifest/assets require new pixel/resource/actual Render binding before any final acceptance. Navigation970 remains valid while its frozen sources are unchanged."
+  ],
+  "overallStatus": "LOGIC_AND_INTEGRATION_COMPLETE_VISUAL_NEEDS_REFINEMENT",
+  "visualAcceptance": "NEEDS_REFINEMENT",
+  "nextMaterialRevision": "THIRD_AUTHORIZED_VISUAL_FIX_IN_PROGRESS",
+  "finalMaterialRebindRequired": true,
+  "deliveryEvidence": {
+    "recordedManifestSha256": "ccc8e18ee68bd53863c43084ac710e1aa0644d7a818d1a197de0101a34667e14",
+    "recordedQuietBaseSha256": "ef4cb61f0a4013a5f23ddbc8a23a3de54f43a333d664c5397349e6d45c8c3a47",
+    "bindingScope": "Historical evidence for captured CCC batch; not a declaration that any in-progress third artwork revision has passed.",
+    "nativeMovement": {
+      "caseCount": 4,
+      "captures": 149,
+      "speed": 1,
+      "timeCompression": 1,
+      "dpr": 2,
+      "resources": {
+        "images": 66,
+        "draws": 0,
+        "contexts": 2
+      },
+      "cases": [
+        {
+          "id": "gate/stomach/siege/gastric.local.northwest/exit",
+          "completed": true,
+          "recordingUsesNormalMainLoop": true,
+          "simulationSeconds": 16.99999999999997,
+          "durationSeconds": 17.006380937993526,
+          "setupElapsed": 0,
+          "movedDistanceWorld": [
+            19.639310832345412
+          ],
+          "arrivals": [
+            {
+              "distanceWorld": 0.01511559727076869,
+              "id": 18,
+              "laneMatches": true,
+              "organMatches": true
+            }
+          ],
+          "movementFrames": [
+            157
+          ]
+        },
+        {
+          "id": "native-representative/chest-trunk/e151-e156/scout",
+          "completed": true,
+          "recordingUsesNormalMainLoop": true,
+          "simulationSeconds": 16.999999999999034,
+          "durationSeconds": 17.00381898507476,
+          "setupElapsed": 165.69999999999487,
+          "movedDistanceWorld": [
+            24.56655893382433
+          ],
+          "arrivals": [
+            {
+              "distanceWorld": 0,
+              "id": 18,
+              "laneMatches": true,
+              "organMatches": true
+            }
+          ],
+          "movementFrames": [
+            63
+          ]
+        },
+        {
+          "id": "native-representative/stomach/northwest/siege-siege",
+          "completed": true,
+          "recordingUsesNormalMainLoop": true,
+          "simulationSeconds": 40.30000000000057,
+          "durationSeconds": 40.32428800687194,
+          "setupElapsed": 15.99999999999996,
+          "movedDistanceWorld": [
+            22.879871427960936,
+            19.761871708465385
+          ],
+          "arrivals": [
+            {
+              "distanceWorld": 0.021423964210953272,
+              "id": 18,
+              "laneMatches": true,
+              "organMatches": true
+            },
+            {
+              "organId": "stomach",
+              "distanceWorld": 0.002116467926759104,
+              "id": 19,
+              "laneMatches": true,
+              "organMatches": true
+            }
+          ],
+          "movementFrames": [
+            188,
+            159
+          ]
+        },
+        {
+          "id": "gate/pancreas/siege/pancreas.candidate.1/enter",
+          "completed": true,
+          "recordingUsesNormalMainLoop": true,
+          "simulationSeconds": 65.99999999999626,
+          "durationSeconds": 66.0155430175364,
+          "setupElapsed": 65.60000000000055,
+          "movedDistanceWorld": [
+            86.26131255643254
+          ],
+          "arrivals": [
+            {
+              "organId": "pancreas",
+              "distanceWorld": 0.021864739232250723,
+              "id": 18,
+              "laneMatches": true,
+              "organMatches": true
+            }
+          ],
+          "movementFrames": [
+            656
+          ]
+        }
+      ],
+      "captureCoverage": [
+        {
+          "id": "gate/stomach/siege/gastric.local.northwest/exit",
+          "stateRunId": "1791720395/1",
+          "frames": 18,
+          "captureSpanSeconds": 15.676446199417114,
+          "simulationSpanSeconds": 15.59999999999996,
+          "capturedContinuously": true,
+          "completed": true
+        },
+        {
+          "id": "native-representative/chest-trunk/e151-e156/scout",
+          "stateRunId": "1791720423/2",
+          "frames": 18,
+          "captureSpanSeconds": 15.958714008331299,
+          "simulationSpanSeconds": 15.799999999999102,
+          "capturedContinuously": true,
+          "completed": true
+        },
+        {
+          "id": "native-representative/stomach/northwest/siege-siege",
+          "stateRunId": "1791720455/3",
+          "frames": 43,
+          "captureSpanSeconds": 39.951154947280884,
+          "simulationSpanSeconds": 39.90000000000057,
+          "capturedContinuously": true,
+          "completed": true
+        },
+        {
+          "id": "gate/pancreas/siege/pancreas.candidate.1/enter",
+          "stateRunId": "1791720505/4",
+          "frames": 70,
+          "captureSpanSeconds": 65.35011291503906,
+          "simulationSpanSeconds": 65.2999999999963,
+          "capturedContinuously": true,
+          "completed": true
+        }
+      ]
+    },
+    "nativePerformance": {
+      "schema": "fullbody-native-performance-summary/v1",
+      "status": "PASS_MEASURED_PAUSED_VIEWS",
+      "nativeEvidence": true,
+      "scope": "Paused stomach and aortic-arch .15 views, 17 entities, 60 FPS cap, DPR2, same loaded 33 resources/context; comparison toggles 32 foreground map layers while the quiet bitmap stays enabled. This is not a crowds/active-combat or standalone GPU measurement.",
+      "targetAddedFrameP95Ms": 2,
+      "GPUTimeMeasured": false,
+      "views": [
+        {
+          "path": "docs/body-life/vascular-art-study/fullbody-015/native-performance-002/report.json",
+          "sha256": "53f2d1c9d61b446d12f4c5e79b08de8bd5381e745d00f245288c31a1cc5f265c",
+          "camera": {
+            "y": 1492,
+            "x": 1036
+          },
+          "offFrameP95Ms": 17.525000497698784,
+          "onFrameP95Ms": 17.496999353170395,
+          "frameP95IncrementMs": -0.028001144528388977,
+          "offRenderCpuP95Ms": 1.8380000000011165,
+          "onRenderCpuP95Ms": 1.9569999999990983,
+          "renderCpuP95IncrementMs": 0.11899999999798183,
+          "samplesPerGroup": 360,
+          "resources": {
+            "images": 66,
+            "draws": 0,
+            "contexts": 2
+          },
+          "dpr": 2
+        },
+        {
+          "path": "docs/body-life/vascular-art-study/fullbody-015/native-performance-003/report.json",
+          "sha256": "c9b4a651064ecaf1e7938665c0c18d9bc8311f1731267455b4d8fecae0df6f4a",
+          "camera": {
+            "y": 1210,
+            "x": 1056
+          },
+          "offFrameP95Ms": 17.43749901652336,
+          "onFrameP95Ms": 17.480000853538513,
+          "frameP95IncrementMs": 0.04250183701515198,
+          "offRenderCpuP95Ms": 1.6690000000014749,
+          "onRenderCpuP95Ms": 1.8789999999988538,
+          "renderCpuP95IncrementMs": 0.20999999999737895,
+          "samplesPerGroup": 360,
+          "resources": {
+            "contexts": 2,
+            "draws": 0,
+            "images": 66
+          },
+          "dpr": 2
+        }
+      ],
+      "inputEvidence": [
+        {
+          "path": "docs/body-life/vascular-art-study/fullbody-015/native-performance-002/inputs.json",
+          "sha256": "e5568280962701843d8b44d76124e0858373a70e5c2863b40aa901dbaa80db4d"
+        },
+        {
+          "path": "docs/body-life/vascular-art-study/fullbody-015/native-performance-003/inputs.json",
+          "sha256": "a6fca06a19c5bd0e43a5c9a994b3d48c2baa7b7162649f3be3f5a9fb1018efec"
+        }
+      ],
+      "incrementTargetMet": true,
+      "remainingNativeCoverage": [
+        "DPR1/3",
+        "tablet/mobile native layouts",
+        "active combat crowds",
+        "standalone GPU timing"
+      ]
+    },
+    "formalMenuEntry": {
+      "status": "PASS_SHOWN_NORMAL_ENTRY",
+      "mainSha256": "091adca6a72ebf428d7a63cf51752668bf2d7edb51e9506f889a606521ce1595",
+      "image": {
+        "path": "docs/body-life/vascular-art-study/fullbody-015/native-menu/normal-entry.png",
+        "sha256": "614ce918f023375572558a139f98f5c4a6c44d11a6f7c99df01bef0135153a8d"
+      },
+      "temporaryHarnessRemoved": true,
+      "labelObserved": "全身地图·0.15"
+    },
+    "evidence": [
+      {
+        "path": "docs/body-life/vascular-art-study/fullbody-015/native-movement-002/driver-report.json",
+        "sha256": "e1ca55c06f9079b8b1dc53a192f8a15d56577eef362fe39414c5b5254f9c32a8"
+      },
+      {
+        "path": "docs/body-life/vascular-art-study/fullbody-015/native-movement-002/system-movement.json",
+        "sha256": "7261811f79997ca84fdc9a5f5127c60ba83d1cfeafb4cdc8d2c5c8b58db90cbd"
+      },
+      {
+        "path": "docs/body-life/vascular-art-study/fullbody-015/native-movement-002/inputs.json",
+        "sha256": "87232f4d00f111d9ae08d09090e0fa65fb10a60aed66b245eebdcd0984151a1d"
+      },
+      {
+        "path": "docs/body-life/vascular-art-study/fullbody-015/native-performance-002/report.json",
+        "sha256": "53f2d1c9d61b446d12f4c5e79b08de8bd5381e745d00f245288c31a1cc5f265c"
+      },
+      {
+        "path": "docs/body-life/vascular-art-study/fullbody-015/native-performance-002/inputs.json",
+        "sha256": "e5568280962701843d8b44d76124e0858373a70e5c2863b40aa901dbaa80db4d"
+      },
+      {
+        "path": "docs/body-life/vascular-art-study/fullbody-015/native-performance-003/report.json",
+        "sha256": "c9b4a651064ecaf1e7938665c0c18d9bc8311f1731267455b4d8fecae0df6f4a"
+      },
+      {
+        "path": "docs/body-life/vascular-art-study/fullbody-015/native-performance-003/inputs.json",
+        "sha256": "a6fca06a19c5bd0e43a5c9a994b3d48c2baa7b7162649f3be3f5a9fb1018efec"
+      },
+      {
+        "path": "docs/body-life/vascular-art-study/fullbody-015/qa/native-performance-summary.json",
+        "sha256": "aca364f9552698ac277b9c04af17a75658098a9f8dd84825e1f35a4bc76d97ba"
+      },
+      {
+        "path": "docs/body-life/vascular-art-study/fullbody-015/native-menu/record.json",
+        "sha256": "e1dcd551a6a8bbcdd5734424c90dafb355b4fb0b2a298f793b55f7186d77e910"
+      },
+      {
+        "path": "docs/body-life/vascular-art-study/fullbody-015/native-menu/normal-entry.png",
+        "sha256": "614ce918f023375572558a139f98f5c4a6c44d11a6f7c99df01bef0135153a8d"
+      }
+    ]
+  }
+}

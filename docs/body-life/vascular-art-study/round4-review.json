@@ -1,0 +1,70 @@
+{
+  "status": "STOMACH_LOCAL_PILOT_DELIVERED_LIMB_ART_NOT_FINAL",
+  "productionUnchanged": {
+    "scripts/war/ReferenceVessels.lua": true,
+    "scripts/war/Vessels.lua": true,
+    "scripts/war/ReferenceArt.lua": true,
+    "scripts/war/Save.lua": true,
+    "scripts/war/World.lua": true,
+    "scripts/war/Path.lua": true,
+    "assets/image/anatomy-reference/reference.png": true
+  },
+  "canonicalNetworkSha256": "c2e5c51890098e8d162cb9db3cb8235ac77490a56d9aca2a211b44c26aabedfc",
+  "stomach": {
+    "localTrialsPassed": 7,
+    "localTrials": 7,
+    "unreachableDesignCases": [
+      "wall-left",
+      "cavity-detour"
+    ],
+    "projectionSamples": 75,
+    "nativeEvidence": false,
+    "sharedCoordinates": true,
+    "browserEvidence": "stomach-browser-final.jpg",
+    "oldVectorGroupsFadeOut": [
+      "e123",
+      "e164"
+    ],
+    "backgroundLimitation": "Browser v10 art and actual Lua ReferenceArt backgrounds are separately evaluated; only new layer and coordinates are shared."
+  },
+  "limbs": {
+    "version": 15,
+    "scope": "Elbows and forearms only",
+    "visualStatus": "Improved but endpoint joins still visible; not promoted",
+    "gptSource": "generation-round4.json"
+  },
+  "nativePreview": {
+    "process_alive": false,
+    "reload_id": 22,
+    "restarted": false,
+    "p95": "UNDETERMINED"
+  },
+  "followup": "Design explicit connections for separated stomach tissue regions before expanding the battlefield or promoting artwork.",
+  "independentReview": {
+    "status": "PASS_SCOPED_STUDY",
+    "fixed": [
+      "old SVG routes fade out completely at .15",
+      "browser uses per-primitive alpha like Lua"
+    ],
+    "remaining": [
+      "separate browser/Lua base backgrounds",
+      "two disconnected tissue targets",
+      "limb wrist/proximal art joins",
+      "native preview stopped; native P95 unknown"
+    ]
+  },
+  "browserChecks": {
+    "errors": 0,
+    "luaImagesLoaded": 5,
+    "imageWidth": 1920,
+    "zoom012": {
+      "newAlpha": 0.5575785161583976,
+      "oldAlpha": 0.4424214838416024
+    },
+    "zoom015": {
+      "newAlpha": 1,
+      "oldAlpha": 0
+    },
+    "actualMembraneToBattlefieldReplay": "5.2 seconds completed after zoom change"
+  }
+}

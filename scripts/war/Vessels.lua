@@ -298,14 +298,20 @@ function current.forScale(scale)
 end
 local nasal
 local anatomical
-local reference
-local trachea
+local reference={}
+local trachea={}
+local gastric
 -- The body atlas and background keep the original circulation network.
 -- NasalArt draws the local overlay; navigation uses forState below.
 function current.forDisplay(s)
- if s.anatomyVersion==3 then
-  if not reference then reference=create(1,require('war.ReferenceVessels')) end
-  return reference
+ if s.anatomyVersion==4 and (s.gastricBattlefieldVersion==1 or s.organBattlefieldVersion==1 or s.fullbodyBattlefieldVersion==1) then
+  if not gastric then gastric=create(1,require('war.FinalVascularStudyData')) end
+  return gastric
+ end
+ if s.anatomyVersion==3 or s.anatomyVersion==4 then
+  local version=s.anatomyVersion
+  if not reference[version] then reference[version]=create(1,require(version==3 and 'war.LegacyReferenceVesselsV3' or 'war.ReferenceVessels')) end
+  return reference[version]
  end
  if s.anatomyVersion==2 then
   if not anatomical then anatomical=create(D.WORLD_SCALE,require('war.VesselLayoutV2')) end
@@ -315,7 +321,8 @@ function current.forDisplay(s)
 end
 function current.forState(s)
  if s.campaign and s.campaign.event.id=='trachea' then
-  if not trachea then trachea=create(1,require('war.TracheaTerrain').vascular) end;return trachea
+  local version=s.campaign.terrainVersion
+  if not trachea[version] then trachea[version]=create(1,require('war.CampaignData').forState(s).vascular) end;return trachea[version]
  end
  if s.campaign and s.campaign.terrainVersion==2 then
   if not nasal then nasal=create(1,require('war.NasalTerrain').vascular) end;return nasal

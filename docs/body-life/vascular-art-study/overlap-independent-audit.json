@@ -1,0 +1,241 @@
+{
+  "schema": "vascular-overlap-independent-audit/v1",
+  "status": "READ_ONLY_REVIEW_SAVED",
+  "scope": "当前用户草稿0.8弧线与原人体器官轮廓的游戏投影设计候选；不是临床解剖结论。",
+  "geometryModified": false,
+  "productionModified": false,
+  "sourceHashes": {
+    "user-drafts/stomach-20261010-original.json": "c482ffe322d0a23f13ef37d37991caf0b2152e0c471b7a73180ce326a94210e7",
+    "passages-data.json": "37c4cfcaa565a15bccf8d23bd5ad26151f14c13562aeb375320a4e80f1998ae5",
+    "interface-contract.json": "86878d45e150353b439fb0ea8e12ad22649185ff143d5dff4a8465cea8fa8253",
+    "organ-layers.json": "43c5adbd65f481e64642242f3bc57b9fcc3c981633b70f86b014606ac49edb3d",
+    "central-vessel-connections.json": "c3b27fd52bf17fc1f9fd20df08c9b8e29be542f718ed01d309e698ec917a4294",
+    "vascular-editor-core.js": "97e750e37130ae114a7cc3beeb8dc946f9593a76978b07d9bcf057a61e1ed33f"
+  },
+  "method": {
+    "curveStrength": 0.8,
+    "curveAlgorithm": "bounded-cubic-v1",
+    "overlap": "以实际曲线采样段中点落入器官轮廓累计长度；受采样和轮廓精度限制。",
+    "passageConflict": "曲线样点至food/air/urine折线最短距离小于双方宽度之和的一半；用于发现候选冲突，不是连续净空证明。",
+    "interfaceApproach": "从冻结interface端点沿同一所属connector向器官内部寻找首次进入点，累计该段并检查foreign器官投影；不是新增接口或移口。"
+  },
+  "classificationRules": [
+    "使用system判断血管属性；kind只表示编辑器配色，不能将capillary改判为artery。",
+    "使用a/b命名节点、interface-contract的supply/return/portalSupply与器官namespace判断所属及既有连接；几何相交不能建立连接。",
+    "controlledTissueAccess单独表示血管与组织战场交换出口，不与血管供回接口混淆。",
+    "绿色表示所属或命名连接，不代表0.15净空通过；所属血管也可能与食物或尿液通道冲突。",
+    "无关器官投影只标绕开或遮挡候选，不能自动赋器官归属，也不能把深度候选称为解剖事实。"
+  ],
+  "heartPulmonaryExceptions": {
+    "localHeartNamespace": [
+      "coronary"
+    ],
+    "functionalNodes": [
+      "right_heart",
+      "left_heart",
+      "heart.v",
+      "aortic_root",
+      "pulmonary_trunk"
+    ],
+    "functionalEdges": [
+      "e001",
+      "e002",
+      "e003",
+      "e005",
+      "e006",
+      "e008",
+      "e150",
+      "e151"
+    ],
+    "rule": "心脏所属不能仅依coronary namespace。上述循环枢纽与肺循环心端须单独表示功能接续，不因心轮廓重合而自动判为无关血管绕行。",
+    "pulmonaryConnectors": [
+      {
+        "edge": "e174",
+        "organ": "lung_l",
+        "foreignProjection": "heart",
+        "approxApproachOverlapSource": 2.95
+      },
+      {
+        "edge": "e175",
+        "organ": "lung_l",
+        "foreignProjection": "heart",
+        "approxApproachOverlapSource": 16.44
+      }
+    ],
+    "limit": "心肺接续候选不是可行走的心肌组织通道。"
+  },
+  "trunksNotGenericReroute": [
+    {
+      "edges": [
+        "e010"
+      ],
+      "organs": [
+        "liver",
+        "stomach",
+        "pancreas"
+      ],
+      "reason": "主动脉主干需保留系统连接；胃腔等重合应先标深度/遮挡候选。"
+    },
+    {
+      "edges": [
+        "e014",
+        "e015"
+      ],
+      "organs": [
+        "liver",
+        "heart"
+      ],
+      "reason": "中央静脉回流主干，不应因投影简单绕整器官重排。"
+    },
+    {
+      "edges": [
+        "e012",
+        "e013"
+      ],
+      "organs": [
+        "large_intestine",
+        "small_intestine",
+        "bladder"
+      ],
+      "reason": "主干贯通下肢，穿多条消化通道的二维投影不应触发generic reroute并切断腿部。"
+    },
+    {
+      "edges": [
+        "e022"
+      ],
+      "organs": [
+        "lung_r"
+      ],
+      "reason": "上肢回流与已认可头四肢结构，优先遮挡候选，不自动改几何。"
+    },
+    {
+      "edges": [
+        "e038",
+        "e039",
+        "e088",
+        "e089"
+      ],
+      "organs": [
+        "bladder"
+      ],
+      "reason": "保留髂部/下肢连接，与膀胱相交不代表膀胱接口。"
+    }
+  ],
+  "localForeignProjectionCandidates": [
+    {
+      "edge": "e125",
+      "organ": "stomach",
+      "approxOverlapSource": 46.8,
+      "reason": "胰供血不是胃供血，另与胃腔冲突，局部绕胃或深层候选。"
+    },
+    {
+      "edges": [
+        "e136",
+        "e139",
+        "e147"
+      ],
+      "organ": "pancreas",
+      "reason": "肾或躯干供血穿胰投影，不是胰入口。"
+    },
+    {
+      "edge": "e149",
+      "organ": "kidney_r",
+      "approxOverlapSource": 27.6,
+      "reason": "躯干回流穿右肾投影，无肾命名接口，绕边/遮挡候选。"
+    },
+    {
+      "edge": "e167",
+      "organ": "small_intestine",
+      "approxOverlapSource": 73.3,
+      "reason": "大肠近端回流穿小肠投影及消化通路，不是小肠回流，绕边或深层候选。"
+    }
+  ],
+  "ownedPassageConflictCandidates": [
+    {
+      "edge": "e131",
+      "organ": "small_intestine",
+      "passages": [
+        "food.small"
+      ]
+    },
+    {
+      "edge": "e133",
+      "organ": "large_intestine",
+      "passages": [
+        "food.ileocecal",
+        "food.colon"
+      ]
+    },
+    {
+      "edge": "e135",
+      "organ": "large_intestine",
+      "passages": [
+        "food.colon"
+      ]
+    },
+    {
+      "edge": "e143",
+      "organ": "bladder",
+      "passages": [
+        "urine.bl_right",
+        "urine.bl_left"
+      ]
+    },
+    {
+      "edge": "study.stomach.wall_service",
+      "organ": "stomach",
+      "passages": [
+        "food.stomach"
+      ]
+    }
+  ],
+  "draftEndpointException": {
+    "edge": "study.stomach.wall_service",
+    "point": [
+      566,
+      503
+    ],
+    "geometricallyMatchesNode": "stomach.a",
+    "assignedNode": "study.stomach.wall_service.outer",
+    "baselineAssignedCoordinate": [
+      611,
+      533
+    ],
+    "system": "capillary",
+    "kind": "artery",
+    "classification": "GEOMETRIC_CONTACT_PENDING_NAMED_CONNECTION",
+    "reason": "唯一用户修改的末端几何贴合stomach.a，但b仍为旧外侧命名节点；尚不能宣称闭环已接入，原草稿保留。"
+  },
+  "interfaceApproachForeignProjectionCandidates": [
+    {
+      "port": "lung_l.entry",
+      "edge": "e174",
+      "foreignOrgan": "heart",
+      "approxOverlapSource": 2.95,
+      "rule": "心肺功能接续/深度候选，不能视为可行走心肌走廊。"
+    },
+    {
+      "port": "lung_l.exit",
+      "edge": "e175",
+      "foreignOrgan": "heart",
+      "approxOverlapSource": 16.44,
+      "rule": "心肺功能接续/深度候选，不能视为可行走心肌走廊。"
+    },
+    {
+      "port": "colon_proximal.exit",
+      "edge": "e190",
+      "foreignOrgan": "small_intestine",
+      "approxApproachLengthSource": 4.3,
+      "approxOverlapSource": 1.75,
+      "rule": "大肠出口到大肠内部候选通道跨少量小肠投影，需局部人工核对。"
+    }
+  ],
+  "otherInterfaceApproaches": "其余受查冻结接口沿同一所属connector的中心线首次入器官方法未发现foreign器官approach重合；不代表buffer、骨骼、通路、细胞半径与全部相位净空通过。",
+  "limits": [
+    "脑轮廓为粗定位，边缘口不能据此强行移入或声称精细边界成立。",
+    "长度均为0.8弧线采样近似值；管腔buffer、连续扫掠、实际单位半径、骨关节遮挡和原生表现需单独验证。",
+    "所有深度/遮挡、绕行和局部接入仅为游戏投影设计候选，不是临床解剖事实。",
+    "既有13个中央器官命名环路连通不意味着用户修改草稿的每个新端点、细胞通道或图像遮挡均通过。",
+    "当前弧线是视觉草稿，碰撞和生产寻路未替换；几何修改后需重验共享数据与通行。"
+  ]
+}

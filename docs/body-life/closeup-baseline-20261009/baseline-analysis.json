@@ -1,0 +1,95 @@
+{
+  "nativeEvidence": false,
+  "baselineFrames": 45,
+  "centerFrames": 36,
+  "boundaryFrames": 9,
+  "catalogViews": 72,
+  "time": 1.92,
+  "logicalSize": [
+    640,
+    480
+  ],
+  "zooms": [
+    0.15,
+    0.4,
+    0.9
+  ],
+  "inspected": [
+    "heart-center-z0.4-t1.9200.png",
+    "lung_r-boundary-z0.9-t1.9200.png",
+    "stomach-boundary-z0.15-t1.9200.png"
+  ],
+  "findings": [
+    {
+      "source": "ReferenceArt.drawBase",
+      "finding": "The original continuous-tone image is fully replaced at zoom .15 by 48-colour traced regions. The regions encode pigment, not semantic organs."
+    },
+    {
+      "source": "ReferenceArt.drawBase nvgStrokeWidth(scale*1.05)",
+      "finding": "Same-colour region outlines expand over neighbouring colour boundaries.",
+      "strokeLogicalPixelsAtZooms": [
+        10.08,
+        26.88,
+        60.48
+      ]
+    },
+    {
+      "source": "trace_reference.py approxPolyDP(error=.55)",
+      "finding": "Source contour simplification error is magnified; midpoint quadratic smoothing further changes corners.",
+      "nominalSimplificationLogicalPixelsAtZooms": [
+        5.28,
+        14.08,
+        31.68
+      ]
+    },
+    {
+      "source": "ReferenceArt.details",
+      "finding": "Repeated procedural marks sit over the simplified colour fields. They add local texture but cannot restore missing original organ shading or semantic boundaries."
+    },
+    {
+      "source": "View framing",
+      "finding": "At fixed high zoom only a tissue crop fits in the viewport. A complete-organ overview is a separate view.",
+      "visibleSourceSizesAtZooms": [
+        [
+          66.6667,
+          50
+        ],
+        [
+          25,
+          18.75
+        ],
+        [
+          11.1111,
+          8.3333
+        ]
+      ]
+    }
+  ],
+  "visualAssessment": "Inspected baseline frames show broad flat-colour patches and repeated marks with weak anatomical identity. This is a rendering-quality finding, separate from whether animation frames advance.",
+  "sequenceDelivery": "render_body_closeups.py emits lossless PNG frames at explicit absolute visual times and per-view JSON for browser Canvas playback; no autoplay dependency.",
+  "runtimeSha256": {
+    "scripts/war/BodyLifeFlowAcceptance.lua": "c13d0464162e9977a779a7adec7410de8ac747501b71301cdfa822c444e5a311",
+    "scripts/war/BodyLifeFlowData.lua": "d2633631896be97ca0faf108eab06430b3bfdb894dc0a63466e43c16298db0c2",
+    "scripts/war/BodyLifeAcceptance.lua": "f6815ce8227c4bf27e325ee4aa30e1f989a31b859a3252e5d52f3d6c4dc7cfff",
+    "scripts/war/BodyLifeMasks.lua": "5e2e46c586aaf1ee5ee3f33a7aac96e0374a16b2463192dc9f19076c8103ef88",
+    "scripts/war/BodyLifeShading.lua": "c94c779bb6a1e2db7b313ff184d2a28eba2bc68ee6ceefb3c2b038f550d59ed6",
+    "scripts/war/BodyLife.lua": "a21e5c99d8f24ba997b9c875bee3cc9dd7892fdcbd6fe5bba61e9395fa13358d",
+    "scripts/war/BodyLifeLightingRegions.lua": "65823f35d8fbe95db2a56d70954a73822829ceb52a5f705c0163587456ee8218",
+    "scripts/war/BodyLifeMotion.lua": "8a97783cf7f42770ae63ba4f6937342843bd4c2d44bc1f332c69a8367d93da51",
+    "scripts/war/BodyLifeRegions.lua": "4ff4a2ddd96af6030d60e0d43afc15f500542ceff614d61fd469022f6b86cfab",
+    "scripts/war/BodyLifeFlow.lua": "d6e50b9a7d348aff611b976a3dd46db6e1f913eba1009769ea31b257803a903a",
+    "scripts/war/BodyLifeAssets.lua": "20922466a90d0c0bd817aa3568aa596647a7b357bd309b5bbe24592035d154f5",
+    "scripts/war/BodyLifeMotionAcceptance.lua": "975b646a1e35d4bbf41f6fa3a5dca4b076e809d2cb0d45e22684ef245cc1f343",
+    "scripts/war/ReferenceArt.lua": "28cdbfe6c572bd7ace77db9307b5595d6b536f1cb192e710d38b2b3190dc83e6",
+    "scripts/war/ReferenceTrace.lua": "79943529511e57e8a05b29a872f8dfb02ab682b2eea86f5bc23b7dabface607b",
+    "scripts/war/Contour.lua": "0f9a55ec38ab26aa4691cbb3032850ee181011209f67b06ab4006313894a389e",
+    "scripts/qa/render_body_closeups.py": "902a75043c071bdf9b4057bdc45e0e40968e337e28c62d04cb635e93fc727ac3",
+    "scripts/qa/body_life_backend.py": "011d26a7ff94456f4b6b1dcb9db50a452602308422a03448cecfdcb8f15b5e43"
+  },
+  "limitations": [
+    "No native GPU screenshot evidence was collected by this subagent.",
+    "Static baseline frames do not demonstrate visible animation.",
+    "Cairo edge filtering differs from NanoVG."
+  ],
+  "nextComparison": "After runtime freeze, render the same organ/anchor/zoom/time combinations to a different closeup directory; retain this baseline."
+}

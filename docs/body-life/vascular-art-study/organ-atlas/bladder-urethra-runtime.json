@@ -1,0 +1,1499 @@
+{
+  "schema": "bladder-urethra-production-regression/v1",
+  "nativeEvidence": false,
+  "physicsSubstituted": false,
+  "startHashes": {
+    "OrganBattlefield": "ba529bfa35a85833e1dc15f5a36bf2437b6a926e5299e36856593ec3b86d111c",
+    "OrganBattlefieldCore": "40c670d25c69281b0d5663c684dcb699b6871c806000fd2e8f013601218c6b8d",
+    "OrganBattlefieldData": "1c47073f1f465fb79bbe64b5868e78b07bac4d745342717c9ee87439ff436e7d",
+    "OrganTrial": "2448272435d422dc9c10f13c54382727b93da03b9bce177235f0d58d7eb803fd",
+    "OrganTraffic": "901ece0eb1bb68d22089d99c2b669c42270f34d66539f6daa1d1bb02786dab0f",
+    "Commands": "2956a387a4e0452740dee7384a0f9070c638199ae4706f510706a10f32c0cdc3",
+    "Path": "a41c95130db4c45a96956c09ad122432055bd3cc0588835ae9cae5a321283929",
+    "CellCollision": "a11dc894c9cf91347ff89e290301c0bb0889c520593d60cbe4c1bf122201d30f",
+    "Simulation": "fab3667006f1d45ff13aaaf408f559eba33614f120a23d1d8806efb3aa3d082a",
+    "World": "020f77336ced2aa0a4f7907aa79385c438eda38d76e2bc639d49ca864b70166c",
+    "Vessels": "1a09c89674c7308dd711c07fe1cbe7955f157d3148589e7b40b7173d0b2cc179",
+    "Save": "d55c19716b457cb3be7a0839e8179367194200c7bf01a3368a49724f64a72e05",
+    "bladderGeometry": "b3f8203d58953eb45c42c1c6dd95838a6c712e7a4892c04aadeaa114c595e233",
+    "atlasContract": "cb6141214c5cf4af3198aa8445ddb438db71c21f1c7e453240e5470feda6f340"
+  },
+  "endHashes": {
+    "OrganBattlefield": "ba529bfa35a85833e1dc15f5a36bf2437b6a926e5299e36856593ec3b86d111c",
+    "OrganBattlefieldCore": "40c670d25c69281b0d5663c684dcb699b6871c806000fd2e8f013601218c6b8d",
+    "OrganBattlefieldData": "1c47073f1f465fb79bbe64b5868e78b07bac4d745342717c9ee87439ff436e7d",
+    "OrganTrial": "2448272435d422dc9c10f13c54382727b93da03b9bce177235f0d58d7eb803fd",
+    "OrganTraffic": "901ece0eb1bb68d22089d99c2b669c42270f34d66539f6daa1d1bb02786dab0f",
+    "Commands": "2956a387a4e0452740dee7384a0f9070c638199ae4706f510706a10f32c0cdc3",
+    "Path": "a41c95130db4c45a96956c09ad122432055bd3cc0588835ae9cae5a321283929",
+    "CellCollision": "a11dc894c9cf91347ff89e290301c0bb0889c520593d60cbe4c1bf122201d30f",
+    "Simulation": "fab3667006f1d45ff13aaaf408f559eba33614f120a23d1d8806efb3aa3d082a",
+    "World": "020f77336ced2aa0a4f7907aa79385c438eda38d76e2bc639d49ca864b70166c",
+    "Vessels": "1a09c89674c7308dd711c07fe1cbe7955f157d3148589e7b40b7173d0b2cc179",
+    "Save": "d55c19716b457cb3be7a0839e8179367194200c7bf01a3368a49724f64a72e05",
+    "bladderGeometry": "b3f8203d58953eb45c42c1c6dd95838a6c712e7a4892c04aadeaa114c595e233",
+    "atlasContract": "cb6141214c5cf4af3198aa8445ddb438db71c21f1c7e453240e5470feda6f340"
+  },
+  "inputsStable": true,
+  "runtimeMatchesAtlas": true,
+  "frozenPassage": {
+    "a": "urine.neck",
+    "b": "urine.out",
+    "basis": "outlet_candidate",
+    "blocksTissuePlane": true,
+    "cellEntry": false,
+    "flow": "a_to_b",
+    "id": "urine.urethra",
+    "intersectsFineOutline": true,
+    "layer": 60,
+    "localOwnershipException": "bladder urine outlet only; frozen passage owners/points/width unchanged",
+    "localPolicy": "reserved lumen on independent non-cell plane",
+    "name": "尿道",
+    "owners": [],
+    "points": [
+      [
+        509,
+        783
+      ],
+      [
+        509,
+        798
+      ],
+      [
+        509,
+        811
+      ]
+    ],
+    "status": "candidate",
+    "system": "urine",
+    "width": 4
+  },
+  "control": {
+    "dataSha256": "a21c0bbfbc4852d793753734756123fa0a40e467217708ea8854ba3aa1d2bcbc",
+    "rows": [
+      {
+        "kind": "scout",
+        "source": [
+          509,
+          783
+        ],
+        "allowed": false
+      },
+      {
+        "kind": "scout",
+        "source": [
+          509,
+          784
+        ],
+        "allowed": false
+      },
+      {
+        "kind": "scout",
+        "source": [
+          509,
+          785
+        ],
+        "allowed": false
+      },
+      {
+        "kind": "scout",
+        "source": [
+          509,
+          786
+        ],
+        "allowed": false
+      },
+      {
+        "kind": "scout",
+        "source": [
+          509,
+          787
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "scout",
+        "source": [
+          509,
+          788
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "scout",
+        "source": [
+          509,
+          789
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "scout",
+        "source": [
+          509,
+          790
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "scout",
+        "source": [
+          509,
+          791
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "scout",
+        "source": [
+          509,
+          792
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "scout",
+        "source": [
+          509,
+          793
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "scout",
+        "source": [
+          509,
+          794
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "scout",
+        "source": [
+          509,
+          795
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "scout",
+        "source": [
+          509,
+          796
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "scout",
+        "source": [
+          509,
+          797
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "scout",
+        "source": [
+          509,
+          798
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "scout",
+        "source": [
+          509,
+          799
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "scout",
+        "source": [
+          509,
+          800
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "scout",
+        "source": [
+          509,
+          801
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "scout",
+        "source": [
+          509,
+          802
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "scout",
+        "source": [
+          509,
+          803
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "scout",
+        "source": [
+          509,
+          804
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "scout",
+        "source": [
+          509,
+          805
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "scout",
+        "source": [
+          509,
+          806
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "scout",
+        "source": [
+          509,
+          807
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "scout",
+        "source": [
+          509,
+          808
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "scout",
+        "source": [
+          509,
+          809
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "scout",
+        "source": [
+          509,
+          810
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "scout",
+        "source": [
+          509,
+          811
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "siege",
+        "source": [
+          509,
+          783
+        ],
+        "allowed": false
+      },
+      {
+        "kind": "siege",
+        "source": [
+          509,
+          784
+        ],
+        "allowed": false
+      },
+      {
+        "kind": "siege",
+        "source": [
+          509,
+          785
+        ],
+        "allowed": false
+      },
+      {
+        "kind": "siege",
+        "source": [
+          509,
+          786
+        ],
+        "allowed": false
+      },
+      {
+        "kind": "siege",
+        "source": [
+          509,
+          787
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "siege",
+        "source": [
+          509,
+          788
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "siege",
+        "source": [
+          509,
+          789
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "siege",
+        "source": [
+          509,
+          790
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "siege",
+        "source": [
+          509,
+          791
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "siege",
+        "source": [
+          509,
+          792
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "siege",
+        "source": [
+          509,
+          793
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "siege",
+        "source": [
+          509,
+          794
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "siege",
+        "source": [
+          509,
+          795
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "siege",
+        "source": [
+          509,
+          796
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "siege",
+        "source": [
+          509,
+          797
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "siege",
+        "source": [
+          509,
+          798
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "siege",
+        "source": [
+          509,
+          799
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "siege",
+        "source": [
+          509,
+          800
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "siege",
+        "source": [
+          509,
+          801
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "siege",
+        "source": [
+          509,
+          802
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "siege",
+        "source": [
+          509,
+          803
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "siege",
+        "source": [
+          509,
+          804
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "siege",
+        "source": [
+          509,
+          805
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "siege",
+        "source": [
+          509,
+          806
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "siege",
+        "source": [
+          509,
+          807
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "siege",
+        "source": [
+          509,
+          808
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "siege",
+        "source": [
+          509,
+          809
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "siege",
+        "source": [
+          509,
+          810
+        ],
+        "allowed": true
+      },
+      {
+        "kind": "siege",
+        "source": [
+          509,
+          811
+        ],
+        "allowed": true
+      }
+    ]
+  },
+  "rows": [
+    {
+      "probes": [
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            783
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.15031502470283403,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            784
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.15031502470283403,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            785
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.15031502470283403,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            786
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.15031502470283403,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            787
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.15031502470283403,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            788
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.15031502470283403,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            789
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.15031502470283403,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            790
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.15031502470283403,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            791
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.15031502470283403,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            792
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.15031502470283403,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            793
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.15031502470283403,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            794
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.15031502470283403,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            795
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.15031502470283403,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            796
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.15031502470283403,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            797
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.15031502470283403,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            798
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.15031502470283403,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            799
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.15031502470283403,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            800
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.15031502470283403,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            801
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.15031502470283403,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            802
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.15031502470283403,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            803
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.15031502470283403,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            804
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.15031502470283403,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            805
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.15031502470283403,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            806
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.15031502470283403,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            807
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.15031502470283403,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            808
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.15031502470283403,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            809
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.15031502470283403,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            810
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.15031502470283403,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            811
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.15031502470283403,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            506.890625,
+            793
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": false,
+          "diskUrethraOverlapArea": 0.029384665256824004,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            511.109375,
+            793
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": false,
+          "diskUrethraOverlapArea": 0.029384665256824004,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        }
+      ],
+      "collisionMove": {
+        "moved": 0.0,
+        "source": [
+          506.0,
+          793.0
+        ],
+        "targetSource": [
+          509,
+          793
+        ],
+        "lane": 0,
+        "rawFullDiskAllowed": true,
+        "urethraOverlapArea": 0.0,
+        "pass": true
+      },
+      "spawn": {
+        "lane": 0,
+        "x": 1012,
+        "y": 2098
+      },
+      "roundtrip": {
+        "completed": 2,
+        "endPosition": {
+          "lane": 0,
+          "x": 1069.3536621669086,
+          "y": 2058.219061360249
+        },
+        "cpuSeconds": 0.10107599999999994,
+        "spawnDrift": 2.2737367544323206e-13,
+        "start": {
+          "lane": 0,
+          "x": 1069.3536621669086,
+          "y": 2058.219061360249
+        },
+        "planner": {
+          "failures": 0,
+          "maxResumeSeconds": 0.00016800000000016801,
+          "requests": 2,
+          "yields": 0
+        },
+        "pass": true,
+        "goals": [
+          {
+            "pathFailed": false,
+            "distance": 0.0,
+            "lane": 197,
+            "orderRemaining": 0,
+            "accepted": true,
+            "targetLane": 197,
+            "elapsed": 11.799999999999974
+          },
+          {
+            "pathFailed": false,
+            "distance": 0.0,
+            "lane": 0,
+            "orderRemaining": 0,
+            "accepted": true,
+            "targetLane": 0,
+            "elapsed": 11.800000000000091
+          }
+        ],
+        "substeps": 468,
+        "savedOrganFlag": 1,
+        "rejectedSweeps": 0,
+        "savePositionError": 0.0
+      },
+      "kind": "scout",
+      "radiusSource": 0.21875,
+      "pass": true
+    },
+    {
+      "probes": [
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            783
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.8865518803901985,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            784
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.8865518803901985,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            785
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.8865518803901985,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            786
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.8865518803901985,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            787
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.8865518803901985,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            788
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.8865518803901985,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            789
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.8865518803901985,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            790
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.8865518803901985,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            791
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.8865518803901985,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            792
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.8865518803901985,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            793
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.8865518803901985,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            794
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.8865518803901985,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            795
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.8865518803901985,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            796
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.8865518803901985,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            797
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.8865518803901985,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            798
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.8865518803901985,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            799
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.8865518803901985,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            800
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.8865518803901985,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            801
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.8865518803901985,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            802
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.8865518803901985,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            803
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.8865518803901985,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            804
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.8865518803901985,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            805
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.8865518803901985,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            806
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.8865518803901985,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            807
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.8865518803901985,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            808
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.8865518803901985,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            809
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.8865518803901985,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            810
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.8865518803901985,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            509,
+            811
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": true,
+          "diskUrethraOverlapArea": 0.8865518803901985,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            506.734375,
+            793
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": false,
+          "diskUrethraOverlapArea": 0.17330955631066838,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        },
+        {
+          "pathClear": false,
+          "source": [
+            511.265625,
+            793
+          ],
+          "allowed": false,
+          "centerInFrozenOuter": true,
+          "centerInUrethra": false,
+          "diskUrethraOverlapArea": 0.17330955631066847,
+          "rawFullDiskAllowed": false,
+          "pass": true
+        }
+      ],
+      "collisionMove": {
+        "moved": 0.0,
+        "source": [
+          506.0,
+          793.0
+        ],
+        "targetSource": [
+          509,
+          793
+        ],
+        "lane": 0,
+        "rawFullDiskAllowed": true,
+        "urethraOverlapArea": 0.0,
+        "pass": true
+      },
+      "spawn": {
+        "lane": 0,
+        "x": 1012,
+        "y": 2098
+      },
+      "roundtrip": {
+        "completed": 2,
+        "endPosition": {
+          "lane": 0,
+          "x": 1069.353165757229,
+          "y": 2058.2177734990582
+        },
+        "cpuSeconds": 0.07804900000000004,
+        "spawnDrift": 2.2737367544323206e-13,
+        "start": {
+          "lane": 0,
+          "x": 1069.3536621669086,
+          "y": 2058.219061360249
+        },
+        "planner": {
+          "failures": 0,
+          "maxResumeSeconds": 0.0002629999999999022,
+          "requests": 4,
+          "yields": 0
+        },
+        "pass": true,
+        "goals": [
+          {
+            "pathFailed": false,
+            "distance": 0.0017679783827717632,
+            "lane": 197,
+            "orderRemaining": 0,
+            "accepted": true,
+            "targetLane": 197,
+            "elapsed": 32.50000000000019
+          },
+          {
+            "pathFailed": false,
+            "distance": 0.0013802206404480084,
+            "lane": 0,
+            "orderRemaining": 0,
+            "accepted": true,
+            "targetLane": 0,
+            "elapsed": 32.50000000000039
+          }
+        ],
+        "substeps": 1296,
+        "savedOrganFlag": 1,
+        "rejectedSweeps": 0,
+        "savePositionError": 0.0
+      },
+      "kind": "siege",
+      "radiusSource": 0.53125,
+      "pass": true
+    }
+  ],
+  "pass": true,
+  "limits": [
+    "Blood is an independent depth plane; these negatives explicitly test tissue lane 0.",
+    "No native frame or screen verification."
+  ]
+}

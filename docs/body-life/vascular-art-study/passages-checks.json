@@ -1,0 +1,219 @@
+{
+  "status": "GRAPH_CHECKS_PASS_DESIGN_REVIEW_REQUIRED",
+  "routeChecks": [
+    {
+      "id": "food.mouth→food.anal",
+      "expected": true,
+      "passed": true
+    },
+    {
+      "id": "air.upper→air.r",
+      "expected": true,
+      "passed": true
+    },
+    {
+      "id": "air.upper→air.l",
+      "expected": true,
+      "passed": true
+    },
+    {
+      "id": "urine.r→urine.out",
+      "expected": true,
+      "passed": true
+    },
+    {
+      "id": "urine.l→urine.out",
+      "expected": true,
+      "passed": true
+    },
+    {
+      "id": "food.mouth !→ air.r",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "id": "food.mouth !→ air.l",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "id": "food.mouth !→ urine.out",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "id": "air.upper !→ food.anal",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "id": "air.upper !→ urine.out",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "id": "urine.r !→ food.anal",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "id": "urine.r !→ air.r",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "id": "urine.r !→ air.l",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "id": "urine.l !→ food.anal",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "id": "urine.l !→ air.r",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "id": "urine.l !→ air.l",
+      "expected": false,
+      "passed": true
+    }
+  ],
+  "passageEdges": 16,
+  "organZones": 12,
+  "bloodCrossings": 84,
+  "bloodConnectionsAdded": 0,
+  "passageCrossings": [
+    {
+      "a": "food.esophagus",
+      "b": "air.left",
+      "point": [
+        536.607,
+        358.2996
+      ],
+      "connected": false,
+      "front": "air.left",
+      "unresolved": false
+    },
+    {
+      "a": "food.connector",
+      "b": "food.colon",
+      "point": [
+        530.7842,
+        632.6205
+      ],
+      "connected": false,
+      "front": "food.colon",
+      "unresolved": false
+    },
+    {
+      "a": "food.rectum",
+      "b": "urine.left",
+      "point": [
+        537.76,
+        742.56
+      ],
+      "connected": false,
+      "front": "urine.left",
+      "unresolved": false
+    }
+  ],
+  "selfRouteCrossings": [],
+  "portConflicts": [
+    {
+      "port": "lung_l.entry",
+      "region": "lung_l",
+      "passage": "food.esophagus",
+      "source": [
+        541.4487996080353,
+        374.0489955903969
+      ],
+      "clearance": -1.022,
+      "resolution": "separate_depth_proposed_runtime_unverified",
+      "blocking": false
+    },
+    {
+      "port": "lung_l.exit",
+      "region": "lung_l",
+      "passage": "food.esophagus",
+      "source": [
+        545.0,
+        414.0
+      ],
+      "clearance": 0.461,
+      "resolution": "separate_depth_proposed_runtime_unverified",
+      "blocking": false
+    },
+    {
+      "port": "kidney_r.exit",
+      "region": "kidney_r",
+      "passage": "urine.right",
+      "source": [
+        435.0945945945946,
+        617.9324324324324
+      ],
+      "clearance": -0.331,
+      "resolution": "separate_depth_proposed_runtime_unverified",
+      "blocking": false
+    },
+    {
+      "port": "kidney_l.exit",
+      "region": "kidney_l",
+      "passage": "urine.left",
+      "source": [
+        584.0,
+        619.0
+      ],
+      "clearance": 1.237,
+      "resolution": "separate_depth_proposed_runtime_unverified",
+      "blocking": false
+    },
+    {
+      "port": "bladder.entry",
+      "region": "bladder",
+      "passage": "food.rectum",
+      "source": [
+        536.3294117647059,
+        750.7176470588236
+      ],
+      "clearance": -1.485,
+      "resolution": "separate_depth_proposed_runtime_unverified",
+      "blocking": false
+    },
+    {
+      "port": "coronary.entry",
+      "region": "coronary",
+      "passage": "food.esophagus",
+      "source": [
+        541.7692307692307,
+        384.15384615384613
+      ],
+      "clearance": -1.224,
+      "resolution": "separate_depth_proposed_runtime_unverified",
+      "blocking": false
+    }
+  ],
+  "unresolvedEqualDepthCrossings": 0,
+  "samePlanePortConflicts": 0,
+  "stomachPilotUnchanged": true,
+  "sourceHashes": {
+    "network.json": "c2e5c51890098e8d162cb9db3cb8235ac77490a56d9aca2a211b44c26aabedfc",
+    "interface-contract.json": "86878d45e150353b439fb0ea8e12ad22649185ff143d5dff4a8465cea8fa8253",
+    "stomach-pilot.json": "2e84a68221f8c4e84774465e64bb70016ae48cf6bad42c65e2f1f7cc900ec321",
+    "stomach-food-union.json": "4016b762dd42b516f044d3da7c887a6f6ad95cba29db4c26a5d10222aa4a7038",
+    "occlusion-outlines.json": "c2e23829738e47fb10883974bdb3033f9f2e178592043085b4768fa5e8a73091",
+    "inspection-geometry.json": "2ae00ba2defb260f0ae73a78e47cd1faee30fc76586104d7f29e4e2a2fd59097",
+    "connectivity-evidence/report.json": "45da77a67f9f4c961badeba8735a0e27cd350a872e5904b54b953aea55553ca9"
+  },
+  "scriptSha256": "4a14c795db0a2077d4fa5f5e1786afed412d129b289699efb8451c879c48cd1b",
+  "nativeEvidence": false,
+  "gameplayMovementTested": false,
+  "limitations": [
+    "Centerline crossings only; lumen overlap and gate-radius tests are separate",
+    "Candidate graph connectivity is not actual cell movement",
+    "All coordinates preserve the reference; new missing structures are proposals"
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "recordedAt": "2026-10-09T04:57:03.885947+08:00",
+  "native": true,
+  "kind": "CPU submission and frame interval under menu",
+  "runtimeLog": "/Users/jitian/.taptap-maker/runtime/runtime-a3589e34-437d-4631-9dbc-17b5df962b05/logs/lua/lua-2026-10-09 04_55_34_756.log",
+  "samples": [
+    {
+      "view": "whole",
+      "enabled": false,
+      "samples": 74,
+      "cpuP50ms": 0.539,
+      "cpuP95ms": 1.131,
+      "frameP50ms": 17.8315,
+      "frameP95ms": 18.5215
+    },
+    {
+      "view": "whole",
+      "enabled": true,
+      "samples": 74,
+      "cpuP50ms": 3.839,
+      "cpuP95ms": 5.232,
+      "frameP50ms": 17.745,
+      "frameP95ms": 18.432
+    },
+    {
+      "view": "chest",
+      "enabled": false,
+      "samples": 74,
+      "cpuP50ms": 2.116,
+      "cpuP95ms": 3.012,
+      "frameP50ms": 17.8075,
+      "frameP95ms": 18.2955
+    },
+    {
+      "view": "chest",
+      "enabled": true,
+      "samples": 74,
+      "cpuP50ms": 3.822,
+      "cpuP95ms": 5.274,
+      "frameP50ms": 18.058,
+      "frameP95ms": 18.514
+    },
+    {
+      "view": "transition",
+      "enabled": false,
+      "samples": 74,
+      "cpuP50ms": 3.26,
+      "cpuP95ms": 4.432,
+      "frameP50ms": 17.654,
+      "frameP95ms": 18.372
+    },
+    {
+      "view": "transition",
+      "enabled": true,
+      "samples": 74,
+      "cpuP50ms": 4.329,
+      "cpuP95ms": 5.566,
+      "frameP50ms": 17.9615,
+      "frameP95ms": 18.4055
+    },
+    {
+      "view": "detail",
+      "enabled": false,
+      "samples": 74,
+      "cpuP50ms": 1.73,
+      "cpuP95ms": 2.347,
+      "frameP50ms": 17.927,
+      "frameP95ms": 18.514
+    },
+    {
+      "view": "detail",
+      "enabled": true,
+      "samples": 74,
+      "cpuP50ms": 2.231,
+      "cpuP95ms": 2.784,
+      "frameP50ms": 17.794,
+      "frameP95ms": 18.271
+    }
+  ],
+  "limitations": [
+    "Offline QA export ran concurrently and may inflate or destabilize CPU samples.",
+    "Frame times include 60FPS cap, menu, scheduler and benchmark.",
+    "Not native screenshots or actual battle GPU acceptance."
+  ],
+  "p95CpuDeltaByView": {
+    "whole": 4.101,
+    "chest": 2.262,
+    "transition": 1.1339999999999995,
+    "detail": 0.43699999999999983
+  },
+  "target2msConfirmed": false
+}

@@ -1,0 +1,41 @@
+{
+  "provider": "GPT built-in image_gen.imagegen",
+  "authorization": "User explicitly requested built-in GPT image generation instead of Maker extraction.",
+  "source": "assets/image/anatomy-reference/body-life/source-upload.jpg",
+  "coordinateSpace": [
+    1024,
+    1536
+  ],
+  "requests": [
+    {
+      "name": "tissue-v1",
+      "prompt": "游戏动画素材分层，精确抠图任务。编辑参考图，不要重新设计。输出必须保持原图1024x1536画布，所有器官在原图绝对坐标、大小、方向、边缘轮廓、原始颜色和手绘风格严格不变。只保留脑、左右肺、心脏、肝、胃、胰腺、双肾、大小肠、膀胱及四肢红色肌肉组织。其余皮肤、骨骼、外部红蓝大血管、气管、白背景全部去掉变为真正透明。肺内部蓝色树状支气管从本层去掉，用周围粉色肺组织自然补齐；心脏内黄色细血管保留。胃肠原来被血管遮挡的极小缺口用相邻组织补齐。不要重新排列成图标，不要把器官放大或居中，不要新增器官，不要描边、标记、文字、阴影背景、棋盘格。保留头到脚的全画布空白区域；这是与原图原坐标重合的透明软组织图层。",
+      "path": "assets/image/anatomy-reference/body-life/candidates/tissue-v1.png",
+      "transparent": true,
+      "decision": "rejected: invented muscles and diffuse alpha halo"
+    },
+    {
+      "name": "foreground-v1",
+      "prompt": "游戏动画素材分层，精确抠图任务。编辑输入参考图，不要重新设计。输出必须保持原始1024x1536完整画布，所有保留结构在原图绝对坐标、大小、形状、颜色严格不变。只提取固定前景：全部象牙色骨骼和关节、正中象牙色气管、两肺内部蓝色树状支气管、颈部/躯干/双臂双手/双腿双脚原本可见的红色动脉和蓝色静脉。其余皮肤、器官软组织、肌肉、白背景全部为真正透明。只保留原本看得到的部分，不补画被器官遮住的血管，不添加新线路。肺内蓝色支气管要原样保留，心脏上黄色冠状血管不保留。禁止位移、放大、重排、换色、文字、白底和棋盘格。保留从头到脚的全画布范围和原坐标，该透明图用于叠回原图并盖住后方软组织动画。",
+      "path": "assets/image/anatomy-reference/body-life/candidates/foreground-v1.png",
+      "transparent": true,
+      "decision": "rejected: invented hidden vessels, retained heart, diffuse halo"
+    },
+    {
+      "name": "organs-v2",
+      "prompt": "Extract existing artwork, do not redraw anatomy. Produce a registration-preserving GAME TEXTURE ATLAS on a 1024 by 1536 TRANSPARENT canvas, using the reference image. Keep ONLY these existing organs at their EXACT original x/y positions and sizes: brain, two pink lungs, red heart with yellow coronary details, brown liver, peach stomach, yellow pancreas, two red kidneys, pink large and small intestines, orange bladder. Everything else MUST have alpha exactly ZERO: no skin, no muscles, no skeleton, no extra tissue, no hands or feet, no connective tissue. NO GLOW, NO HALO, NO COLORED MIST, NO SHADOW outside organ silhouettes. Alpha must be fully opaque inside organs and cleanly transparent outside. Do not create a complete anatomical body. These are separate organ cutouts occupying their original positions in a mostly empty full-height canvas. Preserve the original pixels and the original cartoon painting, do not introduce new highlights or darker color grading. Remove only the blue bronchial trees painted on lungs and replace with matching plain pink lung tissue. Heart original silhouette remains x476..561 y337..458; left image lung x368..484 y289..484; right image lung x539..648 y289..488. Do not center the cutouts or enlarge them to fill the canvas. Keep full canvas blank below bladder y820. No labels.",
+      "path": "assets/image/anatomy-reference/body-life/candidates/organs-v2.png",
+      "transparent": true,
+      "decision": "rejected: shifted/enlarged organs and diffuse halo"
+    },
+    {
+      "name": "lung-inpaint",
+      "prompt": "Make ONE small inpainting edit to this original image. Remove the blue branching bronchial trees painted INSIDE the two pink lungs, and fill only those removed blue strokes with matching pink lung tissue. Preserve literally everything else in the original image unchanged: full white background, skin, body outline, all muscles, all bones, all blood vessels outside lungs, all organs, shading, colors, every organ silhouette, every coordinate, exact original 1024x1536 composition. No glow. No enhancement. No reinterpretation. Do not remove the blue vessels outside lungs. Do not change lung shapes or sizes. This is the original full-body illustration with only the two internal blue lung trees erased, for an animation texture beneath separately fixed bronchial foreground. Reproduce the reference exactly everywhere except the blue tree strokes within the pink lungs.",
+      "path": "assets/image/anatomy-reference/body-life/lung-tissue-inpaint.png",
+      "transparent": false,
+      "decision": "integrated only through original lung interior masks; all other pixels ignored"
+    }
+  ],
+  "processing": "Generated files copied byte-for-byte; no automatic bitmap crop, recolor, warp or refitting. Runtime clips the full-canvas lung inpaint through original numerical masks.",
+  "nativeVisualAcceptance": "UNDETERMINED"
+}

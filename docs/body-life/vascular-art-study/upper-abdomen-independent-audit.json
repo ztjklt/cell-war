@@ -1,0 +1,297 @@
+{
+  "schema": "upper-abdomen-independent-audit/v1",
+  "status": "PASS_REGISTERED_ART_PILOT_WITH_LIMITS",
+  "sourceBox": [
+    350,
+    450,
+    674,
+    666
+  ],
+  "inputHashes": {
+    "docs/body-life/vascular-art-study/upper-abdomen-inputs/registration.json": "7d334ced8b039e0cef416a3534b618fee036ffb841f4a4799acfb1c9fc6532cd",
+    "docs/body-life/vascular-art-study/final-reference-data.json": "3890744e2fcaf9e9907c85513e170e479f67b7fbb1fbf06385ac02bd80e8550c",
+    "docs/body-life/vascular-art-study/upper-abdomen-inputs/original.png": "7970958d846c584fac6f0a20790f9183fc7c7942228dfa93f8a4acd793d8b7ca",
+    "docs/body-life/vascular-art-study/upper-abdomen-inputs/visible-vessels.png": "e796ee96b372e7202c3adc82c2c213a3ad18ee6b8724e3674557ccfba984eb56",
+    "docs/body-life/vascular-art-study/upper-abdomen-inputs/depth-and-gates.png": "114ef9a22935dd07828c0e4749c3ef63f57e063faf812d79e80234a48b940be9",
+    "assets/image/anatomy-reference/vascular-study/upper-abdomen/gpt-beauty-v1.png": "a54b39335d1b419654bf694698b32cc83a5c8dc465519a4f3af486250ea11ce8",
+    "assets/image/anatomy-reference/vascular-study/upper-abdomen/gpt-vessel-material-v2.png": "4bbf9ccb671bb40c9da3980ab4018525ba7baaef73b5dcc938de59e0e30e8047",
+    "docs/body-life/vascular-art-study/upper-abdomen-generation.json": "5f67df264cc86299d6bd52a496453aae1b32d8b1029aefd96b9323e199652da0",
+    "scripts/qa/build_upper_abdomen_gpt_sample.py": "2e724bac718d8f256db3b3e7236ab450f60538710473c88d1152a2ccc71fb3a2",
+    "docs/body-life/vascular-art-study/upper-abdomen-output/registered-upper-abdomen.png": "781a967fcdacb251980a182874e27f3476863695fb2ac7f67e787bdb41affa74",
+    "docs/body-life/vascular-art-study/upper-abdomen-output/registered-full-body.png": "16e4c1a98f96aca5affbf710ed3e5611520e4226ca62e4f6556fd0c9509731c4",
+    "docs/body-life/vascular-art-study/upper-abdomen-output/registered-upper-abdomen.svg": "ffdfde8bb9fb35721a67d67a56ab146c66594706c4fb59262c4486936236cbf8",
+    "docs/body-life/vascular-art-study/upper-abdomen-output/registered-full-body.svg": "9d7e947a9bacceca134ad97c5ba2cbdc53eb374f34f2586725fda1ca30e8c98c"
+  },
+  "checks": {
+    "registered59EqualAllCenterlineIntersections": true,
+    "registered59EqualAllPipeIntersections": true,
+    "finalReferenceHashMatches": true,
+    "bothStomachGateCentersAndTissueTargetsWithinCrop": true,
+    "allLocalOcclusionOwnersResolve": true,
+    "sourceAndFinalAndRegistrationHashesMatch": true,
+    "outputHashesMatch": true,
+    "56RenderedEdgesEqualReviewedVisibleSet": true,
+    "82RenderedPiecesUseExactReviewedPathCoordinates": true,
+    "82MaterialUsesWithinReviewedLumenGroups": true,
+    "outsideCropIncludingBrainAndLimbsPixelIdentical": true,
+    "twoStomachExitAnchorsRemainOnReviewedCurve": true,
+    "shortGlimpsesMatchRuleAndEffectiveOuterOpacity": true,
+    "namedPortsExcludedFromShortGlimpseDimming": true,
+    "inner10pxBlendMasksPresent": true,
+    "twoGastricArtMarksAtFixedGatePositions": true,
+    "foodBileMetadataCorrected": true,
+    "finalStatusRecordedWithoutChangingArtwork": {
+      "metadataStatus": "REGISTERED_ART_PILOT",
+      "metadataStatusOnlyChangeVerified": true,
+      "allOtherInputHashesUnchanged": true,
+      "geometryOrOutputChanged": false
+    }
+  },
+  "localVisibleEdges": [
+    "e009",
+    "e010",
+    "e013",
+    "e014",
+    "e015",
+    "e116",
+    "e117",
+    "e118",
+    "e119",
+    "e120",
+    "e121",
+    "e122",
+    "e123",
+    "e124",
+    "e125",
+    "e126",
+    "e127",
+    "e129",
+    "e130",
+    "e132",
+    "e133",
+    "e134",
+    "e135",
+    "e136",
+    "e137",
+    "e138",
+    "e139",
+    "e140",
+    "e141",
+    "e147",
+    "e148",
+    "e149",
+    "e164",
+    "e165",
+    "e166",
+    "e167",
+    "e168",
+    "e169",
+    "e170",
+    "e171",
+    "e180",
+    "e181",
+    "e182",
+    "e183",
+    "e184",
+    "e185",
+    "e186",
+    "e187",
+    "e188",
+    "e189",
+    "e191",
+    "e193",
+    "e194",
+    "e195",
+    "e196",
+    "study.stomach.wall_service"
+  ],
+  "hiddenOnlyLocalEdges": [
+    "e011",
+    "e012",
+    "e128"
+  ],
+  "badOcclusionOwners": [],
+  "imageSizes": {
+    "docs/body-life/vascular-art-study/upper-abdomen-inputs/original.png": [
+      1296,
+      864
+    ],
+    "docs/body-life/vascular-art-study/upper-abdomen-inputs/visible-vessels.png": [
+      1296,
+      864
+    ],
+    "docs/body-life/vascular-art-study/upper-abdomen-inputs/depth-and-gates.png": [
+      1296,
+      864
+    ],
+    "assets/image/anatomy-reference/vascular-study/upper-abdomen/gpt-beauty-v1.png": [
+      1536,
+      1024
+    ],
+    "assets/image/anatomy-reference/vascular-study/upper-abdomen/gpt-vessel-material-v2.png": [
+      1536,
+      1024
+    ]
+  },
+  "materialAlpha": {
+    "mode": "RGBA",
+    "extrema": [
+      0,
+      254
+    ],
+    "nonzeroFraction": 0.15820821126302084
+  },
+  "boundaryWarnings": [
+    {
+      "port": "small_intestine.exit",
+      "source": [
+        549.22,
+        665.54
+      ],
+      "distanceToLowerCropEdgeSource": 0.46,
+      "rule": "保持跨裁切边界的既有回流延续，不画盲端。"
+    },
+    {
+      "port": "colon_distal.entry",
+      "source": [
+        559.0739726027397,
+        664.9972602739726
+      ],
+      "distanceToLowerCropEdgeSource": 1.0027397260274,
+      "rule": "接口与下边接近，不能用试样裁切制造假终点。"
+    },
+    {
+      "port": "colon_proximal.entry",
+      "source": [
+        460.09479553903344,
+        674.2732342007434
+      ],
+      "withinCrop": false,
+      "rule": "试样里不得自行添加图内替代口。"
+    }
+  ],
+  "visualPreflight": [
+    "已看v1：直接生成图存在器官变形、血管补线/漏线，限对照。",
+    "已看v2：只作为clip内低强度质感；独立颜色/壁色托底才能保证连续管腔。",
+    "必须按同一sourceBox与缩放映射；1536×1024材质和1296×864guide同1.5宽高比，不可直接按图像像素原点贴图。"
+  ],
+  "finalComposite": {
+    "path": "/Users/jitian/Documents/ChatGPT/细胞战争真/docs/body-life/vascular-art-study/upper-abdomen-output/registered-upper-abdomen.png",
+    "fullBodyPath": "/Users/jitian/Documents/ChatGPT/细胞战争真/docs/body-life/vascular-art-study/upper-abdomen-output/registered-full-body.png",
+    "layerAudit": "PASS_FIXED_PATHS_MASKS_OPACITY_BLEND_AND_GATE_MARKS",
+    "screenshotAudit": "BOTH_UPDATED_ACTUAL_OUTPUT_PNGS_VIEWED",
+    "browserOrNativeGameplayVisualAudit": "NOT_PERFORMED_BY_THIS_AGENT",
+    "generatedTextureOutsideFixedClip": "SVG_MASK_STRUCTURE_CHECK_PASSED",
+    "originalOrganPixelsPreserved": "ORIGINAL_RIM_GEOMETRY_USED_INTERIORS_REPAINTED",
+    "outsideCropChangedPixels": 0,
+    "renderedEdgeCount": 56,
+    "renderedPieceCount": 82,
+    "badRenderPaths": [],
+    "visualFixesEffective": true,
+    "shortGlimpseCount": 17,
+    "cropInnerBlendSourcePixels": 10
+  },
+  "limits": [
+    "实际查看新版上腹PNG和全身PNG；本次修复足够用于上腹裁切试贴与样式审阅，不代表全身最终成熟美术。",
+    "原器官边界按固定轮廓保留，内部允许GPT重绘，food/bile来自清理底图而非原像素认证。",
+    "crop外逐像素一致，内侧10px过渡用于试贴；没有证明所有新旧管腔在全身生产地图中无缝连续。",
+    "定稿named graph和遮挡区间未改变；降低短片段明度不新增分支，不把投影交叉变为连接。",
+    "胃壁两口只有美术短纹；未接入模拟，不能声称单位可从这些位置实际进出。",
+    "未安装生产地图，未运行原生RTS移动、混合细胞会车、点击、选框或性能验收。"
+  ],
+  "stomachGateReview": [
+    {
+      "id": "study.stomach.wall_service.inner",
+      "onReviewedWall": true,
+      "distanceToJunctionSource": 6.041675467624984,
+      "wholeExitFoodClearanceSource": 6.497146115199173,
+      "rasterApertureRendered": "SUBTLE_ART_MARK_ONLY",
+      "artOnly": true
+    },
+    {
+      "id": "study.stomach.wall_service.outer",
+      "onReviewedWall": true,
+      "distanceToJunctionSource": 58.600000000000044,
+      "wholeExitFoodClearanceSource": 5.422612817549606,
+      "rasterApertureRendered": "SUBTLE_ART_MARK_ONLY",
+      "artOnly": true
+    }
+  ],
+  "visualFindings": [
+    {
+      "status": "resolved_for_pilot",
+      "finding": "e010/e013蓝色方块及e149/e171强色点在新版实际PNG明显消退；17短片段改为12%深层提示，没有延长曲线或补假连接。"
+    },
+    {
+      "status": "resolved_for_pilot",
+      "finding": "裁切内侧10源像素过渡降低硬接缝，裁切外脑四肢及身体像素仍完全一致。"
+    },
+    {
+      "status": "resolved",
+      "finding": "food/bile描述已改为GPT清理底图，不再声称其原像素逐点保留。"
+    },
+    {
+      "status": "resolved_art_marker_only",
+      "finding": "两胃壁口新增与冻结gate对应的安静短纹，坐标与切向一致；只是美术标记，不是实际通行膜口。"
+    },
+    {
+      "status": "remaining_scope_limit",
+      "finding": "画面仍是固定坐标上腹部裁切试贴；不能由边界淡入淡出推断全身美术血管已完全无缝或运行时通行通过。"
+    }
+  ],
+  "previousVisualReview": {
+    "status": "PASS_REGISTERED_STRUCTURE_VISUAL_REFINEMENT_REQUIRED",
+    "findings": [
+      {
+        "severity": "refine_before_final_art_acceptance",
+        "edges": [
+          "e010",
+          "e013"
+        ],
+        "sourceLocations": [
+          [
+            516.16,
+            531.08
+          ],
+          [
+            477.29,
+            622.94
+          ]
+        ],
+        "finding": "实际图中短宽主干露出段读成孤立蓝色方块/断管；e010约4.11px长但7px宽，e013约5.75px长但7px宽。隐藏端渐隐尚不足以消除块感。",
+        "recommendedFix": "普通美术层将短于管径的非入口露出段显著降强度或采用柔和深层提示；技术层仍保留真实可见区间。不可延长血管穿过遮挡来补线。"
+      },
+      {
+        "severity": "refine_before_final_art_acceptance",
+        "edges": [
+          "e149",
+          "e171"
+        ],
+        "finding": "约0.33px和0.07px的可见段大于长度的管径容易变成孤立色点。",
+        "recommendedFix": "普通美术可抑制极短片段，保留技术层与定稿数据；不增加几何分支。"
+      },
+      {
+        "severity": "pilot_boundary_limit",
+        "finding": "严格裁切保持了外部像素，但不能据此证明新管腔像素与裁切外旧绘画无缝。底边附近e188只露0.46px，小肠回流和大肠接口延续须由全图参考或技术层说明。",
+        "recommendedFix": "试样明确显示裁切范围；正式美术需内侧过渡/共享接缝版本并检查原像素连接。不得把试样边界画成新的盲端。"
+      },
+      {
+        "severity": "metadata_accuracy",
+        "finding": "元数据composition描述source pigment-selected organ/food foreground，但original-food/original-bile只有defs，没有实际copy-back group。",
+        "recommendedFix": "描述改为GPT清理底图中的食物/胆道绘画与独立保护通路mask；不能声称其原像素保留。"
+      },
+      {
+        "severity": "art_only_gate_limit",
+        "finding": "胃壁两出口位于定稿曲线且避开胃腔，但普通PNG没有显式开口绘制。",
+        "recommendedFix": "技术层标出两口；不宣称已制作可通行的膜口或完成混合细胞验收。"
+      }
+    ],
+    "outputHashes": {
+      "docs/body-life/vascular-art-study/upper-abdomen-output/registered-upper-abdomen.png": "7c74d3fc11b18045fa5763b49516a8a90fc97d6e1821e07a6e13a0863f991c0d",
+      "docs/body-life/vascular-art-study/upper-abdomen-output/registered-full-body.png": "471cc69b95d2ffce176eeffa43f803d38e68589e515730cb01b1338c156419ab",
+      "docs/body-life/vascular-art-study/upper-abdomen-output/registered-upper-abdomen.svg": "dbbbc9e1f9b4edc9e3cee661d7996b10ff0d348657295915aec08229e20711b4",
+      "docs/body-life/vascular-art-study/upper-abdomen-output/registered-full-body.svg": "58da1721a5f25635f970ccc99d6c02f01e8691faa2e0ae652105e03542c1848f"
+    }
+  },
+  "recordStatus": "FINAL_LOCAL_ART_PILOT"
+}

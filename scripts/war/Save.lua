@@ -43,6 +43,19 @@ function Save.snapshot(s,withoutCheckpoint)
  local snap={version=D.VERSION,mapSize=D.width(s),mapWidth=D.width(s),mapHeight=D.height(s),indexStride=D.INDEX_STRIDE,legacyTerrain=s.legacyTerrain,terrainStyle=s.terrainStyle,seed=s.seed,rng=s.rng,time=s.time,tick=s.tick,nextId=s.nextId,entities={},resources={},factions={},generatedChunks={},spawnedChunks=U.copy(s.spawnedChunks),commands=U.copy(s.commands),tutorial=s.tutorial,outcome=s.outcome,lastDay=s.lastDay,delivered=s.delivered,farmed=s.farmed,trained=s.trained,selectedOnce=s.selectedOnce}
  snap.mode=s.campaign and "campaign" or "sandbox"
  snap.anatomyVersion=s.anatomyVersion or 1
+ if s.heartBattlefieldVersion==1 then snap.heartBattlefieldVersion=1;snap.heartEncounterVersion=s.heartEncounterVersion end
+ if s.fullbodyBattlefieldVersion==1 then
+  snap.fullbodyBattlefieldVersion=1;snap.organBattlefieldIds=U.copy(s.organBattlefieldIds)
+  snap.organTraffic=require('war.OrganTraffic').snapshot(s)
+ end
+ if s.organBattlefieldVersion==1 then
+  snap.organBattlefieldVersion=1;snap.organBattlefieldIds=U.copy(s.organBattlefieldIds)
+  snap.organTraffic=require('war.OrganTraffic').snapshot(s)
+ end
+ if s.gastricBattlefieldVersion==1 then
+  snap.gastricBattlefieldVersion=1
+  snap.gastricTraffic=require('war.GastricTraffic').snapshot(s)
+ end
  if s.campaign then
   snap.campaign={}
   for k,v in pairs(s.campaign) do if k~="checkpoint" then snap.campaign[k]=U.copy(v) end end
@@ -76,16 +89,16 @@ function Save.restore(snap,isCheckpoint,validateOnly)
  assert(style=="body" or style=="body-v4" or style=="body-v3" or style=="continent","组织地图数据损坏")
  assert((style=="body" and width==D.MAP and height==D.MAP_HEIGHT) or (style=="body-v4" and width==4096 and height==8192) or ((style=="body-v3" or style=="continent") and width==1024 and height==1024),"组织尺寸不匹配")
  local anatomyVersion=snap.version>=7 and snap.anatomyVersion or 1
- assert(anatomyVersion==1 or (anatomyVersion==2 or anatomyVersion==3 and snap.version>=8) and style=='body','人体解剖版本不支持')
+ assert(anatomyVersion==1 or (anatomyVersion==2 or anatomyVersion==3 and snap.version>=8 or anatomyVersion==4 and snap.version>=9) and style=='body','人体解剖版本不支持')
  local campaign=snap.version>=6 and snap.mode=="campaign"
  if campaign then
   assert(style=="body" and type(snap.campaign)=="table","战役数据损坏")
   local c=snap.campaign;local ev=c.event
-  assert(c.terrainVersion==nil or c.terrainVersion==2 or c.terrainVersion==3 and anatomyVersion==3,"战场版本不支持")
-  assert((anatomyVersion==3)==(c.terrainVersion==3),"人体与战场版本不匹配")
+  assert(c.terrainVersion==nil or c.terrainVersion==2 or c.terrainVersion==3 and anatomyVersion==3 or c.terrainVersion==4 and anatomyVersion==4,"战场版本不支持")
+  assert((anatomyVersion<3 and (c.terrainVersion==nil or c.terrainVersion==2) or anatomyVersion>=3 and c.terrainVersion==anatomyVersion),"人体与战场版本不匹配")
   local N=require("war.CampaignData").forState({campaign=c})
   assert(finite(c.stage) and c.stage%1==0 and c.stage>=1 and c.stage<=#N.stages+1 and type(c.completed)=="table" and type(c.unlocked)=="table" and type(c.rewards)=="table" and type(c.randomEnabled)=="boolean","战役进度损坏")
-  assert(type(ev)=="table" and ev.id==(c.terrainVersion==3 and "trachea" or "nasal") and (ev.status=="active" or ev.status=="failed" or ev.status=="completed") and (ev.phase=="defend" or ev.phase=="counterattack"),"事件状态损坏")
+  assert(type(ev)=="table" and ev.id==((c.terrainVersion==3 or c.terrainVersion==4) and "trachea" or "nasal") and (ev.status=="active" or ev.status=="failed" or ev.status=="completed") and (ev.phase=="defend" or ev.phase=="counterattack"),"事件状态损坏")
   numbers(ev,{"elapsed","wave","pendingViruses","spawnTimer","secure"},"入侵状态损坏")
   assert(ev.elapsed>=0 and ev.wave%1==0 and ev.wave>=0 and ev.wave<=#N.waves and ev.pendingViruses%1==0 and ev.pendingViruses>=0 and ev.pendingViruses<=24 and ev.secure>=0 and type(ev.zones)=="table" and #ev.zones==#N.zones,"入侵数据损坏")
   for i,z in ipairs(ev.zones) do
@@ -104,6 +117,23 @@ function Save.restore(snap,isCheckpoint,validateOnly)
   else assert(isCheckpoint,"事件检查点缺失") end
  end
  local s=W.generate(snap.seed,old or snap.legacyTerrain,style,campaign and "campaign" or "sandbox",anatomyVersion)
+ if snap.gastricBattlefieldVersion~=nil then
+  assert(snap.gastricBattlefieldVersion==1 and anatomyVersion==4 and not campaign,"胃部战场版本不支持")
+  require('war.GastricBattlefield').enable(s)
+ end
+ if snap.fullbodyBattlefieldVersion~=nil then
+  assert(snap.fullbodyBattlefieldVersion==1 and anatomyVersion==4 and not campaign and snap.organBattlefieldVersion==nil and snap.gastricBattlefieldVersion==nil and type(snap.organBattlefieldIds)=='table','全身地图版本不支持')
+  assert(require('war.FullBodyBattlefield').enable(s,snap.organBattlefieldIds))
+ end
+ if snap.organBattlefieldVersion~=nil then
+  assert(snap.organBattlefieldVersion==1 and anatomyVersion==4 and not campaign and type(snap.organBattlefieldIds)=='table','器官战场版本不支持')
+  assert(require('war.OrganBattlefield').enable(s,snap.organBattlefieldIds))
+ end
+ if snap.heartBattlefieldVersion~=nil then
+  assert(snap.heartBattlefieldVersion==1 and (s.organBattlefieldVersion==1 or s.fullbodyBattlefieldVersion==1),'心脏战场版本不支持')
+  s.heartEncounterVersion=snap.heartEncounterVersion==1 and 1 or nil
+ end
+ local vesselCount=W.hasVessels(s)and #((s.organBattlefieldVersion==1 or s.fullbodyBattlefieldVersion==1)and require('war.OrganBattlefield').net(s)or W.vessels(s)).edges or 0
  if campaign then s.campaign=U.copy(snap.campaign) end
  for _,key in ipairs({"rng","time","tick","nextId","commands","tutorial","outcome","lastDay","delivered","farmed","trained","selectedOnce"}) do if snap[key]~=nil then s[key]=U.copy(snap[key]) end end
  convertOrders(s.commands,stride)
@@ -126,9 +156,12 @@ function Save.restore(snap,isCheckpoint,validateOnly)
   for _,q in ipairs(e.queue) do assert(type(q)=="table" and ((q.unit and D.units[q.unit]) or (q.tech and D.tech[q.tech])) and finite(q.remaining) and finite(q.total) and type(q.cost)=="table","生产队列损坏") end
   if campaign then
    assert(e.category=="unit" and require("war.Campaign").allowed(s,e.x,e.y),"单位位于未开放组织")
-   if s.campaign.terrainVersion==2 or s.campaign.terrainVersion==3 then assert(W.land(s,math.floor(e.x),math.floor(e.y)) and e.vesselLane<=#W.vessels(s).edges,"单位位于战场障碍或未知血管") end
+   if s.campaign.terrainVersion==2 or s.campaign.terrainVersion==3 or s.campaign.terrainVersion==4 then assert(W.land(s,math.floor(e.x),math.floor(e.y)) and e.vesselLane<=#W.vessels(s).edges,"单位位于战场障碍或未知血管") end
   end
-  e=U.copy(e);e.path={};e.longRoute=nil;e.pathGoal=nil;e.pathResolved=nil;e.routeEnd=nil;e.pathPending=false;e.pathIndex=1;e.pathFailed=false;convertOrders(e.orders,stride);if previous then e.vesselLane=0 else assert(finite(e.vesselLane) and e.vesselLane%1==0 and e.vesselLane>=0 and e.vesselLane<=(W.hasVessels(s) and #W.vessels(s).edges or 0),"血管通路状态损坏") end;s.entities[id]=e
+  e=U.copy(e);e.path={};e.longRoute=nil;e.pathGoal=nil;e.pathResolved=nil;e.routeEnd=nil;e.pathPending=false;e.pathIndex=1;e.pathFailed=false;convertOrders(e.orders,stride);if previous then e.vesselLane=0 else assert(finite(e.vesselLane) and e.vesselLane%1==0 and e.vesselLane>=0 and e.vesselLane<=vesselCount,"血管通路状态损坏") end;s.entities[id]=e
+ end
+ if snap.heartBattlefieldVersion==nil and (s.organBattlefieldVersion==1 or s.fullbodyBattlefieldVersion==1)then
+  for _,e in pairs(s.entities)do require('war.HeartBattlefield').migrateEntity(s,e)end
  end
  for k,r in pairs(snap.resources) do
   local key=tonumber(k);assert(key and key%1==0 and key>=1 and key<=stride*(old and 192 or height) and type(r)=="table" and D.names[r.kind],"资源数据损坏")
@@ -141,7 +174,10 @@ function Save.restore(snap,isCheckpoint,validateOnly)
   for _,batch in ipairs(f.food) do assert(type(batch)=="table" and finite(batch.amount) and batch.amount>=0 and finite(batch.born),"食物批次损坏") end
   f.seen=unpackSeen(f.seen,old,stride,width,height);f.visible={};f.mapSeen=nil;f.name=campaign and require("war.CampaignData").forState(s).starts[i].name or D.factions[i].name;s.factions[i]=f
  end
- s.effects={};s.message=old and "旧版胞群已恢复原地图，单位已成为细胞" or "存档已恢复";s.messageTime=8;if not validateOnly then P.reset() end;W.rebuild(s);require("war.CellCollision").resolve(s);W.rebuild(s);W.fog(s);return s
+ s.effects={};s.message=old and "旧版胞群已恢复原地图，单位已成为细胞" or "存档已恢复";s.messageTime=8;if not validateOnly then P.reset() end;W.rebuild(s);require("war.CellCollision").resolve(s);W.rebuild(s);W.fog(s)
+ if s.gastricBattlefieldVersion==1 and snap.gastricTraffic~=nil then require('war.GastricTraffic').restore(s,snap.gastricTraffic) end
+ if (s.organBattlefieldVersion==1 or s.fullbodyBattlefieldVersion==1) and snap.organTraffic~=nil then require('war.OrganTraffic').restore(s,snap.organTraffic) end
+ return s
 end
 function Save.write(s,slot,snapshotOverride)
  if Save.busy then U.message(s,"正在存档，请稍候");return end

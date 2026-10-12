@@ -1,5 +1,5 @@
 -- All tuning lives here; simulation uses seconds and map cells.
-local D = { VERSION=8, MAP=2048, MAP_HEIGHT=4096, INDEX_STRIDE=4096, WORLD_SCALE=.5, CHUNK=32, MAP_BIN=16, STEP=0.1, DAY=360, SEASON_DAYS=8, MAX_POP=40 }
+local D = { VERSION=9, MAP=2048, MAP_HEIGHT=4096, INDEX_STRIDE=4096, WORLD_SCALE=.5, CHUNK=32, MAP_BIN=16, STEP=0.1, DAY=360, SEASON_DAYS=8, MAX_POP=40 }
 D.resources={"wood","stone","flint","fiber","metal","food","fuel","relic"}
 D.names={wood="蛋白质",stone="钙质",flint="盐晶",fiber="胶原",metal="铁质",food="葡萄糖",fuel="脂质",relic="基因片段"}
 D.seasons={"平衡","低代谢","复苏","高代谢"}

@@ -1,10 +1,13 @@
 -- Two-scale incremental A*: 16-cell terrain routes, then local building-aware paths.
 local D,U,W=require("war.Data"),require("war.Util"),require("war.World")
 local Vessels=require("war.Vessels")
-local P={jobs={},cursor=1};local directions={{1,0},{0,1},{-1,0},{0,-1},{1,1},{-1,1},{1,-1},{-1,-1}}
+local P={jobs={},gastricJobs={},cursor=1};local directions={{1,0},{0,1},{-1,0},{0,-1},{1,1},{-1,1},{1,-1},{-1,-1}}
 local function push(h,item) h[#h+1]=item;local i=#h;while i>1 do local p=math.floor(i/2);if h[p].f<=item.f then break end h[i]=h[p];i=p end h[i]=item end
 local function pop(h) local root=h[1];local last=table.remove(h);if #h>0 then local i=1;while i*2<=#h do local c=i*2;if c+1<=#h and h[c+1].f<h[c].f then c=c+1 end;if last.f<=h[c].f then break end h[i]=h[c];i=c end h[i]=last end return root end
-function P.reset() P.jobs={};P.cursor=1 end
+function P.reset()
+ for _,j in ipairs(P.gastricJobs) do require('war.OrganBattlefield').cancelRoute(j.work) end
+ P.jobs={};P.gastricJobs={};P.cursor=1
+end
 -- Supercover segment: crossing diagonally requires both adjacent cells clear.
 -- A -> B is a swept point; corners and narrow gaps must never be cut.
 ---@return boolean, table<number,boolean>
@@ -26,7 +29,28 @@ local function trace(s,x,y,tx,ty,f,lane,occupancy)
  end
  return true,states
 end
-function P.clear(s,x,y,tx,ty,f,lane,desiredLane)
+function P.clear(s,x,y,tx,ty,f,lane,desiredLane,entity)
+ local G=require('war.OrganBattlefield')
+ if G.enabled(s) then
+  local e=entity or {kind='siege',faction=f,vesselLane=lane}
+  local ok,nextLane,transit=G.sweep(s,e,x,y,tx,ty,lane,desiredLane)
+  if not ok then return false end
+  -- The authored local geometry replaces coarse reference-image walls.
+  -- Buildings and campaign restrictions still block the entire moving disk.
+  local r=G.radius(e)*2;local count=math.max(1,math.ceil(math.max(math.abs(tx-x),math.abs(ty-y))*4))
+  for i=0,count do
+   local px,py=x+(tx-x)*i/count,y+(ty-y)*i/count
+   if not require('war.Campaign').allowed(s,px,py) then return false end
+   for yy=math.floor(py-r),math.floor(py+r) do for xx=math.floor(px-r),math.floor(px+r) do
+    local id=s.occupancy and s.occupancy[U.key(xx,yy)];local b=id and s.entities[id]
+    if b and not (b.kind=='gate' and b.faction==f) then
+     local dx=math.max(xx-px,0,px-xx-1);local dy=math.max(yy-py,0,py-yy-1)
+     if dx*dx+dy*dy<r*r then return false end
+    end
+   end end
+  end
+  return true,nextLane,transit
+ end
  local ok,states=trace(s,x,y,tx,ty,f,lane,true);if not ok then return false end
  if desiredLane~=nil then if states[desiredLane] then return true,desiredLane else return false end end
  if states[lane or 0] then return true,lane or 0 end
@@ -74,6 +98,15 @@ local function job(s,e,sx,sy,gx,gy,phase,limit,routeIndex,goalLane)
  P.jobs[#P.jobs+1]={id=e.id,token=e.orderToken,sx=sx,sy=sy,gx=gx,gy=gy,phase=phase,limit=limit,routeIndex=routeIndex,goalLane=goalLane,requestX=e.pathGoal.x,requestY=e.pathGoal.y,open={{k=k,x=sx,y=sy,lane=lane,g=0,f=((sx-gx)^2+(sy-gy)^2)^.5}},g={[k]=0},parent={},points={[k]={x=sx+.5,y=sy+.5,lane=lane}},closed={},visits=0}
 end
 function P.request(s,e,x,y,forceFine)
+ local G=require('war.OrganBattlefield')
+ if G.enabled(s) then
+  if e.pathPending then return end
+  e.pathGoal={x=x,y=y};e.pathPending=true;e.longRoute=nil;e.pathIndex=1;e.path={};e.pathFailed=false
+  local o=e.orders and e.orders[1]
+  P.gastricJobs[#P.gastricJobs+1]={id=e.id,token=e.orderToken,work=G.beginRoute(s,e,x,y,o and o.lane)}
+  e.pathResolved={x=x,y=y,adjusted=false}
+  return
+ end
  if s.campaign and not require("war.Campaign").allowed(s,x,y) then e.path={};e.pathPending=false;e.pathFailed=true;U.message(s,"这片组织尚未开放",e.faction);return end
  if e.pathPending then return end
  if s.campaign and s.campaign.terrainVersion==2 then forceFine=true end
@@ -108,6 +141,21 @@ function P.request(s,e,x,y,forceFine)
  job(s,e,math.floor(e.x),math.floor(e.y),gx,gy,"fine",forceFine and 60000 or 24000)
 end
 function P.update(s,budget,seconds)
+ if require('war.OrganBattlefield').enabled(s) then
+  local G=require('war.OrganBattlefield');local deadline=os.clock()+(seconds or .003)
+  while #P.gastricJobs>0 and os.clock()<deadline do
+   local j=table.remove(P.gastricJobs,1);local e=s.entities[j.id]
+   if not U.alive(e) or e.orderToken~=j.token then G.cancelRoute(j.work)
+   else
+    local done,route,why=G.resumeRoute(j.work,math.max(.0001,deadline-os.clock()))
+    if done then
+     e.pathPending=false;e.path=route or {};e.pathIndex=1;e.pathFailed=not route;e.gastricRouteReason=why
+     if not route then U.message(s,'此处不能通行，请选择组织地面或血管通道',e.faction) end
+    else P.gastricJobs[#P.gastricJobs+1]=j end
+   end
+  end
+  return
+ end
  -- The runtime yields between expansions; tests may omit the time slice for deterministic completion.
  local deadline=seconds and os.clock()+seconds
  local expansions=0

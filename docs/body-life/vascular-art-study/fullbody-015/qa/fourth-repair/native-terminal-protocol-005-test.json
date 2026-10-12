@@ -1,0 +1,430 @@
+{
+  "schema": "fullbody-native-terminal-protocol-test/v2",
+  "batch": "005",
+  "status": "PASS",
+  "passed": 102,
+  "total": 102,
+  "checks": [
+    {
+      "name": "collector arm without completed render cannot start setup",
+      "pass": true
+    },
+    {
+      "name": "collector arm and only one ready render cannot start setup",
+      "pass": true
+    },
+    {
+      "name": "collector arm and two ready renders allow paused setup",
+      "pass": true
+    },
+    {
+      "name": "driver stays paused in ready without collector arm",
+      "pass": true
+    },
+    {
+      "name": "wrong pre-record arm cannot start: schema",
+      "pass": true
+    },
+    {
+      "name": "wrong pre-record arm cannot start: stateRunId",
+      "pass": true
+    },
+    {
+      "name": "wrong pre-record arm cannot start: index",
+      "pass": true
+    },
+    {
+      "name": "wrong pre-record arm cannot start: manifestSha256",
+      "pass": true
+    },
+    {
+      "name": "wrong pre-record arm cannot start: nonce",
+      "pass": true
+    },
+    {
+      "name": "wrong pre-record arm cannot start: nonce",
+      "pass": true
+    },
+    {
+      "name": "wrong pre-record arm cannot start: ownerPid",
+      "pass": true
+    },
+    {
+      "name": "exact collector run/index/manifest arms setup before movement",
+      "pass": true
+    },
+    {
+      "name": "case1: first arrival waits for terminal renders",
+      "pass": true
+    },
+    {
+      "name": "case1: one completed render is insufficient",
+      "pass": true
+    },
+    {
+      "name": "case1: second completed render becomes terminal-ready",
+      "pass": true
+    },
+    {
+      "name": "case1: actual final QA positions validate all helper goals",
+      "pass": true
+    },
+    {
+      "name": "case1: engine mock does not recognize original absolute workspace path",
+      "pass": true
+    },
+    {
+      "name": "case1: wrong ACK stateRunId cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case1: wrong ACK index cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case1: wrong ACK terminal cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case1: wrong ACK pngSha256 cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case1: wrong ACK pngPath cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case1: wrong ACK pngRuntimePath cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case1: wrong ACK pngRuntimePath cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case1: wrong ACK pngRuntimePath cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case1: wrong ACK captureNonce cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case1: wrong ACK ownerPid cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case1: wrong ACK runtimeMirrorSha256 cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case1: absent virtual mirror cannot advance even with matching runtime path",
+      "pass": true
+    },
+    {
+      "name": "case1: paused terminal preserves simulation/entities/commands",
+      "pass": true
+    },
+    {
+      "name": "case1: driver recorded collector arm before record",
+      "pass": true
+    },
+    {
+      "name": "case1: exact PNG acknowledgement persisted before advance",
+      "pass": true
+    },
+    {
+      "name": "case1: only acknowledged case advances",
+      "pass": true
+    },
+    {
+      "name": "case2: first arrival waits for terminal renders",
+      "pass": true
+    },
+    {
+      "name": "case2: one completed render is insufficient",
+      "pass": true
+    },
+    {
+      "name": "case2: second completed render becomes terminal-ready",
+      "pass": true
+    },
+    {
+      "name": "case2: actual final QA positions validate all helper goals",
+      "pass": true
+    },
+    {
+      "name": "case2: engine mock does not recognize original absolute workspace path",
+      "pass": true
+    },
+    {
+      "name": "case2: wrong ACK stateRunId cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case2: wrong ACK index cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case2: wrong ACK terminal cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case2: wrong ACK pngSha256 cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case2: wrong ACK pngPath cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case2: wrong ACK pngRuntimePath cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case2: wrong ACK pngRuntimePath cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case2: wrong ACK pngRuntimePath cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case2: wrong ACK captureNonce cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case2: wrong ACK ownerPid cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case2: wrong ACK runtimeMirrorSha256 cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case2: absent virtual mirror cannot advance even with matching runtime path",
+      "pass": true
+    },
+    {
+      "name": "case2: paused terminal preserves simulation/entities/commands",
+      "pass": true
+    },
+    {
+      "name": "case2: driver recorded collector arm before record",
+      "pass": true
+    },
+    {
+      "name": "case2: exact PNG acknowledgement persisted before advance",
+      "pass": true
+    },
+    {
+      "name": "case2: only acknowledged case advances",
+      "pass": true
+    },
+    {
+      "name": "case3: first arrival waits for terminal renders",
+      "pass": true
+    },
+    {
+      "name": "case3: one completed render is insufficient",
+      "pass": true
+    },
+    {
+      "name": "case3: second completed render becomes terminal-ready",
+      "pass": true
+    },
+    {
+      "name": "case3: actual final QA positions validate all helper goals",
+      "pass": true
+    },
+    {
+      "name": "case3: engine mock does not recognize original absolute workspace path",
+      "pass": true
+    },
+    {
+      "name": "case3: wrong ACK stateRunId cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case3: wrong ACK index cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case3: wrong ACK terminal cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case3: wrong ACK pngSha256 cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case3: wrong ACK pngPath cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case3: wrong ACK pngRuntimePath cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case3: wrong ACK pngRuntimePath cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case3: wrong ACK pngRuntimePath cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case3: wrong ACK captureNonce cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case3: wrong ACK ownerPid cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case3: wrong ACK runtimeMirrorSha256 cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case3: absent virtual mirror cannot advance even with matching runtime path",
+      "pass": true
+    },
+    {
+      "name": "case3: paused terminal preserves simulation/entities/commands",
+      "pass": true
+    },
+    {
+      "name": "case3: driver recorded collector arm before record",
+      "pass": true
+    },
+    {
+      "name": "case3: exact PNG acknowledgement persisted before advance",
+      "pass": true
+    },
+    {
+      "name": "case3: only acknowledged case advances",
+      "pass": true
+    },
+    {
+      "name": "case4: first arrival waits for terminal renders",
+      "pass": true
+    },
+    {
+      "name": "case4: one completed render is insufficient",
+      "pass": true
+    },
+    {
+      "name": "case4: second completed render becomes terminal-ready",
+      "pass": true
+    },
+    {
+      "name": "case4: actual final QA positions validate all helper goals",
+      "pass": true
+    },
+    {
+      "name": "case4: engine mock does not recognize original absolute workspace path",
+      "pass": true
+    },
+    {
+      "name": "case4: wrong ACK stateRunId cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case4: wrong ACK index cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case4: wrong ACK terminal cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case4: wrong ACK pngSha256 cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case4: wrong ACK pngPath cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case4: wrong ACK pngRuntimePath cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case4: wrong ACK pngRuntimePath cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case4: wrong ACK pngRuntimePath cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case4: wrong ACK captureNonce cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case4: wrong ACK ownerPid cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case4: wrong ACK runtimeMirrorSha256 cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case4: absent virtual mirror cannot advance even with matching runtime path",
+      "pass": true
+    },
+    {
+      "name": "case4: paused terminal preserves simulation/entities/commands",
+      "pass": true
+    },
+    {
+      "name": "case4: driver recorded collector arm before record",
+      "pass": true
+    },
+    {
+      "name": "case4: exact PNG acknowledgement persisted before advance",
+      "pass": true
+    },
+    {
+      "name": "case4: only acknowledged case advances",
+      "pass": true
+    },
+    {
+      "name": "all four actual QA configurations finish only with four terminal ACKs",
+      "pass": true
+    },
+    {
+      "name": "normal speed is retained",
+      "pass": true
+    },
+    {
+      "name": "Motion.record and event subscriptions restored on finish",
+      "pass": true
+    },
+    {
+      "name": "missing terminal ACK fails explicitly after bounded wait",
+      "pass": true
+    },
+    {
+      "name": "timeout restores Motion.record/subscriptions",
+      "pass": true
+    },
+    {
+      "name": "64 characters without hexadecimal content do not count as PNG SHA",
+      "pass": true
+    }
+  ],
+  "inputHashes": {
+    "scripts/qa/check_fullbody_native_terminal_protocol_005.py": "9ac90bcf5795012fa086327f30de77d8ca4fc227ba40edf3931d7c254f4748c8",
+    ".tmp/fullbody-015/capture-movement-005.py": "8af876e46f0d3198b1edf8d53bfbb2f4771a10c8639ed53cf7cfd6086571b756",
+    "scripts/qa/FullBodyMapNativeMovement.lua": "8458bdc84383d93b4d6b02bfaa06670d4f06405837aa8478b96347570c163ee2",
+    "scripts/qa/FullBodyMapNativeMovementData.lua": "d5082b890a90796d0fee40ea12783a6c25d2d2e4bc498a76c0648e2433606f08"
+  },
+  "changedDuringChecks": [],
+  "nativeEvidence": false,
+  "scope": "Actual QA Lua driver and four actual configs with mocked event/File/resource/motion engine; strict virtual storage PNG path plus collector-arming protocol.",
+  "limits": [
+    "No actual screenshots, native UI, preview status/refresh, production path planning or GPU resources were used.",
+    "Four final real PNGs plus current material bindings must still be captured and independently viewed after candidate freeze."
+  ]
+}

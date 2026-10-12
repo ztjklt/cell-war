@@ -1,0 +1,43 @@
+{
+  "nativeEvidence": false,
+  "passed": 8,
+  "total": 8,
+  "results": [
+    {
+      "name": "RGBA alpha multiplies global alpha, saved state restores alpha",
+      "pass": true
+    },
+    {
+      "name": "Multiple image handles, decoded image reuse, tint alpha and deletion",
+      "pass": true
+    },
+    {
+      "name": "Affine translation/shear use logical coordinates at DPR 1/2/3",
+      "pass": true
+    },
+    {
+      "name": "Nested mask holes stay empty and RGBAf retains low-amplitude alpha",
+      "pass": true
+    },
+    {
+      "name": "World/overview browsing leaves Save snapshot, RNG, visibility and projection unchanged",
+      "pass": true
+    },
+    {
+      "name": "Paused visual draws preserve simulation; world/map phase agrees at 1x/2x",
+      "pass": true
+    },
+    {
+      "name": "Anatomy v3 retains legacy renderer and never requests new resources",
+      "pass": true
+    },
+    {
+      "name": "Repeated map views do not grow live image handles",
+      "pass": true
+    }
+  ],
+  "limitations": [
+    "Does not prove native seams, frame time, UI pause wiring or scene readability.",
+    "Cairo edge coverage and image filtering differ from NanoVG."
+  ]
+}

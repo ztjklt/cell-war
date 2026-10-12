@@ -1,0 +1,1226 @@
+{
+  "schema": "organ-atlas-palette-audit/v3",
+  "thresholds": {
+    "hueDegreesMin": 70,
+    "hueDegreesMax": 202,
+    "saturationMin": 0.09803921568627451,
+    "valueMin": 40,
+    "rgbChromaMin": 12,
+    "alphaWeightedChromaMin": 8,
+    "antialiasNoisePixelBudget": 8
+  },
+  "manifestSha256": "ddbfed8fe3d814b8041b50d4f39640f1b8af6013b5feb5bf3b927d2a67286fce",
+  "scope": "Every alpha-visible raw and final compiled color, including blood vessels, overlaps and protected regions; no spatial exclusions.",
+  "greenAllowedOrgans": [
+    "liver",
+    "stomach"
+  ],
+  "requiredRestrictedOrganCount": 10,
+  "restrictedCoverageComplete": true,
+  "baselineDir": "docs/body-life/vascular-art-study/organ-atlas/revision-v2/palette-correction/before/art",
+  "organs": [
+    {
+      "organId": "liver",
+      "policy": "GREEN_ALLOWED",
+      "raw": {
+        "path": "assets/image/anatomy-reference/vascular-study/organ-atlas/liver/gpt-terrain-v2.png",
+        "sha256": "c8e9c198c20dbee49246fd4f7903e2039d88685c38d1164af9f4372da4cee97d",
+        "visiblePixels": 743744,
+        "excludedBloodPixels": 0,
+        "greenHuePixels": 0,
+        "greenHueFraction": 0.0,
+        "candidateBoundingBoxXY": null,
+        "dominantCandidateRGB": [],
+        "greenAllowed": true,
+        "status": "ALLOWED_GREEN_EXCEPTION"
+      },
+      "compiled": {
+        "path": "docs/body-life/vascular-art-study/organ-atlas/art/liver/battlefield.png",
+        "sha256": "64fececa82a2e97d12801f9e25130c8835602d1e741cd615b26ab3c4839a66f7",
+        "visiblePixels": 1111744,
+        "excludedBloodPixels": 0,
+        "greenHuePixels": 55299,
+        "greenHueFraction": 0.04974076765874158,
+        "candidateBoundingBoxXY": [
+          702,
+          136,
+          1442,
+          887
+        ],
+        "dominantCandidateRGB": [
+          {
+            "rgb": [
+              159,
+              184,
+              191
+            ],
+            "pixels": 50881,
+            "hueDegrees": 193.125,
+            "sampleXY": [
+              1043,
+              136
+            ]
+          },
+          {
+            "rgb": [
+              159,
+              184,
+              190
+            ],
+            "pixels": 1038,
+            "hueDegrees": 191.613,
+            "sampleXY": [
+              1043,
+              142
+            ]
+          },
+          {
+            "rgb": [
+              158,
+              184,
+              191
+            ],
+            "pixels": 106,
+            "hueDegrees": 192.727,
+            "sampleXY": [
+              1053,
+              139
+            ]
+          },
+          {
+            "rgb": [
+              140,
+              167,
+              178
+            ],
+            "pixels": 69,
+            "hueDegrees": 197.368,
+            "sampleXY": [
+              1028,
+              174
+            ]
+          },
+          {
+            "rgb": [
+              147,
+              173,
+              183
+            ],
+            "pixels": 66,
+            "hueDegrees": 196.667,
+            "sampleXY": [
+              1055,
+              147
+            ]
+          }
+        ],
+        "greenAllowed": true,
+        "status": "ALLOWED_GREEN_EXCEPTION"
+      },
+      "compiledFromPreservedBaseline": false
+    },
+    {
+      "organId": "kidney_r",
+      "policy": "NO_GREEN_ANY_VISIBLE_LAYER",
+      "raw": {
+        "path": "assets/image/anatomy-reference/vascular-study/organ-atlas/kidney_r/gpt-terrain-v2.png",
+        "sha256": "97ddaad605a80dafb9724f3d2ba0b58e0e758170e8a42c0329656a1e24dca348",
+        "visiblePixels": 887310,
+        "excludedBloodPixels": 0,
+        "greenHuePixels": 0,
+        "greenHueFraction": 0.0,
+        "candidateBoundingBoxXY": null,
+        "dominantCandidateRGB": [],
+        "greenAllowed": false,
+        "status": "PASS"
+      },
+      "compiled": {
+        "path": "docs/body-life/vascular-art-study/organ-atlas/revision-v2/palette-correction/before/art/kidney_r/battlefield.png",
+        "sha256": "103ce3be52f6c7e652b810babbb39e7ffbcd98322cafe108bf2638e6d4775c22",
+        "visiblePixels": 345404,
+        "excludedBloodPixels": 0,
+        "greenHuePixels": 1414,
+        "greenHueFraction": 0.0040937568760060685,
+        "candidateBoundingBoxXY": [
+          456,
+          695,
+          509,
+          743
+        ],
+        "dominantCandidateRGB": [
+          {
+            "rgb": [
+              159,
+              184,
+              191
+            ],
+            "pixels": 1219,
+            "hueDegrees": 193.125,
+            "sampleXY": [
+              498,
+              695
+            ]
+          },
+          {
+            "rgb": [
+              159,
+              184,
+              190
+            ],
+            "pixels": 69,
+            "hueDegrees": 191.613,
+            "sampleXY": [
+              491,
+              698
+            ]
+          },
+          {
+            "rgb": [
+              158,
+              184,
+              191
+            ],
+            "pixels": 9,
+            "hueDegrees": 192.727,
+            "sampleXY": [
+              490,
+              699
+            ]
+          },
+          {
+            "rgb": [
+              153,
+              178,
+              187
+            ],
+            "pixels": 6,
+            "hueDegrees": 195.882,
+            "sampleXY": [
+              500,
+              695
+            ]
+          },
+          {
+            "rgb": [
+              154,
+              179,
+              187
+            ],
+            "pixels": 5,
+            "hueDegrees": 194.545,
+            "sampleXY": [
+              503,
+              719
+            ]
+          }
+        ],
+        "greenAllowed": false,
+        "status": "REVIEW_COLOR"
+      },
+      "compiledFromPreservedBaseline": true
+    },
+    {
+      "organId": "kidney_l",
+      "policy": "NO_GREEN_ANY_VISIBLE_LAYER",
+      "raw": {
+        "path": "assets/image/anatomy-reference/vascular-study/organ-atlas/kidney_l/gpt-terrain-v2.png",
+        "sha256": "3e49ca1d8a539b27deb5a16a8cb914fec0de3cd7829fd721d5950b0fa5d440bd",
+        "visiblePixels": 868130,
+        "excludedBloodPixels": 0,
+        "greenHuePixels": 0,
+        "greenHueFraction": 0.0,
+        "candidateBoundingBoxXY": null,
+        "dominantCandidateRGB": [],
+        "greenAllowed": false,
+        "status": "PASS"
+      },
+      "compiled": {
+        "path": "docs/body-life/vascular-art-study/organ-atlas/revision-v2/palette-correction/before/art/kidney_l/battlefield.png",
+        "sha256": "6391e0b0033cbff8acb773d43f8f181033980fa972b4225c50d4ef5f69a54e30",
+        "visiblePixels": 330346,
+        "excludedBloodPixels": 0,
+        "greenHuePixels": 1904,
+        "greenHueFraction": 0.0057636538659466136,
+        "candidateBoundingBoxXY": [
+          172,
+          674,
+          239,
+          743
+        ],
+        "dominantCandidateRGB": [
+          {
+            "rgb": [
+              159,
+              184,
+              191
+            ],
+            "pixels": 1735,
+            "hueDegrees": 193.125,
+            "sampleXY": [
+              186,
+              674
+            ]
+          },
+          {
+            "rgb": [
+              159,
+              184,
+              190
+            ],
+            "pixels": 33,
+            "hueDegrees": 191.613,
+            "sampleXY": [
+              180,
+              702
+            ]
+          },
+          {
+            "rgb": [
+              155,
+              180,
+              189
+            ],
+            "pixels": 6,
+            "hueDegrees": 195.882,
+            "sampleXY": [
+              189,
+              677
+            ]
+          },
+          {
+            "rgb": [
+              159,
+              183,
+              190
+            ],
+            "pixels": 5,
+            "hueDegrees": 193.548,
+            "sampleXY": [
+              180,
+              680
+            ]
+          },
+          {
+            "rgb": [
+              158,
+              184,
+              191
+            ],
+            "pixels": 5,
+            "hueDegrees": 192.727,
+            "sampleXY": [
+              189,
+              716
+            ]
+          }
+        ],
+        "greenAllowed": false,
+        "status": "REVIEW_COLOR"
+      },
+      "compiledFromPreservedBaseline": true
+    },
+    {
+      "organId": "lung_r",
+      "policy": "NO_GREEN_ANY_VISIBLE_LAYER",
+      "raw": {
+        "path": "assets/image/anatomy-reference/vascular-study/organ-atlas/lung_r/gpt-terrain-v2.png",
+        "sha256": "320926bd6a2015a1d733eb031c7474d7231acce041c60772db52b89de56d2ff1",
+        "visiblePixels": 1053287,
+        "excludedBloodPixels": 0,
+        "greenHuePixels": 0,
+        "greenHueFraction": 0.0,
+        "candidateBoundingBoxXY": null,
+        "dominantCandidateRGB": [],
+        "greenAllowed": false,
+        "status": "PASS"
+      },
+      "compiled": {
+        "path": "docs/body-life/vascular-art-study/organ-atlas/revision-v2/palette-correction/before/art/lung_r/battlefield.png",
+        "sha256": "054fb71aafb4e3293c43fc3ce47ec72beb68f285447c5347db51fc71b315ece1",
+        "visiblePixels": 2068467,
+        "excludedBloodPixels": 0,
+        "greenHuePixels": 2849,
+        "greenHueFraction": 0.0013773485387970899,
+        "candidateBoundingBoxXY": [
+          798,
+          1516,
+          1206,
+          1748
+        ],
+        "dominantCandidateRGB": [
+          {
+            "rgb": [
+              164,
+              184,
+              190
+            ],
+            "pixels": 147,
+            "hueDegrees": 193.846,
+            "sampleXY": [
+              1192,
+              1520
+            ]
+          },
+          {
+            "rgb": [
+              161,
+              184,
+              191
+            ],
+            "pixels": 133,
+            "hueDegrees": 194.0,
+            "sampleXY": [
+              1196,
+              1519
+            ]
+          },
+          {
+            "rgb": [
+              162,
+              184,
+              190
+            ],
+            "pixels": 132,
+            "hueDegrees": 192.857,
+            "sampleXY": [
+              1205,
+              1517
+            ]
+          },
+          {
+            "rgb": [
+              163,
+              184,
+              190
+            ],
+            "pixels": 131,
+            "hueDegrees": 193.333,
+            "sampleXY": [
+              1199,
+              1517
+            ]
+          },
+          {
+            "rgb": [
+              167,
+              185,
+              189
+            ],
+            "pixels": 127,
+            "hueDegrees": 190.909,
+            "sampleXY": [
+              1169,
+              1529
+            ]
+          }
+        ],
+        "greenAllowed": false,
+        "status": "REVIEW_COLOR"
+      },
+      "compiledFromPreservedBaseline": true
+    },
+    {
+      "organId": "lung_l",
+      "policy": "NO_GREEN_ANY_VISIBLE_LAYER",
+      "raw": {
+        "path": "assets/image/anatomy-reference/vascular-study/organ-atlas/lung_l/gpt-terrain-v2.png",
+        "sha256": "9004248bd451eef23d20d8e1ea4032a564c830a340a51cc464b8385473a1f9a6",
+        "visiblePixels": 906081,
+        "excludedBloodPixels": 0,
+        "greenHuePixels": 0,
+        "greenHueFraction": 0.0,
+        "candidateBoundingBoxXY": null,
+        "dominantCandidateRGB": [],
+        "greenAllowed": false,
+        "status": "PASS"
+      },
+      "compiled": {
+        "path": "docs/body-life/vascular-art-study/organ-atlas/revision-v2/palette-correction/before/art/lung_l/battlefield.png",
+        "sha256": "7eb304af2bc9c28981d247a77988f24605a6935b32ed36510448056904f79965",
+        "visiblePixels": 1931892,
+        "excludedBloodPixels": 0,
+        "greenHuePixels": 2024,
+        "greenHueFraction": 0.0010476776134483708,
+        "candidateBoundingBoxXY": [
+          341,
+          1585,
+          702,
+          1758
+        ],
+        "dominantCandidateRGB": [
+          {
+            "rgb": [
+              161,
+              183,
+              190
+            ],
+            "pixels": 220,
+            "hueDegrees": 194.483,
+            "sampleXY": [
+              354,
+              1596
+            ]
+          },
+          {
+            "rgb": [
+              162,
+              182,
+              189
+            ],
+            "pixels": 116,
+            "hueDegrees": 195.556,
+            "sampleXY": [
+              351,
+              1590
+            ]
+          },
+          {
+            "rgb": [
+              164,
+              181,
+              188
+            ],
+            "pixels": 102,
+            "hueDegrees": 197.5,
+            "sampleXY": [
+              364,
+              1600
+            ]
+          },
+          {
+            "rgb": [
+              162,
+              183,
+              190
+            ],
+            "pixels": 94,
+            "hueDegrees": 195.0,
+            "sampleXY": [
+              358,
+              1602
+            ]
+          },
+          {
+            "rgb": [
+              163,
+              182,
+              189
+            ],
+            "pixels": 85,
+            "hueDegrees": 196.154,
+            "sampleXY": [
+              357,
+              1599
+            ]
+          }
+        ],
+        "greenAllowed": false,
+        "status": "REVIEW_COLOR"
+      },
+      "compiledFromPreservedBaseline": true
+    },
+    {
+      "organId": "heart",
+      "policy": "NO_GREEN_ANY_VISIBLE_LAYER",
+      "raw": {
+        "path": "assets/image/anatomy-reference/vascular-study/organ-atlas/heart/gpt-terrain-v2.png",
+        "sha256": "11c9b051efc7e7a415f870743c064661586dc9a25780c1ad86363d5e9ab2e786",
+        "visiblePixels": 856915,
+        "excludedBloodPixels": 0,
+        "greenHuePixels": 0,
+        "greenHueFraction": 0.0,
+        "candidateBoundingBoxXY": null,
+        "dominantCandidateRGB": [],
+        "greenAllowed": false,
+        "status": "PASS"
+      },
+      "compiled": {
+        "path": "docs/body-life/vascular-art-study/organ-atlas/revision-v2/palette-correction/before/art/heart/battlefield.png",
+        "sha256": "17feb21673ff5cab9145e98d9aebae621bd856c004a05d03b351d8abaaefbc60",
+        "visiblePixels": 1025919,
+        "excludedBloodPixels": 0,
+        "greenHuePixels": 110464,
+        "greenHueFraction": 0.10767321786612784,
+        "candidateBoundingBoxXY": [
+          98,
+          353,
+          1026,
+          1467
+        ],
+        "dominantCandidateRGB": [
+          {
+            "rgb": [
+              159,
+              184,
+              191
+            ],
+            "pixels": 99958,
+            "hueDegrees": 193.125,
+            "sampleXY": [
+              612,
+              414
+            ]
+          },
+          {
+            "rgb": [
+              159,
+              184,
+              190
+            ],
+            "pixels": 2549,
+            "hueDegrees": 191.613,
+            "sampleXY": [
+              608,
+              418
+            ]
+          },
+          {
+            "rgb": [
+              159,
+              183,
+              190
+            ],
+            "pixels": 705,
+            "hueDegrees": 193.548,
+            "sampleXY": [
+              554,
+              485
+            ]
+          },
+          {
+            "rgb": [
+              160,
+              184,
+              191
+            ],
+            "pixels": 423,
+            "hueDegrees": 193.548,
+            "sampleXY": [
+              617,
+              413
+            ]
+          },
+          {
+            "rgb": [
+              161,
+              183,
+              190
+            ],
+            "pixels": 246,
+            "hueDegrees": 194.483,
+            "sampleXY": [
+              612,
+              413
+            ]
+          }
+        ],
+        "greenAllowed": false,
+        "status": "REVIEW_COLOR"
+      },
+      "compiledFromPreservedBaseline": true
+    },
+    {
+      "organId": "brain",
+      "policy": "NO_GREEN_ANY_VISIBLE_LAYER",
+      "raw": {
+        "path": "assets/image/anatomy-reference/vascular-study/organ-atlas/brain/gpt-terrain-v2.png",
+        "sha256": "d632361096c30a59f6f3be584c9d56923a05e66397c7b66439e93d9d44968bfe",
+        "visiblePixels": 960999,
+        "excludedBloodPixels": 0,
+        "greenHuePixels": 0,
+        "greenHueFraction": 0.0,
+        "candidateBoundingBoxXY": null,
+        "dominantCandidateRGB": [],
+        "greenAllowed": false,
+        "status": "PASS"
+      },
+      "compiled": {
+        "path": "docs/body-life/vascular-art-study/organ-atlas/revision-v2/palette-correction/before/art/brain/battlefield.png",
+        "sha256": "6cd99116cd935f95020442ff12ca30078b862ac29adbf3bbd8eb1adf9d85ad3a",
+        "visiblePixels": 1210498,
+        "excludedBloodPixels": 0,
+        "greenHuePixels": 6135,
+        "greenHueFraction": 0.005068162029181378,
+        "candidateBoundingBoxXY": [
+          552,
+          972,
+          1360,
+          1109
+        ],
+        "dominantCandidateRGB": [
+          {
+            "rgb": [
+              159,
+              184,
+              191
+            ],
+            "pixels": 5658,
+            "hueDegrees": 193.125,
+            "sampleXY": [
+              561,
+              973
+            ]
+          },
+          {
+            "rgb": [
+              158,
+              184,
+              191
+            ],
+            "pixels": 32,
+            "hueDegrees": 192.727,
+            "sampleXY": [
+              566,
+              973
+            ]
+          },
+          {
+            "rgb": [
+              159,
+              184,
+              190
+            ],
+            "pixels": 16,
+            "hueDegrees": 191.613,
+            "sampleXY": [
+              1178,
+              973
+            ]
+          },
+          {
+            "rgb": [
+              159,
+              183,
+              190
+            ],
+            "pixels": 14,
+            "hueDegrees": 193.548,
+            "sampleXY": [
+              605,
+              993
+            ]
+          },
+          {
+            "rgb": [
+              157,
+              182,
+              190
+            ],
+            "pixels": 12,
+            "hueDegrees": 194.545,
+            "sampleXY": [
+              1224,
+              998
+            ]
+          }
+        ],
+        "greenAllowed": false,
+        "status": "REVIEW_COLOR"
+      },
+      "compiledFromPreservedBaseline": true
+    },
+    {
+      "organId": "pancreas",
+      "policy": "NO_GREEN_ANY_VISIBLE_LAYER",
+      "raw": {
+        "path": "assets/image/anatomy-reference/vascular-study/organ-atlas/pancreas/gpt-terrain-v2.png",
+        "sha256": "187944ef8f88fe9d978b1d5be6dbfb3bd374babb27be92b5794fa204262d32c1",
+        "visiblePixels": 690650,
+        "excludedBloodPixels": 0,
+        "greenHuePixels": 0,
+        "greenHueFraction": 0.0,
+        "candidateBoundingBoxXY": null,
+        "dominantCandidateRGB": [],
+        "greenAllowed": false,
+        "status": "PASS"
+      },
+      "compiled": {
+        "path": "docs/body-life/vascular-art-study/organ-atlas/revision-v2/palette-correction/before/art/pancreas/battlefield.png",
+        "sha256": "ef6d372a1238bddd67221483c137b6eb50ef6b290603418566922f1b45fdb0e7",
+        "visiblePixels": 307205,
+        "excludedBloodPixels": 0,
+        "greenHuePixels": 11304,
+        "greenHueFraction": 0.03679627610227698,
+        "candidateBoundingBoxXY": [
+          304,
+          148,
+          517,
+          530
+        ],
+        "dominantCandidateRGB": [
+          {
+            "rgb": [
+              159,
+              184,
+              191
+            ],
+            "pixels": 7074,
+            "hueDegrees": 193.125,
+            "sampleXY": [
+              462,
+              150
+            ]
+          },
+          {
+            "rgb": [
+              161,
+              184,
+              190
+            ],
+            "pixels": 378,
+            "hueDegrees": 192.414,
+            "sampleXY": [
+              460,
+              150
+            ]
+          },
+          {
+            "rgb": [
+              160,
+              185,
+              191
+            ],
+            "pixels": 374,
+            "hueDegrees": 191.613,
+            "sampleXY": [
+              431,
+              186
+            ]
+          },
+          {
+            "rgb": [
+              159,
+              184,
+              190
+            ],
+            "pixels": 284,
+            "hueDegrees": 191.613,
+            "sampleXY": [
+              498,
+              150
+            ]
+          },
+          {
+            "rgb": [
+              160,
+              184,
+              191
+            ],
+            "pixels": 221,
+            "hueDegrees": 193.548,
+            "sampleXY": [
+              461,
+              150
+            ]
+          }
+        ],
+        "greenAllowed": false,
+        "status": "REVIEW_COLOR"
+      },
+      "compiledFromPreservedBaseline": true
+    },
+    {
+      "organId": "bladder",
+      "policy": "NO_GREEN_ANY_VISIBLE_LAYER",
+      "raw": {
+        "path": "assets/image/anatomy-reference/vascular-study/organ-atlas/bladder/gpt-terrain-v2.png",
+        "sha256": "f1d86bf00769cb1b8b5ecd1fff0f2dd20610e6ad9cef39a831a5a51b07502849",
+        "visiblePixels": 793466,
+        "excludedBloodPixels": 0,
+        "greenHuePixels": 0,
+        "greenHueFraction": 0.0,
+        "candidateBoundingBoxXY": null,
+        "dominantCandidateRGB": [],
+        "greenAllowed": false,
+        "status": "PASS"
+      },
+      "compiled": {
+        "path": "docs/body-life/vascular-art-study/organ-atlas/revision-v2/palette-correction/before/art/bladder/battlefield.png",
+        "sha256": "e9edb958ed7738cd4e6b2705278a115472f63ffe4d7cebc810249864634104ec",
+        "visiblePixels": 528535,
+        "excludedBloodPixels": 0,
+        "greenHuePixels": 20039,
+        "greenHueFraction": 0.037914234629683935,
+        "candidateBoundingBoxXY": [
+          130,
+          338,
+          532,
+          845
+        ],
+        "dominantCandidateRGB": [
+          {
+            "rgb": [
+              159,
+              184,
+              191
+            ],
+            "pixels": 17627,
+            "hueDegrees": 193.125,
+            "sampleXY": [
+              175,
+              338
+            ]
+          },
+          {
+            "rgb": [
+              159,
+              184,
+              190
+            ],
+            "pixels": 385,
+            "hueDegrees": 191.613,
+            "sampleXY": [
+              174,
+              354
+            ]
+          },
+          {
+            "rgb": [
+              161,
+              183,
+              190
+            ],
+            "pixels": 62,
+            "hueDegrees": 194.483,
+            "sampleXY": [
+              195,
+              353
+            ]
+          },
+          {
+            "rgb": [
+              161,
+              184,
+              190
+            ],
+            "pixels": 52,
+            "hueDegrees": 192.414,
+            "sampleXY": [
+              218,
+              365
+            ]
+          },
+          {
+            "rgb": [
+              158,
+              184,
+              191
+            ],
+            "pixels": 48,
+            "hueDegrees": 192.727,
+            "sampleXY": [
+              175,
+              341
+            ]
+          }
+        ],
+        "greenAllowed": false,
+        "status": "REVIEW_COLOR"
+      },
+      "compiledFromPreservedBaseline": true
+    },
+    {
+      "organId": "small_intestine",
+      "policy": "NO_GREEN_ANY_VISIBLE_LAYER",
+      "raw": {
+        "path": "assets/image/anatomy-reference/vascular-study/organ-atlas/small_intestine/gpt-terrain-v2.png",
+        "sha256": "43890e86af62e38d2458a7943bd5c55558bed66461bdcd718ea9f544c73dcdb8",
+        "visiblePixels": 1020312,
+        "excludedBloodPixels": 0,
+        "greenHuePixels": 0,
+        "greenHueFraction": 0.0,
+        "candidateBoundingBoxXY": null,
+        "dominantCandidateRGB": [],
+        "greenAllowed": false,
+        "status": "PASS"
+      },
+      "compiled": {
+        "path": "docs/body-life/vascular-art-study/organ-atlas/revision-v2/palette-correction/before/art/small_intestine/battlefield.png",
+        "sha256": "bad560f1d71b9ffa3c2485a2840c1484f03e5861d24079c03303591f61255a0b",
+        "visiblePixels": 799083,
+        "excludedBloodPixels": 0,
+        "greenHuePixels": 9991,
+        "greenHueFraction": 0.012503081657349736,
+        "candidateBoundingBoxXY": [
+          1024,
+          172,
+          1177,
+          585
+        ],
+        "dominantCandidateRGB": [
+          {
+            "rgb": [
+              159,
+              184,
+              191
+            ],
+            "pixels": 9006,
+            "hueDegrees": 193.125,
+            "sampleXY": [
+              1149,
+              173
+            ]
+          },
+          {
+            "rgb": [
+              159,
+              184,
+              190
+            ],
+            "pixels": 296,
+            "hueDegrees": 191.613,
+            "sampleXY": [
+              1166,
+              183
+            ]
+          },
+          {
+            "rgb": [
+              158,
+              184,
+              191
+            ],
+            "pixels": 33,
+            "hueDegrees": 192.727,
+            "sampleXY": [
+              1155,
+              198
+            ]
+          },
+          {
+            "rgb": [
+              153,
+              178,
+              187
+            ],
+            "pixels": 14,
+            "hueDegrees": 195.882,
+            "sampleXY": [
+              1151,
+              241
+            ]
+          },
+          {
+            "rgb": [
+              134,
+              161,
+              174
+            ],
+            "pixels": 14,
+            "hueDegrees": 199.5,
+            "sampleXY": [
+              1175,
+              228
+            ]
+          }
+        ],
+        "greenAllowed": false,
+        "status": "REVIEW_COLOR"
+      },
+      "compiledFromPreservedBaseline": true
+    },
+    {
+      "organId": "large_intestine",
+      "policy": "NO_GREEN_ANY_VISIBLE_LAYER",
+      "raw": {
+        "path": "assets/image/anatomy-reference/vascular-study/organ-atlas/large_intestine/gpt-terrain-v2.png",
+        "sha256": "20606b33625f27f75ad467f0d6974cb42db1cf21cb1721ef1ce08a2aa0a0407b",
+        "visiblePixels": 612826,
+        "excludedBloodPixels": 0,
+        "greenHuePixels": 0,
+        "greenHueFraction": 0.0,
+        "candidateBoundingBoxXY": null,
+        "dominantCandidateRGB": [],
+        "greenAllowed": false,
+        "status": "PASS"
+      },
+      "compiled": {
+        "path": "docs/body-life/vascular-art-study/organ-atlas/revision-v2/palette-correction/before/art/large_intestine/battlefield.png",
+        "sha256": "de83dd4a0c9dc9858e027f0edf96ac8ecc10262130a87cd966fef2a246669e51",
+        "visiblePixels": 1315987,
+        "excludedBloodPixels": 0,
+        "greenHuePixels": 8219,
+        "greenHueFraction": 0.006245502425175933,
+        "candidateBoundingBoxXY": [
+          418,
+          348,
+          1879,
+          1408
+        ],
+        "dominantCandidateRGB": [
+          {
+            "rgb": [
+              159,
+              184,
+              191
+            ],
+            "pixels": 4217,
+            "hueDegrees": 193.125,
+            "sampleXY": [
+              1769,
+              546
+            ]
+          },
+          {
+            "rgb": [
+              159,
+              183,
+              190
+            ],
+            "pixels": 565,
+            "hueDegrees": 193.548,
+            "sampleXY": [
+              1842,
+              604
+            ]
+          },
+          {
+            "rgb": [
+              160,
+              184,
+              191
+            ],
+            "pixels": 458,
+            "hueDegrees": 193.548,
+            "sampleXY": [
+              1180,
+              354
+            ]
+          },
+          {
+            "rgb": [
+              161,
+              183,
+              190
+            ],
+            "pixels": 228,
+            "hueDegrees": 194.483,
+            "sampleXY": [
+              1179,
+              353
+            ]
+          },
+          {
+            "rgb": [
+              160,
+              183,
+              190
+            ],
+            "pixels": 154,
+            "hueDegrees": 194.0,
+            "sampleXY": [
+              1176,
+              354
+            ]
+          }
+        ],
+        "greenAllowed": false,
+        "status": "REVIEW_COLOR"
+      },
+      "compiledFromPreservedBaseline": true
+    },
+    {
+      "organId": "stomach",
+      "policy": "GREEN_ALLOWED",
+      "raw": null,
+      "compiled": {
+        "path": "docs/body-life/vascular-art-study/stomach-playable/battlefield.png",
+        "sha256": "9464d5f62338e1dc9644cedd4fc9ce1ba803d4afe5a172395249a679b47cb918",
+        "visiblePixels": 1071229,
+        "excludedBloodPixels": 0,
+        "greenHuePixels": 22938,
+        "greenHueFraction": 0.021412788488735835,
+        "candidateBoundingBoxXY": [
+          691,
+          847,
+          1258,
+          1372
+        ],
+        "dominantCandidateRGB": [
+          {
+            "rgb": [
+              155,
+              182,
+              189
+            ],
+            "pixels": 11655,
+            "hueDegrees": 192.353,
+            "sampleXY": [
+              980,
+              848
+            ]
+          },
+          {
+            "rgb": [
+              155,
+              183,
+              189
+            ],
+            "pixels": 6439,
+            "hueDegrees": 190.588,
+            "sampleXY": [
+              990,
+              851
+            ]
+          },
+          {
+            "rgb": [
+              155,
+              183,
+              190
+            ],
+            "pixels": 1690,
+            "hueDegrees": 192.0,
+            "sampleXY": [
+              1086,
+              918
+            ]
+          },
+          {
+            "rgb": [
+              154,
+              182,
+              189
+            ],
+            "pixels": 872,
+            "hueDegrees": 192.0,
+            "sampleXY": [
+              997,
+              853
+            ]
+          },
+          {
+            "rgb": [
+              154,
+              183,
+              189
+            ],
+            "pixels": 615,
+            "hueDegrees": 190.286,
+            "sampleXY": [
+              918,
+              942
+            ]
+          }
+        ],
+        "greenAllowed": true,
+        "status": "ALLOWED_GREEN_EXCEPTION"
+      },
+      "compiledFromPreservedBaseline": false
+    }
+  ],
+  "failures": [
+    "kidney_r:compiled",
+    "kidney_l:compiled",
+    "lung_r:compiled",
+    "lung_l:compiled",
+    "heart:compiled",
+    "brain:compiled",
+    "pancreas:compiled",
+    "bladder:compiled",
+    "small_intestine:compiled",
+    "large_intestine:compiled"
+  ],
+  "limit": "Color audit only; low-chroma/low-alpha AA and at most 8 candidate pixels are noise tolerance, not a vessel exclusion. Does not certify native readability or anatomy.",
+  "status": "REVIEW_COLOR"
+}

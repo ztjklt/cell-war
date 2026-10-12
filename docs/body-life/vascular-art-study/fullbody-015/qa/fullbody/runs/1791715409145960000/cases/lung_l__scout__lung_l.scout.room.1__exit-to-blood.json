@@ -1,0 +1,3827 @@
+{
+  "schema": "fullbody-015-production-motion-case/v1",
+  "nativeEvidence": false,
+  "productionNavigationSubstituted": false,
+  "config": {
+    "id": "lung_l/scout/lung_l.scout.room.1/exit-to-blood",
+    "organs": [
+      "brain",
+      "lung_r",
+      "lung_l",
+      "liver",
+      "stomach",
+      "pancreas",
+      "kidney_r",
+      "kidney_l",
+      "large_intestine",
+      "small_intestine",
+      "bladder",
+      "heart"
+    ],
+    "actors": [
+      {
+        "kind": "scout",
+        "x": 1219.730164567191,
+        "y": 1286.6264289375802,
+        "tx": 1188.5900771998975,
+        "ty": 1295.8502060445346,
+        "lane": 0,
+        "targetLane": 7,
+        "targetOrgan": "lung_l"
+      }
+    ],
+    "family": "inherited-organ",
+    "caseOrgans": [
+      "lung_l"
+    ]
+  },
+  "row": {
+    "id": "lung_l/scout/lung_l.scout.room.1/exit-to-blood",
+    "family": "inherited-organ",
+    "status": "PASS",
+    "completed": true,
+    "commandsValid": true,
+    "spawnErrors": {},
+    "arrivals": [
+      {
+        "id": 18,
+        "distanceWorld": 0.0,
+        "laneMatches": true,
+        "organMatches": true
+      }
+    ],
+    "savePassed": true,
+    "elapsedSimulationSeconds": 9.399999999999983,
+    "setupSimulationSeconds": 0,
+    "disksChecked": 280,
+    "capsulesChecked": 186,
+    "geometryFailures": 0,
+    "firstGeometryFailures": [],
+    "unverifiedDomainPoints": 0,
+    "trafficStats": {
+      "resumed": 0,
+      "routeRequests": 0,
+      "expired": 0,
+      "waits": 0,
+      "conflicts": 0,
+      "maxPlanningSlice": 4.000000000559112e-06,
+      "maxPairs": 0,
+      "deadReleased": 0,
+      "activePairs": 0,
+      "noBay": 0,
+      "cancelled": 0,
+      "yields": 0
+    },
+    "visitedLanes": [
+      7
+    ],
+    "minimumFrameDiskGapWorld": null,
+    "endpointFailures": []
+  },
+  "actual": {
+    "activeOrgans": [
+      "bladder",
+      "brain",
+      "heart",
+      "kidney_l",
+      "kidney_r",
+      "large_intestine",
+      "liver",
+      "lung_l",
+      "lung_r",
+      "pancreas",
+      "small_intestine",
+      "stomach"
+    ],
+    "id": "lung_l/scout/lung_l.scout.room.1/exit-to-blood",
+    "starts": [
+      {
+        "id": 18,
+        "tick": 0,
+        "kind": "scout",
+        "lane": 0,
+        "time": 0,
+        "organId": "lung_l",
+        "y": 1286.6264289375802,
+        "x": 1219.730164567191,
+        "phase": "spawn"
+      }
+    ],
+    "trafficStats": {
+      "resumed": 0,
+      "routeRequests": 0,
+      "expired": 0,
+      "waits": 0,
+      "conflicts": 0,
+      "maxPlanningSlice": 4.000000000559112e-06,
+      "maxPairs": 0,
+      "deadReleased": 0,
+      "activePairs": 0,
+      "noBay": 0,
+      "cancelled": 0,
+      "yields": 0
+    },
+    "commands": [
+      {
+        "accepted": true,
+        "id": 18,
+        "order": {
+          "y": 1295.8502060445346,
+          "x": 1188.5900771998975,
+          "lane": 7
+        },
+        "requested": {
+          "y": 1295.8502060445346,
+          "x": 1188.5900771998975
+        }
+      }
+    ],
+    "networkEdges": 202,
+    "save": {
+      "ids": [
+        "bladder",
+        "brain",
+        "heart",
+        "kidney_l",
+        "kidney_r",
+        "large_intestine",
+        "liver",
+        "lung_l",
+        "lung_r",
+        "pancreas",
+        "small_intestine",
+        "stomach"
+      ],
+      "laneErrors": 0,
+      "restored": true,
+      "restoredIds": [
+        "bladder",
+        "brain",
+        "heart",
+        "kidney_l",
+        "kidney_r",
+        "large_intestine",
+        "liver",
+        "lung_l",
+        "lung_r",
+        "pancreas",
+        "small_intestine",
+        "stomach"
+      ],
+      "version": 9,
+      "restoredNetworkEdges": 202,
+      "positionErrors": 0.0,
+      "flag": 1,
+      "restoredFlag": 1
+    },
+    "spawnErrors": {},
+    "endpoints": [
+      {
+        "id": 18,
+        "tick": 94,
+        "kind": "scout",
+        "pathFailed": false,
+        "lane": 7,
+        "time": 9.399999999999983,
+        "organId": "lung_l",
+        "y": 1295.8502060445346,
+        "x": 1188.5900771998975,
+        "ordersRemaining": 0,
+        "phase": "end"
+      }
+    ],
+    "completed": true,
+    "setupElapsed": 0,
+    "setupCommands": {},
+    "elapsed": 9.399999999999983,
+    "goals": [
+      {
+        "id": 18,
+        "organId": "lung_l",
+        "y": 1295.8502060445346,
+        "x": 1188.5900771998975,
+        "lane": 7
+      }
+    ],
+    "frames": [
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 1,
+            "kind": "scout",
+            "lane": 0,
+            "time": 0.1,
+            "organId": "lung_l",
+            "y": 1286.6264289375802,
+            "x": 1219.730164567191,
+            "phase": "frame"
+          }
+        ],
+        "time": 0.1
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 2,
+            "kind": "scout",
+            "lane": 0,
+            "time": 0.2,
+            "organId": "lung_l",
+            "y": 1286.704168604621,
+            "x": 1219.4677102607302,
+            "phase": "frame"
+          }
+        ],
+        "time": 0.2
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 3,
+            "kind": "scout",
+            "lane": 0,
+            "time": 0.30000000000000004,
+            "organId": "lung_l",
+            "y": 1286.7944157377399,
+            "x": 1219.1630299136896,
+            "phase": "frame"
+          }
+        ],
+        "time": 0.30000000000000004
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 4,
+            "kind": "scout",
+            "lane": 0,
+            "time": 0.4,
+            "organId": "lung_l",
+            "y": 1286.8907857965596,
+            "x": 1218.8376781606669,
+            "phase": "frame"
+          }
+        ],
+        "time": 0.4
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 5,
+            "kind": "scout",
+            "lane": 0,
+            "time": 0.5,
+            "organId": "lung_l",
+            "y": 1286.9901532825882,
+            "x": 1218.5022068932544,
+            "phase": "frame"
+          }
+        ],
+        "time": 0.5
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 6,
+            "kind": "scout",
+            "lane": 0,
+            "time": 0.6,
+            "organId": "lung_l",
+            "y": 1287.090988134107,
+            "x": 1218.1617817019737,
+            "phase": "frame"
+          }
+        ],
+        "time": 0.6
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 7,
+            "kind": "scout",
+            "lane": 0,
+            "time": 0.7,
+            "organId": "lung_l",
+            "y": 1287.1925413221632,
+            "x": 1217.8189313585813,
+            "phase": "frame"
+          }
+        ],
+        "time": 0.7
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 8,
+            "kind": "scout",
+            "lane": 0,
+            "time": 0.7999999999999999,
+            "organId": "lung_l",
+            "y": 1287.29444616588,
+            "x": 1217.4748938021992,
+            "phase": "frame"
+          }
+        ],
+        "time": 0.7999999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 9,
+            "kind": "scout",
+            "lane": 0,
+            "time": 0.8999999999999999,
+            "organId": "lung_l",
+            "y": 1287.3965231596924,
+            "x": 1217.1302750556001,
+            "phase": "frame"
+          }
+        ],
+        "time": 0.8999999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 10,
+            "kind": "scout",
+            "lane": 0,
+            "time": 0.9999999999999999,
+            "organId": "lung_l",
+            "y": 1287.4986844281482,
+            "x": 1216.7853717921776,
+            "phase": "frame"
+          }
+        ],
+        "time": 0.9999999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 11,
+            "kind": "scout",
+            "lane": 0,
+            "time": 1.0999999999999999,
+            "organId": "lung_l",
+            "y": 1287.6008869525529,
+            "x": 1216.4403292459172,
+            "phase": "frame"
+          }
+        ],
+        "time": 1.0999999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 12,
+            "kind": "scout",
+            "lane": 0,
+            "time": 1.2,
+            "organId": "lung_l",
+            "y": 1287.7031096734634,
+            "x": 1216.0952185149051,
+            "phase": "frame"
+          }
+        ],
+        "time": 1.2
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 13,
+            "kind": "scout",
+            "lane": 0,
+            "time": 1.3,
+            "organId": "lung_l",
+            "y": 1287.8053422814046,
+            "x": 1215.7500744046165,
+            "phase": "frame"
+          }
+        ],
+        "time": 1.3
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 14,
+            "kind": "scout",
+            "lane": 0,
+            "time": 1.4000000000000001,
+            "organId": "lung_l",
+            "y": 1287.9075797294595,
+            "x": 1215.4049139537815,
+            "phase": "frame"
+          }
+        ],
+        "time": 1.4000000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 15,
+            "kind": "scout",
+            "lane": 0,
+            "time": 1.5000000000000002,
+            "organId": "lung_l",
+            "y": 1288.0098195469516,
+            "x": 1215.0597455035684,
+            "phase": "frame"
+          }
+        ],
+        "time": 1.5000000000000002
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 16,
+            "kind": "scout",
+            "lane": 0,
+            "time": 1.6000000000000003,
+            "organId": "lung_l",
+            "y": 1288.1120605243818,
+            "x": 1214.7145731373264,
+            "phase": "frame"
+          }
+        ],
+        "time": 1.6000000000000003
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 17,
+            "kind": "scout",
+            "lane": 0,
+            "time": 1.7000000000000004,
+            "organId": "lung_l",
+            "y": 1288.21430206965,
+            "x": 1214.3693988540251,
+            "phase": "frame"
+          }
+        ],
+        "time": 1.7000000000000004
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 18,
+            "kind": "scout",
+            "lane": 0,
+            "time": 1.8000000000000005,
+            "organId": "lung_l",
+            "y": 1288.3165438928988,
+            "x": 1214.0242236322435,
+            "phase": "frame"
+          }
+        ],
+        "time": 1.8000000000000005
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 19,
+            "kind": "scout",
+            "lane": 0,
+            "time": 1.9000000000000006,
+            "organId": "lung_l",
+            "y": 1288.4187858522305,
+            "x": 1213.6790479510366,
+            "phase": "frame"
+          }
+        ],
+        "time": 1.9000000000000006
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 20,
+            "kind": "scout",
+            "lane": 0,
+            "time": 2.0000000000000004,
+            "organId": "lung_l",
+            "y": 1288.5210278781806,
+            "x": 1213.333872044922,
+            "phase": "frame"
+          }
+        ],
+        "time": 2.0000000000000004
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 21,
+            "kind": "scout",
+            "lane": 0,
+            "time": 2.1000000000000005,
+            "organId": "lung_l",
+            "y": 1288.623269936743,
+            "x": 1212.9886960287056,
+            "phase": "frame"
+          }
+        ],
+        "time": 2.1000000000000005
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 22,
+            "kind": "scout",
+            "lane": 0,
+            "time": 2.2000000000000006,
+            "organId": "lung_l",
+            "y": 1288.7255120112707,
+            "x": 1212.6435199585899,
+            "phase": "frame"
+          }
+        ],
+        "time": 2.2000000000000006
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 23,
+            "kind": "scout",
+            "lane": 0,
+            "time": 2.3000000000000007,
+            "organId": "lung_l",
+            "y": 1288.827754093614,
+            "x": 1212.2983438620881,
+            "phase": "frame"
+          }
+        ],
+        "time": 2.3000000000000007
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 24,
+            "kind": "scout",
+            "lane": 0,
+            "time": 2.400000000000001,
+            "organId": "lung_l",
+            "y": 1288.9299961797833,
+            "x": 1211.9531677526693,
+            "phase": "frame"
+          }
+        ],
+        "time": 2.400000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 25,
+            "kind": "scout",
+            "lane": 0,
+            "time": 2.500000000000001,
+            "organId": "lung_l",
+            "y": 1289.0322382678255,
+            "x": 1211.607991636927,
+            "phase": "frame"
+          }
+        ],
+        "time": 2.500000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 26,
+            "kind": "scout",
+            "lane": 0,
+            "time": 2.600000000000001,
+            "organId": "lung_l",
+            "y": 1289.1344803567847,
+            "x": 1211.2628155180892,
+            "phase": "frame"
+          }
+        ],
+        "time": 2.600000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 27,
+            "kind": "scout",
+            "lane": 0,
+            "time": 2.700000000000001,
+            "organId": "lung_l",
+            "y": 1289.2367224461927,
+            "x": 1210.917639397736,
+            "phase": "frame"
+          }
+        ],
+        "time": 2.700000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 28,
+            "kind": "scout",
+            "lane": 0,
+            "time": 2.800000000000001,
+            "organId": "lung_l",
+            "y": 1289.3389645358207,
+            "x": 1210.5724632766407,
+            "phase": "frame"
+          }
+        ],
+        "time": 2.800000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 29,
+            "kind": "scout",
+            "lane": 0,
+            "time": 2.9000000000000012,
+            "organId": "lung_l",
+            "y": 1289.441206625556,
+            "x": 1210.2272871551825,
+            "phase": "frame"
+          }
+        ],
+        "time": 2.9000000000000012
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 30,
+            "kind": "scout",
+            "lane": 0,
+            "time": 3.0000000000000013,
+            "organId": "lung_l",
+            "y": 1289.543448715344,
+            "x": 1209.8821110335464,
+            "phase": "frame"
+          }
+        ],
+        "time": 3.0000000000000013
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 31,
+            "kind": "scout",
+            "lane": 0,
+            "time": 3.1000000000000014,
+            "organId": "lung_l",
+            "y": 1289.645690805158,
+            "x": 1209.5369349118232,
+            "phase": "frame"
+          }
+        ],
+        "time": 3.1000000000000014
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 32,
+            "kind": "scout",
+            "lane": 0,
+            "time": 3.2000000000000015,
+            "organId": "lung_l",
+            "y": 1289.7479328949844,
+            "x": 1209.1917587900575,
+            "phase": "frame"
+          }
+        ],
+        "time": 3.2000000000000015
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 33,
+            "kind": "scout",
+            "lane": 0,
+            "time": 3.3000000000000016,
+            "organId": "lung_l",
+            "y": 1289.850174984817,
+            "x": 1208.846582668271,
+            "phase": "frame"
+          }
+        ],
+        "time": 3.3000000000000016
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 34,
+            "kind": "scout",
+            "lane": 0,
+            "time": 3.4000000000000017,
+            "organId": "lung_l",
+            "y": 1289.9524170746527,
+            "x": 1208.501406546474,
+            "phase": "frame"
+          }
+        ],
+        "time": 3.4000000000000017
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 35,
+            "kind": "scout",
+            "lane": 0,
+            "time": 3.5000000000000018,
+            "organId": "lung_l",
+            "y": 1290.0546591644897,
+            "x": 1208.1562304246722,
+            "phase": "frame"
+          }
+        ],
+        "time": 3.5000000000000018
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 36,
+            "kind": "scout",
+            "lane": 0,
+            "time": 3.600000000000002,
+            "organId": "lung_l",
+            "y": 1290.1569012543275,
+            "x": 1207.811054302868,
+            "phase": "frame"
+          }
+        ],
+        "time": 3.600000000000002
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 37,
+            "kind": "scout",
+            "lane": 0,
+            "time": 3.700000000000002,
+            "organId": "lung_l",
+            "y": 1290.2591433441658,
+            "x": 1207.4658781810624,
+            "phase": "frame"
+          }
+        ],
+        "time": 3.700000000000002
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 38,
+            "kind": "scout",
+            "lane": 0,
+            "time": 3.800000000000002,
+            "organId": "lung_l",
+            "y": 1290.3613854340042,
+            "x": 1207.1207020592565,
+            "phase": "frame"
+          }
+        ],
+        "time": 3.800000000000002
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 39,
+            "kind": "scout",
+            "lane": 0,
+            "time": 3.900000000000002,
+            "organId": "lung_l",
+            "y": 1290.4636275238427,
+            "x": 1206.77552593745,
+            "phase": "frame"
+          }
+        ],
+        "time": 3.900000000000002
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 40,
+            "kind": "scout",
+            "lane": 0,
+            "time": 4.000000000000002,
+            "organId": "lung_l",
+            "y": 1290.5658696136811,
+            "x": 1206.4303498156437,
+            "phase": "frame"
+          }
+        ],
+        "time": 4.000000000000002
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 41,
+            "kind": "scout",
+            "lane": 0,
+            "time": 4.100000000000001,
+            "organId": "lung_l",
+            "y": 1290.6681117035196,
+            "x": 1206.085173693837,
+            "phase": "frame"
+          }
+        ],
+        "time": 4.100000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 42,
+            "kind": "scout",
+            "lane": 0,
+            "time": 4.200000000000001,
+            "organId": "lung_l",
+            "y": 1290.770353793358,
+            "x": 1205.7399975720305,
+            "phase": "frame"
+          }
+        ],
+        "time": 4.200000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 43,
+            "kind": "scout",
+            "lane": 0,
+            "time": 4.300000000000001,
+            "organId": "lung_l",
+            "y": 1290.8725958831965,
+            "x": 1205.3948214502238,
+            "phase": "frame"
+          }
+        ],
+        "time": 4.300000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 44,
+            "kind": "scout",
+            "lane": 0,
+            "time": 4.4,
+            "organId": "lung_l",
+            "y": 1290.974837973035,
+            "x": 1205.0496453284172,
+            "phase": "frame"
+          }
+        ],
+        "time": 4.4
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 45,
+            "kind": "scout",
+            "lane": 0,
+            "time": 4.5,
+            "organId": "lung_l",
+            "y": 1291.0770800628734,
+            "x": 1204.7044692066106,
+            "phase": "frame"
+          }
+        ],
+        "time": 4.5
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 46,
+            "kind": "scout",
+            "lane": 0,
+            "time": 4.6,
+            "organId": "lung_l",
+            "y": 1291.1793221527118,
+            "x": 1204.359293084804,
+            "phase": "frame"
+          }
+        ],
+        "time": 4.6
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 47,
+            "kind": "scout",
+            "lane": 0,
+            "time": 4.699999999999999,
+            "organId": "lung_l",
+            "y": 1291.2815642425503,
+            "x": 1204.0141169629974,
+            "phase": "frame"
+          }
+        ],
+        "time": 4.699999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 48,
+            "kind": "scout",
+            "lane": 0,
+            "time": 4.799999999999999,
+            "organId": "lung_l",
+            "y": 1291.3838063323888,
+            "x": 1203.6689408411908,
+            "phase": "frame"
+          }
+        ],
+        "time": 4.799999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 49,
+            "kind": "scout",
+            "lane": 0,
+            "time": 4.899999999999999,
+            "organId": "lung_l",
+            "y": 1291.4860484222272,
+            "x": 1203.3237647193841,
+            "phase": "frame"
+          }
+        ],
+        "time": 4.899999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 50,
+            "kind": "scout",
+            "lane": 0,
+            "time": 4.999999999999998,
+            "organId": "lung_l",
+            "y": 1291.588290512066,
+            "x": 1202.9785885975775,
+            "phase": "frame"
+          }
+        ],
+        "time": 4.999999999999998
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 51,
+            "kind": "scout",
+            "lane": 0,
+            "time": 5.099999999999998,
+            "organId": "lung_l",
+            "y": 1291.6905326019044,
+            "x": 1202.633412475771,
+            "phase": "frame"
+          }
+        ],
+        "time": 5.099999999999998
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 52,
+            "kind": "scout",
+            "lane": 0,
+            "time": 5.1999999999999975,
+            "organId": "lung_l",
+            "y": 1291.792774691743,
+            "x": 1202.2882363539643,
+            "phase": "frame"
+          }
+        ],
+        "time": 5.1999999999999975
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 53,
+            "kind": "scout",
+            "lane": 0,
+            "time": 5.299999999999997,
+            "organId": "lung_l",
+            "y": 1291.8950167815815,
+            "x": 1201.9430602321577,
+            "phase": "frame"
+          }
+        ],
+        "time": 5.299999999999997
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 54,
+            "kind": "scout",
+            "lane": 0,
+            "time": 5.399999999999997,
+            "organId": "lung_l",
+            "y": 1291.9972588714202,
+            "x": 1201.597884110351,
+            "phase": "frame"
+          }
+        ],
+        "time": 5.399999999999997
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 55,
+            "kind": "scout",
+            "lane": 0,
+            "time": 5.4999999999999964,
+            "organId": "lung_l",
+            "y": 1292.0995009612586,
+            "x": 1201.2527079885444,
+            "phase": "frame"
+          }
+        ],
+        "time": 5.4999999999999964
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 56,
+            "kind": "scout",
+            "lane": 0,
+            "time": 5.599999999999996,
+            "organId": "lung_l",
+            "y": 1292.2017430510973,
+            "x": 1200.9075318667378,
+            "phase": "frame"
+          }
+        ],
+        "time": 5.599999999999996
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 57,
+            "kind": "scout",
+            "lane": 0,
+            "time": 5.699999999999996,
+            "organId": "lung_l",
+            "y": 1292.3039851409358,
+            "x": 1200.5623557449312,
+            "phase": "frame"
+          }
+        ],
+        "time": 5.699999999999996
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 58,
+            "kind": "scout",
+            "lane": 0,
+            "time": 5.799999999999995,
+            "organId": "lung_l",
+            "y": 1292.4062272307744,
+            "x": 1200.2171796231246,
+            "phase": "frame"
+          }
+        ],
+        "time": 5.799999999999995
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 59,
+            "kind": "scout",
+            "lane": 0,
+            "time": 5.899999999999995,
+            "organId": "lung_l",
+            "y": 1292.508469320613,
+            "x": 1199.872003501318,
+            "phase": "frame"
+          }
+        ],
+        "time": 5.899999999999995
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 60,
+            "kind": "scout",
+            "lane": 0,
+            "time": 5.999999999999995,
+            "organId": "lung_l",
+            "y": 1292.6107114104516,
+            "x": 1199.5268273795114,
+            "phase": "frame"
+          }
+        ],
+        "time": 5.999999999999995
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 61,
+            "kind": "scout",
+            "lane": 0,
+            "time": 6.099999999999994,
+            "organId": "lung_l",
+            "y": 1292.71295350029,
+            "x": 1199.1816512577047,
+            "phase": "frame"
+          }
+        ],
+        "time": 6.099999999999994
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 62,
+            "kind": "scout",
+            "lane": 0,
+            "time": 6.199999999999994,
+            "organId": "lung_l",
+            "y": 1292.8151955901287,
+            "x": 1198.8364751358981,
+            "phase": "frame"
+          }
+        ],
+        "time": 6.199999999999994
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 63,
+            "kind": "scout",
+            "lane": 0,
+            "time": 6.299999999999994,
+            "organId": "lung_l",
+            "y": 1292.9174376799672,
+            "x": 1198.4912990140915,
+            "phase": "frame"
+          }
+        ],
+        "time": 6.299999999999994
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 64,
+            "kind": "scout",
+            "lane": 0,
+            "time": 6.399999999999993,
+            "organId": "lung_l",
+            "y": 1293.0196797698059,
+            "x": 1198.146122892285,
+            "phase": "frame"
+          }
+        ],
+        "time": 6.399999999999993
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 65,
+            "kind": "scout",
+            "lane": 0,
+            "time": 6.499999999999993,
+            "organId": "lung_l",
+            "y": 1293.1219218596443,
+            "x": 1197.8009467704783,
+            "phase": "frame"
+          }
+        ],
+        "time": 6.499999999999993
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 66,
+            "kind": "scout",
+            "lane": 0,
+            "time": 6.5999999999999925,
+            "organId": "lung_l",
+            "y": 1293.224163949483,
+            "x": 1197.4557706486717,
+            "phase": "frame"
+          }
+        ],
+        "time": 6.5999999999999925
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 67,
+            "kind": "scout",
+            "lane": 0,
+            "time": 6.699999999999992,
+            "organId": "lung_l",
+            "y": 1293.3264060393217,
+            "x": 1197.110594526865,
+            "phase": "frame"
+          }
+        ],
+        "time": 6.699999999999992
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 68,
+            "kind": "scout",
+            "lane": 0,
+            "time": 6.799999999999992,
+            "organId": "lung_l",
+            "y": 1293.4286481291601,
+            "x": 1196.7654184050584,
+            "phase": "frame"
+          }
+        ],
+        "time": 6.799999999999992
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 69,
+            "kind": "scout",
+            "lane": 0,
+            "time": 6.8999999999999915,
+            "organId": "lung_l",
+            "y": 1293.5308902189988,
+            "x": 1196.4202422832518,
+            "phase": "frame"
+          }
+        ],
+        "time": 6.8999999999999915
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 70,
+            "kind": "scout",
+            "lane": 0,
+            "time": 6.999999999999991,
+            "organId": "lung_l",
+            "y": 1293.6331323088373,
+            "x": 1196.0750661614452,
+            "phase": "frame"
+          }
+        ],
+        "time": 6.999999999999991
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 71,
+            "kind": "scout",
+            "lane": 0,
+            "time": 7.099999999999991,
+            "organId": "lung_l",
+            "y": 1293.735374398676,
+            "x": 1195.7298900396386,
+            "phase": "frame"
+          }
+        ],
+        "time": 7.099999999999991
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 72,
+            "kind": "scout",
+            "lane": 0,
+            "time": 7.19999999999999,
+            "organId": "lung_l",
+            "y": 1293.8376164885144,
+            "x": 1195.384713917832,
+            "phase": "frame"
+          }
+        ],
+        "time": 7.19999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 73,
+            "kind": "scout",
+            "lane": 0,
+            "time": 7.29999999999999,
+            "organId": "lung_l",
+            "y": 1293.939858578353,
+            "x": 1195.0395377960253,
+            "phase": "frame"
+          }
+        ],
+        "time": 7.29999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 74,
+            "kind": "scout",
+            "lane": 0,
+            "time": 7.39999999999999,
+            "organId": "lung_l",
+            "y": 1294.0421006681916,
+            "x": 1194.6943616742187,
+            "phase": "frame"
+          }
+        ],
+        "time": 7.39999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 75,
+            "kind": "scout",
+            "lane": 0,
+            "time": 7.499999999999989,
+            "organId": "lung_l",
+            "y": 1294.1443427580302,
+            "x": 1194.349185552412,
+            "phase": "frame"
+          }
+        ],
+        "time": 7.499999999999989
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 76,
+            "kind": "scout",
+            "lane": 0,
+            "time": 7.599999999999989,
+            "organId": "lung_l",
+            "y": 1294.2465848478687,
+            "x": 1194.0040094306055,
+            "phase": "frame"
+          }
+        ],
+        "time": 7.599999999999989
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 77,
+            "kind": "scout",
+            "lane": 0,
+            "time": 7.699999999999989,
+            "organId": "lung_l",
+            "y": 1294.3488269377074,
+            "x": 1193.6588333087989,
+            "phase": "frame"
+          }
+        ],
+        "time": 7.699999999999989
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 78,
+            "kind": "scout",
+            "lane": 0,
+            "time": 7.799999999999988,
+            "organId": "lung_l",
+            "y": 1294.4510690275458,
+            "x": 1193.3136571869923,
+            "phase": "frame"
+          }
+        ],
+        "time": 7.799999999999988
+      },
+      {
+        "points": [
+          {
+            "transit": {
+              "gateId": "lung_l.candidate.1",
+              "toLane": 7,
+              "fromLane": 0
+            },
+            "id": 18,
+            "tick": 79,
+            "kind": "scout",
+            "lane": 0,
+            "time": 7.899999999999988,
+            "organId": "lung_l",
+            "y": 1294.5533111173845,
+            "x": 1192.9684810651856,
+            "phase": "frame"
+          }
+        ],
+        "time": 7.899999999999988
+      },
+      {
+        "points": [
+          {
+            "transit": {
+              "gateId": "lung_l.candidate.1",
+              "toLane": 7,
+              "fromLane": 0
+            },
+            "id": 18,
+            "tick": 80,
+            "kind": "scout",
+            "lane": 0,
+            "time": 7.999999999999988,
+            "organId": "lung_l",
+            "y": 1294.655553207223,
+            "x": 1192.623304943379,
+            "phase": "frame"
+          }
+        ],
+        "time": 7.999999999999988
+      },
+      {
+        "points": [
+          {
+            "transit": {
+              "gateId": "lung_l.candidate.1",
+              "toLane": 7,
+              "fromLane": 0
+            },
+            "id": 18,
+            "tick": 81,
+            "kind": "scout",
+            "lane": 0,
+            "time": 8.099999999999987,
+            "organId": "lung_l",
+            "y": 1294.7577952970616,
+            "x": 1192.2781288215724,
+            "phase": "frame"
+          }
+        ],
+        "time": 8.099999999999987
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 82,
+            "kind": "scout",
+            "lane": 7,
+            "time": 8.199999999999987,
+            "organId": "lung_l",
+            "y": 1294.8600373869,
+            "x": 1191.9329526997658,
+            "phase": "frame"
+          }
+        ],
+        "time": 8.199999999999987
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 83,
+            "kind": "scout",
+            "lane": 7,
+            "time": 8.299999999999986,
+            "organId": "lung_l",
+            "y": 1294.9622794767388,
+            "x": 1191.5877765779592,
+            "phase": "frame"
+          }
+        ],
+        "time": 8.299999999999986
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 84,
+            "kind": "scout",
+            "lane": 7,
+            "time": 8.399999999999986,
+            "organId": "lung_l",
+            "y": 1295.0645215665772,
+            "x": 1191.2426004561526,
+            "phase": "frame"
+          }
+        ],
+        "time": 8.399999999999986
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 85,
+            "kind": "scout",
+            "lane": 7,
+            "time": 8.499999999999986,
+            "organId": "lung_l",
+            "y": 1295.166763656416,
+            "x": 1190.897424334346,
+            "phase": "frame"
+          }
+        ],
+        "time": 8.499999999999986
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 86,
+            "kind": "scout",
+            "lane": 7,
+            "time": 8.599999999999985,
+            "organId": "lung_l",
+            "y": 1295.2690057462546,
+            "x": 1190.5522482125393,
+            "phase": "frame"
+          }
+        ],
+        "time": 8.599999999999985
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 87,
+            "kind": "scout",
+            "lane": 7,
+            "time": 8.699999999999985,
+            "organId": "lung_l",
+            "y": 1295.371247836093,
+            "x": 1190.2070720907327,
+            "phase": "frame"
+          }
+        ],
+        "time": 8.699999999999985
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 88,
+            "kind": "scout",
+            "lane": 7,
+            "time": 8.799999999999985,
+            "organId": "lung_l",
+            "y": 1295.4734899259317,
+            "x": 1189.861895968926,
+            "phase": "frame"
+          }
+        ],
+        "time": 8.799999999999985
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 89,
+            "kind": "scout",
+            "lane": 7,
+            "time": 8.899999999999984,
+            "organId": "lung_l",
+            "y": 1295.5757320157702,
+            "x": 1189.5167198471195,
+            "phase": "frame"
+          }
+        ],
+        "time": 8.899999999999984
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 90,
+            "kind": "scout",
+            "lane": 7,
+            "time": 8.999999999999984,
+            "organId": "lung_l",
+            "y": 1295.6779741056089,
+            "x": 1189.1715437253129,
+            "phase": "frame"
+          }
+        ],
+        "time": 8.999999999999984
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 91,
+            "kind": "scout",
+            "lane": 7,
+            "time": 9.099999999999984,
+            "organId": "lung_l",
+            "y": 1295.7713765029591,
+            "x": 1188.856210995556,
+            "phase": "frame"
+          }
+        ],
+        "time": 9.099999999999984
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 92,
+            "kind": "scout",
+            "lane": 7,
+            "time": 9.199999999999983,
+            "organId": "lung_l",
+            "y": 1295.835931371453,
+            "x": 1188.638269449314,
+            "phase": "frame"
+          }
+        ],
+        "time": 9.199999999999983
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 93,
+            "kind": "scout",
+            "lane": 7,
+            "time": 9.299999999999983,
+            "organId": "lung_l",
+            "y": 1295.8502060445346,
+            "x": 1188.5900771998975,
+            "phase": "frame"
+          }
+        ],
+        "time": 9.299999999999983
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "tick": 94,
+            "kind": "scout",
+            "lane": 7,
+            "time": 9.399999999999983,
+            "organId": "lung_l",
+            "y": 1295.8502060445346,
+            "x": 1188.5900771998975,
+            "phase": "frame"
+          }
+        ],
+        "time": 9.399999999999983
+      }
+    ],
+    "trace": [
+      {
+        "id": 18,
+        "tick": 1,
+        "kind": "scout",
+        "lane": 0,
+        "time": 0.1,
+        "organId": "lung_l",
+        "y": 1286.6264289375802,
+        "x": 1219.730164567191,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 2,
+        "kind": "scout",
+        "lane": 0,
+        "time": 0.2,
+        "organId": "lung_l",
+        "y": 1286.704168604621,
+        "x": 1219.4677102607302,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 2,
+        "kind": "scout",
+        "lane": 0,
+        "time": 0.2,
+        "organId": "lung_l",
+        "y": 1286.704168604621,
+        "x": 1219.4677102607302,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 3,
+        "kind": "scout",
+        "lane": 0,
+        "time": 0.30000000000000004,
+        "organId": "lung_l",
+        "y": 1286.7944157377399,
+        "x": 1219.1630299136896,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 3,
+        "kind": "scout",
+        "lane": 0,
+        "time": 0.30000000000000004,
+        "organId": "lung_l",
+        "y": 1286.7944157377399,
+        "x": 1219.1630299136896,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 4,
+        "kind": "scout",
+        "lane": 0,
+        "time": 0.4,
+        "organId": "lung_l",
+        "y": 1286.8907857965596,
+        "x": 1218.8376781606669,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 4,
+        "kind": "scout",
+        "lane": 0,
+        "time": 0.4,
+        "organId": "lung_l",
+        "y": 1286.8907857965596,
+        "x": 1218.8376781606669,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 5,
+        "kind": "scout",
+        "lane": 0,
+        "time": 0.5,
+        "organId": "lung_l",
+        "y": 1286.9901532825882,
+        "x": 1218.5022068932544,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 5,
+        "kind": "scout",
+        "lane": 0,
+        "time": 0.5,
+        "organId": "lung_l",
+        "y": 1286.9901532825882,
+        "x": 1218.5022068932544,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 6,
+        "kind": "scout",
+        "lane": 0,
+        "time": 0.6,
+        "organId": "lung_l",
+        "y": 1287.090988134107,
+        "x": 1218.1617817019737,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 6,
+        "kind": "scout",
+        "lane": 0,
+        "time": 0.6,
+        "organId": "lung_l",
+        "y": 1287.090988134107,
+        "x": 1218.1617817019737,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 7,
+        "kind": "scout",
+        "lane": 0,
+        "time": 0.7,
+        "organId": "lung_l",
+        "y": 1287.1925413221632,
+        "x": 1217.8189313585813,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 7,
+        "kind": "scout",
+        "lane": 0,
+        "time": 0.7,
+        "organId": "lung_l",
+        "y": 1287.1925413221632,
+        "x": 1217.8189313585813,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 8,
+        "kind": "scout",
+        "lane": 0,
+        "time": 0.7999999999999999,
+        "organId": "lung_l",
+        "y": 1287.29444616588,
+        "x": 1217.4748938021992,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 8,
+        "kind": "scout",
+        "lane": 0,
+        "time": 0.7999999999999999,
+        "organId": "lung_l",
+        "y": 1287.29444616588,
+        "x": 1217.4748938021992,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 9,
+        "kind": "scout",
+        "lane": 0,
+        "time": 0.8999999999999999,
+        "organId": "lung_l",
+        "y": 1287.3965231596924,
+        "x": 1217.1302750556001,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 9,
+        "kind": "scout",
+        "lane": 0,
+        "time": 0.8999999999999999,
+        "organId": "lung_l",
+        "y": 1287.3965231596924,
+        "x": 1217.1302750556001,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 10,
+        "kind": "scout",
+        "lane": 0,
+        "time": 0.9999999999999999,
+        "organId": "lung_l",
+        "y": 1287.4986844281482,
+        "x": 1216.7853717921776,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 10,
+        "kind": "scout",
+        "lane": 0,
+        "time": 0.9999999999999999,
+        "organId": "lung_l",
+        "y": 1287.4986844281482,
+        "x": 1216.7853717921776,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 11,
+        "kind": "scout",
+        "lane": 0,
+        "time": 1.0999999999999999,
+        "organId": "lung_l",
+        "y": 1287.6008869525529,
+        "x": 1216.4403292459172,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 11,
+        "kind": "scout",
+        "lane": 0,
+        "time": 1.0999999999999999,
+        "organId": "lung_l",
+        "y": 1287.6008869525529,
+        "x": 1216.4403292459172,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 12,
+        "kind": "scout",
+        "lane": 0,
+        "time": 1.2,
+        "organId": "lung_l",
+        "y": 1287.7031096734634,
+        "x": 1216.0952185149051,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 12,
+        "kind": "scout",
+        "lane": 0,
+        "time": 1.2,
+        "organId": "lung_l",
+        "y": 1287.7031096734634,
+        "x": 1216.0952185149051,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 13,
+        "kind": "scout",
+        "lane": 0,
+        "time": 1.3,
+        "organId": "lung_l",
+        "y": 1287.8053422814046,
+        "x": 1215.7500744046165,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 13,
+        "kind": "scout",
+        "lane": 0,
+        "time": 1.3,
+        "organId": "lung_l",
+        "y": 1287.8053422814046,
+        "x": 1215.7500744046165,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 14,
+        "kind": "scout",
+        "lane": 0,
+        "time": 1.4000000000000001,
+        "organId": "lung_l",
+        "y": 1287.9075797294595,
+        "x": 1215.4049139537815,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 14,
+        "kind": "scout",
+        "lane": 0,
+        "time": 1.4000000000000001,
+        "organId": "lung_l",
+        "y": 1287.9075797294595,
+        "x": 1215.4049139537815,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 15,
+        "kind": "scout",
+        "lane": 0,
+        "time": 1.5000000000000002,
+        "organId": "lung_l",
+        "y": 1288.0098195469516,
+        "x": 1215.0597455035684,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 15,
+        "kind": "scout",
+        "lane": 0,
+        "time": 1.5000000000000002,
+        "organId": "lung_l",
+        "y": 1288.0098195469516,
+        "x": 1215.0597455035684,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 16,
+        "kind": "scout",
+        "lane": 0,
+        "time": 1.6000000000000003,
+        "organId": "lung_l",
+        "y": 1288.1120605243818,
+        "x": 1214.7145731373264,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 16,
+        "kind": "scout",
+        "lane": 0,
+        "time": 1.6000000000000003,
+        "organId": "lung_l",
+        "y": 1288.1120605243818,
+        "x": 1214.7145731373264,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 17,
+        "kind": "scout",
+        "lane": 0,
+        "time": 1.7000000000000004,
+        "organId": "lung_l",
+        "y": 1288.21430206965,
+        "x": 1214.3693988540251,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 17,
+        "kind": "scout",
+        "lane": 0,
+        "time": 1.7000000000000004,
+        "organId": "lung_l",
+        "y": 1288.21430206965,
+        "x": 1214.3693988540251,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 18,
+        "kind": "scout",
+        "lane": 0,
+        "time": 1.8000000000000005,
+        "organId": "lung_l",
+        "y": 1288.3165438928988,
+        "x": 1214.0242236322435,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 18,
+        "kind": "scout",
+        "lane": 0,
+        "time": 1.8000000000000005,
+        "organId": "lung_l",
+        "y": 1288.3165438928988,
+        "x": 1214.0242236322435,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 19,
+        "kind": "scout",
+        "lane": 0,
+        "time": 1.9000000000000006,
+        "organId": "lung_l",
+        "y": 1288.4187858522305,
+        "x": 1213.6790479510366,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 19,
+        "kind": "scout",
+        "lane": 0,
+        "time": 1.9000000000000006,
+        "organId": "lung_l",
+        "y": 1288.4187858522305,
+        "x": 1213.6790479510366,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 20,
+        "kind": "scout",
+        "lane": 0,
+        "time": 2.0000000000000004,
+        "organId": "lung_l",
+        "y": 1288.5210278781806,
+        "x": 1213.333872044922,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 20,
+        "kind": "scout",
+        "lane": 0,
+        "time": 2.0000000000000004,
+        "organId": "lung_l",
+        "y": 1288.5210278781806,
+        "x": 1213.333872044922,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 21,
+        "kind": "scout",
+        "lane": 0,
+        "time": 2.1000000000000005,
+        "organId": "lung_l",
+        "y": 1288.623269936743,
+        "x": 1212.9886960287056,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 21,
+        "kind": "scout",
+        "lane": 0,
+        "time": 2.1000000000000005,
+        "organId": "lung_l",
+        "y": 1288.623269936743,
+        "x": 1212.9886960287056,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 22,
+        "kind": "scout",
+        "lane": 0,
+        "time": 2.2000000000000006,
+        "organId": "lung_l",
+        "y": 1288.7255120112707,
+        "x": 1212.6435199585899,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 22,
+        "kind": "scout",
+        "lane": 0,
+        "time": 2.2000000000000006,
+        "organId": "lung_l",
+        "y": 1288.7255120112707,
+        "x": 1212.6435199585899,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 23,
+        "kind": "scout",
+        "lane": 0,
+        "time": 2.3000000000000007,
+        "organId": "lung_l",
+        "y": 1288.827754093614,
+        "x": 1212.2983438620881,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 23,
+        "kind": "scout",
+        "lane": 0,
+        "time": 2.3000000000000007,
+        "organId": "lung_l",
+        "y": 1288.827754093614,
+        "x": 1212.2983438620881,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 24,
+        "kind": "scout",
+        "lane": 0,
+        "time": 2.400000000000001,
+        "organId": "lung_l",
+        "y": 1288.9299961797833,
+        "x": 1211.9531677526693,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 24,
+        "kind": "scout",
+        "lane": 0,
+        "time": 2.400000000000001,
+        "organId": "lung_l",
+        "y": 1288.9299961797833,
+        "x": 1211.9531677526693,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 25,
+        "kind": "scout",
+        "lane": 0,
+        "time": 2.500000000000001,
+        "organId": "lung_l",
+        "y": 1289.0322382678255,
+        "x": 1211.607991636927,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 25,
+        "kind": "scout",
+        "lane": 0,
+        "time": 2.500000000000001,
+        "organId": "lung_l",
+        "y": 1289.0322382678255,
+        "x": 1211.607991636927,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 26,
+        "kind": "scout",
+        "lane": 0,
+        "time": 2.600000000000001,
+        "organId": "lung_l",
+        "y": 1289.1344803567847,
+        "x": 1211.2628155180892,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 26,
+        "kind": "scout",
+        "lane": 0,
+        "time": 2.600000000000001,
+        "organId": "lung_l",
+        "y": 1289.1344803567847,
+        "x": 1211.2628155180892,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 27,
+        "kind": "scout",
+        "lane": 0,
+        "time": 2.700000000000001,
+        "organId": "lung_l",
+        "y": 1289.2367224461927,
+        "x": 1210.917639397736,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 27,
+        "kind": "scout",
+        "lane": 0,
+        "time": 2.700000000000001,
+        "organId": "lung_l",
+        "y": 1289.2367224461927,
+        "x": 1210.917639397736,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 28,
+        "kind": "scout",
+        "lane": 0,
+        "time": 2.800000000000001,
+        "organId": "lung_l",
+        "y": 1289.3389645358207,
+        "x": 1210.5724632766407,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 28,
+        "kind": "scout",
+        "lane": 0,
+        "time": 2.800000000000001,
+        "organId": "lung_l",
+        "y": 1289.3389645358207,
+        "x": 1210.5724632766407,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 29,
+        "kind": "scout",
+        "lane": 0,
+        "time": 2.9000000000000012,
+        "organId": "lung_l",
+        "y": 1289.441206625556,
+        "x": 1210.2272871551825,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 29,
+        "kind": "scout",
+        "lane": 0,
+        "time": 2.9000000000000012,
+        "organId": "lung_l",
+        "y": 1289.441206625556,
+        "x": 1210.2272871551825,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 30,
+        "kind": "scout",
+        "lane": 0,
+        "time": 3.0000000000000013,
+        "organId": "lung_l",
+        "y": 1289.543448715344,
+        "x": 1209.8821110335464,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 30,
+        "kind": "scout",
+        "lane": 0,
+        "time": 3.0000000000000013,
+        "organId": "lung_l",
+        "y": 1289.543448715344,
+        "x": 1209.8821110335464,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 31,
+        "kind": "scout",
+        "lane": 0,
+        "time": 3.1000000000000014,
+        "organId": "lung_l",
+        "y": 1289.645690805158,
+        "x": 1209.5369349118232,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 31,
+        "kind": "scout",
+        "lane": 0,
+        "time": 3.1000000000000014,
+        "organId": "lung_l",
+        "y": 1289.645690805158,
+        "x": 1209.5369349118232,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 32,
+        "kind": "scout",
+        "lane": 0,
+        "time": 3.2000000000000015,
+        "organId": "lung_l",
+        "y": 1289.7479328949844,
+        "x": 1209.1917587900575,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 32,
+        "kind": "scout",
+        "lane": 0,
+        "time": 3.2000000000000015,
+        "organId": "lung_l",
+        "y": 1289.7479328949844,
+        "x": 1209.1917587900575,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 33,
+        "kind": "scout",
+        "lane": 0,
+        "time": 3.3000000000000016,
+        "organId": "lung_l",
+        "y": 1289.850174984817,
+        "x": 1208.846582668271,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 33,
+        "kind": "scout",
+        "lane": 0,
+        "time": 3.3000000000000016,
+        "organId": "lung_l",
+        "y": 1289.850174984817,
+        "x": 1208.846582668271,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 34,
+        "kind": "scout",
+        "lane": 0,
+        "time": 3.4000000000000017,
+        "organId": "lung_l",
+        "y": 1289.9524170746527,
+        "x": 1208.501406546474,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 34,
+        "kind": "scout",
+        "lane": 0,
+        "time": 3.4000000000000017,
+        "organId": "lung_l",
+        "y": 1289.9524170746527,
+        "x": 1208.501406546474,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 35,
+        "kind": "scout",
+        "lane": 0,
+        "time": 3.5000000000000018,
+        "organId": "lung_l",
+        "y": 1290.0546591644897,
+        "x": 1208.1562304246722,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 35,
+        "kind": "scout",
+        "lane": 0,
+        "time": 3.5000000000000018,
+        "organId": "lung_l",
+        "y": 1290.0546591644897,
+        "x": 1208.1562304246722,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 36,
+        "kind": "scout",
+        "lane": 0,
+        "time": 3.600000000000002,
+        "organId": "lung_l",
+        "y": 1290.1569012543275,
+        "x": 1207.811054302868,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 36,
+        "kind": "scout",
+        "lane": 0,
+        "time": 3.600000000000002,
+        "organId": "lung_l",
+        "y": 1290.1569012543275,
+        "x": 1207.811054302868,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 37,
+        "kind": "scout",
+        "lane": 0,
+        "time": 3.700000000000002,
+        "organId": "lung_l",
+        "y": 1290.2591433441658,
+        "x": 1207.4658781810624,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 37,
+        "kind": "scout",
+        "lane": 0,
+        "time": 3.700000000000002,
+        "organId": "lung_l",
+        "y": 1290.2591433441658,
+        "x": 1207.4658781810624,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 38,
+        "kind": "scout",
+        "lane": 0,
+        "time": 3.800000000000002,
+        "organId": "lung_l",
+        "y": 1290.3613854340042,
+        "x": 1207.1207020592565,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 38,
+        "kind": "scout",
+        "lane": 0,
+        "time": 3.800000000000002,
+        "organId": "lung_l",
+        "y": 1290.3613854340042,
+        "x": 1207.1207020592565,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 39,
+        "kind": "scout",
+        "lane": 0,
+        "time": 3.900000000000002,
+        "organId": "lung_l",
+        "y": 1290.4636275238427,
+        "x": 1206.77552593745,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 39,
+        "kind": "scout",
+        "lane": 0,
+        "time": 3.900000000000002,
+        "organId": "lung_l",
+        "y": 1290.4636275238427,
+        "x": 1206.77552593745,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 40,
+        "kind": "scout",
+        "lane": 0,
+        "time": 4.000000000000002,
+        "organId": "lung_l",
+        "y": 1290.5658696136811,
+        "x": 1206.4303498156437,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 40,
+        "kind": "scout",
+        "lane": 0,
+        "time": 4.000000000000002,
+        "organId": "lung_l",
+        "y": 1290.5658696136811,
+        "x": 1206.4303498156437,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 41,
+        "kind": "scout",
+        "lane": 0,
+        "time": 4.100000000000001,
+        "organId": "lung_l",
+        "y": 1290.6681117035196,
+        "x": 1206.085173693837,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 41,
+        "kind": "scout",
+        "lane": 0,
+        "time": 4.100000000000001,
+        "organId": "lung_l",
+        "y": 1290.6681117035196,
+        "x": 1206.085173693837,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 42,
+        "kind": "scout",
+        "lane": 0,
+        "time": 4.200000000000001,
+        "organId": "lung_l",
+        "y": 1290.770353793358,
+        "x": 1205.7399975720305,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 42,
+        "kind": "scout",
+        "lane": 0,
+        "time": 4.200000000000001,
+        "organId": "lung_l",
+        "y": 1290.770353793358,
+        "x": 1205.7399975720305,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 43,
+        "kind": "scout",
+        "lane": 0,
+        "time": 4.300000000000001,
+        "organId": "lung_l",
+        "y": 1290.8725958831965,
+        "x": 1205.3948214502238,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 43,
+        "kind": "scout",
+        "lane": 0,
+        "time": 4.300000000000001,
+        "organId": "lung_l",
+        "y": 1290.8725958831965,
+        "x": 1205.3948214502238,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 44,
+        "kind": "scout",
+        "lane": 0,
+        "time": 4.4,
+        "organId": "lung_l",
+        "y": 1290.974837973035,
+        "x": 1205.0496453284172,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 44,
+        "kind": "scout",
+        "lane": 0,
+        "time": 4.4,
+        "organId": "lung_l",
+        "y": 1290.974837973035,
+        "x": 1205.0496453284172,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 45,
+        "kind": "scout",
+        "lane": 0,
+        "time": 4.5,
+        "organId": "lung_l",
+        "y": 1291.0770800628734,
+        "x": 1204.7044692066106,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 45,
+        "kind": "scout",
+        "lane": 0,
+        "time": 4.5,
+        "organId": "lung_l",
+        "y": 1291.0770800628734,
+        "x": 1204.7044692066106,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 46,
+        "kind": "scout",
+        "lane": 0,
+        "time": 4.6,
+        "organId": "lung_l",
+        "y": 1291.1793221527118,
+        "x": 1204.359293084804,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 46,
+        "kind": "scout",
+        "lane": 0,
+        "time": 4.6,
+        "organId": "lung_l",
+        "y": 1291.1793221527118,
+        "x": 1204.359293084804,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 47,
+        "kind": "scout",
+        "lane": 0,
+        "time": 4.699999999999999,
+        "organId": "lung_l",
+        "y": 1291.2815642425503,
+        "x": 1204.0141169629974,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 47,
+        "kind": "scout",
+        "lane": 0,
+        "time": 4.699999999999999,
+        "organId": "lung_l",
+        "y": 1291.2815642425503,
+        "x": 1204.0141169629974,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 48,
+        "kind": "scout",
+        "lane": 0,
+        "time": 4.799999999999999,
+        "organId": "lung_l",
+        "y": 1291.3838063323888,
+        "x": 1203.6689408411908,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 48,
+        "kind": "scout",
+        "lane": 0,
+        "time": 4.799999999999999,
+        "organId": "lung_l",
+        "y": 1291.3838063323888,
+        "x": 1203.6689408411908,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 49,
+        "kind": "scout",
+        "lane": 0,
+        "time": 4.899999999999999,
+        "organId": "lung_l",
+        "y": 1291.4860484222272,
+        "x": 1203.3237647193841,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 49,
+        "kind": "scout",
+        "lane": 0,
+        "time": 4.899999999999999,
+        "organId": "lung_l",
+        "y": 1291.4860484222272,
+        "x": 1203.3237647193841,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 50,
+        "kind": "scout",
+        "lane": 0,
+        "time": 4.999999999999998,
+        "organId": "lung_l",
+        "y": 1291.588290512066,
+        "x": 1202.9785885975775,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 50,
+        "kind": "scout",
+        "lane": 0,
+        "time": 4.999999999999998,
+        "organId": "lung_l",
+        "y": 1291.588290512066,
+        "x": 1202.9785885975775,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 51,
+        "kind": "scout",
+        "lane": 0,
+        "time": 5.099999999999998,
+        "organId": "lung_l",
+        "y": 1291.6905326019044,
+        "x": 1202.633412475771,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 51,
+        "kind": "scout",
+        "lane": 0,
+        "time": 5.099999999999998,
+        "organId": "lung_l",
+        "y": 1291.6905326019044,
+        "x": 1202.633412475771,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 52,
+        "kind": "scout",
+        "lane": 0,
+        "time": 5.1999999999999975,
+        "organId": "lung_l",
+        "y": 1291.792774691743,
+        "x": 1202.2882363539643,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 52,
+        "kind": "scout",
+        "lane": 0,
+        "time": 5.1999999999999975,
+        "organId": "lung_l",
+        "y": 1291.792774691743,
+        "x": 1202.2882363539643,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 53,
+        "kind": "scout",
+        "lane": 0,
+        "time": 5.299999999999997,
+        "organId": "lung_l",
+        "y": 1291.8950167815815,
+        "x": 1201.9430602321577,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 53,
+        "kind": "scout",
+        "lane": 0,
+        "time": 5.299999999999997,
+        "organId": "lung_l",
+        "y": 1291.8950167815815,
+        "x": 1201.9430602321577,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 54,
+        "kind": "scout",
+        "lane": 0,
+        "time": 5.399999999999997,
+        "organId": "lung_l",
+        "y": 1291.9972588714202,
+        "x": 1201.597884110351,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 54,
+        "kind": "scout",
+        "lane": 0,
+        "time": 5.399999999999997,
+        "organId": "lung_l",
+        "y": 1291.9972588714202,
+        "x": 1201.597884110351,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 55,
+        "kind": "scout",
+        "lane": 0,
+        "time": 5.4999999999999964,
+        "organId": "lung_l",
+        "y": 1292.0995009612586,
+        "x": 1201.2527079885444,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 55,
+        "kind": "scout",
+        "lane": 0,
+        "time": 5.4999999999999964,
+        "organId": "lung_l",
+        "y": 1292.0995009612586,
+        "x": 1201.2527079885444,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 56,
+        "kind": "scout",
+        "lane": 0,
+        "time": 5.599999999999996,
+        "organId": "lung_l",
+        "y": 1292.2017430510973,
+        "x": 1200.9075318667378,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 56,
+        "kind": "scout",
+        "lane": 0,
+        "time": 5.599999999999996,
+        "organId": "lung_l",
+        "y": 1292.2017430510973,
+        "x": 1200.9075318667378,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 57,
+        "kind": "scout",
+        "lane": 0,
+        "time": 5.699999999999996,
+        "organId": "lung_l",
+        "y": 1292.3039851409358,
+        "x": 1200.5623557449312,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 57,
+        "kind": "scout",
+        "lane": 0,
+        "time": 5.699999999999996,
+        "organId": "lung_l",
+        "y": 1292.3039851409358,
+        "x": 1200.5623557449312,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 58,
+        "kind": "scout",
+        "lane": 0,
+        "time": 5.799999999999995,
+        "organId": "lung_l",
+        "y": 1292.4062272307744,
+        "x": 1200.2171796231246,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 58,
+        "kind": "scout",
+        "lane": 0,
+        "time": 5.799999999999995,
+        "organId": "lung_l",
+        "y": 1292.4062272307744,
+        "x": 1200.2171796231246,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 59,
+        "kind": "scout",
+        "lane": 0,
+        "time": 5.899999999999995,
+        "organId": "lung_l",
+        "y": 1292.508469320613,
+        "x": 1199.872003501318,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 59,
+        "kind": "scout",
+        "lane": 0,
+        "time": 5.899999999999995,
+        "organId": "lung_l",
+        "y": 1292.508469320613,
+        "x": 1199.872003501318,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 60,
+        "kind": "scout",
+        "lane": 0,
+        "time": 5.999999999999995,
+        "organId": "lung_l",
+        "y": 1292.6107114104516,
+        "x": 1199.5268273795114,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 60,
+        "kind": "scout",
+        "lane": 0,
+        "time": 5.999999999999995,
+        "organId": "lung_l",
+        "y": 1292.6107114104516,
+        "x": 1199.5268273795114,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 61,
+        "kind": "scout",
+        "lane": 0,
+        "time": 6.099999999999994,
+        "organId": "lung_l",
+        "y": 1292.71295350029,
+        "x": 1199.1816512577047,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 61,
+        "kind": "scout",
+        "lane": 0,
+        "time": 6.099999999999994,
+        "organId": "lung_l",
+        "y": 1292.71295350029,
+        "x": 1199.1816512577047,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 62,
+        "kind": "scout",
+        "lane": 0,
+        "time": 6.199999999999994,
+        "organId": "lung_l",
+        "y": 1292.8151955901287,
+        "x": 1198.8364751358981,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 62,
+        "kind": "scout",
+        "lane": 0,
+        "time": 6.199999999999994,
+        "organId": "lung_l",
+        "y": 1292.8151955901287,
+        "x": 1198.8364751358981,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 63,
+        "kind": "scout",
+        "lane": 0,
+        "time": 6.299999999999994,
+        "organId": "lung_l",
+        "y": 1292.9174376799672,
+        "x": 1198.4912990140915,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 63,
+        "kind": "scout",
+        "lane": 0,
+        "time": 6.299999999999994,
+        "organId": "lung_l",
+        "y": 1292.9174376799672,
+        "x": 1198.4912990140915,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 64,
+        "kind": "scout",
+        "lane": 0,
+        "time": 6.399999999999993,
+        "organId": "lung_l",
+        "y": 1293.0196797698059,
+        "x": 1198.146122892285,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 64,
+        "kind": "scout",
+        "lane": 0,
+        "time": 6.399999999999993,
+        "organId": "lung_l",
+        "y": 1293.0196797698059,
+        "x": 1198.146122892285,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 65,
+        "kind": "scout",
+        "lane": 0,
+        "time": 6.499999999999993,
+        "organId": "lung_l",
+        "y": 1293.1219218596443,
+        "x": 1197.8009467704783,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 65,
+        "kind": "scout",
+        "lane": 0,
+        "time": 6.499999999999993,
+        "organId": "lung_l",
+        "y": 1293.1219218596443,
+        "x": 1197.8009467704783,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 66,
+        "kind": "scout",
+        "lane": 0,
+        "time": 6.5999999999999925,
+        "organId": "lung_l",
+        "y": 1293.224163949483,
+        "x": 1197.4557706486717,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 66,
+        "kind": "scout",
+        "lane": 0,
+        "time": 6.5999999999999925,
+        "organId": "lung_l",
+        "y": 1293.224163949483,
+        "x": 1197.4557706486717,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 67,
+        "kind": "scout",
+        "lane": 0,
+        "time": 6.699999999999992,
+        "organId": "lung_l",
+        "y": 1293.3264060393217,
+        "x": 1197.110594526865,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 67,
+        "kind": "scout",
+        "lane": 0,
+        "time": 6.699999999999992,
+        "organId": "lung_l",
+        "y": 1293.3264060393217,
+        "x": 1197.110594526865,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 68,
+        "kind": "scout",
+        "lane": 0,
+        "time": 6.799999999999992,
+        "organId": "lung_l",
+        "y": 1293.4286481291601,
+        "x": 1196.7654184050584,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 68,
+        "kind": "scout",
+        "lane": 0,
+        "time": 6.799999999999992,
+        "organId": "lung_l",
+        "y": 1293.4286481291601,
+        "x": 1196.7654184050584,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 69,
+        "kind": "scout",
+        "lane": 0,
+        "time": 6.8999999999999915,
+        "organId": "lung_l",
+        "y": 1293.5308902189988,
+        "x": 1196.4202422832518,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 69,
+        "kind": "scout",
+        "lane": 0,
+        "time": 6.8999999999999915,
+        "organId": "lung_l",
+        "y": 1293.5308902189988,
+        "x": 1196.4202422832518,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 70,
+        "kind": "scout",
+        "lane": 0,
+        "time": 6.999999999999991,
+        "organId": "lung_l",
+        "y": 1293.6331323088373,
+        "x": 1196.0750661614452,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 70,
+        "kind": "scout",
+        "lane": 0,
+        "time": 6.999999999999991,
+        "organId": "lung_l",
+        "y": 1293.6331323088373,
+        "x": 1196.0750661614452,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 71,
+        "kind": "scout",
+        "lane": 0,
+        "time": 7.099999999999991,
+        "organId": "lung_l",
+        "y": 1293.735374398676,
+        "x": 1195.7298900396386,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 71,
+        "kind": "scout",
+        "lane": 0,
+        "time": 7.099999999999991,
+        "organId": "lung_l",
+        "y": 1293.735374398676,
+        "x": 1195.7298900396386,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 72,
+        "kind": "scout",
+        "lane": 0,
+        "time": 7.19999999999999,
+        "organId": "lung_l",
+        "y": 1293.8376164885144,
+        "x": 1195.384713917832,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 72,
+        "kind": "scout",
+        "lane": 0,
+        "time": 7.19999999999999,
+        "organId": "lung_l",
+        "y": 1293.8376164885144,
+        "x": 1195.384713917832,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 73,
+        "kind": "scout",
+        "lane": 0,
+        "time": 7.29999999999999,
+        "organId": "lung_l",
+        "y": 1293.939858578353,
+        "x": 1195.0395377960253,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 73,
+        "kind": "scout",
+        "lane": 0,
+        "time": 7.29999999999999,
+        "organId": "lung_l",
+        "y": 1293.939858578353,
+        "x": 1195.0395377960253,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 74,
+        "kind": "scout",
+        "lane": 0,
+        "time": 7.39999999999999,
+        "organId": "lung_l",
+        "y": 1294.0421006681916,
+        "x": 1194.6943616742187,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 74,
+        "kind": "scout",
+        "lane": 0,
+        "time": 7.39999999999999,
+        "organId": "lung_l",
+        "y": 1294.0421006681916,
+        "x": 1194.6943616742187,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 75,
+        "kind": "scout",
+        "lane": 0,
+        "time": 7.499999999999989,
+        "organId": "lung_l",
+        "y": 1294.1443427580302,
+        "x": 1194.349185552412,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 75,
+        "kind": "scout",
+        "lane": 0,
+        "time": 7.499999999999989,
+        "organId": "lung_l",
+        "y": 1294.1443427580302,
+        "x": 1194.349185552412,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 76,
+        "kind": "scout",
+        "lane": 0,
+        "time": 7.599999999999989,
+        "organId": "lung_l",
+        "y": 1294.2465848478687,
+        "x": 1194.0040094306055,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 76,
+        "kind": "scout",
+        "lane": 0,
+        "time": 7.599999999999989,
+        "organId": "lung_l",
+        "y": 1294.2465848478687,
+        "x": 1194.0040094306055,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 77,
+        "kind": "scout",
+        "lane": 0,
+        "time": 7.699999999999989,
+        "organId": "lung_l",
+        "y": 1294.3488269377074,
+        "x": 1193.6588333087989,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 77,
+        "kind": "scout",
+        "lane": 0,
+        "time": 7.699999999999989,
+        "organId": "lung_l",
+        "y": 1294.3488269377074,
+        "x": 1193.6588333087989,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 78,
+        "kind": "scout",
+        "lane": 0,
+        "time": 7.799999999999988,
+        "organId": "lung_l",
+        "y": 1294.4510690275458,
+        "x": 1193.3136571869923,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 78,
+        "kind": "scout",
+        "lane": 0,
+        "time": 7.799999999999988,
+        "organId": "lung_l",
+        "y": 1294.4510690275458,
+        "x": 1193.3136571869923,
+        "phase": "substep"
+      },
+      {
+        "transit": {
+          "gateId": "lung_l.candidate.1",
+          "toLane": 7,
+          "fromLane": 0
+        },
+        "id": 18,
+        "tick": 79,
+        "kind": "scout",
+        "lane": 0,
+        "time": 7.899999999999988,
+        "organId": "lung_l",
+        "y": 1294.5533111173845,
+        "x": 1192.9684810651856,
+        "phase": "substep"
+      },
+      {
+        "transit": {
+          "gateId": "lung_l.candidate.1",
+          "toLane": 7,
+          "fromLane": 0
+        },
+        "id": 18,
+        "tick": 79,
+        "kind": "scout",
+        "lane": 0,
+        "time": 7.899999999999988,
+        "organId": "lung_l",
+        "y": 1294.5533111173845,
+        "x": 1192.9684810651856,
+        "phase": "substep"
+      },
+      {
+        "transit": {
+          "gateId": "lung_l.candidate.1",
+          "toLane": 7,
+          "fromLane": 0
+        },
+        "id": 18,
+        "tick": 80,
+        "kind": "scout",
+        "lane": 0,
+        "time": 7.999999999999988,
+        "organId": "lung_l",
+        "y": 1294.655553207223,
+        "x": 1192.623304943379,
+        "phase": "substep"
+      },
+      {
+        "transit": {
+          "gateId": "lung_l.candidate.1",
+          "toLane": 7,
+          "fromLane": 0
+        },
+        "id": 18,
+        "tick": 80,
+        "kind": "scout",
+        "lane": 0,
+        "time": 7.999999999999988,
+        "organId": "lung_l",
+        "y": 1294.655553207223,
+        "x": 1192.623304943379,
+        "phase": "substep"
+      },
+      {
+        "transit": {
+          "gateId": "lung_l.candidate.1",
+          "toLane": 7,
+          "fromLane": 0
+        },
+        "id": 18,
+        "tick": 81,
+        "kind": "scout",
+        "lane": 0,
+        "time": 8.099999999999987,
+        "organId": "lung_l",
+        "y": 1294.7577952970616,
+        "x": 1192.2781288215724,
+        "phase": "substep"
+      },
+      {
+        "transit": {
+          "gateId": "lung_l.candidate.1",
+          "toLane": 7,
+          "fromLane": 0
+        },
+        "id": 18,
+        "tick": 81,
+        "kind": "scout",
+        "lane": 0,
+        "time": 8.099999999999987,
+        "organId": "lung_l",
+        "y": 1294.7577952970616,
+        "x": 1192.2781288215724,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 82,
+        "kind": "scout",
+        "lane": 7,
+        "time": 8.199999999999987,
+        "organId": "lung_l",
+        "y": 1294.8600373869,
+        "x": 1191.9329526997658,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 82,
+        "kind": "scout",
+        "lane": 7,
+        "time": 8.199999999999987,
+        "organId": "lung_l",
+        "y": 1294.8600373869,
+        "x": 1191.9329526997658,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 83,
+        "kind": "scout",
+        "lane": 7,
+        "time": 8.299999999999986,
+        "organId": "lung_l",
+        "y": 1294.9622794767388,
+        "x": 1191.5877765779592,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 83,
+        "kind": "scout",
+        "lane": 7,
+        "time": 8.299999999999986,
+        "organId": "lung_l",
+        "y": 1294.9622794767388,
+        "x": 1191.5877765779592,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 84,
+        "kind": "scout",
+        "lane": 7,
+        "time": 8.399999999999986,
+        "organId": "lung_l",
+        "y": 1295.0645215665772,
+        "x": 1191.2426004561526,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 84,
+        "kind": "scout",
+        "lane": 7,
+        "time": 8.399999999999986,
+        "organId": "lung_l",
+        "y": 1295.0645215665772,
+        "x": 1191.2426004561526,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 85,
+        "kind": "scout",
+        "lane": 7,
+        "time": 8.499999999999986,
+        "organId": "lung_l",
+        "y": 1295.166763656416,
+        "x": 1190.897424334346,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 85,
+        "kind": "scout",
+        "lane": 7,
+        "time": 8.499999999999986,
+        "organId": "lung_l",
+        "y": 1295.166763656416,
+        "x": 1190.897424334346,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 86,
+        "kind": "scout",
+        "lane": 7,
+        "time": 8.599999999999985,
+        "organId": "lung_l",
+        "y": 1295.2690057462546,
+        "x": 1190.5522482125393,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 86,
+        "kind": "scout",
+        "lane": 7,
+        "time": 8.599999999999985,
+        "organId": "lung_l",
+        "y": 1295.2690057462546,
+        "x": 1190.5522482125393,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 87,
+        "kind": "scout",
+        "lane": 7,
+        "time": 8.699999999999985,
+        "organId": "lung_l",
+        "y": 1295.371247836093,
+        "x": 1190.2070720907327,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 87,
+        "kind": "scout",
+        "lane": 7,
+        "time": 8.699999999999985,
+        "organId": "lung_l",
+        "y": 1295.371247836093,
+        "x": 1190.2070720907327,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 88,
+        "kind": "scout",
+        "lane": 7,
+        "time": 8.799999999999985,
+        "organId": "lung_l",
+        "y": 1295.4734899259317,
+        "x": 1189.861895968926,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 88,
+        "kind": "scout",
+        "lane": 7,
+        "time": 8.799999999999985,
+        "organId": "lung_l",
+        "y": 1295.4734899259317,
+        "x": 1189.861895968926,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 89,
+        "kind": "scout",
+        "lane": 7,
+        "time": 8.899999999999984,
+        "organId": "lung_l",
+        "y": 1295.5757320157702,
+        "x": 1189.5167198471195,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 89,
+        "kind": "scout",
+        "lane": 7,
+        "time": 8.899999999999984,
+        "organId": "lung_l",
+        "y": 1295.5757320157702,
+        "x": 1189.5167198471195,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 90,
+        "kind": "scout",
+        "lane": 7,
+        "time": 8.999999999999984,
+        "organId": "lung_l",
+        "y": 1295.6779741056089,
+        "x": 1189.1715437253129,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 90,
+        "kind": "scout",
+        "lane": 7,
+        "time": 8.999999999999984,
+        "organId": "lung_l",
+        "y": 1295.6779741056089,
+        "x": 1189.1715437253129,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 91,
+        "kind": "scout",
+        "lane": 7,
+        "time": 9.099999999999984,
+        "organId": "lung_l",
+        "y": 1295.7713765029591,
+        "x": 1188.856210995556,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 91,
+        "kind": "scout",
+        "lane": 7,
+        "time": 9.099999999999984,
+        "organId": "lung_l",
+        "y": 1295.7713765029591,
+        "x": 1188.856210995556,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 92,
+        "kind": "scout",
+        "lane": 7,
+        "time": 9.199999999999983,
+        "organId": "lung_l",
+        "y": 1295.835931371453,
+        "x": 1188.638269449314,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 92,
+        "kind": "scout",
+        "lane": 7,
+        "time": 9.199999999999983,
+        "organId": "lung_l",
+        "y": 1295.835931371453,
+        "x": 1188.638269449314,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 93,
+        "kind": "scout",
+        "lane": 7,
+        "time": 9.299999999999983,
+        "organId": "lung_l",
+        "y": 1295.8502060445346,
+        "x": 1188.5900771998975,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 93,
+        "kind": "scout",
+        "lane": 7,
+        "time": 9.299999999999983,
+        "organId": "lung_l",
+        "y": 1295.8502060445346,
+        "x": 1188.5900771998975,
+        "phase": "substep"
+      },
+      {
+        "id": 18,
+        "tick": 94,
+        "kind": "scout",
+        "lane": 7,
+        "time": 9.399999999999983,
+        "organId": "lung_l",
+        "y": 1295.8502060445346,
+        "x": 1188.5900771998975,
+        "phase": "substep"
+      }
+    ]
+  },
+  "inputHashes": {
+    "scripts/war/FullBodyBattlefield.lua": "d28b30024e20d37e9df2679ccb387fd0c091ba2e7fc437edf1f94541106a6366",
+    "scripts/war/OrganBattlefield.lua": "cd0194aa8016f2a0487c9fbaabe689b0de73fcf9dc1294a25bce37ee9520756b",
+    "scripts/war/OrganBattlefieldCore.lua": "40c670d25c69281b0d5663c684dcb699b6871c806000fd2e8f013601218c6b8d",
+    "scripts/war/OrganBattlefieldData.lua": "047dce28da8aa19d893a9116258631cf71c039ecb44b7c63478d40043cd9c273",
+    "scripts/war/GastricBattlefield.lua": "789066936c29437cfcbc47490a7527288700e82c02b88b3e19458f69906b2b46",
+    "scripts/war/GastricBattlefieldData.lua": "81cbe1eedd29506a13fa19a7edd079d7f93b3eb58b4a9e4282e98277854b279d",
+    "scripts/war/OrganTrial.lua": "2448272435d422dc9c10f13c54382727b93da03b9bce177235f0d58d7eb803fd",
+    "scripts/war/OrganTraffic.lua": "901ece0eb1bb68d22089d99c2b669c42270f34d66539f6daa1d1bb02786dab0f",
+    "scripts/war/GastricTraffic.lua": "d04b89128fedb033d67b9eef01a72f5c2733b5942a0e87656e00d9b883ee3e6d",
+    "scripts/war/Commands.lua": "d03717fefdd1aeb43d7d21948a6af149b5ba3401466b78c14cba1200c0d4655a",
+    "scripts/war/Path.lua": "a41c95130db4c45a96956c09ad122432055bd3cc0588835ae9cae5a321283929",
+    "scripts/war/Simulation.lua": "2df8aa4f850caa950c2abc48477cf0bdc71c3a7418d64c95567eb326b460ff43",
+    "scripts/war/CellCollision.lua": "a11dc894c9cf91347ff89e290301c0bb0889c520593d60cbe4c1bf122201d30f",
+    "scripts/war/Motion.lua": "7fe39b4a715b5b0b5398e5ef7e6f0fe2bd8987e47359e6083d46a5db467829a5",
+    "scripts/war/Save.lua": "29655d752131e7993d943f3996a3fe4d07ab02cf52065216594c48a8f21df36d",
+    "scripts/war/World.lua": "020f77336ced2aa0a4f7907aa79385c438eda38d76e2bc639d49ca864b70166c",
+    "scripts/war/Vessels.lua": "5302854eda3d7b29a238394db9b50662835ad2a76f69d0e3b9c42431c53b8d6e",
+    "scripts/war/Data.lua": "6aa40613c149a254391e68d5ffca3ef5f6b7d4dbba8a4861b6b8adb7983d5f33",
+    "scripts/war/Util.lua": "bd35c4e904854a00b98825fe2cc422eaa74d4f87308c8a336f25f9cd76131c0d"
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "log": "lua-2026-10-09 02_53_54_746.log",
+  "recordedAt": "2026-10-09T02:54:21+08:00",
+  "scope": "Final lung rim masks; native CPU submission behind menu; background cap 30 FPS",
+  "rows": [
+    {
+      "view": "whole",
+      "enabled": false,
+      "samples": 74,
+      "cpuP50ms": 0.172,
+      "cpuP95ms": 0.439,
+      "frameP50ms": 33.717,
+      "frameP95ms": 34.175
+    },
+    {
+      "view": "whole",
+      "enabled": true,
+      "samples": 74,
+      "cpuP50ms": 1.57,
+      "cpuP95ms": 2.988,
+      "frameP50ms": 33.413,
+      "frameP95ms": 33.911
+    },
+    {
+      "view": "chest",
+      "enabled": false,
+      "samples": 74,
+      "cpuP50ms": 0.174,
+      "cpuP95ms": 0.455,
+      "frameP50ms": 33.7975,
+      "frameP95ms": 34.1165
+    },
+    {
+      "view": "chest",
+      "enabled": true,
+      "samples": 74,
+      "cpuP50ms": 1.27,
+      "cpuP95ms": 3.033,
+      "frameP50ms": 33.649,
+      "frameP95ms": 34.17
+    },
+    {
+      "view": "transition",
+      "enabled": false,
+      "samples": 74,
+      "cpuP50ms": 7.283,
+      "cpuP95ms": 10.079,
+      "frameP50ms": 33.706,
+      "frameP95ms": 34.117
+    },
+    {
+      "view": "transition",
+      "enabled": true,
+      "samples": 74,
+      "cpuP50ms": 5.338,
+      "cpuP95ms": 6.468,
+      "frameP50ms": 33.739,
+      "frameP95ms": 34.082
+    },
+    {
+      "view": "detail",
+      "enabled": false,
+      "samples": 74,
+      "cpuP50ms": 10.129,
+      "cpuP95ms": 13.838,
+      "frameP50ms": 33.6895,
+      "frameP95ms": 34.099
+    },
+    {
+      "view": "detail",
+      "enabled": true,
+      "samples": 74,
+      "cpuP50ms": 10.892,
+      "cpuP95ms": 13.241,
+      "frameP50ms": 33.829,
+      "frameP95ms": 34.2075
+    }
+  ],
+  "deltas": {
+    "whole": {
+      "cpuP95ms": 2.549,
+      "frameP95ms": -0.264
+    },
+    "chest": {
+      "cpuP95ms": 2.578,
+      "frameP95ms": 0.0535
+    },
+    "transition": {
+      "cpuP95ms": -3.611,
+      "frameP95ms": -0.035
+    },
+    "detail": {
+      "cpuP95ms": -0.597,
+      "frameP95ms": 0.1085
+    }
+  },
+  "conclusion": "Whole/chest CPU deltas still >2ms. Negative transition/detail deltas demonstrate scheduling noise, not a speedup. Capped frame samples do not establish GPU/battle P95 acceptance. No native image obtained. Temporary hook removed.",
+  "runtimeSha256": {
+    "scripts/war/BodyLifeFlowAcceptance.lua": "5525ef8ca493ce537587f6bec0b1421f6187bc125b6b60ace92f6accfc60aa5b",
+    "scripts/war/BodyLifeFlowData.lua": "d2633631896be97ca0faf108eab06430b3bfdb894dc0a63466e43c16298db0c2",
+    "scripts/war/BodyLifeAcceptance.lua": "f6815ce8227c4bf27e325ee4aa30e1f989a31b859a3252e5d52f3d6c4dc7cfff",
+    "scripts/war/BodyLifeMasks.lua": "5e2e46c586aaf1ee5ee3f33a7aac96e0374a16b2463192dc9f19076c8103ef88",
+    "scripts/war/BodyLifeShading.lua": "e6a13cec85c87d3eccb799a9722e23c7109058cd3f394c09548d4beae91d8593",
+    "scripts/war/BodyLife.lua": "833bbbd9ad6b5b6d71fbe25c9bdec2e7bbf5df7654006ab17576928557498b27",
+    "scripts/war/BodyLifeMotion.lua": "b9b5d3398c2869e07c37a2232f74e7d2497fad655f0de979c018aef8ce0a8011",
+    "scripts/war/BodyLifeRegions.lua": "d2ec96785d082f3656dcf2a6c4280f170d933ad9e371f0a92f5bb6fc6b491ccc",
+    "scripts/war/BodyLifeFlow.lua": "dd035bdd19b12c3cb6756cd939962124cf57d28d0cb0b476cdfc0045c1cccac3",
+    "scripts/war/BodyLifeAssets.lua": "20922466a90d0c0bd817aa3568aa596647a7b357bd309b5bbe24592035d154f5",
+    "scripts/war/BodyLifeMotionAcceptance.lua": "975b646a1e35d4bbf41f6fa3a5dca4b076e809d2cb0d45e22684ef245cc1f343"
+  }
+}

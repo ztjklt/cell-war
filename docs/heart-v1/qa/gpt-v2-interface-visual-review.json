@@ -1,0 +1,83 @@
+{
+  "schema": "heart-v1-independent-art-interface-review/v1",
+  "status": "NEEDS_INTERFACE_BLEND",
+  "nativeEvidence": false,
+  "inputHashes": {
+    "assets/image/anatomy-reference/vascular-study/heart-four-chamber-v1/gpt-cutaway.png": "d52749a4f4c445c508342e4cad78230f67e645056d68086051982981a9995415",
+    "docs/heart-v1/geometry/heart-four-chamber.json": "d76e7cc093f4f126f92cbef6a9499ccda0b9c0c888ad12d9c90f528363199c6d",
+    "docs/heart-v1/qa/display-preview/context-z015-p0.00.png": "8f7761c4fd680c1d0f4371a94b76dd523ee11ff9bcf4e82b797ac215916b498c",
+    "docs/heart-v1/qa/display-preview/render-manifest.json": "da209fff9cdb6c5ee85b12ea09b40b25fe03f0d0eb0ac79fb1885fac79f4a67e",
+    "scripts/war/FullBodyMapArt.lua": "6a39d918f20e3712061c21ecc8dc65fff5106ea449bcb327a4b73cf887476cc4",
+    "scripts/war/HeartArt.lua": "5ef6e091a776e3c46e56373562f92726549d2158442e78c6488da377e6313c74",
+    "scripts/war/HeartVisualData.lua": "8037704cca51d31414d351d4c83c5a27985193a1fe96a2fb605ee3854d9ecc7f"
+  },
+  "observations": [
+    {
+      "id": "four-chambers",
+      "status": "PASS_VISUAL_CANDIDATE",
+      "detail": "Current generated cutaway has distinguishable two upper atria and two larger lower ventricles; the four geometry centers sit on matching floors."
+    },
+    {
+      "id": "valve-opening-repair",
+      "status": "PASS_VISUAL_CANDIDATE",
+      "detail": "The four previous closed cup bottoms have been removed. Tricuspid, mitral and pulmonary have visibly continuous floors in the certified throat regions."
+    },
+    {
+      "id": "aortic-upstream-adapter",
+      "status": "NEEDS_FIX",
+      "sourcePoints": [
+        [
+          526,
+          403
+        ],
+        [
+          529,
+          391
+        ],
+        [
+          533,
+          375
+        ]
+      ],
+      "detail": "The aortic throat now has a red floor, but its continuation to the fixed aortic root is not visibly differentiated from the projected left-atrium floor. Add a coherent separately depicted artery outlet and collar along this registered route."
+    },
+    {
+      "id": "systemic-return-atrium-opening",
+      "status": "NEEDS_FIX",
+      "sourcePoints": [
+        [
+          483,
+          379
+        ],
+        [
+          487,
+          379
+        ]
+      ],
+      "detail": "The left atrial wall in the generated cutaway remains visually continuous across the required systemic-return opening. Join the existing venous anchor to right-atrium floor through a visible mouth."
+    },
+    {
+      "id": "external-vessel-material-seams",
+      "status": "NEEDS_FIX",
+      "detail": "The generated left vertical and upper horizontal return tube retains free circular cut ends in the actual ordered composite. Existing coarse trunks are flat and visibly separate behind it. Complete collars must be evaluated in the assembled context, not only in the transparent sprite."
+    },
+    {
+      "id": "legacy-heart-adjacent-pixels",
+      "status": "NEEDS_REVIEW",
+      "detail": "The context still shows red/blue coarse pixels above the new heart silhouette. The new outer-only deep/foreground exclusion does not establish that all obsolete heart-owned pixels are removed; compare with the frozen baseline and classify these pixels."
+    },
+    {
+      "id": "native-heartbeat-and-seams",
+      "status": "UNDETERMINED",
+      "detail": "The viewed composite is the actual Lua draw through an offline SVG/Cairo backend; native window evidence and current device DPR are still required."
+    }
+  ],
+  "overlays": [
+    "docs/heart-v1/qa/gpt-v2-geometry-overlay.png",
+    "docs/heart-v1/qa/gpt-v2-adapters-geometry-overlay.png"
+  ],
+  "limits": [
+    "Visual observations do not certify movement or medical anatomical fidelity.",
+    "The current candidate may be an in-progress connector package; this report is bound to its input hashes."
+  ]
+}

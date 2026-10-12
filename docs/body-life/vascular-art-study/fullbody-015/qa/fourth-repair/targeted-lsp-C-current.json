@@ -1,0 +1,102 @@
+{
+  "schema": "fullbody-targeted-lsp-evidence/v1",
+  "status": "PASS",
+  "manifestSha256": "fb0bb1a3fd70a7d69cdf53d534a715a519ea48822bd6a9665fa1e639d0e8f693",
+  "inputHashes": {
+    "scripts/war/FullBodyMapArtData.lua": "0aa893e9f7149b2d7dcbf0f7af2f22088ac797354df3f44079b489c183539d1b",
+    "scripts/war/FullBodyMapArt.lua": "3bde16f78756bfbfc70aeee18951bd956ecca128de1084d372c2a3b6b559e29c",
+    "scripts/war/FullBodyBattlefield.lua": "46a9281dee121e56f5d233dc8e8180fee7b89ff1b20212d362a2530f88d41176",
+    "scripts/war/ReferenceArt.lua": "2e40c9fc0f3650e6163807cb35fb8e854b75865bee746a3e4c22895a09033514",
+    "scripts/war/Render.lua": "248d1a526722aee3d514f36e817814d5d1046f3f63e1a6ca2a2a031f37714734",
+    "scripts/war/HUD.lua": "267f8bd15c0703c255122a070e21ff2a898174d36f3cc28609d4327ff935c3bd"
+  },
+  "requests": [
+    {
+      "name": "FullBodyMapArtData",
+      "toolResponse": {
+        "status": "fulfilled",
+        "value": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"ok\": true, \"result\": {\"kind\": \"full\", \"items\": []}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "FullBodyMapArt",
+      "toolResponse": {
+        "status": "fulfilled",
+        "value": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"ok\": true, \"result\": {\"kind\": \"full\", \"items\": []}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "FullBodyBattlefield",
+      "toolResponse": {
+        "status": "fulfilled",
+        "value": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"ok\": true, \"result\": {\"kind\": \"full\", \"items\": []}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "ReferenceArt",
+      "toolResponse": {
+        "status": "fulfilled",
+        "value": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"ok\": true, \"result\": {\"kind\": \"full\", \"items\": []}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Render",
+      "toolResponse": {
+        "status": "fulfilled",
+        "value": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"ok\": true, \"result\": {\"kind\": \"full\", \"items\": []}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "HUD",
+      "toolResponse": {
+        "status": "fulfilled",
+        "value": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"ok\": true, \"result\": {\"kind\": \"full\", \"items\": []}}"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "severity": 1,
+  "normalMainRestoredEvidence": false,
+  "scope": "Only the six explicitly inspected current production draw/data/HUD modules; no project-wide or normal-menu claim."
+}

@@ -1,0 +1,4188 @@
+{
+  "configuration": {
+    "actors": [
+      {
+        "kind": "scout",
+        "lane": 183,
+        "targetLane": 0,
+        "tx": 1112.069902880929,
+        "ty": 1513.2894295195874,
+        "x": 1112.5580176368371,
+        "y": 1518.9684914126346
+      },
+      {
+        "kind": "siege",
+        "lane": 0,
+        "targetLane": 183,
+        "tx": 1112.5580176368371,
+        "ty": 1518.9684914126346,
+        "x": 1112.069902880929,
+        "y": 1513.2894295195874
+      }
+    ],
+    "id": "membrane-meeting/gastric.local.northwest/scout-siege",
+    "maxTime": 300
+  },
+  "nativeEvidence": false,
+  "navigationSubstituted": false,
+  "result": {
+    "arrival": [
+      {
+        "id": 7,
+        "ordersRemaining": 0,
+        "pathFailed": false
+      },
+      {
+        "id": 8,
+        "ordersRemaining": 0,
+        "pathFailed": false
+      }
+    ],
+    "commands": [
+      {
+        "accepted": true,
+        "id": 7,
+        "order": {
+          "lane": 0,
+          "x": 1115.069902880929,
+          "y": 1513.2894295195874
+        },
+        "requested": {
+          "x": 1112.069902880929,
+          "y": 1513.2894295195874
+        }
+      },
+      {
+        "accepted": true,
+        "id": 8,
+        "order": {
+          "lane": 183,
+          "x": 1114.5580176368371,
+          "y": 1518.9684914126346
+        },
+        "requested": {
+          "x": 1112.5580176368371,
+          "y": 1518.9684914126346
+        }
+      }
+    ],
+    "completed": true,
+    "elapsed": 5.599999999999996,
+    "endpoints": [
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "end",
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "end",
+        "x": 1114.5577753421044,
+        "y": 1518.9679383807538
+      }
+    ],
+    "frames": [
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 183,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1112.5580176368371,
+            "y": 1518.9684914126346
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1112.069902880929,
+            "y": 1513.2894295195874
+          }
+        ],
+        "time": 0.1
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 183,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 183,
+              "gateId": "gastric.local.northwest",
+              "toLane": 0
+            },
+            "x": 1112.6687410222041,
+            "y": 1518.7181595314364
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1112.109569130258,
+            "y": 1513.3799667765486
+          }
+        ],
+        "time": 0.2
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 183,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 183,
+              "gateId": "gastric.local.northwest",
+              "toLane": 0
+            },
+            "x": 1112.7972785948357,
+            "y": 1518.4275519759067
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1112.1556172472592,
+            "y": 1513.4850704924793
+          }
+        ],
+        "time": 0.30000000000000004
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 183,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 183,
+              "gateId": "gastric.local.northwest",
+              "toLane": 0
+            },
+            "x": 1112.9345369542643,
+            "y": 1518.1172277999249
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1112.2047895543517,
+            "y": 1513.5973050969078
+          }
+        ],
+        "time": 0.4
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 183,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 183,
+              "gateId": "gastric.local.northwest",
+              "toLane": 0
+            },
+            "x": 1113.0760645021344,
+            "y": 1517.7972515168462
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1112.2554912826463,
+            "y": 1513.7130305683256
+          }
+        ],
+        "time": 0.5
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 183,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 183,
+              "gateId": "gastric.local.northwest",
+              "toLane": 0
+            },
+            "x": 1113.2196819955989,
+            "y": 1517.472550125241
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1112.3069417263343,
+            "y": 1513.8304649645627
+          }
+        ],
+        "time": 0.6
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 183,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 183,
+              "gateId": "gastric.local.northwest",
+              "toLane": 0
+            },
+            "x": 1113.364322604498,
+            "y": 1517.1455355961662
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1112.3587586973986,
+            "y": 1513.9487359506918
+          }
+        ],
+        "time": 0.7
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 183,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 183,
+              "gateId": "gastric.local.northwest",
+              "toLane": 0
+            },
+            "x": 1113.5094640710251,
+            "y": 1516.8173886899358
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1112.4107550988829,
+            "y": 1514.0674164824252
+          }
+        ],
+        "time": 0.7999999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 183,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 183,
+              "gateId": "gastric.local.northwest",
+              "toLane": 0
+            },
+            "x": 1113.6548507282266,
+            "y": 1516.4886874379133
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1112.4628393390326,
+            "y": 1514.1862975037932
+          }
+        ],
+        "time": 0.8999999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 183,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 183,
+              "gateId": "gastric.local.northwest",
+              "toLane": 0
+            },
+            "x": 1113.8003574164777,
+            "y": 1516.1597148105318
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1112.5149665798685,
+            "y": 1514.3052766731898
+          }
+        ],
+        "time": 0.9999999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 183,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 183,
+              "gateId": "gastric.local.northwest",
+              "toLane": 0
+            },
+            "x": 1113.945922864928,
+            "y": 1515.8306093336066
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1112.5671148713318,
+            "y": 1514.4243038901352
+          }
+        ],
+        "time": 1.0999999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1114.0915170789435,
+            "y": 1515.5014388212956
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1112.619273467954,
+            "y": 1514.5433546283573
+          }
+        ],
+        "time": 1.2
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1114.2371253749018,
+            "y": 1515.1722364714535
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1112.6714371093808,
+            "y": 1514.6624168812243
+          }
+        ],
+        "time": 1.3
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1114.3827405645577,
+            "y": 1514.8430185358138
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1112.7236032204496,
+            "y": 1514.7814847709897
+          }
+        ],
+        "time": 1.4000000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1114.5283591289658,
+            "y": 1514.5137929702769
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1112.775770540511,
+            "y": 1514.9005554202515
+          }
+        ],
+        "time": 1.5000000000000002
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1114.6739793454556,
+            "y": 1514.1845636695875
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1112.8279384524249,
+            "y": 1515.019627420402
+          }
+        ],
+        "time": 1.6000000000000003
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1114.8196003707083,
+            "y": 1513.8553325403852
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1112.880106654075,
+            "y": 1515.1387000818686
+          }
+        ],
+        "time": 1.7000000000000004
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1114.9539429217357,
+            "y": 1513.5516006466019
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1112.9322749975631,
+            "y": 1515.257773067077
+          }
+        ],
+        "time": 1.8000000000000005
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.0474963908687,
+            "y": 1513.340087822612
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1112.9844434104868,
+            "y": 1515.3768462107707
+          }
+        ],
+        "time": 1.9000000000000006
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1113.0366118574022,
+            "y": 1515.4959194320493
+          }
+        ],
+        "time": 2.0000000000000004
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1113.088780320958,
+            "y": 1515.614992691309
+          }
+        ],
+        "time": 2.1000000000000005
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1113.1409487926599,
+            "y": 1515.734065969162
+          }
+        ],
+        "time": 2.2000000000000006
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1113.1931172683496,
+            "y": 1515.8531392561172
+          }
+        ],
+        "time": 2.3000000000000007
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1113.2452857459916,
+            "y": 1515.9722125475284
+          }
+        ],
+        "time": 2.400000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1113.2974542245893,
+            "y": 1516.091285841121
+          }
+        ],
+        "time": 2.500000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1113.3496227036549,
+            "y": 1516.2103591357813
+          }
+        ],
+        "time": 2.600000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1113.4017911829494,
+            "y": 1516.3294324309645
+          }
+        ],
+        "time": 2.700000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1113.453959662356,
+            "y": 1516.4485057264037
+          }
+        ],
+        "time": 2.800000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1113.5061281418177,
+            "y": 1516.5675790219682
+          }
+        ],
+        "time": 2.9000000000000012
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1113.5582966213062,
+            "y": 1516.6866523175938
+          }
+        ],
+        "time": 3.0000000000000013
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1113.610465100808,
+            "y": 1516.8057256132495
+          }
+        ],
+        "time": 3.1000000000000014
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1113.662633580316,
+            "y": 1516.92479890892
+          }
+        ],
+        "time": 3.2000000000000015
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1113.7148020598272,
+            "y": 1517.0438722045976
+          }
+        ],
+        "time": 3.3000000000000016
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1113.76697053934,
+            "y": 1517.1629455002787
+          }
+        ],
+        "time": 3.4000000000000017
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1113.8191390188535,
+            "y": 1517.2820187959617
+          }
+        ],
+        "time": 3.5000000000000018
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1113.8713074983673,
+            "y": 1517.4010920916453
+          }
+        ],
+        "time": 3.600000000000002
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1113.9234759778813,
+            "y": 1517.5201653873294
+          }
+        ],
+        "time": 3.700000000000002
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1113.9756444573954,
+            "y": 1517.6392386830137
+          }
+        ],
+        "time": 3.800000000000002
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1114.0278129369096,
+            "y": 1517.7583119786982
+          }
+        ],
+        "time": 3.900000000000002
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "transit": {
+              "fromLane": 0,
+              "gateId": "gastric.local.northwest",
+              "toLane": 183
+            },
+            "x": 1114.0799814164238,
+            "y": 1517.8773852743827
+          }
+        ],
+        "time": 4.000000000000002
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 183,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1114.132149895938,
+            "y": 1517.9964585700673
+          }
+        ],
+        "time": 4.100000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 183,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1114.1843183754522,
+            "y": 1518.1155318657518
+          }
+        ],
+        "time": 4.200000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 183,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1114.2364868549664,
+            "y": 1518.2346051614363
+          }
+        ],
+        "time": 4.300000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 183,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1114.2886553344806,
+            "y": 1518.3536784571208
+          }
+        ],
+        "time": 4.4
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 183,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1114.3387782992502,
+            "y": 1518.4680829147583
+          }
+        ],
+        "time": 4.5
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 183,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1114.3831482720457,
+            "y": 1518.5693563070329
+          }
+        ],
+        "time": 4.6
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 183,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1114.420495668534,
+            "y": 1518.6546008383384
+          }
+        ],
+        "time": 4.699999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 183,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1114.4508647103567,
+            "y": 1518.7239174435047
+          }
+        ],
+        "time": 4.799999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 183,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1114.4749385897273,
+            "y": 1518.778865492274
+          }
+        ],
+        "time": 4.899999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 183,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1114.4936485353576,
+            "y": 1518.8215704917109
+          }
+        ],
+        "time": 4.999999999999998
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 183,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1114.5086663969964,
+            "y": 1518.855848398526
+          }
+        ],
+        "time": 5.099999999999998
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 183,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1114.521876829711,
+            "y": 1518.8860008924337
+          }
+        ],
+        "time": 5.1999999999999975
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 183,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1114.5342024506701,
+            "y": 1518.9141338248605
+          }
+        ],
+        "time": 5.299999999999997
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 183,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1114.5460949194144,
+            "y": 1518.9412780978082
+          }
+        ],
+        "time": 5.399999999999997
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 183,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1114.5577753421044,
+            "y": 1518.9679383807538
+          }
+        ],
+        "time": 5.4999999999999964
+      },
+      {
+        "points": [
+          {
+            "id": 7,
+            "kind": "scout",
+            "lane": 0,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1115.069902880929,
+            "y": 1513.2894295195874
+          },
+          {
+            "id": 8,
+            "kind": "siege",
+            "lane": 183,
+            "pathFailed": false,
+            "phase": "frame",
+            "x": 1114.5577753421044,
+            "y": 1518.9679383807538
+          }
+        ],
+        "time": 5.599999999999996
+      }
+    ],
+    "goals": [
+      {
+        "id": 7,
+        "lane": 0,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "lane": 183,
+        "x": 1114.5580176368371,
+        "y": 1518.9684914126346
+      }
+    ],
+    "id": "membrane-meeting/gastric.local.northwest/scout-siege",
+    "minimumFrameDiskGapWorld": 0.14660127516395094,
+    "networkEdges": 202,
+    "save": {
+      "flag": 1,
+      "laneErrors": 0,
+      "positionErrors": 0.0,
+      "restored": true,
+      "restoredFlag": 1,
+      "restoredNetworkEdges": 202,
+      "version": 9
+    },
+    "spawnErrors": {},
+    "starts": [
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "spawn",
+        "x": 1112.5580176368371,
+        "y": 1518.9684914126346
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "spawn",
+        "x": 1112.069902880929,
+        "y": 1513.2894295195874
+      }
+    ],
+    "stateFlag": 1,
+    "trace": [
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 1,
+        "time": 0.1,
+        "x": 1112.5580176368371,
+        "y": 1518.9684914126346
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 1,
+        "time": 0.1,
+        "x": 1112.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 2,
+        "time": 0.2,
+        "transit": {
+          "fromLane": 183,
+          "gateId": "gastric.local.northwest",
+          "toLane": 0
+        },
+        "x": 1112.6687410222041,
+        "y": 1518.7181595314364
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 2,
+        "time": 0.2,
+        "x": 1112.109569130258,
+        "y": 1513.3799667765486
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 2,
+        "time": 0.2,
+        "transit": {
+          "fromLane": 183,
+          "gateId": "gastric.local.northwest",
+          "toLane": 0
+        },
+        "x": 1112.6687410222041,
+        "y": 1518.7181595314364
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 2,
+        "time": 0.2,
+        "x": 1112.109569130258,
+        "y": 1513.3799667765486
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 3,
+        "time": 0.30000000000000004,
+        "transit": {
+          "fromLane": 183,
+          "gateId": "gastric.local.northwest",
+          "toLane": 0
+        },
+        "x": 1112.7972785948357,
+        "y": 1518.4275519759067
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 3,
+        "time": 0.30000000000000004,
+        "x": 1112.1556172472592,
+        "y": 1513.4850704924793
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 3,
+        "time": 0.30000000000000004,
+        "transit": {
+          "fromLane": 183,
+          "gateId": "gastric.local.northwest",
+          "toLane": 0
+        },
+        "x": 1112.7972785948357,
+        "y": 1518.4275519759067
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 3,
+        "time": 0.30000000000000004,
+        "x": 1112.1556172472592,
+        "y": 1513.4850704924793
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 4,
+        "time": 0.4,
+        "transit": {
+          "fromLane": 183,
+          "gateId": "gastric.local.northwest",
+          "toLane": 0
+        },
+        "x": 1112.9345369542643,
+        "y": 1518.1172277999249
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 4,
+        "time": 0.4,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1112.2047895543517,
+        "y": 1513.5973050969078
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 4,
+        "time": 0.4,
+        "transit": {
+          "fromLane": 183,
+          "gateId": "gastric.local.northwest",
+          "toLane": 0
+        },
+        "x": 1112.9345369542643,
+        "y": 1518.1172277999249
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 4,
+        "time": 0.4,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1112.2047895543517,
+        "y": 1513.5973050969078
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 5,
+        "time": 0.5,
+        "transit": {
+          "fromLane": 183,
+          "gateId": "gastric.local.northwest",
+          "toLane": 0
+        },
+        "x": 1113.0760645021344,
+        "y": 1517.7972515168462
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 5,
+        "time": 0.5,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1112.2554912826463,
+        "y": 1513.7130305683256
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 5,
+        "time": 0.5,
+        "transit": {
+          "fromLane": 183,
+          "gateId": "gastric.local.northwest",
+          "toLane": 0
+        },
+        "x": 1113.0760645021344,
+        "y": 1517.7972515168462
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 5,
+        "time": 0.5,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1112.2554912826463,
+        "y": 1513.7130305683256
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 6,
+        "time": 0.6,
+        "transit": {
+          "fromLane": 183,
+          "gateId": "gastric.local.northwest",
+          "toLane": 0
+        },
+        "x": 1113.2196819955989,
+        "y": 1517.472550125241
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 6,
+        "time": 0.6,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1112.3069417263343,
+        "y": 1513.8304649645627
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 6,
+        "time": 0.6,
+        "transit": {
+          "fromLane": 183,
+          "gateId": "gastric.local.northwest",
+          "toLane": 0
+        },
+        "x": 1113.2196819955989,
+        "y": 1517.472550125241
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 6,
+        "time": 0.6,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1112.3069417263343,
+        "y": 1513.8304649645627
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 7,
+        "time": 0.7,
+        "transit": {
+          "fromLane": 183,
+          "gateId": "gastric.local.northwest",
+          "toLane": 0
+        },
+        "x": 1113.364322604498,
+        "y": 1517.1455355961662
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 7,
+        "time": 0.7,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1112.3587586973986,
+        "y": 1513.9487359506918
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 7,
+        "time": 0.7,
+        "transit": {
+          "fromLane": 183,
+          "gateId": "gastric.local.northwest",
+          "toLane": 0
+        },
+        "x": 1113.364322604498,
+        "y": 1517.1455355961662
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 7,
+        "time": 0.7,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1112.3587586973986,
+        "y": 1513.9487359506918
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 8,
+        "time": 0.7999999999999999,
+        "transit": {
+          "fromLane": 183,
+          "gateId": "gastric.local.northwest",
+          "toLane": 0
+        },
+        "x": 1113.5094640710251,
+        "y": 1516.8173886899358
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 8,
+        "time": 0.7999999999999999,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1112.4107550988829,
+        "y": 1514.0674164824252
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 8,
+        "time": 0.7999999999999999,
+        "transit": {
+          "fromLane": 183,
+          "gateId": "gastric.local.northwest",
+          "toLane": 0
+        },
+        "x": 1113.5094640710251,
+        "y": 1516.8173886899358
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 8,
+        "time": 0.7999999999999999,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1112.4107550988829,
+        "y": 1514.0674164824252
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 9,
+        "time": 0.8999999999999999,
+        "transit": {
+          "fromLane": 183,
+          "gateId": "gastric.local.northwest",
+          "toLane": 0
+        },
+        "x": 1113.6548507282266,
+        "y": 1516.4886874379133
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 9,
+        "time": 0.8999999999999999,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1112.4628393390326,
+        "y": 1514.1862975037932
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 9,
+        "time": 0.8999999999999999,
+        "transit": {
+          "fromLane": 183,
+          "gateId": "gastric.local.northwest",
+          "toLane": 0
+        },
+        "x": 1113.6548507282266,
+        "y": 1516.4886874379133
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 9,
+        "time": 0.8999999999999999,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1112.4628393390326,
+        "y": 1514.1862975037932
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 10,
+        "time": 0.9999999999999999,
+        "transit": {
+          "fromLane": 183,
+          "gateId": "gastric.local.northwest",
+          "toLane": 0
+        },
+        "x": 1113.8003574164777,
+        "y": 1516.1597148105318
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 10,
+        "time": 0.9999999999999999,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1112.5149665798685,
+        "y": 1514.3052766731898
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 10,
+        "time": 0.9999999999999999,
+        "transit": {
+          "fromLane": 183,
+          "gateId": "gastric.local.northwest",
+          "toLane": 0
+        },
+        "x": 1113.8003574164777,
+        "y": 1516.1597148105318
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 10,
+        "time": 0.9999999999999999,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1112.5149665798685,
+        "y": 1514.3052766731898
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 11,
+        "time": 1.0999999999999999,
+        "transit": {
+          "fromLane": 183,
+          "gateId": "gastric.local.northwest",
+          "toLane": 0
+        },
+        "x": 1113.945922864928,
+        "y": 1515.8306093336066
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 11,
+        "time": 1.0999999999999999,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1112.5671148713318,
+        "y": 1514.4243038901352
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 11,
+        "time": 1.0999999999999999,
+        "transit": {
+          "fromLane": 183,
+          "gateId": "gastric.local.northwest",
+          "toLane": 0
+        },
+        "x": 1113.945922864928,
+        "y": 1515.8306093336066
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 11,
+        "time": 1.0999999999999999,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1112.5671148713318,
+        "y": 1514.4243038901352
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 12,
+        "time": 1.2,
+        "x": 1114.0915170789435,
+        "y": 1515.5014388212956
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 12,
+        "time": 1.2,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1112.619273467954,
+        "y": 1514.5433546283573
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 12,
+        "time": 1.2,
+        "x": 1114.0915170789435,
+        "y": 1515.5014388212956
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 12,
+        "time": 1.2,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1112.619273467954,
+        "y": 1514.5433546283573
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 13,
+        "time": 1.3,
+        "x": 1114.2371253749018,
+        "y": 1515.1722364714535
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 13,
+        "time": 1.3,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1112.6714371093808,
+        "y": 1514.6624168812243
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 13,
+        "time": 1.3,
+        "x": 1114.2371253749018,
+        "y": 1515.1722364714535
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 13,
+        "time": 1.3,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1112.6714371093808,
+        "y": 1514.6624168812243
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 14,
+        "time": 1.4000000000000001,
+        "x": 1114.3827405645577,
+        "y": 1514.8430185358138
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 14,
+        "time": 1.4000000000000001,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1112.7236032204496,
+        "y": 1514.7814847709897
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 14,
+        "time": 1.4000000000000001,
+        "x": 1114.3827405645577,
+        "y": 1514.8430185358138
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 14,
+        "time": 1.4000000000000001,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1112.7236032204496,
+        "y": 1514.7814847709897
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 15,
+        "time": 1.5000000000000002,
+        "x": 1114.5283591289658,
+        "y": 1514.5137929702769
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 15,
+        "time": 1.5000000000000002,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1112.775770540511,
+        "y": 1514.9005554202515
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 15,
+        "time": 1.5000000000000002,
+        "x": 1114.5283591289658,
+        "y": 1514.5137929702769
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 15,
+        "time": 1.5000000000000002,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1112.775770540511,
+        "y": 1514.9005554202515
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 16,
+        "time": 1.6000000000000003,
+        "x": 1114.6739793454556,
+        "y": 1514.1845636695875
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 16,
+        "time": 1.6000000000000003,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1112.8279384524249,
+        "y": 1515.019627420402
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 16,
+        "time": 1.6000000000000003,
+        "x": 1114.6739793454556,
+        "y": 1514.1845636695875
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 16,
+        "time": 1.6000000000000003,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1112.8279384524249,
+        "y": 1515.019627420402
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 17,
+        "time": 1.7000000000000004,
+        "x": 1114.8196003707083,
+        "y": 1513.8553325403852
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 17,
+        "time": 1.7000000000000004,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1112.880106654075,
+        "y": 1515.1387000818686
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 17,
+        "time": 1.7000000000000004,
+        "x": 1114.8196003707083,
+        "y": 1513.8553325403852
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 17,
+        "time": 1.7000000000000004,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1112.880106654075,
+        "y": 1515.1387000818686
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 18,
+        "time": 1.8000000000000005,
+        "x": 1114.9539429217357,
+        "y": 1513.5516006466019
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 18,
+        "time": 1.8000000000000005,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1112.9322749975631,
+        "y": 1515.257773067077
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 18,
+        "time": 1.8000000000000005,
+        "x": 1114.9539429217357,
+        "y": 1513.5516006466019
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 18,
+        "time": 1.8000000000000005,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1112.9322749975631,
+        "y": 1515.257773067077
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 19,
+        "time": 1.9000000000000006,
+        "x": 1115.0474963908687,
+        "y": 1513.340087822612
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 19,
+        "time": 1.9000000000000006,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1112.9844434104868,
+        "y": 1515.3768462107707
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 19,
+        "time": 1.9000000000000006,
+        "x": 1115.0474963908687,
+        "y": 1513.340087822612
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 19,
+        "time": 1.9000000000000006,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1112.9844434104868,
+        "y": 1515.3768462107707
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 20,
+        "time": 2.0000000000000004,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 20,
+        "time": 2.0000000000000004,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.0366118574022,
+        "y": 1515.4959194320493
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 20,
+        "time": 2.0000000000000004,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 20,
+        "time": 2.0000000000000004,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.0366118574022,
+        "y": 1515.4959194320493
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 21,
+        "time": 2.1000000000000005,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.088780320958,
+        "y": 1515.614992691309
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 21,
+        "time": 2.1000000000000005,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 21,
+        "time": 2.1000000000000005,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.088780320958,
+        "y": 1515.614992691309
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 22,
+        "time": 2.2000000000000006,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.1409487926599,
+        "y": 1515.734065969162
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 22,
+        "time": 2.2000000000000006,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 22,
+        "time": 2.2000000000000006,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.1409487926599,
+        "y": 1515.734065969162
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 23,
+        "time": 2.3000000000000007,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.1931172683496,
+        "y": 1515.8531392561172
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 23,
+        "time": 2.3000000000000007,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 23,
+        "time": 2.3000000000000007,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.1931172683496,
+        "y": 1515.8531392561172
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 24,
+        "time": 2.400000000000001,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.2452857459916,
+        "y": 1515.9722125475284
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 24,
+        "time": 2.400000000000001,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 24,
+        "time": 2.400000000000001,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.2452857459916,
+        "y": 1515.9722125475284
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 25,
+        "time": 2.500000000000001,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.2974542245893,
+        "y": 1516.091285841121
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 25,
+        "time": 2.500000000000001,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 25,
+        "time": 2.500000000000001,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.2974542245893,
+        "y": 1516.091285841121
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 26,
+        "time": 2.600000000000001,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.3496227036549,
+        "y": 1516.2103591357813
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 26,
+        "time": 2.600000000000001,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 26,
+        "time": 2.600000000000001,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.3496227036549,
+        "y": 1516.2103591357813
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 27,
+        "time": 2.700000000000001,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.4017911829494,
+        "y": 1516.3294324309645
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 27,
+        "time": 2.700000000000001,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 27,
+        "time": 2.700000000000001,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.4017911829494,
+        "y": 1516.3294324309645
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 28,
+        "time": 2.800000000000001,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.453959662356,
+        "y": 1516.4485057264037
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 28,
+        "time": 2.800000000000001,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 28,
+        "time": 2.800000000000001,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.453959662356,
+        "y": 1516.4485057264037
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 29,
+        "time": 2.9000000000000012,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.5061281418177,
+        "y": 1516.5675790219682
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 29,
+        "time": 2.9000000000000012,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 29,
+        "time": 2.9000000000000012,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.5061281418177,
+        "y": 1516.5675790219682
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 30,
+        "time": 3.0000000000000013,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.5582966213062,
+        "y": 1516.6866523175938
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 30,
+        "time": 3.0000000000000013,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 30,
+        "time": 3.0000000000000013,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.5582966213062,
+        "y": 1516.6866523175938
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 31,
+        "time": 3.1000000000000014,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.610465100808,
+        "y": 1516.8057256132495
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 31,
+        "time": 3.1000000000000014,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 31,
+        "time": 3.1000000000000014,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.610465100808,
+        "y": 1516.8057256132495
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 32,
+        "time": 3.2000000000000015,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.662633580316,
+        "y": 1516.92479890892
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 32,
+        "time": 3.2000000000000015,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 32,
+        "time": 3.2000000000000015,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.662633580316,
+        "y": 1516.92479890892
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 33,
+        "time": 3.3000000000000016,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.7148020598272,
+        "y": 1517.0438722045976
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 33,
+        "time": 3.3000000000000016,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 33,
+        "time": 3.3000000000000016,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.7148020598272,
+        "y": 1517.0438722045976
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 34,
+        "time": 3.4000000000000017,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.76697053934,
+        "y": 1517.1629455002787
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 34,
+        "time": 3.4000000000000017,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 34,
+        "time": 3.4000000000000017,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.76697053934,
+        "y": 1517.1629455002787
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 35,
+        "time": 3.5000000000000018,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.8191390188535,
+        "y": 1517.2820187959617
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 35,
+        "time": 3.5000000000000018,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 35,
+        "time": 3.5000000000000018,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.8191390188535,
+        "y": 1517.2820187959617
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 36,
+        "time": 3.600000000000002,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.8713074983673,
+        "y": 1517.4010920916453
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 36,
+        "time": 3.600000000000002,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 36,
+        "time": 3.600000000000002,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.8713074983673,
+        "y": 1517.4010920916453
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 37,
+        "time": 3.700000000000002,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.9234759778813,
+        "y": 1517.5201653873294
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 37,
+        "time": 3.700000000000002,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 37,
+        "time": 3.700000000000002,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.9234759778813,
+        "y": 1517.5201653873294
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 38,
+        "time": 3.800000000000002,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.9756444573954,
+        "y": 1517.6392386830137
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 38,
+        "time": 3.800000000000002,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 38,
+        "time": 3.800000000000002,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1113.9756444573954,
+        "y": 1517.6392386830137
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 39,
+        "time": 3.900000000000002,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1114.0278129369096,
+        "y": 1517.7583119786982
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 39,
+        "time": 3.900000000000002,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 39,
+        "time": 3.900000000000002,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1114.0278129369096,
+        "y": 1517.7583119786982
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 40,
+        "time": 4.000000000000002,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1114.0799814164238,
+        "y": 1517.8773852743827
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 40,
+        "time": 4.000000000000002,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 40,
+        "time": 4.000000000000002,
+        "transit": {
+          "fromLane": 0,
+          "gateId": "gastric.local.northwest",
+          "toLane": 183
+        },
+        "x": 1114.0799814164238,
+        "y": 1517.8773852743827
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 41,
+        "time": 4.100000000000001,
+        "x": 1114.132149895938,
+        "y": 1517.9964585700673
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 41,
+        "time": 4.100000000000001,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 41,
+        "time": 4.100000000000001,
+        "x": 1114.132149895938,
+        "y": 1517.9964585700673
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 42,
+        "time": 4.200000000000001,
+        "x": 1114.1843183754522,
+        "y": 1518.1155318657518
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 42,
+        "time": 4.200000000000001,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 42,
+        "time": 4.200000000000001,
+        "x": 1114.1843183754522,
+        "y": 1518.1155318657518
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 43,
+        "time": 4.300000000000001,
+        "x": 1114.2364868549664,
+        "y": 1518.2346051614363
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 43,
+        "time": 4.300000000000001,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 43,
+        "time": 4.300000000000001,
+        "x": 1114.2364868549664,
+        "y": 1518.2346051614363
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 44,
+        "time": 4.4,
+        "x": 1114.2886553344806,
+        "y": 1518.3536784571208
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 44,
+        "time": 4.4,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 44,
+        "time": 4.4,
+        "x": 1114.2886553344806,
+        "y": 1518.3536784571208
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 45,
+        "time": 4.5,
+        "x": 1114.3387782992502,
+        "y": 1518.4680829147583
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 45,
+        "time": 4.5,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 45,
+        "time": 4.5,
+        "x": 1114.3387782992502,
+        "y": 1518.4680829147583
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 46,
+        "time": 4.6,
+        "x": 1114.3831482720457,
+        "y": 1518.5693563070329
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 46,
+        "time": 4.6,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 46,
+        "time": 4.6,
+        "x": 1114.3831482720457,
+        "y": 1518.5693563070329
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 47,
+        "time": 4.699999999999999,
+        "x": 1114.420495668534,
+        "y": 1518.6546008383384
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 47,
+        "time": 4.699999999999999,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 47,
+        "time": 4.699999999999999,
+        "x": 1114.420495668534,
+        "y": 1518.6546008383384
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 48,
+        "time": 4.799999999999999,
+        "x": 1114.4508647103567,
+        "y": 1518.7239174435047
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 48,
+        "time": 4.799999999999999,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 48,
+        "time": 4.799999999999999,
+        "x": 1114.4508647103567,
+        "y": 1518.7239174435047
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 49,
+        "time": 4.899999999999999,
+        "x": 1114.4749385897273,
+        "y": 1518.778865492274
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 49,
+        "time": 4.899999999999999,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 49,
+        "time": 4.899999999999999,
+        "x": 1114.4749385897273,
+        "y": 1518.778865492274
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 50,
+        "time": 4.999999999999998,
+        "x": 1114.4936485353576,
+        "y": 1518.8215704917109
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 50,
+        "time": 4.999999999999998,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 50,
+        "time": 4.999999999999998,
+        "x": 1114.4936485353576,
+        "y": 1518.8215704917109
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 51,
+        "time": 5.099999999999998,
+        "x": 1114.5086663969964,
+        "y": 1518.855848398526
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 51,
+        "time": 5.099999999999998,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 51,
+        "time": 5.099999999999998,
+        "x": 1114.5086663969964,
+        "y": 1518.855848398526
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 52,
+        "time": 5.1999999999999975,
+        "x": 1114.521876829711,
+        "y": 1518.8860008924337
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 52,
+        "time": 5.1999999999999975,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 52,
+        "time": 5.1999999999999975,
+        "x": 1114.521876829711,
+        "y": 1518.8860008924337
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 53,
+        "time": 5.299999999999997,
+        "x": 1114.5342024506701,
+        "y": 1518.9141338248605
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 53,
+        "time": 5.299999999999997,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 53,
+        "time": 5.299999999999997,
+        "x": 1114.5342024506701,
+        "y": 1518.9141338248605
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 54,
+        "time": 5.399999999999997,
+        "x": 1114.5460949194144,
+        "y": 1518.9412780978082
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 54,
+        "time": 5.399999999999997,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 54,
+        "time": 5.399999999999997,
+        "x": 1114.5460949194144,
+        "y": 1518.9412780978082
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 55,
+        "time": 5.4999999999999964,
+        "x": 1114.5577753421044,
+        "y": 1518.9679383807538
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 55,
+        "time": 5.4999999999999964,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 55,
+        "time": 5.4999999999999964,
+        "x": 1114.5577753421044,
+        "y": 1518.9679383807538
+      },
+      {
+        "id": 7,
+        "kind": "scout",
+        "lane": 0,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 56,
+        "time": 5.599999999999996,
+        "x": 1115.069902880929,
+        "y": 1513.2894295195874
+      },
+      {
+        "id": 8,
+        "kind": "siege",
+        "lane": 183,
+        "pathFailed": false,
+        "phase": "substep",
+        "tick": 56,
+        "time": 5.599999999999996,
+        "x": 1114.5577753421044,
+        "y": 1518.9679383807538
+      }
+    ],
+    "trafficInspect": {},
+    "trafficStats": {
+      "activePairs": 0,
+      "cancelled": 0,
+      "conflicts": 0,
+      "deadReleased": 0,
+      "expired": 0,
+      "maxPairs": 0,
+      "maxPlanningSlice": 3.999999997006398e-06,
+      "noBay": 0,
+      "resumed": 0,
+      "routeRequests": 0,
+      "waits": 0,
+      "yields": 0
+    }
+  },
+  "schema": "gastric-production-lua-trace/v1"
+}

@@ -1,0 +1,218 @@
+{
+  "scope": "Native CPU submission behind opaque startup menu. Whole-frame timestep includes FPS caps, UI and scheduling. Not GPU/battle acceptance. Intermediate run cancelled automatically on gameplay start; final run completed eight conditions.",
+  "target": "Native added P95 frame time <= 2ms remains UNCONFIRMED; observed CPU submission overhead still exceeds 2ms at whole/chest views.",
+  "runs": [
+    {
+      "log": "lua-2026-10-08 20_15_30_402.log",
+      "lines": [
+        {
+          "t": "2026-10-08 20_15_57_655",
+          "f": 984,
+          "l": "RAW",
+          "m": "[2026-10-08 20_15_57_655][984][Script] [BodyLifeBenchmark] view=whole enabled=false samples=74 cpuP50ms=0.3960 cpuP95ms=0.4530 frameP50ms=33.7390 frameP95ms=34.0960\n"
+        },
+        {
+          "t": "2026-10-08 20_15_57_655",
+          "f": 984,
+          "l": "RAW",
+          "m": "[2026-10-08 20_15_57_655][984][Script] [BodyLifeBenchmark] view=whole enabled=true samples=74 cpuP50ms=4.2710 cpuP95ms=5.0370 frameP50ms=33.5280 frameP95ms=33.8835\n"
+        },
+        {
+          "t": "2026-10-08 20_15_57_655",
+          "f": 984,
+          "l": "RAW",
+          "m": "[2026-10-08 20_15_57_655][984][Script] [BodyLifeBenchmark] view=chest enabled=false samples=74 cpuP50ms=0.4060 cpuP95ms=0.4740 frameP50ms=33.9480 frameP95ms=34.2225\n"
+        },
+        {
+          "t": "2026-10-08 20_15_57_655",
+          "f": 984,
+          "l": "RAW",
+          "m": "[2026-10-08 20_15_57_655][984][Script] [BodyLifeBenchmark] view=chest enabled=true samples=74 cpuP50ms=3.5920 cpuP95ms=4.3890 frameP50ms=33.7475 frameP95ms=34.1325\n"
+        },
+        {
+          "t": "2026-10-08 20_15_57_655",
+          "f": 984,
+          "l": "RAW",
+          "m": "[2026-10-08 20_15_57_655][984][Script] [BodyLifeBenchmark] view=transition enabled=false samples=74 cpuP50ms=9.0390 cpuP95ms=12.5170 frameP50ms=33.6500 frameP95ms=33.9725\n"
+        },
+        {
+          "t": "2026-10-08 20_15_57_655",
+          "f": 984,
+          "l": "RAW",
+          "m": "[2026-10-08 20_15_57_655][984][Script] [BodyLifeBenchmark] view=transition enabled=true samples=74 cpuP50ms=9.5960 cpuP95ms=12.0790 frameP50ms=33.7305 frameP95ms=34.1745\n"
+        },
+        {
+          "t": "2026-10-08 20_15_57_655",
+          "f": 984,
+          "l": "RAW",
+          "m": "[2026-10-08 20_15_57_655][984][Script] [BodyLifeBenchmark] view=detail enabled=false samples=74 cpuP50ms=11.6340 cpuP95ms=13.1450 frameP50ms=33.7225 frameP95ms=34.2100\n"
+        },
+        {
+          "t": "2026-10-08 20_15_57_655",
+          "f": 984,
+          "l": "RAW",
+          "m": "[2026-10-08 20_15_57_655][984][Script] [BodyLifeBenchmark] view=detail enabled=true samples=74 cpuP50ms=11.7940 cpuP95ms=13.6820 frameP50ms=33.7555 frameP95ms=34.1735\n"
+        },
+        {
+          "t": "2026-10-08 20_15_57_655",
+          "f": 984,
+          "l": "RAW",
+          "m": "[2026-10-08 20_15_57_655][984][Script] [BodyLifeBenchmark] finished native submission smoke complete; visuals unverified\n"
+        }
+      ]
+    },
+    {
+      "log": "lua-2026-10-08 20_18_37_201.log",
+      "lines": [
+        {
+          "t": "2026-10-08 20_19_04_584",
+          "f": 816,
+          "l": "RAW",
+          "m": "[2026-10-08 20_19_04_584][816][Script] [BodyLifeBenchmark] view=whole enabled=false samples=74 cpuP50ms=0.4070 cpuP95ms=0.4810 frameP50ms=33.7510 frameP95ms=34.1245\n"
+        },
+        {
+          "t": "2026-10-08 20_19_04_584",
+          "f": 816,
+          "l": "RAW",
+          "m": "[2026-10-08 20_19_04_584][816][Script] [BodyLifeBenchmark] view=whole enabled=true samples=74 cpuP50ms=3.2390 cpuP95ms=4.2740 frameP50ms=33.6075 frameP95ms=34.0125\n"
+        },
+        {
+          "t": "2026-10-08 20_19_04_584",
+          "f": 816,
+          "l": "RAW",
+          "m": "[2026-10-08 20_19_04_584][816][Script] [BodyLifeBenchmark] view=chest enabled=false samples=74 cpuP50ms=0.2710 cpuP95ms=0.4880 frameP50ms=33.7990 frameP95ms=34.1345\n"
+        },
+        {
+          "t": "2026-10-08 20_19_04_585",
+          "f": 816,
+          "l": "RAW",
+          "m": "[2026-10-08 20_19_04_585][816][Script] [BodyLifeBenchmark] view=chest enabled=true samples=74 cpuP50ms=3.5490 cpuP95ms=3.7930 frameP50ms=33.7485 frameP95ms=34.1580\n"
+        },
+        {
+          "t": "2026-10-08 20_19_04_585",
+          "f": 816,
+          "l": "RAW",
+          "m": "[2026-10-08 20_19_04_585][816][Script] [BodyLifeBenchmark] view=transition enabled=false samples=74 cpuP50ms=7.8810 cpuP95ms=12.7890 frameP50ms=33.7290 frameP95ms=34.0900\n"
+        },
+        {
+          "t": "2026-10-08 20_19_04_585",
+          "f": 816,
+          "l": "RAW",
+          "m": "[2026-10-08 20_19_04_585][816][Script] [BodyLifeBenchmark] view=transition enabled=true samples=74 cpuP50ms=9.0160 cpuP95ms=15.6720 frameP50ms=33.6945 frameP95ms=34.0230\n"
+        },
+        {
+          "t": "2026-10-08 20_19_04_585",
+          "f": 816,
+          "l": "RAW",
+          "m": "[2026-10-08 20_19_04_585][816][Script] [BodyLifeBenchmark] view=detail enabled=false samples=74 cpuP50ms=11.3460 cpuP95ms=14.7140 frameP50ms=33.8150 frameP95ms=34.1745\n"
+        },
+        {
+          "t": "2026-10-08 20_19_04_585",
+          "f": 816,
+          "l": "RAW",
+          "m": "[2026-10-08 20_19_04_585][816][Script] [BodyLifeBenchmark] view=detail enabled=true samples=74 cpuP50ms=11.3770 cpuP95ms=13.9200 frameP50ms=33.7210 frameP95ms=34.1940\n"
+        },
+        {
+          "t": "2026-10-08 20_19_04_585",
+          "f": 816,
+          "l": "RAW",
+          "m": "[2026-10-08 20_19_04_585][816][Script] [BodyLifeBenchmark] finished native submission smoke complete; visuals unverified\n"
+        }
+      ]
+    },
+    {
+      "log": "lua-2026-10-08 20_21_30_710.log",
+      "lines": [
+        {
+          "t": "2026-10-08 20_21_38_762",
+          "f": 385,
+          "l": "RAW",
+          "m": "[2026-10-08 20_21_38_762][385][Script] [BodyLifeBenchmark] view=whole enabled=false samples=74 cpuP50ms=0.4050 cpuP95ms=0.4830 frameP50ms=17.0005 frameP95ms=17.4580\n"
+        },
+        {
+          "t": "2026-10-08 20_21_38_764",
+          "f": 385,
+          "l": "RAW",
+          "m": "[2026-10-08 20_21_38_764][385][Script] [BodyLifeBenchmark] view=whole enabled=true samples=74 cpuP50ms=3.3000 cpuP95ms=3.9620 frameP50ms=17.0475 frameP95ms=17.4705\n"
+        },
+        {
+          "t": "2026-10-08 20_21_38_764",
+          "f": 385,
+          "l": "RAW",
+          "m": "[2026-10-08 20_21_38_764][385][Script] [BodyLifeBenchmark] view=chest enabled=false samples=68 cpuP50ms=0.2260 cpuP95ms=0.4280 frameP50ms=17.1245 frameP95ms=17.5140\n"
+        },
+        {
+          "t": "2026-10-08 20_21_38_764",
+          "f": 385,
+          "l": "RAW",
+          "m": "[2026-10-08 20_21_38_764][385][Script] [BodyLifeBenchmark] finished cancelled on gameplay start\n"
+        }
+      ]
+    },
+    {
+      "log": "lua-2026-10-08 20_31_33_834.log",
+      "lines": [
+        {
+          "t": "2026-10-08 20_32_01_454",
+          "f": 1182,
+          "l": "RAW",
+          "m": "[2026-10-08 20_32_01_453][1182][Script] [BodyLifeBenchmark] view=whole enabled=false samples=74 cpuP50ms=0.4080 cpuP95ms=0.4630 frameP50ms=33.8330 frameP95ms=34.1565\n"
+        },
+        {
+          "t": "2026-10-08 20_32_01_456",
+          "f": 1182,
+          "l": "RAW",
+          "m": "[2026-10-08 20_32_01_456][1182][Script] [BodyLifeBenchmark] view=whole enabled=true samples=74 cpuP50ms=3.8060 cpuP95ms=4.1530 frameP50ms=33.6585 frameP95ms=34.0750\n"
+        },
+        {
+          "t": "2026-10-08 20_32_01_456",
+          "f": 1182,
+          "l": "RAW",
+          "m": "[2026-10-08 20_32_01_456][1182][Script] [BodyLifeBenchmark] view=chest enabled=false samples=74 cpuP50ms=0.4150 cpuP95ms=0.4520 frameP50ms=33.9480 frameP95ms=34.1905\n"
+        },
+        {
+          "t": "2026-10-08 20_32_01_456",
+          "f": 1182,
+          "l": "RAW",
+          "m": "[2026-10-08 20_32_01_456][1182][Script] [BodyLifeBenchmark] view=chest enabled=true samples=74 cpuP50ms=2.8070 cpuP95ms=2.9610 frameP50ms=33.4610 frameP95ms=33.9650\n"
+        },
+        {
+          "t": "2026-10-08 20_32_01_456",
+          "f": 1182,
+          "l": "RAW",
+          "m": "[2026-10-08 20_32_01_456][1182][Script] [BodyLifeBenchmark] view=transition enabled=false samples=74 cpuP50ms=9.7270 cpuP95ms=12.6180 frameP50ms=33.7025 frameP95ms=34.0945\n"
+        },
+        {
+          "t": "2026-10-08 20_32_01_456",
+          "f": 1182,
+          "l": "RAW",
+          "m": "[2026-10-08 20_32_01_456][1182][Script] [BodyLifeBenchmark] view=transition enabled=true samples=74 cpuP50ms=8.7950 cpuP95ms=15.3710 frameP50ms=33.6565 frameP95ms=34.0800\n"
+        },
+        {
+          "t": "2026-10-08 20_32_01_456",
+          "f": 1182,
+          "l": "RAW",
+          "m": "[2026-10-08 20_32_01_456][1182][Script] [BodyLifeBenchmark] view=detail enabled=false samples=74 cpuP50ms=11.3250 cpuP95ms=14.6570 frameP50ms=33.8190 frameP95ms=34.1280\n"
+        },
+        {
+          "t": "2026-10-08 20_32_01_456",
+          "f": 1182,
+          "l": "RAW",
+          "m": "[2026-10-08 20_32_01_456][1182][Script] [BodyLifeBenchmark] view=detail enabled=true samples=74 cpuP50ms=11.5160 cpuP95ms=14.6880 frameP50ms=33.7885 frameP95ms=34.0965\n"
+        },
+        {
+          "t": "2026-10-08 20_32_01_456",
+          "f": 1182,
+          "l": "RAW",
+          "m": "[2026-10-08 20_32_01_456][1182][Script] [BodyLifeBenchmark] finished native submission smoke complete; visuals unverified\n"
+        }
+      ]
+    }
+  ],
+  "finalCpuP95AddedMs": {
+    "whole": 3.69,
+    "chest": 2.509,
+    "transition": 2.753,
+    "detail": 0.031
+  }
+}

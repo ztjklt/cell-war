@@ -1,0 +1,203 @@
+{
+  "schema": "fullbody-actual-foreground/v3",
+  "sourceBox": [
+    0,
+    0,
+    1024,
+    1536
+  ],
+  "pixelSize": [
+    4096,
+    6144
+  ],
+  "path": "assets/image/anatomy-reference/vascular-study/fullbody-015/masks/actual-art-foreground-v3.png",
+  "sha256": "e1828b8109dd84e8f13ef93fe2dd03b506896b3670c90f3d9d665fbfa4a12b9e",
+  "registrationScale": 4,
+  "logicalGeometrySha256": "3890744e2fcaf9e9907c85513e170e479f67b7fbb1fbf06385ac02bd80e8550c",
+  "quietBasePath": "assets/image/anatomy-reference/vascular-study/fullbody-gpt-source/quiet-body-registered-v2.png",
+  "quietBaseSha256": "ef4cb61f0a4013a5f23ddbc8a23a3de54f43a333d664c5397349e6d45c8c3a47",
+  "acceptedOrganInputs": [
+    {
+      "id": "liver",
+      "path": "assets/image/anatomy-reference/vascular-study/organ-atlas/liver/battlefield.png",
+      "sha256": "64fececa82a2e97d12801f9e25130c8835602d1e741cd615b26ab3c4839a66f7",
+      "sourceBox": [
+        387,
+        463,
+        537,
+        576
+      ]
+    },
+    {
+      "id": "kidney_r",
+      "path": "assets/image/anatomy-reference/vascular-study/organ-atlas/kidney_r/battlefield.png",
+      "sha256": "2bb9565bf764b2850ebc89921681812da0dcfd432c4c27403654883cab8c7905",
+      "sourceBox": [
+        390,
+        564,
+        449,
+        656
+      ]
+    },
+    {
+      "id": "kidney_l",
+      "path": "assets/image/anatomy-reference/vascular-study/organ-atlas/kidney_l/battlefield.png",
+      "sha256": "4b64bd08494b8e8c612237ced8de5c4f2b22d3f5e5d80d1e43bb1ab777675357",
+      "sourceBox": [
+        571,
+        564,
+        628,
+        655
+      ]
+    },
+    {
+      "id": "lung_r",
+      "path": "assets/image/anatomy-reference/vascular-study/organ-atlas/lung_r/battlefield.png",
+      "sha256": "830c4126c5e15ec14499951d10309ad532388fcf578b0cfba5faf1d1907bf30f",
+      "sourceBox": [
+        366,
+        285,
+        484,
+        489
+      ]
+    },
+    {
+      "id": "lung_l",
+      "path": "assets/image/anatomy-reference/vascular-study/organ-atlas/lung_l/battlefield.png",
+      "sha256": "9b62c9157cf0e87a3c468b77834d5bf2915563936a58c5291dcea350a670e3d4",
+      "sourceBox": [
+        533,
+        285,
+        650,
+        490
+      ]
+    },
+    {
+      "id": "heart",
+      "path": "assets/image/anatomy-reference/vascular-study/organ-atlas/heart/battlefield.png",
+      "sha256": "d0580777347de263cff83d8f3d179db06823b47159a05a2db2503ae07f84ebc7",
+      "sourceBox": [
+        468,
+        326,
+        568,
+        467
+      ]
+    },
+    {
+      "id": "brain",
+      "path": "assets/image/anatomy-reference/vascular-study/organ-atlas/brain/battlefield.png",
+      "sha256": "79774e751a3b3c2810681f1ac094c05a971150a478a43ed7b2be06cf777b29ba",
+      "sourceBox": [
+        439,
+        21,
+        580,
+        124
+      ]
+    },
+    {
+      "id": "pancreas",
+      "path": "assets/image/anatomy-reference/vascular-study/organ-atlas/pancreas/battlefield.png",
+      "sha256": "73f3a3e52741379b26c9b57c51a56682b14dbe9c8ed2621f12b60db37dcc9ab5",
+      "sourceBox": [
+        476,
+        558,
+        580,
+        611
+      ]
+    },
+    {
+      "id": "bladder",
+      "path": "assets/image/anatomy-reference/vascular-study/organ-atlas/bladder/battlefield.png",
+      "sha256": "3559a76671df7c90c54102376c29365668d621978402a3270f587d519d7374e9",
+      "sourceBox": [
+        462,
+        725,
+        554,
+        822
+      ]
+    },
+    {
+      "id": "small_intestine",
+      "path": "assets/image/anatomy-reference/vascular-study/organ-atlas/small_intestine/battlefield.png",
+      "sha256": "2bfa9dd46b3c12e859803d5cdbaf73166050cfe0d288d218bd84f81154de19c8",
+      "sourceBox": [
+        452,
+        651,
+        563,
+        740
+      ]
+    },
+    {
+      "id": "large_intestine",
+      "path": "assets/image/anatomy-reference/vascular-study/organ-atlas/large_intestine/battlefield.png",
+      "sha256": "9cb7fc3f9961fa7a82e6a7d994a9054591802a951abb5f537f8a4f1463794b66",
+      "sourceBox": [
+        425,
+        597,
+        594,
+        751
+      ]
+    },
+    {
+      "id": "stomach",
+      "path": "assets/image/anatomy-reference/vascular-study/stomach-playable/battlefield.png",
+      "sha256": "9464d5f62338e1dc9644cedd4fc9ce1ba803d4afe5a172395249a679b47cb918",
+      "sourceBox": [
+        464,
+        448,
+        644,
+        628
+      ]
+    }
+  ],
+  "formula": "warm-cream pigment inside frozen logical protection + complete stomach food cavity; binary closing2 at4x, .10source-px coverage guard; mouth matches actual foreground plane without perpendicular cap",
+  "creamClassifier": {
+    "redMinimum": 155,
+    "greenMinimum": 140,
+    "redMinusGreenMaximum": 48,
+    "greenMinusBlueMinimum": 17,
+    "redMinusBlueMinimum": 30,
+    "comparisons": "strict > and <"
+  },
+  "binaryClosingIterations": 2,
+  "rowRunSimplifySource": 0.06,
+  "foregroundBufferSource": 0.1,
+  "maskSimplifySource": 0.008,
+  "precisionSource": 1e-05,
+  "compositionOrder": [
+    "quiet-base",
+    "liver",
+    "kidney_r",
+    "kidney_l",
+    "lung_r",
+    "lung_l",
+    "heart",
+    "brain",
+    "pancreas",
+    "bladder",
+    "small_intestine",
+    "large_intestine",
+    "stomach"
+  ],
+  "candidateSourceBox": [
+    392,
+    128,
+    626,
+    814
+  ],
+  "candidatePixelSize": [
+    936,
+    2744
+  ],
+  "candidateMembership": "logical geometry alpha>127 at texel centers; CairoSVG evenodd raster",
+  "candidatePath": "assets/image/anatomy-reference/vascular-study/fullbody-015/masks/actual-art-logical-candidate-v3.png",
+  "candidateSha256": "847561c7a0b463e07a7a6a2e60b2061fe99d489fcf7774afa6963e06f1794439",
+  "geometryConversion": "binary row-run boxes at4x\u2192union\u2192simplify .06 source-px preserving topology\u2192buffer .10 source-px clipped to logical geometry\u2192union full stomach food cavity\u2192precision .00001",
+  "visualUnitDepthGuardSource": 0.025,
+  "alphaProtection": "actualArtForeground alpha255 pixels copied from accepted floors / external+deep zeroed; visible unit interval at geometric foreground +.025 source-px",
+  "logicalUnitDepthIntervalsUnchanged": true,
+  "generatedColorsDefineCollision": false,
+  "rawCreamPixels": 177910,
+  "actualForegroundAreaSource": 15828.82932954785,
+  "logicalForegroundAreaSource": 20331.723622909936
+}
