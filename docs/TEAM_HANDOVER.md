@@ -30,7 +30,7 @@ GitHub 仓库：https://github.com/ztjklt/cell-war 。此次整合合入后，ma
 - 所有 182 个 Lua 文件语法检查通过；静态 war 模块及显式图片引用未发现缺失。
 - 全身地图资源检查 951/951，通过，包含图集布局与内存预算契约。
 - 全身存档兼容检查通过。旧 clearance 探针遇到与最新几何不匹配的 oracle 数据，不作为当前净空已验收的证据。
-- 本次在独立目录整合；该目录没有运行中的预览，因此没有自动启动窗口。未宣称整合版本已通过原生画面、手机或长期性能验收。
+- 在独立目录整合后，本机 main 已同步并刷新原本运行中的预览。CLI check 返回 FAIL：缺少引擎内置 `Cube/Day/DaySpecularHDR_QualityLow.dds`；刷新前已有同名错误。进程仍存活，但未取得画面证据，不能宣称原生运行验收通过。详见 `integration-native-preview-check.json`；手机、云存档及长期性能仍待验收。
 
 结果文件：`integration-regression-results.json`、`body-life/vascular-art-study/fullbody-015/qa/resource-report.json`、`body-life/vascular-art-study/fullbody-015/qa/compatibility-report.json`。
 
