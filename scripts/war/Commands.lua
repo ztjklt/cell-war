@@ -3,6 +3,10 @@ local D,U,W,E,P=require("war.Data"),require("war.Util"),require("war.World"),req
 local C={}
 local Motion=require("war.Motion")
 local Collision=require("war.CellCollision")
+local Organs,Status,K=require("war.OrganRules"),require("war.CombatStatus"),require("war.CombatConfig")
+function C.resetPath(e)
+ e.path={};e.pathIndex=1;e.longRoute=nil;e.pathGoal=nil;e.pathResolved=nil;e.routeEnd=nil;e.pathPending=false;e.pathFailed=false;e.orderToken=(e.orderToken or 0)+1
+end
 function C.spawn(s,category,kind,f,x,y,complete)
  if s.campaign and (category~="unit" or not require("war.Campaign").allowed(s,x,y)) then return nil end
  local d=(category=="unit" and D.units[kind] or D.buildings[kind]) --[[@as table]]
@@ -13,14 +17,31 @@ function C.spawn(s,category,kind,f,x,y,complete)
   if not x then return nil end
  end
  local e={id=s.nextId,category=category,kind=kind,faction=f,x=x,y=y,hp=d.hp,maxHp=d.hp,complete=complete~=false,progress=complete==false and 0 or 1,orders={},orderToken=0,path={},pathIndex=1,queue={},rally={x=x+3,y=y+3},satiety=100,temp=22,sanity=100,cooldown=0,work=0,cargo={},fire=0,wet=0,age=0}
- e.vesselLane=category=="unit" and W.lane(s,x,y) or 0;s.nextId=s.nextId+1;s.entities[e.id]=e;if category=="building" then W.rebuild(s) end;return e
+ e.vesselLane=category=="unit" and W.lane(s,x,y) or 0
+ e.requiresHeart=category=="unit" and K.strongCells[kind] and Organs.at(s,x,y)=="liver" or nil
+ s.nextId=s.nextId+1;s.entities[e.id]=e;if category=="building" then W.rebuild(s) end;return e
 end
 function C.submit(s,c) s.commands[#s.commands+1]=U.copy(c) end
 function C.order(s,e,o,append)
  if s.campaign and o.x and o.y and not require("war.Campaign").allowed(s,o.x,o.y) then return false end
  if not append and require('war.OrganBattlefield').enabled(s) then require((s.organBattlefieldVersion==1 or s.fullbodyBattlefieldVersion==1) and 'war.OrganTraffic' or 'war.GastricTraffic').cancel(s,e) end
- if not append then e.cellDetour=nil;e.contactStall=0;e.orders={};e.path={};e.longRoute=nil;e.pathPending=false;e.pathFailed=false;e.orderToken=e.orderToken+1 end
+ if not append then
+  e.cellDetour=nil;e.contactStall=0;e.orders={};e.path={};e.longRoute=nil;e.pathGoal=nil;e.pathResolved=nil;e.routeEnd=nil;e.pathPending=false;e.pathFailed=false;e.travelSpeed=0;e.orderToken=e.orderToken+1
+ end
  e.orders[#e.orders+1]=U.copy(o)
+end
+-- Remove an order that has not started yet. The first order is intentionally
+-- protected because it may already be moving, fighting, or performing work.
+function C.removeQueued(s,ids,index)
+ if not index or index<=1 then return false end
+ local changed=false
+ for _,id in ipairs(ids or {}) do
+  local e=s.entities[id]
+  if U.alive(e) and e.faction==1 and e.orders and e.orders[index] then
+   table.remove(e.orders,index);changed=true
+  end
+ end
+ return changed
 end
 function C.execute(s,c)
  local f=c.faction or 1;local fa=s.factions[f];if not fa or fa.lost then return false end
@@ -28,7 +49,7 @@ function C.execute(s,c)
  if s.campaign then
   if s.campaign.event.status=="failed" then return false end
   if kind=="reinforce" then return f==1 and require("war.Reinforcements").request(s) end
-  if ({build=true,train=true,research=true,gather=true,farm=true,repair=true,rally=true,extinguish=true,cancel=true})[kind] then U.message(s,s.campaign.event.id=="trachea" and "气管事件仅开放战术指挥" or "鼻腔事件仅开放战术指挥",f);return false end
+  if ({build=true,train=true,research=true,gather=true,farm=true,repair=true,rally=true,extinguish=true,cancel=true})[kind] then U.message(s,require("war.MapRegistry").isTrachea(s) and "气管事件仅开放战术指挥" or "鼻腔事件仅开放战术指挥",f);return false end
   if kind=="attack" and c.target then local t=s.entities[c.target];if t and not require("war.Campaign").allowed(s,t.x,t.y) then return false end end
   if c.x and c.y and not require("war.Campaign").allowed(s,c.x,c.y) then U.message(s,"这片组织尚未开放",f);return false end
  end
@@ -39,10 +60,12 @@ function C.execute(s,c)
   local offset=d.size%2==0 and 0 or .5
   local x,y=math.floor(c.x)+offset,math.floor(c.y)+offset
   local ok,why=W.canBuild(s,c.building,x,y,f);if not ok then U.message(s,why,f);return false end
+  if c.building==K.aura.building and E.stomachGlucose(s,f)<K.aura.stomachGlucoseCost then U.message(s,"需要红细胞从胃部采集并运回葡萄糖",f);return false end
   local workers={} for _,id in ipairs(c.ids or {}) do local u=s.entities[id];if U.alive(u) and u.faction==f and u.kind=="worker" then workers[#workers+1]=u end end
   if #workers==0 then U.message(s,"请先选择红细胞",f);return false end
-  ok,why=E.pay(s,f,d.cost);if not ok then U.message(s,why,f);return false end
+  ok,why=E.pay(s,f,d.cost,c.building==K.aura.building);if not ok then U.message(s,why,f);return false end
   local b=C.spawn(s,"building",c.building,f,x,y,false);b.hp=math.max(30,d.hp*.15)
+  if c.building==K.aura.building then b.attackAura=true end
   W.rebuild(s)
   for _,u in ipairs(workers) do C.order(s,u,{kind="build",target=b.id},c.append) end
   U.message(s,"开始建造"..d.name,f);return true,b.id
@@ -52,6 +75,7 @@ function C.execute(s,c)
   if kind=="train" then
    local d=D.units[c.unit] --[[@as table?]]
    if not d or d.at~=b.kind or fa.tier<d.tier then U.message(s,"建筑或科技条件不足",f);return false end
+   if not Organs.canTrain(s,c.unit,b.x,b.y) then U.message(s,"强力细胞仅能在肝脏区建造",f);return false end
    local pop,cap=E.population(s,f,true);if pop+d.pop>cap then U.message(s,"人口不足，请建造住宅（上限40）",f);return false end
    local ok,why=E.pay(s,f,d.cost);if not ok then U.message(s,why,f);return false end
    b.queue[#b.queue+1]={unit=c.unit,remaining=d.train,total=d.train,cost=U.copy(d.cost)}
@@ -64,12 +88,12 @@ function C.execute(s,c)
   end return true
  elseif kind=="cancel" then
   local b=s.entities[c.target];if not U.alive(b) or b.faction~=f or b.category~="building" then return false end
-  if not b.complete then E.refund(s,f,D.buildings[b.kind].cost,.75);b.hp=0;W.rebuild(s)
+  if not b.complete then E.refund(s,f,D.buildings[b.kind].cost,.75,b.attackAura and "stomach" or nil);b.hp=0;W.rebuild(s)
   elseif #b.queue>0 then local q=table.remove(b.queue);E.refund(s,f,q.cost,1);if q.tech then fa.researching=nil end end return true
  elseif kind=="rally" then
   local b=s.entities[c.target];if U.alive(b) and b.faction==f and b.category=="building" then b.rally={x=U.clamp(c.x,2,D.width(s)-1),y=U.clamp(c.y,2,D.height(s)-1)};return true end return false
  end
- local n=0;local spacing=1.4
+ local n=0
  local G=require('war.OrganBattlefield');local destinations
  if G.enabled(s) and (kind=='move' or kind=='attackmove') and c.x and c.y then
   local units={};for _,id in ipairs(c.ids or {}) do local e=s.entities[id];if U.alive(e) and e.faction==f and e.category=='unit' then units[#units+1]=e end end
@@ -81,7 +105,6 @@ function C.execute(s,c)
   local places=assert(G.formation(s,units,c.x,c.y,lane)) --[[@as table[] ]]
   destinations={};for _,p in ipairs(places) do destinations[p.id]=p end
  end
- for _,id in ipairs(c.ids or {}) do local u=s.entities[id];if u and u.category=="unit" then spacing=math.max(spacing,Collision.radius(u)*2+.15) end end
  for i,id in ipairs(c.ids or {}) do
   local e=s.entities[id]
   if U.alive(e) and e.faction==f and e.category=="unit" then
@@ -93,11 +116,11 @@ function C.execute(s,c)
    if destinations then
     local p=destinations[e.id]
     if not p or p.failed then o.kind='stop' else o.x,o.y,o.lane=p.x,p.y,p.lane end
-   elseif kind=="move" or o.kind=="attackmove" then o.x=U.clamp((o.x or e.x)+((i-1)%5)*spacing,2,D.width(s)-1);o.y=U.clamp((o.y or e.y)+math.floor((i-1)/5)*spacing,2,D.height(s)-1) end
+   elseif kind=="move" or o.kind=="attackmove" then o.x=U.clamp(o.x or e.x,2,D.width(s)-1);o.y=U.clamp(o.y or e.y,2,D.height(s)-1) end
    if s.campaign and o.x and o.y and not require("war.Campaign").allowed(s,o.x,o.y) then o.x,o.y=c.x or e.x,c.y or e.y end
    if o.kind=="stop" then
     if require('war.OrganBattlefield').enabled(s) then require((s.organBattlefieldVersion==1 or s.fullbodyBattlefieldVersion==1) and 'war.OrganTraffic' or 'war.GastricTraffic').cancel(s,e) end
-    e.orders={};e.path={};e.longRoute=nil;e.pathPending=false;e.orderToken=e.orderToken+1
+    e.orders={};C.resetPath(e);e.cellDetour=nil;e.travelSpeed=0
    elseif (kind=="gather" or kind=="build" or kind=="repair" or kind=="farm" or kind=="extinguish") and e.kind~="worker" then
    else C.order(s,e,o,c.append);n=n+1 end
   end
@@ -107,13 +130,18 @@ function C.process(s)
  local pending=s.commands;s.commands={}
  for _,c in ipairs(pending) do C.execute(s,c) end
 end
-function C.completeOrder(e) table.remove(e.orders,1);e.path={};e.pathPending=false;e.pathFailed=false;e.pathIndex=1;e.orderToken=e.orderToken+1;e.work=0 end
+function C.completeOrder(e) table.remove(e.orders,1);C.resetPath(e);e.work=0 end
 function C.go(s,e,x,y,dt,stopRange,destinationLane)
  if require('war.OrganBattlefield').enabled(s) and require((s.organBattlefieldVersion==1 or s.fullbodyBattlefieldVersion==1) and 'war.OrganTraffic' or 'war.GastricTraffic').beforeMove(s,e,x,y,dt) then return false end
  if require('war.OrganBattlefield').enabled(s) then
   -- Exact trial formation slots and membrane anchors must remain clear.
   stopRange=math.min(stopRange or .7,.025)
  end
+ if not Organs.canLeaveLiver(s,e,x,y) then
+  if not e.liverExitNotice then U.message(s,"强力细胞离开肝脏须先经心脏",e.faction);e.liverExitNotice=true end
+  return false
+ end
+ e.liverExitNotice=nil
  local d=math.sqrt((x-e.x)^2+(y-e.y)^2)
  local goalLane=destinationLane
  if require('war.OrganBattlefield').enabled(s) and goalLane==nil then
@@ -135,7 +163,9 @@ function C.go(s,e,x,y,dt,stopRange,destinationLane)
  if not e.pathPending and (not e.path[e.pathIndex or 1]) then P.request(s,e,x,y) end
  local factor=(e.satiety<20 or e.sanity<25 or e.temp<5 or e.temp>35) and .65 or 1
  local terrain=D.biomes[W.terrain(s,math.floor(e.x),math.floor(e.y))]
- local speed=D.units[e.kind].speed*factor*(terrain.move or 1)
+ local organFactor=Organs.moveMultiplier(s,e)
+ local speed=D.units[e.kind].speed*factor*(organFactor~=1 and organFactor or terrain.move or 1)*Status.multiplier(e,"moveMultiplier")
+ Status.setState(s,e,"moving")
  if s.time-(e.lastTravel or -10)>dt*1.5 then e.travelSpeed=0 end
  -- Short acceleration and arrival easing, expressed in seconds.
  local wanted=speed*U.clamp((d-(stopRange or .7))/.7,.22,1)
@@ -150,6 +180,7 @@ function C.go(s,e,x,y,dt,stopRange,destinationLane)
   else
    local step=math.min(pd,budget);local nx,ny=e.x+dx/pd*step,e.y+dy/pd*step
    if e.cellDetour then nx,ny=e.x+e.cellDetour.x*step,e.y+e.cellDetour.y*step end
+   if not Organs.canStep(s,e,nx,ny,x,y) then break end
    local clear,lane=P.clear(s,e.x,e.y,nx,ny,e.faction,e.vesselLane,p.lane,e)
    if not clear then
     if e.cellDetour then e.cellDetour=nil;e.contactStall=0 end
@@ -159,6 +190,7 @@ function C.go(s,e,x,y,dt,stopRange,destinationLane)
    end
    local transit
    nx,ny,lane,transit=Collision.move(s,e,nx,ny,p.lane)
+   if not Organs.canStep(s,e,nx,ny,x,y) then break end
    if p.lane~=nil and (p.x-nx)^2+(p.y-ny)^2<.00000001 then
     local ok,preferred=P.clear(s,e.x,e.y,nx,ny,e.faction,e.vesselLane,p.lane,e);if ok then lane=preferred end
    end

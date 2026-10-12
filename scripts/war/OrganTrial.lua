@@ -25,7 +25,18 @@ function T.step(s,dt)
  local C,W,K=require('war.Commands'),require('war.World'),require('war.CellCollision')
  C.process(s);s.time=s.time+dt;s.tick=s.tick+1;s.messageTime=math.max(0,s.messageTime-dt)
  W.rebuild(s);require('war.Path').update(s,500,.003)
- for _,e in ipairs(K.units(s)) do require('war.Workers').update(s,e,dt) end
+ for _,e in ipairs(K.units(s)) do
+  local Status=require('war.CombatStatus')
+  e.resolvingCombatState=true;e.nextCombatState=e.statuses and e.statuses.fatigue and 'fatigued' or 'idle'
+  require('war.OrganRules').update(s,e,dt);Status.update(s,e,dt)
+  if e.hp>0 then require('war.Workers').update(s,e,dt) end
+ end
+ for _,e in ipairs(K.units(s)) do
+  e.resolvingCombatState=false;require('war.CombatStatus').setState(s,e,e.nextCombatState or 'idle');e.nextCombatState=nil
+ end
+ require('war.Combat').updateProjectiles(s,dt)
+ for _,e in ipairs(K.units(s)) do if e.hp>0 then require('war.Combat').contacts(s,e) end end
+ require('war.CombatPresentation').update(s)
  require('war.OrganTraffic').update(s,dt)
  require('war.HeartBattlefield').afterStep(s,dt)
  K.resolve(s);W.rebuild(s)

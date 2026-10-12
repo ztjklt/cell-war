@@ -9,7 +9,7 @@ def convert(value):
     keys=list(value.keys())
     if keys and all(isinstance(k,int) for k in keys):return [convert(value[i]) for i in range(1,len(keys)+1)]
     return {k:convert(v) for k,v in value.items()}
-suites=['BattleHUDAcceptance','ReferenceAcceptance','ReferenceRenderAcceptance','AnatomyAcceptance','NasalAcceptance','NasalTerrainAcceptance','VesselAcceptance','SmoothAcceptance','ZoomAcceptance','Acceptance']
+suites=['GameplayUpdateAcceptance','BattleHUDAcceptance','ReferenceAcceptance','ReferenceRenderAcceptance','AnatomyAcceptance','NasalAcceptance','NasalTerrainAcceptance','VesselAcceptance','SmoothAcceptance','ZoomAcceptance','Acceptance']
 report={}
 for suite in suites:
     runtime=LuaRuntime(unpack_returned_tuples=True)

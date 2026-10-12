@@ -320,7 +320,7 @@ function current.forDisplay(s)
  return current.forScale(s.terrainStyle=='body-v4' and 1 or D.WORLD_SCALE)
 end
 function current.forState(s)
- if s.campaign and s.campaign.event.id=='trachea' then
+ if s.campaign and require('war.MapRegistry').isTrachea(s) then
   local version=s.campaign.terrainVersion
   if not trachea[version] then trachea[version]=create(1,require('war.CampaignData').forState(s).vascular) end;return trachea[version]
  end
