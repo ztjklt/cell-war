@@ -45,6 +45,7 @@ D.biomes[25]={name="结肠组织",color={225,194,216},resources={{"food",.075},{
 D.biomes[26]={name="膀胱壁",color={241,208,222},resources={{"fiber",.09},{"flint",.03}},detail="bladder"}
 D.biomes[27]={name="气管黏膜",color={135,191,206},resources={},detail="trachea"}
 D.cellRadii={virus=18/32,worker=19/32,scout=14/32,spear=22/32,archer=22/32,heavy=27/32,siege=34/32,wolf=19/32,shadow=17/32}
+---@type table<string,table>
 D.units={
  virus={name="入侵病毒",hp=100,speed=2.7,damage=11,range=1.5,cool=1.2,pop=0,vision=10,sprite="virus"},
  worker={name="红细胞",hp=95,speed=2.4,damage=5,range=1.5,cool=1.3,pop=1,train=16,cost={food=8,wood=12},at="core",tier=1,vision=12,sprite="worker"},
@@ -56,6 +57,11 @@ D.units={
  wolf={name="侵袭菌",hp=100,speed=2.7,damage=11,range=1.5,cool=1.2,pop=0,vision=10,sprite="wolf"},
  shadow={name="应激孢子",hp=65,speed=2.9,damage=8,range=1.4,cool=1,pop=0,vision=10,sprite="wolf"},
 }
+for kind,profile in pairs(require("war.CombatConfig").roles) do D.units[kind]=profile end
+D.cellRadii.neutrophil=D.cellRadii.spear
+D.cellRadii.herpes=D.cellRadii.virus
+D.cellRadii.helicobacter=D.cellRadii.wolf
+---@type table<string,table>
 D.buildings={
  core={name="核心胞巢",hp=1100,size=3,time=55,cost={wood=65,stone=35,fiber=15},tier=1,supply=15,pop=10,sprite="camp",desc="人口 +10 · 补给 · 训练红细胞"},
  store={name="储运囊",hp=500,size=2,time=24,cost={wood=30,stone=10},tier=1,supply=13,sprite="store",desc="运输交付 · 远征补给"},
@@ -70,11 +76,15 @@ D.buildings={
  clinic={name="修复腺",hp=450,size=2,time=30,cost={wood=30,fiber=25,metal=5},tier=2,sprite="store",desc="附近友军持续恢复生命"},
  wall={name="膜壁",hp=750,size=1,time=12,cost={stone=12,wood=5},tier=1,desc="阻断道路 · 红细胞可维修"},
  gate={name="膜门",hp=650,size=1,time=16,cost={wood=15,stone=10},tier=1,desc="友军通过 · 阻挡敌军"},
- tower={name="防御触须塔",hp=600,size=2,time=35,cost={wood=35,stone=25,flint=10},tier=2,damage=19,range=10,desc="自动攻击可见敌军"},
+ tower={name="防御触须塔",hp=600,size=2,time=35,cost={wood=35,stone=25,flint=10},tier=2,damage=19,range=10,cool=1.5,desc="自动攻击可见敌军"},
  nest={name="感染巢",hp=500,size=2,desc="守卫遗物 · 夜间出没"},
 }
 D.buildOrder={"core","store","house","fire","kitchen","farm","lab","barracks","range","workshop","clinic","wall","gate","tower"}
 D.unitOrder={"worker","scout","spear","archer","heavy","siege"}
+local aura=require("war.CombatConfig").aura
+D.buildings.clinic.name="葡萄糖增益所"
+D.buildings.clinic.desc="消耗胃部葡萄糖建造 · 区域内战斗细胞攻击提升"
+D.buildings.clinic.cost.food=aura.stomachGlucoseCost
 D.tech={
  tier2={name="稳定生产",tier=1,cost={wood=60,stone=30,metal=10},time=70,desc="解锁毒囊细胞、防御触须塔、修复腺"},
  tier3={name="增殖战备",tier=2,cost={wood=90,stone=60,metal=40,relic=3},time=110,desc="解锁甲壳细胞、巨噬孵化池与巨噬细胞"},

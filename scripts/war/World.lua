@@ -69,6 +69,10 @@ end
 function W.tile(x,y,seed) return Anatomy.tile(x,y,seed) end
 function W.terrain(s,x,y) if x<1 or y<1 or x>D.width(s) or y>D.height(s) then return 14 end return s.tiles[U.key(x,y)] end
 local function seedResource(s,x,y,kind,amount,legacy)
+ if kind=="food" and not legacy then
+  local organ=require("war.OrganRegions").at(s,x+.5,y+.5)
+  if organ=="small_intestine" or organ=="large_intestine" then amount=amount*require("war.CombatConfig").intestine.glucoseMultiplier end
+ end
  s.resources[U.key(x,y)]={x=x+.5,y=y+.5,kind=kind,amount=amount,max=amount,initialAmount=amount,regen=0,legacy=legacy or nil}
 end
 function W.ensureChunk(s,cx,cy)

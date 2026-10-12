@@ -68,6 +68,7 @@ function Save.snapshot(s,withoutCheckpoint)
  local snap={version=D.VERSION,mapSize=D.width(s),mapWidth=D.width(s),mapHeight=D.height(s),indexStride=D.INDEX_STRIDE,legacyTerrain=s.legacyTerrain,terrainStyle=s.terrainStyle,seed=s.seed,rng=s.rng,time=s.time,tick=s.tick,nextId=s.nextId,entities={},resources={},factions={},generatedChunks={},spawnedChunks=U.copy(s.spawnedChunks),commands=U.copy(s.commands),tutorial=s.tutorial,outcome=s.outcome,lastDay=s.lastDay,delivered=s.delivered,farmed=s.farmed,trained=s.trained,selectedOnce=s.selectedOnce}
  snap.mode=s.campaign and "campaign" or "sandbox"
  snap.anatomyVersion=s.anatomyVersion or 1
+ snap.combatProjectiles=U.copy(s.combatProjectiles or {});snap.nextProjectileId=s.nextProjectileId or 0
  if s.campaign then
   snap.campaign={}
   for k,v in pairs(s.campaign) do if k~="checkpoint" then snap.campaign[k]=U.copy(v) end end
@@ -166,6 +167,14 @@ function Save.restore(snap,isCheckpoint,validateOnly)
   assert(e.x>=1 and e.x<=width and e.y>=1 and e.y<=height and e.hp>0 and e.maxHp>0 and e.faction>=0 and e.faction<=3 and e.faction%1==0 and type(e.orders)=="table" and type(e.queue)=="table" and type(e.cargo)=="table" and type(e.rally)=="table","单位数据损坏")
   numbers(e.rally,{"x","y"},"集结点损坏")
   assert((e.category=="unit" and D.units[e.kind]) or (e.category=="building" and D.buildings[e.kind]),"未知单位或建筑")
+  if e.statuses~=nil then
+   assert(type(e.statuses)=="table","战斗状态损坏")
+   for kind,status in pairs(e.statuses) do
+    assert(require("war.CombatConfig").statuses[kind] and type(status)=="table","未知战斗状态")
+    for _,key in ipairs({"duration","moveMultiplier","attackMultiplier","damagePerSecond"}) do if status[key]~=nil then assert(finite(status[key]) and status[key]>=0,"战斗状态数值损坏") end end
+    if status.source~=nil then assert(finite(status.source) and status.source%1==0 and status.source>0,"状态来源损坏") end
+   end
+  end
   for _,o in ipairs(e.orders) do assert(type(o)=="table" and type(o.kind)=="string","命令队列损坏") end
   for _,q in ipairs(e.queue) do assert(type(q)=="table" and ((q.unit and D.units[q.unit]) or (q.tech and D.tech[q.tech])) and finite(q.remaining) and finite(q.total) and type(q.cost)=="table","生产队列损坏") end
   if campaign then
@@ -182,9 +191,22 @@ function Save.restore(snap,isCheckpoint,validateOnly)
  for i,fa in ipairs(snap.factions) do
   local f=U.copy(fa);assert(type(f.seen)=="string" and type(f.stock)=="table" and type(f.food)=="table" and type(f.tech)=="table" and type(f.ai)=="table" and finite(f.ai.timer) and finite(f.tier) and f.tier>=1 and f.tier<=3,"阵营数据损坏")
   numbers(f.stock,D.resources,"库存数据损坏")
-  for _,batch in ipairs(f.food) do assert(type(batch)=="table" and finite(batch.amount) and batch.amount>=0 and finite(batch.born),"食物批次损坏") end
+  for _,batch in ipairs(f.food) do
+   assert(type(batch)=="table" and finite(batch.amount) and batch.amount>=0 and finite(batch.born),"食物批次损坏")
+   if batch.stomachGlucose~=nil then assert(finite(batch.stomachGlucose) and batch.stomachGlucose>=0 and batch.stomachGlucose<=batch.amount,"葡萄糖来源损坏") end
+  end
   f.seen=unpackSeen(f.seen,old,stride,width,height);f.visible={};f.mapSeen=nil;f.name=campaign and require("war.CampaignData").forState(s).starts[i].name or D.factions[i].name;s.factions[i]=f
  end
+ local projectiles=snap.combatProjectiles or {};local nextProjectileId=snap.nextProjectileId or 0
+ assert(type(projectiles)=="table" and #projectiles<=require("war.CombatConfig").projectilesLimit and finite(nextProjectileId) and nextProjectileId>=0 and nextProjectileId%1==0,"飞行物存档损坏")
+ local projectileIds={}
+ for _,p in ipairs(projectiles) do
+  assert(type(p)=="table","飞行物存档损坏");numbers(p,{"id","source","faction","x","y","dx","dy","speed","ttl","damage"},"飞行物数值损坏")
+  assert(p.id%1==0 and p.id>0 and p.id<=nextProjectileId and not projectileIds[p.id] and p.source%1==0 and p.source>0 and p.source<s.nextId and p.faction%1==0 and p.faction>=0 and p.faction<=3 and D.units[p.sourceKind] and p.x>=1 and p.x<=width and p.y>=1 and p.y<=height and p.speed>0 and p.ttl>0 and p.damage>=0 and math.abs(p.dx*p.dx+p.dy*p.dy-1)<.0001,"飞行物状态损坏")
+  if p.targetKinds~=nil then assert(type(p.targetKinds)=="table","飞行物目标损坏");for kind in pairs(p.targetKinds) do assert(D.units[kind],"未知飞行物目标") end end
+  projectileIds[p.id]=true
+ end
+ s.combatProjectiles=U.copy(projectiles);s.nextProjectileId=nextProjectileId
  s.effects={};s.message=old and "旧版胞群已恢复原地图，单位已成为细胞" or "存档已恢复";s.messageTime=8;if not validateOnly then P.reset() end;W.rebuild(s);require("war.CellCollision").resolve(s);W.rebuild(s);W.fog(s);return s
 end
 function Save.write(s,slot,snapshotOverride)
