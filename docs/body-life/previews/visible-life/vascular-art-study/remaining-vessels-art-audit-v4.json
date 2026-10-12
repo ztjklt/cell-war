@@ -1,0 +1,447 @@
+{
+  "schema": "remaining-vessels-independent-art-audit/v4",
+  "date": "2026-10-10",
+  "status": "DRAWING_IMPROVED_MINOR_CAP_REMAINS_REGISTRATION_NOT_PASSED",
+  "pageSummary": "胸部已补回两侧红色供血弧，血管与浅蓝支气管的遮挡层次比 v2、v3 清楚；膀胱内部紫红弧已移除，橙色面恢复干净。膀胱左上蓝短管还露着圆切头，需要收进肠袢前景。两块仍是美术候选，固定端口、主图像素注册和实际通路尚未通过。",
+  "inputHashes": {
+    "docs/body-life/vascular-art-study/final-reference-data.json": "3890744e2fcaf9e9907c85513e170e479f67b7fbb1fbf06385ac02bd80e8550c",
+    "docs/body-life/vascular-art-study/remaining-vessels-art-audit.json": "af686672d355809470986753ee71123de3394f0ec3913e0b191463df193f8a8a",
+    "docs/body-life/vascular-art-study/remaining-vessels-art-audit-v3.json": "7f82103444cc3bdbd4662cd430956adc48279a4a8b47afc8450f428f0c053a14",
+    "docs/body-life/vascular-art-study/remaining-vessels-inputs/registration.json": "501c60d42175a16fe1b9fa8d8c2fa7965baeaea2b0b1cb65837b055126ec2851",
+    "assets/image/anatomy-reference/reference.png": "9a04e39961c07073cd9fdcfcdc2c98253ccc25d968e97dbea1f36669e06b5d9f",
+    "assets/image/anatomy-reference/vascular-study/remaining-vessels/gpt-chest-v3.png": "df17df1a900afd75ec856cbc7a1f7a99dc4cd24f5dbede9169f4f368098beae1",
+    "assets/image/anatomy-reference/vascular-study/remaining-vessels/gpt-lower-abdomen-v3.png": "056987fd2ba7cf91736ee38cd1bf8a33f19036fba6efca81db5c01cc8924cea9",
+    "assets/image/anatomy-reference/vascular-study/remaining-vessels/gpt-chest-v4.png": "1249bfa92bbc8f945d3a0fcfe73a8cc4e290ed316f87a4c3accbe2bee6b9ec9c",
+    "assets/image/anatomy-reference/vascular-study/remaining-vessels/gpt-lower-abdomen-v4.png": "9d2ec9a5331edac019149a32d940187b2234e3c1bca8636a1d9b7cf461065616",
+    "docs/body-life/vascular-art-study/remaining-vessels-inputs/chest-prompt-v4.txt": "11dd5a5a2f645f0684f0700da7afe987b9ade243ec9f82c2c61e3e423a26b6c1",
+    "docs/body-life/vascular-art-study/remaining-vessels-inputs/lower-abdomen-prompt-v4.txt": "b40ed365939aa7df9ecc9d7c876d072f1094ba90c4fe2ffe6225086c84dcb8d3",
+    "docs/body-life/vascular-art-study/remaining-vessels-inputs/chest-original.png": "c0d3e035096b26502d4b6fcfcd79bc234dc2116a75aba3023a95fc9b22dcc5cd",
+    "docs/body-life/vascular-art-study/remaining-vessels-inputs/chest-visible-guide.png": "5fa10ee55cd38ae4b760e3720e91f383c04e5fb4e02f2d7d63c846f7f04611f5",
+    "docs/body-life/vascular-art-study/remaining-vessels-inputs/chest-depth-guide.png": "7a9f745a741f62e96d25cfb1ab362b91324eafa58ae4778e4c88d2b3739a66d7",
+    "docs/body-life/vascular-art-study/remaining-vessels-inputs/lower-abdomen-original.png": "f30df9427c6a3b3ddf628750e3bd6f8eb54102909bc56e59a46e4bf2621562d0",
+    "docs/body-life/vascular-art-study/remaining-vessels-inputs/lower-abdomen-visible-guide.png": "51e1f276361823310708d57a9b702509e7e6552c22ab759c329d1c0786c7b487",
+    "docs/body-life/vascular-art-study/remaining-vessels-inputs/lower-abdomen-depth-guide.png": "0796dab35574665a0a5ed611fdb47eda6d88d3e0d5437ff35baa025cf76434fe"
+  },
+  "actualImagesViewed": [
+    "assets/image/anatomy-reference/vascular-study/remaining-vessels/gpt-chest-v4.png",
+    "assets/image/anatomy-reference/vascular-study/remaining-vessels/gpt-lower-abdomen-v4.png"
+  ],
+  "priorImagesPreviouslyViewed": [
+    "gpt-chest-v2.png",
+    "gpt-chest-v3.png",
+    "gpt-lower-abdomen-v2.png",
+    "gpt-lower-abdomen-v3.png",
+    "chest-original.png",
+    "chest-visible-guide.png",
+    "chest-depth-guide.png",
+    "lower-abdomen-original.png",
+    "lower-abdomen-visible-guide.png",
+    "lower-abdomen-depth-guide.png"
+  ],
+  "immutableReferenceChecks": {
+    "sourceHashMatched": true,
+    "finalReferenceUnchanged": true,
+    "previousAuditsPreserved": true,
+    "headLimbEdgesExcludedFromEditableInventory": true,
+    "candidateFrameAspectRatios": {
+      "gpt-chest-v4.png": [
+        1536,
+        1024
+      ],
+      "gpt-lower-abdomen-v4.png": [
+        1536,
+        1024
+      ]
+    },
+    "candidateSourceCoordinateRegistrationCertified": false,
+    "candidateOriginalPixelIdentityCertified": false
+  },
+  "chest": {
+    "paintingStatus": "CLEAR_IMPROVEMENT_CANDIDATE_ONLY",
+    "resolvedSinceV3": [
+      {
+        "id": "supply-access-restored",
+        "finding": "Two red access arcs now join the mauve lung-loop tops; the v3 wholesale deletion of the visible supply arcs is repaired in appearance.",
+        "intendedEdges": [
+          "e172",
+          "e174"
+        ]
+      },
+      {
+        "id": "airway-depth-improved",
+        "finding": "Near each hilum, the red access now disappears behind the lighter matte-blue bronchial foreground. The darker glossy blood loops remain distinguishable from the flat lighter blue airway tree; this is easier to read than the v2 exposed red bridges and v3 purple-only airway contact."
+      }
+    ],
+    "redBlueFalseJunctionReview": "No new obvious red-to-dark-blue systemic T-junction is visible in this v4 comparison. A red/blue projected contact at a lung hilum is now covered by foreground, rather than visibly welded to the deep blue trunk. This visual observation does not certify shared-node topology or exact hidden interval boundaries.",
+    "overDeletionReview": "The two major missing lung supply arcs are restored. Coronary/functional central blood paths and all smaller registered visible intervals still cannot be individually certified from the beauty crop.",
+    "newIndependentPortObserved": false,
+    "remainingLimits": [
+      "Exact lengths/endpoints of the restored red arcs have not been registered against the fixed guide; a model-created short extension could still fall into a frozen hidden span.",
+      "Macro lungs/heart/shoulders are recognizable, but exact silhouettes and untouched crop-boundary pixels are not certified.",
+      "Blood-air separation is visually improved, not a complete exact-mask collision/separation PASS."
+    ],
+    "requiredNextAction": "Use this corrected material candidate in a controlled source-coordinate composition or port/hidden-mask comparison before declaring the chest route artwork final; do not add branches or erase the two required red access arcs again."
+  },
+  "lowerAbdomen": {
+    "paintingStatus": "BLADDER_CORE_FIXED_MINOR_EXPOSED_CAP_REMAINS",
+    "resolvedSinceV3": [
+      {
+        "id": "bladder-core-clean",
+        "finding": "The purple/red curves that crossed the orange bladder interior are gone. The interior and outlet are clean and recognizable; blood is shown only as short peripheral approaches. This answers the current painting objection without changing frozen gameplay geometry."
+      },
+      {
+        "id": "red-blue-weld-improved",
+        "finding": "The upper-right red bladder approach now tucks behind the bowel/bladder foreground instead of appearing to start directly from the large surrounding blue venous ring. No obvious new red-to-blue welded T-junction is seen there."
+      }
+    ],
+    "remainingPaintIssue": {
+      "id": "left-blue-approach-cut-cap",
+      "severity": "minor-paint-fix-before-final-art",
+      "finding": "The upper end of the short glossy blue tube at the bladder upper-left is still an exposed rounded blue cap rather than a clear tissue-covered continuation. It reads as a little cut pipe in the open dark gap.",
+      "approximateSourcePoint": [
+        472,
+        742
+      ],
+      "approximateSourceRepairRegion": [
+        468,
+        738,
+        478,
+        747
+      ],
+      "candidateImageApproximatePoint": [
+        578,
+        540
+      ],
+      "coordinateLimit": "The candidate crop is mapped proportionally to [350,628,674,844] only for locating the paint defect. This is not exact registered endpoint evidence.",
+      "minimumRepair": "Cover just the cap/reflection/shadow with the existing lower-left bowel foreground or its local soft shadow. Leave the rest of the short blue approach and bladder rim unchanged. Do not lengthen it to create a new blood junction or relocate the named exit.",
+      "doNotDo": [
+        "Add a new loop",
+        "Repaint the orange core as a battlefield",
+        "Move the original bladder outline",
+        "Change e143/e197/e198 source paths or flow"
+      ]
+    },
+    "rightRedApproachReview": "The corresponding right red short approach is more naturally tucked under the bowel and bladder foreground in this image; no equally exposed cut cap is apparent there.",
+    "fixedPortDesignAnchors": {
+      "bladder.entry": [
+        536.3294117647059,
+        750.7176470588236
+      ],
+      "bladder.exit": [
+        476.6928327645051,
+        754.6109215017065
+      ]
+    },
+    "frozenDeepGeometryNotice": "e143/e197/e198 still have original paths inside the bladder outline; they were not rerouted. Hiding their beauty paint changes display only and does not establish a new wall-only cell movement domain.",
+    "remainingLimits": [
+      "Direct-generated peripheral approaches are not proof that their junctions land on the two fixed named ports.",
+      "The unchanged broad original-style blue arcs remain incidental image pigment until their relationship to the final graph is explicitly registered."
+    ]
+  },
+  "frozenRouteContext": {
+    "e003": {
+      "a": "pulmonary_trunk",
+      "b": "lung_r.entry",
+      "visibleEndpointPairs": [
+        [
+          [
+            510.0,
+            355.0
+          ],
+          [
+            499.51852,
+            356.71133
+          ]
+        ],
+        [
+          [
+            485.96392,
+            365.6197
+          ],
+          [
+            475.16139,
+            374.01501
+          ]
+        ]
+      ],
+      "hiddenArcIntervalsSource": [
+        [
+          10.638520131016517,
+          27.25869023349582
+        ]
+      ]
+    },
+    "e006": {
+      "a": "pulmonary_trunk",
+      "b": "lung_l.entry",
+      "visibleEndpointPairs": [
+        [
+          [
+            510.0,
+            355.0
+          ],
+          [
+            521.15959,
+            356.02716
+          ]
+        ]
+      ],
+      "hiddenArcIntervalsSource": [
+        [
+          11.221144956139518,
+          40.25069197238155
+        ]
+      ]
+    },
+    "e172": {
+      "a": "lung_r.entry",
+      "b": "lung_r.a",
+      "visibleEndpointPairs": [
+        [
+          [
+            475.16139,
+            374.01501
+          ],
+          [
+            470.42818,
+            372.71096
+          ]
+        ],
+        [
+          [
+            461.69767,
+            365.74858
+          ],
+          [
+            439.0,
+            350.0
+          ]
+        ]
+      ],
+      "hiddenArcIntervalsSource": [
+        [
+          4.971341352830758,
+          16.170117954847782
+        ]
+      ]
+    },
+    "e174": {
+      "a": "lung_l.entry",
+      "b": "lung_l.a",
+      "visibleEndpointPairs": [
+        [
+          [
+            544.12164,
+            373.99811
+          ],
+          [
+            549.91533,
+            371.15366
+          ]
+        ],
+        [
+          [
+            558.01823,
+            364.22442
+          ],
+          [
+            580.0,
+            350.0
+          ]
+        ]
+      ],
+      "hiddenArcIntervalsSource": [
+        [
+          0.0,
+          2.692576360372499
+        ],
+        [
+          9.188820464495778,
+          19.85966644425402
+        ]
+      ]
+    },
+    "e004": {
+      "a": "lung_r.a",
+      "b": "lung_r.v",
+      "visibleEndpointPairs": [
+        [
+          [
+            439.0,
+            350.0
+          ],
+          [
+            433.0,
+            430.0
+          ]
+        ]
+      ],
+      "hiddenArcIntervalsSource": []
+    },
+    "e007": {
+      "a": "lung_l.a",
+      "b": "lung_l.v",
+      "visibleEndpointPairs": [
+        [
+          [
+            580.0,
+            350.0
+          ],
+          [
+            592.0,
+            430.0
+          ]
+        ]
+      ],
+      "hiddenArcIntervalsSource": []
+    },
+    "e142": {
+      "a": "iliac.a",
+      "b": "bladder.entry",
+      "visibleEndpointPairs": [
+        [
+          [
+            509.0,
+            747.0
+          ],
+          [
+            512.8702,
+            746.44713
+          ]
+        ],
+        [
+          [
+            541.86535,
+            745.94913
+          ],
+          [
+            540.47177,
+            753.32383
+          ]
+        ]
+      ],
+      "hiddenArcIntervalsSource": [
+        [
+          3.909542392648573,
+          33.576687983232354
+        ],
+        [
+          41.19525064129119,
+          50.290886112141216
+        ]
+      ]
+    },
+    "e143": {
+      "a": "bladder.a",
+      "b": "bladder.v",
+      "visibleEndpointPairs": [
+        [
+          [
+            523.0,
+            756.0
+          ],
+          [
+            513.91358,
+            779.4758
+          ]
+        ],
+        [
+          [
+            495.74652,
+            775.56072
+          ],
+          [
+            491.0,
+            772.0
+          ]
+        ]
+      ],
+      "hiddenArcIntervalsSource": [
+        [
+          31.77762667164025,
+          51.07252804148281
+        ]
+      ]
+    },
+    "e144": {
+      "a": "bladder.exit",
+      "b": "iliac.v",
+      "visibleEndpointPairs": [
+        [
+          [
+            476.69283,
+            754.61092
+          ],
+          [
+            504.85,
+            793.12902
+          ]
+        ]
+      ],
+      "hiddenArcIntervalsSource": [
+        [
+          57.54981707788866,
+          88.77958986145215
+        ]
+      ]
+    },
+    "e197": {
+      "a": "bladder.entry",
+      "b": "bladder.a",
+      "visibleEndpointPairs": [
+        [
+          [
+            531.14976,
+            751.0818
+          ],
+          [
+            523.0,
+            756.0
+          ]
+        ]
+      ],
+      "hiddenArcIntervalsSource": [
+        [
+          0.0,
+          5.270882642560278
+        ]
+      ]
+    },
+    "e198": {
+      "a": "bladder.v",
+      "b": "bladder.exit",
+      "visibleEndpointPairs": [
+        [
+          [
+            491.0,
+            772.0
+          ],
+          [
+            476.69283,
+            754.61092
+          ]
+        ]
+      ],
+      "hiddenArcIntervalsSource": []
+    }
+  },
+  "deliveryVerdict": {
+    "paintingImproved": true,
+    "safeForDirectMainMapReplacement": false,
+    "strictFixedPortsPassed": false,
+    "strictRegisteredCoordinatesPassed": false,
+    "allHiddenSpanMasksPassed": false,
+    "fullBodyArtworkComplete": false,
+    "nextArtCandidateUsable": true,
+    "minorPaintFixOutstanding": "Left upper bladder blue cap; local cover only."
+  },
+  "limits": [
+    "Only remaining-vessels-art-audit-v4.json written by this reviewer; prior audits, raw resources, final reference, production scripts and gameplay remain unchanged.",
+    "Both v4 images were actually viewed; this audit separates observed painting improvement from exact geometry and pixel registration, which remain unpassed.",
+    "All frozen source coordinates in route context are exact final-reference data. Observed image defect coordinates are approximate proportional crop mapping.",
+    "Game-art projection review only; no clinical anatomy claim, no actual navigation or native runtime test performed."
+  ],
+  "productionInstalled": false,
+  "newMovementCertified": false,
+  "nativeEvidence": false
+}

@@ -1,0 +1,743 @@
+{
+  "schema": "organ-atlas-independent-art-audit/v1",
+  "inputHashes": {
+    "docs/body-life/vascular-art-study/organ-atlas/contract.json": "cb6141214c5cf4af3198aa8445ddb438db71c21f1c7e453240e5470feda6f340",
+    "docs/body-life/vascular-art-study/final-reference-data.json": "3890744e2fcaf9e9907c85513e170e479f67b7fbb1fbf06385ac02bd80e8550c",
+    "scripts/war/OrganBoundariesData.lua": "b4617ba302f4deab54ffdb9a7be0750b1ab63000a50a8395e151456ad2e34e24",
+    "assets/image/anatomy-reference/reference.png": "9a04e39961c07073cd9fdcfcdc2c98253ccc25d968e97dbea1f36669e06b5d9f",
+    "scripts/qa/build_organ_battlefield_art.py": "994aee75fa850ed39a8ecf53374672e751ae296291a909ddfe5bba4058683a96",
+    "/Users/jitian/Documents/ChatGPT/细胞战争真/docs/body-life/vascular-art-study/organ-atlas/art.json": "911c7501d7042bd46be65c9bed50f29ee579cf238296db3ba592b66dbc911408"
+  },
+  "expectedOrganCount": 12,
+  "organs": [
+    {
+      "organId": "liver",
+      "name": "肝脏",
+      "sourceBox": [
+        387,
+        463,
+        537,
+        576
+      ],
+      "checks": {
+        "sourceBoxMatches": true,
+        "manifestAssetShaMatches": true,
+        "geometryShaMatches": true,
+        "pixelDimensionsMatch": true,
+        "alphaFullyOutsideFineOutlinePixels": 1,
+        "rasterAAMarginSource": 0.1,
+        "alphaNonAAOutsidePixels": 0,
+        "alphaInsideFineOutlineOnly": true,
+        "edgeAntialiasAlphaExcessPixels": 4974,
+        "svgViewBoxMatches": true,
+        "completeCanvasMappedToSourceBox": true,
+        "unsupportedBlackLuminanceMaskPresent": false,
+        "unusedLuminanceMaskDefinitions": [],
+        "protectedReserveSourceArea": 0.0,
+        "actualWallSourceArea": 263.2778707600476,
+        "rawProtectedReserveInsideOrgan": true,
+        "wallDoesNotInvadeProtectedReserve": true,
+        "paintedBloodPathCount": 8,
+        "unclippedBloodProtectedOverlapSourceArea": 0.0,
+        "explicitProtectedForegroundCoverageRatio": 1,
+        "candidateGateCount": 1,
+        "rawGateStrokeProtectedOverlapSourceArea": 0.0,
+        "visibleGateStrokeProtectedOverlapSourceArea": 0.0,
+        "gateCenterlinesAvoidFoodAirUrine": true,
+        "frozenBloodCoordinatesAndVisibilityUnchanged": true,
+        "paintedBloodOutsideFrozenVisibleFootprintSourceArea": 0.0,
+        "paintedBloodOnlyFrozenVisibleSections": true,
+        "foreignBloodFootprintAreaSource": 0.0,
+        "documentAssetCopyMatches": true
+      },
+      "issues": [],
+      "visualStatus": "VIEWED_ART_CANDIDATE_NOT_NATIVE_FINAL",
+      "inputHashes": {
+        "finalPng": "217c5b77cd259b1249d0d5a87f18f9335c8588015e31fc69fd5bb1391e40278e",
+        "compiledSvg": "6fb70e6d684d19bd830a9ac019c30e5c9114cd49b085cf181c3c8f0b97553166",
+        "geometry": "fa17c168076c1d94992c6a7da6d320ac7d547e00f036c3b300972a09d99a5ff5"
+      },
+      "registrationStatus": "PASS",
+      "displayContractStatus": "PASS",
+      "visualInputSha256": "217c5b77cd259b1249d0d5a87f18f9335c8588015e31fc69fd5bb1391e40278e",
+      "visualFindings": [
+        "暖色大叶组织与少量团簇有肝脏区别，主体组织面开放；固定碰撞岛描边清晰。",
+        "8段绘制血管均属于冻结肝脏边，未把外部蓝色投影误判为新增支路；血管仍明显是平面覆盖线。"
+      ],
+      "visualViewedAt": "2026-10-10T21:11:53.978337+00:00",
+      "status": "VISUAL_AND_DISPLAY_ACCEPTANCE_PENDING"
+    },
+    {
+      "organId": "kidney_r",
+      "name": "右肾",
+      "sourceBox": [
+        390,
+        564,
+        449,
+        656
+      ],
+      "checks": {
+        "sourceBoxMatches": true,
+        "manifestAssetShaMatches": true,
+        "geometryShaMatches": true,
+        "pixelDimensionsMatch": true,
+        "alphaFullyOutsideFineOutlinePixels": 0,
+        "rasterAAMarginSource": 0.1,
+        "alphaNonAAOutsidePixels": 0,
+        "alphaInsideFineOutlineOnly": true,
+        "edgeAntialiasAlphaExcessPixels": 2736,
+        "svgViewBoxMatches": true,
+        "completeCanvasMappedToSourceBox": true,
+        "unsupportedBlackLuminanceMaskPresent": false,
+        "unusedLuminanceMaskDefinitions": [
+          "protectedCut"
+        ],
+        "protectedReserveSourceArea": 70.44001148072397,
+        "actualWallSourceArea": 14.32107652052453,
+        "rawProtectedReserveInsideOrgan": true,
+        "wallDoesNotInvadeProtectedReserve": true,
+        "paintedBloodPathCount": 3,
+        "unclippedBloodProtectedOverlapSourceArea": 1.2608727006037607e-07,
+        "explicitProtectedForegroundCoverageRatio": 0.9999999890563566,
+        "candidateGateCount": 1,
+        "rawGateStrokeProtectedOverlapSourceArea": 0.0,
+        "visibleGateStrokeProtectedOverlapSourceArea": 0.0,
+        "gateCenterlinesAvoidFoodAirUrine": true,
+        "frozenBloodCoordinatesAndVisibilityUnchanged": true,
+        "paintedBloodOutsideFrozenVisibleFootprintSourceArea": 0.0,
+        "paintedBloodOnlyFrozenVisibleSections": true,
+        "foreignBloodFootprintAreaSource": 0.0,
+        "documentAssetCopyMatches": true
+      },
+      "issues": [],
+      "visualStatus": "VIEWED_ART_CANDIDATE_NOT_NATIVE_FINAL",
+      "inputHashes": {
+        "finalPng": "388567f67e0db198a62079393a7c5e3389f8a6428b6ff870fc47f47e5f69938c",
+        "compiledSvg": "40195c7e7f83d253239c35a5a950a5acfbf1d19b0557ce04aaae462ba69662ae",
+        "geometry": "d4c3393f644d03da0ab0b4ee40b450d40a86ef43bf99465fcdf6e7260efb5dc3"
+      },
+      "registrationStatus": "PASS",
+      "displayContractStatus": "PASS",
+      "visualInputSha256": "388567f67e0db198a62079393a7c5e3389f8a6428b6ff870fc47f47e5f69938c",
+      "visualFindings": [
+        "皮质环与宽髓质扇区清晰，黄色肾盂独立保留，内部没有密集小管迷宫。",
+        "浅色放射分区为可走装饰，不能在操作中当作墙；蓝色短回流端仍需要深度语义提示。"
+      ],
+      "visualViewedAt": "2026-10-10T21:11:53.978337+00:00",
+      "status": "VISUAL_AND_DISPLAY_ACCEPTANCE_PENDING"
+    },
+    {
+      "organId": "kidney_l",
+      "name": "左肾",
+      "sourceBox": [
+        571,
+        564,
+        628,
+        655
+      ],
+      "checks": {
+        "sourceBoxMatches": true,
+        "manifestAssetShaMatches": true,
+        "geometryShaMatches": true,
+        "pixelDimensionsMatch": true,
+        "alphaFullyOutsideFineOutlinePixels": 0,
+        "rasterAAMarginSource": 0.1,
+        "alphaNonAAOutsidePixels": 0,
+        "alphaInsideFineOutlineOnly": true,
+        "edgeAntialiasAlphaExcessPixels": 2677,
+        "svgViewBoxMatches": true,
+        "completeCanvasMappedToSourceBox": true,
+        "unsupportedBlackLuminanceMaskPresent": false,
+        "unusedLuminanceMaskDefinitions": [
+          "protectedCut"
+        ],
+        "protectedReserveSourceArea": 61.50613863922114,
+        "actualWallSourceArea": 13.493659087079983,
+        "rawProtectedReserveInsideOrgan": true,
+        "wallDoesNotInvadeProtectedReserve": true,
+        "paintedBloodPathCount": 3,
+        "unclippedBloodProtectedOverlapSourceArea": 4.0998822601472075e-07,
+        "explicitProtectedForegroundCoverageRatio": 0.9999999861736408,
+        "candidateGateCount": 1,
+        "rawGateStrokeProtectedOverlapSourceArea": 0.0,
+        "visibleGateStrokeProtectedOverlapSourceArea": 0.0,
+        "gateCenterlinesAvoidFoodAirUrine": true,
+        "frozenBloodCoordinatesAndVisibilityUnchanged": true,
+        "paintedBloodOutsideFrozenVisibleFootprintSourceArea": 0.0,
+        "paintedBloodOnlyFrozenVisibleSections": true,
+        "foreignBloodFootprintAreaSource": 0.0,
+        "documentAssetCopyMatches": true
+      },
+      "issues": [],
+      "visualStatus": "VIEWED_ART_CANDIDATE_NOT_NATIVE_FINAL",
+      "inputHashes": {
+        "finalPng": "e9be113c7e3130608d3e71fba14c2c8bc504ea3c640b525dbef72a35eb9bf69c",
+        "compiledSvg": "9508ae9ed9833b7f10b2ee4ef0181c1f4d7fea406c200d479878a7c4519a9f49",
+        "geometry": "5c821d2f36d25f1c3124b244b9161445f60fb3078e87848f985e7d8e804c3db1"
+      },
+      "registrationStatus": "PASS",
+      "displayContractStatus": "PASS",
+      "visualInputSha256": "e9be113c7e3130608d3e71fba14c2c8bc504ea3c640b525dbef72a35eb9bf69c",
+      "visualFindings": [
+        "左右肾具有相同画风但不镜像移动冻结端口；黄色肾盂与壁组织区分明确。",
+        "放射浅色分区可走，细胞实际碰撞只认固定小组织岛和保留尿路。"
+      ],
+      "visualViewedAt": "2026-10-10T21:11:53.978337+00:00",
+      "status": "VISUAL_AND_DISPLAY_ACCEPTANCE_PENDING"
+    },
+    {
+      "organId": "lung_r",
+      "name": "右肺",
+      "sourceBox": [
+        366,
+        285,
+        484,
+        489
+      ],
+      "checks": {
+        "sourceBoxMatches": true,
+        "manifestAssetShaMatches": true,
+        "geometryShaMatches": true,
+        "pixelDimensionsMatch": true,
+        "alphaFullyOutsideFineOutlinePixels": 0,
+        "rasterAAMarginSource": 0.1,
+        "alphaNonAAOutsidePixels": 0,
+        "alphaInsideFineOutlineOnly": true,
+        "edgeAntialiasAlphaExcessPixels": 6219,
+        "svgViewBoxMatches": true,
+        "completeCanvasMappedToSourceBox": true,
+        "unsupportedBlackLuminanceMaskPresent": false,
+        "unusedLuminanceMaskDefinitions": [
+          "protectedCut"
+        ],
+        "protectedReserveSourceArea": 2162.3218221740217,
+        "actualWallSourceArea": 18.422667429913375,
+        "rawProtectedReserveInsideOrgan": true,
+        "wallDoesNotInvadeProtectedReserve": true,
+        "fullAirwayProtectedForegroundCoverageRatio": 0.9999999956217971,
+        "smoothedAirwayCoreOutsideProtectedSourceArea": 0.0,
+        "smoothedAirwayCoreCoverageRatio": 0.6532436197544305,
+        "airwayCoreInsideOriginalReserve": true,
+        "completeOriginalAirwayForegroundRetained": true,
+        "paintedBloodPathCount": 4,
+        "unclippedBloodProtectedOverlapSourceArea": 5.198495268801012e-07,
+        "explicitProtectedForegroundCoverageRatio": 0.9999999957738477,
+        "candidateGateCount": 1,
+        "rawGateStrokeProtectedOverlapSourceArea": 0.0,
+        "visibleGateStrokeProtectedOverlapSourceArea": 0.0,
+        "gateCenterlinesAvoidFoodAirUrine": true,
+        "frozenBloodCoordinatesAndVisibilityUnchanged": true,
+        "paintedBloodOutsideFrozenVisibleFootprintSourceArea": 0.0,
+        "paintedBloodOnlyFrozenVisibleSections": true,
+        "foreignBloodFootprintAreaSource": 0.0,
+        "documentAssetCopyMatches": true
+      },
+      "issues": [],
+      "visualStatus": "VIEWED_ART_CANDIDATE_NOT_NATIVE_FINAL",
+      "inputHashes": {
+        "finalPng": "df6f6c923fd928dfea73fde0aae259acdb3a914384a7314b3ac94189d8e2b564",
+        "compiledSvg": "ef461b297dc8181dbf5bbe0cbc1cdf99e9ab8e780d651b111ae9c03b940432b0",
+        "geometry": "dd4d2bf1900f7f3ebcd04b533c5cd76771b3356b7368195bd48bde4d6bcb8f7e"
+      },
+      "registrationStatus": "PASS",
+      "displayContractStatus": "PASS",
+      "status": "VISUAL_AND_DISPLAY_ACCEPTANCE_PENDING",
+      "visualInputSha256": "df6f6c923fd928dfea73fde0aae259acdb3a914384a7314b3ac94189d8e2b564",
+      "visualViewedAt": "2026-10-10T21:18:33.136739+00:00",
+      "visualFindings": [
+        "新核心的长斜支不再逐格呈强阶梯，主要分支比上一版明显连贯；全原保护域只以低对比底保留。",
+        "少量转角仍呈多边形，右肺末梢一处核心断成小片但完整保留域未断，不能据此改拓扑；未发现必须改几何的功能性失败。",
+        "血管仍按原reserved完整减去，圆润核心只改变显示而不扩大禁入域；原生缩放接缝和最终单位对比仍未独立验收。"
+      ]
+    },
+    {
+      "organId": "lung_l",
+      "name": "左肺",
+      "sourceBox": [
+        533,
+        285,
+        650,
+        490
+      ],
+      "checks": {
+        "sourceBoxMatches": true,
+        "manifestAssetShaMatches": true,
+        "geometryShaMatches": true,
+        "pixelDimensionsMatch": true,
+        "alphaFullyOutsideFineOutlinePixels": 0,
+        "rasterAAMarginSource": 0.1,
+        "alphaNonAAOutsidePixels": 0,
+        "alphaInsideFineOutlineOnly": true,
+        "edgeAntialiasAlphaExcessPixels": 6076,
+        "svgViewBoxMatches": true,
+        "completeCanvasMappedToSourceBox": true,
+        "unsupportedBlackLuminanceMaskPresent": false,
+        "unusedLuminanceMaskDefinitions": [
+          "protectedCut"
+        ],
+        "protectedReserveSourceArea": 2069.160263501096,
+        "actualWallSourceArea": 32.1776666764346,
+        "rawProtectedReserveInsideOrgan": true,
+        "wallDoesNotInvadeProtectedReserve": true,
+        "fullAirwayProtectedForegroundCoverageRatio": 0.9999999912694717,
+        "smoothedAirwayCoreOutsideProtectedSourceArea": 0.0,
+        "smoothedAirwayCoreCoverageRatio": 0.6483454751613177,
+        "airwayCoreInsideOriginalReserve": true,
+        "completeOriginalAirwayForegroundRetained": true,
+        "paintedBloodPathCount": 3,
+        "unclippedBloodProtectedOverlapSourceArea": 3.860745837139724e-07,
+        "explicitProtectedForegroundCoverageRatio": 0.999999991388357,
+        "candidateGateCount": 1,
+        "rawGateStrokeProtectedOverlapSourceArea": 0.0,
+        "visibleGateStrokeProtectedOverlapSourceArea": 0.0,
+        "gateCenterlinesAvoidFoodAirUrine": true,
+        "frozenBloodCoordinatesAndVisibilityUnchanged": true,
+        "paintedBloodOutsideFrozenVisibleFootprintSourceArea": 0.0,
+        "paintedBloodOnlyFrozenVisibleSections": true,
+        "foreignBloodFootprintAreaSource": 0.0,
+        "documentAssetCopyMatches": true
+      },
+      "issues": [],
+      "visualStatus": "VIEWED_ART_CANDIDATE_NOT_NATIVE_FINAL",
+      "inputHashes": {
+        "finalPng": "e5996db6e237307e45a1d211be040a6a411a5d733e95fe86eb33c8933b6999e8",
+        "compiledSvg": "a93e9813c4c88dcb53f683665182d76ff71c9739d76139bd25aa3ae4d3ca518b",
+        "geometry": "49aa585227dfdc2e6c4b39cde7e565a104973e74d4ac1f9b9b45f14249f95a79"
+      },
+      "registrationStatus": "PASS",
+      "displayContractStatus": "PASS",
+      "status": "VISUAL_AND_DISPLAY_ACCEPTANCE_PENDING",
+      "visualInputSha256": "e5996db6e237307e45a1d211be040a6a411a5d733e95fe86eb33c8933b6999e8",
+      "visualViewedAt": "2026-10-10T21:18:33.137162+00:00",
+      "visualFindings": [
+        "新核心的长斜支不再逐格呈强阶梯，主要分支比上一版明显连贯；全原保护域只以低对比底保留。",
+        "少量转角仍呈多边形，右肺末梢一处核心断成小片但完整保留域未断，不能据此改拓扑；未发现必须改几何的功能性失败。",
+        "血管仍按原reserved完整减去，圆润核心只改变显示而不扩大禁入域；原生缩放接缝和最终单位对比仍未独立验收。"
+      ]
+    },
+    {
+      "organId": "heart",
+      "name": "心脏",
+      "sourceBox": [
+        468,
+        326,
+        568,
+        467
+      ],
+      "checks": {
+        "sourceBoxMatches": true,
+        "manifestAssetShaMatches": true,
+        "geometryShaMatches": true,
+        "pixelDimensionsMatch": true,
+        "alphaFullyOutsideFineOutlinePixels": 4,
+        "rasterAAMarginSource": 0.1,
+        "alphaNonAAOutsidePixels": 0,
+        "alphaInsideFineOutlineOnly": true,
+        "edgeAntialiasAlphaExcessPixels": 4765,
+        "svgViewBoxMatches": true,
+        "completeCanvasMappedToSourceBox": true,
+        "unsupportedBlackLuminanceMaskPresent": false,
+        "unusedLuminanceMaskDefinitions": [],
+        "protectedReserveSourceArea": 0.0,
+        "actualWallSourceArea": 80.99808372566126,
+        "rawProtectedReserveInsideOrgan": true,
+        "wallDoesNotInvadeProtectedReserve": true,
+        "paintedBloodPathCount": 12,
+        "unclippedBloodProtectedOverlapSourceArea": 0.0,
+        "explicitProtectedForegroundCoverageRatio": 1,
+        "candidateGateCount": 1,
+        "rawGateStrokeProtectedOverlapSourceArea": 0.0,
+        "visibleGateStrokeProtectedOverlapSourceArea": 0.0,
+        "gateCenterlinesAvoidFoodAirUrine": true,
+        "frozenBloodCoordinatesAndVisibilityUnchanged": true,
+        "paintedBloodOutsideFrozenVisibleFootprintSourceArea": 0.0,
+        "paintedBloodOnlyFrozenVisibleSections": true,
+        "foreignBloodFootprintAreaSource": 0.0,
+        "documentAssetCopyMatches": true
+      },
+      "issues": [],
+      "visualStatus": "VIEWED_ART_CANDIDATE_NOT_NATIVE_FINAL",
+      "inputHashes": {
+        "finalPng": "d383b5dd9b59191b84f2d384cf4cda56a430503a6142944ccbc9573d688f6774",
+        "compiledSvg": "87e2ed8088a18216a25070382a14ef77089b66c83e895d527326fe4c1acc0848",
+        "geometry": "0f124d062dc7e8e605b741f2c4f76ff85ff91b66720482f65c37b752840afd01"
+      },
+      "registrationStatus": "PASS",
+      "displayContractStatus": "PASS",
+      "visualInputSha256": "d383b5dd9b59191b84f2d384cf4cda56a430503a6142944ccbc9573d688f6774",
+      "visualFindings": [
+        "心肌纤维方向明确，旧冠脉前景色素扣洞消失，蓝管不再出现方形锯齿缺口。",
+        "几段内部短血管仍读成平面圆片；深层隐藏/命名连接的语义须结合技术视图，不认证最终原生美术。"
+      ],
+      "visualViewedAt": "2026-10-10T21:11:53.978337+00:00",
+      "status": "VISUAL_AND_DISPLAY_ACCEPTANCE_PENDING"
+    },
+    {
+      "organId": "brain",
+      "name": "脑",
+      "sourceBox": [
+        439,
+        21,
+        580,
+        124
+      ],
+      "checks": {
+        "sourceBoxMatches": true,
+        "manifestAssetShaMatches": true,
+        "geometryShaMatches": true,
+        "pixelDimensionsMatch": true,
+        "alphaFullyOutsideFineOutlinePixels": 3,
+        "rasterAAMarginSource": 0.1,
+        "alphaNonAAOutsidePixels": 0,
+        "alphaInsideFineOutlineOnly": true,
+        "edgeAntialiasAlphaExcessPixels": 5132,
+        "svgViewBoxMatches": true,
+        "completeCanvasMappedToSourceBox": true,
+        "unsupportedBlackLuminanceMaskPresent": false,
+        "unusedLuminanceMaskDefinitions": [],
+        "protectedReserveSourceArea": 0.0,
+        "actualWallSourceArea": 0.0,
+        "rawProtectedReserveInsideOrgan": true,
+        "wallDoesNotInvadeProtectedReserve": true,
+        "paintedBloodPathCount": 8,
+        "unclippedBloodProtectedOverlapSourceArea": 0.0,
+        "explicitProtectedForegroundCoverageRatio": 1,
+        "candidateGateCount": 1,
+        "rawGateStrokeProtectedOverlapSourceArea": 0.0,
+        "visibleGateStrokeProtectedOverlapSourceArea": 0.0,
+        "gateCenterlinesAvoidFoodAirUrine": true,
+        "frozenBloodCoordinatesAndVisibilityUnchanged": true,
+        "paintedBloodOutsideFrozenVisibleFootprintSourceArea": 0.0,
+        "paintedBloodOnlyFrozenVisibleSections": true,
+        "foreignBloodFootprintAreaSource": 0.0,
+        "documentAssetCopyMatches": true
+      },
+      "issues": [],
+      "visualStatus": "VIEWED_ART_CANDIDATE_NOT_NATIVE_FINAL",
+      "inputHashes": {
+        "finalPng": "c37b6f7998eef675c3cea2261878a053fe86808484d1f26ed7682aea6029bca8",
+        "compiledSvg": "d3af7901763f5e392cbe5694c0be80b3183181fda7369a966aecf9b90277067c",
+        "geometry": "39709421787c42dbfbceb6ff20616abc5ebdbd558e869cd1e9a3ea24e10b4af5"
+      },
+      "registrationStatus": "PASS",
+      "displayContractStatus": "PASS",
+      "visualInputSha256": "c37b6f7998eef675c3cea2261878a053fe86808484d1f26ed7682aea6029bca8",
+      "visualFindings": [
+        "低对比紫粉支持组织和少量宽脑回有辨识度，没有新神经迷宫障碍。",
+        "这是近景新材质候选，原全身脑图像及外部坐标保持；浅色脑回是装饰可走面。"
+      ],
+      "visualViewedAt": "2026-10-10T21:11:53.978337+00:00",
+      "status": "VISUAL_AND_DISPLAY_ACCEPTANCE_PENDING"
+    },
+    {
+      "organId": "pancreas",
+      "name": "胰腺",
+      "sourceBox": [
+        476,
+        558,
+        580,
+        611
+      ],
+      "checks": {
+        "sourceBoxMatches": true,
+        "manifestAssetShaMatches": true,
+        "geometryShaMatches": true,
+        "pixelDimensionsMatch": true,
+        "alphaFullyOutsideFineOutlinePixels": 0,
+        "rasterAAMarginSource": 0.1,
+        "alphaNonAAOutsidePixels": 0,
+        "alphaInsideFineOutlineOnly": true,
+        "edgeAntialiasAlphaExcessPixels": 2681,
+        "svgViewBoxMatches": true,
+        "completeCanvasMappedToSourceBox": true,
+        "unsupportedBlackLuminanceMaskPresent": false,
+        "unusedLuminanceMaskDefinitions": [
+          "protectedCut"
+        ],
+        "protectedReserveSourceArea": 115.78655343030314,
+        "actualWallSourceArea": 15.168923675682557,
+        "rawProtectedReserveInsideOrgan": true,
+        "wallDoesNotInvadeProtectedReserve": true,
+        "paintedBloodPathCount": 6,
+        "unclippedBloodProtectedOverlapSourceArea": 2.562618569648857e-06,
+        "explicitProtectedForegroundCoverageRatio": 0.9999997496332573,
+        "candidateGateCount": 1,
+        "rawGateStrokeProtectedOverlapSourceArea": 0.406015444624923,
+        "visibleGateStrokeProtectedOverlapSourceArea": 1.1413762402182765e-07,
+        "gateCenterlinesAvoidFoodAirUrine": true,
+        "frozenBloodCoordinatesAndVisibilityUnchanged": true,
+        "paintedBloodOutsideFrozenVisibleFootprintSourceArea": 0.0,
+        "paintedBloodOnlyFrozenVisibleSections": true,
+        "foreignBloodFootprintAreaSource": 0.0,
+        "documentAssetCopyMatches": true
+      },
+      "issues": [],
+      "visualStatus": "VIEWED_ART_CANDIDATE_NOT_NATIVE_FINAL",
+      "inputHashes": {
+        "finalPng": "2c0a29f6f06e3085f829bd4d735df201863c6f6d1fdb61165ef93c0ee3fdbd56",
+        "compiledSvg": "c3489a7aca7ea6d8a4918b0f7e73463b0bb5c2798d1f282e0b5defa15a3e0a1d",
+        "geometry": "e7003cf97e41d542d8ead5db7525e790b449ae924e37eeca20aeb60968adf29c"
+      },
+      "registrationStatus": "PASS",
+      "displayContractStatus": "PASS",
+      "visualInputSha256": "2c0a29f6f06e3085f829bd4d735df201863c6f6d1fdb61165ef93c0ee3fdbd56",
+      "visualFindings": [
+        "暖黄大腺叶与独立分泌管区分明确，不沿分泌管派细胞。",
+        "膜口外描边已裁回许可喉道，未继续涂进分泌管；固定血管真实隐藏端采用淡出。"
+      ],
+      "visualViewedAt": "2026-10-10T21:11:53.978337+00:00",
+      "status": "VISUAL_AND_DISPLAY_ACCEPTANCE_PENDING"
+    },
+    {
+      "organId": "bladder",
+      "name": "膀胱",
+      "sourceBox": [
+        462,
+        725,
+        554,
+        822
+      ],
+      "checks": {
+        "sourceBoxMatches": true,
+        "manifestAssetShaMatches": true,
+        "geometryShaMatches": true,
+        "pixelDimensionsMatch": true,
+        "alphaFullyOutsideFineOutlinePixels": 2,
+        "rasterAAMarginSource": 0.1,
+        "alphaNonAAOutsidePixels": 0,
+        "alphaInsideFineOutlineOnly": true,
+        "edgeAntialiasAlphaExcessPixels": 3300,
+        "svgViewBoxMatches": true,
+        "completeCanvasMappedToSourceBox": true,
+        "unsupportedBlackLuminanceMaskPresent": false,
+        "unusedLuminanceMaskDefinitions": [
+          "protectedCut"
+        ],
+        "protectedReserveSourceArea": 1371.8348109800138,
+        "actualWallSourceArea": 0.0,
+        "rawProtectedReserveInsideOrgan": true,
+        "wallDoesNotInvadeProtectedReserve": true,
+        "paintedBloodPathCount": 5,
+        "unclippedBloodProtectedOverlapSourceArea": 1.0690114362711516e-06,
+        "explicitProtectedForegroundCoverageRatio": 0.9999999907647774,
+        "candidateGateCount": 1,
+        "rawGateStrokeProtectedOverlapSourceArea": 0.0,
+        "visibleGateStrokeProtectedOverlapSourceArea": 0.0,
+        "gateCenterlinesAvoidFoodAirUrine": true,
+        "independentUrethraReservedCoverageRatio": 1.0000000000000002,
+        "frozenBloodCoordinatesAndVisibilityUnchanged": true,
+        "paintedBloodOutsideFrozenVisibleFootprintSourceArea": 0.0,
+        "paintedBloodOnlyFrozenVisibleSections": true,
+        "foreignBloodFootprintAreaSource": 0.0,
+        "documentAssetCopyMatches": true
+      },
+      "issues": [],
+      "visualStatus": "VIEWED_ART_CANDIDATE_NOT_NATIVE_FINAL",
+      "inputHashes": {
+        "finalPng": "bee18938428afa8194af8df2350689c942625c557e62abef6b5372917418ae4f",
+        "compiledSvg": "b7ab9563c88308a042708598603ed281d83593594c5aa818b2fa7232baddb353",
+        "geometry": "b3f8203d58953eb45c42c1c6dd95838a6c712e7a4892c04aadeaa114c595e233"
+      },
+      "registrationStatus": "PASS",
+      "displayContractStatus": "PASS",
+      "visualInputSha256": "bee18938428afa8194af8df2350689c942625c557e62abef6b5372917418ae4f",
+      "visualFindings": [
+        "黄色尿腔干净，尿道由中央腔延续到下方固定出口，旧下颈开放组织错误已修复。",
+        "左侧蓝回流留在壁区，供回短段不侵入尿腔，e197门坐标保持；尿腔与尿道是独立非细胞面。"
+      ],
+      "visualViewedAt": "2026-10-10T21:11:53.978337+00:00",
+      "status": "VISUAL_AND_DISPLAY_ACCEPTANCE_PENDING"
+    },
+    {
+      "organId": "small_intestine",
+      "name": "小肠",
+      "sourceBox": [
+        452,
+        651,
+        563,
+        740
+      ],
+      "checks": {
+        "sourceBoxMatches": true,
+        "manifestAssetShaMatches": true,
+        "geometryShaMatches": true,
+        "pixelDimensionsMatch": true,
+        "alphaFullyOutsideFineOutlinePixels": 1,
+        "rasterAAMarginSource": 0.1,
+        "alphaNonAAOutsidePixels": 0,
+        "alphaInsideFineOutlineOnly": true,
+        "edgeAntialiasAlphaExcessPixels": 3701,
+        "svgViewBoxMatches": true,
+        "completeCanvasMappedToSourceBox": true,
+        "unsupportedBlackLuminanceMaskPresent": false,
+        "unusedLuminanceMaskDefinitions": [
+          "protectedCut"
+        ],
+        "protectedReserveSourceArea": 1496.0975625906478,
+        "actualWallSourceArea": 0.0,
+        "rawProtectedReserveInsideOrgan": true,
+        "wallDoesNotInvadeProtectedReserve": true,
+        "paintedBloodPathCount": 4,
+        "unclippedBloodProtectedOverlapSourceArea": 0.0,
+        "explicitProtectedForegroundCoverageRatio": 0.9999999641780846,
+        "candidateGateCount": 1,
+        "rawGateStrokeProtectedOverlapSourceArea": 0.0,
+        "visibleGateStrokeProtectedOverlapSourceArea": 0.0,
+        "gateCenterlinesAvoidFoodAirUrine": true,
+        "frozenBloodCoordinatesAndVisibilityUnchanged": true,
+        "paintedBloodOutsideFrozenVisibleFootprintSourceArea": 0.0,
+        "paintedBloodOnlyFrozenVisibleSections": true,
+        "foreignBloodFootprintAreaSource": 0.0,
+        "documentAssetCopyMatches": true
+      },
+      "issues": [],
+      "visualStatus": "VIEWED_ART_CANDIDATE_NOT_NATIVE_FINAL",
+      "inputHashes": {
+        "finalPng": "12cd51b6dd9115a810f35aedfb9d390d2061ace01a3ece7df40307658a8ce428",
+        "compiledSvg": "4c36efac95f166b4fa1f7da5d8df7ed72c289c3d6048d23c1ced3772930ba99b",
+        "geometry": "c703bf72eb7cd452d283ca550310774893740dacf3bb40be895d6d496d1a8101"
+      },
+      "registrationStatus": "PASS",
+      "displayContractStatus": "PASS",
+      "visualInputSha256": "12cd51b6dd9115a810f35aedfb9d390d2061ace01a3ece7df40307658a8ce428",
+      "visualFindings": [
+        "食物通路连续、沿冻结肠袢走向保留，粉色黏膜组织在两侧开放。",
+        "食物通路几处折弯仍呈简化工程线条；保留几何可信但不冒称最终自然肠壁美术。"
+      ],
+      "visualViewedAt": "2026-10-10T21:11:53.978337+00:00",
+      "status": "VISUAL_AND_DISPLAY_ACCEPTANCE_PENDING"
+    },
+    {
+      "organId": "large_intestine",
+      "name": "大肠",
+      "sourceBox": [
+        425,
+        597,
+        594,
+        751
+      ],
+      "checks": {
+        "sourceBoxMatches": true,
+        "manifestAssetShaMatches": true,
+        "geometryShaMatches": true,
+        "pixelDimensionsMatch": true,
+        "alphaFullyOutsideFineOutlinePixels": 1,
+        "rasterAAMarginSource": 0.1,
+        "alphaNonAAOutsidePixels": 0,
+        "alphaInsideFineOutlineOnly": true,
+        "edgeAntialiasAlphaExcessPixels": 9770,
+        "svgViewBoxMatches": true,
+        "completeCanvasMappedToSourceBox": true,
+        "unsupportedBlackLuminanceMaskPresent": false,
+        "unusedLuminanceMaskDefinitions": [
+          "protectedCut"
+        ],
+        "protectedReserveSourceArea": 2015.113848931413,
+        "actualWallSourceArea": 0.0,
+        "rawProtectedReserveInsideOrgan": true,
+        "wallDoesNotInvadeProtectedReserve": true,
+        "paintedBloodPathCount": 10,
+        "unclippedBloodProtectedOverlapSourceArea": 0.0,
+        "explicitProtectedForegroundCoverageRatio": 0.9999999683425248,
+        "candidateGateCount": 3,
+        "rawGateStrokeProtectedOverlapSourceArea": 0.05951975217587813,
+        "visibleGateStrokeProtectedOverlapSourceArea": 0.0,
+        "gateCenterlinesAvoidFoodAirUrine": true,
+        "frozenBloodCoordinatesAndVisibilityUnchanged": true,
+        "paintedBloodOutsideFrozenVisibleFootprintSourceArea": 0.0,
+        "paintedBloodOnlyFrozenVisibleSections": true,
+        "foreignBloodFootprintAreaSource": 0.0,
+        "documentAssetCopyMatches": true
+      },
+      "issues": [],
+      "visualStatus": "VIEWED_ART_CANDIDATE_NOT_NATIVE_FINAL",
+      "inputHashes": {
+        "finalPng": "9a5ac5756ac1c3849764e12d5c081972fed6c828fe4e6f523a374c8ba77c8325",
+        "compiledSvg": "5cfb7f2a830323e9962168208d50c3712afbe186e11cf814ec10a706bacd007f",
+        "geometry": "126f76746c3a396016f9a62a27154668468f580b7c1a81d04ab0c5fbca785acc"
+      },
+      "registrationStatus": "PASS",
+      "displayContractStatus": "PASS",
+      "visualInputSha256": "9a5ac5756ac1c3849764e12d5c081972fed6c828fe4e6f523a374c8ba77c8325",
+      "visualFindings": [
+        "中央透明空腔未被填成虚构组织桥；保留食物通路围绕原肠壁。",
+        "顶部膜口描边已裁掉侵入食物腔的部分；三组织组件需冻结血管及显式膜口联通，不能把显示交叉当通路。"
+      ],
+      "visualViewedAt": "2026-10-10T21:11:53.978337+00:00",
+      "status": "VISUAL_AND_DISPLAY_ACCEPTANCE_PENDING"
+    },
+    {
+      "organId": "stomach",
+      "name": "胃",
+      "sourceBox": [
+        464,
+        461,
+        644,
+        641
+      ],
+      "checks": {
+        "existingDataShaMatches": true
+      },
+      "issues": [],
+      "visualStatus": "OUT_OF_CURRENT_NEW_ART_SCOPE",
+      "status": "EXISTING_STOMACH_DELEGATE_NO_NEW_ART"
+    }
+  ],
+  "nativeEvidence": "UNDETERMINED_STOPPED_PREVIEW",
+  "limits": [
+    "Alpha raster boundary allows .10source antialias margin; exact outside-AA count is also recorded.",
+    "Exact silhouette/sourceBox and alpha checks do not certify attractive art or good RTS readability.",
+    "Existing live preview is stopped; native image seams, frame time, DPR and final runtime visuals are unverified.",
+    "Only final PNG actually viewed at its recorded SHA receives visual-reviewed status.",
+    "Food, airway, urine and deep foreign blood projections are independent planes; visually intersecting strokes never establish a junction."
+  ],
+  "overview": {
+    "referenceShaUnchanged": true,
+    "fineBoundaryShaUnchanged": true,
+    "frozenGraphShaUnchanged": true,
+    "headAndLimbsOriginalAtlasUnchanged": true,
+    "nativeOverviewHookVerified": false,
+    "registeredBodyInputSha256": "a26d25572b85c82dc551f3880f964bf87b3087d0d70d8b5363d3ff999cd65825",
+    "headReferencePixelChanges": 0,
+    "limbReferencePixelChanges": 0,
+    "headAndLimbsRegisteredBodyUnchanged": true,
+    "OrganAtlasArtModuleSha256": "4f4b45e924f2c1a5f6e87a20d563a4e0360e83279ac4d3c9dbc1e6081e1b84db",
+    "sourceReadOptInFlagPresent": true,
+    "sourceReadCloseZoomAlphaGatePresent": true
+  },
+  "counts": {
+    "presentNewArt": 11,
+    "registrationPass": 11,
+    "displayContractNeedsFix": 0,
+    "finalImagesActuallyViewed": 11
+  },
+  "pageSummary": "11个当前成品均已实看；轮廓注册、冻结可见血管及专用通路检查通过。膀胱尿道、门帽越界已修复；两肺强阶梯明显弱化，少量折角仍保留。原脑/四肢像素及导航数据不变，原生接缝与最终单位可读性仍未确认。",
+  "airwayDisplayReview": {
+    "geometryAndNavigationInputHashesBefore": {
+      "docs/body-life/vascular-art-study/organ-atlas/contract.json": "cb6141214c5cf4af3198aa8445ddb438db71c21f1c7e453240e5470feda6f340",
+      "docs/body-life/vascular-art-study/organ-atlas/geometry/lung_r.json": "dd4d2bf1900f7f3ebcd04b533c5cd76771b3356b7368195bd48bde4d6bcb8f7e",
+      "docs/body-life/vascular-art-study/organ-atlas/geometry/lung_l.json": "49aa585227dfdc2e6c4b39cde7e565a104973e74d4ac1f9b9b45f14249f95a79",
+      "scripts/war/OrganBattlefieldData.lua": "1c47073f1f465fb79bbe64b5868e78b07bac4d745342717c9ee87439ff436e7d",
+      "docs/body-life/vascular-art-study/final-reference-data.json": "3890744e2fcaf9e9907c85513e170e479f67b7fbb1fbf06385ac02bd80e8550c"
+    },
+    "allGeometryAndNavigationInputsUnchanged": true,
+    "completeOriginalReservedForegroundGeometryRetained": true,
+    "fullLayerOpacity": 0.22,
+    "smoothedCoreOutsideReservedArea": 0,
+    "visualStaircaseIssueResolved": "MAJOR_REPEATED_STEPS_REDUCED_RESIDUAL_POLYGON_TURNS_REMAIN",
+    "visualResult": "长斜支反复台阶已明显弱化，主分支更连贯圆润；少量折线转角和孤立底色保留，不称最终自然美术。",
+    "functionalDisplayFailureFound": false
+  },
+  "visualAcceptance": {
+    "status": "ART_CANDIDATE_NOT_FINAL_NATIVE_ACCEPTANCE",
+    "all11CurrentPngActuallyViewed": true,
+    "remainingDisplayPolish": [
+      "两肺强台阶已明显弱化，仍有少量多边形转角及原色素小块。",
+      "平面血管与GPT组织材质融合仍待原生单位叠加检查。",
+      "深层短显露段不能凭美术圆帽推断断路。"
+    ],
+    "nativeRenderSeams": "UNDETERMINED_STOPPED_PREVIEW",
+    "unitContrastAndBattlefieldReadability": "UNDETERMINED_NATIVE",
+    "clinicalAnatomyCertified": false
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "schema": "registered-vessel-static-checks/v1",
+  "status": "PASS_OFFLINE_REGISTRATION",
+  "nativeEvidence": false,
+  "productionInstalled": false,
+  "checks": {
+    "sourceAndFrozenReferenceHashes": true,
+    "nominalWidthsAndCoordinates": true,
+    "protectedEdgesExcluded": true,
+    "outsideAllowedFootprintUnchanged": true,
+    "fixedForegroundPixelsUnchanged": true,
+    "intactOverviewOrganFacesUnchanged": true,
+    "headAndLimbPixelRegionsUnchanged": true,
+    "regionalCropsFromSingleComposition": true,
+    "topologyAndSaveVersionUnchanged": true,
+    "actualLuaFillAndGlyphEvidence": true
+  },
+  "changedPixels": 2514,
+  "changedPixelsOutsideFootprint": 0,
+  "changedFixedForegroundPixels": {
+    "bladderForegroundPath": 0,
+    "airwayForegroundPath": 0,
+    "coronaryForegroundPath": 0
+  },
+  "changedProtectedRegionPixels": {
+    "head": 0,
+    "legs": 0,
+    "left_arm": 0,
+    "right_arm": 0
+  },
+  "coordinateFailures": [],
+  "renderedEditableEdges": 80,
+  "frozenEdges": 202,
+  "fixedNamedPorts": 29,
+  "sourceSha256": "9a04e39961c07073cd9fdcfcdc2c98253ccc25d968e97dbea1f36669e06b5d9f",
+  "finalReferenceSha256": "3890744e2fcaf9e9907c85513e170e479f67b7fbb1fbf06385ac02bd80e8550c",
+  "geometrySha256": "37c6cbcdbdea7fa88cd17079a54db62ee46745158874c27432eea4dd2d850a8b",
+  "generationSha256": "fbcb9bd84413cedddaca6107faa65f6d49a67b5e9577eee3da329bb06339b389",
+  "gameEvidenceSha256": "204467744b3a2faa9e7a3df55d0a3aa3eb58a8eb914da63f88afbe713fa5b49f",
+  "artAcceptance": "candidate: matte vessel material and stronger inward fades; tiny visible wall fragments are not full closeup tissue art",
+  "limits": [
+    "No native preview, FPS, live-cell or full-organ battlefield acceptance.",
+    "Recorded stomach movement is a replay of prior tested Lua paths, not a new native navigation pass.",
+    "Frozen named ports may be behind original foreground; hollow markers expose their fixed coordinates without new holes."
+  ],
+  "changedIntactOverviewOrganPixels": 0,
+  "summary": "坐标、管径与遮挡像素通过；器官完整前景变化 0 像素，脑部四肢保护区变化 0 像素，膀胱及支气管保护区变化 0 像素。已提供真实 Lua 填色及细胞回放。最终美术与原生验证待确认。"
+}

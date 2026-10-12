@@ -1,0 +1,61 @@
+{
+  "url": "http://127.0.0.1:57916/vascular-art-study/vascular-organ-overlap.html",
+  "checks": [
+    {
+      "name": "stomach foreign pancreas branch",
+      "detail": "O035 · 胃 · e125\n建议绕开\n\n无该器官命名接入口；局部供回支线建议沿器官外侧绕开，保持原分叉和目标接口\n\n血管关系：celiac → pancreas.entry；动脉供血。\n\n此血管另有 1 组食物／气道／尿路投影重合，可勾选冲突层查看；已有连接不等于局部净空通过。\n\n标注位置（原图坐标）：544.16, 547.95。"
+    },
+    {
+      "name": "stomach channel at 0.15",
+      "zoom": "zoom 0.1500 · 9.60 逻辑像素 / 原图像素",
+      "viewBox": "531.0217055323222 476.044162593501 37.29166666666667 54.16666666666667",
+      "detail": "C12 · stomach.entry · 沿 e183 · 冻结接口 (548.18, 502.03) → 器官内侧 (551.79, 503.57)。接口已在轮廓内。细胞移动与出口净空未验收。"
+    },
+    {
+      "name": "separate passage overlay",
+      "paths": 21
+    },
+    {
+      "name": "connection filter leaves channels visible",
+      "channelCount": 2
+    },
+    {
+      "name": "left lung heart-depth warning",
+      "detail": "C04 · lung_l.exit · 沿 e175 · 冻结接口 (545.00, 414.00) → 器官内侧 (563.57, 418.68)。接口在视觉轮廓外，保留短接入段。需核对跨 心脏 的深度接续。细胞移动与出口净空未验收。"
+    },
+    {
+      "name": "map drag",
+      "before": "-96.04923076923069 -115.19999999999993 1216.0984615384614 1766.3999999999999",
+      "after": "9.255384615384628 -6.49846153846147 1216.0984615384614 1766.3999999999999",
+      "passed": true
+    },
+    {
+      "name": "wheel zoom",
+      "display": "zoom 0.0069 · 0.44 逻辑像素 / 原图像素"
+    },
+    {
+      "name": "hide existing connections",
+      "remainingGreenPaths": 0,
+      "passed": true
+    },
+    {
+      "name": "preserved user stomach pending endpoint",
+      "filteredCases": 1,
+      "detail": "O041 · 胃 · study.stomach.wall_service\n待接入\n\n胃壁所属草稿；新末端贴合供血节点，但命名连接及两个出口仍待重配\n\n血管关系：stomach.v → study.stomach.wall_service.outer；交换血管。\n\n新末端 (566, 503) 对齐 stomach.a，但 b 仍标旧外壁死端。需要补命名接入、流向和膜口；当前未改原稿。\n\n此血管另有 1 组食物／气道／尿路投影重合，可勾选冲突层查看；已有连接不等于局部净空通过。\n\n标注位置（原图坐标）：608.15, 532.84。"
+    }
+  ],
+  "finalView": {
+    "caseButtons": 128,
+    "channelButtons": 29,
+    "horizontalOverflow": false,
+    "organLabels": 12,
+    "organRows": 12,
+    "portMarkers": 43,
+    "summary": "已检查全身 202 条设计血管与 12 个器官：128 组重合，29 个0.15接入通道候选。独立腔道另列 121 组投影重合。未生图、未替换生产地图。",
+    "zoom": "zoom 0.0046 · 0.29 逻辑像素 / 原图像素"
+  },
+  "console": [],
+  "status": "PASS_LOCAL_BROWSER_ANNOTATION_UI",
+  "screenshot": "vascular-organ-overlap-browser.png",
+  "nativePreview": "Stopped; not restarted. Native gameplay and movement not certified by this annotation review."
+}

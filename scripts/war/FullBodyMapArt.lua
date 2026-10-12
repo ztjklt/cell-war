@@ -93,6 +93,7 @@ function A.draw(R,g,s,x1,x2,y1,y2)
  A.last={draws=0}
  if A.disabled then return false end -- Diagnostic visual comparison only; no state mutation.
  local alpha=A.alpha(g.zoom)
+ local heartVisible=g.zoom>=.15
  if not A.ready(R.vg,s)then return false end
  local d=data();local h=handles[R.vg];local heart
  for _,layer in ipairs(layers)do
@@ -100,7 +101,7 @@ function A.draw(R,g,s,x1,x2,y1,y2)
    local b=spec.sourceBox
    if not x1 or not(x1>b[3]*2 or x2<b[1]*2 or y1>b[4]*2+512 or y2<b[2]*2+512)then
     if layer=='organs'and spec.id=='heart'then heart=spec
-    elseif (layer=='deepTiles'or layer=='junctions'or layer=='foregroundPatches')and HeartVisual.overlaps(spec)
+    elseif heartVisible and (layer=='deepTiles'or layer=='junctions'or layer=='foregroundPatches')and HeartVisual.overlaps(spec)
      and HeartArt.drawOutsideSpec(R,g,s,spec,h[spec.id],alpha,require('war.HeartBattlefieldData').outerRings)then
      A.last.draws=A.last.draws+1
     else
@@ -118,7 +119,7 @@ function A.draw(R,g,s,x1,x2,y1,y2)
    end
   end
  end
- if heart and HeartArt.drawSpec(R,g,s,heart,h[heart.id],1,alpha)then A.last.draws=A.last.draws+1 end
+ if heartVisible and heart and HeartArt.drawSpec(R,g,s,heart,h[heart.id],1,alpha)then A.last.draws=A.last.draws+1 end
  return true
 end
 function A.stats()

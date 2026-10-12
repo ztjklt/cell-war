@@ -1,0 +1,129 @@
+{
+  "reviewedAt": "2026-10-12T11:51:44.548646+00:00",
+  "manifestSha256": "351aa221a49cf4921c44d71348836aeba5af60b220a7c3b4872e42b66683c8e6",
+  "dataSha256": "6e474d14ac212bca2c64893d6269d3a2adb929d9a339930c9b8b841f0c515e75",
+  "viewCount": 27,
+  "basis": "Current production Lua drawing through offline SVG/Cairo adapter; actual current resources, not current native window screenshots.",
+  "runtimeModified": false,
+  "nativeVisualEvidence": false,
+  "navigationFailuresInferredFromImages": false,
+  "findings": [
+    {
+      "region": "胃、肝、胰腺周边主干",
+      "priority": "先修",
+      "status": "可见形状待细化",
+      "needs": [
+        "粗细交接仍有台阶和硬肩部",
+        "部分真分叉的管壁线与支管入口不够连续",
+        "投影交叉处上下层关系需保持清晰"
+      ],
+      "frames": [
+        "celiac-stomach",
+        "pancreas",
+        "portal",
+        "stomach-boundary"
+      ]
+    },
+    {
+      "region": "肝内血管床与门脉汇合",
+      "priority": "先修",
+      "status": "三路节点尚未专项修整",
+      "node": "liver.bed",
+      "incidentEdges": [
+        "e118",
+        "e120",
+        "e121"
+      ],
+      "needs": [
+        "三路共同边界和不同管径的整体过渡"
+      ],
+      "frames": [
+        "liver"
+      ]
+    },
+    {
+      "region": "左右肾门、大肠回流",
+      "priority": "先修",
+      "status": "材质已局部修整，几何仍待细化",
+      "needs": [
+        "部分 V 形回弯尖角",
+        "窄管与宽管的肩部",
+        "器官入口周围管壁收口"
+      ],
+      "frames": [
+        "kidney_r",
+        "kidney_l",
+        "large_intestine"
+      ]
+    },
+    {
+      "region": "膀胱上缘与骨盆分支",
+      "priority": "先修",
+      "status": "未专项修整",
+      "needs": [
+        "上缘支管入口拥挤",
+        "小三角与急折角",
+        "血管与尿路遮挡收口"
+      ],
+      "frames": [
+        "bladder",
+        "pelvis-main"
+      ]
+    },
+    {
+      "region": "脑部入口、颈部及四肢支管",
+      "priority": "随后修",
+      "status": "未纳入近期局部修整",
+      "needs": [
+        "大回环与细管接头的粗细收口",
+        "材质类型的硬边接缝与小台阶"
+      ],
+      "frames": [
+        "brain",
+        "neck-main",
+        "arm-right",
+        "arm-left",
+        "leg-right",
+        "leg-left"
+      ]
+    },
+    {
+      "region": "手足末端",
+      "priority": "随后修",
+      "status": "细管回环待细化",
+      "needs": [
+        "末梢颜色与粗细交接",
+        "足部汇合拥挤与局部折线",
+        "手指末端的小折角"
+      ],
+      "frames": [
+        "hand-right",
+        "hand-left",
+        "foot-right",
+        "foot-left"
+      ]
+    },
+    {
+      "region": "主动脉弓、心肺入口",
+      "priority": "专项核对",
+      "status": "近期批次未修改；原生验收未确认",
+      "needs": [
+        "管径肩部与硬折接头",
+        "与心肺贴图的衔接与遮挡",
+        "实际动效及窗口视觉检查"
+      ],
+      "frames": [
+        "aortic-arch",
+        "heart",
+        "lung_r",
+        "lung_l"
+      ]
+    }
+  ],
+  "completedScope": "Upper-abdominal local material repair, eight same-material joins, four renal material handoffs and ten abdominal material handoffs. Those batches kept authored curves, widths and collision unchanged.",
+  "remainingAcceptance": [
+    "Current native window inspection across regions",
+    "Full-route organ traffic and crowded movement checks; short-node sweeps do not certify these",
+    "Overview/close-up consistency and native filtering"
+  ]
+}

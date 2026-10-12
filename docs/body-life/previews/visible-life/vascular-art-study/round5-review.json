@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-10",
+  "status": "ISOLATED_CONNECTIVITY_VERIFIED",
+  "productionInstalled": false,
+  "nativeEvidence": false,
+  "inputBaseline": "round5-baseline.json",
+  "report": "connectivity-evidence/report.json",
+  "reportSha256": "45da77a67f9f4c961badeba8735a0e27cd350a872e5904b54b953aea55553ca9",
+  "changes": [
+    "4 controlled membrane gates",
+    "1 deep stomach service branch",
+    "scrubbable replay with cell follow and A/B endpoints",
+    "hollow dashed projection for vessel cells beneath food region"
+  ],
+  "verification": {
+    "checksPassed": 28,
+    "movementCases": 17,
+    "newCrossRegionDirections": 4,
+    "newGateProjectionCases": 75,
+    "foodTissueSteps": 0,
+    "originalGeometryAndProductionHashesUnchanged": true,
+    "independentReview": "vascular_layer_review; Lua-to-JavaScript lane indexing corrected",
+    "browser": {
+      "deepLaneAt17Seconds": "胃壁深层支路",
+      "deepMarkerFill": "none",
+      "deepMarkerDash": ".22 .16",
+      "zoom012to015RetainsTime": true,
+      "oldRoutesOpacityAt015": "0",
+      "playbackReached31_5Seconds": true,
+      "consoleErrors": []
+    }
+  },
+  "limitations": [
+    "Single-cell isolated trials, not arbitrary-point or crowd coverage",
+    "Native preview stopped, no native frame-time/seam acceptance",
+    "v15 limb patches remain visually unaccepted at some joints",
+    "Formal campaign and save migration not installed"
+  ]
+}
