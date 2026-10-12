@@ -1,6 +1,31 @@
 local U,W,P,D=require("war.Util"),require("war.World"),require("war.Path"),require("war.Data")
 local Save={busy=false,status="尚未保存",slots={},pending=false,request=0}
 local function finite(n) return type(n)=="number" and n==n and n>-math.huge and n<math.huge end
+local function localPath(slot) return "saves/slot"..tostring(slot)..".json" end
+local function localWrite(slot,snapshot)
+ if not File or not cjson then return false,"本地文件接口不可用" end
+ local ok,a,b=pcall(function()
+  if fileSystem then fileSystem:CreateDir("saves") end
+  local file=File(localPath(slot),FILE_WRITE)
+  if not file or not file:IsOpen() then return false,"无法打开本地存档" end
+  file:WriteString(cjson.encode(snapshot));file:Close();return true
+ end)
+ if not ok then return false,tostring(a) end
+ return a,b
+end
+local function localRead(slot)
+ if not File or not cjson then return false,"本地文件接口不可用" end
+ local path=localPath(slot)
+ if fileSystem and not fileSystem:FileExists(path) then return false,"此槽位没有本地存档" end
+ local ok,a,b=pcall(function()
+  local file=File(path,FILE_READ)
+  if not file or not file:IsOpen() then return false,"无法读取本地存档" end
+  local text=file:ReadString();file:Close()
+  local decoded=cjson.decode(text);return true,decoded
+ end)
+ if not ok then return false,tostring(a) end
+ return a,b
+end
 local function numbers(row,keys,message)
  for _,key in ipairs(keys) do assert(finite(row[key]),message) end
 end
@@ -56,6 +81,7 @@ function Save.snapshot(s,withoutCheckpoint)
   snap.gastricBattlefieldVersion=1
   snap.gastricTraffic=require('war.GastricTraffic').snapshot(s)
  end
+ snap.combatProjectiles=U.copy(s.combatProjectiles or {});snap.nextProjectileId=s.nextProjectileId or 0
  if s.campaign then
   snap.campaign={}
   for k,v in pairs(s.campaign) do if k~="checkpoint" then snap.campaign[k]=U.copy(v) end end
@@ -93,12 +119,20 @@ function Save.restore(snap,isCheckpoint,validateOnly)
  local campaign=snap.version>=6 and snap.mode=="campaign"
  if campaign then
   assert(style=="body" and type(snap.campaign)=="table","战役数据损坏")
-  local c=snap.campaign;local ev=c.event
+   local c=U.copy(snap.campaign);local ev=c.event
+   local Registry=require("war.MapRegistry")
+   if not c.map_id and ev then
+    if ev.id=="trachea" then c.map_id="trachea_01"
+    elseif ev.id=="nasal" then c.map_id="nasal_01"
+    elseif c.terrainVersion==3 and Registry.exists(ev.id) then c.map_id=ev.id end
+   end
   assert(c.terrainVersion==nil or c.terrainVersion==2 or c.terrainVersion==3 and anatomyVersion==3 or c.terrainVersion==4 and anatomyVersion==4,"战场版本不支持")
   assert((anatomyVersion<3 and (c.terrainVersion==nil or c.terrainVersion==2) or anatomyVersion>=3 and c.terrainVersion==anatomyVersion),"人体与战场版本不匹配")
   local N=require("war.CampaignData").forState({campaign=c})
   assert(finite(c.stage) and c.stage%1==0 and c.stage>=1 and c.stage<=#N.stages+1 and type(c.completed)=="table" and type(c.unlocked)=="table" and type(c.rewards)=="table" and type(c.randomEnabled)=="boolean","战役进度损坏")
-  assert(type(ev)=="table" and ev.id==((c.terrainVersion==3 or c.terrainVersion==4) and "trachea" or "nasal") and (ev.status=="active" or ev.status=="failed" or ev.status=="completed") and (ev.phase=="defend" or ev.phase=="counterattack"),"事件状态损坏")
+  local expectedLegacy=(c.terrainVersion or 2)>=3 and c.map_id=="trachea_01" and "trachea" or (c.terrainVersion or 2)<3 and "nasal" or nil
+  local validEvent=type(ev)=="table" and (ev.id==expectedLegacy or ((c.terrainVersion or 2)>=3 and Registry.exists(ev.id) and ev.id==c.map_id))
+  assert(validEvent and (ev.status=="active" or ev.status=="failed" or ev.status=="completed") and (ev.phase=="defend" or ev.phase=="counterattack"),"事件状态损坏")
   numbers(ev,{"elapsed","wave","pendingViruses","spawnTimer","secure"},"入侵状态损坏")
   assert(ev.elapsed>=0 and ev.wave%1==0 and ev.wave>=0 and ev.wave<=#N.waves and ev.pendingViruses%1==0 and ev.pendingViruses>=0 and ev.pendingViruses<=24 and ev.secure>=0 and type(ev.zones)=="table" and #ev.zones==#N.zones,"入侵数据损坏")
   for i,z in ipairs(ev.zones) do
@@ -116,7 +150,12 @@ function Save.restore(snap,isCheckpoint,validateOnly)
    Save.restore(c.checkpoint,true,true)
   else assert(isCheckpoint,"事件检查点缺失") end
  end
- local s=W.generate(snap.seed,old or snap.legacyTerrain,style,campaign and "campaign" or "sandbox",anatomyVersion)
+  local restoredMap=campaign and snap.campaign and snap.campaign.map_id
+  if campaign and not restoredMap and snap.campaign.event then
+   local eventId=snap.campaign.event.id
+   restoredMap=eventId=="trachea" and "trachea_01" or eventId=="nasal" and "nasal_01" or require("war.MapRegistry").exists(eventId) and eventId or nil
+  end
+ local s=W.generate(snap.seed,old or snap.legacyTerrain,style,campaign and "campaign" or "sandbox",anatomyVersion,restoredMap)
  if snap.gastricBattlefieldVersion~=nil then
   assert(snap.gastricBattlefieldVersion==1 and anatomyVersion==4 and not campaign,"胃部战场版本不支持")
   require('war.GastricBattlefield').enable(s)
@@ -134,7 +173,13 @@ function Save.restore(snap,isCheckpoint,validateOnly)
   s.heartEncounterVersion=snap.heartEncounterVersion==1 and 1 or nil
  end
  local vesselCount=W.hasVessels(s)and #((s.organBattlefieldVersion==1 or s.fullbodyBattlefieldVersion==1)and require('war.OrganBattlefield').net(s)or W.vessels(s)).edges or 0
- if campaign then s.campaign=U.copy(snap.campaign) end
+  if campaign then
+   s.campaign=U.copy(snap.campaign)
+   if not s.campaign.map_id and s.campaign.event then
+    local eventId=s.campaign.event.id
+    s.campaign.map_id=eventId=="trachea" and "trachea_01" or eventId=="nasal" and "nasal_01" or require("war.MapRegistry").exists(eventId) and eventId or nil
+   end
+  end
  for _,key in ipairs({"rng","time","tick","nextId","commands","tutorial","outcome","lastDay","delivered","farmed","trained","selectedOnce"}) do if snap[key]~=nil then s[key]=U.copy(snap[key]) end end
  convertOrders(s.commands,stride)
  if not old then
@@ -152,6 +197,14 @@ function Save.restore(snap,isCheckpoint,validateOnly)
   assert(e.x>=1 and e.x<=width and e.y>=1 and e.y<=height and e.hp>0 and e.maxHp>0 and e.faction>=0 and e.faction<=3 and e.faction%1==0 and type(e.orders)=="table" and type(e.queue)=="table" and type(e.cargo)=="table" and type(e.rally)=="table","单位数据损坏")
   numbers(e.rally,{"x","y"},"集结点损坏")
   assert((e.category=="unit" and D.units[e.kind]) or (e.category=="building" and D.buildings[e.kind]),"未知单位或建筑")
+  if e.statuses~=nil then
+   assert(type(e.statuses)=="table","战斗状态损坏")
+   for kind,status in pairs(e.statuses) do
+    assert(require("war.CombatConfig").statuses[kind] and type(status)=="table","未知战斗状态")
+    for _,key in ipairs({"duration","moveMultiplier","attackMultiplier","damagePerSecond"}) do if status[key]~=nil then assert(finite(status[key]) and status[key]>=0,"战斗状态数值损坏") end end
+    if status.source~=nil then assert(finite(status.source) and status.source%1==0 and status.source>0,"状态来源损坏") end
+   end
+  end
   for _,o in ipairs(e.orders) do assert(type(o)=="table" and type(o.kind)=="string","命令队列损坏") end
   for _,q in ipairs(e.queue) do assert(type(q)=="table" and ((q.unit and D.units[q.unit]) or (q.tech and D.tech[q.tech])) and finite(q.remaining) and finite(q.total) and type(q.cost)=="table","生产队列损坏") end
   if campaign then
@@ -171,9 +224,22 @@ function Save.restore(snap,isCheckpoint,validateOnly)
  for i,fa in ipairs(snap.factions) do
   local f=U.copy(fa);assert(type(f.seen)=="string" and type(f.stock)=="table" and type(f.food)=="table" and type(f.tech)=="table" and type(f.ai)=="table" and finite(f.ai.timer) and finite(f.tier) and f.tier>=1 and f.tier<=3,"阵营数据损坏")
   numbers(f.stock,D.resources,"库存数据损坏")
-  for _,batch in ipairs(f.food) do assert(type(batch)=="table" and finite(batch.amount) and batch.amount>=0 and finite(batch.born),"食物批次损坏") end
+  for _,batch in ipairs(f.food) do
+   assert(type(batch)=="table" and finite(batch.amount) and batch.amount>=0 and finite(batch.born),"食物批次损坏")
+   if batch.stomachGlucose~=nil then assert(finite(batch.stomachGlucose) and batch.stomachGlucose>=0 and batch.stomachGlucose<=batch.amount,"葡萄糖来源损坏") end
+  end
   f.seen=unpackSeen(f.seen,old,stride,width,height);f.visible={};f.mapSeen=nil;f.name=campaign and require("war.CampaignData").forState(s).starts[i].name or D.factions[i].name;s.factions[i]=f
  end
+ local projectiles=snap.combatProjectiles or {};local nextProjectileId=snap.nextProjectileId or 0
+ assert(type(projectiles)=="table" and #projectiles<=require("war.CombatConfig").projectilesLimit and finite(nextProjectileId) and nextProjectileId>=0 and nextProjectileId%1==0,"飞行物存档损坏")
+ local projectileIds={}
+ for _,p in ipairs(projectiles) do
+  assert(type(p)=="table","飞行物存档损坏");numbers(p,{"id","source","faction","x","y","dx","dy","speed","ttl","damage"},"飞行物数值损坏")
+  assert(p.id%1==0 and p.id>0 and p.id<=nextProjectileId and not projectileIds[p.id] and p.source%1==0 and p.source>0 and p.source<s.nextId and p.faction%1==0 and p.faction>=0 and p.faction<=3 and D.units[p.sourceKind] and p.x>=1 and p.x<=width and p.y>=1 and p.y<=height and p.speed>0 and p.ttl>0 and p.damage>=0 and math.abs(p.dx*p.dx+p.dy*p.dy-1)<.0001,"飞行物状态损坏")
+  if p.targetKinds~=nil then assert(type(p.targetKinds)=="table","飞行物目标损坏");for kind in pairs(p.targetKinds) do assert(D.units[kind],"未知飞行物目标") end end
+  projectileIds[p.id]=true
+ end
+ s.combatProjectiles=U.copy(projectiles);s.nextProjectileId=nextProjectileId
  s.effects={};s.message=old and "旧版胞群已恢复原地图，单位已成为细胞" or "存档已恢复";s.messageTime=8;if not validateOnly then P.reset() end;W.rebuild(s);require("war.CellCollision").resolve(s);W.rebuild(s);W.fog(s)
  if s.gastricBattlefieldVersion==1 and snap.gastricTraffic~=nil then require('war.GastricTraffic').restore(s,snap.gastricTraffic) end
  if (s.organBattlefieldVersion==1 or s.fullbodyBattlefieldVersion==1) and snap.organTraffic~=nil then require('war.OrganTraffic').restore(s,snap.organTraffic) end
@@ -183,9 +249,16 @@ function Save.write(s,slot,snapshotOverride)
  if Save.busy then U.message(s,"正在存档，请稍候");return end
  local snapshot=snapshotOverride or Save.snapshot(s) --[[@as table]]
  Save.pending={snapshot=snapshot,slot=slot};Save.busy=true;Save.status="正在保存…";Save.request=Save.request+1;local token=Save.request;Save.elapsed=0
- local function failed(reason) if token~=Save.request then return end Save.busy=false;Save.status="保存失败 · 可重试";U.message(s,"云存档未保存："..tostring(reason).."，当前游戏保留") end
+ local function failed(reason,kind) if token~=Save.request then return end Save.busy=false;Save.status="保存失败 · 可重试";U.message(s,(kind=="local" and "本地存档未保存：" or "云存档未保存：")..tostring(reason).."，当前游戏保留") end
  Save.timeoutCallback=function() failed("云服务无响应，可重试") end
- if not clientCloud then failed("本地预览未连接云服务");return end
+ if not clientCloud then
+  local ok,reason=localWrite(slot,snapshot)
+  if ok then
+   Save.busy=false;Save.pending=false;Save.status="已保存 · 本地"..(slot==0 and "自动槽" or "槽位"..slot)
+   Save.slots[slot]={day=math.floor(snapshot.time/360)+1};U.message(s,Save.status)
+  else failed(reason,"local") end
+  return
+ end
  local key="wilderness_v1_slot"..slot
  local ok,err=pcall(function() clientCloud:Set(key,{snapshot=snapshot,day=math.floor(s.time/360)+1,savedAt=os.time()}, {
   ok=function() if token~=Save.request then return end Save.busy=false;Save.pending=false;Save.status="已保存 · "..(slot==0 and "自动槽" or "槽位"..slot);Save.slots[slot]={day=math.floor(snapshot.time/360)+1};U.message(s,Save.status) end,
@@ -197,7 +270,16 @@ function Save.read(slot,callback)
  if Save.busy then return end;Save.busy=true;Save.status="正在读取…";Save.request=Save.request+1;local token=Save.request;Save.elapsed=0
  local function fail(msg) if token~=Save.request then return end Save.busy=false;Save.status=msg;callback(false,msg) end
  Save.timeoutCallback=function() fail("读取超时，可重试") end
- if not clientCloud then fail("本地预览未连接云服务");return end
+ if not clientCloud then
+  local ok,snapshot=localRead(slot)
+  if not ok then fail(snapshot);return end
+  local valid,result=pcall(Save.restore,snapshot)
+  Save.busy=false
+  if valid then
+   Save.status="本地存档已恢复";Save.slots[slot]={day=math.floor(result.time/360)+1};callback(result)
+  else Save.status="存档损坏 · 当前游戏保留";callback(false,tostring(result)) end
+  return
+ end
  local key="wilderness_v1_slot"..slot
  local ok,err=pcall(function() clientCloud:Get(key,{
   ok=function(values)

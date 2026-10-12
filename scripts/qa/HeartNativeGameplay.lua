@@ -113,8 +113,8 @@ function Q.start(g,R,HUD,options)
    actorIds={},passageVisited={},chamberHp={},frames=0,completed=false,fixturePlaneTagsBeforeRecording=true}
   result.cases[#result.cases+1]=row
   if config.kind=='move'then
-   local from=config.from --[[@as number[]]]
-   local to=config.to --[[@as number[]]]
+   local from=config.from --[=[@as number[]]=]
+   local to=config.to --[=[@as number[]]=]
    spawn('scout',1,from,from[3]);g.selection[actors[1].id]=true
    g.camera={x=(from[1]+to[1]),y=(from[2]+to[2])+512}
   elseif config.kind=='combat'then

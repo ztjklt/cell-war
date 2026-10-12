@@ -50,7 +50,8 @@ local function vessel(R,g,e)
 end
 function A.draw(R,g)
  local c=g.state.campaign;if not c then return end
- if c.event.id=="trachea" then return require("war.TracheaArt").draw(R,g) end
+ if require('war.MapRegistry').currentId(g.state)=='lungs_01' then return require('war.LungsArt').draw(R,g) end
+ if require("war.MapRegistry").isTrachea(g.state) then return require("war.TracheaArt").draw(R,g) end
  if c.terrainVersion~=2 then require('war.NasalArtLegacy').draw(R,g);return end
  local left,top=R.project(g,G.bounds.x,G.bounds.y);local right,bottom=R.project(g,G.bounds.x+G.bounds.w,G.bounds.y+G.bounds.h)
  if right<0 or left>R.w or bottom<0 or top>R.h then return end
@@ -129,7 +130,8 @@ function A.draw(R,g)
 end
 function A.atlas(R,g,px,py,scale)
  if not g.state.campaign then return end
- if g.state.campaign.event.id=="trachea" then return require("war.TracheaArt").atlas(R,g,px,py,scale) end
+ if require('war.MapRegistry').currentId(g.state)=='lungs_01' then return require('war.LungsArt').atlas(R,g,px,py,scale) end
+ if require("war.MapRegistry").isTrachea(g.state) then return require("war.TracheaArt").atlas(R,g,px,py,scale) end
  if g.state.campaign.terrainVersion~=2 then require('war.NasalArtLegacy').atlas(R,g,px,py,scale);return end
  for i,z in ipairs(G.zones) do local p={}
   local polygon=z.polygon

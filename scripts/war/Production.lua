@@ -8,7 +8,7 @@ function B.update(s,dt)
    if q.remaining<=0 then
     if q.unit then
      local pop,cap=E.population(s,b.faction,false)
-     if pop+D.units[q.unit].pop<=cap then
+     if pop+D.units[q.unit].pop<=cap and require("war.OrganRules").canTrain(s,q.unit,b.x,b.y) then
       local x,y=b.rally.x,b.rally.y
       if not W.walkable(s,math.floor(x),math.floor(y),b.faction) then
        x,y=false,false
@@ -22,7 +22,7 @@ function B.update(s,dt)
         if x then break end
        end
       end
-      if x then
+      if x and require("war.OrganRules").canTrain(s,q.unit,x,y) then
        local u=C.spawn(s,"unit",q.unit,b.faction,x,y)
        if u then C.order(s,u,{kind="move",x=b.rally.x,y=b.rally.y});table.remove(b.queue,1)
         if b.faction==1 then s.trained=(s.trained or 0)+1 end

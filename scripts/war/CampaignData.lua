@@ -1,13 +1,23 @@
--- Choose terrain by saved geometry, never reinterpret an old checkpoint.
-local N=require('war.TracheaTerrain')
-local V3=require('war.LegacyTracheaTerrainV3')
-local Legacy=require('war.LegacyCampaignData')
-N.legacy=Legacy.legacy
-function N.forState(s)
- if not s or not s.campaign then return N end
- if s.campaign.terrainVersion==4 then return N end
- if s.campaign.terrainVersion==3 then return V3 end
- return Legacy.forState(s)
+-- Geometry selection is campaign-only. Sandbox continues to use World/Anatomy.
+local Trachea=require("war.TracheaTerrain")
+local Legacy=require("war.LegacyCampaignData")
+local Registry=require("war.MapRegistry")
+local V3=require("war.LegacyTracheaTerrainV3")
+local M={legacy=Legacy,stages=Trachea.stages,waves=Trachea.waves,supply=Trachea.supply}
+
+function M.forState(s)
+ local c=s and s.campaign
+ if not c then return Trachea end
+ -- Old nasal saves have no stable map id and must retain their historical geometry.
+ if c.terrainVersion~=3 and c.terrainVersion~=4 and c.event and c.event.id=="nasal" then return Legacy.forState(s) end
+ local id=Registry.currentId(s) or "trachea_01"
+ if c.terrainVersion==3 and id=="trachea_01" then return V3 end
+ return Registry.definition(id)
 end
-function N.forVersion(version) return version==4 and N or version==3 and V3 or Legacy end
-return N
+
+function M.forVersion(version)
+ if version==2 or version==1 then return Legacy end
+ if version==3 then return V3 end
+ return Registry.definition("trachea_01")
+end
+return M
