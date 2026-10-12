@@ -1,0 +1,122 @@
+{
+  "nativeEvidence": false,
+  "passed": 5,
+  "total": 5,
+  "results": [
+    {
+      "name": "Large zoom patterns retain native texture allocation and correct sampled coordinates",
+      "pass": true
+    },
+    {
+      "name": "Image opacity and global alpha multiply once under bounded patch groups",
+      "pass": true
+    },
+    {
+      "name": "Tint RGB and alpha remain correct through SurfacePattern sampling",
+      "pass": true
+    },
+    {
+      "name": "Default edge clamp and explicit repeat flags use distinct sampling modes",
+      "pass": true
+    },
+    {
+      "name": "DPR scales output while giant pattern coordinates remain logical",
+      "pass": true
+    }
+  ],
+  "evidence": {
+    "largePatterns": [
+      {
+        "sourceDisplayedWidth": 9830.4,
+        "sourceDisplayedHeight": 14745.599999999999,
+        "sample": [
+          30,
+          180,
+          70,
+          255
+        ]
+      },
+      {
+        "sourceDisplayedWidth": 26214.4,
+        "sourceDisplayedHeight": 39321.600000000006,
+        "sample": [
+          30,
+          180,
+          70,
+          255
+        ]
+      },
+      {
+        "sourceDisplayedWidth": 58982.4,
+        "sourceDisplayedHeight": 88473.6,
+        "sample": [
+          30,
+          180,
+          70,
+          255
+        ]
+      },
+      {
+        "sourceDisplayedWidth": 1024000,
+        "sourceDisplayedHeight": 1536000,
+        "sample": [
+          30,
+          180,
+          70,
+          255
+        ]
+      }
+    ],
+    "processPeakRssBytes": 53608448,
+    "alphaProduct": [
+      30,
+      180,
+      70,
+      51
+    ],
+    "tint": [
+      16,
+      179,
+      36,
+      64
+    ],
+    "clampAndRepeat": [
+      [
+        30,
+        180,
+        70,
+        255
+      ],
+      [
+        220,
+        40,
+        30,
+        255
+      ]
+    ],
+    "dprColors": [
+      [
+        30,
+        181,
+        70,
+        76
+      ],
+      [
+        30,
+        181,
+        70,
+        76
+      ],
+      [
+        30,
+        181,
+        70,
+        76
+      ]
+    ]
+  },
+  "limitations": [
+    "Cairo sampling differs from NanoVG filtering.",
+    "Peak RSS includes Python libraries and is diagnostic only."
+  ]
+}

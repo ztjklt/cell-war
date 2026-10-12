@@ -1,0 +1,69 @@
+{
+  "schema": "fullbody-native-performance-summary/v1",
+  "status": "PASS_MEASURED_PAUSED_VIEWS",
+  "nativeEvidence": true,
+  "scope": "Paused stomach and aortic-arch .15 views, 17 entities, 60 FPS cap, DPR2, same loaded 33 resources/context; comparison toggles 32 foreground map layers while the quiet bitmap stays enabled. This is not a crowds/active-combat or standalone GPU measurement.",
+  "targetAddedFrameP95Ms": 2,
+  "GPUTimeMeasured": false,
+  "views": [
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-performance-002/report.json",
+      "sha256": "53f2d1c9d61b446d12f4c5e79b08de8bd5381e745d00f245288c31a1cc5f265c",
+      "camera": {
+        "y": 1492,
+        "x": 1036
+      },
+      "offFrameP95Ms": 17.525000497698784,
+      "onFrameP95Ms": 17.496999353170395,
+      "frameP95IncrementMs": -0.028001144528388977,
+      "offRenderCpuP95Ms": 1.8380000000011165,
+      "onRenderCpuP95Ms": 1.9569999999990983,
+      "renderCpuP95IncrementMs": 0.11899999999798183,
+      "samplesPerGroup": 360,
+      "resources": {
+        "images": 66,
+        "draws": 0,
+        "contexts": 2
+      },
+      "dpr": 2
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-performance-003/report.json",
+      "sha256": "c9b4a651064ecaf1e7938665c0c18d9bc8311f1731267455b4d8fecae0df6f4a",
+      "camera": {
+        "y": 1210,
+        "x": 1056
+      },
+      "offFrameP95Ms": 17.43749901652336,
+      "onFrameP95Ms": 17.480000853538513,
+      "frameP95IncrementMs": 0.04250183701515198,
+      "offRenderCpuP95Ms": 1.6690000000014749,
+      "onRenderCpuP95Ms": 1.8789999999988538,
+      "renderCpuP95IncrementMs": 0.20999999999737895,
+      "samplesPerGroup": 360,
+      "resources": {
+        "contexts": 2,
+        "draws": 0,
+        "images": 66
+      },
+      "dpr": 2
+    }
+  ],
+  "inputEvidence": [
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-performance-002/inputs.json",
+      "sha256": "e5568280962701843d8b44d76124e0858373a70e5c2863b40aa901dbaa80db4d"
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-performance-003/inputs.json",
+      "sha256": "a6fca06a19c5bd0e43a5c9a994b3d48c2baa7b7162649f3be3f5a9fb1018efec"
+    }
+  ],
+  "incrementTargetMet": true,
+  "remainingNativeCoverage": [
+    "DPR1/3",
+    "tablet/mobile native layouts",
+    "active combat crowds",
+    "standalone GPU timing"
+  ]
+}

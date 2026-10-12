@@ -1,0 +1,24 @@
+{
+  "schema": "bladder-main-map-visibility/v1",
+  "reason": "User rejects vessel graphics dipping into orange bladder lumen",
+  "topologyEdited": false,
+  "productionInstalled": false,
+  "sourceGuideIssue": "e143, e197 and e198 are wall-exchange locator curves inside the flat silhouette. Their interior spans must not be painted on the orange lumen face.",
+  "hideOnOrangeFace": [
+    "e143",
+    "e197",
+    "e198"
+  ],
+  "keepNamedWallPorts": {
+    "supply": [
+      536.3294117647059,
+      750.7176470588236
+    ],
+    "return": [
+      476.6928327645051,
+      754.6109215017065
+    ]
+  },
+  "displayPolicy": "Wall perfusion is behind existing orange foreground; only short arterial/venous approaches at the two wall ports are exposed. No interior U-loop, indent, groove or red-blue shared junction.",
+  "inputOnlyAnnotations": "docs/body-life/vascular-art-study/remaining-vessels-inputs/lower-abdomen-bladder-wall-repair.svg"
+}

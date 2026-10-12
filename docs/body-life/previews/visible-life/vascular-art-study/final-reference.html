@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>全身血管参考定稿 · 绕行、遮挡与胃壁入口</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#172c29;color:#e4eee5;font:14px/1.6 system-ui}main{max-width:1440px;margin:auto;padding:18px}a{color:#b5d9c9}h1{font-size:23px;margin:10px 0}h2{font-size:17px;margin:0 0 8px}p{margin:8px 0}.muted{font-size:12px;color:#b9cec0}.toolbar,.legend{display:flex;align-items:center;gap:7px 13px;flex-wrap:wrap;margin:12px 0}.legend label{display:flex;align-items:center;gap:5px}button,select{font:inherit;border:1px solid #65816d;background:#2b443a;color:inherit;border-radius:6px;padding:6px 9px;cursor:pointer}button[aria-pressed=true]{background:#496653}.layout{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(300px,1fr);gap:16px}.panel{min-width:0;border:1px solid #466857;border-radius:9px;background:#223a32;padding:12px}.map-panel{position:sticky;top:10px;align-self:start}.map{display:block;width:100%;height:720px;background:#f5f3ea;border-radius:5px;touch-action:none;cursor:grab}.map:active{cursor:grabbing}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:10px 0}.stats div{padding:8px;background:#294239;border-radius:5px;font-size:11px;color:#c0d3c4}.stats strong{display:block;color:#f0eee0;font-size:22px;font-weight:600}.swatch{display:inline-block;width:20px;height:4px;border-radius:2px}.card{border-left:3px solid #a9c3a8;background:#294237;padding:11px;margin:12px 0;overflow-wrap:anywhere}.list{display:grid;gap:5px;max-height:300px;overflow:auto;margin:9px 0}.case{text-align:left;font-size:12px;border-left:4px solid #7098b5}.case small{display:block;color:#bfd1c1}.case.active{background:#47634e;border-color:#d4be84}#decisionFilter{max-width:100%}.hidden-list{display:grid;gap:5px;margin-top:10px}.hidden-list button{text-align:left;font-size:11px;padding:5px}.status{padding:9px 12px;border-left:3px solid #c3b58b;background:#30453a;font-size:12px}.note-list{padding-left:18px;font-size:12px}.tiny{font-size:11px;color:#b9cfbf}footer{font-size:12px;margin:18px 0}#error{color:#ffbfaa}.tag{display:inline-block;background:#435e4b;padding:1px 6px;border-radius:3px;font-size:12px}details{margin-top:12px}#mapCaption{margin-bottom:0}button:focus-visible,select:focus-visible{outline:2px solid #ead495;outline-offset:2px}@media(max-width:850px){main{padding:12px}.layout{grid-template-columns:1fr}.map-panel{position:relative;top:0}.map{height:520px}h1{font-size:20px}.stats{gap:4px}.stats div{padding:5px}.stats strong{font-size:19px}}
+</style>
+<main>
+<a href="vascular-organ-overlap.html">上一版重合标注</a> · <a href="organ-routes.html">血管编辑器</a> · <a href="upper-abdomen-sample.html">GPT 上腹试样</a>
+<h1>全身血管参考定稿</h1>
+<p>沿用原图和你改的胃壁线。脑部与四肢保持原样；胸腹绕行、遮挡起止和胃壁出口已经落实。</p>
+<p id="summary" class="muted">正在加载固定坐标与复核结果…</p><p id="error" role="alert"></p>
+<div class="toolbar" aria-label="参考图取景">
+<button id="fitBody">全身</button><button id="fitTorso">胸腹</button><button id="fitHead">头部</button><button id="fitArms">双臂</button><button id="fitLegs">双腿</button><button id="fitStomach">胃壁总览</button><button id="zoom015">胃壁内侧出口 0.15</button><button id="outer015">胃壁外侧出口 0.15</button><button id="zoomPlus" aria-label="放大参考图">＋</button><button id="zoomMinus" aria-label="缩小参考图">−</button><span id="mapZoom" class="muted"></span>
+</div>
+<div class="legend">
+<span><i class="swatch" style="background:#bd514b"></i> 供血</span><span><i class="swatch" style="background:#3678a6"></i> 回流</span><span><i class="swatch" style="background:#796780"></i> 交换</span>
+<label><input id="showDeep" type="checkbox" checked>虚线：深层接续</label>
+<label><input id="showChanges" type="checkbox" checked>金边：实际绕行</label>
+<label><input id="showOld" type="checkbox">绕行前对照</label>
+<label><input id="showOrgans" type="checkbox">器官边界</label>
+<label><input id="showPorts" type="checkbox">固定接口</label>
+<label><input id="showFood" type="checkbox">独立食物通路</label>
+</div>
+<div class="layout">
+<section class="panel map-panel" aria-label="最终全身血管参考">
+<svg id="finalMap" class="map" viewBox="0 0 1024 1536" role="img" aria-label="原图上的最终可见血管、深层遮挡和胃壁入口" tabindex="0">
+<image href="coverage-reference.png" width="1024" height="1536" opacity=".38"/>
+<g id="foodLayer"></g><g id="organLayer"></g><g id="oldLayer"></g><g id="deepLayer"></g><g id="routeLayer"></g><g id="vesselLayer"></g><g id="portLayer"></g><g id="gateLayer"></g><g id="labelLayer"></g><g id="selectedLayer"></g>
+</svg>
+<p id="mapCaption" class="tiny">滚轮缩放、拖动平移。虚线表示遮挡下的完整通路；交叉处不会自动连通。浅色原图用于定位。</p>
+</section>
+<section class="panel" aria-label="定稿处理记录">
+<div class="stats"><div><strong id="statNetwork">—</strong>全身血管</div><div><strong id="statFrozen">—</strong>脑／四肢保留</div><div><strong id="statRouted">—</strong>实际绕行</div><div><strong id="statGates">—</strong>胃壁出口</div></div>
+<h2>已落实的处理</h2>
+<p class="muted">18 处绕开建议涉及 16 条血管：4 条调整走向，12 条保留简短的深层接续。30 处器官遮挡逐段固定。位置相交不新增器官入口。</p>
+<div id="caseDetail" class="card"><h2>定稿说明</h2><p>选一个处理条目，图中会突出对应通路和遮挡的起止位置。</p><p>胃壁已接成供血侧 → 沿原轮廓 → 回流侧。两个组织出口重新落在同一条血管上，入口朝向由管壁法线确定。</p></div>
+<label>查看处理 <select id="decisionFilter" aria-label="定稿处理类型"><option value="all">全部 48 项处理</option><option value="outer_detour">4 条实际绕行</option><option value="fixed_deep_connector">固定深层接续</option><option value="foreground_occlusion">器官前景遮挡</option></select></label>
+<div id="caseList" class="list" aria-label="逐项定稿记录"></div>
+<p class="status" id="checkStatus">正在读取复核结果…</p>
+<details><summary>精确遮挡段与血管交叉</summary><p id="occlusionSummary" class="muted"></p><label>选择遮挡段 <select id="hiddenSelect" aria-label="精确遮挡段"><option value="">选择一个起止段</option></select></label><p id="hiddenDetail" class="tiny"></p></details>
+<details><summary>坐标、图层和后续使用</summary><ul id="limits" class="note-list"></ul><p class="tiny">供回流命名接口坐标保持固定。新胃壁出口已经移位，接入游戏时须用这版坐标重测移动与会车；旧通行结果不能套用。参考图已定稿，本轮未生图。</p></details>
+</section>
+</div>
+<footer><a href="final-reference-guide.svg">可见层 SVG</a> · <a href="final-reference-data.json">完整坐标和遮挡数据</a> · <a href="final-reference-checks.json">结构复核</a> · <a href="independent-final-reference-audit.json">独立复核</a> · <a href="maintenance.html#final-vascular-reference">维护记录</a></footer>
+</main>
+<script src="final-reference.js"></script>
+</html>

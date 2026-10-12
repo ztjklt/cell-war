@@ -1,0 +1,2413 @@
+{
+  "schema": "vascular-material-pilot-qa/v1",
+  "nativeEvidence": false,
+  "manifestSha256": "9e1378ad63e23de31795ec3b2e0ed56d1a1c9dff488b0c015a105cd5090d0f51",
+  "assets": [
+    {
+      "id": "battlefield",
+      "path": "assets/image/anatomy-reference/vascular-study/vessel-material-pilot/battlefield.png",
+      "sha256": "2a8d15b8e6f9c347712339e1a942bb738681dcc5d2b26dd66d543a7c7ad5cf9c",
+      "pixelSize": [
+        2160,
+        2160
+      ],
+      "sourceBox": [
+        464,
+        448,
+        644,
+        628
+      ]
+    },
+    {
+      "id": "exterior",
+      "path": "assets/image/anatomy-reference/vascular-study/vessel-material-pilot/exterior.png",
+      "sha256": "0efa0c13251ad9146712908e705ea0234fe77214ff27659fbe5c5dc90dc1a5f6",
+      "pixelSize": [
+        2160,
+        2160
+      ],
+      "sourceBox": [
+        464,
+        448,
+        644,
+        628
+      ]
+    }
+  ],
+  "frozenBaseline": {
+    "checked": 25,
+    "unchanged": true,
+    "files": [
+      {
+        "path": "docs/body-life/vascular-art-study/final-reference-data.json",
+        "beforeSha256": "3890744e2fcaf9e9907c85513e170e479f67b7fbb1fbf06385ac02bd80e8550c",
+        "afterSha256": "3890744e2fcaf9e9907c85513e170e479f67b7fbb1fbf06385ac02bd80e8550c",
+        "unchanged": true
+      },
+      {
+        "path": "docs/body-life/vascular-art-study/interface-contract.json",
+        "beforeSha256": "86878d45e150353b439fb0ea8e12ad22649185ff143d5dff4a8465cea8fa8253",
+        "afterSha256": "86878d45e150353b439fb0ea8e12ad22649185ff143d5dff4a8465cea8fa8253",
+        "unchanged": true
+      },
+      {
+        "path": "docs/body-life/vascular-art-study/organ-layers.json",
+        "beforeSha256": "43c5adbd65f481e64642242f3bc57b9fcc3c981633b70f86b014606ac49edb3d",
+        "afterSha256": "43c5adbd65f481e64642242f3bc57b9fcc3c981633b70f86b014606ac49edb3d",
+        "unchanged": true
+      },
+      {
+        "path": "docs/body-life/vascular-art-study/passages-data.json",
+        "beforeSha256": "37c4cfcaa565a15bccf8d23bd5ad26151f14c13562aeb375320a4e80f1998ae5",
+        "afterSha256": "37c4cfcaa565a15bccf8d23bd5ad26151f14c13562aeb375320a4e80f1998ae5",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/OrganBoundariesData.lua",
+        "beforeSha256": "b4617ba302f4deab54ffdb9a7be0750b1ab63000a50a8395e151456ad2e34e24",
+        "afterSha256": "b4617ba302f4deab54ffdb9a7be0750b1ab63000a50a8395e151456ad2e34e24",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/OrganBattlefieldData.lua",
+        "beforeSha256": "047dce28da8aa19d893a9116258631cf71c039ecb44b7c63478d40043cd9c273",
+        "afterSha256": "047dce28da8aa19d893a9116258631cf71c039ecb44b7c63478d40043cd9c273",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/GastricBattlefieldData.lua",
+        "beforeSha256": "81cbe1eedd29506a13fa19a7edd079d7f93b3eb58b4a9e4282e98277854b279d",
+        "afterSha256": "81cbe1eedd29506a13fa19a7edd079d7f93b3eb58b4a9e4282e98277854b279d",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/Save.lua",
+        "beforeSha256": "d55c19716b457cb3be7a0839e8179367194200c7bf01a3368a49724f64a72e05",
+        "afterSha256": "d55c19716b457cb3be7a0839e8179367194200c7bf01a3368a49724f64a72e05",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/Path.lua",
+        "beforeSha256": "a41c95130db4c45a96956c09ad122432055bd3cc0588835ae9cae5a321283929",
+        "afterSha256": "a41c95130db4c45a96956c09ad122432055bd3cc0588835ae9cae5a321283929",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/CellCollision.lua",
+        "beforeSha256": "a11dc894c9cf91347ff89e290301c0bb0889c520593d60cbe4c1bf122201d30f",
+        "afterSha256": "a11dc894c9cf91347ff89e290301c0bb0889c520593d60cbe4c1bf122201d30f",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/Simulation.lua",
+        "beforeSha256": "fab3667006f1d45ff13aaaf408f559eba33614f120a23d1d8806efb3aa3d082a",
+        "afterSha256": "fab3667006f1d45ff13aaaf408f559eba33614f120a23d1d8806efb3aa3d082a",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/Commands.lua",
+        "beforeSha256": "19573e908c5c09ff9572d686d497962949ea962dd5c4c67a7e700efd46b0996e",
+        "afterSha256": "19573e908c5c09ff9572d686d497962949ea962dd5c4c67a7e700efd46b0996e",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/World.lua",
+        "beforeSha256": "020f77336ced2aa0a4f7907aa79385c438eda38d76e2bc639d49ca864b70166c",
+        "afterSha256": "020f77336ced2aa0a4f7907aa79385c438eda38d76e2bc639d49ca864b70166c",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/View.lua",
+        "beforeSha256": "deafbe8bf8ebaa17b582d90c460cf9c21b0a6950d16fd925b1ac9708b8dcd7e0",
+        "afterSha256": "deafbe8bf8ebaa17b582d90c460cf9c21b0a6950d16fd925b1ac9708b8dcd7e0",
+        "unchanged": true
+      },
+      {
+        "path": "docs/body-life/vascular-art-study/organ-atlas/art.json",
+        "beforeSha256": "ddbfed8fe3d814b8041b50d4f39640f1b8af6013b5feb5bf3b927d2a67286fce",
+        "afterSha256": "ddbfed8fe3d814b8041b50d4f39640f1b8af6013b5feb5bf3b927d2a67286fce",
+        "unchanged": true
+      },
+      {
+        "path": "assets/image/anatomy-reference/reference.png",
+        "beforeSha256": "9a04e39961c07073cd9fdcfcdc2c98253ccc25d968e97dbea1f36669e06b5d9f",
+        "afterSha256": "9a04e39961c07073cd9fdcfcdc2c98253ccc25d968e97dbea1f36669e06b5d9f",
+        "unchanged": true
+      },
+      {
+        "path": "assets/image/anatomy-reference/vascular-study/stomach-playable/battlefield.png",
+        "beforeSha256": "9464d5f62338e1dc9644cedd4fc9ce1ba803d4afe5a172395249a679b47cb918",
+        "afterSha256": "9464d5f62338e1dc9644cedd4fc9ce1ba803d4afe5a172395249a679b47cb918",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/ReferenceMap.lua",
+        "beforeSha256": "f4de806b2f5f2f75299561478945ddc0ca8289b0088bcaa571219cb126ba3007",
+        "afterSha256": "f4de806b2f5f2f75299561478945ddc0ca8289b0088bcaa571219cb126ba3007",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/ReferenceVessels.lua",
+        "beforeSha256": "e015d6f00f2d723d5d14561190e3b21998aab42188e6571590c17956cb0f43d6",
+        "afterSha256": "e015d6f00f2d723d5d14561190e3b21998aab42188e6571590c17956cb0f43d6",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/ReferenceTrace.lua",
+        "beforeSha256": "79943529511e57e8a05b29a872f8dfb02ab682b2eea86f5bc23b7dabface607b",
+        "afterSha256": "79943529511e57e8a05b29a872f8dfb02ab682b2eea86f5bc23b7dabface607b",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/OrganBattlefield.lua",
+        "beforeSha256": "ba529bfa35a85833e1dc15f5a36bf2437b6a926e5299e36856593ec3b86d111c",
+        "afterSha256": "ba529bfa35a85833e1dc15f5a36bf2437b6a926e5299e36856593ec3b86d111c",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/OrganBattlefieldCore.lua",
+        "beforeSha256": "40c670d25c69281b0d5663c684dcb699b6871c806000fd2e8f013601218c6b8d",
+        "afterSha256": "40c670d25c69281b0d5663c684dcb699b6871c806000fd2e8f013601218c6b8d",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/GastricBattlefield.lua",
+        "beforeSha256": "789066936c29437cfcbc47490a7527288700e82c02b88b3e19458f69906b2b46",
+        "afterSha256": "789066936c29437cfcbc47490a7527288700e82c02b88b3e19458f69906b2b46",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/Vessels.lua",
+        "beforeSha256": "1a09c89674c7308dd711c07fe1cbe7955f157d3148589e7b40b7173d0b2cc179",
+        "afterSha256": "1a09c89674c7308dd711c07fe1cbe7955f157d3148589e7b40b7173d0b2cc179",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/OrganTrial.lua",
+        "beforeSha256": "2448272435d422dc9c10f13c54382727b93da03b9bce177235f0d58d7eb803fd",
+        "afterSha256": "2448272435d422dc9c10f13c54382727b93da03b9bce177235f0d58d7eb803fd",
+        "unchanged": true
+      }
+    ]
+  },
+  "inputHashes": {
+    "scripts/war/VascularMaterialArt.lua": "ec1fbc8f5381beeac427e0eb9ed1cf7f910bda427af55fbba556d52d76344ac4",
+    "scripts/war/GastricArt.lua": "0f9ab51468be76bcdb61bf4a173abfe659e379f0a3a8652452175d9f3e1c42a0",
+    "scripts/war/ReferenceArt.lua": "46d63023742760731fc7817d67365f082bc98788eb1b47d00fb0ce50db109cfa",
+    "scripts/war/Render.lua": "0e84abb91789500f226b2a0f429432827e26da9c154d57974a774e38607b95bd",
+    "scripts/war/OrganAtlasArt.lua": "17ed3df534e311eb717c65a6c81ba273d16c0f2dec406401fd80ddc276b4bb16",
+    "scripts/war/Cells.lua": "14f36d08d440937105e5e0ed2c33433cc95d8adedd7f0ad4f0acdd483215196b",
+    "scripts/war/BodyLifeFlow.lua": "d6e50b9a7d348aff611b976a3dd46db6e1f913eba1009769ea31b257803a903a",
+    "scripts/qa/body_life_backend.py": "112da582a0ebff26ac0d8060f9186751344f10fb36270d7398d29c63d015fa9c",
+    "scripts/qa/check_vascular_material_pilot.py": "b5d1d1d7e0c74061070fdb8d61b13004f8353838e57256338e476d3830f3d02a",
+    "assets/image/anatomy-reference/vascular-study/vessel-material-pilot/battlefield.png": "2a8d15b8e6f9c347712339e1a942bb738681dcc5d2b26dd66d543a7c7ad5cf9c",
+    "assets/image/anatomy-reference/vascular-study/vessel-material-pilot/exterior.png": "0efa0c13251ad9146712908e705ea0234fe77214ff27659fbe5c5dc90dc1a5f6",
+    "docs/body-life/vascular-art-study/vessel-material-pilot/manifest.json": "9e1378ad63e23de31795ec3b2e0ed56d1a1c9dff488b0c015a105cd5090d0f51"
+  },
+  "pixels": {
+    "sourceFrame": [
+      464,
+      448,
+      644,
+      628
+    ],
+    "rasterPixelsPerSourcePixel": 12,
+    "changedStomachPixels": 77218,
+    "changedStomachPixelsOutsideApprovedBloodAndPatch": 0,
+    "exteriorAlphaPixelsOutsideApprovedFootprint": 0,
+    "changedProtectedFoodPixels": 0,
+    "antialiasMarginRasterPixels": 2,
+    "edgeContracts": [
+      {
+        "id": "e009",
+        "nominalWidthSource": 7,
+        "endpointsFrozen": true
+      },
+      {
+        "id": "e010",
+        "nominalWidthSource": 7,
+        "endpointsFrozen": true
+      },
+      {
+        "id": "e164",
+        "nominalWidthSource": 3,
+        "endpointsFrozen": true
+      },
+      {
+        "id": "e116",
+        "nominalWidthSource": 3,
+        "endpointsFrozen": true
+      },
+      {
+        "id": "e123",
+        "nominalWidthSource": 3,
+        "endpointsFrozen": true
+      },
+      {
+        "id": "study.stomach.wall_service",
+        "nominalWidthSource": 1.5,
+        "endpointsFrozen": true
+      },
+      {
+        "id": "e124",
+        "nominalWidthSource": 2,
+        "endpointsFrozen": true
+      },
+      {
+        "id": "e183",
+        "nominalWidthSource": 2,
+        "endpointsFrozen": true
+      },
+      {
+        "id": "e184",
+        "nominalWidthSource": 2,
+        "endpointsFrozen": true
+      }
+    ],
+    "palette": [
+      {
+        "kind": "compiled-exterior",
+        "path": "assets/image/anatomy-reference/vascular-study/vessel-material-pilot/exterior.png",
+        "sha256": "0efa0c13251ad9146712908e705ea0234fe77214ff27659fbe5c5dc90dc1a5f6",
+        "greenPixels": 0
+      },
+      {
+        "kind": "compiled-stomach-vessels",
+        "path": "assets/image/anatomy-reference/vascular-study/vessel-material-pilot/battlefield.png",
+        "sha256": "2a8d15b8e6f9c347712339e1a942bb738681dcc5d2b26dd66d543a7c7ad5cf9c",
+        "greenPixels": 0
+      },
+      {
+        "kind": "raw-GPT",
+        "path": "assets/image/anatomy-reference/vascular-study/vessel-material-pilot/gpt-material-v1.png",
+        "sha256": "925d0de718f2d0cc7468f6436c39b665e0698f53f2f20a78f8428b958c953825",
+        "greenPixels": 0
+      },
+      {
+        "kind": "raw-GPT",
+        "path": "assets/image/anatomy-reference/vascular-study/vessel-material-pilot/gpt-junction-v2.png",
+        "sha256": "299cb423220fafcbded8eddbcc7ecae58fb9f31db6e459eb55ed4700023e1bd6",
+        "greenPixels": 0
+      }
+    ],
+    "stomachFoodInletIsCellEntry": false,
+    "hiddenMainTrunkPreserved": true,
+    "nativeEvidence": false,
+    "scope": "Final PNG alpha/color comparisons to frozen source-coordinate paths; accepted stomach floor is unchanged outside blood masks."
+  },
+  "resources": {
+    "passed": 93,
+    "total": 93,
+    "cases": [
+      {
+        "name": "two context pilot count",
+        "passed": true
+      },
+      {
+        "name": "prepare caches existing contexts",
+        "passed": true
+      },
+      {
+        "name": "both decoded contexts ready",
+        "passed": true
+      },
+      {
+        "name": "gastric trial is accepted",
+        "passed": true
+      },
+      {
+        "name": "old anatomy rejected",
+        "passed": true
+      },
+      {
+        "name": "normal campaign rejected",
+        "passed": true
+      },
+      {
+        "name": "other organ trial rejected",
+        "passed": true
+      },
+      {
+        "name": "authored alpha endpoints",
+        "passed": true
+      },
+      {
+        "name": "monotone alpha",
+        "passed": true
+      },
+      {
+        "name": "exterior draws when ready",
+        "passed": true
+      },
+      {
+        "name": "stomach replacement available",
+        "passed": true
+      },
+      {
+        "name": "draw creates no images",
+        "passed": true
+      },
+      {
+        "name": "invisible viewport skips exterior",
+        "passed": true
+      },
+      {
+        "name": "reopen count bounded",
+        "passed": true
+      },
+      {
+        "name": "reopen count bounded",
+        "passed": true
+      },
+      {
+        "name": "reopen count bounded",
+        "passed": true
+      },
+      {
+        "name": "reopen count bounded",
+        "passed": true
+      },
+      {
+        "name": "reopen count bounded",
+        "passed": true
+      },
+      {
+        "name": "reopen count bounded",
+        "passed": true
+      },
+      {
+        "name": "reopen count bounded",
+        "passed": true
+      },
+      {
+        "name": "reopen count bounded",
+        "passed": true
+      },
+      {
+        "name": "reopen count bounded",
+        "passed": true
+      },
+      {
+        "name": "reopen count bounded",
+        "passed": true
+      },
+      {
+        "name": "reopen count bounded",
+        "passed": true
+      },
+      {
+        "name": "reopen count bounded",
+        "passed": true
+      },
+      {
+        "name": "reopen count bounded",
+        "passed": true
+      },
+      {
+        "name": "reopen count bounded",
+        "passed": true
+      },
+      {
+        "name": "reopen count bounded",
+        "passed": true
+      },
+      {
+        "name": "reopen count bounded",
+        "passed": true
+      },
+      {
+        "name": "reopen count bounded",
+        "passed": true
+      },
+      {
+        "name": "reopen count bounded",
+        "passed": true
+      },
+      {
+        "name": "reopen count bounded",
+        "passed": true
+      },
+      {
+        "name": "reopen count bounded",
+        "passed": true
+      },
+      {
+        "name": "reopen count bounded",
+        "passed": true
+      },
+      {
+        "name": "reopen count bounded",
+        "passed": true
+      },
+      {
+        "name": "reopen count bounded",
+        "passed": true
+      },
+      {
+        "name": "reopen count bounded",
+        "passed": true
+      },
+      {
+        "name": "reopen count bounded",
+        "passed": true
+      },
+      {
+        "name": "world release preserves UI",
+        "passed": true
+      },
+      {
+        "name": "all dedicated images released",
+        "passed": true
+      },
+      {
+        "name": "positive decode placeholders rejected",
+        "passed": true
+      },
+      {
+        "name": "replacement unavailable before full decode",
+        "passed": true
+      },
+      {
+        "name": "placeholder exterior stays static",
+        "passed": true
+      },
+      {
+        "name": "world readiness advances independently",
+        "passed": true
+      },
+      {
+        "name": "placeholder handles released",
+        "passed": true
+      },
+      {
+        "name": "accepted gastric fallback stays ready",
+        "passed": true
+      },
+      {
+        "name": "accepted stomach draws while pilot loads",
+        "passed": true
+      },
+      {
+        "name": "fallback uses accepted original stomach PNG",
+        "passed": true
+      },
+      {
+        "name": "ready pilot replaces one stomach draw",
+        "passed": true
+      },
+      {
+        "name": "ready stomach uses generated vascular overlay PNG",
+        "passed": true
+      },
+      {
+        "name": "delegated gastric lifecycle releases pilot",
+        "passed": true
+      },
+      {
+        "name": "missing resource rejects complete pack",
+        "passed": true,
+        "asset": "battlefield",
+        "failureValue": "nil"
+      },
+      {
+        "name": "missing resource rejects stomach replacement",
+        "passed": true,
+        "asset": "battlefield",
+        "failureValue": "nil"
+      },
+      {
+        "name": "missing resource exterior is static",
+        "passed": true,
+        "asset": "battlefield",
+        "failureValue": "nil"
+      },
+      {
+        "name": "failure does not retry in draw/prepare",
+        "passed": true,
+        "asset": "battlefield",
+        "failureValue": "nil"
+      },
+      {
+        "name": "partial successful handles released",
+        "passed": true,
+        "asset": "battlefield",
+        "failureValue": "nil"
+      },
+      {
+        "name": "explicit release permits recovery",
+        "passed": true,
+        "asset": "battlefield",
+        "failureValue": "nil"
+      },
+      {
+        "name": "recovered resources release",
+        "passed": true,
+        "asset": "battlefield",
+        "failureValue": "nil"
+      },
+      {
+        "name": "missing resource rejects complete pack",
+        "passed": true,
+        "asset": "battlefield",
+        "failureValue": "0"
+      },
+      {
+        "name": "missing resource rejects stomach replacement",
+        "passed": true,
+        "asset": "battlefield",
+        "failureValue": "0"
+      },
+      {
+        "name": "missing resource exterior is static",
+        "passed": true,
+        "asset": "battlefield",
+        "failureValue": "0"
+      },
+      {
+        "name": "failure does not retry in draw/prepare",
+        "passed": true,
+        "asset": "battlefield",
+        "failureValue": "0"
+      },
+      {
+        "name": "partial successful handles released",
+        "passed": true,
+        "asset": "battlefield",
+        "failureValue": "0"
+      },
+      {
+        "name": "explicit release permits recovery",
+        "passed": true,
+        "asset": "battlefield",
+        "failureValue": "0"
+      },
+      {
+        "name": "recovered resources release",
+        "passed": true,
+        "asset": "battlefield",
+        "failureValue": "0"
+      },
+      {
+        "name": "missing resource rejects complete pack",
+        "passed": true,
+        "asset": "battlefield",
+        "failureValue": "-1"
+      },
+      {
+        "name": "missing resource rejects stomach replacement",
+        "passed": true,
+        "asset": "battlefield",
+        "failureValue": "-1"
+      },
+      {
+        "name": "missing resource exterior is static",
+        "passed": true,
+        "asset": "battlefield",
+        "failureValue": "-1"
+      },
+      {
+        "name": "failure does not retry in draw/prepare",
+        "passed": true,
+        "asset": "battlefield",
+        "failureValue": "-1"
+      },
+      {
+        "name": "partial successful handles released",
+        "passed": true,
+        "asset": "battlefield",
+        "failureValue": "-1"
+      },
+      {
+        "name": "explicit release permits recovery",
+        "passed": true,
+        "asset": "battlefield",
+        "failureValue": "-1"
+      },
+      {
+        "name": "recovered resources release",
+        "passed": true,
+        "asset": "battlefield",
+        "failureValue": "-1"
+      },
+      {
+        "name": "missing resource rejects complete pack",
+        "passed": true,
+        "asset": "exterior",
+        "failureValue": "nil"
+      },
+      {
+        "name": "missing resource rejects stomach replacement",
+        "passed": true,
+        "asset": "exterior",
+        "failureValue": "nil"
+      },
+      {
+        "name": "missing resource exterior is static",
+        "passed": true,
+        "asset": "exterior",
+        "failureValue": "nil"
+      },
+      {
+        "name": "failure does not retry in draw/prepare",
+        "passed": true,
+        "asset": "exterior",
+        "failureValue": "nil"
+      },
+      {
+        "name": "partial successful handles released",
+        "passed": true,
+        "asset": "exterior",
+        "failureValue": "nil"
+      },
+      {
+        "name": "explicit release permits recovery",
+        "passed": true,
+        "asset": "exterior",
+        "failureValue": "nil"
+      },
+      {
+        "name": "recovered resources release",
+        "passed": true,
+        "asset": "exterior",
+        "failureValue": "nil"
+      },
+      {
+        "name": "missing resource rejects complete pack",
+        "passed": true,
+        "asset": "exterior",
+        "failureValue": "0"
+      },
+      {
+        "name": "missing resource rejects stomach replacement",
+        "passed": true,
+        "asset": "exterior",
+        "failureValue": "0"
+      },
+      {
+        "name": "missing resource exterior is static",
+        "passed": true,
+        "asset": "exterior",
+        "failureValue": "0"
+      },
+      {
+        "name": "failure does not retry in draw/prepare",
+        "passed": true,
+        "asset": "exterior",
+        "failureValue": "0"
+      },
+      {
+        "name": "partial successful handles released",
+        "passed": true,
+        "asset": "exterior",
+        "failureValue": "0"
+      },
+      {
+        "name": "explicit release permits recovery",
+        "passed": true,
+        "asset": "exterior",
+        "failureValue": "0"
+      },
+      {
+        "name": "recovered resources release",
+        "passed": true,
+        "asset": "exterior",
+        "failureValue": "0"
+      },
+      {
+        "name": "missing resource rejects complete pack",
+        "passed": true,
+        "asset": "exterior",
+        "failureValue": "-1"
+      },
+      {
+        "name": "missing resource rejects stomach replacement",
+        "passed": true,
+        "asset": "exterior",
+        "failureValue": "-1"
+      },
+      {
+        "name": "missing resource exterior is static",
+        "passed": true,
+        "asset": "exterior",
+        "failureValue": "-1"
+      },
+      {
+        "name": "failure does not retry in draw/prepare",
+        "passed": true,
+        "asset": "exterior",
+        "failureValue": "-1"
+      },
+      {
+        "name": "partial successful handles released",
+        "passed": true,
+        "asset": "exterior",
+        "failureValue": "-1"
+      },
+      {
+        "name": "explicit release permits recovery",
+        "passed": true,
+        "asset": "exterior",
+        "failureValue": "-1"
+      },
+      {
+        "name": "recovered resources release",
+        "passed": true,
+        "asset": "exterior",
+        "failureValue": "-1"
+      }
+    ],
+    "reopenCycles": 25,
+    "dedicatedImagesPeak": 4,
+    "dedicatedImagesAfterRelease": 0,
+    "nativeEvidence": false,
+    "scope": "Real Lua module; controlled NanoVG resource API and texture dimensions."
+  },
+  "render": {
+    "nativeEvidence": false,
+    "productionEntry": "war.Render.draw",
+    "actualAssetDecodeVerified": true,
+    "samples": [
+      {
+        "viewportLogical": [
+          1440,
+          900
+        ],
+        "dpr": 1,
+        "zoom": 0.085,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          1440,
+          900
+        ],
+        "dpr": 1,
+        "zoom": 0.12,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          1440,
+          900
+        ],
+        "dpr": 1,
+        "zoom": 0.149,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          1440,
+          900
+        ],
+        "dpr": 1,
+        "zoom": 0.15,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          1440,
+          900
+        ],
+        "dpr": 1,
+        "zoom": 0.151,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          1440,
+          900
+        ],
+        "dpr": 2,
+        "zoom": 0.085,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          1440,
+          900
+        ],
+        "dpr": 2,
+        "zoom": 0.12,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          1440,
+          900
+        ],
+        "dpr": 2,
+        "zoom": 0.149,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          1440,
+          900
+        ],
+        "dpr": 2,
+        "zoom": 0.15,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          1440,
+          900
+        ],
+        "dpr": 2,
+        "zoom": 0.151,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          1440,
+          900
+        ],
+        "dpr": 3,
+        "zoom": 0.085,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          1440,
+          900
+        ],
+        "dpr": 3,
+        "zoom": 0.12,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          1440,
+          900
+        ],
+        "dpr": 3,
+        "zoom": 0.149,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          1440,
+          900
+        ],
+        "dpr": 3,
+        "zoom": 0.15,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          1440,
+          900
+        ],
+        "dpr": 3,
+        "zoom": 0.151,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          1024,
+          768
+        ],
+        "dpr": 1,
+        "zoom": 0.085,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          1024,
+          768
+        ],
+        "dpr": 1,
+        "zoom": 0.12,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          1024,
+          768
+        ],
+        "dpr": 1,
+        "zoom": 0.149,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          1024,
+          768
+        ],
+        "dpr": 1,
+        "zoom": 0.15,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          1024,
+          768
+        ],
+        "dpr": 1,
+        "zoom": 0.151,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          1024,
+          768
+        ],
+        "dpr": 2,
+        "zoom": 0.085,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          1024,
+          768
+        ],
+        "dpr": 2,
+        "zoom": 0.12,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          1024,
+          768
+        ],
+        "dpr": 2,
+        "zoom": 0.149,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          1024,
+          768
+        ],
+        "dpr": 2,
+        "zoom": 0.15,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          1024,
+          768
+        ],
+        "dpr": 2,
+        "zoom": 0.151,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          1024,
+          768
+        ],
+        "dpr": 3,
+        "zoom": 0.085,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          1024,
+          768
+        ],
+        "dpr": 3,
+        "zoom": 0.12,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          1024,
+          768
+        ],
+        "dpr": 3,
+        "zoom": 0.149,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          1024,
+          768
+        ],
+        "dpr": 3,
+        "zoom": 0.15,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          1024,
+          768
+        ],
+        "dpr": 3,
+        "zoom": 0.151,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          844,
+          390
+        ],
+        "dpr": 1,
+        "zoom": 0.085,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          844,
+          390
+        ],
+        "dpr": 1,
+        "zoom": 0.12,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          844,
+          390
+        ],
+        "dpr": 1,
+        "zoom": 0.149,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          844,
+          390
+        ],
+        "dpr": 1,
+        "zoom": 0.15,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          844,
+          390
+        ],
+        "dpr": 1,
+        "zoom": 0.151,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          844,
+          390
+        ],
+        "dpr": 2,
+        "zoom": 0.085,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          844,
+          390
+        ],
+        "dpr": 2,
+        "zoom": 0.12,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          844,
+          390
+        ],
+        "dpr": 2,
+        "zoom": 0.149,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          844,
+          390
+        ],
+        "dpr": 2,
+        "zoom": 0.15,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          844,
+          390
+        ],
+        "dpr": 2,
+        "zoom": 0.151,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          844,
+          390
+        ],
+        "dpr": 3,
+        "zoom": 0.085,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          844,
+          390
+        ],
+        "dpr": 3,
+        "zoom": 0.12,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          844,
+          390
+        ],
+        "dpr": 3,
+        "zoom": 0.149,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          844,
+          390
+        ],
+        "dpr": 3,
+        "zoom": 0.15,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          844,
+          390
+        ],
+        "dpr": 3,
+        "zoom": 0.151,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          430,
+          932
+        ],
+        "dpr": 1,
+        "zoom": 0.085,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          430,
+          932
+        ],
+        "dpr": 1,
+        "zoom": 0.12,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          430,
+          932
+        ],
+        "dpr": 1,
+        "zoom": 0.149,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          430,
+          932
+        ],
+        "dpr": 1,
+        "zoom": 0.15,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          430,
+          932
+        ],
+        "dpr": 1,
+        "zoom": 0.151,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          430,
+          932
+        ],
+        "dpr": 2,
+        "zoom": 0.085,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          430,
+          932
+        ],
+        "dpr": 2,
+        "zoom": 0.12,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          430,
+          932
+        ],
+        "dpr": 2,
+        "zoom": 0.149,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          430,
+          932
+        ],
+        "dpr": 2,
+        "zoom": 0.15,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          430,
+          932
+        ],
+        "dpr": 2,
+        "zoom": 0.151,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          430,
+          932
+        ],
+        "dpr": 3,
+        "zoom": 0.085,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          430,
+          932
+        ],
+        "dpr": 3,
+        "zoom": 0.12,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          430,
+          932
+        ],
+        "dpr": 3,
+        "zoom": 0.149,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          430,
+          932
+        ],
+        "dpr": 3,
+        "zoom": 0.15,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          430,
+          932
+        ],
+        "dpr": 3,
+        "zoom": 0.151,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          360,
+          780
+        ],
+        "dpr": 1,
+        "zoom": 0.085,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          360,
+          780
+        ],
+        "dpr": 1,
+        "zoom": 0.12,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          360,
+          780
+        ],
+        "dpr": 1,
+        "zoom": 0.149,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          360,
+          780
+        ],
+        "dpr": 1,
+        "zoom": 0.15,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          360,
+          780
+        ],
+        "dpr": 1,
+        "zoom": 0.151,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          360,
+          780
+        ],
+        "dpr": 2,
+        "zoom": 0.085,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          360,
+          780
+        ],
+        "dpr": 2,
+        "zoom": 0.12,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          360,
+          780
+        ],
+        "dpr": 2,
+        "zoom": 0.149,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          360,
+          780
+        ],
+        "dpr": 2,
+        "zoom": 0.15,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          360,
+          780
+        ],
+        "dpr": 2,
+        "zoom": 0.151,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          360,
+          780
+        ],
+        "dpr": 3,
+        "zoom": 0.085,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          360,
+          780
+        ],
+        "dpr": 3,
+        "zoom": 0.12,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          360,
+          780
+        ],
+        "dpr": 3,
+        "zoom": 0.149,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          360,
+          780
+        ],
+        "dpr": 3,
+        "zoom": 0.15,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      },
+      {
+        "viewportLogical": [
+          360,
+          780
+        ],
+        "dpr": 3,
+        "zoom": 0.151,
+        "projectionError": 0.0,
+        "saveRngVisibilityUnchanged": true
+      }
+    ],
+    "frames": [
+      {
+        "name": "gastric-entry",
+        "sourceCenter": [
+          548.176,
+          502.032
+        ],
+        "zoom": 0.085,
+        "file": "qa/render/gastric-entry-z0.085.png",
+        "sha256": "b5811954f99e5fd0fc8b100658269fe0d9eef45eba0492b0f8cf3dfc51c8a443"
+      },
+      {
+        "name": "gastric-entry",
+        "sourceCenter": [
+          548.176,
+          502.032
+        ],
+        "zoom": 0.12,
+        "file": "qa/render/gastric-entry-z0.12.png",
+        "sha256": "b8d3f69ddd89cf0521eec2bd18a9ef4eb9ddaa2d4d1ff8b81b4b185c85a683b2"
+      },
+      {
+        "name": "gastric-entry",
+        "sourceCenter": [
+          548.176,
+          502.032
+        ],
+        "zoom": 0.149,
+        "file": "qa/render/gastric-entry-z0.149.png",
+        "sha256": "db223794c6c4d20d2e7edfe491e7cb844794ff5b488475870ff78fa33f4476b2"
+      },
+      {
+        "name": "gastric-entry",
+        "sourceCenter": [
+          548.176,
+          502.032
+        ],
+        "zoom": 0.15,
+        "file": "qa/render/gastric-entry-z0.15.png",
+        "sha256": "a91adf5f05b1289eec17abbb953d6f04d42ca08e65bd5bbbf81616ce7ac7b2fc"
+      },
+      {
+        "name": "gastric-entry",
+        "sourceCenter": [
+          548.176,
+          502.032
+        ],
+        "zoom": 0.151,
+        "file": "qa/render/gastric-entry-z0.151.png",
+        "sha256": "0a9e2f820929a13caf420442dc57d379aafa21a2b9bf5d6baff12e41fe4dfc49",
+        "near015MeanRgbDifference": [
+          4.482913547092014,
+          4.203104654947917
+        ]
+      },
+      {
+        "name": "return-entry",
+        "sourceCenter": [
+          539,
+          520
+        ],
+        "zoom": 0.085,
+        "file": "qa/render/return-entry-z0.085.png",
+        "sha256": "bbbd40fe38095799d6045650ad23f2c05f19932bf995ccc93484ba10a2960891"
+      },
+      {
+        "name": "return-entry",
+        "sourceCenter": [
+          539,
+          520
+        ],
+        "zoom": 0.12,
+        "file": "qa/render/return-entry-z0.12.png",
+        "sha256": "f0a323c21fb7e5b31007220cc4ddb44a623c3b6f0ba651670ec5eb1705f248f3"
+      },
+      {
+        "name": "return-entry",
+        "sourceCenter": [
+          539,
+          520
+        ],
+        "zoom": 0.149,
+        "file": "qa/render/return-entry-z0.149.png",
+        "sha256": "ae82fffb5a76b112719257bed8f055b390af1199421a1e4aa622a3376259c022"
+      },
+      {
+        "name": "return-entry",
+        "sourceCenter": [
+          539,
+          520
+        ],
+        "zoom": 0.15,
+        "file": "qa/render/return-entry-z0.15.png",
+        "sha256": "cbc4feeb222303f764f55ef36d02c4b6c686e14c5f14189af1b5b698f774c5b1"
+      },
+      {
+        "name": "return-entry",
+        "sourceCenter": [
+          539,
+          520
+        ],
+        "zoom": 0.151,
+        "file": "qa/render/return-entry-z0.151.png",
+        "sha256": "a8fe7a8d3896d2c2b44c8ee6b95afd82982d436f93747fbbe23690cdd3468e0f",
+        "near015MeanRgbDifference": [
+          4.962523990207249,
+          4.742749532063802
+        ]
+      },
+      {
+        "name": "tissue-gate",
+        "sourceCenter": [
+          565.0100505063389,
+          503.98994949366113
+        ],
+        "zoom": 0.085,
+        "file": "qa/render/tissue-gate-z0.085.png",
+        "sha256": "c4e579d177cede96123425ef4eb7243a985b4d3417900286b6208378c28fee78"
+      },
+      {
+        "name": "tissue-gate",
+        "sourceCenter": [
+          565.0100505063389,
+          503.98994949366113
+        ],
+        "zoom": 0.12,
+        "file": "qa/render/tissue-gate-z0.12.png",
+        "sha256": "c61d17c96a9d852449aa88447bb2c48f60b47e653c6e1ed9198a8a21a10a6763"
+      },
+      {
+        "name": "tissue-gate",
+        "sourceCenter": [
+          565.0100505063389,
+          503.98994949366113
+        ],
+        "zoom": 0.149,
+        "file": "qa/render/tissue-gate-z0.149.png",
+        "sha256": "79ab12d8730ab144caac6b1aeedd82ed6ae9e3499a399bdd70c6fef4007e426a"
+      },
+      {
+        "name": "tissue-gate",
+        "sourceCenter": [
+          565.0100505063389,
+          503.98994949366113
+        ],
+        "zoom": 0.15,
+        "file": "qa/render/tissue-gate-z0.15.png",
+        "sha256": "3e48057347df4dd8457b53f212e33d48c1367ec4727d4c8f6b20b9222a519b43"
+      },
+      {
+        "name": "tissue-gate",
+        "sourceCenter": [
+          565.0100505063389,
+          503.98994949366113
+        ],
+        "zoom": 0.151,
+        "file": "qa/render/tissue-gate-z0.151.png",
+        "sha256": "02bef3c78596bbdbb805430527ed0c69252e190f6d850e97f6a9cb4e891e3ac7",
+        "near015MeanRgbDifference": [
+          5.218419816758898,
+          5.041810777452257
+        ]
+      }
+    ],
+    "movement": {
+      "file": "qa/render/production-entry-movement-15s.webp",
+      "sha256": "e690ce5fdb1ab113c7f72d8e13d8ec8ca0bfc6449791a6e784b0b1919e24fab7",
+      "durationMs": 15000,
+      "frames": 60,
+      "fps": 4,
+      "zoom": 0.15,
+      "productionModules": [
+        "war.Simulation",
+        "war.OrganTrial",
+        "war.Commands",
+        "war.Path",
+        "war.CellCollision"
+      ],
+      "gateId": "gastric.local.northwest",
+      "targetLane": 183,
+      "trace": [
+        {
+          "visualTime": 0.0,
+          "simulationTime": 0.0,
+          "source": [
+            555.3939393939394,
+            493.69696969696975
+          ],
+          "lane": 0
+        },
+        {
+          "visualTime": 0.25,
+          "simulationTime": 0.30000000000000004,
+          "source": [
+            555.4205751423435,
+            493.99151316908285
+          ],
+          "lane": 0
+        },
+        {
+          "visualTime": 0.5,
+          "simulationTime": 0.5,
+          "source": [
+            555.451611009405,
+            494.3347140397924
+          ],
+          "lane": 0
+        },
+        {
+          "visualTime": 0.75,
+          "simulationTime": 0.7999999999999999,
+          "source": [
+            555.4998592567247,
+            494.86825287914667
+          ],
+          "lane": 0
+        },
+        {
+          "visualTime": 1.0,
+          "simulationTime": 0.9999999999999999,
+          "source": [
+            555.5322429854648,
+            495.22635867585007
+          ],
+          "lane": 0
+        },
+        {
+          "visualTime": 1.25,
+          "simulationTime": 1.3,
+          "source": [
+            555.5808662190626,
+            495.76404418901575
+          ],
+          "lane": 0
+        },
+        {
+          "visualTime": 1.5,
+          "simulationTime": 1.5000000000000002,
+          "source": [
+            555.6132878438231,
+            496.1225690475469
+          ],
+          "lane": 0
+        },
+        {
+          "visualTime": 1.75,
+          "simulationTime": 1.8000000000000005,
+          "source": [
+            555.6619216204074,
+            496.66037114718256
+          ],
+          "lane": 0
+        },
+        {
+          "visualTime": 2.0,
+          "simulationTime": 2.0000000000000004,
+          "source": [
+            555.6943443106394,
+            497.0189077879136
+          ],
+          "lane": 0
+        },
+        {
+          "visualTime": 2.25,
+          "simulationTime": 2.3000000000000007,
+          "source": [
+            555.7429783836468,
+            497.55671316545465
+          ],
+          "lane": 0
+        },
+        {
+          "visualTime": 2.5,
+          "simulationTime": 2.500000000000001,
+          "source": [
+            555.7754011038353,
+            497.9152501374499
+          ],
+          "lane": 0
+        },
+        {
+          "visualTime": 2.75,
+          "simulationTime": 2.800000000000001,
+          "source": [
+            555.8240351851767,
+            498.45305560715155
+          ],
+          "lane": 0
+        },
+        {
+          "visualTime": 3.0,
+          "simulationTime": 3.0000000000000013,
+          "source": [
+            555.8564579062074,
+            498.8115925884606
+          ],
+          "lane": 0
+        },
+        {
+          "visualTime": 3.25,
+          "simulationTime": 3.3000000000000016,
+          "source": [
+            555.9050919877833,
+            499.3493980607533
+          ],
+          "lane": 0
+        },
+        {
+          "visualTime": 3.5,
+          "simulationTime": 3.5000000000000018,
+          "source": [
+            555.9375147088377,
+            499.70793504232415
+          ],
+          "lane": 0
+        },
+        {
+          "visualTime": 3.75,
+          "simulationTime": 3.800000000000002,
+          "source": [
+            555.9861487904202,
+            500.2457405146897
+          ],
+          "lane": 0
+        },
+        {
+          "visualTime": 4.0,
+          "simulationTime": 4.000000000000002,
+          "source": [
+            556.0185715114753,
+            500.60427749626797
+          ],
+          "lane": 0
+        },
+        {
+          "visualTime": 4.25,
+          "simulationTime": 4.300000000000001,
+          "source": [
+            556.067205593058,
+            501.1420829686357
+          ],
+          "lane": 0
+        },
+        {
+          "visualTime": 4.5,
+          "simulationTime": 4.5,
+          "source": [
+            556.0996283141131,
+            501.5006199502142
+          ],
+          "lane": 0
+        },
+        {
+          "visualTime": 4.75,
+          "simulationTime": 4.799999999999999,
+          "source": [
+            556.1482623956957,
+            502.0384254225819
+          ],
+          "lane": 0
+        },
+        {
+          "visualTime": 5.0,
+          "simulationTime": 4.999999999999998,
+          "source": [
+            556.1806851167507,
+            502.3969624041604
+          ],
+          "lane": 0
+        },
+        {
+          "visualTime": 5.25,
+          "simulationTime": 5.299999999999997,
+          "source": [
+            556.2293191983332,
+            502.9347678765281
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 5.5,
+          "simulationTime": 5.4999999999999964,
+          "source": [
+            556.2617419193882,
+            503.2933048581066
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 5.75,
+          "simulationTime": 5.799999999999995,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 6.0,
+          "simulationTime": 5.999999999999995,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 6.25,
+          "simulationTime": 6.299999999999994,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 6.5,
+          "simulationTime": 6.499999999999993,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 6.75,
+          "simulationTime": 6.799999999999992,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 7.0,
+          "simulationTime": 6.999999999999991,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 7.25,
+          "simulationTime": 7.29999999999999,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 7.5,
+          "simulationTime": 7.499999999999989,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 7.75,
+          "simulationTime": 7.799999999999988,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 8.0,
+          "simulationTime": 7.999999999999988,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 8.25,
+          "simulationTime": 8.299999999999986,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 8.5,
+          "simulationTime": 8.499999999999986,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 8.75,
+          "simulationTime": 8.799999999999985,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 9.0,
+          "simulationTime": 8.999999999999984,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 9.25,
+          "simulationTime": 9.299999999999983,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 9.5,
+          "simulationTime": 9.499999999999982,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 9.75,
+          "simulationTime": 9.799999999999981,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 10.0,
+          "simulationTime": 9.99999999999998,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 10.25,
+          "simulationTime": 10.29999999999998,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 10.5,
+          "simulationTime": 10.499999999999979,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 10.75,
+          "simulationTime": 10.799999999999978,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 11.0,
+          "simulationTime": 10.999999999999977,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 11.25,
+          "simulationTime": 11.299999999999976,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 11.5,
+          "simulationTime": 11.499999999999975,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 11.75,
+          "simulationTime": 11.799999999999974,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 12.0,
+          "simulationTime": 11.999999999999973,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 12.25,
+          "simulationTime": 12.299999999999972,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 12.5,
+          "simulationTime": 12.499999999999972,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 12.75,
+          "simulationTime": 12.79999999999997,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 13.0,
+          "simulationTime": 12.99999999999997,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 13.25,
+          "simulationTime": 13.299999999999969,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 13.5,
+          "simulationTime": 13.499999999999968,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 13.75,
+          "simulationTime": 13.799999999999967,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 14.0,
+          "simulationTime": 13.999999999999966,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 14.25,
+          "simulationTime": 14.299999999999965,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 14.5,
+          "simulationTime": 14.499999999999964,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        },
+        {
+          "visualTime": 14.75,
+          "simulationTime": 14.799999999999963,
+          "source": [
+            556.2790088184186,
+            503.4842457063173
+          ],
+          "lane": 183
+        }
+      ],
+      "distanceMovedSource": 9.827213214808081,
+      "nativeEvidence": false
+    },
+    "logicalSourceScale": "64*zoom",
+    "pixelScaleAt015": 9.6,
+    "saveRngVisibilityUnchanged": true,
+    "dedicatedImagesAfterRelease": 0,
+    "limitations": [
+      "SVG/Cairo approximates native GPU filtering and antialiasing.",
+      "These still frames do not certify continuous native movement or P95 frame time."
+    ]
+  },
+  "frozenAfter": {
+    "checked": 25,
+    "unchanged": true,
+    "files": [
+      {
+        "path": "docs/body-life/vascular-art-study/final-reference-data.json",
+        "beforeSha256": "3890744e2fcaf9e9907c85513e170e479f67b7fbb1fbf06385ac02bd80e8550c",
+        "afterSha256": "3890744e2fcaf9e9907c85513e170e479f67b7fbb1fbf06385ac02bd80e8550c",
+        "unchanged": true
+      },
+      {
+        "path": "docs/body-life/vascular-art-study/interface-contract.json",
+        "beforeSha256": "86878d45e150353b439fb0ea8e12ad22649185ff143d5dff4a8465cea8fa8253",
+        "afterSha256": "86878d45e150353b439fb0ea8e12ad22649185ff143d5dff4a8465cea8fa8253",
+        "unchanged": true
+      },
+      {
+        "path": "docs/body-life/vascular-art-study/organ-layers.json",
+        "beforeSha256": "43c5adbd65f481e64642242f3bc57b9fcc3c981633b70f86b014606ac49edb3d",
+        "afterSha256": "43c5adbd65f481e64642242f3bc57b9fcc3c981633b70f86b014606ac49edb3d",
+        "unchanged": true
+      },
+      {
+        "path": "docs/body-life/vascular-art-study/passages-data.json",
+        "beforeSha256": "37c4cfcaa565a15bccf8d23bd5ad26151f14c13562aeb375320a4e80f1998ae5",
+        "afterSha256": "37c4cfcaa565a15bccf8d23bd5ad26151f14c13562aeb375320a4e80f1998ae5",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/OrganBoundariesData.lua",
+        "beforeSha256": "b4617ba302f4deab54ffdb9a7be0750b1ab63000a50a8395e151456ad2e34e24",
+        "afterSha256": "b4617ba302f4deab54ffdb9a7be0750b1ab63000a50a8395e151456ad2e34e24",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/OrganBattlefieldData.lua",
+        "beforeSha256": "047dce28da8aa19d893a9116258631cf71c039ecb44b7c63478d40043cd9c273",
+        "afterSha256": "047dce28da8aa19d893a9116258631cf71c039ecb44b7c63478d40043cd9c273",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/GastricBattlefieldData.lua",
+        "beforeSha256": "81cbe1eedd29506a13fa19a7edd079d7f93b3eb58b4a9e4282e98277854b279d",
+        "afterSha256": "81cbe1eedd29506a13fa19a7edd079d7f93b3eb58b4a9e4282e98277854b279d",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/Save.lua",
+        "beforeSha256": "d55c19716b457cb3be7a0839e8179367194200c7bf01a3368a49724f64a72e05",
+        "afterSha256": "d55c19716b457cb3be7a0839e8179367194200c7bf01a3368a49724f64a72e05",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/Path.lua",
+        "beforeSha256": "a41c95130db4c45a96956c09ad122432055bd3cc0588835ae9cae5a321283929",
+        "afterSha256": "a41c95130db4c45a96956c09ad122432055bd3cc0588835ae9cae5a321283929",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/CellCollision.lua",
+        "beforeSha256": "a11dc894c9cf91347ff89e290301c0bb0889c520593d60cbe4c1bf122201d30f",
+        "afterSha256": "a11dc894c9cf91347ff89e290301c0bb0889c520593d60cbe4c1bf122201d30f",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/Simulation.lua",
+        "beforeSha256": "fab3667006f1d45ff13aaaf408f559eba33614f120a23d1d8806efb3aa3d082a",
+        "afterSha256": "fab3667006f1d45ff13aaaf408f559eba33614f120a23d1d8806efb3aa3d082a",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/Commands.lua",
+        "beforeSha256": "19573e908c5c09ff9572d686d497962949ea962dd5c4c67a7e700efd46b0996e",
+        "afterSha256": "19573e908c5c09ff9572d686d497962949ea962dd5c4c67a7e700efd46b0996e",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/World.lua",
+        "beforeSha256": "020f77336ced2aa0a4f7907aa79385c438eda38d76e2bc639d49ca864b70166c",
+        "afterSha256": "020f77336ced2aa0a4f7907aa79385c438eda38d76e2bc639d49ca864b70166c",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/View.lua",
+        "beforeSha256": "deafbe8bf8ebaa17b582d90c460cf9c21b0a6950d16fd925b1ac9708b8dcd7e0",
+        "afterSha256": "deafbe8bf8ebaa17b582d90c460cf9c21b0a6950d16fd925b1ac9708b8dcd7e0",
+        "unchanged": true
+      },
+      {
+        "path": "docs/body-life/vascular-art-study/organ-atlas/art.json",
+        "beforeSha256": "ddbfed8fe3d814b8041b50d4f39640f1b8af6013b5feb5bf3b927d2a67286fce",
+        "afterSha256": "ddbfed8fe3d814b8041b50d4f39640f1b8af6013b5feb5bf3b927d2a67286fce",
+        "unchanged": true
+      },
+      {
+        "path": "assets/image/anatomy-reference/reference.png",
+        "beforeSha256": "9a04e39961c07073cd9fdcfcdc2c98253ccc25d968e97dbea1f36669e06b5d9f",
+        "afterSha256": "9a04e39961c07073cd9fdcfcdc2c98253ccc25d968e97dbea1f36669e06b5d9f",
+        "unchanged": true
+      },
+      {
+        "path": "assets/image/anatomy-reference/vascular-study/stomach-playable/battlefield.png",
+        "beforeSha256": "9464d5f62338e1dc9644cedd4fc9ce1ba803d4afe5a172395249a679b47cb918",
+        "afterSha256": "9464d5f62338e1dc9644cedd4fc9ce1ba803d4afe5a172395249a679b47cb918",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/ReferenceMap.lua",
+        "beforeSha256": "f4de806b2f5f2f75299561478945ddc0ca8289b0088bcaa571219cb126ba3007",
+        "afterSha256": "f4de806b2f5f2f75299561478945ddc0ca8289b0088bcaa571219cb126ba3007",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/ReferenceVessels.lua",
+        "beforeSha256": "e015d6f00f2d723d5d14561190e3b21998aab42188e6571590c17956cb0f43d6",
+        "afterSha256": "e015d6f00f2d723d5d14561190e3b21998aab42188e6571590c17956cb0f43d6",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/ReferenceTrace.lua",
+        "beforeSha256": "79943529511e57e8a05b29a872f8dfb02ab682b2eea86f5bc23b7dabface607b",
+        "afterSha256": "79943529511e57e8a05b29a872f8dfb02ab682b2eea86f5bc23b7dabface607b",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/OrganBattlefield.lua",
+        "beforeSha256": "ba529bfa35a85833e1dc15f5a36bf2437b6a926e5299e36856593ec3b86d111c",
+        "afterSha256": "ba529bfa35a85833e1dc15f5a36bf2437b6a926e5299e36856593ec3b86d111c",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/OrganBattlefieldCore.lua",
+        "beforeSha256": "40c670d25c69281b0d5663c684dcb699b6871c806000fd2e8f013601218c6b8d",
+        "afterSha256": "40c670d25c69281b0d5663c684dcb699b6871c806000fd2e8f013601218c6b8d",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/GastricBattlefield.lua",
+        "beforeSha256": "789066936c29437cfcbc47490a7527288700e82c02b88b3e19458f69906b2b46",
+        "afterSha256": "789066936c29437cfcbc47490a7527288700e82c02b88b3e19458f69906b2b46",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/Vessels.lua",
+        "beforeSha256": "1a09c89674c7308dd711c07fe1cbe7955f157d3148589e7b40b7173d0b2cc179",
+        "afterSha256": "1a09c89674c7308dd711c07fe1cbe7955f157d3148589e7b40b7173d0b2cc179",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/war/OrganTrial.lua",
+        "beforeSha256": "2448272435d422dc9c10f13c54382727b93da03b9bce177235f0d58d7eb803fd",
+        "afterSha256": "2448272435d422dc9c10f13c54382727b93da03b9bce177235f0d58d7eb803fd",
+        "unchanged": true
+      }
+    ]
+  },
+  "changedDuringChecks": [],
+  "status": "PASS_OFFLINE"
+}

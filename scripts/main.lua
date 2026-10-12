@@ -16,16 +16,36 @@ function Start()
   if game.closeModal then game.closeModal() end
   game.transition=nil;game.modal=false;game.paused=true;game.started=false;game.selection={};game.inspectTarget=false;game.mode=false;game.placement=false;game.tab=false;game.lastTap=false
  end
- game.newGame=function(mode) mode=mode or (game.state.campaign and "campaign" or "sandbox");assert(mode=="campaign" or mode=="sandbox","未知游戏模式");game.vesselSurvey=false;game.state=Sim.new(math.floor(os.time()%2000000000),mode);R.prepare(game.state);game.selection={};game.inspectTarget=false;game.groups={{},{},{}};game.lastTap=false;game.camera={x=D.factions[1].x,y=D.factions[1].y};game.zoom=1;game.started=true;game.paused=false;game.defeatShown=false;game.victoryShown=false;game.accumulator=0;game.mode=false;game.placement=false;game.tab=false;H.lastLayout="";H.sidebar(game);R.home(game);H.startGuide(game) end
- game.replaceState=function(state) game.vesselSurvey=false;game.lastTap=false;game.inspectTarget=false;game.state=state;R.prepare(game.state);game.selection={};game.groups={{},{},{}};game.accumulator=0;game.started=true;game.paused=false;game.defeatShown=false;game.victoryShown=false;game.mode=false;game.placement=false;game.tab=false;H.lastLayout="";H.sidebar(game);R.home(game);H.refs.menu:SetVisible(false) end
+ game.newGame=function(mode) mode=mode or (game.state.campaign and "campaign" or "sandbox");assert(mode=="campaign" or mode=="sandbox","未知游戏模式");game.vesselSurvey=false;game.lastTap=false;game.inspectTarget=false;game.state=Sim.new(math.floor(os.time()%2000000000),mode);R.prepare(game.state);H.prepareBattlefield(game.state);game.selection={};game.groups={{},{},{}};game.camera={x=D.factions[1].x,y=D.factions[1].y};game.zoom=1;game.started=true;game.paused=false;game.defeatShown=false;game.victoryShown=false;game.accumulator=0;game.mode=false;game.placement=false;game.tab=false;H.lastLayout="";H.sidebar(game);R.home(game);H.startGuide(game) end
+ game.replaceState=function(state) game.vesselSurvey=false;game.lastTap=false;game.inspectTarget=false;game.state=state;R.prepare(game.state);H.prepareBattlefield(game.state);game.selection={};game.groups={{},{},{}};game.accumulator=0;game.started=true;game.paused=false;game.defeatShown=false;game.victoryShown=false;game.mode=false;game.placement=false;game.tab=false;H.lastLayout="";H.sidebar(game);R.home(game);H.refs.menu:SetVisible(false) end
+ game.startGastricTrial=function()
+  game.replaceState(require('war.GastricTrial').new(math.floor(os.time()%2000000000)))
+  game.camera={x=1120,y=1552};game.zoom=.15;game.fogDisabled=true
+  game.selection={};for id in pairs(game.state.entities) do game.selection[id]=true end
+  H.refs.play:SetVisible(true)
+ end
+ game.startFullBodyMap=function()
+  game.replaceState(require('war.FullBodyBattlefield').new(math.floor(os.time()%2000000000)))
+  game.camera={x=1016,y=1512};game.zoom=.15;game.fogDisabled=true
+  game.selection={};H.refs.play:SetVisible(true)
+ end
+ game.startOrganTrial=function()
+  game.replaceState(require('war.OrganTrial').new(math.floor(os.time()%2000000000)))
+  local d=require('war.OrganBattlefield').organ('liver');local b=d and d.sourceBox or {464,448,644,628}
+  game.camera={x=b[1]+b[3],y=b[2]+b[4]+512};game.zoom=.15;game.fogDisabled=true
+  game.selection={};for id,e in pairs(game.state.entities) do if require('war.OrganBattlefield').organAt(game.state,e,e.x,e.y)=='liver' then game.selection[id]=true end end
+  H.refs.play:SetVisible(true)
+ end
  R.init();R.prepare(game.state);H.create(game);R.home(game);Audio.init();game.audio=Audio.play;Audio.play("ambient")
  SubscribeToEvent(R.vg,"NanoVGRender","HandleWorldRender")
  SubscribeToEvent("Update","HandleUpdate")
  SubscribeToEvent("KeyDown","HandleKeyDown")
  SubscribeToEvent("MouseWheel","HandleWheel")
- print("[细胞战争] READY | view=topdown2d | world=body | map=2048x4096 | anatomy=3 | walls=sealed | mode=campaign | event=trachea | terrain=3 | zones=3 | controllable=cells | fixedStep=0.1")
+ -- Enter the integrated full-body battlefield with its normal interactive camera.
+ game.startFullBodyMap()
+ print("[细胞战争] READY | view=topdown2d | world=body | map=2048x4096 | anatomy="..tostring(game.state.anatomyVersion).." | walls=sealed | mode=fullbody | camera=free | zoom="..tostring(game.zoom).." | controllable=cells | fixedStep=0.1")
 end
-function Stop() Audio.stop();require("war.Cells").release(UI.GetNVGContext());require("war.UIArt").release(UI.GetNVGContext());require("war.OrganArt").release(UI.GetNVGContext());require("war.BrainRig").release(UI.GetNVGContext());R.close();UI.Shutdown() end
+function Stop() Audio.stop();require('war.FullBodyMapArt').release(UI.GetNVGContext());require('war.OrganAtlasArt').release(UI.GetNVGContext());require('war.GastricArt').release(UI.GetNVGContext());require("war.BodyLife").release(UI.GetNVGContext());require("war.ReferenceArt").release(UI.GetNVGContext());require("war.LegacyReferenceArtV3").release(UI.GetNVGContext());require("war.Cells").release(UI.GetNVGContext());require("war.UIArt").release(UI.GetNVGContext());require("war.OrganArt").release(UI.GetNVGContext());require("war.BrainRig").release(UI.GetNVGContext());R.close();UI.Shutdown() end
 ---@param eventType string
 ---@param eventData UpdateEventData
 function HandleUpdate(eventType,eventData)

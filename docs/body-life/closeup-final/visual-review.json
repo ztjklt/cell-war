@@ -1,0 +1,37 @@
+{
+  "nativeEvidence": false,
+  "inspectedStaticViews": [
+    "heart-center-z0.4",
+    "kidney_r-center-z0.4",
+    "heart-organ-fit",
+    "brain-organ-fit",
+    "stomach-organ-fit",
+    "kidney_r-boundary-z0.4",
+    "large_intestine-organ-fit",
+    "lung_r-center-z0.4",
+    "liver-organ-fit",
+    "pancreas-organ-fit",
+    "bladder-organ-fit",
+    "small_intestine-organ-fit"
+  ],
+  "observations": [
+    "Heart and kidney tissue borders are smooth compared with the rejected polygonal version.",
+    "Organ-fit views now show differentiated tissue while fixed connections retain their original colour and placement.",
+    "Gallbladder initially showed a liver overlay; the final correction was visually read and now preserves the green foreground.",
+    "No mirrored or repeated texture tiles appear in the inspected samples.",
+    "Protected outer foreground retains the lower original resolution, so it is softer than internal HD tissue at microscope zoom.",
+    "Lung tissue at .4 contains large alveolar features and appears softer than heart/kidney tissue; generated image resolution alone is not a guarantee of sharp fine detail."
+  ],
+  "dynamicReview": "Root agent handles actual Canvas playback in the 319px pane. This subagent inspected keyframes and records frame differences without claiming human perceptibility.",
+  "weakestPaneViews": [
+    "small_intestine-organ-fit",
+    "large_intestine-organ-fit",
+    "bladder-organ-fit",
+    "kidney_r-organ-fit"
+  ],
+  "testVersionNotes": {
+    "regression191": "Final gallbladder correction; 191/191, including Boundary7/7 and Foreground2/2.",
+    "closeup7": "Final gallbladder correction; real field clipping, resource fallback, Save/RNG, DPR, LOD.",
+    "other40": "Ran on same frozen code/assets before liver-mask-only correction. These isolate unchanged body-life resources, old lung mesh, backend semantics, fullmap wiring and distant visibility. Final closeup checks cover corrected data."
+  }
+}

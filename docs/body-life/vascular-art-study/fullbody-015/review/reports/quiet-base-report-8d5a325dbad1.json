@@ -1,0 +1,292 @@
+{
+  "schema": "fullbody-015-quiet-base-independent-qa/v1",
+  "nativeEvidence": false,
+  "status": "PASS",
+  "passed": 44,
+  "total": 44,
+  "rows": [
+    {
+      "id": "hash:assets/image/anatomy-reference/reference.png",
+      "status": "PASS",
+      "sha256": "9a04e39961c07073cd9fdcfcdc2c98253ccc25d968e97dbea1f36669e06b5d9f",
+      "expectedSha256": "9a04e39961c07073cd9fdcfcdc2c98253ccc25d968e97dbea1f36669e06b5d9f"
+    },
+    {
+      "id": "hash:assets/image/anatomy-reference/vascular-study/fullbody-gpt-source/gpt-quiet-body-underlay-v1.png",
+      "status": "PASS",
+      "sha256": "317d2580754d5d3bcdbb4f696a9147876ba798d1384493fe02f59d2c70c5f216",
+      "expectedSha256": "317d2580754d5d3bcdbb4f696a9147876ba798d1384493fe02f59d2c70c5f216"
+    },
+    {
+      "id": "hash:assets/image/anatomy-reference/vascular-study/fullbody-015/masks/old-blood-candidate.png",
+      "status": "PASS",
+      "sha256": "7295171145a7cc5e81464d5b4e007115e9d8e88522acb3f3ed47b086d521bbdb",
+      "expectedSha256": "7295171145a7cc5e81464d5b4e007115e9d8e88522acb3f3ed47b086d521bbdb"
+    },
+    {
+      "id": "hash:docs/body-life/vascular-art-study/fullbody-015/bake/quietbase-mask-candidates.json",
+      "status": "PASS",
+      "sha256": "8014912566c8c60d6de9ec75a555e4b03b76939c1d906e10acd82227da3940c0",
+      "expectedSha256": "8014912566c8c60d6de9ec75a555e4b03b76939c1d906e10acd82227da3940c0"
+    },
+    {
+      "id": "hash:assets/image/anatomy-reference/vascular-study/fullbody-015/masks/organ-foreground.png",
+      "status": "PASS",
+      "sha256": "70aca35b0f4c68c800a0f154012ea8d35c73e87b62bd7714fd1e369dfe99a50b",
+      "expectedSha256": "70aca35b0f4c68c800a0f154012ea8d35c73e87b62bd7714fd1e369dfe99a50b"
+    },
+    {
+      "id": "hash:assets/image/anatomy-reference/vascular-study/fullbody-015/masks/protected-foreground.png",
+      "status": "PASS",
+      "sha256": "84dcd3c5f761ab1f2e9ab682d423537565c9dfb275a328aa71a8d5736a30d364",
+      "expectedSha256": "84dcd3c5f761ab1f2e9ab682d423537565c9dfb275a328aa71a8d5736a30d364"
+    },
+    {
+      "id": "hash:assets/image/anatomy-reference/vascular-study/fullbody-015/masks/body-interior-with-2px-guard.png",
+      "status": "PASS",
+      "sha256": "c1653e54def74aed7e58a2ff3a525889c6e27153d5db08d8f0bb7c32dc5e5a84",
+      "expectedSha256": "c1653e54def74aed7e58a2ff3a525889c6e27153d5db08d8f0bb7c32dc5e5a84"
+    },
+    {
+      "id": "hash:assets/image/anatomy-reference/vascular-study/fullbody-gpt-source/quiet-body-registered-v1.png",
+      "status": "PASS",
+      "sha256": "695b151a96f2da9f2e270b9f3bb223d1182ea013b8973355e62d644d02f3aa43",
+      "expectedSha256": "695b151a96f2da9f2e270b9f3bb223d1182ea013b8973355e62d644d02f3aa43"
+    },
+    {
+      "id": "hash:scripts/war/FullBodyBaseFillData.lua",
+      "status": "PASS",
+      "sha256": "b6ec5281149ea2b5d642a2adfb8f4a61200e0aa56485125f4dd764b76f565f90",
+      "expectedSha256": "b6ec5281149ea2b5d642a2adfb8f4a61200e0aa56485125f4dd764b76f565f90"
+    },
+    {
+      "id": "hash:docs/body-life/vascular-art-study/fullbody-015/quiet-base/applied-mask.png",
+      "status": "PASS",
+      "sha256": "79ec77697f1294dc61ab3ef5f1a02e1e90abe94156bbfad5e69cbc8423df3025",
+      "expectedSha256": "79ec77697f1294dc61ab3ef5f1a02e1e90abe94156bbfad5e69cbc8423df3025"
+    },
+    {
+      "id": "hash:docs/body-life/vascular-art-study/fullbody-015/quiet-base/applied-alpha.png",
+      "status": "PASS",
+      "sha256": "137a9e24867774e62fcebc1c8e793040b6253040a8e6efb1c67541b3eee43c24",
+      "expectedSha256": "137a9e24867774e62fcebc1c8e793040b6253040a8e6efb1c67541b3eee43c24"
+    },
+    {
+      "id": "full source registration",
+      "status": "PASS"
+    },
+    {
+      "id": "changes stay inside explicit frozen mask",
+      "status": "PASS",
+      "changedOutsideMask": 0,
+      "selectedPixels": 264603
+    },
+    {
+      "id": "unchanged:organ-foreground",
+      "status": "PASS",
+      "changedPixels": 0
+    },
+    {
+      "id": "unchanged:protected-foreground",
+      "status": "PASS",
+      "changedPixels": 0
+    },
+    {
+      "id": "outer contour guard unchanged",
+      "status": "PASS",
+      "changedPixels": 0
+    },
+    {
+      "id": "source cream bones and joints unchanged",
+      "status": "PASS",
+      "changedPixels": 0
+    },
+    {
+      "id": "accepted source alpha exact",
+      "status": "PASS"
+    },
+    {
+      "id": "raw-organ-unchanged:brain",
+      "status": "PASS",
+      "organId": "brain",
+      "changedPixels": 0
+    },
+    {
+      "id": "raw-reserved-unchanged:brain",
+      "status": "PASS",
+      "organId": "brain",
+      "changedPixels": 0
+    },
+    {
+      "id": "raw-organ-unchanged:lung_r",
+      "status": "PASS",
+      "organId": "lung_r",
+      "changedPixels": 0
+    },
+    {
+      "id": "raw-reserved-unchanged:lung_r",
+      "status": "PASS",
+      "organId": "lung_r",
+      "changedPixels": 0
+    },
+    {
+      "id": "raw-organ-unchanged:lung_l",
+      "status": "PASS",
+      "organId": "lung_l",
+      "changedPixels": 0
+    },
+    {
+      "id": "raw-reserved-unchanged:lung_l",
+      "status": "PASS",
+      "organId": "lung_l",
+      "changedPixels": 0
+    },
+    {
+      "id": "raw-organ-unchanged:liver",
+      "status": "PASS",
+      "organId": "liver",
+      "changedPixels": 0
+    },
+    {
+      "id": "raw-reserved-unchanged:liver",
+      "status": "PASS",
+      "organId": "liver",
+      "changedPixels": 0
+    },
+    {
+      "id": "raw-organ-unchanged:stomach",
+      "status": "PASS",
+      "organId": "stomach",
+      "changedPixels": 0
+    },
+    {
+      "id": "raw-reserved-unchanged:stomach",
+      "status": "PASS",
+      "organId": "stomach",
+      "changedPixels": 0
+    },
+    {
+      "id": "raw-organ-unchanged:pancreas",
+      "status": "PASS",
+      "organId": "pancreas",
+      "changedPixels": 0
+    },
+    {
+      "id": "raw-reserved-unchanged:pancreas",
+      "status": "PASS",
+      "organId": "pancreas",
+      "changedPixels": 0
+    },
+    {
+      "id": "raw-organ-unchanged:kidney_r",
+      "status": "PASS",
+      "organId": "kidney_r",
+      "changedPixels": 0
+    },
+    {
+      "id": "raw-reserved-unchanged:kidney_r",
+      "status": "PASS",
+      "organId": "kidney_r",
+      "changedPixels": 0
+    },
+    {
+      "id": "raw-organ-unchanged:kidney_l",
+      "status": "PASS",
+      "organId": "kidney_l",
+      "changedPixels": 0
+    },
+    {
+      "id": "raw-reserved-unchanged:kidney_l",
+      "status": "PASS",
+      "organId": "kidney_l",
+      "changedPixels": 0
+    },
+    {
+      "id": "raw-organ-unchanged:large_intestine",
+      "status": "PASS",
+      "organId": "large_intestine",
+      "changedPixels": 0
+    },
+    {
+      "id": "raw-reserved-unchanged:large_intestine",
+      "status": "PASS",
+      "organId": "large_intestine",
+      "changedPixels": 0
+    },
+    {
+      "id": "raw-organ-unchanged:small_intestine",
+      "status": "PASS",
+      "organId": "small_intestine",
+      "changedPixels": 0
+    },
+    {
+      "id": "raw-reserved-unchanged:small_intestine",
+      "status": "PASS",
+      "organId": "small_intestine",
+      "changedPixels": 0
+    },
+    {
+      "id": "raw-organ-unchanged:bladder",
+      "status": "PASS",
+      "organId": "bladder",
+      "changedPixels": 0
+    },
+    {
+      "id": "raw-reserved-unchanged:bladder",
+      "status": "PASS",
+      "organId": "bladder",
+      "changedPixels": 0
+    },
+    {
+      "id": "raw-organ-unchanged:heart",
+      "status": "PASS",
+      "organId": "heart",
+      "changedPixels": 0
+    },
+    {
+      "id": "raw-reserved-unchanged:heart",
+      "status": "PASS",
+      "organId": "heart",
+      "changedPixels": 0
+    },
+    {
+      "id": "source vector trace has finite declared regions and points",
+      "status": "PASS",
+      "regionCount": 824,
+      "pointCount": 50360
+    },
+    {
+      "id": "frozen navigation and accepted files unchanged",
+      "status": "PASS"
+    }
+  ],
+  "inputHashes": {
+    "docs/body-life/vascular-art-study/fullbody-015/quiet-base/report.json": "a0754fb6bb5d5af5dbd1c878942ac33f7fbc64c427b7674b2bd7806a03a0dd3d",
+    "assets/image/anatomy-reference/reference.png": "9a04e39961c07073cd9fdcfcdc2c98253ccc25d968e97dbea1f36669e06b5d9f",
+    "assets/image/anatomy-reference/vascular-study/fullbody-gpt-source/gpt-quiet-body-underlay-v1.png": "317d2580754d5d3bcdbb4f696a9147876ba798d1384493fe02f59d2c70c5f216",
+    "assets/image/anatomy-reference/vascular-study/fullbody-015/masks/old-blood-candidate.png": "7295171145a7cc5e81464d5b4e007115e9d8e88522acb3f3ed47b086d521bbdb",
+    "docs/body-life/vascular-art-study/fullbody-015/bake/quietbase-mask-candidates.json": "8014912566c8c60d6de9ec75a555e4b03b76939c1d906e10acd82227da3940c0",
+    "assets/image/anatomy-reference/vascular-study/fullbody-015/masks/organ-foreground.png": "70aca35b0f4c68c800a0f154012ea8d35c73e87b62bd7714fd1e369dfe99a50b",
+    "assets/image/anatomy-reference/vascular-study/fullbody-015/masks/protected-foreground.png": "84dcd3c5f761ab1f2e9ab682d423537565c9dfb275a328aa71a8d5736a30d364",
+    "assets/image/anatomy-reference/vascular-study/fullbody-015/masks/body-interior-with-2px-guard.png": "c1653e54def74aed7e58a2ff3a525889c6e27153d5db08d8f0bb7c32dc5e5a84",
+    "assets/image/anatomy-reference/vascular-study/fullbody-gpt-source/quiet-body-registered-v1.png": "695b151a96f2da9f2e270b9f3bb223d1182ea013b8973355e62d644d02f3aa43",
+    "scripts/war/FullBodyBaseFillData.lua": "b6ec5281149ea2b5d642a2adfb8f4a61200e0aa56485125f4dd764b76f565f90",
+    "docs/body-life/vascular-art-study/fullbody-015/quiet-base/applied-mask.png": "79ec77697f1294dc61ab3ef5f1a02e1e90abe94156bbfad5e69cbc8423df3025",
+    "docs/body-life/vascular-art-study/fullbody-015/quiet-base/applied-alpha.png": "137a9e24867774e62fcebc1c8e793040b6253040a8e6efb1c67541b3eee43c24",
+    "scripts/war/ReferenceArt.lua": "c0f543caaa0f3a9a8fb97d53f193b1eb27895784fcee4526bd85155d2bfc2c41",
+    "scripts/war/FullBodyMapArt.lua": "861b7fcba1f4128a81c53b13abc12fbf87d3478190d8a02a14b50ba58831178a",
+    "scripts/war/FullBodyMapArtData.lua": "14cefe47c75beecda5c376947acbe8a0503b334a93e5e8af71bd32f6241cba1f"
+  },
+  "sourceBox": [
+    0,
+    0,
+    1024,
+    1536
+  ],
+  "changedDuringChecks": [],
+  "manifestSha256": "b898a90aa26c202c9573782543944784ac978c71f49a52a5a332a8afd8bd1362",
+  "limits": [
+    "Exact pixel protection belongs to the registered bitmap. The source vector trace approximates it and still requires .15 visual review.",
+    "No source outline, collision polygon, artery graph or accepted organ floor is redefined by this background."
+  ]
+}

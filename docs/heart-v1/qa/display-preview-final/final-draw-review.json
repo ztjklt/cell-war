@@ -1,0 +1,128 @@
+{
+  "schema": "heart-final-staged-draw-review/v1",
+  "staged": true,
+  "nativeEvidence": false,
+  "atlasPath": "/tmp/heart-v1-staging/assets/gpt-heart-atlas-v4-bleed.png",
+  "atlasSha256": "6064509cf67ce2b56b2a26876ade02ed1fd60e976da8bdca646fbfbf0a0d5d5b",
+  "framesSampled": 24,
+  "gifPath": "/tmp/heart-v1-staging/final-display-preview/split-alpha-v4/staged/heart-vessels-z006-loop.gif",
+  "gifSha256": "dbb3fa5192085e5baeb290799136f19592732ceb8e986790cb93af75f2f3fb7c",
+  "gifEncodedFrames": 20,
+  "gifPeriodMilliseconds": 1000,
+  "meshTriangles": 384,
+  "fillTrianglesByZoom": {
+    "0.06": [
+      384
+    ],
+    "0.12": [
+      768
+    ],
+    "0.15": [
+      384
+    ]
+  },
+  "vascularAlphaByZoom": {
+    "0.06": [
+      0.0
+    ],
+    "0.12": [
+      0.5575785161583976
+    ],
+    "0.15": [
+      1.0
+    ]
+  },
+  "maxOffsetSource": 1.0,
+  "minimumAreaRatio": 0.8482946827072955,
+  "allFramesSafe": true,
+  "offlineLuaTimingMilliseconds": {
+    "min": 2.775042004941497,
+    "median": 4.043895998620428,
+    "max": 7.475250000425149
+  },
+  "offlineRasterTimingMilliseconds": {
+    "min": 242.8315829965868,
+    "median": 307.83079150205594,
+    "max": 425.59787500067614
+  },
+  "animationEvidence": {
+    "compareFrames": [
+      0,
+      7
+    ],
+    "differentPixels": 99755,
+    "differenceBounds": [
+      165,
+      269,
+      511,
+      693
+    ]
+  },
+  "visualInspection": {
+    "paths": [
+      "/tmp/heart-v1-staging/final-display-preview/split-alpha-v4/staged/heart-vessels-z006-frame00.png",
+      "/tmp/heart-v1-staging/final-display-preview/split-alpha-v4/staged/heart-vessels-z006-frame07.png",
+      "/tmp/heart-v1-staging/final-display-preview/split-alpha-v4/staged/heart-vessels-z012-p0.00.png",
+      "/tmp/heart-v1-staging/final-display-preview/split-alpha-v4/staged/heart-vessels-z015-p0.30.png"
+    ],
+    "roiRectangleVesselHardCutsVisibleAt006": false,
+    "myocardiumAndApexAlphaContourIntact": true,
+    "normalAtlasRGBBleedCannotBeJudgedByPremultipliedCairo": true
+  },
+  "oldProductionComparison": {
+    "schema": "heart-staged-production-pixel-equality/v2",
+    "staged": true,
+    "nativeEvidence": false,
+    "records": [
+      {
+        "phase": 0.0,
+        "productionPath": "/tmp/heart-v1-staging/final-display-preview/split-alpha-v4/production/heart-vessels-z015-p0.00.png",
+        "stagedPath": "/tmp/heart-v1-staging/final-display-preview/split-alpha-v4/staged/heart-vessels-z015-p0.00.png",
+        "size": [
+          1776,
+          2064
+        ],
+        "differentPixels": 20,
+        "fractionDifferentPixels": 5.4560374327816185e-06,
+        "maxChannelDifference": 12,
+        "meanAbsoluteChannelDifference": 2.5575175466163837e-05,
+        "differenceBounds": [
+          1324,
+          1248,
+          1325,
+          1268
+        ],
+        "pixelExact": false
+      },
+      {
+        "phase": 0.3,
+        "productionPath": "/tmp/heart-v1-staging/final-display-preview/split-alpha-v4/production/heart-vessels-z015-p0.30.png",
+        "stagedPath": "/tmp/heart-v1-staging/final-display-preview/split-alpha-v4/staged/heart-vessels-z015-p0.30.png",
+        "size": [
+          1776,
+          2064
+        ],
+        "differentPixels": 43537,
+        "fractionDifferentPixels": 0.011876975085550667,
+        "maxChannelDifference": 12,
+        "meanAbsoluteChannelDifference": 0.0036670709590404357,
+        "differenceBounds": [
+          391,
+          611,
+          1325,
+          1790
+        ],
+        "pixelExact": false
+      }
+    ],
+    "pixelExact": false,
+    "rawVisibleRGBAExact": true,
+    "motionVerticesExact": true,
+    "interpretation": "2x2 atlas relocation changes Cairo bilinear sampling quantization; source alpha/visible RGB and the 221 display vertices are exact. PixelExact remains false and this is not native GPU evidence."
+  },
+  "limits": [
+    "Offline actual Lua draw through SVG/Cairo. These timings and images are not native GPU performance or native window evidence.",
+    "Native transparent-RGB filtering must be verified by the root native operator.",
+    "Old production atlas layout and new 2x2 layout are not strict Cairo pixel-identical; delta is preserved in the report."
+  ]
+}

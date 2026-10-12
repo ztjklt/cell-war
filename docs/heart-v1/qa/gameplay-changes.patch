@@ -1,0 +1,199 @@
+--- baseline/OrganBattlefield.lua
++++ scripts/war/OrganBattlefield.lua
+@@ -1,6 +1,7 @@
+ -- Opt-in multi-organ facade. Existing gastric saves still delegate unchanged.
+ local Gastric=require('war.GastricBattlefield')
+ local Factory=require('war.OrganBattlefieldCore')
++local Heart=require('war.HeartBattlefield')
+ ---@type table|nil
+ local Data=nil
+ local O={data=Gastric.data,maxRadiusSource=.53125}
+@@ -19,10 +20,11 @@
+ function O.radius(e)return Gastric.radius(e)end
+ function O.net(s)
+  if not opted(s)then return Gastric.net(s)end
+- return require('war.Vessels').forState(frozenState)
++ return Heart.net(require('war.Vessels').forState(frozenState))
+ end
+ function O.organ(id)
+  if id=='stomach'then return Gastric.data end
++ if id=='heart'then return Heart.data end
+  if not Data then Data=require('war.OrganBattlefieldData')end
+  return Data.organs and Data.organs[id]
+ end
+@@ -41,7 +43,8 @@
+  if id=='stomach'then return Gastric end
+  if not engines[id]then
+   local d=O.organ(id);if not d or d.available==false then return nil end
+-  engines[id]=Factory.create(d,{enabled=opted,net=O.net})
++  engines[id]=Factory.create(d,{enabled=opted,net=O.net,
++   localBlood=Heart.data.bloodLanes,localJunctions=Heart.data.junctionContracts,replacedLanes=Heart.data.rawBloodDomains})
+  end
+  return engines[id]
+ end
+@@ -55,7 +58,7 @@
+   if not seen[id]then copy[#copy+1]=id;seen[id]=true end
+  end
+  if #copy==0 then return false,'EMPTY_ORGAN_SET'end
+- table.sort(copy);s.organBattlefieldVersion=1;s.organBattlefieldIds=copy
++ table.sort(copy);s.organBattlefieldVersion=1;s.organBattlefieldIds=copy;s.heartBattlefieldVersion=1
+  for _,id in ipairs(copy)do engine(id).enable(stateFor(s,id))end
+  O.net(s);return true
+ end
+@@ -69,6 +72,9 @@
+  end
+ end
+ local function bloodOwner(s,lane)
++ if Heart.isLocalLane(lane)then
++  for _,id in ipairs(O.activeOrgans(s))do if id=='heart'then return id end end
++ end
+  for _,id in ipairs(O.activeOrgans(s))do
+   if O.organ(id).bloodLanes.siege[lane]then return id end
+  end
+@@ -78,6 +84,13 @@
+  if not opted(s)then return Gastric.pointAllowed(s,e,x,y,0)and'stomach'or nil end
+  local owner=transitOwner(s,e)
+  if owner and engine(owner).pointAllowed(stateFor(s,owner),e,x,y,0)then return owner end
++ -- The cutaway is an explicit foreground tissue layer. Lung tissue projected
++ -- behind a heart cavity cannot become an implicit floor or a septal shortcut.
++ if Heart.insideOuter(x,y)then
++  for _,id in ipairs(O.activeOrgans(s))do if id=='heart'then
++   return engine(id).pointAllowed(s,e,x,y,0)and id or nil
++  end end
++ end
+  local found
+  for _,id in ipairs(O.activeOrgans(s))do
+   if engine(id).pointAllowed(stateFor(s,id),e,x,y,0)then
+@@ -122,6 +135,8 @@
+ function O.lane(s,e,x,y,preferred)
+  if not opted(s)then return Gastric.lane(s,e,x,y,preferred)end
+  if preferred~=nil and O.pointAllowed(s,e,x,y,preferred)then return preferred end
++ -- Four cavities take precedence over projected surface coronary/outflow lines.
++ for lane=203,210 do if O.pointAllowed(s,e,x,y,lane)then return lane end end
+  if O.pointAllowed(s,e,x,y,0)then return 0 end
+  local net=O.net(s)
+  for lane=1,#net.edges do if O.pointAllowed(s,e,x,y,lane)then return lane end end
+--- baseline/OrganBattlefieldCore.lua
++++ scripts/war/OrganBattlefieldCore.lua
+@@ -166,12 +166,22 @@
+  for lane,b in pairs(assert(D.bloodLanes[name],'missing blood domains')) do
+   p.blood[lane]={domain=ringsDomain(b.safeRings),data=b}
+  end
++ -- A single registered heart adapter is shared by every organ route. This
++ -- prevents a remote lung/liver planner from using the obsolete two-node heart.
++ for lane,b in pairs(config.localBlood and config.localBlood[name]or{})do
++  p.blood[lane]={domain=ringsDomain(b.safeRings),data=b}
++ end
+  for _,g in ipairs(assert(D.gateContracts[name],'missing gate contracts')) do
+   p.gates[#p.gates+1]={id=g.id,lane=g.laneIndex,domain=ringsDomain(g.throatRings),
+    inner={x=g.pipeAnchorSource[1],y=g.pipeAnchorSource[2],lane=g.laneIndex},
+    outer={x=g.tissueAnchorSource[1],y=g.tissueAnchorSource[2],lane=0}}
+  end
+  for _,j in ipairs(D.junctionContracts and D.junctionContracts[name] or {}) do
++  if not(config.replacedLanes and(config.replacedLanes[j.aLane]or config.replacedLanes[j.bLane]))then
++   p.junctions[#p.junctions+1]={a=j.aLane,b=j.bLane,domain=ringsDomain(j.safeRings),node=j.nodeId}
++  end
++ end
++ for _,j in ipairs(config.localJunctions and config.localJunctions[name]or{})do
+   p.junctions[#p.junctions+1]={a=j.aLane,b=j.bLane,domain=ringsDomain(j.safeRings),node=j.nodeId}
+  end
+  prepared[name]=p;return p
+@@ -318,7 +328,13 @@
+   -- Movement toward a gate retains its source lane before reaching the throat.
+   return ownSweep(s,e,p,sx,sy,ax,ay,lane),lane,nil
+  end
+- return transition(s,e,p,sx,sy,ax,ay,lane,target),target,nil
++ if transition(s,e,p,sx,sy,ax,ay,lane,target)then return true,target,nil end
++ -- A short heart join may be optimized to one destination waypoint. Partial
++ -- movement keeps its source blood domain until it reaches the named junction.
++ if config.replacedLanes and(config.replacedLanes[lane]or config.replacedLanes[target])then
++  return ownSweep(s,e,p,sx,sy,ax,ay,lane),lane,nil
++ end
++ return false,target,nil
+ end
+ function G.lane(s,e,x,y,preferred)
+  if not G.enabled(s) then return nil end
+--- baseline/CellCollision.lua
++++ scripts/war/CellCollision.lua
+@@ -9,6 +9,8 @@
+ end
+ local function samePlane(s,a,b)
+  if not s or not require('war.OrganBattlefield').enabled(s) then return true end
++ local heart=require('war.HeartBattlefield').samePlane(s,a,b)
++ if heart~=nil then return heart end
+  if a.gastricTransit or b.gastricTransit then return true end
+  return (a.vesselLane or 0)==(b.vesselLane or 0)
+ end
+--- baseline/Combat.lua
++++ scripts/war/Combat.lua
+@@ -24,12 +24,14 @@
+  if s.campaign and (not require("war.Campaign").allowed(s,e.x,e.y) or not require("war.Campaign").allowed(s,t.x,t.y)) then return false end
+  local d=D.units[e.kind] or D.buildings[e.kind];local radius=(t.category=="building" and (D.buildings[t.kind].size or 1)*.5 or 0)
+  local clear=not (s.campaign and (s.campaign.terrainVersion==2 or s.campaign.terrainVersion==3 or s.campaign.terrainVersion==4)) or require("war.Path").clear(s,e.x,e.y,t.x,t.y,e.faction,e.vesselLane)
++ local heartClear=require('war.HeartBattlefield').combatClear(s,e,t)
++ if heartClear~=nil then clear=heartClear end
+  if U.dist(e,t)<=d.range+radius and clear then
+   if e.cooldown<=0 then F.hit(s,e,t,d.damage);e.cooldown=d.cool end
+   return true
+  elseif chase and e.category=="unit" then C.go(s,e,t.x,t.y,dt,clear and d.range+radius-.1 or .5);return true end return false
+ end
+ function F.updateTower(s,b,dt)
+- b.cooldown=math.max(0,b.cooldown-dt);if b.complete and b.kind=="tower" then local t=F.enemy(s,b,10,true);if t and b.cooldown<=0 then F.hit(s,b,t,19);b.cooldown=1.5 end end
++ b.cooldown=math.max(0,b.cooldown-dt);if b.complete and b.kind=="tower" then local t=F.enemy(s,b,10,true);if t and b.cooldown<=0 and require('war.HeartBattlefield').combatClear(s,b,t)~=false then F.hit(s,b,t,19);b.cooldown=1.5 end end
+ end
+ return F
+--- baseline/Save.lua
++++ scripts/war/Save.lua
+@@ -43,6 +43,7 @@
+  local snap={version=D.VERSION,mapSize=D.width(s),mapWidth=D.width(s),mapHeight=D.height(s),indexStride=D.INDEX_STRIDE,legacyTerrain=s.legacyTerrain,terrainStyle=s.terrainStyle,seed=s.seed,rng=s.rng,time=s.time,tick=s.tick,nextId=s.nextId,entities={},resources={},factions={},generatedChunks={},spawnedChunks=U.copy(s.spawnedChunks),commands=U.copy(s.commands),tutorial=s.tutorial,outcome=s.outcome,lastDay=s.lastDay,delivered=s.delivered,farmed=s.farmed,trained=s.trained,selectedOnce=s.selectedOnce}
+  snap.mode=s.campaign and "campaign" or "sandbox"
+  snap.anatomyVersion=s.anatomyVersion or 1
++ if s.heartBattlefieldVersion==1 then snap.heartBattlefieldVersion=1;snap.heartEncounterVersion=s.heartEncounterVersion end
+  if s.fullbodyBattlefieldVersion==1 then
+   snap.fullbodyBattlefieldVersion=1;snap.organBattlefieldIds=U.copy(s.organBattlefieldIds)
+   snap.organTraffic=require('war.OrganTraffic').snapshot(s)
+@@ -128,6 +129,11 @@
+   assert(snap.organBattlefieldVersion==1 and anatomyVersion==4 and not campaign and type(snap.organBattlefieldIds)=='table','器官战场版本不支持')
+   assert(require('war.OrganBattlefield').enable(s,snap.organBattlefieldIds))
+  end
++ if snap.heartBattlefieldVersion~=nil then
++  assert(snap.heartBattlefieldVersion==1 and (s.organBattlefieldVersion==1 or s.fullbodyBattlefieldVersion==1),'心脏战场版本不支持')
++  s.heartEncounterVersion=snap.heartEncounterVersion==1 and 1 or nil
++ end
++ local vesselCount=W.hasVessels(s)and #((s.organBattlefieldVersion==1 or s.fullbodyBattlefieldVersion==1)and require('war.OrganBattlefield').net(s)or W.vessels(s)).edges or 0
+  if campaign then s.campaign=U.copy(snap.campaign) end
+  for _,key in ipairs({"rng","time","tick","nextId","commands","tutorial","outcome","lastDay","delivered","farmed","trained","selectedOnce"}) do if snap[key]~=nil then s[key]=U.copy(snap[key]) end end
+  convertOrders(s.commands,stride)
+@@ -152,7 +158,10 @@
+    assert(e.category=="unit" and require("war.Campaign").allowed(s,e.x,e.y),"单位位于未开放组织")
+    if s.campaign.terrainVersion==2 or s.campaign.terrainVersion==3 or s.campaign.terrainVersion==4 then assert(W.land(s,math.floor(e.x),math.floor(e.y)) and e.vesselLane<=#W.vessels(s).edges,"单位位于战场障碍或未知血管") end
+   end
+-  e=U.copy(e);e.path={};e.longRoute=nil;e.pathGoal=nil;e.pathResolved=nil;e.routeEnd=nil;e.pathPending=false;e.pathIndex=1;e.pathFailed=false;convertOrders(e.orders,stride);if previous then e.vesselLane=0 else assert(finite(e.vesselLane) and e.vesselLane%1==0 and e.vesselLane>=0 and e.vesselLane<=(W.hasVessels(s) and #W.vessels(s).edges or 0),"血管通路状态损坏") end;s.entities[id]=e
++  e=U.copy(e);e.path={};e.longRoute=nil;e.pathGoal=nil;e.pathResolved=nil;e.routeEnd=nil;e.pathPending=false;e.pathIndex=1;e.pathFailed=false;convertOrders(e.orders,stride);if previous then e.vesselLane=0 else assert(finite(e.vesselLane) and e.vesselLane%1==0 and e.vesselLane>=0 and e.vesselLane<=vesselCount,"血管通路状态损坏") end;s.entities[id]=e
++ end
++ if snap.heartBattlefieldVersion==nil and (s.organBattlefieldVersion==1 or s.fullbodyBattlefieldVersion==1)then
++  for _,e in pairs(s.entities)do require('war.HeartBattlefield').migrateEntity(s,e)end
+  end
+  for k,r in pairs(snap.resources) do
+   local key=tonumber(k);assert(key and key%1==0 and key>=1 and key<=stride*(old and 192 or height) and type(r)=="table" and D.names[r.kind],"资源数据损坏")
+--- baseline/OrganTrial.lua
++++ scripts/war/OrganTrial.lua
+@@ -16,8 +16,9 @@
+    if i>=4 then break end
+   end
+  end
++ local heartEncounter=require('war.HeartBattlefield').seedEncounter(s)
+  W.rebuild(s);W.fog(s)
+- s.message='器官战场试验 · 选择细胞，点击组织地面移动';s.messageTime=12
++ s.message=heartEncounter and '器官战场试验 · 选择细胞进入四个心腔，沿瓣膜口通行和战斗' or '器官战场试验 · 选择细胞，点击组织地面移动';s.messageTime=12
+  return s
+ end
+ function T.step(s,dt)
+@@ -26,6 +27,7 @@
+  W.rebuild(s);require('war.Path').update(s,500,.003)
+  for _,e in ipairs(K.units(s)) do require('war.Workers').update(s,e,dt) end
+  require('war.OrganTraffic').update(s,dt)
++ require('war.HeartBattlefield').afterStep(s,dt)
+  K.resolve(s);W.rebuild(s)
+  for _,e in ipairs(K.units(s)) do require('war.Motion').record(e) end
+  if s.tick%10==0 then W.fog(s) end

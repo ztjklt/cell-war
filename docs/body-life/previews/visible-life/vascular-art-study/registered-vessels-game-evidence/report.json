@@ -1,0 +1,71 @@
+{
+  "schema": "registered-vessels-game-evidence/v1",
+  "status": "OFFLINE_FIXTURES_EXPORTED_NATIVE_UNDETERMINED",
+  "nativeEvidence": false,
+  "productionInstalled": false,
+  "frozenGraphSha256": "3890744e2fcaf9e9907c85513e170e479f67b7fbb1fbf06385ac02bd80e8550c",
+  "navigationReportSha256": "b720c0f840c4f8e465d5bdb7ba7bb642947a2999e81a8be1c39efb05bcd044e5",
+  "inputs": {
+    "scripts/war/Render.lua": "3588ed6a96d8805b5e4dca42799e99fa082a87b2e668e209afebdd40b3891b92",
+    "scripts/war/View.lua": "deafbe8bf8ebaa17b582d90c460cf9c21b0a6950d16fd925b1ac9708b8dcd7e0",
+    "scripts/war/Cells.lua": "14f36d08d440937105e5e0ed2c33433cc95d8adedd7f0ad4f0acdd483215196b",
+    "scripts/war/CellFrames.lua": "c081147ab85ea817caa083b03767262ce34d193adaaea8acc7294361cb06df17",
+    "scripts/war/ReferenceArt.lua": "531b702ffad15afa57a4f25f95952af834a865f0474f06dc372aef4213eea8ca",
+    "scripts/war/ReferenceFill.lua": "d4287cd705c2c6b8a54f7ed192d56e61ffc7750586395d3075898baeea681ae6",
+    "scripts/war/Data.lua": "6aa40613c149a254391e68d5ffca3ef5f6b7d4dbba8a4861b6b8adb7983d5f33"
+  },
+  "sprites": 12,
+  "projectionSamples": 60,
+  "maximumWorldError": 1.1368683772161603e-13,
+  "actualTracePoints": 1279,
+  "meetingTraceFrames": 242,
+  "fill": {
+    "file": "actual-reference-fill.svg",
+    "sha256": "01efacb1217149a5ee6c0f364f154959245e50f63c7090fca6b78cebcb1521fa",
+    "sourceBox": [
+      0,
+      0,
+      1024,
+      1536
+    ],
+    "renderer": "actual war.ReferenceArt.draw at zoom=.15",
+    "baseOnly": true,
+    "nativeEvidence": false,
+    "bodyLifeDisabledInIsolatedQaRuntime": true,
+    "meaning": "Existing full-fill renderer for handover comparison; not a new generated organ map."
+  },
+  "fillDisplay": {
+    "file": "fill-display-data.json",
+    "sha256": "fddc648eaddf703595e959fe63c37d267bcab0549f20ccef3cbd789459f9f152",
+    "paths": 1062
+  },
+  "fillDisplayVerification": {
+    "status": "PASS_JSON_PATHS_MATCH_ACTUAL_OFFLINE_DRAW",
+    "nativeEvidence": false,
+    "meanRgbaDifference": 0.015031814575195312,
+    "p95RgbaDifference": 0.0,
+    "peakRgbaDifference": 255.0,
+    "imageSize": [
+      512,
+      768
+    ],
+    "fillDisplaySha256": "fddc648eaddf703595e959fe63c37d267bcab0549f20ccef3cbd789459f9f152",
+    "actualSvgSha256": "01efacb1217149a5ee6c0f364f154959245e50f63c7090fca6b78cebcb1521fa",
+    "limit": "Cairo and export decimal precision differ from native NanoVG; source comparison only. Transparent RGB can produce a high peak."
+  },
+  "imageHandlesAfterRelease": 0,
+  "modulesChangedSinceMovementRecording": [],
+  "nativePreview": "Stopped; not restarted by this QA export.",
+  "checks": {
+    "sourceGraphUnchanged": true,
+    "gameSourceFilesUnchanged": true,
+    "projectionRoundTripAndDpr": true,
+    "movementCoordinatesCopiedFromActualLuaReport": true,
+    "gameSpritesDrawnByActualRenderDraw": true
+  },
+  "limits": [
+    "Fixture for art inspection, not a production art integration test.",
+    "Native seam, filtering, performance and live-unit visibility remain unconfirmed.",
+    "The .14 marker/cell switch and current .15 fill are preserved for honest review."
+  ]
+}

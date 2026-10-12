@@ -14,7 +14,7 @@ function W.vessels(s) return Vessels.forState(s) end
 function W.worldScale(s) return s.terrainStyle=="body-v4" and 1 or D.WORLD_SCALE end
 function W.starts(s)
  if s and s.campaign then return require("war.CampaignData").forState(s).starts or require("war.CampaignData").starts end
- if s and s.anatomyVersion==3 then return require("war.ReferenceMap").starts end
+ if s and (s.anatomyVersion==3 or s.anatomyVersion==4) then return require("war.ReferenceMaps").forState(s).starts end
  if s and s.terrainStyle=="body-v4" then return D.v4Factions end
  return s and s.terrainStyle~="body" and oldBases or D.factions
 end
@@ -69,6 +69,10 @@ end
 function W.tile(x,y,seed) return Anatomy.tile(x,y,seed) end
 function W.terrain(s,x,y) if x<1 or y<1 or x>D.width(s) or y>D.height(s) then return 14 end return s.tiles[U.key(x,y)] end
 local function seedResource(s,x,y,kind,amount,legacy)
+ if kind=="food" and not legacy then
+  local organ=require("war.OrganRegions").at(s,x+.5,y+.5)
+  if organ=="small_intestine" or organ=="large_intestine" then amount=amount*require("war.CombatConfig").intestine.glucoseMultiplier end
+ end
  s.resources[U.key(x,y)]={x=x+.5,y=y+.5,kind=kind,amount=amount,max=amount,initialAmount=amount,regen=0,legacy=legacy or nil}
 end
 function W.ensureChunk(s,cx,cy)
@@ -100,7 +104,7 @@ end
 function W.generate(seed,legacy,style,mode,anatomyVersion,mapId)
  local s={version=D.VERSION,seed=seed,rng=seed,time=0,tick=0,nextId=1,mapSize=style=="body-v4" and 4096 or style and style~="body" and 1024 or D.MAP,mapWidth=style=="body-v4" and 4096 or style and style~="body" and 1024 or D.MAP,mapHeight=style=="body-v4" and 8192 or style and style~="body" and 1024 or D.MAP_HEIGHT,entities={},resources={},tiles={},factions={},commands={},effects={},tutorial=1,outcome="playing",message="",messageTime=0,generated={},newChunks={},spawnedChunks={},legacyTerrain=legacy or nil,terrainStyle=style or "body"}
  s.mode=mode or "sandbox"
- s.anatomyVersion=(s.terrainStyle=='body') and (anatomyVersion or 3) or 1
+ s.anatomyVersion=(s.terrainStyle=='body') and (anatomyVersion or 4) or 1
  if s.mode=="campaign" then s.campaign=require("war.Campaign").create(s.anatomyVersion,mapId) end
  local tileCache={}
  setmetatable(s.tiles,{__index=function(t,k)
@@ -110,13 +114,13 @@ function W.generate(seed,legacy,style,mode,anatomyVersion,mapId)
    local G=require("war.CampaignData").forState(s)
    if s.campaign.map_id and s.campaign.map_id~="trachea_01" and s.campaign.map_id~="nasal_01" then
     biome=G.tile and G.tile(x+.5,y+.5) or (G.blocked(x+.5,y+.5) and 14 or G.biome or 20)
-   elseif require("war.Territory").zone(x+.5,y+.5,s) and s.campaign.terrainVersion==3 then biome=G.blocked(x+.5,y+.5) and 17 or 27
+   elseif (s.campaign.terrainVersion==3 or s.campaign.terrainVersion==4) then biome=G.blocked(x+.5,y+.5) and 17 or 27
    elseif s.campaign.terrainVersion==2 then
     local tube=W.vessels(s).sample(x,y)
     biome=G.blocked(x+.5,y+.5) and 21 or tube.biome>0 and tube.biome or 20
    else biome=20 end
   elseif s.legacyTerrain and x<=192 and y<=192 then biome=W.legacyTile(x,y,s.seed)
-  elseif s.anatomyVersion==3 then biome=require('war.ReferenceMap').tile(x,y,s.seed)
+  elseif (s.anatomyVersion==3 or s.anatomyVersion==4) then biome=require('war.ReferenceMaps').forState(s).tile(x,y,s.seed)
   elseif s.anatomyVersion==2 then biome=require('war.AnatomyV2').tile(x,y,s.seed)
   elseif s.terrainStyle=="body-v4" then biome=Anatomy.tile(x,y,s.seed,1)
   elseif s.terrainStyle=="body-v3" then biome=require("war.AnatomyV3").tile(x,y,s.seed)
@@ -181,7 +185,14 @@ function W.neighbors(s,x,y,r)
   for _,id in ipairs(s.spatial[xx..":"..yy] or {}) do out[#out+1]=s.entities[id] end
  end end return out
 end
-function W.land(s,x,y) return require("war.Campaign").allowed(s,x+.5,y+.5) and x>=2 and y>=2 and x<=D.width(s)-1 and y<=D.height(s)-1 and not D.biomes[W.terrain(s,x,y)].blocked end
+function W.land(s,x,y)
+ local G=require('war.OrganBattlefield')
+ if G.enabled(s) and G.handles(s,x+.5,y+.5) then
+  local e={kind='scout'};local lane=G.lane(s,e,x+.5,y+.5)
+  return lane~=nil and G.pointAllowed(s,e,x+.5,y+.5,lane)
+ end
+ return require('war.Campaign').allowed(s,x+.5,y+.5) and x>=2 and y>=2 and x<=D.width(s)-1 and y<=D.height(s)-1 and not D.biomes[W.terrain(s,x,y)].blocked
+end
 function W.walkable(s,x,y,f)
  if not W.land(s,x,y) then return false end
  local id=s.occupancy[U.key(x,y)];local b=id and s.entities[id]
@@ -200,5 +211,9 @@ function W.canBuild(s,kind,x,y,f)
  for _,b in pairs(s.entities) do if b.category=="building" and U.alive(b) and U.dist(b,{x=x,y=y})<(size+(D.buildings[b.kind].size or 1))*.5 then return false,"建筑间距不足" end end
  return true
 end
-function W.lane(s,x,y) return W.hasVessels(s) and W.vessels(s).initial(x,y) or 0 end
+function W.lane(s,x,y)
+ local G=require('war.OrganBattlefield')
+ if G.enabled(s) and G.handles(s,x,y) then return G.lane(s,{kind='scout'},x,y) or 0 end
+ return W.hasVessels(s) and W.vessels(s).initial(x,y) or 0
+end
 return W

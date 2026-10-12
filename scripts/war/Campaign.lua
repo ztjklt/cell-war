@@ -10,9 +10,9 @@ local function stageFor(c)
  for _,item in ipairs(data.stages or {}) do if item.id==c.event.id or item.region==c.event.id then return item end end
 end
 function C.create(version,mapIdOverride)
- local legacy=version~=3;local id=mapIdOverride or (legacy and "nasal_01" or "trachea_01");local eventId=legacy and "nasal" or (id=="trachea_01" and "trachea" or id)
- local seed={campaign={terrainVersion=legacy and 2 or 3,map_id=id,event={id=eventId}}};local stage=Registry.stage(id)
- return {stage=stage and stage.index or 1,map_id=id,current_map_id=id,previous_map_id=nil,visited_maps={[id]=true},map_progress={},terrainVersion=legacy and 2 or 3,completed={},unlocked={[legacy and "nasal" or "trachea"]=true},randomEnabled=false,rewards={},reinforcements=R.new(version),autoplay=false,autoplayTimer=0,event={id=eventId,map_id=id,status="active",phase="defend",elapsed=0,wave=0,pendingViruses=0,spawnTimer=0,spawnQueue={},secure=0,zones=T.new(seed)}}
+ local legacy=version~=3 and version~=4;local id=mapIdOverride or (legacy and "nasal_01" or "trachea_01");local eventId=legacy and "nasal" or (id=="trachea_01" and "trachea" or id)
+ local seed={campaign={terrainVersion=legacy and 2 or version,map_id=id,event={id=eventId}}};local stage=Registry.stage(id)
+ return {stage=stage and stage.index or 1,map_id=id,current_map_id=id,previous_map_id=nil,visited_maps={[id]=true},map_progress={},terrainVersion=legacy and 2 or version,completed={},unlocked={[legacy and "nasal" or "trachea"]=true},randomEnabled=false,rewards={},reinforcements=R.new(version),autoplay=false,autoplayTimer=0,event={id=eventId,map_id=id,status="active",phase="defend",elapsed=0,wave=0,pendingViruses=0,spawnTimer=0,spawnQueue={},secure=0,zones=T.new(seed)}}
 end
 function C.allowed(s,x,y)
  if not s.campaign then return true end
@@ -30,7 +30,7 @@ function C.enterMap(s,targetId)
  if not s.campaign or not Registry.exists(targetId) then return false,"Unknown campaign map" end
  if not Registry.implemented(targetId) then return false,"Campaign map is not available yet" end
  local c=s.campaign;local old=mapId(c);local stage=Registry.stage(targetId)
- c.previous_map_id=old;c.map_id=targetId;c.current_map_id=targetId;c.visited_maps=c.visited_maps or {};c.visited_maps[targetId]=true;c.map_progress=c.map_progress or {};c.stage=stage and stage.index or c.stage;c.terrainVersion=3;c.awaitingContent=false
+ c.previous_map_id=old;c.map_id=targetId;c.current_map_id=targetId;c.visited_maps=c.visited_maps or {};c.visited_maps[targetId]=true;c.map_progress=c.map_progress or {};c.stage=stage and stage.index or c.stage;c.terrainVersion=s.anatomyVersion;c.awaitingContent=false
  c.event={id=targetId,map_id=targetId,status="active",phase="defend",elapsed=0,wave=0,pendingViruses=0,spawnTimer=0,spawnQueue={},secure=0,zones=T.new(s)}
  return true,Registry.definition(targetId)
 end

@@ -1,0 +1,183 @@
+[INFO] 开始构建项目: /Users/jitian/.taptap-maker/preview/c77d76c39450447ca7bafe38d059fd9c2a3ad04a7b223daa29b3b681ffd63caa/preparations/018689b3-e6bd-4064-b282-6abc9c6de021/source
+[INFO] [1/21] 初始化构建目录...
+[INFO]   完成 (0.00s)
+[INFO] [2/21] 加载配置...
+[INFO]   构建策略: 全量引用 + 增强引用 — groups 含全量通配 **，所有本地资源入包，同时扫描普通路径引用
+[INFO]   预下载: 未启用 — 检测到 preload_groups 为空，blocking 资源启动补齐，其余资源由引擎 DWP 按需下载
+[INFO]   输出目录: /Users/jitian/.taptap-maker/preview/c77d76c39450447ca7bafe38d059fd9c2a3ad04a7b223daa29b3b681ffd63caa/preparations/018689b3-e6bd-4064-b282-6abc9c6de021/source/.project/../dist/1.0.0
+[INFO]   资产目录: /Users/jitian/.taptap-maker/preview/c77d76c39450447ca7bafe38d059fd9c2a3ad04a7b223daa29b3b681ffd63caa/preparations/018689b3-e6bd-4064-b282-6abc9c6de021/source/.project/../dist/assets
+[INFO]   项目: 99c42b81-6612-4d02-a15a-1efa4bf0eebf v1.0.0
+[INFO]   入口: main.lua
+[INFO]   输出: /Users/jitian/.taptap-maker/preview/c77d76c39450447ca7bafe38d059fd9c2a3ad04a7b223daa29b3b681ffd63caa/preparations/018689b3-e6bd-4064-b282-6abc9c6de021/source/.project/../dist/1.0.0
+[INFO]   构建号: 1
+[INFO]   完成 (0.00s)
+[INFO] [3/21] 加载远程资源...
+[INFO]   加载远端来源: engine (tag: stable)
+[INFO]     导入 4 个远端资源: engine (client=d2e42cce, server=88fd2961)
+[INFO]   加载远端来源: engine-res (tag: stable)
+[INFO]     导入 1068 个远端资源: engine-res (client=f8c7bb8e, server=75ae2900)
+[INFO]   加载远端来源: official-res (tag: stable)
+[INFO]     导入 38888 个远端资源: official-res (client=60b25079, server=326ba56f)
+[INFO]   完成 (0.72s)
+[INFO] [4/21] 注入固定引用...
+[INFO]   已确认固定引用: 1 个（含已存在资源）
+[INFO]   完成 (0.00s)
+[INFO] [5/21] 扫描本地资源...
+[INFO]   扫描目录: ../assets (prefix: ../assets)
+[INFO]   扫描目录: ../scripts (prefix: ../scripts)
+[INFO]   增强引用: 完成 — BFS 扫描 550 文件/可达 552 (0.7s)
+[INFO]   增强引用解析耗时: 0.7s
+[WARN]   增强引用: 50 个路径未匹配到资源（已截断，上限 50）
+[WARN]     generation-v2.json: assets/image/anatomy-reference/vascular-study/stomach-terrain-v2/gpt-rich-rooms-style-approved-v2.png
+[WARN]     generation-v2.json: /Users/jitian/.codex/generated_images/01a11af8-adbc-7d11-8076-e0c0198d0b3e/exec-61a8a91f-090d-42d7-8edf-5e3c4bdc4b0e.png
+[WARN]     generation-v2.json: /Users/jitian/.codex/generated_images/01a11af8-adbc-7d11-8076-e0c0198d0b3e/exec-b15b57b8-a75a-48d9-b855-0f843fb534f5.png
+[WARN]     generation-v2.json: docs/body-life/vascular-art-study/organ-atlas/revision-v2/guides/heart-terrain-guide.png
+[WARN]     generation-v2.json: /Users/jitian/.codex/generated_images/01a11af8-adbc-7d11-8076-e0c0198d0b3e/exec-cf4d995a-f43c-4d96-a8e6-df5a1ff1fa0d.png
+[WARN]     organ-tissue-atlas.json: /Users/jitian/.codex/generated_images/01a11af8-adbc-7d11-8076-e0c0198d0b3e/exec-a7c60eb8-5f76-41a0-bf1d-6d738ccb0e65.png
+[WARN]     OrganSortieNavigationStudy.lua: |%.17g,%.17g,%d>%.17g,%.17g,%d
+[WARN]     generation-v2-before-floor-only.json: /Users/jitian/.codex/generated_images/01a129aa-2599-7823-956e-1d3a992bc6fa/exec-958823eb-76e1-419a-9d27-af0a8d925086.png
+[WARN]     generation-v2-before-floor-only.json: assets/image/anatomy-reference/vascular-study/stomach-terrain-v2/gpt-rich-rooms-style-approved-v2.png
+[WARN]     generation-v2-before-floor-only.json: docs/body-life/vascular-art-study/organ-atlas/revision-v2/guides/kidney_r-terrain-guide.png
+[WARN]     generation-v2-before-floor-only.json: /Users/jitian/.codex/generated_images/01a129aa-2599-7823-956e-1d3a992bc6fa/exec-5bc0ec13-b6f2-438c-9bd1-6d54b6829594.png
+[WARN]     generation-v2-before-floor-only.json: /Users/jitian/.codex/generated_images/01a129aa-2599-7823-956e-1d3a992bc6fa/exec-f72fd398-8b80-4a8c-8e73-3d2449ccdbe5.png
+[WARN]     BattleHUD.lua: ,11,T.quiet,{position=
+[WARN]     StomachConnectivityStudy.lua: study.stomach.portal_bank.inner
+[WARN]     StomachConnectivityStudy.lua: study.stomach.wall_service.inner
+[WARN]     StomachConnectivityStudy.lua: study.stomach.wall_service
+[WARN]     StomachConnectivityStudy.lua: study.stomach.wall_service.outer
+[WARN]     StomachConnectivityStudy.lua: study.stomach.portal_bank.lower
+[WARN]     StomachConnectivityStudy.lua: stomach.v
+[WARN]     generation-v2.json: assets/image/anatomy-reference/vascular-study/stomach-terrain-v2/gpt-rich-rooms-style-approved-v2.png
+[WARN]     generation-v2.json: /Users/jitian/.codex/generated_images/01a11af8-adbc-7d11-8076-e0c0198d0b3e/exec-bbfc065e-4bbc-4463-8923-f4f1f9e3f4e6.png
+[WARN]     generation-v2.json: /Users/jitian/.codex/generated_images/01a11af8-adbc-7d11-8076-e0c0198d0b3e/exec-4c3744e8-3040-4025-989e-56ed21441c09.png
+[WARN]     generation-v2.json: docs/body-life/vascular-art-study/organ-atlas/revision-v2/guides/liver-terrain-guide.png
+[WARN]     generation-v2.json: /Users/jitian/.codex/generated_images/01a11af8-adbc-7d11-8076-e0c0198d0b3e/exec-e67758b5-58c7-4e66-a4c3-e7c574d1e36b.png
+[WARN]     generation-v2.json: assets/image/anatomy-reference/vascular-study/stomach-terrain-v2/gpt-rich-rooms-style-approved-v2.png
+[WARN]     generation-v2.json: assets/image/anatomy-reference/vascular-study/organ-atlas/pancreas/generation-v2-before-floor-only.json
+[WARN]     generation-v2.json: assets/image/anatomy-reference/vascular-study/organ-atlas/pancreas/gpt-terrain-v2-before-floor-only.png
+[WARN]     generation-v2.json: docs/body-life/vascular-art-study/organ-atlas/revision-v2/guides/pancreas-terrain-guide.png
+[WARN]     generation-v2.json: /Users/jitian/.codex/generated_images/01a129aa-2599-7823-956e-1d3a992bc6fa/exec-d37a1051-eed0-43c5-bbdc-08652fe3f67e.png
+[WARN]     generation-v2.json: /Users/jitian/.codex/generated_images/01a129aa-2599-7823-956e-1d3a992bc6fa/exec-745c7fb0-135c-4071-acdf-2d0dec556cbb.png
+[WARN]     generation-v2.json: /Users/jitian/.codex/generated_images/01a129aa-2599-7823-956e-1d3a992bc6fa/exec-9fdc1ff6-0903-4108-9d91-d6136605ce3f.png
+[WARN]     generation-v2-before-floor-only.json: /Users/jitian/.codex/generated_images/01a129aa-2599-7823-956e-1d3a992bc6fa/exec-532d073f-cd23-4e3b-b417-75936ee2fb10.png
+[WARN]     generation-v2-before-floor-only.json: assets/image/anatomy-reference/vascular-study/stomach-terrain-v2/gpt-rich-rooms-style-approved-v2.png
+[WARN]     generation-v2-before-floor-only.json: /Users/jitian/.codex/generated_images/01a129aa-2599-7823-956e-1d3a992bc6fa/exec-e05d254e-b537-4042-a367-55422613c007.png
+[WARN]     generation-v2-before-floor-only.json: docs/body-life/vascular-art-study/organ-atlas/revision-v2/guides/bladder-terrain-guide.png
+[WARN]     OrganAccessStudy.lua: study.liver.deep_access
+[WARN]     OrganAccessStudy.lua: study.small_intestine.deep_access
+[WARN]     OrganAccessStudy.lua: study.bladder.deep_access
+[WARN]     OrganAccessStudy.lua: study.colon_distal.junction_access
+[WARN]     generation.json: contract.json
+[WARN]     generation.json: /Users/jitian/.codex/generated_images/01a11af8-adbc-7d11-8076-e0c0198d0b3e/exec-7573f185-1d94-4ef8-9493-efb542164f88.png
+[WARN]     generation-v2.json: /Users/jitian/.codex/generated_images/01a129aa-2599-7823-956e-1d3a992bc6fa/exec-7ad77c11-54b2-4f1c-8523-723c8226f204.png
+[WARN]     generation-v2.json: assets/image/anatomy-reference/vascular-study/stomach-terrain-v2/gpt-rich-rooms-style-approved-v2.png
+[WARN]     generation-v2.json: /Users/jitian/.codex/generated_images/01a129aa-2599-7823-956e-1d3a992bc6fa/exec-67bb18e7-8abd-456e-a88e-4e7442e5a7a8.png
+[WARN]     generation-v2.json: assets/image/anatomy-reference/vascular-study/organ-atlas/kidney_l/gpt-terrain-v2-before-floor-only.png
+[WARN]     generation-v2.json: docs/body-life/vascular-art-study/organ-atlas/revision-v2/guides/kidney_l-terrain-guide.png
+[WARN]     generation-v2.json: /Users/jitian/.codex/generated_images/01a129aa-2599-7823-956e-1d3a992bc6fa/exec-2723a761-9876-496e-8c94-f5fd9416be23.png
+[WARN]     generation-v2.json: assets/image/anatomy-reference/vascular-study/organ-atlas/kidney_l/generation-v2-before-floor-only.json
+[WARN]     GastricBattlefieldData.lua: ]=-7.105427357601002e-15,[
+[WARN]     GastricBattlefieldData.lua: ]=4.440892098500626e-16},{[
+[INFO]   扫描本地资源... 共 552 个文件
+[INFO]   发现资源: 551 个
+[INFO]   完成 (0.79s)
+[INFO] [6/21] 处理配置文件运行时变体...
+[INFO]   完成 (0.00s)
+[INFO] [7/21] 解析别名...
+[INFO]   解析别名: 0 个
+[INFO]   完成 (0.00s)
+[INFO] [8/21] 分配分组...
+[INFO]   分组完成，总资源: 551 个
+[INFO]   完成 (0.00s)
+[INFO] [9/21] 展开引用...
+[INFO]   递归收集 uuid:// 和 alias:// 引用...（裁剪模式（远端只取一层））
+[INFO]   递归收集了 2 个被引用资源
+[INFO]   跳过 3 个远端资源的深层 refs（由运行时补齐）
+[INFO]   组继承: 2 个分组被传播
+[INFO]   #blocking 组: 184 个阻塞类型资源
+[INFO]   完成 (0.00s)
+[INFO] [10/21] 扫描变体...
+[INFO]   完成 (0.00s)
+[INFO] [11/21] 国际化处理...
+[WARN]   跳过（前置条件不满足） (0.00s)
+[INFO] [12/21] 图片文本本地化...
+[WARN]   跳过（前置条件不满足） (0.00s)
+[INFO] [13/21] 标记 C/S 端别...
+[WARN]   跳过（前置条件不满足） (0.00s)
+[INFO] [14/21] 标记修订...
+[WARN]   跳过（前置条件不满足） (0.00s)
+[INFO] [15/21] 资产烘焙...
+[WARN]   跳过（前置条件不满足） (0.00s)
+[INFO] [16/21] 生成产物...
+[INFO]   生成: manifest-083858d7.json (client)
+[INFO]   生成: manifest-2930001a.json (server)
+[INFO]     生成 meta: project.json.meta
+[INFO]     origin 配置: project.json (uuid=TLQ9Rj8q)
+[INFO]     生成 meta: resources.json.meta
+[INFO]     origin 配置: resources.json (uuid=XY_3uMQK)
+[INFO]     生成 meta: settings.json.meta
+[INFO]     origin 配置: settings.json (uuid=x4ccS4Qb)
+[INFO]   生成: manifest-origin.json (553 个源文件)
+[INFO]   归档: manifest-origin.b1.json
+[INFO]   生成: engine-ef9e23e2.json
+[INFO]   官方资源采纳: 1 个
+[INFO]   项目资产埋点: 550 个
+[INFO]   完成 (0.32s)
+[INFO] [17/21] 复制资产...
+[INFO]   复制资源到: /Users/jitian/.taptap-maker/preview/c77d76c39450447ca7bafe38d059fd9c2a3ad04a7b223daa29b3b681ffd63caa/preparations/018689b3-e6bd-4064-b282-6abc9c6de021/source/.project/../dist/assets
+[INFO]   已复制: 550 个文件
+[INFO]   复制 origin-only 资产: 3 个文件
+[INFO]   完成 (0.22s)
+[INFO] [18/21] 生成 Assets 包...
+[WARN]   跳过（前置条件不满足） (0.00s)
+[INFO] [19/21] 生成版本配置...
+[INFO]   生成: manifest-083858d7.json (client)
+[INFO]   生成: manifest-2930001a.json (server)
+[INFO]   生成: version.json
+[INFO]   生成: project.json
+[INFO]   生成: dist/project.json
+[INFO]   生成 tag: latest.json (默认)
+[INFO]   生成 tag: 1.x.x.json (默认)
+[INFO]   完成 (0.00s)
+[INFO] [20/21] 清理旧版本...
+[INFO]   无需清理
+[INFO]   完成 (0.01s)
+[INFO] [21/21] 输出统计...
+
+=== 构建统计 ===
+项目根目录: /Users/jitian/.taptap-maker/preview/c77d76c39450447ca7bafe38d059fd9c2a3ad04a7b223daa29b3b681ffd63caa/preparations/018689b3-e6bd-4064-b282-6abc9c6de021/source
+资产目录: ../assets, ../scripts
+
+资源统计:
+  扫描文件: 552
+  发现资源: 553
+  项目资源大小: 520.79 MB
+  忽略文件: 0
+  生成 meta: 553
+  Client 资源: 553
+  Server 资源: 4
+  复制资源: 550
+
+Meta 缓存:
+
+=== Meta 缓存统计 ===
+本地缓存: 550 条目
+命中次数: 2
+未命中次数: 550
+命中率: 0.4%
+加载次数: 550
+刷新次数: 0
+
+远端来源: 3 个
+  - engine: 4 个文件
+  - engine-res: 1068 个文件
+  - official-res: 38888 个文件
+
+构建完成!
+  版本: 1.0.0
+  输出: /Users/jitian/.taptap-maker/preview/c77d76c39450447ca7bafe38d059fd9c2a3ad04a7b223daa29b3b681ffd63caa/preparations/018689b3-e6bd-4064-b282-6abc9c6de021/source/.project/../dist/1.0.0
+  Client: manifest-083858d7.json
+  Server: manifest-2930001a.json
+[INFO]   完成 (0.00s)
+[INFO] 总耗时: 2.06s
+[INFO] 构建完成!

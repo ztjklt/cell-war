@@ -1,0 +1,31 @@
+{
+  "schema": "gastric-yellow-cover-removal/v1",
+  "status": "PASS_SCOPED_VISUAL_REMOVAL",
+  "updated": "2026-10-11T14:13:36.687119+08:00",
+  "change": "Removed opaque foodPath fill from the composed SVG; original GPT room material remains visible. Subtle food boundary retained.",
+  "beforeAssetSha256": "cf41c1602a2dd61a5fa1381bbbffc26ca577ba2f522642e6f2fdf469809d5d60",
+  "afterAssetSha256": "9464d5f62338e1dc9644cedd4fc9ce1ba803d4afe5a172395249a679b47cb918",
+  "unchangedInputHashes": {
+    "scripts/main.lua": "58214fb923a00ac5e5f1980a0cd68c5dac57e46de9db4d0d13395dfadcd5e583",
+    "scripts/war/GastricBattlefieldData.lua": "81cbe1eedd29506a13fa19a7edd079d7f93b3eb58b4a9e4282e98277854b279d",
+    "scripts/war/GastricBattlefield.lua": "789066936c29437cfcbc47490a7527288700e82c02b88b3e19458f69906b2b46",
+    "scripts/war/GastricTraffic.lua": "d04b89128fedb033d67b9eef01a72f5c2733b5942a0e87656e00d9b883ee3e6d",
+    "scripts/war/GastricArt.lua": "4460ab0fd73343eb089ac5a5eb70a9cf53243e979912dee835a039c98cd9df3f",
+    "scripts/war/OrganBattlefieldData.lua": "1c47073f1f465fb79bbe64b5868e78b07bac4d745342717c9ee87439ff436e7d",
+    "scripts/war/OrganBattlefieldCore.lua": "40c670d25c69281b0d5663c684dcb699b6871c806000fd2e8f013601218c6b8d",
+    "scripts/war/OrganAtlasArtData.lua": "0158ab97daa71c1ae7f55dc067133602f19195c9c90fba69f5a73e783063eb77",
+    "scripts/war/Save.lua": "d55c19716b457cb3be7a0839e8179367194200c7bf01a3368a49724f64a72e05",
+    "docs/body-life/vascular-art-study/stomach-playable/layout.json": "ee7c95a483e9bc3a264028392bdcc3c92c8cf7e4f76d3234a412980a232f32d9",
+    "docs/body-life/vascular-art-study/stomach-playable/geometry.json": "aa91fbc538300a42b1fb3877829b86a3b42a31d8bce35c166b33027076291604",
+    "docs/body-life/vascular-art-study/final-reference-data.json": "3890744e2fcaf9e9907c85513e170e479f67b7fbb1fbf06385ac02bd80e8550c"
+  },
+  "pixelScope": "pixel-scope.json",
+  "nativeCaptures": 3,
+  "captureEvidence": "system-views.json",
+  "mainTemporaryHookRemoved": true,
+  "limits": [
+    "Food boundary remains visually weak; collision and food reservation unchanged.",
+    "0.12 handover ghosting and unit readability remain unresolved.",
+    "Earlier visual QA refers to the previous stomach asset; other organs are unchanged."
+  ]
+}

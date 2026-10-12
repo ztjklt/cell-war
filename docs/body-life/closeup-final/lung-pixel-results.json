@@ -1,0 +1,243 @@
+{
+  "nativeEvidence": false,
+  "passed": 6,
+  "total": 6,
+  "results": [
+    {
+      "name": "Lung outer boundary and fixed foreground interiors preserve original pixels",
+      "pass": true
+    },
+    {
+      "name": "Misregistered GPT bright-rim pixels retain the original foreground at every phase",
+      "pass": true
+    },
+    {
+      "name": "Zero-displacement crossings and full breath periods do not switch source images",
+      "pass": true
+    },
+    {
+      "name": "Sub-16px lung LOD retains the registered texture without mesh motion",
+      "pass": true
+    },
+    {
+      "name": "Only the two lungs sample the generated tissue handle; other organs sample source",
+      "pass": true
+    },
+    {
+      "name": "Generated tissue contribution continuously vanishes at the vector transition",
+      "pass": true
+    }
+  ],
+  "evidence": {
+    "fixedForeground": {
+      "testedPixels": 99586,
+      "times": {
+        "0": {
+          "maxChannelDifference": 0,
+          "meanChannelDifference": 0.0,
+          "changedPixels": 0
+        },
+        "0.13": {
+          "maxChannelDifference": 0,
+          "meanChannelDifference": 0.0,
+          "changedPixels": 0
+        },
+        "0.96": {
+          "maxChannelDifference": 0,
+          "meanChannelDifference": 0.0,
+          "changedPixels": 0
+        },
+        "1.92": {
+          "maxChannelDifference": 0,
+          "meanChannelDifference": 0.0,
+          "changedPixels": 0
+        },
+        "3.36": {
+          "maxChannelDifference": 0,
+          "meanChannelDifference": 0.0,
+          "changedPixels": 0
+        },
+        "4.8": {
+          "maxChannelDifference": 0,
+          "meanChannelDifference": 0.0,
+          "changedPixels": 0
+        },
+        "9.6": {
+          "maxChannelDifference": 0,
+          "meanChannelDifference": 0.0,
+          "changedPixels": 0
+        }
+      }
+    },
+    "generatedRimRegression": {
+      "sourcePixels": 107,
+      "sourceBounds": [
+        378,
+        440,
+        455,
+        477
+      ],
+      "testedScreenPixels": 428,
+      "times": {
+        "0": {
+          "maxChannelDifference": 0,
+          "meanChannelDifference": 0.0,
+          "changedPixels": 0
+        },
+        "0.13": {
+          "maxChannelDifference": 0,
+          "meanChannelDifference": 0.0,
+          "changedPixels": 0
+        },
+        "0.96": {
+          "maxChannelDifference": 0,
+          "meanChannelDifference": 0.0,
+          "changedPixels": 0
+        },
+        "1.92": {
+          "maxChannelDifference": 0,
+          "meanChannelDifference": 0.0,
+          "changedPixels": 0
+        },
+        "3.36": {
+          "maxChannelDifference": 0,
+          "meanChannelDifference": 0.0,
+          "changedPixels": 0
+        },
+        "4.8": {
+          "maxChannelDifference": 0,
+          "meanChannelDifference": 0.0,
+          "changedPixels": 0
+        },
+        "9.6": {
+          "maxChannelDifference": 0,
+          "meanChannelDifference": 0.0,
+          "changedPixels": 0
+        }
+      }
+    },
+    "cycleBoundary": {
+      "epsilonSeconds": 1e-06,
+      "times": {
+        "0": {
+          "before": {
+            "maxChannelDifference": 0,
+            "meanChannelDifference": 0.0,
+            "changedPixels": 0
+          },
+          "after": {
+            "maxChannelDifference": 0,
+            "meanChannelDifference": 0.0,
+            "changedPixels": 0
+          }
+        },
+        "0.96": {
+          "before": {
+            "maxChannelDifference": 1,
+            "meanChannelDifference": 0.003117,
+            "changedPixels": 314
+          },
+          "after": {
+            "maxChannelDifference": 1,
+            "meanChannelDifference": 0.001912,
+            "changedPixels": 196
+          }
+        },
+        "3.36": {
+          "before": {
+            "maxChannelDifference": 1,
+            "meanChannelDifference": 0.001622,
+            "changedPixels": 166
+          },
+          "after": {
+            "maxChannelDifference": 1,
+            "meanChannelDifference": 0.003435,
+            "changedPixels": 341
+          }
+        },
+        "4.8": {
+          "before": {
+            "maxChannelDifference": 0,
+            "meanChannelDifference": 0.0,
+            "changedPixels": 0
+          },
+          "after": {
+            "maxChannelDifference": 0,
+            "meanChannelDifference": 0.0,
+            "changedPixels": 0
+          }
+        },
+        "9.6": {
+          "before": {
+            "maxChannelDifference": 0,
+            "meanChannelDifference": 0.0,
+            "changedPixels": 0
+          },
+          "after": {
+            "maxChannelDifference": 0,
+            "meanChannelDifference": 0.0,
+            "changedPixels": 0
+          }
+        }
+      },
+      "period": {
+        "maxChannelDifference": 0,
+        "meanChannelDifference": 0.0,
+        "changedPixels": 0
+      }
+    },
+    "tinyLod": {
+      "0.0005": {
+        "maxChannelDifference": 0,
+        "meanChannelDifference": 0.0,
+        "changedPixels": 0
+      },
+      "0.001": {
+        "maxChannelDifference": 0,
+        "meanChannelDifference": 0.0,
+        "changedPixels": 0
+      },
+      "0.00125": {
+        "maxChannelDifference": 0,
+        "meanChannelDifference": 0.0,
+        "changedPixels": 0
+      }
+    },
+    "zoomTransition": {
+      "assetContribution": {
+        "0.084": {
+          "maxChannelDifference": 62,
+          "meanChannelDifference": 1.906331,
+          "changedPixels": 34633
+        },
+        "0.12": {
+          "maxChannelDifference": 27,
+          "meanChannelDifference": 0.78088,
+          "changedPixels": 30425
+        },
+        "0.1499": {
+          "maxChannelDifference": 0,
+          "meanChannelDifference": 0.0,
+          "changedPixels": 0
+        },
+        "0.15": {
+          "maxChannelDifference": 0,
+          "meanChannelDifference": 0.0,
+          "changedPixels": 0
+        }
+      },
+      "boundaryDifference": {
+        "maxChannelDifference": 0,
+        "meanChannelDifference": 0.0,
+        "changedPixels": 0
+      },
+      "projection": "normalized to source coordinates to isolate atlas/vector handoff"
+    }
+  },
+  "referenceSha256": "9a04e39961c07073cd9fdcfcdc2c98253ccc25d968e97dbea1f36669e06b5d9f",
+  "tissueSha256": "9bea30ed9bd1fee9ef99452cda933d7114e600ad98137f68e7dd7a3a5ddbd717",
+  "limitations": [
+    "Fixed-pixel check excludes a 3px mask-edge margin; native edge coverage still needs inspection.",
+    "Cairo filtering and tessellation differ from NanoVG."
+  ]
+}

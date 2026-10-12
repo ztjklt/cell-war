@@ -1,0 +1,1740 @@
+{
+  "schema": "fullbody-native-independent-visual-review/v1",
+  "status": "NEEDS_FIX",
+  "nativeEvidence": true,
+  "completeFrameTimeAccepted": false,
+  "captureDirectory": "native-001",
+  "manifestSha256": "b2cb7ba5d0f3da8584cf02b322094baa04e43d75c7b1a57ff7c5f8c0dee6ec9c",
+  "inputHashes": {
+    "scripts/war/FullBodyMapArtData.lua": "5f9c2d135a88420db6e9cfd6881515bff577037bab310466686ac59caf7b821d",
+    "scripts/war/FullBodyMapArt.lua": "e8c2a89d75d6f28b0189ca7fb24f6f192190ee0f5ad4b33e57396017391e7d2e",
+    "docs/body-life/vascular-art-study/fullbody-015/bake/manifest.json": "b2cb7ba5d0f3da8584cf02b322094baa04e43d75c7b1a57ff7c5f8c0dee6ec9c",
+    "scripts/qa/FullBodyMapNativeViews.lua": "38f49128cef1492313efa4cd10962cb15dc2dc31b36b31ff6997e7d1ae2014f9"
+  },
+  "reviewedAt": "2026-10-11T11:15:30.523848+00:00",
+  "captures": [
+    {
+      "index": 1,
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-001/01-liver-z0.15.png",
+      "sha256": "a58f24bc23e1a25ebc06d863a55a240bdc47571591a51dac54786798c1ca57a8",
+      "pixelSize": [
+        2498,
+        1468
+      ],
+      "independentlyViewed": true,
+      "viewed": true,
+      "tool": "functions.view_image",
+      "displayReview": "Full image viewed; tool resized to 2048px wide for visual inspection. Original pixels remain saved.",
+      "status": "NEEDS_FIX",
+      "findings": "肝地面红黄分区平坦；蓝回流主干大色块和分支拼接断痕清楚。",
+      "issueIds": [
+        "legacy-vessel-underlay",
+        "junction-strip-hard-seam",
+        "unit-visibility-motion-limit"
+      ],
+      "phase": {
+        "zoom": 0.15,
+        "worldReady": true,
+        "tick": 0,
+        "frame": 343,
+        "organId": "liver",
+        "index": 1,
+        "modal": false,
+        "simulationTime": 0,
+        "rng": 1791716691,
+        "visibilityUnchanged": true,
+        "fullbodyStats": {
+          "contexts": 2,
+          "draws": 0,
+          "images": 64
+        },
+        "uiReady": true,
+        "camera": {
+          "x": 949.8285979776736,
+          "y": 1550.7902645583756
+        },
+        "realTime": 15.975113479420543,
+        "draws": 180,
+        "runId": "1791716709",
+        "snapshotUnchanged": true,
+        "fps": 54,
+        "wallTime": 1791716725,
+        "label": "liver-z0.15",
+        "phaseDraws": 60,
+        "total": 31
+      }
+    },
+    {
+      "index": 2,
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-001/02-stomach-z0.15.png",
+      "sha256": "7373c08dd4b4fd07f4eead832ae658683e4bba8740b01c5d8800b05621ba218d",
+      "pixelSize": [
+        2498,
+        1468
+      ],
+      "independentlyViewed": true,
+      "viewed": true,
+      "tool": "functions.view_image",
+      "displayReview": "Full image viewed; tool resized to 2048px wide for visual inspection. Original pixels remain saved.",
+      "status": "NEEDS_FIX",
+      "findings": "胃保留原有黄/珊瑚/少量绿色地形；胃壁血管接头确已呈现，但strip硬切、旧大管露底仍明显。",
+      "issueIds": [
+        "legacy-vessel-underlay",
+        "junction-strip-hard-seam",
+        "unit-visibility-motion-limit"
+      ],
+      "phase": {
+        "zoom": 0.15,
+        "worldReady": true,
+        "tick": 0,
+        "frame": 1128,
+        "organId": "stomach",
+        "index": 2,
+        "modal": false,
+        "simulationTime": 0,
+        "rng": 1791716691,
+        "visibilityUnchanged": true,
+        "fullbodyStats": {
+          "contexts": 2,
+          "draws": 0,
+          "images": 64
+        },
+        "uiReady": true,
+        "camera": {
+          "x": 1110.7878787878788,
+          "y": 1499.3939393939395
+        },
+        "realTime": 17.92712246067822,
+        "draws": 965,
+        "runId": "1791716709",
+        "snapshotUnchanged": true,
+        "fps": 56,
+        "wallTime": 1791716727,
+        "label": "stomach-z0.15",
+        "phaseDraws": 60,
+        "total": 31
+      }
+    },
+    {
+      "index": 3,
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-001/03-brain-z0.15.png",
+      "sha256": "f15a5df30e47cc6a6d41a3e95987b5cb15f93825d2086b89169457cd8fec26ad",
+      "pixelSize": [
+        2498,
+        1468
+      ],
+      "independentlyViewed": true,
+      "viewed": true,
+      "tool": "functions.view_image",
+      "displayReview": "Full image viewed; tool resized to 2048px wide for visual inspection. Original pixels remain saved.",
+      "status": "LIMITED_STATIC_OBSERVATION",
+      "findings": "脑粉色地形平坦，无绿色底块；中心环形组织壁可见。入口不在中心视野，不能据此验收脑供回流连接。",
+      "issueIds": [
+        "unit-visibility-motion-limit"
+      ],
+      "phase": {
+        "zoom": 0.15,
+        "worldReady": true,
+        "tick": 0,
+        "frame": 1213,
+        "organId": "brain",
+        "index": 3,
+        "modal": false,
+        "simulationTime": 0,
+        "rng": 1791716691,
+        "visibilityUnchanged": true,
+        "fullbodyStats": {
+          "contexts": 2,
+          "draws": 0,
+          "images": 64
+        },
+        "uiReady": true,
+        "camera": {
+          "x": 1018.6343114671818,
+          "y": 657.3376816444812
+        },
+        "realTime": 19.564520962536335,
+        "draws": 1050,
+        "runId": "1791716709",
+        "snapshotUnchanged": true,
+        "fps": 53,
+        "wallTime": 1791716729,
+        "label": "brain-z0.15",
+        "phaseDraws": 60,
+        "total": 31
+      }
+    },
+    {
+      "index": 4,
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-001/04-lung_r-z0.15.png",
+      "sha256": "513716480538065ea273b0b245f67ec3f58efa4bd134141916ad6314084ed4f7",
+      "pixelSize": [
+        2498,
+        1468
+      ],
+      "independentlyViewed": true,
+      "viewed": true,
+      "tool": "functions.view_image",
+      "displayReview": "Full image viewed; tool resized to 2048px wide for visual inspection. Original pixels remain saved.",
+      "status": "NEEDS_FIX",
+      "findings": "右肺粉红平地、奶油支气管保持独立；局部粉色血管在气道边直截，不是蓝支气管变静脉。",
+      "issueIds": [
+        "legacy-vessel-underlay",
+        "protected-underpass-caps",
+        "unit-visibility-motion-limit"
+      ],
+      "phase": {
+        "zoom": 0.15,
+        "worldReady": true,
+        "tick": 0,
+        "frame": 1307,
+        "organId": "lung_r",
+        "index": 4,
+        "modal": false,
+        "simulationTime": 0,
+        "rng": 1791716691,
+        "visibilityUnchanged": true,
+        "fullbodyStats": {
+          "contexts": 2,
+          "draws": 0,
+          "images": 64
+        },
+        "uiReady": true,
+        "camera": {
+          "x": 815.8651693446275,
+          "y": 1285.9209425148558
+        },
+        "realTime": 21.314081462100148,
+        "draws": 1144,
+        "runId": "1791716709",
+        "snapshotUnchanged": true,
+        "fps": 57,
+        "wallTime": 1791716731,
+        "label": "lung_r-z0.15",
+        "phaseDraws": 60,
+        "total": 31
+      }
+    },
+    {
+      "index": 5,
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-001/05-lung_l-z0.15.png",
+      "sha256": "d6e7ced8c177287f3f993726f63c6882b001acddc5e3c8ac04901834b8015963",
+      "pixelSize": [
+        2498,
+        1468
+      ],
+      "independentlyViewed": true,
+      "viewed": true,
+      "tool": "functions.view_image",
+      "displayReview": "Full image viewed; tool resized to 2048px wide for visual inspection. Original pixels remain saved.",
+      "status": "NEEDS_FIX",
+      "findings": "左肺同类空气保护层正确保留；粉色直管的截断边和外围旧粗大血管仍需修。",
+      "issueIds": [
+        "legacy-vessel-underlay",
+        "protected-underpass-caps",
+        "unit-visibility-motion-limit"
+      ],
+      "phase": {
+        "zoom": 0.15,
+        "worldReady": true,
+        "tick": 0,
+        "frame": 1402,
+        "organId": "lung_l",
+        "index": 5,
+        "modal": false,
+        "simulationTime": 0,
+        "rng": 1791716691,
+        "visibilityUnchanged": true,
+        "fullbodyStats": {
+          "contexts": 2,
+          "draws": 0,
+          "images": 64
+        },
+        "uiReady": true,
+        "camera": {
+          "x": 1219.7357457285038,
+          "y": 1286.6395794292855
+        },
+        "realTime": 23.142627961933613,
+        "draws": 1239,
+        "runId": "1791716709",
+        "snapshotUnchanged": true,
+        "fps": 49,
+        "wallTime": 1791716733,
+        "label": "lung_l-z0.15",
+        "phaseDraws": 60,
+        "total": 31
+      }
+    },
+    {
+      "index": 6,
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-001/06-pancreas-z0.15.png",
+      "sha256": "65a41979ccbe04df84995869af49d5e9f940c6083cc28c51d53ab826d2479dfc",
+      "pixelSize": [
+        2498,
+        1468
+      ],
+      "independentlyViewed": true,
+      "viewed": true,
+      "tool": "functions.view_image",
+      "displayReview": "Full image viewed; tool resized to 2048px wide for visual inspection. Original pixels remain saved.",
+      "status": "NEEDS_FIX",
+      "findings": "胰腺暖黄分叶平地已接入，无绿色底块；多条血管及奶油保护管交叉处矩形口/材质断面较多。",
+      "issueIds": [
+        "legacy-vessel-underlay",
+        "junction-strip-hard-seam",
+        "protected-underpass-caps",
+        "unit-visibility-motion-limit"
+      ],
+      "phase": {
+        "zoom": 0.15,
+        "worldReady": true,
+        "tick": 0,
+        "frame": 1509,
+        "organId": "pancreas",
+        "index": 6,
+        "modal": false,
+        "simulationTime": 0,
+        "rng": 1791716691,
+        "visibilityUnchanged": true,
+        "fullbodyStats": {
+          "contexts": 2,
+          "draws": 0,
+          "images": 64
+        },
+        "uiReady": true,
+        "camera": {
+          "x": 1116.1502880969042,
+          "y": 1681.0316593925281
+        },
+        "realTime": 25.130346961319447,
+        "draws": 1346,
+        "runId": "1791716709",
+        "snapshotUnchanged": true,
+        "fps": 57,
+        "wallTime": 1791716735,
+        "label": "pancreas-z0.15",
+        "phaseDraws": 60,
+        "total": 31
+      }
+    },
+    {
+      "index": 7,
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-001/07-kidney_r-z0.15.png",
+      "sha256": "fcee7c828b1494350d987892bb427bcd980795a2e2b0b3faa2275e6c7ade865d",
+      "pixelSize": [
+        2498,
+        1468
+      ],
+      "independentlyViewed": true,
+      "viewed": true,
+      "tool": "functions.view_image",
+      "displayReview": "Full image viewed; tool resized to 2048px wide for visual inspection. Original pixels remain saved.",
+      "status": "NEEDS_FIX",
+      "findings": "右肾红黄平地已接入；奶油肾内侧保护区清楚，蓝血管口硬断，外围旧薄荷竖管需禁绿修正。",
+      "issueIds": [
+        "legacy-vessel-underlay",
+        "junction-strip-hard-seam",
+        "protected-underpass-caps",
+        "legacy-green-outside-allowed-organs",
+        "unit-visibility-motion-limit"
+      ],
+      "phase": {
+        "zoom": 0.15,
+        "worldReady": true,
+        "tick": 0,
+        "frame": 1604,
+        "organId": "kidney_r",
+        "index": 7,
+        "modal": false,
+        "simulationTime": 0,
+        "rng": 1791716691,
+        "visibilityUnchanged": true,
+        "fullbodyStats": {
+          "contexts": 2,
+          "draws": 0,
+          "images": 64
+        },
+        "uiReady": true,
+        "camera": {
+          "x": 822.5534903755783,
+          "y": 1732.349437248223
+        },
+        "realTime": 26.945524461567402,
+        "draws": 1441,
+        "runId": "1791716709",
+        "snapshotUnchanged": true,
+        "fps": 55,
+        "wallTime": 1791716737,
+        "label": "kidney_r-z0.15",
+        "phaseDraws": 60,
+        "total": 31
+      }
+    },
+    {
+      "index": 8,
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-001/08-kidney_l-z0.15.png",
+      "sha256": "9efeabb54df007956a4b6a419d9c8c66dbeb9630d6bfc664cefe30ad8c0f7fd3",
+      "pixelSize": [
+        2498,
+        1468
+      ],
+      "independentlyViewed": true,
+      "viewed": true,
+      "tool": "functions.view_image",
+      "displayReview": "Full image viewed; tool resized to 2048px wide for visual inspection. Original pixels remain saved.",
+      "status": "NEEDS_FIX",
+      "findings": "左肾红黄平地无绿色底块；奶油内侧保护区清楚，蓝回流与旧大蓝色块共存造成假断路观感。",
+      "issueIds": [
+        "legacy-vessel-underlay",
+        "protected-underpass-caps",
+        "unit-visibility-motion-limit"
+      ],
+      "phase": {
+        "zoom": 0.15,
+        "worldReady": true,
+        "tick": 0,
+        "frame": 1693,
+        "organId": "kidney_l",
+        "index": 8,
+        "modal": false,
+        "simulationTime": 0,
+        "rng": 1791716691,
+        "visibilityUnchanged": true,
+        "fullbodyStats": {
+          "contexts": 2,
+          "draws": 0,
+          "images": 64
+        },
+        "uiReady": true,
+        "camera": {
+          "x": 1215.15185181795,
+          "y": 1731.379110398568
+        },
+        "realTime": 28.64936444722116,
+        "draws": 1530,
+        "runId": "1791716709",
+        "snapshotUnchanged": true,
+        "fps": 54,
+        "wallTime": 1791716738,
+        "label": "kidney_l-z0.15",
+        "phaseDraws": 60,
+        "total": 31
+      }
+    },
+    {
+      "index": 9,
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-001/09-large_intestine-z0.15.png",
+      "sha256": "c18b26253fb53cc38cdafd31f8c1f444791dda90f14d59576d2a76176175e22b",
+      "pixelSize": [
+        2498,
+        1468
+      ],
+      "independentlyViewed": true,
+      "viewed": true,
+      "tool": "functions.view_image",
+      "displayReview": "Full image viewed; tool resized to 2048px wide for visual inspection. Original pixels remain saved.",
+      "status": "NEEDS_FIX",
+      "findings": "大肠红黄组织区与奶油食物腔分离；保护边界附近长方形血管残块/口需修。",
+      "issueIds": [
+        "legacy-vessel-underlay",
+        "junction-strip-hard-seam",
+        "protected-underpass-caps",
+        "unit-visibility-motion-limit"
+      ],
+      "phase": {
+        "zoom": 0.15,
+        "worldReady": true,
+        "tick": 0,
+        "frame": 1776,
+        "organId": "large_intestine",
+        "index": 9,
+        "modal": false,
+        "simulationTime": 0,
+        "rng": 1791716691,
+        "visibilityUnchanged": true,
+        "fullbodyStats": {
+          "contexts": 2,
+          "draws": 0,
+          "images": 64
+        },
+        "uiReady": true,
+        "camera": {
+          "x": 1129.0957588737895,
+          "y": 1859.8319011858528
+        },
+        "realTime": 30.252622447907925,
+        "draws": 1613,
+        "runId": "1791716709",
+        "snapshotUnchanged": true,
+        "fps": 50,
+        "wallTime": 1791716740,
+        "label": "large_intestine-z0.15",
+        "phaseDraws": 60,
+        "total": 31
+      }
+    },
+    {
+      "index": 10,
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-001/10-small_intestine-z0.15.png",
+      "sha256": "1f096ea0ac72f4b8febbc546e317564f7f01b1537f40410909f22034eba2d5aa",
+      "pixelSize": [
+        2498,
+        1468
+      ],
+      "independentlyViewed": true,
+      "viewed": true,
+      "tool": "functions.view_image",
+      "displayReview": "Full image viewed; tool resized to 2048px wide for visual inspection. Original pixels remain saved.",
+      "status": "NEEDS_FIX",
+      "findings": "小肠红黄平地、食物腔走向仍保留；多条纵管在食物层两侧平截，几处组织边界拼贴痕明显。",
+      "issueIds": [
+        "legacy-vessel-underlay",
+        "junction-strip-hard-seam",
+        "protected-underpass-caps",
+        "unit-visibility-motion-limit"
+      ],
+      "phase": {
+        "zoom": 0.15,
+        "worldReady": true,
+        "tick": 0,
+        "frame": 1860,
+        "organId": "small_intestine",
+        "index": 10,
+        "modal": false,
+        "simulationTime": 0,
+        "rng": 1791716691,
+        "visibilityUnchanged": true,
+        "fullbodyStats": {
+          "contexts": 2,
+          "draws": 0,
+          "images": 64
+        },
+        "uiReady": true,
+        "camera": {
+          "x": 1001.6763066149477,
+          "y": 1902.8086737325598
+        },
+        "realTime": 31.873754458501935,
+        "draws": 1697,
+        "runId": "1791716709",
+        "snapshotUnchanged": true,
+        "fps": 52,
+        "wallTime": 1791716742,
+        "label": "small_intestine-z0.15",
+        "phaseDraws": 60,
+        "total": 31
+      }
+    },
+    {
+      "index": 11,
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-001/11-bladder-z0.15.png",
+      "sha256": "63d0b0c5a900a1608d1bc40a4d07392502b23ab9a444fcdf60179c29e17df888",
+      "pixelSize": [
+        2498,
+        1468
+      ],
+      "independentlyViewed": true,
+      "viewed": true,
+      "tool": "functions.view_image",
+      "displayReview": "Full image viewed; tool resized to 2048px wide for visual inspection. Original pixels remain saved.",
+      "status": "NEEDS_FIX",
+      "findings": "膀胱黄色尿腔内部没有新增红蓝管穿入；腔周有孤立短红蓝片和平截口，视觉仍像不完整侧路。",
+      "issueIds": [
+        "legacy-vessel-underlay",
+        "protected-underpass-caps",
+        "unit-visibility-motion-limit"
+      ],
+      "phase": {
+        "zoom": 0.15,
+        "worldReady": true,
+        "tick": 0,
+        "frame": 1955,
+        "organId": "bladder",
+        "index": 11,
+        "modal": false,
+        "simulationTime": 0,
+        "rng": 1791716691,
+        "visibilityUnchanged": true,
+        "fullbodyStats": {
+          "contexts": 2,
+          "draws": 0,
+          "images": 64
+        },
+        "uiReady": true,
+        "camera": {
+          "x": 1069.3536621669086,
+          "y": 2058.219061360249
+        },
+        "realTime": 33.674196952953935,
+        "draws": 1792,
+        "runId": "1791716709",
+        "snapshotUnchanged": true,
+        "fps": 55,
+        "wallTime": 1791716744,
+        "label": "bladder-z0.15",
+        "phaseDraws": 60,
+        "total": 31
+      }
+    },
+    {
+      "index": 12,
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-001/12-heart-z0.15.png",
+      "sha256": "32089e054bce8b2c42fe452aeba77059c3661b493d76aa2e8036cb85f5f55c13",
+      "pixelSize": [
+        2498,
+        1468
+      ],
+      "independentlyViewed": true,
+      "viewed": true,
+      "tool": "functions.view_image",
+      "displayReview": "Full image viewed; tool resized to 2048px wide for visual inspection. Original pixels remain saved.",
+      "status": "NEEDS_FIX",
+      "findings": "心脏红黄肌束地面无绿色底块；供回流大管露底以及内外材质硬切仍可见。",
+      "issueIds": [
+        "legacy-vessel-underlay",
+        "junction-strip-hard-seam",
+        "unit-visibility-motion-limit"
+      ],
+      "phase": {
+        "zoom": 0.15,
+        "worldReady": true,
+        "tick": 0,
+        "frame": 2039,
+        "organId": "heart",
+        "index": 12,
+        "modal": false,
+        "simulationTime": 0,
+        "rng": 1791716691,
+        "visibilityUnchanged": true,
+        "fullbodyStats": {
+          "contexts": 2,
+          "draws": 0,
+          "images": 64
+        },
+        "uiReady": true,
+        "camera": {
+          "x": 1033.3013879867644,
+          "y": 1305.693206511241
+        },
+        "realTime": 35.30022844299674,
+        "draws": 1876,
+        "runId": "1791716709",
+        "snapshotUnchanged": true,
+        "fps": 49,
+        "wallTime": 1791716745,
+        "label": "heart-z0.15",
+        "phaseDraws": 60,
+        "total": 31
+      }
+    },
+    {
+      "index": 13,
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-001/13-stomach-z0.085.png",
+      "sha256": "e1be28e8decb310898af3949499ea08dff01911ec73e0d19e13932f7fb4cf84d",
+      "pixelSize": [
+        2498,
+        1468
+      ],
+      "independentlyViewed": true,
+      "viewed": true,
+      "tool": "functions.view_image",
+      "displayReview": "Full image viewed; tool resized to 2048px wide for visual inspection. Original pixels remain saved.",
+      "status": "LIMITED_STATIC_OBSERVATION",
+      "findings": "0.085仍是主图位图路径，截图较糊是放大母图显示；这一帧不是.15地形验收。",
+      "issueIds": [
+        "unit-visibility-motion-limit"
+      ],
+      "phase": {
+        "zoom": 0.085,
+        "worldReady": true,
+        "tick": 0,
+        "frame": 2124,
+        "organId": "stomach",
+        "index": 13,
+        "modal": false,
+        "simulationTime": 0,
+        "rng": 1791716691,
+        "visibilityUnchanged": true,
+        "fullbodyStats": {
+          "contexts": 2,
+          "draws": 0,
+          "images": 64
+        },
+        "uiReady": true,
+        "camera": {
+          "x": 1110.7878787878788,
+          "y": 1499.3939393939395
+        },
+        "realTime": 36.94222795404494,
+        "draws": 1961,
+        "runId": "1791716709",
+        "snapshotUnchanged": true,
+        "fps": 51,
+        "wallTime": 1791716747,
+        "label": "stomach-z0.085",
+        "phaseDraws": 60,
+        "total": 31
+      }
+    },
+    {
+      "index": 14,
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-001/14-stomach-z0.12.png",
+      "sha256": "613543df2b0cf3372f73d070d962a2146a9001ae30de4ac154707526a4cb096e",
+      "pixelSize": [
+        2498,
+        1468
+      ],
+      "independentlyViewed": true,
+      "viewed": true,
+      "tool": "functions.view_image",
+      "displayReview": "Full image viewed; tool resized to 2048px wide for visual inspection. Original pixels remain saved.",
+      "status": "NEEDS_FIX",
+      "findings": "0.12过渡混合中主图/矢量/贴图都明显存在，形成双图透明叠加观感；静帧不证明连续缩放无跳变。",
+      "issueIds": [
+        "legacy-vessel-underlay",
+        "unit-visibility-motion-limit"
+      ],
+      "phase": {
+        "zoom": 0.12,
+        "worldReady": true,
+        "tick": 0,
+        "frame": 2209,
+        "organId": "stomach",
+        "index": 14,
+        "modal": false,
+        "simulationTime": 0,
+        "rng": 1791716691,
+        "visibilityUnchanged": true,
+        "fullbodyStats": {
+          "contexts": 2,
+          "draws": 0,
+          "images": 64
+        },
+        "uiReady": true,
+        "camera": {
+          "x": 1110.7878787878788,
+          "y": 1499.3939393939395
+        },
+        "realTime": 38.57895595766604,
+        "draws": 2046,
+        "runId": "1791716709",
+        "snapshotUnchanged": true,
+        "fps": 54,
+        "wallTime": 1791716749,
+        "label": "stomach-z0.12",
+        "phaseDraws": 60,
+        "total": 31
+      }
+    },
+    {
+      "index": 15,
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-001/15-stomach-z0.149.png",
+      "sha256": "3b024491c88adf3d62996cd18c5124cb055ec11206e94ae8c01997fc3d4100fc",
+      "pixelSize": [
+        2498,
+        1468
+      ],
+      "independentlyViewed": true,
+      "viewed": true,
+      "tool": "functions.view_image",
+      "displayReview": "Full image viewed; tool resized to 2048px wide for visual inspection. Original pixels remain saved.",
+      "status": "NEEDS_FIX",
+      "findings": "0.149与0.15构图接近，仍有相同接头/主干露底问题；没有从这组静帧见明显器官位置跳变。",
+      "issueIds": [
+        "legacy-vessel-underlay",
+        "junction-strip-hard-seam",
+        "unit-visibility-motion-limit"
+      ],
+      "phase": {
+        "zoom": 0.149,
+        "worldReady": true,
+        "tick": 0,
+        "frame": 2294,
+        "organId": "stomach",
+        "index": 15,
+        "modal": false,
+        "simulationTime": 0,
+        "rng": 1791716691,
+        "visibilityUnchanged": true,
+        "fullbodyStats": {
+          "contexts": 2,
+          "draws": 0,
+          "images": 64
+        },
+        "uiReady": true,
+        "camera": {
+          "x": 1110.7878787878788,
+          "y": 1499.3939393939395
+        },
+        "realTime": 40.221171932294965,
+        "draws": 2131,
+        "runId": "1791716709",
+        "snapshotUnchanged": true,
+        "fps": 50,
+        "wallTime": 1791716750,
+        "label": "stomach-z0.149",
+        "phaseDraws": 60,
+        "total": 31
+      }
+    },
+    {
+      "index": 16,
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-001/16-stomach-z0.151.png",
+      "sha256": "ad7e7616843289f2028fe33e326eac6d32696e8c1997e9a24b1af76b2d974087",
+      "pixelSize": [
+        2498,
+        1468
+      ],
+      "independentlyViewed": true,
+      "viewed": true,
+      "tool": "functions.view_image",
+      "displayReview": "Full image viewed; tool resized to 2048px wide for visual inspection. Original pixels remain saved.",
+      "status": "NEEDS_FIX",
+      "findings": "0.151与0.149/0.15构图连续，仍是首版材质问题；连续缩放时间证据未采。",
+      "issueIds": [
+        "legacy-vessel-underlay",
+        "junction-strip-hard-seam",
+        "unit-visibility-motion-limit"
+      ],
+      "phase": {
+        "zoom": 0.151,
+        "worldReady": true,
+        "tick": 0,
+        "frame": 2387,
+        "organId": "stomach",
+        "index": 16,
+        "modal": false,
+        "simulationTime": 0,
+        "rng": 1791716691,
+        "visibilityUnchanged": true,
+        "fullbodyStats": {
+          "contexts": 2,
+          "draws": 0,
+          "images": 64
+        },
+        "uiReady": true,
+        "camera": {
+          "x": 1110.7878787878788,
+          "y": 1499.3939393939395
+        },
+        "realTime": 42.01174393855035,
+        "draws": 2224,
+        "runId": "1791716709",
+        "snapshotUnchanged": true,
+        "fps": 55,
+        "wallTime": 1791716752,
+        "label": "stomach-z0.151",
+        "phaseDraws": 60,
+        "total": 31
+      }
+    },
+    {
+      "index": 17,
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-001/17-stomach-boundary-z0.15.png",
+      "sha256": "48564d97e59afc5caaf2ea41a87f4bbeae030e7806502356dc31ba3656989580",
+      "pixelSize": [
+        2498,
+        1468
+      ],
+      "independentlyViewed": true,
+      "viewed": true,
+      "tool": "functions.view_image",
+      "displayReview": "Full image viewed; tool resized to 2048px wide for visual inspection. Original pixels remain saved.",
+      "status": "NEEDS_FIX",
+      "findings": "胃肝交界有大蓝旧血管和腹部绿色块；胃食物预留区保留，血管在其两侧口硬断。",
+      "issueIds": [
+        "legacy-vessel-underlay",
+        "junction-strip-hard-seam",
+        "protected-underpass-caps",
+        "legacy-green-outside-allowed-organs",
+        "unit-visibility-motion-limit"
+      ],
+      "phase": {
+        "zoom": 0.15,
+        "worldReady": true,
+        "tick": 0,
+        "frame": 2478,
+        "organId": "stomach",
+        "index": 17,
+        "modal": false,
+        "simulationTime": 0,
+        "rng": 1791716691,
+        "visibilityUnchanged": true,
+        "fullbodyStats": {
+          "contexts": 2,
+          "draws": 0,
+          "images": 64
+        },
+        "uiReady": true,
+        "camera": {
+          "x": 948,
+          "y": 1614
+        },
+        "realTime": 43.76100594364107,
+        "draws": 2315,
+        "runId": "1791716709",
+        "snapshotUnchanged": true,
+        "fps": 54,
+        "wallTime": 1791716754,
+        "label": "stomach-boundary-z0.15",
+        "phaseDraws": 60,
+        "total": 31
+      }
+    },
+    {
+      "index": 18,
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-001/18-whole-body.png",
+      "sha256": "77655bad78a60ce636625220ed1c957e0a9ac8cc839af0896a9aa5ef2693c630",
+      "pixelSize": [
+        2498,
+        1468
+      ],
+      "independentlyViewed": true,
+      "viewed": true,
+      "tool": "functions.view_image",
+      "displayReview": "Full image viewed; tool resized to 2048px wide for visual inspection. Original pixels remain saved.",
+      "status": "LIMITED_STATIC_OBSERVATION",
+      "findings": "全身远景沿主图显示，脑及四肢外轮廓未见摆动；头顶部和脚被HUD遮住，本帧不能证明全身连接细节。",
+      "issueIds": [
+        "capture-framing",
+        "unit-visibility-motion-limit"
+      ],
+      "phase": {
+        "zoom": 0.006,
+        "worldReady": true,
+        "tick": 0,
+        "frame": 2563,
+        "index": 18,
+        "modal": false,
+        "simulationTime": 0,
+        "rng": 1791716691,
+        "visibilityUnchanged": true,
+        "fullbodyStats": {
+          "contexts": 2,
+          "draws": 0,
+          "images": 64
+        },
+        "uiReady": true,
+        "camera": {
+          "x": 1024,
+          "y": 2048
+        },
+        "realTime": 45.38665993884206,
+        "draws": 2400,
+        "runId": "1791716709",
+        "snapshotUnchanged": true,
+        "fps": 51,
+        "wallTime": 1791716756,
+        "label": "whole-body",
+        "phaseDraws": 60,
+        "total": 31
+      }
+    },
+    {
+      "index": 19,
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-001/19-map-popup.png",
+      "sha256": "222f10cf23a8a7adba5fc86be20da188e4aa1a694de060fb863d0e067804414d",
+      "pixelSize": [
+        2498,
+        1468
+      ],
+      "independentlyViewed": true,
+      "viewed": true,
+      "tool": "functions.view_image",
+      "displayReview": "Full image viewed; tool resized to 2048px wide for visual inspection. Original pixels remain saved.",
+      "status": "LIMITED_STATIC_OBSERVATION",
+      "findings": "地图弹窗正常打开，全身主图保持定位；显示倍率是弹窗fit远景，背景世界.15，不是弹窗.15接缝证据。",
+      "issueIds": [
+        "capture-framing",
+        "unit-visibility-motion-limit"
+      ],
+      "phase": {
+        "zoom": 0.15,
+        "worldReady": true,
+        "tick": 0,
+        "frame": 2651,
+        "organId": "stomach",
+        "index": 19,
+        "modal": true,
+        "simulationTime": 0,
+        "rng": 1791716691,
+        "visibilityUnchanged": true,
+        "fullbodyStats": {
+          "contexts": 2,
+          "draws": 0,
+          "images": 64
+        },
+        "uiReady": true,
+        "camera": {
+          "x": 1110.7878787878788,
+          "y": 1499.3939393939395
+        },
+        "realTime": 47.065684443339705,
+        "draws": 2488,
+        "runId": "1791716709",
+        "snapshotUnchanged": true,
+        "fps": 55,
+        "wallTime": 1791716757,
+        "label": "map-popup",
+        "phaseDraws": 60,
+        "total": 31
+      }
+    },
+    {
+      "index": 20,
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-001/20-aortic-arch-z0.15.png",
+      "sha256": "77689792d5af821b2eb07f2cd3eb7a2235e563a7dd06200d329c64168ce9dc2b",
+      "pixelSize": [
+        2498,
+        1468
+      ],
+      "independentlyViewed": true,
+      "viewed": true,
+      "tool": "functions.view_image",
+      "displayReview": "Full image viewed; tool resized to 2048px wide for visual inspection. Original pixels remain saved.",
+      "status": "NEEDS_FIX",
+      "findings": "主动脉弓局部GPT红接头可见；与统一strip和心缘相邻边界有矩形材质切口，旧大蓝纯色仍占大量面积。",
+      "issueIds": [
+        "legacy-vessel-underlay",
+        "junction-strip-hard-seam",
+        "protected-underpass-caps",
+        "unit-visibility-motion-limit"
+      ],
+      "phase": {
+        "zoom": 0.15,
+        "worldReady": true,
+        "tick": 0,
+        "frame": 2733,
+        "index": 20,
+        "modal": false,
+        "simulationTime": 0,
+        "rng": 1791716691,
+        "visibilityUnchanged": true,
+        "fullbodyStats": {
+          "contexts": 2,
+          "draws": 0,
+          "images": 64
+        },
+        "uiReady": true,
+        "camera": {
+          "x": 1056,
+          "y": 1210
+        },
+        "realTime": 48.639350447803736,
+        "draws": 2570,
+        "runId": "1791716709",
+        "snapshotUnchanged": true,
+        "fps": 54,
+        "wallTime": 1791716759,
+        "label": "aortic-arch-z0.15",
+        "phaseDraws": 60,
+        "total": 31
+      }
+    },
+    {
+      "index": 21,
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-001/21-celiac-stomach-z0.15.png",
+      "sha256": "82fd58f5213fed81ed926715df2634ea48ea7e63e0751a494a18b6dd64704cf9",
+      "pixelSize": [
+        2498,
+        1468
+      ],
+      "independentlyViewed": true,
+      "viewed": true,
+      "tool": "functions.view_image",
+      "displayReview": "Full image viewed; tool resized to 2048px wide for visual inspection. Original pixels remain saved.",
+      "status": "NEEDS_FIX",
+      "findings": "腹腔—胃壁连接有实际GPT红组织接头；真实节点内部未見封口内墙，但入口段矩形换材质边突出。",
+      "issueIds": [
+        "legacy-vessel-underlay",
+        "junction-strip-hard-seam",
+        "unit-visibility-motion-limit"
+      ],
+      "phase": {
+        "zoom": 0.15,
+        "worldReady": true,
+        "tick": 0,
+        "frame": 2818,
+        "index": 21,
+        "modal": false,
+        "simulationTime": 0,
+        "rng": 1791716691,
+        "visibilityUnchanged": true,
+        "fullbodyStats": {
+          "contexts": 2,
+          "draws": 0,
+          "images": 64
+        },
+        "uiReady": true,
+        "camera": {
+          "x": 1064,
+          "y": 1492
+        },
+        "realTime": 50.276518454775214,
+        "draws": 2655,
+        "runId": "1791716709",
+        "snapshotUnchanged": true,
+        "fps": 50,
+        "wallTime": 1791716761,
+        "label": "celiac-stomach-z0.15",
+        "phaseDraws": 60,
+        "total": 31
+      }
+    },
+    {
+      "index": 22,
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-001/22-portal-z0.15.png",
+      "sha256": "1b7cccf46fb30b00077981a52c9c2fa5c227a643bb4827d855f49bb4c44c4a4a",
+      "pixelSize": [
+        2498,
+        1468
+      ],
+      "independentlyViewed": true,
+      "viewed": true,
+      "tool": "functions.view_image",
+      "displayReview": "Full image viewed; tool resized to 2048px wide for visual inspection. Original pixels remain saved.",
+      "status": "NEEDS_FIX",
+      "findings": "门静脉区大范围旧蓝/红/绿底块覆盖；保护食物通路两侧长截口让深层连续性在视觉上不明确。",
+      "issueIds": [
+        "legacy-vessel-underlay",
+        "junction-strip-hard-seam",
+        "protected-underpass-caps",
+        "legacy-green-outside-allowed-organs",
+        "unit-visibility-motion-limit"
+      ],
+      "phase": {
+        "zoom": 0.15,
+        "worldReady": true,
+        "tick": 0,
+        "frame": 2905,
+        "index": 22,
+        "modal": false,
+        "simulationTime": 0,
+        "rng": 1791716691,
+        "visibilityUnchanged": true,
+        "fullbodyStats": {
+          "contexts": 2,
+          "draws": 0,
+          "images": 64
+        },
+        "uiReady": true,
+        "camera": {
+          "x": 1022,
+          "y": 1612
+        },
+        "realTime": 51.946178475394845,
+        "draws": 2742,
+        "runId": "1791716709",
+        "snapshotUnchanged": true,
+        "fps": 54,
+        "wallTime": 1791716762,
+        "label": "portal-z0.15",
+        "phaseDraws": 60,
+        "total": 31
+      }
+    },
+    {
+      "index": 23,
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-001/23-mesenteric-z0.15.png",
+      "sha256": "6bd89476f56e020719c28ebba45261b3be48d753e464a0e504ab09ee7ce1d9c9",
+      "pixelSize": [
+        2498,
+        1468
+      ],
+      "independentlyViewed": true,
+      "viewed": true,
+      "tool": "functions.view_image",
+      "displayReview": "Full image viewed; tool resized to 2048px wide for visual inspection. Original pixels remain saved.",
+      "status": "NEEDS_FIX",
+      "findings": "肠系膜各分支覆有材质，食物腔不当血管；交界孤立片、旧粗色块和硬切阻碍通路可读性。",
+      "issueIds": [
+        "legacy-vessel-underlay",
+        "junction-strip-hard-seam",
+        "protected-underpass-caps",
+        "unit-visibility-motion-limit"
+      ],
+      "phase": {
+        "zoom": 0.15,
+        "worldReady": true,
+        "tick": 0,
+        "frame": 2991,
+        "index": 23,
+        "modal": false,
+        "simulationTime": 0,
+        "rng": 1791716691,
+        "visibilityUnchanged": true,
+        "fullbodyStats": {
+          "contexts": 2,
+          "draws": 0,
+          "images": 64
+        },
+        "uiReady": true,
+        "camera": {
+          "x": 1032,
+          "y": 1852
+        },
+        "realTime": 53.59714699536562,
+        "draws": 2828,
+        "runId": "1791716709",
+        "snapshotUnchanged": true,
+        "fps": 54,
+        "wallTime": 1791716764,
+        "label": "mesenteric-z0.15",
+        "phaseDraws": 60,
+        "total": 31
+      }
+    },
+    {
+      "index": 24,
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-001/24-pelvis-main-z0.15.png",
+      "sha256": "50ad0729bce4ece48b69ae0bc6dd5b8a7b1af3a157834e6423e5ecbc7348f56e",
+      "pixelSize": [
+        2498,
+        1468
+      ],
+      "independentlyViewed": true,
+      "viewed": true,
+      "tool": "functions.view_image",
+      "displayReview": "Full image viewed; tool resized to 2048px wide for visual inspection. Original pixels remain saved.",
+      "status": "NEEDS_FIX",
+      "findings": "骨盆镜头主要收入尿道末端和两侧长管，上方分叉不完整；不能据此判定整个骨盆接头通过。",
+      "issueIds": [
+        "legacy-vessel-underlay",
+        "protected-underpass-caps",
+        "capture-framing",
+        "unit-visibility-motion-limit"
+      ],
+      "phase": {
+        "zoom": 0.15,
+        "worldReady": true,
+        "tick": 0,
+        "frame": 3080,
+        "index": 24,
+        "modal": false,
+        "simulationTime": 0,
+        "rng": 1791716691,
+        "visibilityUnchanged": true,
+        "fullbodyStats": {
+          "contexts": 2,
+          "draws": 0,
+          "images": 64
+        },
+        "uiReady": true,
+        "camera": {
+          "x": 1020,
+          "y": 2142
+        },
+        "realTime": 55.30314799584448,
+        "draws": 2917,
+        "runId": "1791716709",
+        "snapshotUnchanged": true,
+        "fps": 49,
+        "wallTime": 1791716766,
+        "label": "pelvis-main-z0.15",
+        "phaseDraws": 60,
+        "total": 31
+      }
+    },
+    {
+      "index": 25,
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-001/25-arm-right-z0.15.png",
+      "sha256": "2c8fef6036cfd857724eb69778caad306c0b8184a1f4a0d80a34642301d530c8",
+      "pixelSize": [
+        2498,
+        1468
+      ],
+      "independentlyViewed": true,
+      "viewed": true,
+      "tool": "functions.view_image",
+      "displayReview": "Full image viewed; tool resized to 2048px wide for visual inspection. Original pixels remain saved.",
+      "status": "NEEDS_FIX",
+      "findings": "右臂长红/蓝血管strip可见且平坦；旧大蓝/红形状露在新窄管外，未收入移动测试细胞。",
+      "issueIds": [
+        "legacy-vessel-underlay",
+        "unit-visibility-motion-limit"
+      ],
+      "phase": {
+        "zoom": 0.15,
+        "worldReady": true,
+        "tick": 0,
+        "frame": 3161,
+        "index": 25,
+        "modal": false,
+        "simulationTime": 0,
+        "rng": 1791716691,
+        "visibilityUnchanged": true,
+        "fullbodyStats": {
+          "contexts": 2,
+          "draws": 0,
+          "images": 64
+        },
+        "uiReady": true,
+        "camera": {
+          "x": 670,
+          "y": 1392
+        },
+        "realTime": 56.86194249428809,
+        "draws": 2998,
+        "runId": "1791716709",
+        "snapshotUnchanged": true,
+        "fps": 54,
+        "wallTime": 1791716767,
+        "label": "arm-right-z0.15",
+        "phaseDraws": 60,
+        "total": 31
+      }
+    },
+    {
+      "index": 26,
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-001/26-arm-left-z0.15.png",
+      "sha256": "5d7df278164631657efe4d4e9e823c2d0955181959edac9aaa767d2f3678385e",
+      "pixelSize": [
+        2498,
+        1468
+      ],
+      "independentlyViewed": true,
+      "viewed": true,
+      "tool": "functions.view_image",
+      "displayReview": "Full image viewed; tool resized to 2048px wide for visual inspection. Original pixels remain saved.",
+      "status": "NEEDS_FIX",
+      "findings": "左臂同类双路线位置可见；旧大形状共存，未收入单位会车或移动证据。",
+      "issueIds": [
+        "legacy-vessel-underlay",
+        "unit-visibility-motion-limit"
+      ],
+      "phase": {
+        "zoom": 0.15,
+        "worldReady": true,
+        "tick": 0,
+        "frame": 3248,
+        "index": 26,
+        "modal": false,
+        "simulationTime": 0,
+        "rng": 1791716691,
+        "visibilityUnchanged": true,
+        "fullbodyStats": {
+          "contexts": 2,
+          "draws": 0,
+          "images": 64
+        },
+        "uiReady": true,
+        "camera": {
+          "x": 1370,
+          "y": 1392
+        },
+        "realTime": 58.51068849116564,
+        "draws": 3085,
+        "runId": "1791716709",
+        "snapshotUnchanged": true,
+        "fps": 52,
+        "wallTime": 1791716769,
+        "label": "arm-left-z0.15",
+        "phaseDraws": 60,
+        "total": 31
+      }
+    },
+    {
+      "index": 27,
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-001/27-leg-right-z0.15.png",
+      "sha256": "9313ede24a608854c1b6342a81d6ea28d5989e6a03f6ee6fa46a8035542de516",
+      "pixelSize": [
+        2498,
+        1468
+      ],
+      "independentlyViewed": true,
+      "viewed": true,
+      "tool": "functions.view_image",
+      "displayReview": "Full image viewed; tool resized to 2048px wide for visual inspection. Original pixels remain saved.",
+      "status": "NEEDS_FIX",
+      "findings": "右腿纹理长段可见；旁边旧蓝树状填色仍在，局部粉—蓝交接突变；无移动细胞。",
+      "issueIds": [
+        "legacy-vessel-underlay",
+        "unit-visibility-motion-limit"
+      ],
+      "phase": {
+        "zoom": 0.15,
+        "worldReady": true,
+        "tick": 0,
+        "frame": 3329,
+        "index": 27,
+        "modal": false,
+        "simulationTime": 0,
+        "rng": 1791716691,
+        "visibilityUnchanged": true,
+        "fullbodyStats": {
+          "contexts": 2,
+          "draws": 0,
+          "images": 64
+        },
+        "uiReady": true,
+        "camera": {
+          "x": 868,
+          "y": 2352
+        },
+        "realTime": 60.07735147885978,
+        "draws": 3166,
+        "runId": "1791716709",
+        "snapshotUnchanged": true,
+        "fps": 54,
+        "wallTime": 1791716771,
+        "label": "leg-right-z0.15",
+        "phaseDraws": 60,
+        "total": 31
+      }
+    },
+    {
+      "index": 28,
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-001/28-leg-left-z0.15.png",
+      "sha256": "001414afdad064ba8a4269baae9c99552759738c674bde2f8c179fd49007abf3",
+      "pixelSize": [
+        2498,
+        1468
+      ],
+      "independentlyViewed": true,
+      "viewed": true,
+      "tool": "functions.view_image",
+      "displayReview": "Full image viewed; tool resized to 2048px wide for visual inspection. Original pixels remain saved.",
+      "status": "NEEDS_FIX",
+      "findings": "左腿同类纹理/旧蓝大形状共存；粉—蓝交接突变；无移动细胞。",
+      "issueIds": [
+        "legacy-vessel-underlay",
+        "unit-visibility-motion-limit"
+      ],
+      "phase": {
+        "zoom": 0.15,
+        "worldReady": true,
+        "tick": 0,
+        "frame": 3409,
+        "index": 28,
+        "modal": false,
+        "simulationTime": 0,
+        "rng": 1791716691,
+        "visibilityUnchanged": true,
+        "fullbodyStats": {
+          "contexts": 2,
+          "draws": 0,
+          "images": 64
+        },
+        "uiReady": true,
+        "camera": {
+          "x": 1162,
+          "y": 2352
+        },
+        "realTime": 61.622129483148456,
+        "draws": 3246,
+        "runId": "1791716709",
+        "snapshotUnchanged": true,
+        "fps": 50,
+        "wallTime": 1791716772,
+        "label": "leg-left-z0.15",
+        "phaseDraws": 60,
+        "total": 31
+      }
+    },
+    {
+      "index": 29,
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-001/29-foot-right-z0.15.png",
+      "sha256": "d5df5bab8598001bda1f9e54bb13feb1766a449c51846b78196a2f03d9c98429",
+      "pixelSize": [
+        2498,
+        1468
+      ],
+      "independentlyViewed": true,
+      "viewed": true,
+      "tool": "functions.view_image",
+      "displayReview": "Full image viewed; tool resized to 2048px wide for visual inspection. Original pixels remain saved.",
+      "status": "NEEDS_FIX",
+      "findings": "右足镜头主要见下肢长管与骨干，趾部接头未完整入画；不能证明足部分叉接缝。",
+      "issueIds": [
+        "legacy-vessel-underlay",
+        "capture-framing",
+        "unit-visibility-motion-limit"
+      ],
+      "phase": {
+        "zoom": 0.15,
+        "worldReady": true,
+        "tick": 0,
+        "frame": 3489,
+        "index": 29,
+        "modal": false,
+        "simulationTime": 0,
+        "rng": 1791716691,
+        "visibilityUnchanged": true,
+        "fullbodyStats": {
+          "contexts": 2,
+          "draws": 0,
+          "images": 64
+        },
+        "uiReady": true,
+        "camera": {
+          "x": 742,
+          "y": 3292
+        },
+        "realTime": 63.15727248415351,
+        "draws": 3326,
+        "runId": "1791716709",
+        "snapshotUnchanged": true,
+        "fps": 53,
+        "wallTime": 1791716774,
+        "label": "foot-right-z0.15",
+        "phaseDraws": 60,
+        "total": 31
+      }
+    },
+    {
+      "index": 30,
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-001/30-foot-left-z0.15.png",
+      "sha256": "4b8bd803e4b9642c5eec8977acf884c93962303e6f8b4549b71ffe5c4746d602",
+      "pixelSize": [
+        2498,
+        1468
+      ],
+      "independentlyViewed": true,
+      "viewed": true,
+      "tool": "functions.view_image",
+      "displayReview": "Full image viewed; tool resized to 2048px wide for visual inspection. Original pixels remain saved.",
+      "status": "NEEDS_FIX",
+      "findings": "左足镜头同类取景限制，长段纹理可见、趾部接头未收入。",
+      "issueIds": [
+        "legacy-vessel-underlay",
+        "capture-framing",
+        "unit-visibility-motion-limit"
+      ],
+      "phase": {
+        "zoom": 0.15,
+        "worldReady": true,
+        "tick": 0,
+        "frame": 3577,
+        "index": 30,
+        "modal": false,
+        "simulationTime": 0,
+        "rng": 1791716691,
+        "visibilityUnchanged": true,
+        "fullbodyStats": {
+          "contexts": 2,
+          "draws": 0,
+          "images": 64
+        },
+        "uiReady": true,
+        "camera": {
+          "x": 1300,
+          "y": 3292
+        },
+        "realTime": 64.8327144831419,
+        "draws": 3414,
+        "runId": "1791716709",
+        "snapshotUnchanged": true,
+        "fps": 55,
+        "wallTime": 1791716775,
+        "label": "foot-left-z0.15",
+        "phaseDraws": 60,
+        "total": 31
+      }
+    },
+    {
+      "index": 31,
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-001/31-neck-main-z0.15.png",
+      "sha256": "b20069383a459a10e981e9b11265326daf37450c317da824048d397bfa267962",
+      "pixelSize": [
+        2498,
+        1468
+      ],
+      "independentlyViewed": true,
+      "viewed": true,
+      "tool": "functions.view_image",
+      "displayReview": "Full image viewed; tool resized to 2048px wide for visual inspection. Original pixels remain saved.",
+      "status": "NEEDS_FIX",
+      "findings": "颈部中线奶油气道/骨骼保持独立；两侧新血管strip与旧大管共存，无移动态验收。",
+      "issueIds": [
+        "legacy-vessel-underlay",
+        "unit-visibility-motion-limit"
+      ],
+      "phase": {
+        "zoom": 0.15,
+        "worldReady": true,
+        "tick": 0,
+        "frame": 3667,
+        "index": 31,
+        "modal": false,
+        "simulationTime": 0,
+        "rng": 1791716691,
+        "visibilityUnchanged": true,
+        "fullbodyStats": {
+          "contexts": 2,
+          "draws": 0,
+          "images": 64
+        },
+        "uiReady": true,
+        "camera": {
+          "x": 1020,
+          "y": 978
+        },
+        "realTime": 66.51108550094068,
+        "draws": 3504,
+        "runId": "1791716709",
+        "snapshotUnchanged": true,
+        "fps": 51,
+        "wallTime": 1791716777,
+        "label": "neck-main-z0.15",
+        "phaseDraws": 60,
+        "total": 31
+      }
+    }
+  ],
+  "count": 31,
+  "viewed": 31,
+  "total": 31,
+  "issues": [
+    {
+      "id": "legacy-vessel-underlay",
+      "severity": "blocker",
+      "finding": "旧矢量大血管与粗组织色块露在新纹理外，形成两套血管宽度/位置与强烈纯色背景。",
+      "views": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        14,
+        15,
+        16,
+        17,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "nextCheck": "新版须在新材质接管后隐藏旧血管填色；核对冻结路线、体表和骨骼仍稳定。"
+    },
+    {
+      "id": "junction-strip-hard-seam",
+      "severity": "blocker",
+      "finding": "GPT局部接头与统一strip之间有明显矩形边、颜色/纹理突变和细锯齿接缝。",
+      "views": [
+        1,
+        2,
+        6,
+        7,
+        9,
+        10,
+        12,
+        15,
+        16,
+        17,
+        20,
+        21,
+        22,
+        23
+      ],
+      "nextCheck": "新版逐接头看同一真实节点的开放地面、端口连续及过渡；分层相交不能假连。"
+    },
+    {
+      "id": "protected-underpass-caps",
+      "severity": "blocker",
+      "finding": "气/食/尿通路周围的血管断面呈直角平截/短孤立块，视觉上像死路或刺入保护腔。",
+      "views": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        17,
+        20,
+        22,
+        23,
+        24
+      ],
+      "nextCheck": "冻结血管继续走独立平面，前景保护区域不增血管；underpass圆口/隐去断口不得改变节点、宽度或连接。"
+    },
+    {
+      "id": "legacy-green-outside-allowed-organs",
+      "severity": "blocker",
+      "finding": "右肾内侧旧竖向通路和胃外腹部残留薄荷/灰绿色块；它们不是新器官绿色底块，但仍违背胃肝之外不出现绿色的视觉要求。",
+      "views": [
+        7,
+        17,
+        22
+      ],
+      "nextCheck": "旧尿路/外围底色改成奶油暖黄或暖粉；不能把尿路改成血管。"
+    },
+    {
+      "id": "capture-framing",
+      "severity": "evidence-limit",
+      "finding": "全身图头脚被HUD覆盖；骨盆/足部镜头没有完整收入目标分叉/趾部；地图弹窗仅为fit全身远景。",
+      "views": [
+        18,
+        19,
+        24,
+        29,
+        30
+      ],
+      "nextCheck": "新增取景明确收入目标，地图弹窗远景只证明其远景；若UI没有.15局部视图则不声称已验收UI.15接缝。"
+    },
+    {
+      "id": "unit-visibility-motion-limit",
+      "severity": "evidence-limit",
+      "finding": "器官中心选中细胞的绿环可见，但本体小；四肢/主干镜头缺少受测移动细胞。单帧无法证明类型可辨、隐藏管段、会车或连续移动。",
+      "views": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "nextCheck": "生产移动矩阵与原生移动录像分别验收，至少覆盖入口、隐藏blood平面、组织壁边和会车。"
+    }
+  ],
+  "summary": "首版31/31原生静帧已独立查看；主干旧矢量露底、GPT接头硬切、食气尿保护层交界血管断面及胃肝外旧绿色底色阻断视觉通过。修正后必须另采原生新版，不以本批数量或离线通过代替。",
+  "limits": [
+    "All views from one desktop window 1249×734 logical including title bar, DPR 2. No tablet/phone validation.",
+    "No native 15-second continuous animation or movement recording in this batch.",
+    "Selected unit rings visible in organ views; unit type readability and hidden-route motion remain unconfirmed.",
+    "Screenshot FPS display is not a controlled P95 comparison.",
+    "Whole body and popup use fit/overview scale, not .15.",
+    "Collision/navigation graph unchanged must be established by separate production QA, not inferred from artwork."
+  ]
+}

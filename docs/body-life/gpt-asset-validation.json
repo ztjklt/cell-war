@@ -1,0 +1,58 @@
+{
+  "coordinateSpace": [
+    1024,
+    1536
+  ],
+  "imageSize": [
+    1024,
+    1536
+  ],
+  "sha256": "9bea30ed9bd1fee9ef99452cda933d7114e600ad98137f68e7dd7a3a5ddbd717",
+  "sourceUnchanged": true,
+  "regions": {
+    "lung_r": {
+      "maskPixels": 4962,
+      "rgbAbsoluteDifferenceMean": 1.982869810560258,
+      "rgbAbsoluteDifferenceP95": 5.0,
+      "bluePixelCountInGeneratedInterior": 0
+    },
+    "lung_l": {
+      "maskPixels": 4563,
+      "rgbAbsoluteDifferenceMean": 2.208050259332311,
+      "rgbAbsoluteDifferenceP95": 6.0,
+      "bluePixelCountInGeneratedInterior": 0
+    }
+  },
+  "registration": "Full-canvas reference alignment; no per-organ refitting. Original masks enforce final silhouette/foreground registration. Image generation is not pixel-identical extraction.",
+  "rejectedCandidates": [
+    {
+      "file": "foreground-v1.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "partialAlphaPixels": 153681,
+      "decision": "Do not load into runtime: visible halo and invented or displaced structures."
+    },
+    {
+      "file": "organs-v2.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "partialAlphaPixels": 16155,
+      "decision": "Do not load into runtime: visible halo and invented or displaced structures."
+    },
+    {
+      "file": "tissue-v1.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "partialAlphaPixels": 46245,
+      "decision": "Do not load into runtime: visible halo and invented or displaced structures."
+    }
+  ],
+  "maskSha256": "d2ec96785d082f3656dcf2a6c4280f170d933ad9e371f0a92f5bb6fc6b491ccc",
+  "rimProtection": "5 source pixels around original and generated pale markings"
+}

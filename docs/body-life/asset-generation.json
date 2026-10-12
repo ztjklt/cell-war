@@ -1,0 +1,24 @@
+{
+  "provider": "Maker edit_image",
+  "delivery": "blocked",
+  "error": "INSUFFICIENT_BALANCE",
+  "retry": false,
+  "requests": [
+    {
+      "name": "body_life_organs_registered",
+      "prompt": "游戏动画素材分层，精确抠图任务。输入是1024x1536的完整人体解剖图。输出必须保持同样1024x1536画布，所有器官在原图的绝对坐标、大小、方向、边缘轮廓、原始颜色和手绘风格严格不变。只保留脑、左右肺、心脏、肝、胃、胰腺、双肾、大小肠、膀胱及四肢红色肌肉组织。其余皮肤、骨骼、外部红蓝大血管、气管、白背景全部去掉变为真正透明。肺内部蓝色树状支气管从本层去掉，用周围粉色肺组织自然补齐；心脏内黄色细血管保留。胃肠原来被血管遮挡的极小缺口用相邻组织补齐。不要重新排列成图标，不要把器官放大或居中，不要新增器官，不要描边、标记、文字、阴影背景、棋盘格。输出是与原图完全重合的透明器官组织图层，可直接叠回原图。",
+      "target_size": "1024x1536",
+      "transparent": true,
+      "image": "assets/image/anatomy-reference/body-life/source-upload.jpg"
+    },
+    {
+      "name": "body_life_fixed_foreground",
+      "prompt": "游戏动画素材分层，精确抠图任务。输入1024x1536人体解剖图。输出必须是同一1024x1536画布，所有被保留像素在原图绝对坐标、大小、形状、颜色不变。只提取固定前景：全部象牙色骨骼和关节、正中象牙色气管、两肺内部蓝色树状支气管、颈部/躯干/双臂双手/双腿双脚原本可见的红色动脉和蓝色静脉。其余皮肤、器官软组织、肌肉、白背景全部为真正透明。只保留原本看得到的部分，不补画被器官遮住的血管，不添加新线路。肺内蓝色支气管要原样保留。禁止位移、放大、重排、换色、文字、白底和棋盘格。该图必须原坐标叠回原图，用于盖住后方软组织动画。",
+      "target_size": "1024x1536",
+      "transparent": true,
+      "image": "assets/image/anatomy-reference/body-life/source-upload.jpg"
+    }
+  ],
+  "fallback": "Superseded by explicit user choice: GPT built-in image generation dispatched; see gpt-asset-generation.json.",
+  "historical": true
+}

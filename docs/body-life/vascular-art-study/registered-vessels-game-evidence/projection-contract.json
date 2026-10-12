@@ -1,0 +1,847 @@
+{
+  "schema": "registered-vessels-projection-contract/v1",
+  "nativeEvidence": false,
+  "sourceToWorld": {
+    "xScale": 2,
+    "yScale": 2,
+    "yOffset": 512
+  },
+  "worldToLogical": {
+    "scale": "32 * zoom",
+    "center": [
+      "logicalWidth*.5",
+      "logicalHeight*.47"
+    ]
+  },
+  "sourceToLogicalScale": "64 * zoom",
+  "fillAlpha": "smoothstep(clamp((zoom-.085)/.065,0,1))",
+  "fillPaintAlpha": "floor(fillAlpha * 255) / 255",
+  "dpr": "Mode B: logical viewport = physical viewport / DPR; physical output = logical output * DPR.",
+  "pointsTested": 49,
+  "samples": [
+    {
+      "logicalSize": [
+        1440,
+        900
+      ],
+      "dpr": 1,
+      "zoom": 0.085,
+      "sourceToLogicalScale": 5.44,
+      "fillAlpha": 0.0,
+      "fillPaintAlpha": 0.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "far-dot"
+    },
+    {
+      "logicalSize": [
+        1440,
+        900
+      ],
+      "dpr": 1,
+      "zoom": 0.115,
+      "sourceToLogicalScale": 7.36,
+      "fillAlpha": 0.4424214838416022,
+      "fillPaintAlpha": 0.4392156862745098,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "far-dot"
+    },
+    {
+      "logicalSize": [
+        1440,
+        900
+      ],
+      "dpr": 1,
+      "zoom": 0.15,
+      "sourceToLogicalScale": 9.6,
+      "fillAlpha": 1.0,
+      "fillPaintAlpha": 1.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "cell"
+    },
+    {
+      "logicalSize": [
+        1440,
+        900
+      ],
+      "dpr": 1,
+      "zoom": 0.18,
+      "sourceToLogicalScale": 11.52,
+      "fillAlpha": 1.0,
+      "fillPaintAlpha": 1.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "cell"
+    },
+    {
+      "logicalSize": [
+        1440,
+        900
+      ],
+      "dpr": 2,
+      "zoom": 0.085,
+      "sourceToLogicalScale": 5.44,
+      "fillAlpha": 0.0,
+      "fillPaintAlpha": 0.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "far-dot"
+    },
+    {
+      "logicalSize": [
+        1440,
+        900
+      ],
+      "dpr": 2,
+      "zoom": 0.115,
+      "sourceToLogicalScale": 7.36,
+      "fillAlpha": 0.4424214838416022,
+      "fillPaintAlpha": 0.4392156862745098,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "far-dot"
+    },
+    {
+      "logicalSize": [
+        1440,
+        900
+      ],
+      "dpr": 2,
+      "zoom": 0.15,
+      "sourceToLogicalScale": 9.6,
+      "fillAlpha": 1.0,
+      "fillPaintAlpha": 1.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "cell"
+    },
+    {
+      "logicalSize": [
+        1440,
+        900
+      ],
+      "dpr": 2,
+      "zoom": 0.18,
+      "sourceToLogicalScale": 11.52,
+      "fillAlpha": 1.0,
+      "fillPaintAlpha": 1.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "cell"
+    },
+    {
+      "logicalSize": [
+        1440,
+        900
+      ],
+      "dpr": 3,
+      "zoom": 0.085,
+      "sourceToLogicalScale": 5.44,
+      "fillAlpha": 0.0,
+      "fillPaintAlpha": 0.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "far-dot"
+    },
+    {
+      "logicalSize": [
+        1440,
+        900
+      ],
+      "dpr": 3,
+      "zoom": 0.115,
+      "sourceToLogicalScale": 7.36,
+      "fillAlpha": 0.4424214838416022,
+      "fillPaintAlpha": 0.4392156862745098,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "far-dot"
+    },
+    {
+      "logicalSize": [
+        1440,
+        900
+      ],
+      "dpr": 3,
+      "zoom": 0.15,
+      "sourceToLogicalScale": 9.6,
+      "fillAlpha": 1.0,
+      "fillPaintAlpha": 1.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "cell"
+    },
+    {
+      "logicalSize": [
+        1440,
+        900
+      ],
+      "dpr": 3,
+      "zoom": 0.18,
+      "sourceToLogicalScale": 11.52,
+      "fillAlpha": 1.0,
+      "fillPaintAlpha": 1.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "cell"
+    },
+    {
+      "logicalSize": [
+        1024,
+        768
+      ],
+      "dpr": 1,
+      "zoom": 0.085,
+      "sourceToLogicalScale": 5.44,
+      "fillAlpha": 0.0,
+      "fillPaintAlpha": 0.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "far-dot"
+    },
+    {
+      "logicalSize": [
+        1024,
+        768
+      ],
+      "dpr": 1,
+      "zoom": 0.115,
+      "sourceToLogicalScale": 7.36,
+      "fillAlpha": 0.4424214838416022,
+      "fillPaintAlpha": 0.4392156862745098,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "far-dot"
+    },
+    {
+      "logicalSize": [
+        1024,
+        768
+      ],
+      "dpr": 1,
+      "zoom": 0.15,
+      "sourceToLogicalScale": 9.6,
+      "fillAlpha": 1.0,
+      "fillPaintAlpha": 1.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "cell"
+    },
+    {
+      "logicalSize": [
+        1024,
+        768
+      ],
+      "dpr": 1,
+      "zoom": 0.18,
+      "sourceToLogicalScale": 11.52,
+      "fillAlpha": 1.0,
+      "fillPaintAlpha": 1.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "cell"
+    },
+    {
+      "logicalSize": [
+        1024,
+        768
+      ],
+      "dpr": 2,
+      "zoom": 0.085,
+      "sourceToLogicalScale": 5.44,
+      "fillAlpha": 0.0,
+      "fillPaintAlpha": 0.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "far-dot"
+    },
+    {
+      "logicalSize": [
+        1024,
+        768
+      ],
+      "dpr": 2,
+      "zoom": 0.115,
+      "sourceToLogicalScale": 7.36,
+      "fillAlpha": 0.4424214838416022,
+      "fillPaintAlpha": 0.4392156862745098,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "far-dot"
+    },
+    {
+      "logicalSize": [
+        1024,
+        768
+      ],
+      "dpr": 2,
+      "zoom": 0.15,
+      "sourceToLogicalScale": 9.6,
+      "fillAlpha": 1.0,
+      "fillPaintAlpha": 1.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "cell"
+    },
+    {
+      "logicalSize": [
+        1024,
+        768
+      ],
+      "dpr": 2,
+      "zoom": 0.18,
+      "sourceToLogicalScale": 11.52,
+      "fillAlpha": 1.0,
+      "fillPaintAlpha": 1.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "cell"
+    },
+    {
+      "logicalSize": [
+        1024,
+        768
+      ],
+      "dpr": 3,
+      "zoom": 0.085,
+      "sourceToLogicalScale": 5.44,
+      "fillAlpha": 0.0,
+      "fillPaintAlpha": 0.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "far-dot"
+    },
+    {
+      "logicalSize": [
+        1024,
+        768
+      ],
+      "dpr": 3,
+      "zoom": 0.115,
+      "sourceToLogicalScale": 7.36,
+      "fillAlpha": 0.4424214838416022,
+      "fillPaintAlpha": 0.4392156862745098,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "far-dot"
+    },
+    {
+      "logicalSize": [
+        1024,
+        768
+      ],
+      "dpr": 3,
+      "zoom": 0.15,
+      "sourceToLogicalScale": 9.6,
+      "fillAlpha": 1.0,
+      "fillPaintAlpha": 1.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "cell"
+    },
+    {
+      "logicalSize": [
+        1024,
+        768
+      ],
+      "dpr": 3,
+      "zoom": 0.18,
+      "sourceToLogicalScale": 11.52,
+      "fillAlpha": 1.0,
+      "fillPaintAlpha": 1.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "cell"
+    },
+    {
+      "logicalSize": [
+        844,
+        390
+      ],
+      "dpr": 1,
+      "zoom": 0.085,
+      "sourceToLogicalScale": 5.44,
+      "fillAlpha": 0.0,
+      "fillPaintAlpha": 0.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "far-dot"
+    },
+    {
+      "logicalSize": [
+        844,
+        390
+      ],
+      "dpr": 1,
+      "zoom": 0.115,
+      "sourceToLogicalScale": 7.36,
+      "fillAlpha": 0.4424214838416022,
+      "fillPaintAlpha": 0.4392156862745098,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "far-dot"
+    },
+    {
+      "logicalSize": [
+        844,
+        390
+      ],
+      "dpr": 1,
+      "zoom": 0.15,
+      "sourceToLogicalScale": 9.6,
+      "fillAlpha": 1.0,
+      "fillPaintAlpha": 1.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "cell"
+    },
+    {
+      "logicalSize": [
+        844,
+        390
+      ],
+      "dpr": 1,
+      "zoom": 0.18,
+      "sourceToLogicalScale": 11.52,
+      "fillAlpha": 1.0,
+      "fillPaintAlpha": 1.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "cell"
+    },
+    {
+      "logicalSize": [
+        844,
+        390
+      ],
+      "dpr": 2,
+      "zoom": 0.085,
+      "sourceToLogicalScale": 5.44,
+      "fillAlpha": 0.0,
+      "fillPaintAlpha": 0.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "far-dot"
+    },
+    {
+      "logicalSize": [
+        844,
+        390
+      ],
+      "dpr": 2,
+      "zoom": 0.115,
+      "sourceToLogicalScale": 7.36,
+      "fillAlpha": 0.4424214838416022,
+      "fillPaintAlpha": 0.4392156862745098,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "far-dot"
+    },
+    {
+      "logicalSize": [
+        844,
+        390
+      ],
+      "dpr": 2,
+      "zoom": 0.15,
+      "sourceToLogicalScale": 9.6,
+      "fillAlpha": 1.0,
+      "fillPaintAlpha": 1.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "cell"
+    },
+    {
+      "logicalSize": [
+        844,
+        390
+      ],
+      "dpr": 2,
+      "zoom": 0.18,
+      "sourceToLogicalScale": 11.52,
+      "fillAlpha": 1.0,
+      "fillPaintAlpha": 1.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "cell"
+    },
+    {
+      "logicalSize": [
+        844,
+        390
+      ],
+      "dpr": 3,
+      "zoom": 0.085,
+      "sourceToLogicalScale": 5.44,
+      "fillAlpha": 0.0,
+      "fillPaintAlpha": 0.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "far-dot"
+    },
+    {
+      "logicalSize": [
+        844,
+        390
+      ],
+      "dpr": 3,
+      "zoom": 0.115,
+      "sourceToLogicalScale": 7.36,
+      "fillAlpha": 0.4424214838416022,
+      "fillPaintAlpha": 0.4392156862745098,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "far-dot"
+    },
+    {
+      "logicalSize": [
+        844,
+        390
+      ],
+      "dpr": 3,
+      "zoom": 0.15,
+      "sourceToLogicalScale": 9.6,
+      "fillAlpha": 1.0,
+      "fillPaintAlpha": 1.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "cell"
+    },
+    {
+      "logicalSize": [
+        844,
+        390
+      ],
+      "dpr": 3,
+      "zoom": 0.18,
+      "sourceToLogicalScale": 11.52,
+      "fillAlpha": 1.0,
+      "fillPaintAlpha": 1.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "cell"
+    },
+    {
+      "logicalSize": [
+        430,
+        932
+      ],
+      "dpr": 1,
+      "zoom": 0.085,
+      "sourceToLogicalScale": 5.44,
+      "fillAlpha": 0.0,
+      "fillPaintAlpha": 0.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "far-dot"
+    },
+    {
+      "logicalSize": [
+        430,
+        932
+      ],
+      "dpr": 1,
+      "zoom": 0.115,
+      "sourceToLogicalScale": 7.36,
+      "fillAlpha": 0.4424214838416022,
+      "fillPaintAlpha": 0.4392156862745098,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "far-dot"
+    },
+    {
+      "logicalSize": [
+        430,
+        932
+      ],
+      "dpr": 1,
+      "zoom": 0.15,
+      "sourceToLogicalScale": 9.6,
+      "fillAlpha": 1.0,
+      "fillPaintAlpha": 1.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "cell"
+    },
+    {
+      "logicalSize": [
+        430,
+        932
+      ],
+      "dpr": 1,
+      "zoom": 0.18,
+      "sourceToLogicalScale": 11.52,
+      "fillAlpha": 1.0,
+      "fillPaintAlpha": 1.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "cell"
+    },
+    {
+      "logicalSize": [
+        430,
+        932
+      ],
+      "dpr": 2,
+      "zoom": 0.085,
+      "sourceToLogicalScale": 5.44,
+      "fillAlpha": 0.0,
+      "fillPaintAlpha": 0.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "far-dot"
+    },
+    {
+      "logicalSize": [
+        430,
+        932
+      ],
+      "dpr": 2,
+      "zoom": 0.115,
+      "sourceToLogicalScale": 7.36,
+      "fillAlpha": 0.4424214838416022,
+      "fillPaintAlpha": 0.4392156862745098,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "far-dot"
+    },
+    {
+      "logicalSize": [
+        430,
+        932
+      ],
+      "dpr": 2,
+      "zoom": 0.15,
+      "sourceToLogicalScale": 9.6,
+      "fillAlpha": 1.0,
+      "fillPaintAlpha": 1.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "cell"
+    },
+    {
+      "logicalSize": [
+        430,
+        932
+      ],
+      "dpr": 2,
+      "zoom": 0.18,
+      "sourceToLogicalScale": 11.52,
+      "fillAlpha": 1.0,
+      "fillPaintAlpha": 1.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "cell"
+    },
+    {
+      "logicalSize": [
+        430,
+        932
+      ],
+      "dpr": 3,
+      "zoom": 0.085,
+      "sourceToLogicalScale": 5.44,
+      "fillAlpha": 0.0,
+      "fillPaintAlpha": 0.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "far-dot"
+    },
+    {
+      "logicalSize": [
+        430,
+        932
+      ],
+      "dpr": 3,
+      "zoom": 0.115,
+      "sourceToLogicalScale": 7.36,
+      "fillAlpha": 0.4424214838416022,
+      "fillPaintAlpha": 0.4392156862745098,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "far-dot"
+    },
+    {
+      "logicalSize": [
+        430,
+        932
+      ],
+      "dpr": 3,
+      "zoom": 0.15,
+      "sourceToLogicalScale": 9.6,
+      "fillAlpha": 1.0,
+      "fillPaintAlpha": 1.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "cell"
+    },
+    {
+      "logicalSize": [
+        430,
+        932
+      ],
+      "dpr": 3,
+      "zoom": 0.18,
+      "sourceToLogicalScale": 11.52,
+      "fillAlpha": 1.0,
+      "fillPaintAlpha": 1.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "cell"
+    },
+    {
+      "logicalSize": [
+        360,
+        780
+      ],
+      "dpr": 1,
+      "zoom": 0.085,
+      "sourceToLogicalScale": 5.44,
+      "fillAlpha": 0.0,
+      "fillPaintAlpha": 0.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "far-dot"
+    },
+    {
+      "logicalSize": [
+        360,
+        780
+      ],
+      "dpr": 1,
+      "zoom": 0.115,
+      "sourceToLogicalScale": 7.36,
+      "fillAlpha": 0.4424214838416022,
+      "fillPaintAlpha": 0.4392156862745098,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "far-dot"
+    },
+    {
+      "logicalSize": [
+        360,
+        780
+      ],
+      "dpr": 1,
+      "zoom": 0.15,
+      "sourceToLogicalScale": 9.6,
+      "fillAlpha": 1.0,
+      "fillPaintAlpha": 1.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "cell"
+    },
+    {
+      "logicalSize": [
+        360,
+        780
+      ],
+      "dpr": 1,
+      "zoom": 0.18,
+      "sourceToLogicalScale": 11.52,
+      "fillAlpha": 1.0,
+      "fillPaintAlpha": 1.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "cell"
+    },
+    {
+      "logicalSize": [
+        360,
+        780
+      ],
+      "dpr": 2,
+      "zoom": 0.085,
+      "sourceToLogicalScale": 5.44,
+      "fillAlpha": 0.0,
+      "fillPaintAlpha": 0.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "far-dot"
+    },
+    {
+      "logicalSize": [
+        360,
+        780
+      ],
+      "dpr": 2,
+      "zoom": 0.115,
+      "sourceToLogicalScale": 7.36,
+      "fillAlpha": 0.4424214838416022,
+      "fillPaintAlpha": 0.4392156862745098,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "far-dot"
+    },
+    {
+      "logicalSize": [
+        360,
+        780
+      ],
+      "dpr": 2,
+      "zoom": 0.15,
+      "sourceToLogicalScale": 9.6,
+      "fillAlpha": 1.0,
+      "fillPaintAlpha": 1.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "cell"
+    },
+    {
+      "logicalSize": [
+        360,
+        780
+      ],
+      "dpr": 2,
+      "zoom": 0.18,
+      "sourceToLogicalScale": 11.52,
+      "fillAlpha": 1.0,
+      "fillPaintAlpha": 1.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "cell"
+    },
+    {
+      "logicalSize": [
+        360,
+        780
+      ],
+      "dpr": 3,
+      "zoom": 0.085,
+      "sourceToLogicalScale": 5.44,
+      "fillAlpha": 0.0,
+      "fillPaintAlpha": 0.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "far-dot"
+    },
+    {
+      "logicalSize": [
+        360,
+        780
+      ],
+      "dpr": 3,
+      "zoom": 0.115,
+      "sourceToLogicalScale": 7.36,
+      "fillAlpha": 0.4424214838416022,
+      "fillPaintAlpha": 0.4392156862745098,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "far-dot"
+    },
+    {
+      "logicalSize": [
+        360,
+        780
+      ],
+      "dpr": 3,
+      "zoom": 0.15,
+      "sourceToLogicalScale": 9.6,
+      "fillAlpha": 1.0,
+      "fillPaintAlpha": 1.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "cell"
+    },
+    {
+      "logicalSize": [
+        360,
+        780
+      ],
+      "dpr": 3,
+      "zoom": 0.18,
+      "sourceToLogicalScale": 11.52,
+      "fillAlpha": 1.0,
+      "fillPaintAlpha": 1.0,
+      "roundTripWorldError": 1.1368683772161603e-13,
+      "unitsMode": "cell"
+    }
+  ],
+  "maximumWorldError": 1.1368683772161603e-13,
+  "zoomSizes": [
+    {
+      "zoom": 0.085,
+      "sourceToLogicalScale": 5.44,
+      "fillAlpha": 0.0,
+      "fillPaintAlpha": 0.0,
+      "unitMode": "far-dot",
+      "scoutDiameterLogical": 4,
+      "siegeDiameterLogical": 4
+    },
+    {
+      "zoom": 0.115,
+      "sourceToLogicalScale": 7.36,
+      "fillAlpha": 0.4424214838416022,
+      "fillPaintAlpha": 0.4392156862745098,
+      "unitMode": "far-dot",
+      "scoutDiameterLogical": 4,
+      "siegeDiameterLogical": 4
+    },
+    {
+      "zoom": 0.15,
+      "sourceToLogicalScale": 9.6,
+      "fillAlpha": 1.0,
+      "fillPaintAlpha": 1.0,
+      "unitMode": "cell",
+      "scoutDiameterLogical": 4.2,
+      "siegeDiameterLogical": 10.2
+    },
+    {
+      "zoom": 0.18,
+      "sourceToLogicalScale": 11.52,
+      "fillAlpha": 1.0,
+      "fillPaintAlpha": 1.0,
+      "unitMode": "cell",
+      "scoutDiameterLogical": 5.04,
+      "siegeDiameterLogical": 12.24
+    }
+  ],
+  "limits": [
+    "The actual .14 far-dot/cell switch is discontinuous in current Render.lua; this records it without changing it.",
+    "A CSS-fit full-body picture is not zoom=.15. A .15 viewport uses 9.6 logical pixels per source pixel.",
+    "Existing .15 fill is a comparison layer. New vascular art is a separate uninstalled study layer."
+  ]
+}

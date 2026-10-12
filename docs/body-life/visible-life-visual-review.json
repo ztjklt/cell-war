@@ -1,0 +1,114 @@
+{
+  "nativeEvidence": false,
+  "source": "Rendered Lua/NanoVG drawing commands through the offline Cairo backend.",
+  "results": {
+    "regression": {
+      "passed": 180,
+      "total": 180
+    },
+    "integration": {
+      "passed": 8,
+      "total": 8
+    },
+    "resources": {
+      "passed": 11,
+      "total": 11
+    },
+    "pixel-checks": {
+      "passed": 6,
+      "total": 6
+    },
+    "visibility": {
+      "passed": 3,
+      "total": 3
+    }
+  },
+  "previews": {
+    "whole": {
+      "webp": {
+        "file": "whole-15s.webp",
+        "view": "whole",
+        "framesSampled": 180,
+        "fps": 12,
+        "durationMs": 15000,
+        "logicalSize": [
+          720,
+          600
+        ],
+        "dpr": 1
+      },
+      "sourcesChangedDuringExport": [],
+      "mp4": {
+        "file": "whole-15s.mp4",
+        "codec": "h264",
+        "width": 720,
+        "height": 600,
+        "fps": 12,
+        "frames": 180,
+        "durationSeconds": 15
+      }
+    },
+    "chest": {
+      "webp": {
+        "file": "chest-15s.webp",
+        "view": "chest",
+        "framesSampled": 180,
+        "fps": 12,
+        "durationMs": 15000,
+        "logicalSize": [
+          720,
+          600
+        ],
+        "dpr": 1
+      },
+      "sourcesChangedDuringExport": [],
+      "mp4": {
+        "file": "chest-15s.mp4",
+        "codec": "h264",
+        "width": 720,
+        "height": 600,
+        "fps": 12,
+        "frames": 180,
+        "durationSeconds": 15
+      }
+    },
+    "digestive": {
+      "webp": {
+        "file": "digestive-15s.webp",
+        "view": "digestive",
+        "framesSampled": 180,
+        "fps": 12,
+        "durationMs": 15000,
+        "logicalSize": [
+          720,
+          600
+        ],
+        "dpr": 1
+      },
+      "sourcesChangedDuringExport": []
+    }
+  },
+  "visualReview": [
+    "whole-0.13.png: full body remains stable; heart peak shading is materially stronger.",
+    "chest-0.13.png and chest-1.92.png: stronger cardiac/respiratory shading without the former fragmented lung rim or a broad halo around bronchi.",
+    "digestive-4.8.png: organ layout and connections remain fixed."
+  ],
+  "playbackEvidence": {
+    "observer": "parent agent",
+    "method": "in-app browser video playback",
+    "files": [
+      "whole-15s.mp4",
+      "chest-15s.mp4"
+    ],
+    "observedProgressSeconds": [
+      0,
+      13
+    ]
+  },
+  "limitations": [
+    "Visibility thresholds are engineering regression floors, not a universal guarantee of perception.",
+    "Browser playback verifies the exported video; it does not prove native game GPU seams or frame time."
+  ],
+  "passed": 208,
+  "total": 208
+}

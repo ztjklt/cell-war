@@ -1,0 +1,260 @@
+{
+  "adapterStats": {
+    "rejectedCenterlines": 0,
+    "prior": {
+      "laneSelections": 2,
+      "directRoutes": 0,
+      "centerlineRoutes": 0
+    },
+    "centerlineRoutes": 0,
+    "directRoutes": 2,
+    "explicitRequests": 2
+  },
+  "routes": [
+    {
+      "id": "lung_l.outward",
+      "startSource": [
+        580.0,
+        350.0
+      ],
+      "zone": "lung_l",
+      "targetSource": [
+        601,
+        412
+      ],
+      "pass": true,
+      "trace": [
+        {
+          "t": 0,
+          "lane": 7,
+          "y": 1212,
+          "x": 1160
+        },
+        {
+          "y": 1212.0,
+          "x": 1158.9603081853147,
+          "lane": 7,
+          "stage": "gate-to-tissue",
+          "t": 0.49999999999999994
+        },
+        {
+          "y": 1212.0,
+          "x": 1157.6898447491296,
+          "lane": 7,
+          "stage": "gate-to-tissue",
+          "t": 1.0000000000000002
+        },
+        {
+          "y": 1212.0,
+          "x": 1156.429550562718,
+          "lane": 7,
+          "stage": "gate-to-tissue",
+          "t": 1.5000000000000007
+        },
+        {
+          "y": 1212.0,
+          "x": 1155.169542291473,
+          "lane": 7,
+          "stage": "gate-to-tissue",
+          "t": 2.000000000000001
+        },
+        {
+          "y": 1212.0,
+          "x": 1153.9095420589217,
+          "lane": 7,
+          "stage": "gate-to-tissue",
+          "t": 2.499999999999999
+        },
+        {
+          "y": 1212.0,
+          "x": 1152.6495420523834,
+          "lane": 7,
+          "stage": "gate-to-tissue",
+          "t": 2.9999999999999973
+        },
+        {
+          "y": 1212.0,
+          "x": 1152.019542052226,
+          "lane": 0,
+          "stage": "gate-to-tissue",
+          "t": 3.2499999999999964
+        },
+        {
+          "y": 1212.0,
+          "x": 1151.3895420521997,
+          "lane": 0,
+          "stage": "gate-to-tissue",
+          "t": 3.4999999999999956
+        },
+        {
+          "t": 3.8499999999999943,
+          "lane": 0,
+          "y": 1212.0,
+          "x": 1150.785101340758
+        }
+      ],
+      "seconds": 3.8499999999999943,
+      "stages": [
+        {
+          "id": "gate-to-tissue",
+          "toSource": [
+            575.0,
+            350.0
+          ],
+          "startLane": 7,
+          "invalidSteps": 0,
+          "pass": true,
+          "seconds": 3.85,
+          "endLegal": true,
+          "startLegal": true,
+          "arrived": true,
+          "endLane": 0,
+          "radiusViolations": 0,
+          "fromSource": [
+            580.0,
+            350.0
+          ]
+        }
+      ],
+      "name": "左肺",
+      "kind": "worker"
+    },
+    {
+      "id": "lung_l.inward",
+      "startSource": [
+        575.0,
+        350.0
+      ],
+      "zone": "lung_l",
+      "targetSource": [
+        601,
+        412
+      ],
+      "pass": true,
+      "trace": [
+        {
+          "t": 0,
+          "lane": 0,
+          "y": 1212.0,
+          "x": 1150.0
+        },
+        {
+          "y": 1212.0,
+          "x": 1150.9282962631114,
+          "lane": 0,
+          "stage": "tissue-to-blood",
+          "t": 0.49999999999999994
+        },
+        {
+          "y": 1212.0,
+          "x": 1152.1612406404065,
+          "lane": 0,
+          "stage": "tissue-to-blood",
+          "t": 1.0000000000000002
+        },
+        {
+          "y": 1212.0,
+          "x": 1152.2870055763235,
+          "lane": 7,
+          "stage": "tissue-to-blood",
+          "t": 1.0500000000000003
+        },
+        {
+          "y": 1212.0,
+          "x": 1153.4204799537245,
+          "lane": 7,
+          "stage": "tissue-to-blood",
+          "t": 1.5000000000000007
+        },
+        {
+          "y": 1212.0,
+          "x": 1154.6804585665168,
+          "lane": 7,
+          "stage": "tissue-to-blood",
+          "t": 2.000000000000001
+        },
+        {
+          "y": 1212.0,
+          "x": 1155.9404579652014,
+          "lane": 7,
+          "stage": "tissue-to-blood",
+          "t": 2.499999999999999
+        },
+        {
+          "y": 1212.0,
+          "x": 1157.2004579482948,
+          "lane": 7,
+          "stage": "tissue-to-blood",
+          "t": 2.9999999999999973
+        },
+        {
+          "y": 1212.0,
+          "x": 1158.4604579478194,
+          "lane": 7,
+          "stage": "tissue-to-blood",
+          "t": 3.4999999999999956
+        },
+        {
+          "t": 3.899999999999994,
+          "lane": 7,
+          "y": 1212.0,
+          "x": 1159.211392877794
+        }
+      ],
+      "seconds": 3.899999999999994,
+      "stages": [
+        {
+          "id": "tissue-to-blood",
+          "toSource": [
+            580.0,
+            350.0
+          ],
+          "startLane": 0,
+          "invalidSteps": 0,
+          "pass": true,
+          "seconds": 3.9000000000000004,
+          "endLegal": true,
+          "startLegal": true,
+          "arrived": true,
+          "endLane": 7,
+          "radiusViolations": 0,
+          "fromSource": [
+            575.0,
+            350.0
+          ]
+        }
+      ],
+      "name": "左肺",
+      "kind": "worker"
+    }
+  ],
+  "productionInstalled": false,
+  "nativeEvidence": false,
+  "fixtureBasis": "Original vascular supply/return and controlled tissue gates; internal objectives frozen from prior short-probe report",
+  "qaScriptSha256": "1fcb67579232c5bb062c1c918a5cfd4e7689e0789c2ee87ab01b1542d1ba1924",
+  "inputHashes": {
+    "interface-contract.json": "86878d45e150353b439fb0ea8e12ad22649185ff143d5dff4a8465cea8fa8253",
+    "passages-data.json": "37c4cfcaa565a15bccf8d23bd5ad26151f14c13562aeb375320a4e80f1998ae5",
+    "navigation-fix-evidence/report.json": "f225382f3e4b8b74a91bdfae0cc90156d43c5bd1141c80d806865a2388fc7a2d"
+  },
+  "testedModuleHashes": {
+    "PassageCollisionStudy.lua": "b81f3fc1e72a56036fc71b73dd12c15433c1b70726db92e85b88b0c0f6441f9d",
+    "World.lua": "2a789fe9178b06d62d6c19f36b64785624efb3c32f9b0cbf0226cb32c6a17359",
+    "Path.lua": "fcb01be11c85b89564337639e14cb9e914a345da1f56428fd5474906290be014",
+    "Vessels.lua": "24850819241d673fff976e75d2ddd8183edf96271829434153747af11fa5a4cd",
+    "Workers.lua": "77181ac098a5e5aacb2f652fba604aac69bf4a5b7d8dfedbcd90270cfe67a287",
+    "Commands.lua": "e6152c85f5cfa1f2d41f22bc65862c567782a1e61e7067d834ad8671e4fe452a",
+    "CellCollision.lua": "99f15e06fc6715b1e65d00cdc68d2356c41a59d7cf8ccb38046b0696c4184992",
+    "Data.lua": "6aa40613c149a254391e68d5ffca3ef5f6b7d4dbba8a4861b6b8adb7983d5f33",
+    "StomachConnectivityStudy.lua": "a033e365cb3712acc101dbac24e1d4bb39261135207800e771a39badf22697c7",
+    "PassageNavigationStudy.lua": "f2b342dfe79a9cb1b264be4fb1e7e278646e85530c3e2f0c4273f12e9e9638f4",
+    "OrganRouteNavigationStudy.lua": "dafbec15bc0e0b50f30b56932643e15352bdd04046bb70bc7c92e74f2e2619f5",
+    "OrganRouteCollisionStudy.lua": "82e80251492a26de7915e61333047e30bef2a57b8d5e7d7cb0f3cf912820bc30"
+  },
+  "summary": {
+    "routes": 2,
+    "passed": 2,
+    "stages": 2,
+    "stagesPassed": 2
+  }
+}

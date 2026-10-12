@@ -48,6 +48,16 @@ for index, color in enumerate(palette[:48]):
             child = hierarchy[0][child][0]
         x,y,w,h = cv2.boundingRect(contour)
         regions.append(dict(color=color.tolist(), points=outer, holes=holes, x1=x,y1=y,x2=x+w,y2=y+h))
-data = '-- Generated from the unchanged reference.png; run scripts/qa/trace_reference.py to reproduce.\nreturn ' + lua(dict(outline=points(body), regions=regions)) + '\n'
+# Pixel-accurate blue vessel visibility keeps moving blood behind foreground structures.
+# Bronchi share blue pigment in the reference; ReferenceMap excludes lung tissue here.
+blue = (rgb[:,:,2].astype(int)-rgb[:,:,0].astype(int)>25) & (rgb[:,:,1].astype(int)-rgb[:,:,0].astype(int)>12)
+blue_rows = {}
+for y,row in enumerate(blue):
+    transitions=np.diff(np.pad(row.astype(int),(1,1)))
+    starts=np.flatnonzero(transitions==1); ends=np.flatnonzero(transitions==-1)
+    if len(starts): blue_rows[str(y)]=sum(([int(a),int(b)-1] for a,b in zip(starts,ends)),[])
+# Numeric Lua keys preserve sparse source rows, no extra runtime image reads.
+row_data='{'+','.join('['+y+']='+lua(runs) for y,runs in blue_rows.items())+'}'
+data = '-- Generated from the unchanged reference.png; run scripts/qa/trace_reference.py to reproduce.\nreturn ' + lua(dict(outline=points(body), regions=regions))[:-1]+',blueRows='+row_data+'}' + '\n'
 (root / 'scripts/war/ReferenceTrace.lua').write_text(data)
 print(json.dumps(dict(regions=len(regions), outlinePoints=len(points(body)), bytes=len(data))))

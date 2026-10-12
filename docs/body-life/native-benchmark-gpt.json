@@ -1,0 +1,103 @@
+{
+  "log": "lua-2026-10-09 02_49_35_422.log",
+  "recordedAt": "2026-10-09T02:49:49+08:00",
+  "scope": "Native CPU submission and capped whole frame, isolated viewport behind menu, after GPT lung integration and identity triangle skipping",
+  "rows": [
+    {
+      "view": "whole",
+      "enabled": false,
+      "samples": 74,
+      "cpuP50ms": 0.241,
+      "cpuP95ms": 0.462,
+      "frameP50ms": 16.983,
+      "frameP95ms": 17.511
+    },
+    {
+      "view": "whole",
+      "enabled": true,
+      "samples": 74,
+      "cpuP50ms": 2.987,
+      "cpuP95ms": 3.41,
+      "frameP50ms": 17.094,
+      "frameP95ms": 17.473
+    },
+    {
+      "view": "chest",
+      "enabled": false,
+      "samples": 74,
+      "cpuP50ms": 0.402,
+      "cpuP95ms": 0.516,
+      "frameP50ms": 16.8765,
+      "frameP95ms": 17.192
+    },
+    {
+      "view": "chest",
+      "enabled": true,
+      "samples": 74,
+      "cpuP50ms": 2.353,
+      "cpuP95ms": 2.868,
+      "frameP50ms": 16.898,
+      "frameP95ms": 17.5835
+    },
+    {
+      "view": "transition",
+      "enabled": false,
+      "samples": 74,
+      "cpuP50ms": 3.873,
+      "cpuP95ms": 5.408,
+      "frameP50ms": 17.1545,
+      "frameP95ms": 17.584
+    },
+    {
+      "view": "transition",
+      "enabled": true,
+      "samples": 74,
+      "cpuP50ms": 3.941,
+      "cpuP95ms": 6.098,
+      "frameP50ms": 17.1,
+      "frameP95ms": 17.5655
+    },
+    {
+      "view": "detail",
+      "enabled": false,
+      "samples": 74,
+      "cpuP50ms": 7.192,
+      "cpuP95ms": 8.795,
+      "frameP50ms": 17.291,
+      "frameP95ms": 17.578
+    },
+    {
+      "view": "detail",
+      "enabled": true,
+      "samples": 74,
+      "cpuP50ms": 7.658,
+      "cpuP95ms": 9.406,
+      "frameP50ms": 16.9895,
+      "frameP95ms": 17.2355
+    }
+  ],
+  "deltas": {
+    "whole": {
+      "cpuP95ms": 2.948,
+      "frameP95ms": -0.038
+    },
+    "chest": {
+      "cpuP95ms": 2.352,
+      "frameP95ms": 0.3915
+    },
+    "transition": {
+      "cpuP95ms": 0.69,
+      "frameP95ms": -0.0185
+    },
+    "detail": {
+      "cpuP95ms": 0.611,
+      "frameP95ms": -0.3425
+    }
+  },
+  "conclusion": "CPU submission P95 whole/chest still exceeds 2ms. Capped whole-frame deltas do not establish GPU/battle acceptance. Native visuals remain unverified. Temporary probe removed from main.",
+  "runtimeSha256": {
+    "scripts/war/BodyLife.lua": "833bbbd9ad6b5b6d71fbe25c9bdec2e7bbf5df7654006ab17576928557498b27",
+    "scripts/war/BodyLifeAssets.lua": "20922466a90d0c0bd817aa3568aa596647a7b357bd309b5bbe24592035d154f5"
+  },
+  "laterChange": "Lung masks subsequently protect generated/original pale inner rims with 5 source-pixel margin. This benchmark predates that mask change."
+}

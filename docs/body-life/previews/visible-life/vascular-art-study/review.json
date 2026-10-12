@@ -1,0 +1,53 @@
+{
+  "status": "ART_STUDY_REQUIRES_LOCAL_CONNECTION_REPAIR",
+  "source": {
+    "sha256": "9a04e39961c07073cd9fdcfcdc2c98253ccc25d968e97dbea1f36669e06b5d9f",
+    "size": [
+      1024,
+      1536
+    ]
+  },
+  "candidate": {
+    "sha256": "f7fc890257b4a20db47ffeb1cc82ac7c59a5fa63308c00097860ee63b09a09b5",
+    "size": [
+      1024,
+      1536
+    ]
+  },
+  "networkSha256": "dddb28f00c5a385e7d08f06eaa80503ee74b90e52d8522f55ab29b331e9bf6b3",
+  "runtimeModified": false,
+  "topologyVerifiedInRaster": false,
+  "exactRegistrationVerified": false,
+  "generationMode": "built-in GPT imagegen",
+  "observations": [
+    "整体姿势、器官分布与原图视觉接近；未证明逐像素重合。",
+    "第二次生成恢复了粉橙色胃出口与十二指肠弯曲段。",
+    "肺内蓝色分支仍容易与血管混淆。",
+    "肝门静脉、肾门动静脉与审核图的端口未得到明确视觉验证。",
+    "全身血管线条更清楚，不等于逐条满足连接图。"
+  ],
+  "nextOrder": [
+    "修订胸部的气道与血管区分，核对颈根分叉。",
+    "修订肝、胃、胰、肾的血管短接头与遮挡，保护消化通道。",
+    "检查四肢交叉与主干走向，再决定主地图接入。",
+    "主图连接校准后才制作 zoom=0.15 的胃肝局部战场。"
+  ],
+  "independentReview": {
+    "reviewer": "vascular_art_review",
+    "decision": "ART_DIRECTION_ONLY_DO_NOT_INTEGRATE",
+    "findings": [
+      "肺内蓝色树状结构根部仍与心旁蓝紫干线视觉相接，不能作为可行走血管。",
+      "颈根近乎对称的红色干线没有明确落实审核图 e153–e159 的分叉。",
+      "胃出口恢复，但门静脉汇流点 (523,561) 和肝入口约 (510,520) 缺少可判读的可见连接段。",
+      "双肾门以蓝色支管为主，红色供血无法连续追踪到主干；相隔约 9–13 原图像素的入口和出口未清晰分开。"
+    ],
+    "nextRepairOrder": [
+      "颈根和肺门",
+      "肝胃与胰周遮挡",
+      "双肾门",
+      "四肢交叉"
+    ]
+  },
+  "previewEvidence": "docs/body-life/preview-evidence.json",
+  "previewResult": "Refreshed live session; existing missing Cube/Day/DaySpecularHDR_QualityLow.dds remains. No runtime integration tested."
+}

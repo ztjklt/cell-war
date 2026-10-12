@@ -1,0 +1,798 @@
+{
+  "status": "GEOMETRY_WITH_EXPLICIT_LOCAL_GATES_PENDING_REAL_MOVEMENT_QA",
+  "frozenSourceSha256": "3890744e2fcaf9e9907c85513e170e479f67b7fbb1fbf06385ac02bd80e8550c",
+  "roomCount": 6,
+  "localGateCount": 3,
+  "localGates": [
+    {
+      "id": "gastric.local.northwest",
+      "edgeId": "e183",
+      "edgeIndex": 183,
+      "pipeCenterSource": [
+        556.2790088184186,
+        503.4842457063174
+      ],
+      "wallSource": [
+        556.1591209836341,
+        502.0893883992531
+      ],
+      "tissueTargetSource": [
+        556.0349514404645,
+        500.64471475979366
+      ],
+      "nx": -0.08563416770320233,
+      "ny": -0.9963266479030759,
+      "radius": 1.9,
+      "zone": "stomach",
+      "distanceAlongSource": 8.550000000000002,
+      "fromLane": 183,
+      "toLane": 0,
+      "roomId": "northwest",
+      "added": true
+    },
+    {
+      "id": "gastric.local.west_middle",
+      "edgeId": "e124",
+      "edgeIndex": 124,
+      "pipeCenterSource": [
+        568.3195660508943,
+        514.9177156301433
+      ],
+      "wallSource": [
+        566.9210680106336,
+        514.8528832972626
+      ],
+      "tissueTargetSource": [
+        565.4726236117921,
+        514.7857355239217
+      ],
+      "nx": -0.9989271716148423,
+      "ny": -0.046308809200532,
+      "radius": 1.9,
+      "zone": "stomach",
+      "distanceAlongSource": 12.450000000000005,
+      "fromLane": 124,
+      "toLane": 0,
+      "roomId": "west_middle",
+      "added": true
+    },
+    {
+      "id": "gastric.local.central",
+      "edgeId": "study.stomach.wall_service",
+      "edgeIndex": 202,
+      "pipeCenterSource": [
+        570.4503702409799,
+        538.2566996028482
+      ],
+      "wallSource": [
+        571.4425181223874,
+        537.6751993178796
+      ],
+      "tissueTargetSource": [
+        572.6934871902489,
+        536.9420033063973
+      ],
+      "nx": 0.86273728818039,
+      "ny": -0.505652421711937,
+      "radius": 1.9,
+      "zone": "stomach",
+      "distanceAlongSource": 115.15000000000006,
+      "fromLane": 202,
+      "toLane": 0,
+      "roomId": "central",
+      "added": true
+    }
+  ],
+  "wallTraceCount": 13,
+  "newWallAreaSource": 254.28285987762877,
+  "summaries": [
+    {
+      "kind": "scout",
+      "validPoints": 15846,
+      "adjacencySweeps": 119336,
+      "componentCount": 9,
+      "roomCentersAllowed": 6,
+      "roomsReachableFromGates": 6
+    },
+    {
+      "kind": "siege",
+      "validPoints": 14314,
+      "adjacencySweeps": 107332,
+      "componentCount": 9,
+      "roomCentersAllowed": 6,
+      "roomsReachableFromGates": 6
+    }
+  ],
+  "rooms": [
+    {
+      "id": "northwest",
+      "label": "左上组织房间",
+      "centerSource": [
+        555.3939393939394,
+        493.6969696969697
+      ],
+      "authoredDoorSource": [
+        564.1212121212121,
+        501.57575757575756
+      ],
+      "doorSource": [
+        564.11741272967,
+        499.34984565879273
+      ],
+      "doorWidthSource": 3.2,
+      "twoSiegeRequiredWidthSource": 2.375,
+      "doorFoundInFixedTissue": true,
+      "roomArtReferencePixel": [
+        655,
+        377
+      ],
+      "doorRelocationSource": 2.2259151595382396,
+      "doorClearanceSource": 1.6196736830992435,
+      "navigation": {
+        "scout": {
+          "centerAllowed": true,
+          "centerNode": 7826,
+          "doorNode": 11023,
+          "component": 1,
+          "doorSameComponent": true,
+          "reachableGateIds": [
+            "gastric.local.northwest",
+            "gastric.local.west_middle"
+          ]
+        },
+        "siege": {
+          "centerAllowed": true,
+          "centerNode": 7826,
+          "doorNode": 11023,
+          "component": 1,
+          "doorSameComponent": true,
+          "reachableGateIds": [
+            "gastric.local.northwest"
+          ]
+        }
+      },
+      "doorPassingCertificate": {
+        "tracks": [
+          {
+            "startSource": [
+              564.9438254136678,
+              499.1778539780997
+            ],
+            "endSource": [
+              563.9367771790705,
+              498.5252791906656
+            ]
+          },
+          {
+            "startSource": [
+              563.2910000456723,
+              499.5218373394858
+            ],
+            "endSource": [
+              564.2980482802695,
+              500.1744121269199
+            ]
+          }
+        ],
+        "cellRadiusSource": 0.53125,
+        "minimumCenterSeparationSource": 1.1875,
+        "minimumDiskSeparationSource": 0.125,
+        "bothSweepsClear": true,
+        "nativeMovementVerified": false
+      },
+      "rallySource": [
+        555.3939393939394,
+        493.6969696969697
+      ],
+      "approachSource": [
+        564.11741272967,
+        499.34984565879273
+      ]
+    },
+    {
+      "id": "west_middle",
+      "label": "左中组织房间",
+      "centerSource": [
+        560.7272727272727,
+        514.7878787878788
+      ],
+      "authoredDoorSource": [
+        572.6060606060606,
+        514.5454545454545
+      ],
+      "doorSource": [
+        565.3285630894609,
+        514.1974454381178
+      ],
+      "doorWidthSource": 3.2,
+      "twoSiegeRequiredWidthSource": 2.375,
+      "doorFoundInFixedTissue": false,
+      "roomArtReferencePixel": [
+        699,
+        551
+      ],
+      "doorRelocationSource": 7.285813643163309,
+      "doorClearanceSource": 1.62114898345168,
+      "navigation": {
+        "scout": {
+          "centerAllowed": true,
+          "centerNode": 19231,
+          "doorNode": 18711,
+          "component": 1,
+          "doorSameComponent": true,
+          "reachableGateIds": [
+            "gastric.local.northwest",
+            "gastric.local.west_middle"
+          ]
+        },
+        "siege": {
+          "centerAllowed": true,
+          "centerNode": 19231,
+          "doorNode": 18711,
+          "component": 3,
+          "doorSameComponent": true,
+          "reachableGateIds": [
+            "gastric.local.west_middle"
+          ]
+        }
+      },
+      "doorPassingCertificate": {
+        "tracks": [
+          {
+            "startSource": [
+              565.8481136947867,
+              513.5321588600136
+            ],
+            "endSource": [
+              564.6578728120508,
+              513.6848894760146
+            ]
+          },
+          {
+            "startSource": [
+              564.8090124841351,
+              514.862732016222
+            ],
+            "endSource": [
+              565.999253366871,
+              514.710001400221
+            ]
+          }
+        ],
+        "cellRadiusSource": 0.53125,
+        "minimumCenterSeparationSource": 1.1875,
+        "minimumDiskSeparationSource": 0.125,
+        "bothSweepsClear": true,
+        "nativeMovementVerified": false
+      },
+      "rallySource": [
+        560.7272727272727,
+        514.7878787878788
+      ],
+      "approachSource": [
+        565.3285630894609,
+        514.1974454381178
+      ]
+    },
+    {
+      "id": "southwest",
+      "label": "左下组织房间",
+      "centerSource": [
+        542.1818181818182,
+        536.3636363636364
+      ],
+      "authoredDoorSource": [
+        554.7878787878788,
+        541.5757575757576
+      ],
+      "doorSource": [
+        554.7878787878788,
+        541.5757575757576
+      ],
+      "doorWidthSource": 3.2,
+      "twoSiegeRequiredWidthSource": 2.375,
+      "doorFoundInFixedTissue": true,
+      "roomArtReferencePixel": [
+        546,
+        729
+      ],
+      "doorRelocationSource": 0.0,
+      "doorClearanceSource": 2.4182321977734955,
+      "navigation": {
+        "scout": {
+          "centerAllowed": true,
+          "centerNode": 30589,
+          "doorNode": 33265,
+          "component": 4,
+          "doorSameComponent": true,
+          "reachableGateIds": [
+            "study.stomach.wall_service.inner"
+          ]
+        },
+        "siege": {
+          "centerAllowed": true,
+          "centerNode": 30589,
+          "doorNode": 33265,
+          "component": 5,
+          "doorSameComponent": true,
+          "reachableGateIds": [
+            "study.stomach.wall_service.inner"
+          ]
+        }
+      },
+      "doorPassingCertificate": {
+        "tracks": [
+          {
+            "startSource": [
+              555.569219852449,
+              541.2563124266064
+            ],
+            "endSource": [
+              554.4602697936433,
+              540.7978042292157
+            ]
+          },
+          {
+            "startSource": [
+              554.0065377233085,
+              541.8952027249088
+            ],
+            "endSource": [
+              555.1154877821142,
+              542.3537109222996
+            ]
+          }
+        ],
+        "cellRadiusSource": 0.53125,
+        "minimumCenterSeparationSource": 1.1875,
+        "minimumDiskSeparationSource": 0.125,
+        "bothSweepsClear": true,
+        "nativeMovementVerified": false
+      },
+      "rallySource": [
+        542.1818181818182,
+        536.3636363636364
+      ],
+      "approachSource": [
+        554.7878787878788,
+        541.5757575757576
+      ]
+    },
+    {
+      "id": "south_middle",
+      "label": "下部组织房间",
+      "centerSource": [
+        562.060606060606,
+        554.4242424242424
+      ],
+      "authoredDoorSource": [
+        558.6666666666666,
+        544.969696969697
+      ],
+      "doorSource": [
+        558.6666666666666,
+        544.969696969697
+      ],
+      "doorWidthSource": 3.2,
+      "twoSiegeRequiredWidthSource": 2.375,
+      "doorFoundInFixedTissue": true,
+      "roomArtReferencePixel": [
+        710,
+        878
+      ],
+      "doorRelocationSource": 0.0,
+      "doorClearanceSource": 3.0365158308892006,
+      "navigation": {
+        "scout": {
+          "centerAllowed": true,
+          "centerNode": 40169,
+          "doorNode": 35127,
+          "component": 4,
+          "doorSameComponent": true,
+          "reachableGateIds": [
+            "study.stomach.wall_service.inner"
+          ]
+        },
+        "siege": {
+          "centerAllowed": true,
+          "centerNode": 40169,
+          "doorNode": 35127,
+          "component": 5,
+          "doorSameComponent": true,
+          "reachableGateIds": [
+            "study.stomach.wall_service.inner"
+          ]
+        }
+      },
+      "doorPassingCertificate": {
+        "tracks": [
+          {
+            "startSource": [
+              557.9051134787378,
+              544.605587364694
+            ],
+            "endSource": [
+              558.3105511830659,
+              545.7350209696081
+            ]
+          },
+          {
+            "startSource": [
+              559.4282198545955,
+              545.3338065747
+            ],
+            "endSource": [
+              559.0227821502674,
+              544.2043729697859
+            ]
+          }
+        ],
+        "cellRadiusSource": 0.53125,
+        "minimumCenterSeparationSource": 1.1875,
+        "minimumDiskSeparationSource": 0.125,
+        "bothSweepsClear": true,
+        "nativeMovementVerified": false
+      },
+      "rallySource": [
+        562.060606060606,
+        554.4242424242424
+      ],
+      "approachSource": [
+        558.6666666666666,
+        544.969696969697
+      ]
+    },
+    {
+      "id": "west_tail",
+      "label": "左侧组织走廊",
+      "centerSource": [
+        523.8787878787879,
+        546.060606060606
+      ],
+      "authoredDoorSource": [
+        536.969696969697,
+        549.2121212121212
+      ],
+      "doorSource": [
+        536.9730306315317,
+        549.2333734753329
+      ],
+      "doorWidthSource": 3.2,
+      "twoSiegeRequiredWidthSource": 2.375,
+      "doorFoundInFixedTissue": true,
+      "roomArtReferencePixel": [
+        395,
+        809
+      ],
+      "doorRelocationSource": 0.02151213594334823,
+      "doorClearanceSource": 1.6198939628696387,
+      "navigation": {
+        "scout": {
+          "centerAllowed": true,
+          "centerNode": 35588,
+          "doorNode": 37204,
+          "component": 4,
+          "doorSameComponent": true,
+          "reachableGateIds": [
+            "study.stomach.wall_service.inner"
+          ]
+        },
+        "siege": {
+          "centerAllowed": true,
+          "centerNode": 35588,
+          "doorNode": 37204,
+          "component": 5,
+          "doorSameComponent": true,
+          "reachableGateIds": [
+            "study.stomach.wall_service.inner"
+          ]
+        }
+      },
+      "doorPassingCertificate": {
+        "tracks": [
+          {
+            "startSource": [
+              537.6959780971729,
+              548.7976143395445
+            ],
+            "endSource": [
+              536.5297254617101,
+              548.5150284406111
+            ]
+          },
+          {
+            "startSource": [
+              536.2500831658906,
+              549.6691326111213
+            ],
+            "endSource": [
+              537.4163358013534,
+              549.9517185100547
+            ]
+          }
+        ],
+        "cellRadiusSource": 0.53125,
+        "minimumCenterSeparationSource": 1.1875,
+        "minimumDiskSeparationSource": 0.125,
+        "bothSweepsClear": true,
+        "nativeMovementVerified": false
+      },
+      "rallySource": [
+        523.8787878787879,
+        546.060606060606
+      ],
+      "approachSource": [
+        536.9730306315317,
+        549.2333734753329
+      ]
+    },
+    {
+      "id": "central",
+      "label": "中央组织走廊",
+      "centerSource": [
+        577.3333333333334,
+        532.0
+      ],
+      "authoredDoorSource": [
+        575.030303030303,
+        527.2727272727273
+      ],
+      "doorSource": [
+        575.030303030303,
+        527.2727272727273
+      ],
+      "doorWidthSource": 3.2,
+      "twoSiegeRequiredWidthSource": 2.375,
+      "doorFoundInFixedTissue": true,
+      "roomArtReferencePixel": [
+        836,
+        693
+      ],
+      "doorRelocationSource": 0.0,
+      "doorClearanceSource": 5.910596833272737,
+      "navigation": {
+        "scout": {
+          "centerAllowed": true,
+          "centerNode": 28275,
+          "doorNode": 25885,
+          "component": 3,
+          "doorSameComponent": true,
+          "reachableGateIds": [
+            "gastric.local.central"
+          ]
+        },
+        "siege": {
+          "centerAllowed": true,
+          "centerNode": 28275,
+          "doorNode": 25885,
+          "component": 4,
+          "doorSameComponent": true,
+          "reachableGateIds": [
+            "gastric.local.central"
+          ]
+        }
+      },
+      "doorPassingCertificate": {
+        "tracks": [
+          {
+            "startSource": [
+              574.233746141713,
+              526.9933776964972
+            ],
+            "endSource": [
+              574.7593094496488,
+              528.0721655391019
+            ]
+          },
+          {
+            "startSource": [
+              575.826859918893,
+              527.5520768489573
+            ],
+            "endSource": [
+              575.3012966109573,
+              526.4732890063526
+            ]
+          }
+        ],
+        "cellRadiusSource": 0.53125,
+        "minimumCenterSeparationSource": 1.1875,
+        "minimumDiskSeparationSource": 0.125,
+        "bothSweepsClear": true,
+        "nativeMovementVerified": false
+      },
+      "rallySource": [
+        577.3333333333334,
+        532.0
+      ],
+      "approachSource": [
+        575.030303030303,
+        527.2727272727273
+      ]
+    }
+  ],
+  "doorPassingCertificates": {
+    "northwest": {
+      "tracks": [
+        {
+          "startSource": [
+            564.9438254136678,
+            499.1778539780997
+          ],
+          "endSource": [
+            563.9367771790705,
+            498.5252791906656
+          ]
+        },
+        {
+          "startSource": [
+            563.2910000456723,
+            499.5218373394858
+          ],
+          "endSource": [
+            564.2980482802695,
+            500.1744121269199
+          ]
+        }
+      ],
+      "cellRadiusSource": 0.53125,
+      "minimumCenterSeparationSource": 1.1875,
+      "minimumDiskSeparationSource": 0.125,
+      "bothSweepsClear": true,
+      "nativeMovementVerified": false
+    },
+    "west_middle": {
+      "tracks": [
+        {
+          "startSource": [
+            565.8481136947867,
+            513.5321588600136
+          ],
+          "endSource": [
+            564.6578728120508,
+            513.6848894760146
+          ]
+        },
+        {
+          "startSource": [
+            564.8090124841351,
+            514.862732016222
+          ],
+          "endSource": [
+            565.999253366871,
+            514.710001400221
+          ]
+        }
+      ],
+      "cellRadiusSource": 0.53125,
+      "minimumCenterSeparationSource": 1.1875,
+      "minimumDiskSeparationSource": 0.125,
+      "bothSweepsClear": true,
+      "nativeMovementVerified": false
+    },
+    "southwest": {
+      "tracks": [
+        {
+          "startSource": [
+            555.569219852449,
+            541.2563124266064
+          ],
+          "endSource": [
+            554.4602697936433,
+            540.7978042292157
+          ]
+        },
+        {
+          "startSource": [
+            554.0065377233085,
+            541.8952027249088
+          ],
+          "endSource": [
+            555.1154877821142,
+            542.3537109222996
+          ]
+        }
+      ],
+      "cellRadiusSource": 0.53125,
+      "minimumCenterSeparationSource": 1.1875,
+      "minimumDiskSeparationSource": 0.125,
+      "bothSweepsClear": true,
+      "nativeMovementVerified": false
+    },
+    "south_middle": {
+      "tracks": [
+        {
+          "startSource": [
+            557.9051134787378,
+            544.605587364694
+          ],
+          "endSource": [
+            558.3105511830659,
+            545.7350209696081
+          ]
+        },
+        {
+          "startSource": [
+            559.4282198545955,
+            545.3338065747
+          ],
+          "endSource": [
+            559.0227821502674,
+            544.2043729697859
+          ]
+        }
+      ],
+      "cellRadiusSource": 0.53125,
+      "minimumCenterSeparationSource": 1.1875,
+      "minimumDiskSeparationSource": 0.125,
+      "bothSweepsClear": true,
+      "nativeMovementVerified": false
+    },
+    "west_tail": {
+      "tracks": [
+        {
+          "startSource": [
+            537.6959780971729,
+            548.7976143395445
+          ],
+          "endSource": [
+            536.5297254617101,
+            548.5150284406111
+          ]
+        },
+        {
+          "startSource": [
+            536.2500831658906,
+            549.6691326111213
+          ],
+          "endSource": [
+            537.4163358013534,
+            549.9517185100547
+          ]
+        }
+      ],
+      "cellRadiusSource": 0.53125,
+      "minimumCenterSeparationSource": 1.1875,
+      "minimumDiskSeparationSource": 0.125,
+      "bothSweepsClear": true,
+      "nativeMovementVerified": false
+    },
+    "central": {
+      "tracks": [
+        {
+          "startSource": [
+            574.233746141713,
+            526.9933776964972
+          ],
+          "endSource": [
+            574.7593094496488,
+            528.0721655391019
+          ]
+        },
+        {
+          "startSource": [
+            575.826859918893,
+            527.5520768489573
+          ],
+          "endSource": [
+            575.3012966109573,
+            526.4732890063526
+          ]
+        }
+      ],
+      "cellRadiusSource": 0.53125,
+      "minimumCenterSeparationSource": 1.1875,
+      "minimumDiskSeparationSource": 0.125,
+      "bothSweepsClear": true,
+      "nativeMovementVerified": false
+    }
+  },
+  "allRoomDoorsSameComponent": true,
+  "allRoomCentersAccessibleThroughDeclaredGates": true,
+  "nativeEvidence": false,
+  "limits": [
+    "3 additional explicit local blood exchange gates connect the 3 previously unserved named organization components; original two gates and all edge geometry remain fixed.",
+    "Colored rooms overlapping frozen food/blood are excluded as organization-space targets, not silently converted to walkable tissue.",
+    "No cell radius, frozen point, vessel width or original membrane is changed."
+  ]
+}

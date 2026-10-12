@@ -1,0 +1,1093 @@
+{
+  "sourceNetworkSha256": "c2e5c51890098e8d162cb9db3cb8235ac77490a56d9aca2a211b44c26aabedfc",
+  "sourceSize": [
+    1024,
+    1536
+  ],
+  "transform": {
+    "sourceScale": 2,
+    "worldOffsetY": 512,
+    "logicalCellSize": 32,
+    "overviewEnd": 0.085,
+    "fillFull": 0.15
+  },
+  "scope": "shared world/local map authoring contract; isolated navigation fixture",
+  "regions": [
+    {
+      "id": "lung_r",
+      "name": "右肺",
+      "ports": [
+        {
+          "id": "lung_r.entry",
+          "role": "supply",
+          "source": [
+            475.1613941018767,
+            374.0150134048257
+          ],
+          "world": [
+            950.3227882037534,
+            1260.0300268096514
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "lung_r.exit",
+          "role": "return",
+          "source": [
+            471.6707317073171,
+            410.9634146341463
+          ],
+          "world": [
+            943.3414634146342,
+            1333.9268292682927
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "lung_r.tissue_access",
+          "role": "controlledTissueAccess",
+          "source": [
+            436.7826891219729,
+            349.08155976232376
+          ],
+          "world": [
+            873.5653782439458,
+            1210.1631195246475
+          ],
+          "insideWorld": [
+            878,
+            1212
+          ],
+          "outsideWorld": [
+            868.7612046748872,
+            1208.173165676349
+          ],
+          "edge": "e004",
+          "exitToTissue": true
+        }
+      ],
+      "foodPassage": false
+    },
+    {
+      "id": "lung_l",
+      "name": "左肺",
+      "ports": [
+        {
+          "id": "lung_l.entry",
+          "role": "supply",
+          "source": [
+            541.4487996080353,
+            374.0489955903969
+          ],
+          "world": [
+            1082.8975992160706,
+            1260.0979911807938
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "lung_l.exit",
+          "role": "return",
+          "source": [
+            545.0,
+            414.0
+          ],
+          "world": [
+            1090.0,
+            1340.0
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "lung_l.tissue_access",
+          "role": "controlledTissueAccess",
+          "source": [
+            577.6,
+            350.0
+          ],
+          "world": [
+            1155.2,
+            1212.0
+          ],
+          "insideWorld": [
+            1160,
+            1212
+          ],
+          "outsideWorld": [
+            1150.0,
+            1212.0
+          ],
+          "edge": "e007",
+          "exitToTissue": true
+        }
+      ],
+      "foodPassage": false
+    },
+    {
+      "id": "brain_r",
+      "name": "脑右侧",
+      "ports": [
+        {
+          "id": "brain_r.entry",
+          "role": "supply",
+          "source": [
+            484.9526813880126,
+            112.60567823343848
+          ],
+          "world": [
+            969.9053627760252,
+            737.211356466877
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "brain_r.exit",
+          "role": "return",
+          "source": [
+            499.0,
+            106.0
+          ],
+          "world": [
+            998.0,
+            724.0
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "brain_r.tissue_access",
+          "role": "controlledTissueAccess",
+          "source": [
+            495.0100505063388,
+            94.01005050633881
+          ],
+          "world": [
+            990.0201010126776,
+            700.0201010126776
+          ],
+          "insideWorld": [
+            992.0,
+            702.0
+          ],
+          "outsideWorld": [
+            986.3431457505076,
+            696.3431457505076
+          ],
+          "edge": "e160",
+          "exitToTissue": true
+        }
+      ],
+      "foodPassage": false
+    },
+    {
+      "id": "arm_r",
+      "name": "右臂组织",
+      "ports": [
+        {
+          "id": "arm_r.a",
+          "role": "supply",
+          "source": [
+            327,
+            465
+          ],
+          "world": [
+            654,
+            1442
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "arm_r.v",
+          "role": "return",
+          "source": [
+            322,
+            480
+          ],
+          "world": [
+            644,
+            1472
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "arm_r.tissue_access",
+          "role": "controlledTissueAccess",
+          "source": [
+            328.0,
+            466.15
+          ],
+          "world": [
+            656.0,
+            1444.3
+          ],
+          "insideWorld": [
+            656.0,
+            1442.0
+          ],
+          "outsideWorld": [
+            656.0,
+            1449.5
+          ],
+          "edge": "access.arm_r",
+          "exitToTissue": true
+        }
+      ],
+      "foodPassage": false
+    },
+    {
+      "id": "leg_r",
+      "name": "右腿组织",
+      "ports": [
+        {
+          "id": "leg_r.a",
+          "role": "supply",
+          "source": [
+            430,
+            890
+          ],
+          "world": [
+            860,
+            2292
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "leg_r.v",
+          "role": "return",
+          "source": [
+            433,
+            915
+          ],
+          "world": [
+            866,
+            2342
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "leg_r.tissue_access",
+          "role": "controlledTissueAccess",
+          "source": [
+            429.6407137829242,
+            892.7640195808099
+          ],
+          "world": [
+            859.2814275658484,
+            2297.5280391616197
+          ],
+          "insideWorld": [
+            860.3529411764706,
+            2294.9411764705883
+          ],
+          "outsideWorld": [
+            857.2914737175499,
+            2302.3322127306787
+          ],
+          "edge": "e064",
+          "exitToTissue": true
+        }
+      ],
+      "foodPassage": false
+    },
+    {
+      "id": "brain_l",
+      "name": "脑左侧",
+      "ports": [
+        {
+          "id": "brain_l.entry",
+          "role": "supply",
+          "source": [
+            533.9943396226415,
+            113.13018867924528
+          ],
+          "world": [
+            1067.988679245283,
+            738.2603773584906
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "brain_l.exit",
+          "role": "return",
+          "source": [
+            551.0056603773585,
+            113.86981132075472
+          ],
+          "world": [
+            1102.011320754717,
+            739.7396226415094
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "brain_l.tissue_access",
+          "role": "controlledTissueAccess",
+          "source": [
+            520.4642431946888,
+            96.29343134551578
+          ],
+          "world": [
+            1040.9284863893777,
+            704.5868626910316
+          ],
+          "insideWorld": [
+            1042.0,
+            702.0
+          ],
+          "outsideWorld": [
+            1038.9385325410792,
+            709.3910362600903
+          ],
+          "edge": "e162",
+          "exitToTissue": true
+        }
+      ],
+      "foodPassage": false
+    },
+    {
+      "id": "arm_l",
+      "name": "左臂组织",
+      "ports": [
+        {
+          "id": "arm_l.a",
+          "role": "supply",
+          "source": [
+            692,
+            465
+          ],
+          "world": [
+            1384,
+            1442
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "arm_l.v",
+          "role": "return",
+          "source": [
+            696,
+            480
+          ],
+          "world": [
+            1392,
+            1472
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "arm_l.tissue_access",
+          "role": "controlledTissueAccess",
+          "source": [
+            691.0815686544842,
+            466.94200680531117
+          ],
+          "world": [
+            1382.1631373089683,
+            1445.8840136106223
+          ],
+          "insideWorld": [
+            1384.75,
+            1444.8125
+          ],
+          "outsideWorld": [
+            1377.3589637399098,
+            1447.8739674589208
+          ],
+          "edge": "e111",
+          "exitToTissue": true
+        }
+      ],
+      "foodPassage": false
+    },
+    {
+      "id": "leg_l",
+      "name": "左腿组织",
+      "ports": [
+        {
+          "id": "leg_l.a",
+          "role": "supply",
+          "source": [
+            588,
+            890
+          ],
+          "world": [
+            1176,
+            2292
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "leg_l.v",
+          "role": "return",
+          "source": [
+            584,
+            915
+          ],
+          "world": [
+            1168,
+            2342
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "leg_l.tissue_access",
+          "role": "controlledTissueAccess",
+          "source": [
+            586.364705882353,
+            891.4705882352941
+          ],
+          "world": [
+            1172.729411764706,
+            2294.9411764705883
+          ],
+          "insideWorld": [
+            1175.5294117647059,
+            2294.9411764705883
+          ],
+          "outsideWorld": [
+            1167.5294117647059,
+            2294.9411764705883
+          ],
+          "edge": "e114",
+          "exitToTissue": true
+        }
+      ],
+      "foodPassage": false
+    },
+    {
+      "id": "liver",
+      "name": "肝",
+      "ports": [
+        {
+          "id": "liver.entry",
+          "role": "supply",
+          "source": [
+            520.3793103448276,
+            509.44827586206895
+          ],
+          "world": [
+            1040.7586206896551,
+            1530.896551724138
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "liver.exit",
+          "role": "return",
+          "source": [
+            474.0082191780822,
+            475.7780821917808
+          ],
+          "world": [
+            948.0164383561644,
+            1463.5561643835617
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "liver.portal_entry",
+          "role": "portalSupply",
+          "source": [
+            509.7952987267385,
+            520.4417238001959
+          ],
+          "world": [
+            1019.590597453477,
+            1552.8834476003917
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "liver.tissue_access",
+          "role": "controlledTissueAccess",
+          "source": [
+            481.9899494936612,
+            495.01005050633887
+          ],
+          "world": [
+            963.9798989873224,
+            1502.0201010126777
+          ],
+          "insideWorld": [
+            962,
+            1504
+          ],
+          "outsideWorld": [
+            967.6568542494924,
+            1498.3431457505076
+          ],
+          "edge": "e118",
+          "exitToTissue": true
+        }
+      ],
+      "foodPassage": false
+    },
+    {
+      "id": "stomach",
+      "name": "胃",
+      "ports": [
+        {
+          "id": "stomach.entry",
+          "role": "supply",
+          "source": [
+            548.176,
+            502.032
+          ],
+          "world": [
+            1096.352,
+            1516.0639999999999
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "stomach.exit",
+          "role": "return",
+          "source": [
+            539.0,
+            520.0
+          ],
+          "world": [
+            1078.0,
+            1552.0
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "stomach.tissue_access",
+          "role": "controlledTissueAccess",
+          "source": [
+            565.0100505063389,
+            503.98994949366113
+          ],
+          "world": [
+            1130.0201010126777,
+            1519.9798989873223
+          ],
+          "insideWorld": [
+            1132,
+            1518
+          ],
+          "outsideWorld": [
+            1126.3431457505076,
+            1523.6568542494924
+          ],
+          "edge": "e124",
+          "exitToTissue": true
+        }
+      ],
+      "foodPassage": false
+    },
+    {
+      "id": "pancreas",
+      "name": "胰",
+      "ports": [
+        {
+          "id": "pancreas.entry",
+          "role": "supply",
+          "source": [
+            550.0497237569061,
+            575.9447513812155
+          ],
+          "world": [
+            1100.0994475138123,
+            1663.889502762431
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "pancreas.exit",
+          "role": "return",
+          "source": [
+            504.9945205479452,
+            601.0520547945206
+          ],
+          "world": [
+            1009.9890410958905,
+            1714.1041095890412
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "pancreas.tissue_access",
+          "role": "controlledTissueAccess",
+          "source": [
+            546.4642431946888,
+            580.7065686544842
+          ],
+          "world": [
+            1092.9284863893777,
+            1673.4131373089683
+          ],
+          "insideWorld": [
+            1094,
+            1676
+          ],
+          "outsideWorld": [
+            1090.9385325410792,
+            1668.6089637399098
+          ],
+          "edge": "e126",
+          "exitToTissue": true
+        }
+      ],
+      "foodPassage": false
+    },
+    {
+      "id": "small_intestine",
+      "name": "小肠",
+      "ports": [
+        {
+          "id": "small_intestine.entry",
+          "role": "supply",
+          "source": [
+            483.0954128440367,
+            655.451376146789
+          ],
+          "world": [
+            966.1908256880733,
+            1822.902752293578
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "small_intestine.exit",
+          "role": "return",
+          "source": [
+            549.22,
+            665.54
+          ],
+          "world": [
+            1098.44,
+            1843.08
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "small_intestine.tissue_access",
+          "role": "controlledTissueAccess",
+          "source": [
+            491.4642431946889,
+            674.2934313455158
+          ],
+          "world": [
+            982.9284863893778,
+            1860.5868626910317
+          ],
+          "insideWorld": [
+            984,
+            1858
+          ],
+          "outsideWorld": [
+            980.9385325410793,
+            1865.3910362600902
+          ],
+          "edge": "e131",
+          "exitToTissue": true
+        }
+      ],
+      "foodPassage": false
+    },
+    {
+      "id": "colon_proximal",
+      "name": "大肠近端组",
+      "ports": [
+        {
+          "id": "colon_proximal.entry",
+          "role": "supply",
+          "source": [
+            460.09479553903344,
+            674.2732342007434
+          ],
+          "world": [
+            920.1895910780669,
+            1860.546468401487
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "colon_proximal.exit",
+          "role": "return",
+          "source": [
+            464.7529411764706,
+            705.3882352941176
+          ],
+          "world": [
+            929.5058823529412,
+            1922.7764705882353
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "colon_proximal.tissue_access",
+          "role": "controlledTissueAccess",
+          "source": [
+            449.6,
+            657.0
+          ],
+          "world": [
+            899.2,
+            1826.0
+          ],
+          "insideWorld": [
+            902,
+            1826
+          ],
+          "outsideWorld": [
+            894.0,
+            1826.0
+          ],
+          "edge": "e133",
+          "exitToTissue": true
+        }
+      ],
+      "foodPassage": false
+    },
+    {
+      "id": "colon_distal",
+      "name": "大肠远端组",
+      "ports": [
+        {
+          "id": "colon_distal.entry",
+          "role": "supply",
+          "source": [
+            559.0739726027397,
+            664.9972602739726
+          ],
+          "world": [
+            1118.1479452054793,
+            1841.9945205479453
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "colon_distal.exit",
+          "role": "return",
+          "source": [
+            552.4901639344263,
+            709.1918032786886
+          ],
+          "world": [
+            1104.9803278688526,
+            1930.383606557377
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "colon_distal.tissue_access",
+          "role": "controlledTissueAccess",
+          "source": [
+            566.0100505063389,
+            665.0100505063389
+          ],
+          "world": [
+            1132.0201010126777,
+            1842.0201010126777
+          ],
+          "insideWorld": [
+            1134,
+            1844
+          ],
+          "outsideWorld": [
+            1128.3431457505076,
+            1838.3431457505076
+          ],
+          "edge": "e135",
+          "exitToTissue": true
+        }
+      ],
+      "foodPassage": false
+    },
+    {
+      "id": "kidney_r",
+      "name": "右肾",
+      "ports": [
+        {
+          "id": "kidney_r.entry",
+          "role": "supply",
+          "source": [
+            439.88841201716735,
+            604.931330472103
+          ],
+          "world": [
+            879.7768240343347,
+            1721.862660944206
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "kidney_r.exit",
+          "role": "return",
+          "source": [
+            435.0945945945946,
+            617.9324324324324
+          ],
+          "world": [
+            870.1891891891892,
+            1747.8648648648648
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "kidney_r.tissue_access",
+          "role": "controlledTissueAccess",
+          "source": [
+            424.6,
+            590.0
+          ],
+          "world": [
+            849.2,
+            1692.0
+          ],
+          "insideWorld": [
+            852,
+            1692
+          ],
+          "outsideWorld": [
+            844.0,
+            1692.0
+          ],
+          "edge": "e137",
+          "exitToTissue": true
+        }
+      ],
+      "foodPassage": false
+    },
+    {
+      "id": "kidney_l",
+      "name": "左肾",
+      "ports": [
+        {
+          "id": "kidney_l.entry",
+          "role": "supply",
+          "source": [
+            585.8810810810811,
+            610.0864864864865
+          ],
+          "world": [
+            1171.7621621621622,
+            1732.172972972973
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "kidney_l.exit",
+          "role": "return",
+          "source": [
+            584.0,
+            619.0
+          ],
+          "world": [
+            1168.0,
+            1750.0
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "kidney_l.tissue_access",
+          "role": "controlledTissueAccess",
+          "source": [
+            589.6,
+            590.0
+          ],
+          "world": [
+            1179.2,
+            1692.0
+          ],
+          "insideWorld": [
+            1182,
+            1692
+          ],
+          "outsideWorld": [
+            1174.0,
+            1692.0
+          ],
+          "edge": "e140",
+          "exitToTissue": true
+        }
+      ],
+      "foodPassage": false
+    },
+    {
+      "id": "bladder",
+      "name": "膀胱",
+      "ports": [
+        {
+          "id": "bladder.entry",
+          "role": "supply",
+          "source": [
+            536.3294117647059,
+            750.7176470588236
+          ],
+          "world": [
+            1072.6588235294118,
+            2013.4352941176471
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "bladder.exit",
+          "role": "return",
+          "source": [
+            476.6928327645051,
+            754.6109215017065
+          ],
+          "world": [
+            953.3856655290102,
+            2021.221843003413
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "bladder.tissue_access",
+          "role": "controlledTissueAccess",
+          "source": [
+            521.6,
+            756.0
+          ],
+          "world": [
+            1043.2,
+            2024.0
+          ],
+          "insideWorld": [
+            1046,
+            2024
+          ],
+          "outsideWorld": [
+            1038.0,
+            2024.0
+          ],
+          "edge": "e143",
+          "exitToTissue": true
+        }
+      ],
+      "foodPassage": false
+    },
+    {
+      "id": "coronary",
+      "name": "心肌",
+      "ports": [
+        {
+          "id": "coronary.entry",
+          "role": "supply",
+          "source": [
+            541.7692307692307,
+            384.15384615384613
+          ],
+          "world": [
+            1083.5384615384614,
+            1280.3076923076924
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "coronary.exit",
+          "role": "return",
+          "source": [
+            489.84615384615387,
+            432.7692307692308
+          ],
+          "world": [
+            979.6923076923077,
+            1377.5384615384614
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "coronary.tissue_access",
+          "role": "controlledTissueAccess",
+          "source": [
+            522.7065686544842,
+            400.46424319468883
+          ],
+          "world": [
+            1045.4131373089683,
+            1312.9284863893777
+          ],
+          "insideWorld": [
+            1048,
+            1314
+          ],
+          "outsideWorld": [
+            1040.6089637399098,
+            1310.9385325410792
+          ],
+          "edge": "e145",
+          "exitToTissue": true
+        }
+      ],
+      "foodPassage": false
+    },
+    {
+      "id": "trunk",
+      "name": "躯干组织",
+      "ports": [
+        {
+          "id": "trunk.a",
+          "role": "supply",
+          "source": [
+            390,
+            588
+          ],
+          "world": [
+            780,
+            1688
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "trunk.v",
+          "role": "return",
+          "source": [
+            388,
+            629
+          ],
+          "world": [
+            776,
+            1770
+          ],
+          "exitToTissue": false
+        },
+        {
+          "id": "trunk.tissue_access",
+          "role": "controlledTissueAccess",
+          "source": [
+            388.52771084337354,
+            589.4819277108434
+          ],
+          "world": [
+            777.0554216867471,
+            1690.9638554216867
+          ],
+          "insideWorld": [
+            779.855421686747,
+            1690.9638554216867
+          ],
+          "outsideWorld": [
+            771.855421686747,
+            1690.9638554216867
+          ],
+          "edge": "e148",
+          "exitToTissue": true
+        }
+      ],
+      "foodPassage": false
+    }
+  ],
+  "adapterOnlyAdditions": [
+    {
+      "id": "access.arm_r",
+      "a": "arm_r.a",
+      "b": "arm_r.tissue_access.tip",
+      "sourcePoints": [
+        [
+          327,
+          465
+        ],
+        [
+          335,
+          465
+        ]
+      ],
+      "reason": "reviewed exchange short segment has no clear bidirectional tissue doorway; keep all reviewed vascular endpoints fixed"
+    }
+  ]
+}

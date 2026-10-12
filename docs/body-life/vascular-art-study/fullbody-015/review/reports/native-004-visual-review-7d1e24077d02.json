@@ -1,0 +1,688 @@
+{
+  "schema": "fullbody-native-visual-review/v4",
+  "status": "NEEDS_REFINEMENT",
+  "manifestSha256": "77e67f6ae0c8db8935a4803f7495ea979efa991a6ca3a1817412ec8c53a03352",
+  "inputs": {
+    "scripts/main.lua": "6adc1e6a784a3c8361d38dd6b89128d741870578e0e0f0c902ad00f59e4f99b9",
+    "scripts/war/FullBodyMapArt.lua": "b3435305d96bb3180773439285fe93747801e66d6c0ed73e43aab39af5c7c2c1",
+    "scripts/war/FullBodyMapArtData.lua": "ade9458b2949e662f3028ce1a92d0ec6b398953d4524d534f342df9a07107c28",
+    "scripts/war/FullBodyBattlefield.lua": "46a9281dee121e56f5d233dc8e8180fee7b89ff1b20212d362a2530f88d41176",
+    "scripts/war/ReferenceArt.lua": "2e40c9fc0f3650e6163807cb35fb8e854b75865bee746a3e4c22895a09033514",
+    "scripts/war/Render.lua": "248d1a526722aee3d514f36e817814d5d1046f3f63e1a6ca2a2a031f37714734",
+    "scripts/war/HUD.lua": "267f8bd15c0703c255122a070e21ff2a898174d36f3cc28609d4327ff935c3bd",
+    "scripts/qa/FullBodyMapNativeViews.lua": "62cb6a30518cd164a5fb96abebf07d4730251e2c32a124a53daeb65e2d752dbc",
+    "scripts/qa/FullBodyMapNativeMovement.lua": "fdaf5c4bc5fec48d080f265d104bce5470b6ba87b7ed33e647ed20574313872b",
+    "scripts/qa/FullBodyMapNativeMovementData.lua": "d5082b890a90796d0fee40ea12783a6c25d2d2e4bc498a76c0648e2433606f08",
+    "scripts/war/FullBodyBaseFillData.lua": "ba3fe0f9dc2c46ffd9cc6aab7ad91c4b7ba102afb831357fc19fd5a4bc5f757a",
+    "assets/image/anatomy-reference/vascular-study/fullbody-gpt-source/quiet-body-registered-v2.png": "ef4cb61f0a4013a5f23ddbc8a23a3de54f43a333d664c5397349e6d45c8c3a47",
+    "docs/body-life/vascular-art-study/fullbody-015/quiet-base/report.json": "6c9f1d79cc9cf46c24e4bd9b284451c2ee2f18b3d4e2f0b10d12519b51f17438",
+    "docs/body-life/vascular-art-study/fullbody-015/bake/manifest.json": "77e67f6ae0c8db8935a4803f7495ea979efa991a6ca3a1817412ec8c53a03352",
+    "scripts/qa/FullBodyMapNativePerformance.lua": "83ebac1659ce941f6fd160fce34f53c96d1d47f9f7afc04a3798085d3499b97c"
+  },
+  "captureDirectory": "native-004",
+  "nativeEvidence": true,
+  "automaticFixRoundPending": 3,
+  "overallVisualAccepted": false,
+  "reviewedAt": "2026-10-11T13:08:00.989205+00:00",
+  "summary": "31 张实际原生截图均独立逐图查看并核对 SHA。平口贴边已改善肺、胰、肠道和膀胱旧悬空圆帽，尿腔与食气尿路保持保护；主动脉弓/胃肝外部模糊遮挡层仍形成断段和小楔孔，GPT 接头细缝、剪口锯齿及原图放大模糊仍未完全解决。整体 NEEDS_REFINEMENT，不将移动与资源检查通过当美术通过。",
+  "captures": [
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-004/01-liver-z0.15.png",
+      "sha256": "d0e402077fca43d74928d1acc3d3940be34616213f10516f71f2e530ec4f5164",
+      "label": "liver-z0.15",
+      "zoom": 0.15,
+      "camera": {
+        "y": 1550.7902645583756,
+        "x": 949.8285979776736
+      },
+      "sourceCamera": [
+        474.9142989888368,
+        519.3951322791878
+      ],
+      "independentlyViewed": true,
+      "status": "NEEDS_REFINEMENT",
+      "finding": "旧粗底块和胃外大红三角已消失；横向蓝支连续，接头细线及外围原图放大模糊仍可见。",
+      "limits": "静帧；未证明连续缩放、动态遮挡或帧率。"
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-004/02-stomach-z0.15.png",
+      "sha256": "7fe990dd6e83317631ef721abea3ca1521eab1cf3ff8952c44057cb195bb1e02",
+      "label": "stomach-z0.15",
+      "zoom": 0.15,
+      "camera": {
+        "y": 1499.3939393939395,
+        "x": 1110.7878787878788
+      },
+      "sourceCamera": [
+        555.3939393939394,
+        493.69696969696975
+      ],
+      "independentlyViewed": true,
+      "status": "NEEDS_REFINEMENT",
+      "finding": "食道与胃内奶油食物通路保持独立，胃壁血管入口未移；红三叉内部斜直缝和矩形材质边仍可见。",
+      "limits": "静帧；未证明连续缩放、动态遮挡或帧率。"
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-004/03-brain-z0.15.png",
+      "sha256": "d4df4b0940332f9456621c5c3d7f51ef7780518ab1273e4a01fd288000104177",
+      "label": "brain-z0.15",
+      "zoom": 0.15,
+      "camera": {
+        "y": 657.3376816444812,
+        "x": 1018.6343114671818
+      },
+      "sourceCamera": [
+        509.3171557335909,
+        72.66884082224061
+      ],
+      "independentlyViewed": true,
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "finding": "粉色脑房间开放，无新增绿色；脑外人体原图放大模糊。",
+      "limits": "静帧；未证明连续缩放、动态遮挡或帧率。"
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-004/04-lung_r-z0.15.png",
+      "sha256": "a32048a9f7a91799f1827886831a8ae17c28e39b3846c743bb7d216d8940ec0d",
+      "label": "lung_r-z0.15",
+      "zoom": 0.15,
+      "camera": {
+        "y": 1285.9209425148558,
+        "x": 815.8651693446275
+      },
+      "sourceCamera": [
+        407.93258467231374,
+        386.9604712574279
+      ],
+      "independentlyViewed": true,
+      "status": "NEEDS_REFINEMENT",
+      "finding": "肺粉色血管在奶油气路遮挡处已变为贴边平口，旧孤立圆帽消失；口缘有细小阶梯锯齿。",
+      "limits": "静帧；未证明连续缩放、动态遮挡或帧率。"
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-004/05-lung_l-z0.15.png",
+      "sha256": "61a5ccc5196d5be4f9423e46958722469e654b0700e63447689682c000f1a266",
+      "label": "lung_l-z0.15",
+      "zoom": 0.15,
+      "camera": {
+        "y": 1286.6395794292855,
+        "x": 1219.7357457285038
+      },
+      "sourceCamera": [
+        609.8678728642519,
+        387.31978971464275
+      ],
+      "independentlyViewed": true,
+      "status": "NEEDS_REFINEMENT",
+      "finding": "奶油气路独立，粉色血管平口贴气路轮廓；口缘仍有细小锯齿，无旧孤立胶囊。",
+      "limits": "静帧；未证明连续缩放、动态遮挡或帧率。"
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-004/06-pancreas-z0.15.png",
+      "sha256": "96f9d9c2210365bf01785a9e6fc1e0b80092029f0d7836e75d98f32e7176766c",
+      "label": "pancreas-z0.15",
+      "zoom": 0.15,
+      "camera": {
+        "y": 1681.0316593925281,
+        "x": 1116.1502880969042
+      },
+      "sourceCamera": [
+        558.0751440484521,
+        584.5158296962641
+      ],
+      "independentlyViewed": true,
+      "status": "NEEDS_REFINEMENT",
+      "finding": "黄色胰腺地面和奶油导管独立，无绿色；e126 可见血管通过地面，多个导管下穿平口贴边，局部纹理直缝仍在。",
+      "limits": "静帧；未证明连续缩放、动态遮挡或帧率。"
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-004/07-kidney_r-z0.15.png",
+      "sha256": "fae81225baf98050062ca130122ccf99e0a9bba1679706b01cb0a28ba33cc692",
+      "label": "kidney_r-z0.15",
+      "zoom": 0.15,
+      "camera": {
+        "y": 1732.349437248223,
+        "x": 822.5534903755783
+      },
+      "sourceCamera": [
+        411.2767451877892,
+        610.1747186241115
+      ],
+      "independentlyViewed": true,
+      "status": "NEEDS_REFINEMENT",
+      "finding": "红粉局部血管连续，蓝色肾门被奶油尿路正确覆盖；肾门口小楔形白缺口和阶梯边明显，外围图模糊。",
+      "limits": "静帧；未证明连续缩放、动态遮挡或帧率。"
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-004/08-kidney_l-z0.15.png",
+      "sha256": "5c078d849a149c6417cdc2699bfb027e52e9dbc7ba765a591a7c016049a590f6",
+      "label": "kidney_l-z0.15",
+      "zoom": 0.15,
+      "camera": {
+        "y": 1731.379110398568,
+        "x": 1215.15185181795
+      },
+      "sourceCamera": [
+        607.575925908975,
+        609.689555199284
+      ],
+      "independentlyViewed": true,
+      "status": "NEEDS_REFINEMENT",
+      "finding": "奶油肾门尿路独立；红蓝平口贴边但局部尖楔/锯齿仍在；真实局部支路圆端不应误判成遮挡漏洞。",
+      "limits": "静帧；未证明连续缩放、动态遮挡或帧率。"
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-004/09-large_intestine-z0.15.png",
+      "sha256": "821736990aa22f82873c75c1ad3515ed8e670b4b938285fefc2f5c36dc244def",
+      "label": "large_intestine-z0.15",
+      "zoom": 0.15,
+      "camera": {
+        "y": 1859.8319011858528,
+        "x": 1129.0957588737895
+      },
+      "sourceCamera": [
+        564.5478794368947,
+        673.9159505929264
+      ],
+      "independentlyViewed": true,
+      "status": "NEEDS_REFINEMENT",
+      "finding": "奶油食物肠道未被血管占用；血管短矩形片段平口接食物边界，口缘阶梯感、交叉处小蓝楔和细缝仍可见。",
+      "limits": "静帧；未证明连续缩放、动态遮挡或帧率。"
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-004/10-small_intestine-z0.15.png",
+      "sha256": "a93f6b83a53b6ba639a5e09c8ed8d2a2b4a6e7d5f15e0923bf4c4b4b38a4ab0b",
+      "label": "small_intestine-z0.15",
+      "zoom": 0.15,
+      "camera": {
+        "y": 1902.8086737325598,
+        "x": 1001.6763066149477
+      },
+      "sourceCamera": [
+        500.8381533074739,
+        695.4043368662799
+      ],
+      "independentlyViewed": true,
+      "status": "NEEDS_REFINEMENT",
+      "finding": "食物肠袢独立；下穿段由平口贴边取代圆帽，口缘锯齿和短矩形片段感仍存在。",
+      "limits": "静帧；未证明连续缩放、动态遮挡或帧率。"
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-004/11-bladder-z0.15.png",
+      "sha256": "6ec07ef7e16b6cd1b4e5c77d613aa90a3b78b223ce931c68275c43016828b9a4",
+      "label": "bladder-z0.15",
+      "zoom": 0.15,
+      "camera": {
+        "y": 2058.219061360249,
+        "x": 1069.3536621669086
+      },
+      "sourceCamera": [
+        534.6768310834543,
+        773.1095306801244
+      ],
+      "independentlyViewed": true,
+      "status": "NEEDS_REFINEMENT",
+      "finding": "奶油尿腔未画入 e143，红蓝侧路在腔外；顶部下穿口贴腔边，个别口缘锯齿；真实节点圆凸不等同遮挡错误。",
+      "limits": "静帧；未证明连续缩放、动态遮挡或帧率。"
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-004/12-heart-z0.15.png",
+      "sha256": "aa0775e9fe3f2bc8d4541f3d4d729ce44a7f7e8ff032c5ee18577706777ce4b2",
+      "label": "heart-z0.15",
+      "zoom": 0.15,
+      "camera": {
+        "y": 1305.693206511241,
+        "x": 1033.3013879867644
+      },
+      "sourceCamera": [
+        516.6506939933822,
+        396.8466032556205
+      ],
+      "independentlyViewed": true,
+      "status": "NEEDS_REFINEMENT",
+      "finding": "心脏为橙珊瑚色，无绿色；主干连续，左蓝支和上左局部短红支仍有细纹交界，单位青色选框可辨。",
+      "limits": "静帧；未证明连续缩放、动态遮挡或帧率。"
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-004/13-stomach-z0.085.png",
+      "sha256": "7922e780497047eb71c1f0267eb4eb6a7e91e4b4d31b0daa70bc51d069e4b156",
+      "label": "stomach-z0.085",
+      "zoom": 0.085,
+      "camera": {
+        "y": 1499.3939393939395,
+        "x": 1110.7878787878788
+      },
+      "sourceCamera": [
+        555.3939393939394,
+        493.69696969696975
+      ],
+      "independentlyViewed": true,
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "finding": "0.085 仍为原始解剖远景，原图放大模糊；本帧不能代表 0.15 战场细节。",
+      "limits": "静帧；未证明连续缩放、动态遮挡或帧率。"
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-004/14-stomach-z0.12.png",
+      "sha256": "2ce9cdb33477beef36b185784f623dea09c6a11afbf55a0e090e2fbff58afa2f",
+      "label": "stomach-z0.12",
+      "zoom": 0.12,
+      "camera": {
+        "y": 1499.3939393939395,
+        "x": 1110.7878787878788
+      },
+      "sourceCamera": [
+        555.3939393939394,
+        493.69696969696975
+      ],
+      "independentlyViewed": true,
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "finding": "0.12 的原图/战场混合过渡可见；静帧不能验证连续缩放。",
+      "limits": "静帧；未证明连续缩放、动态遮挡或帧率。"
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-004/15-stomach-z0.149.png",
+      "sha256": "0863e78f9286e2084193a9d2dbbc34c1d682b9552fa066023f3b1117c2c35a2d",
+      "label": "stomach-z0.149",
+      "zoom": 0.149,
+      "camera": {
+        "y": 1499.3939393939395,
+        "x": 1110.7878787878788
+      },
+      "sourceCamera": [
+        555.3939393939394,
+        493.69696969696975
+      ],
+      "independentlyViewed": true,
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "finding": "0.149 战场已接近完整接管，器官位置一致；接头细线仍可见。",
+      "limits": "静帧；未证明连续缩放、动态遮挡或帧率。"
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-004/16-stomach-z0.151.png",
+      "sha256": "1892e35aebe5f5f9c70da5a84e90127498a8c4ef9bf82b88ca7a0c4692dc5c15",
+      "label": "stomach-z0.151",
+      "zoom": 0.151,
+      "camera": {
+        "y": 1499.3939393939395,
+        "x": 1110.7878787878788
+      },
+      "sourceCamera": [
+        555.3939393939394,
+        493.69696969696975
+      ],
+      "independentlyViewed": true,
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "finding": "0.151 与 0.149 定位一致，无明显双胃；静帧不能证明连续缩放无跳变。",
+      "limits": "静帧；未证明连续缩放、动态遮挡或帧率。"
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-004/17-stomach-boundary-z0.15.png",
+      "sha256": "eff3009b3fc2cefdca9d1718f7fdd779f43eb3f373bdbe0fd0c23ca6f8ff6567",
+      "label": "stomach-boundary-z0.15",
+      "zoom": 0.15,
+      "camera": {
+        "y": 1614,
+        "x": 948
+      },
+      "sourceCamera": [
+        474.0,
+        551.0
+      ],
+      "independentlyViewed": true,
+      "status": "NEEDS_REFINEMENT",
+      "finding": "胃肝轮廓对齐；中央外部奶油模糊斜带处，红蓝下穿尖/平切片段缺少清晰前景边，仍有断路观感；胃壁食物边口正确贴边。",
+      "limits": "静帧；未证明连续缩放、动态遮挡或帧率。"
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-004/18-whole-body.png",
+      "sha256": "f61b0e938f26ffcb9785dcaa427e380c352a1d3c5a867d45b418a812d6ef3e48",
+      "label": "whole-body",
+      "zoom": 0.0025,
+      "camera": {
+        "y": 2048,
+        "x": 1024
+      },
+      "sourceCamera": [
+        512.0,
+        768.0
+      ],
+      "independentlyViewed": true,
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "finding": "全身头脚完整显示，属于远景原图 fit；并非全图 0.15 实尺度细节证明。",
+      "limits": "静帧；未证明连续缩放、动态遮挡或帧率。"
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-004/19-map-popup.png",
+      "sha256": "2f47415450c91e1846b0d77c6daf63d6a4a2a0f9ef58ec17f4f6549438fdf75e",
+      "label": "map-popup",
+      "zoom": 0.15,
+      "camera": {
+        "y": 1499.3939393939395,
+        "x": 1110.7878787878788
+      },
+      "sourceCamera": [
+        555.3939393939394,
+        493.69696969696975
+      ],
+      "independentlyViewed": true,
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "finding": "弹窗完整全身 fit 和第二 context 有实际截图；并非弹窗器官 0.15 近景证明。",
+      "limits": "静帧；未证明连续缩放、动态遮挡或帧率。"
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-004/20-aortic-arch-z0.15.png",
+      "sha256": "8afe95f8b096d268cef1a8345f2e9e21f33e86682358290f77e316b6b568102f",
+      "label": "aortic-arch-z0.15",
+      "zoom": 0.15,
+      "camera": {
+        "y": 1210,
+        "x": 1056
+      },
+      "sourceCamera": [
+        528.0,
+        349.0
+      ],
+      "independentlyViewed": true,
+      "status": "NEEDS_REFINEMENT",
+      "finding": "主动脉弓仍需精修：模糊气路附近红斜片、蓝尖片、中央与右下红管的奶油楔孔、左蓝主干奶油侵入，虽已无圆帽仍造成断段/穿孔观感；接头细线仍在。",
+      "limits": "静帧；未证明连续缩放、动态遮挡或帧率。",
+      "issueAnchors": [
+        {
+          "sourceApprox": [
+            508.37,
+            334.48
+          ],
+          "screenNormalized": [
+            0.34912,
+            0.30316
+          ],
+          "label": "模糊气路附近红斜切片仍像孤立片段",
+          "accuracy": "以实际窗口截图读点换算，约 ±2 原图 px；只作诊断，不更改冻结几何。"
+        },
+        {
+          "sourceApprox": [
+            527.11,
+            345.27
+          ],
+          "screenNormalized": [
+            0.49316,
+            0.44435
+          ],
+          "label": "蓝色尖切片缺少清晰前景边解释",
+          "accuracy": "以实际窗口截图读点换算，约 ±2 原图 px；只作诊断，不更改冻结几何。"
+        },
+        {
+          "sourceApprox": [
+            513.77,
+            342.41
+          ],
+          "screenNormalized": [
+            0.39062,
+            0.40698
+          ],
+          "label": "中央红蓝交汇奶油楔形孔",
+          "accuracy": "以实际窗口截图读点换算，约 ±2 原图 px；只作诊断，不更改冻结几何。"
+        },
+        {
+          "sourceApprox": [
+            532.19,
+            357.66
+          ],
+          "screenNormalized": [
+            0.53223,
+            0.60631
+          ],
+          "label": "右下横红管奶油楔孔",
+          "accuracy": "以实际窗口截图读点换算，约 ±2 原图 px；只作诊断，不更改冻结几何。"
+        },
+        {
+          "sourceApprox": [
+            481.37,
+            360.83
+          ],
+          "screenNormalized": [
+            0.1416,
+            0.64784
+          ],
+          "label": "左蓝主干被奶油保护色切入",
+          "accuracy": "以实际窗口截图读点换算，约 ±2 原图 px；只作诊断，不更改冻结几何。"
+        }
+      ]
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-004/21-celiac-stomach-z0.15.png",
+      "sha256": "1b4a9b9f0df5913681d11b8b5bafe1753352e30cb4b9259b241985773b0fbcbd",
+      "label": "celiac-stomach-z0.15",
+      "zoom": 0.15,
+      "camera": {
+        "y": 1492,
+        "x": 1064
+      },
+      "sourceCamera": [
+        532.0,
+        490.0
+      ],
+      "independentlyViewed": true,
+      "status": "NEEDS_REFINEMENT",
+      "finding": "红色三叉地面真实连续且食物路独立；GPT 接头斜直线、横支矩形边和向胃支矩形边仍可见。",
+      "limits": "静帧；未证明连续缩放、动态遮挡或帧率。",
+      "issueAnchors": [
+        {
+          "sourceApprox": [
+            520.37,
+            482.59
+          ],
+          "screenNormalized": [
+            0.41064,
+            0.39618
+          ],
+          "label": "红三叉 GPT 接头内斜直线缝",
+          "accuracy": "以实际窗口截图读点换算，约 ±2 原图 px；只作诊断，不更改冻结几何。"
+        },
+        {
+          "sourceApprox": [
+            543.94,
+            489.96
+          ],
+          "screenNormalized": [
+            0.5918,
+            0.49252
+          ],
+          "label": "向胃支矩形材质边界",
+          "accuracy": "以实际窗口截图读点换算，约 ±2 原图 px；只作诊断，不更改冻结几何。"
+        },
+        {
+          "sourceApprox": [
+            528.63,
+            490.02
+          ],
+          "screenNormalized": [
+            0.47412,
+            0.49336
+          ],
+          "label": "横向红支矩形材质边界",
+          "accuracy": "以实际窗口截图读点换算，约 ±2 原图 px；只作诊断，不更改冻结几何。"
+        }
+      ]
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-004/22-portal-z0.15.png",
+      "sha256": "01057417d65355ed8a96452493fa41c220b1a566fce9ff8daba2eab3ceba3958",
+      "label": "portal-z0.15",
+      "zoom": 0.15,
+      "camera": {
+        "y": 1612,
+        "x": 1022
+      },
+      "sourceCamera": [
+        511.0,
+        550.0
+      ],
+      "independentlyViewed": true,
+      "status": "NEEDS_REFINEMENT",
+      "finding": "食物墙右侧红主干平口正确贴边；左侧外围模糊奶油斜带周围红蓝切口仍缺清晰遮挡层解释；蓝三叉材质细缝。",
+      "limits": "静帧；未证明连续缩放、动态遮挡或帧率。"
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-004/23-mesenteric-z0.15.png",
+      "sha256": "cb4ac869fd07e65ba2fd61ce5f1a35acae33af328e8be4572cb632d9be627974",
+      "label": "mesenteric-z0.15",
+      "zoom": 0.15,
+      "camera": {
+        "y": 1852,
+        "x": 1032
+      },
+      "sourceCamera": [
+        516.0,
+        670.0
+      ],
+      "independentlyViewed": true,
+      "status": "NEEDS_REFINEMENT",
+      "finding": "奶油食物袢完整；红蓝下穿平口贴边，没有旧悬空圆帽，阶梯边和短矩形片段观感仍在，交叉处小蓝楔。",
+      "limits": "静帧；未证明连续缩放、动态遮挡或帧率。"
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-004/24-pelvis-main-z0.15.png",
+      "sha256": "f5f574f9644584ce855c68a29d06ca7f01e58f659a62767c89141dffaf21a9e7",
+      "label": "pelvis-main-z0.15",
+      "zoom": 0.15,
+      "camera": {
+        "y": 2018,
+        "x": 1018
+      },
+      "sourceCamera": [
+        509.0,
+        753.0
+      ],
+      "independentlyViewed": true,
+      "status": "NEEDS_REFINEMENT",
+      "finding": "膀胱尿腔未侵入，红蓝侧路在腔外，顶部平口贴腔边；边缘锯齿及外围骨骼模糊。",
+      "limits": "静帧；未证明连续缩放、动态遮挡或帧率。"
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-004/25-arm-right-z0.15.png",
+      "sha256": "c85ecf273ecd3aa84cf9604450aae17fc4e4465e7ec49ecb24e32bb8de33b3ff",
+      "label": "arm-right-z0.15",
+      "zoom": 0.15,
+      "camera": {
+        "y": 1392,
+        "x": 670
+      },
+      "sourceCamera": [
+        335.0,
+        440.0
+      ],
+      "independentlyViewed": true,
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "finding": "右臂红蓝路线保持冻结位置且长段连续，无白纸边或新增绿色；原图组织放大模糊，条带纹理仍较简单。",
+      "limits": "静帧；未证明连续缩放、动态遮挡或帧率。"
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-004/26-arm-left-z0.15.png",
+      "sha256": "9f63574b5048bc41e46f134243bad14db1a990b068c6981f0bc0cead664f1d68",
+      "label": "arm-left-z0.15",
+      "zoom": 0.15,
+      "camera": {
+        "y": 1392,
+        "x": 1370
+      },
+      "sourceCamera": [
+        685.0,
+        440.0
+      ],
+      "independentlyViewed": true,
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "finding": "左臂红蓝路线保持冻结位置且连续，无白纸边或新增绿色；原图组织放大模糊。",
+      "limits": "静帧；未证明连续缩放、动态遮挡或帧率。"
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-004/27-leg-right-z0.15.png",
+      "sha256": "4b9a24f9dedd0bdb9fc4c484a49e75ca32a2daab1aecf6002e045f8c7110e23c",
+      "label": "leg-right-z0.15",
+      "zoom": 0.15,
+      "camera": {
+        "y": 2352,
+        "x": 868
+      },
+      "sourceCamera": [
+        434.0,
+        920.0
+      ],
+      "independentlyViewed": true,
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "finding": "右腿主干连续，局部粉蓝材质转色交界较硬；真实局部分支圆端不是下穿口失败，骨骼原图模糊。",
+      "limits": "静帧；未证明连续缩放、动态遮挡或帧率。"
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-004/28-leg-left-z0.15.png",
+      "sha256": "bbe3cebebf5d99b3624bbab6c4d8bdfa1f720d621a15eaf913b52d571c8e316d",
+      "label": "leg-left-z0.15",
+      "zoom": 0.15,
+      "camera": {
+        "y": 2352,
+        "x": 1162
+      },
+      "sourceCamera": [
+        581.0,
+        920.0
+      ],
+      "independentlyViewed": true,
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "finding": "左腿主干连续，局部材质交界仍见细线；骨骼原图模糊，无新增绿色。",
+      "limits": "静帧；未证明连续缩放、动态遮挡或帧率。"
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-004/29-foot-right-z0.15.png",
+      "sha256": "bbe69bd0e2ebec394f80986e9b1ed6597cf1f3f366b0605f2d4fee0dec56404e",
+      "label": "foot-right-z0.15",
+      "zoom": 0.15,
+      "camera": {
+        "y": 3392,
+        "x": 742
+      },
+      "sourceCamera": [
+        371.0,
+        1440.0
+      ],
+      "independentlyViewed": true,
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "finding": "右足红蓝局部血管环保留冻结路径，中心接头内部细线，足部原图低分辨率；无白纸边或新增绿色。",
+      "limits": "静帧；未证明连续缩放、动态遮挡或帧率。"
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-004/30-foot-left-z0.15.png",
+      "sha256": "d9f205257e1b9b35ce7b8af943d7ac985a020eece4d61564907bedaab3d57fc1",
+      "label": "foot-left-z0.15",
+      "zoom": 0.15,
+      "camera": {
+        "y": 3392,
+        "x": 1300
+      },
+      "sourceCamera": [
+        650.0,
+        1440.0
+      ],
+      "independentlyViewed": true,
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "finding": "左足红蓝局部环连续，接头细线和足部原图模糊仍存在；无新增绿色。",
+      "limits": "静帧；未证明连续缩放、动态遮挡或帧率。"
+    },
+    {
+      "path": "docs/body-life/vascular-art-study/fullbody-015/native-004/31-neck-main-z0.15.png",
+      "sha256": "6c26b77413dac14cd233f48a8d3788956ec38a19bbbfa6be3092451013a98342",
+      "label": "neck-main-z0.15",
+      "zoom": 0.15,
+      "camera": {
+        "y": 978,
+        "x": 1020
+      },
+      "sourceCamera": [
+        510.0,
+        233.0
+      ],
+      "independentlyViewed": true,
+      "status": "REVIEWED_WITH_LIMITATIONS",
+      "finding": "颈部红蓝管位于奶油气管两侧且连续；中央气管原图放大模糊，不将蓝支气管绘成静脉。",
+      "limits": "静帧；未证明连续缩放、动态遮挡或帧率。"
+    }
+  ]
+}

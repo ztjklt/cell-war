@@ -1,0 +1,5211 @@
+{
+  "version": 1,
+  "scope": "game circulation topology proposal; not runtime",
+  "productionReady": false,
+  "reviewStatus": "REQUIRES_REVISION",
+  "reviewReport": "audit.html",
+  "referenceSha256": "9a04e39961c07073cd9fdcfcdc2c98253ccc25d968e97dbea1f36669e06b5d9f",
+  "sourceSize": [
+    1024,
+    1536
+  ],
+  "coordinates": "source image pixels; world=(2*x,2*y+512)",
+  "nodes": [
+    {
+      "id": "right_heart",
+      "x": 493,
+      "y": 414,
+      "label": "右心功能端口（位置示意）"
+    },
+    {
+      "id": "left_heart",
+      "x": 538,
+      "y": 422,
+      "label": "左心功能端口（位置示意）"
+    },
+    {
+      "id": "pulmonary_trunk",
+      "x": 510,
+      "y": 355,
+      "label": "肺动脉分支"
+    },
+    {
+      "id": "heart.v",
+      "x": 483.0,
+      "y": 379.0,
+      "label": "heart.v"
+    },
+    {
+      "id": "arch",
+      "x": 514.0,
+      "y": 341.0,
+      "label": "arch"
+    },
+    {
+      "id": "lung_r.a",
+      "x": 439,
+      "y": 350,
+      "label": "右肺肺动脉端口候选"
+    },
+    {
+      "id": "lung_r.v",
+      "x": 433,
+      "y": 430,
+      "label": "右肺肺静脉端口候选"
+    },
+    {
+      "id": "lung_l.a",
+      "x": 580,
+      "y": 350,
+      "label": "左肺肺动脉端口候选"
+    },
+    {
+      "id": "lung_l.v",
+      "x": 592,
+      "y": 430,
+      "label": "左肺肺静脉端口候选"
+    },
+    {
+      "id": "aorta_upper",
+      "x": 524.0,
+      "y": 481.0,
+      "label": "aorta_upper"
+    },
+    {
+      "id": "aorta_mid",
+      "x": 515.0,
+      "y": 582.0,
+      "label": "aorta_mid"
+    },
+    {
+      "id": "aorta_abd",
+      "x": 518.0,
+      "y": 635.0,
+      "label": "aorta_abd"
+    },
+    {
+      "id": "iliac.a",
+      "x": 509.0,
+      "y": 747.0,
+      "label": "iliac.a"
+    },
+    {
+      "id": "cava_upper",
+      "x": 477.0,
+      "y": 521.0,
+      "label": "cava_upper"
+    },
+    {
+      "id": "iliac.v",
+      "x": 509.0,
+      "y": 763.0,
+      "label": "iliac.v"
+    },
+    {
+      "id": "cava_abdominal",
+      "x": 477,
+      "y": 603,
+      "label": "腹部腔静脉汇流（重定）"
+    },
+    {
+      "id": "shoulder_r.a",
+      "x": 420.0,
+      "y": 286.0,
+      "label": "shoulder_r.a"
+    },
+    {
+      "id": "head_r.a",
+      "x": 480.0,
+      "y": 147.0,
+      "label": "head_r.a"
+    },
+    {
+      "id": "brain_r",
+      "x": 496.0,
+      "y": 95.0,
+      "label": "brain_r"
+    },
+    {
+      "id": "head_r.v",
+      "x": 490.0,
+      "y": 150.0,
+      "label": "head_r.v"
+    },
+    {
+      "id": "wrist_r.a",
+      "x": 233.0,
+      "y": 732.0,
+      "label": "wrist_r.a"
+    },
+    {
+      "id": "wrist_r.v",
+      "x": 232.0,
+      "y": 742.0,
+      "label": "wrist_r.v"
+    },
+    {
+      "id": "elbow_r.v",
+      "x": 292.0,
+      "y": 555.0,
+      "label": "elbow_r.v"
+    },
+    {
+      "id": "armfork_r.v",
+      "x": 335.0,
+      "y": 416.0,
+      "label": "armfork_r.v"
+    },
+    {
+      "id": "shoulder_r.v",
+      "x": 422.0,
+      "y": 297.0,
+      "label": "shoulder_r.v"
+    },
+    {
+      "id": "r.finger1.a",
+      "x": 179.0,
+      "y": 779.0,
+      "label": "r.finger1.a"
+    },
+    {
+      "id": "r.finger1.v",
+      "x": 181.0,
+      "y": 782.0,
+      "label": "r.finger1.v"
+    },
+    {
+      "id": "r.finger2.a",
+      "x": 193.0,
+      "y": 802.0,
+      "label": "r.finger2.a"
+    },
+    {
+      "id": "r.finger2.v",
+      "x": 195.0,
+      "y": 805.0,
+      "label": "r.finger2.v"
+    },
+    {
+      "id": "r.finger3.a",
+      "x": 211.0,
+      "y": 810.0,
+      "label": "r.finger3.a"
+    },
+    {
+      "id": "r.finger3.v",
+      "x": 213.0,
+      "y": 813.0,
+      "label": "r.finger3.v"
+    },
+    {
+      "id": "r.finger4.a",
+      "x": 228.0,
+      "y": 805.0,
+      "label": "r.finger4.a"
+    },
+    {
+      "id": "r.finger4.v",
+      "x": 230.0,
+      "y": 808.0,
+      "label": "r.finger4.v"
+    },
+    {
+      "id": "r.finger5.a",
+      "x": 239.0,
+      "y": 795.0,
+      "label": "r.finger5.a"
+    },
+    {
+      "id": "r.finger5.v",
+      "x": 241.0,
+      "y": 798.0,
+      "label": "r.finger5.v"
+    },
+    {
+      "id": "hip_r.a",
+      "x": 435.0,
+      "y": 801.0,
+      "label": "hip_r.a"
+    },
+    {
+      "id": "hip_r.v",
+      "x": 439.0,
+      "y": 811.0,
+      "label": "hip_r.v"
+    },
+    {
+      "id": "foot_r.a",
+      "x": 381.0,
+      "y": 1438.0,
+      "label": "foot_r.a"
+    },
+    {
+      "id": "foot_r.v",
+      "x": 368.0,
+      "y": 1438.0,
+      "label": "foot_r.v"
+    },
+    {
+      "id": "calffork_r.v",
+      "x": 396.0,
+      "y": 1090.0,
+      "label": "calffork_r.v"
+    },
+    {
+      "id": "knee_r.v",
+      "x": 405.0,
+      "y": 985.0,
+      "label": "knee_r.v"
+    },
+    {
+      "id": "thighfork_r.v",
+      "x": 426.0,
+      "y": 896.0,
+      "label": "thighfork_r.v"
+    },
+    {
+      "id": "r.toe1.a",
+      "x": 351.0,
+      "y": 1435.0,
+      "label": "r.toe1.a"
+    },
+    {
+      "id": "r.toe1.v",
+      "x": 353.0,
+      "y": 1438.0,
+      "label": "r.toe1.v"
+    },
+    {
+      "id": "r.toe2.a",
+      "x": 365.0,
+      "y": 1438.0,
+      "label": "r.toe2.a"
+    },
+    {
+      "id": "r.toe2.v",
+      "x": 367.0,
+      "y": 1441.0,
+      "label": "r.toe2.v"
+    },
+    {
+      "id": "r.toe3.a",
+      "x": 378.0,
+      "y": 1441.0,
+      "label": "r.toe3.a"
+    },
+    {
+      "id": "r.toe3.v",
+      "x": 380.0,
+      "y": 1444.0,
+      "label": "r.toe3.v"
+    },
+    {
+      "id": "r.toe4.a",
+      "x": 392.0,
+      "y": 1443.0,
+      "label": "r.toe4.a"
+    },
+    {
+      "id": "r.toe4.v",
+      "x": 394.0,
+      "y": 1446.0,
+      "label": "r.toe4.v"
+    },
+    {
+      "id": "r.toe5.a",
+      "x": 403.0,
+      "y": 1434.0,
+      "label": "r.toe5.a"
+    },
+    {
+      "id": "r.toe5.v",
+      "x": 405.0,
+      "y": 1437.0,
+      "label": "r.toe5.v"
+    },
+    {
+      "id": "arm_r.a",
+      "x": 327,
+      "y": 465,
+      "label": "右臂组织供血接口候选"
+    },
+    {
+      "id": "arm_r.v",
+      "x": 322,
+      "y": 480,
+      "label": "右臂组织回流接口候选"
+    },
+    {
+      "id": "leg_r.a",
+      "x": 430,
+      "y": 890,
+      "label": "右腿组织供血接口候选"
+    },
+    {
+      "id": "leg_r.v",
+      "x": 433,
+      "y": 915,
+      "label": "右腿组织回流接口候选"
+    },
+    {
+      "id": "shoulder_l.a",
+      "x": 598.0,
+      "y": 286.0,
+      "label": "shoulder_l.a"
+    },
+    {
+      "id": "head_l.a",
+      "x": 539.0,
+      "y": 146.0,
+      "label": "head_l.a"
+    },
+    {
+      "id": "brain_l",
+      "x": 521.0,
+      "y": 95.0,
+      "label": "brain_l"
+    },
+    {
+      "id": "head_l.v",
+      "x": 527.0,
+      "y": 150.0,
+      "label": "head_l.v"
+    },
+    {
+      "id": "wrist_l.a",
+      "x": 782.0,
+      "y": 732.0,
+      "label": "wrist_l.a"
+    },
+    {
+      "id": "wrist_l.v",
+      "x": 782.0,
+      "y": 742.0,
+      "label": "wrist_l.v"
+    },
+    {
+      "id": "elbow_l.v",
+      "x": 726.0,
+      "y": 555.0,
+      "label": "elbow_l.v"
+    },
+    {
+      "id": "armfork_l.v",
+      "x": 684.0,
+      "y": 416.0,
+      "label": "armfork_l.v"
+    },
+    {
+      "id": "shoulder_l.v",
+      "x": 596.0,
+      "y": 297.0,
+      "label": "shoulder_l.v"
+    },
+    {
+      "id": "l.finger1.a",
+      "x": 834.0,
+      "y": 779.0,
+      "label": "l.finger1.a"
+    },
+    {
+      "id": "l.finger1.v",
+      "x": 836.0,
+      "y": 782.0,
+      "label": "l.finger1.v"
+    },
+    {
+      "id": "l.finger2.a",
+      "x": 820.0,
+      "y": 802.0,
+      "label": "l.finger2.a"
+    },
+    {
+      "id": "l.finger2.v",
+      "x": 822.0,
+      "y": 805.0,
+      "label": "l.finger2.v"
+    },
+    {
+      "id": "l.finger3.a",
+      "x": 803.0,
+      "y": 810.0,
+      "label": "l.finger3.a"
+    },
+    {
+      "id": "l.finger3.v",
+      "x": 805.0,
+      "y": 813.0,
+      "label": "l.finger3.v"
+    },
+    {
+      "id": "l.finger4.a",
+      "x": 786.0,
+      "y": 805.0,
+      "label": "l.finger4.a"
+    },
+    {
+      "id": "l.finger4.v",
+      "x": 788.0,
+      "y": 808.0,
+      "label": "l.finger4.v"
+    },
+    {
+      "id": "l.finger5.a",
+      "x": 775.0,
+      "y": 795.0,
+      "label": "l.finger5.a"
+    },
+    {
+      "id": "l.finger5.v",
+      "x": 777.0,
+      "y": 798.0,
+      "label": "l.finger5.v"
+    },
+    {
+      "id": "hip_l.a",
+      "x": 577.0,
+      "y": 802.0,
+      "label": "hip_l.a"
+    },
+    {
+      "id": "hip_l.v",
+      "x": 579.0,
+      "y": 811.0,
+      "label": "hip_l.v"
+    },
+    {
+      "id": "foot_l.a",
+      "x": 629.0,
+      "y": 1438.0,
+      "label": "foot_l.a"
+    },
+    {
+      "id": "foot_l.v",
+      "x": 647.0,
+      "y": 1438.0,
+      "label": "foot_l.v"
+    },
+    {
+      "id": "calffork_l.v",
+      "x": 620.0,
+      "y": 1090.0,
+      "label": "calffork_l.v"
+    },
+    {
+      "id": "knee_l.v",
+      "x": 612.0,
+      "y": 985.0,
+      "label": "knee_l.v"
+    },
+    {
+      "id": "thighfork_l.v",
+      "x": 593.0,
+      "y": 896.0,
+      "label": "thighfork_l.v"
+    },
+    {
+      "id": "l.toe1.a",
+      "x": 666.0,
+      "y": 1435.0,
+      "label": "l.toe1.a"
+    },
+    {
+      "id": "l.toe1.v",
+      "x": 668.0,
+      "y": 1438.0,
+      "label": "l.toe1.v"
+    },
+    {
+      "id": "l.toe2.a",
+      "x": 653.0,
+      "y": 1438.0,
+      "label": "l.toe2.a"
+    },
+    {
+      "id": "l.toe2.v",
+      "x": 655.0,
+      "y": 1441.0,
+      "label": "l.toe2.v"
+    },
+    {
+      "id": "l.toe3.a",
+      "x": 639.0,
+      "y": 1441.0,
+      "label": "l.toe3.a"
+    },
+    {
+      "id": "l.toe3.v",
+      "x": 641.0,
+      "y": 1444.0,
+      "label": "l.toe3.v"
+    },
+    {
+      "id": "l.toe4.a",
+      "x": 626.0,
+      "y": 1443.0,
+      "label": "l.toe4.a"
+    },
+    {
+      "id": "l.toe4.v",
+      "x": 628.0,
+      "y": 1446.0,
+      "label": "l.toe4.v"
+    },
+    {
+      "id": "l.toe5.a",
+      "x": 616.0,
+      "y": 1434.0,
+      "label": "l.toe5.a"
+    },
+    {
+      "id": "l.toe5.v",
+      "x": 618.0,
+      "y": 1437.0,
+      "label": "l.toe5.v"
+    },
+    {
+      "id": "arm_l.a",
+      "x": 692,
+      "y": 465,
+      "label": "左臂组织供血接口候选"
+    },
+    {
+      "id": "arm_l.v",
+      "x": 696,
+      "y": 480,
+      "label": "左臂组织回流接口候选"
+    },
+    {
+      "id": "leg_l.a",
+      "x": 588,
+      "y": 890,
+      "label": "左腿组织供血接口候选"
+    },
+    {
+      "id": "leg_l.v",
+      "x": 584,
+      "y": 915,
+      "label": "左腿组织回流接口候选"
+    },
+    {
+      "id": "celiac",
+      "x": 537,
+      "y": 489,
+      "label": "腹腔供血分支（简化）"
+    },
+    {
+      "id": "mesenteric_upper",
+      "x": 524,
+      "y": 606,
+      "label": "肠系膜上供血组"
+    },
+    {
+      "id": "mesenteric_lower",
+      "x": 525,
+      "y": 664,
+      "label": "肠系膜下供血组"
+    },
+    {
+      "id": "portal",
+      "x": 491,
+      "y": 553,
+      "label": "门静脉汇流（候选）"
+    },
+    {
+      "id": "liver.a",
+      "x": 481,
+      "y": 496,
+      "label": "肝动脉端口候选"
+    },
+    {
+      "id": "liver.p",
+      "x": 489,
+      "y": 519,
+      "label": "肝门静脉端口候选"
+    },
+    {
+      "id": "liver.bed",
+      "x": 447,
+      "y": 516,
+      "label": "肝内交换区（合并）"
+    },
+    {
+      "id": "liver.v",
+      "x": 460,
+      "y": 536,
+      "label": "肝静脉端口候选"
+    },
+    {
+      "id": "stomach.a",
+      "x": 566,
+      "y": 503,
+      "label": "胃供血接口候选"
+    },
+    {
+      "id": "stomach.v",
+      "x": 568,
+      "y": 535,
+      "label": "胃回流接口候选"
+    },
+    {
+      "id": "pancreas.a",
+      "x": 547,
+      "y": 582,
+      "label": "胰供血接口候选"
+    },
+    {
+      "id": "pancreas.v",
+      "x": 515,
+      "y": 587,
+      "label": "胰回流接口候选"
+    },
+    {
+      "id": "small_intestine.a",
+      "x": 492,
+      "y": 673,
+      "label": "小肠供血接口候选"
+    },
+    {
+      "id": "small_intestine.v",
+      "x": 535,
+      "y": 701,
+      "label": "小肠回流接口候选"
+    },
+    {
+      "id": "colon_proximal.a",
+      "x": 451,
+      "y": 657,
+      "label": "大肠近端组供血接口候选"
+    },
+    {
+      "id": "colon_proximal.v",
+      "x": 459,
+      "y": 711,
+      "label": "大肠近端组回流接口候选"
+    },
+    {
+      "id": "colon_distal.a",
+      "x": 567,
+      "y": 666,
+      "label": "大肠远端组供血接口候选"
+    },
+    {
+      "id": "colon_distal.v",
+      "x": 565,
+      "y": 713,
+      "label": "大肠远端组回流接口候选"
+    },
+    {
+      "id": "kidney_r.a",
+      "x": 426,
+      "y": 590,
+      "label": "右肾供血接口候选"
+    },
+    {
+      "id": "kidney_r.v",
+      "x": 429,
+      "y": 625,
+      "label": "右肾回流接口候选"
+    },
+    {
+      "id": "kidney_l.a",
+      "x": 591,
+      "y": 590,
+      "label": "左肾供血接口候选"
+    },
+    {
+      "id": "kidney_l.v",
+      "x": 590,
+      "y": 625,
+      "label": "左肾回流接口候选"
+    },
+    {
+      "id": "bladder.a",
+      "x": 523,
+      "y": 756,
+      "label": "膀胱供血接口候选"
+    },
+    {
+      "id": "bladder.v",
+      "x": 491,
+      "y": 772,
+      "label": "膀胱回流接口候选"
+    },
+    {
+      "id": "coronary.a",
+      "x": 524,
+      "y": 401,
+      "label": "心肌供血接口候选"
+    },
+    {
+      "id": "coronary.v",
+      "x": 513,
+      "y": 438,
+      "label": "心肌回流接口候选"
+    },
+    {
+      "id": "trunk.a",
+      "x": 390,
+      "y": 588,
+      "label": "躯干组织供血接口候选"
+    },
+    {
+      "id": "trunk.v",
+      "x": 388,
+      "y": 629,
+      "label": "躯干组织回流接口候选"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e001",
+      "a": "heart.v",
+      "b": "right_heart",
+      "kind": "vein",
+      "points": [
+        [
+          483.0,
+          379.0
+        ],
+        [
+          481,
+          397
+        ],
+        [
+          493,
+          414
+        ]
+      ],
+      "status": "revise",
+      "group": "heart",
+      "label": "heart.v → right_heart",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e002",
+      "a": "left_heart",
+      "b": "arch",
+      "kind": "artery",
+      "points": [
+        [
+          538,
+          422
+        ],
+        [
+          551,
+          395
+        ],
+        [
+          542,
+          367
+        ],
+        [
+          528,
+          351
+        ],
+        [
+          514.0,
+          341.0
+        ]
+      ],
+      "status": "revise",
+      "group": "heart",
+      "label": "左心至主动脉弓（重定接头）",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e003",
+      "a": "right_heart",
+      "b": "pulmonary_trunk",
+      "kind": "pulmonary_artery",
+      "points": [
+        [
+          493,
+          414
+        ],
+        [
+          492,
+          387
+        ],
+        [
+          498,
+          368
+        ],
+        [
+          510,
+          355
+        ]
+      ],
+      "status": "new",
+      "group": "pulmonary",
+      "label": "right_heart → pulmonary_trunk",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e004",
+      "a": "pulmonary_trunk",
+      "b": "lung_r.a",
+      "kind": "pulmonary_artery",
+      "points": [
+        [
+          510,
+          355
+        ],
+        [
+          478,
+          344
+        ],
+        [
+          455,
+          338
+        ],
+        [
+          439,
+          350
+        ]
+      ],
+      "status": "new",
+      "group": "pulmonary",
+      "label": "pulmonary_trunk → lung_r.a",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e005",
+      "a": "lung_r.a",
+      "b": "lung_r.v",
+      "kind": "exchange",
+      "points": [
+        [
+          439,
+          350
+        ],
+        [
+          425,
+          390
+        ],
+        [
+          433,
+          430
+        ]
+      ],
+      "status": "new",
+      "group": "pulmonary",
+      "label": "右肺气体交换（区域合并）",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e006",
+      "a": "lung_r.v",
+      "b": "left_heart",
+      "kind": "pulmonary_vein",
+      "points": [
+        [
+          433,
+          430
+        ],
+        [
+          454,
+          442
+        ],
+        [
+          475,
+          448
+        ],
+        [
+          521,
+          449
+        ],
+        [
+          538,
+          422
+        ]
+      ],
+      "status": "new",
+      "group": "pulmonary",
+      "label": "lung_r.v → left_heart",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e007",
+      "a": "pulmonary_trunk",
+      "b": "lung_l.a",
+      "kind": "pulmonary_artery",
+      "points": [
+        [
+          510,
+          355
+        ],
+        [
+          543,
+          338
+        ],
+        [
+          566,
+          339
+        ],
+        [
+          580,
+          350
+        ]
+      ],
+      "status": "new",
+      "group": "pulmonary",
+      "label": "pulmonary_trunk → lung_l.a",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e008",
+      "a": "lung_l.a",
+      "b": "lung_l.v",
+      "kind": "exchange",
+      "points": [
+        [
+          580,
+          350
+        ],
+        [
+          594,
+          390
+        ],
+        [
+          592,
+          430
+        ]
+      ],
+      "status": "new",
+      "group": "pulmonary",
+      "label": "左肺气体交换（区域合并）",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e009",
+      "a": "lung_l.v",
+      "b": "left_heart",
+      "kind": "pulmonary_vein",
+      "points": [
+        [
+          592,
+          430
+        ],
+        [
+          577,
+          445
+        ],
+        [
+          557,
+          446
+        ],
+        [
+          538,
+          422
+        ]
+      ],
+      "status": "new",
+      "group": "pulmonary",
+      "label": "lung_l.v → left_heart",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e010",
+      "a": "arch",
+      "b": "aorta_upper",
+      "kind": "artery",
+      "points": [
+        [
+          514.0,
+          341.0
+        ],
+        [
+          535,
+          365
+        ],
+        [
+          555,
+          425
+        ],
+        [
+          545,
+          458
+        ],
+        [
+          524.0,
+          481.0
+        ]
+      ],
+      "status": "revise",
+      "group": "systemic",
+      "label": "arch → aorta_upper",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e011",
+      "a": "aorta_upper",
+      "b": "aorta_mid",
+      "kind": "artery",
+      "points": [
+        [
+          524.0,
+          481.0
+        ],
+        [
+          516,
+          533
+        ],
+        [
+          515.0,
+          582.0
+        ]
+      ],
+      "status": "revise",
+      "group": "systemic",
+      "label": "aorta_upper → aorta_mid",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e012",
+      "a": "aorta_mid",
+      "b": "aorta_abd",
+      "kind": "artery",
+      "points": [
+        [
+          515.0,
+          582.0
+        ],
+        [
+          518.0,
+          635.0
+        ]
+      ],
+      "status": "revise",
+      "group": "systemic",
+      "label": "aorta_mid → aorta_abd",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e013",
+      "a": "aorta_abd",
+      "b": "iliac.a",
+      "kind": "artery",
+      "points": [
+        [
+          518.0,
+          635.0
+        ],
+        [
+          518,
+          683
+        ],
+        [
+          512,
+          719
+        ],
+        [
+          509.0,
+          747.0
+        ]
+      ],
+      "status": "revise",
+      "group": "systemic",
+      "label": "aorta_abd → iliac.a",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e014",
+      "a": "iliac.v",
+      "b": "cava_abdominal",
+      "kind": "vein",
+      "points": [
+        [
+          509.0,
+          763.0
+        ],
+        [
+          488,
+          726
+        ],
+        [
+          479,
+          675
+        ],
+        [
+          477,
+          603
+        ]
+      ],
+      "status": "revise",
+      "group": "systemic",
+      "label": "盆腔回流归并至中央主干（替代沿肠外缘的主干接法）",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e015",
+      "a": "cava_abdominal",
+      "b": "cava_upper",
+      "kind": "vein",
+      "points": [
+        [
+          477,
+          603
+        ],
+        [
+          477,
+          557
+        ],
+        [
+          477.0,
+          521.0
+        ]
+      ],
+      "status": "revise",
+      "group": "systemic",
+      "label": "cava_abdominal → cava_upper",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e016",
+      "a": "cava_upper",
+      "b": "heart.v",
+      "kind": "vein",
+      "points": [
+        [
+          477.0,
+          521.0
+        ],
+        [
+          480,
+          477
+        ],
+        [
+          480,
+          430
+        ],
+        [
+          483.0,
+          379.0
+        ]
+      ],
+      "status": "revise",
+      "group": "systemic",
+      "label": "cava_upper → heart.v",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e017",
+      "a": "arch",
+      "b": "shoulder_r.a",
+      "kind": "artery",
+      "points": [
+        [
+          514.0,
+          341.0
+        ],
+        [
+          493.0,
+          320.0
+        ],
+        [
+          485.0,
+          294.0
+        ],
+        [
+          465.0,
+          280.0
+        ],
+        [
+          442.0,
+          278.0
+        ],
+        [
+          420.0,
+          286.0
+        ]
+      ],
+      "status": "retain",
+      "group": "head",
+      "label": "arch → shoulder_r.a",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "arch → shoulder_r.a"
+    },
+    {
+      "id": "e018",
+      "a": "shoulder_r.a",
+      "b": "head_r.a",
+      "kind": "artery",
+      "points": [
+        [
+          420.0,
+          286.0
+        ],
+        [
+          451.0,
+          272.0
+        ],
+        [
+          470.0,
+          255.0
+        ],
+        [
+          479.0,
+          230.0
+        ],
+        [
+          480.0,
+          191.0
+        ],
+        [
+          480.0,
+          147.0
+        ]
+      ],
+      "status": "retain",
+      "group": "head",
+      "label": "shoulder_r.a → head_r.a",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "shoulder_r.a → head_r.a"
+    },
+    {
+      "id": "e019",
+      "a": "head_r.a",
+      "b": "brain_r",
+      "kind": "artery",
+      "points": [
+        [
+          480.0,
+          147.0
+        ],
+        [
+          479.0,
+          127.0
+        ],
+        [
+          488.0,
+          113.0
+        ],
+        [
+          496.0,
+          95.0
+        ]
+      ],
+      "status": "retain",
+      "group": "head",
+      "label": "head_r.a → brain_r",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "head_r.a → brain_r"
+    },
+    {
+      "id": "e020",
+      "a": "brain_r",
+      "b": "head_r.v",
+      "kind": "exchange",
+      "points": [
+        [
+          496.0,
+          95.0
+        ],
+        [
+          491.0,
+          109.0
+        ],
+        [
+          487.0,
+          125.0
+        ],
+        [
+          490.0,
+          150.0
+        ]
+      ],
+      "status": "retain",
+      "group": "head",
+      "label": "brain_r → head_r.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "brain_r → head_r.v"
+    },
+    {
+      "id": "e021",
+      "a": "head_r.v",
+      "b": "heart.v",
+      "kind": "vein",
+      "points": [
+        [
+          490.0,
+          150.0
+        ],
+        [
+          488.0,
+          191.0
+        ],
+        [
+          484.0,
+          229.0
+        ],
+        [
+          476.0,
+          258.0
+        ],
+        [
+          463.0,
+          278.0
+        ],
+        [
+          479.0,
+          305.0
+        ],
+        [
+          486.0,
+          345.0
+        ],
+        [
+          483.0,
+          379.0
+        ]
+      ],
+      "status": "retain",
+      "group": "head",
+      "label": "head_r.v → heart.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "head_r.v → heart.v"
+    },
+    {
+      "id": "e022",
+      "a": "shoulder_r.a",
+      "b": "wrist_r.a",
+      "kind": "artery",
+      "points": [
+        [
+          420.0,
+          286.0
+        ],
+        [
+          395.0,
+          289.0
+        ],
+        [
+          376.0,
+          304.0
+        ],
+        [
+          355.0,
+          344.0
+        ],
+        [
+          334.0,
+          392.0
+        ],
+        [
+          320.0,
+          430.0
+        ],
+        [
+          308.0,
+          479.0
+        ],
+        [
+          297.0,
+          523.0
+        ],
+        [
+          292.0,
+          555.0
+        ],
+        [
+          271.0,
+          602.0
+        ],
+        [
+          253.0,
+          660.0
+        ],
+        [
+          233.0,
+          732.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "shoulder_r.a → wrist_r.a",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "shoulder_r.a → wrist_r.a"
+    },
+    {
+      "id": "e023",
+      "a": "wrist_r.v",
+      "b": "elbow_r.v",
+      "kind": "vein",
+      "points": [
+        [
+          232.0,
+          742.0
+        ],
+        [
+          237.0,
+          724.0
+        ],
+        [
+          252.0,
+          676.0
+        ],
+        [
+          264.0,
+          633.0
+        ],
+        [
+          282.0,
+          587.0
+        ],
+        [
+          292.0,
+          555.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "wrist_r.v → elbow_r.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "wrist_r.v → elbow_r.v"
+    },
+    {
+      "id": "e024",
+      "a": "elbow_r.v",
+      "b": "armfork_r.v",
+      "kind": "vein",
+      "points": [
+        [
+          292.0,
+          555.0
+        ],
+        [
+          306.0,
+          507.0
+        ],
+        [
+          319.0,
+          456.0
+        ],
+        [
+          335.0,
+          416.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "elbow_r.v → armfork_r.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "elbow_r.v → armfork_r.v"
+    },
+    {
+      "id": "e025",
+      "a": "armfork_r.v",
+      "b": "shoulder_r.v",
+      "kind": "vein",
+      "points": [
+        [
+          335.0,
+          416.0
+        ],
+        [
+          354.0,
+          377.0
+        ],
+        [
+          373.0,
+          335.0
+        ],
+        [
+          394.0,
+          310.0
+        ],
+        [
+          422.0,
+          297.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "armfork_r.v → shoulder_r.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "armfork_r.v → shoulder_r.v"
+    },
+    {
+      "id": "e026",
+      "a": "shoulder_r.v",
+      "b": "heart.v",
+      "kind": "vein",
+      "points": [
+        [
+          422.0,
+          297.0
+        ],
+        [
+          458.0,
+          292.0
+        ],
+        [
+          483.0,
+          379.0
+        ]
+      ],
+      "status": "revise",
+      "group": "limbs",
+      "label": "上肢深层回心接头",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "shoulder_r.v → heart.v"
+    },
+    {
+      "id": "e027",
+      "a": "wrist_r.a",
+      "b": "r.finger1.a",
+      "kind": "artery",
+      "points": [
+        [
+          233.0,
+          732.0
+        ],
+        [
+          203.3,
+          767.0
+        ],
+        [
+          179.0,
+          779.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "wrist_r.a → r.finger1.a",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "wrist_r.a → r.finger1.a"
+    },
+    {
+      "id": "e028",
+      "a": "r.finger1.a",
+      "b": "r.finger1.v",
+      "kind": "exchange",
+      "points": [
+        [
+          179.0,
+          779.0
+        ],
+        [
+          181.0,
+          782.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "r.finger1.a → r.finger1.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "r.finger1.a → r.finger1.v"
+    },
+    {
+      "id": "e029",
+      "a": "r.finger1.v",
+      "b": "wrist_r.v",
+      "kind": "vein",
+      "points": [
+        [
+          181.0,
+          782.0
+        ],
+        [
+          200.2,
+          770.0
+        ],
+        [
+          232.0,
+          742.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "r.finger1.v → wrist_r.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "r.finger1.v → wrist_r.v"
+    },
+    {
+      "id": "e030",
+      "a": "wrist_r.a",
+      "b": "r.finger2.a",
+      "kind": "artery",
+      "points": [
+        [
+          233.0,
+          732.0
+        ],
+        [
+          211.0,
+          767.0
+        ],
+        [
+          193.0,
+          802.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "wrist_r.a → r.finger2.a",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "wrist_r.a → r.finger2.a"
+    },
+    {
+      "id": "e031",
+      "a": "r.finger2.a",
+      "b": "r.finger2.v",
+      "kind": "exchange",
+      "points": [
+        [
+          193.0,
+          802.0
+        ],
+        [
+          195.0,
+          805.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "r.finger2.a → r.finger2.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "r.finger2.a → r.finger2.v"
+    },
+    {
+      "id": "e032",
+      "a": "r.finger2.v",
+      "b": "wrist_r.v",
+      "kind": "vein",
+      "points": [
+        [
+          195.0,
+          805.0
+        ],
+        [
+          208.6,
+          770.0
+        ],
+        [
+          232.0,
+          742.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "r.finger2.v → wrist_r.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "r.finger2.v → wrist_r.v"
+    },
+    {
+      "id": "e033",
+      "a": "wrist_r.a",
+      "b": "r.finger3.a",
+      "kind": "artery",
+      "points": [
+        [
+          233.0,
+          732.0
+        ],
+        [
+          220.9,
+          767.0
+        ],
+        [
+          211.0,
+          810.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "wrist_r.a → r.finger3.a",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "wrist_r.a → r.finger3.a"
+    },
+    {
+      "id": "e034",
+      "a": "r.finger3.a",
+      "b": "r.finger3.v",
+      "kind": "exchange",
+      "points": [
+        [
+          211.0,
+          810.0
+        ],
+        [
+          213.0,
+          813.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "r.finger3.a → r.finger3.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "r.finger3.a → r.finger3.v"
+    },
+    {
+      "id": "e035",
+      "a": "r.finger3.v",
+      "b": "wrist_r.v",
+      "kind": "vein",
+      "points": [
+        [
+          213.0,
+          813.0
+        ],
+        [
+          219.4,
+          770.0
+        ],
+        [
+          232.0,
+          742.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "r.finger3.v → wrist_r.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "r.finger3.v → wrist_r.v"
+    },
+    {
+      "id": "e036",
+      "a": "wrist_r.a",
+      "b": "r.finger4.a",
+      "kind": "artery",
+      "points": [
+        [
+          233.0,
+          732.0
+        ],
+        [
+          230.25,
+          767.0
+        ],
+        [
+          228.0,
+          805.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "wrist_r.a → r.finger4.a",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "wrist_r.a → r.finger4.a"
+    },
+    {
+      "id": "e037",
+      "a": "r.finger4.a",
+      "b": "r.finger4.v",
+      "kind": "exchange",
+      "points": [
+        [
+          228.0,
+          805.0
+        ],
+        [
+          230.0,
+          808.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "r.finger4.a → r.finger4.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "r.finger4.a → r.finger4.v"
+    },
+    {
+      "id": "e038",
+      "a": "r.finger4.v",
+      "b": "wrist_r.v",
+      "kind": "vein",
+      "points": [
+        [
+          230.0,
+          808.0
+        ],
+        [
+          229.6,
+          770.0
+        ],
+        [
+          232.0,
+          742.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "r.finger4.v → wrist_r.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "r.finger4.v → wrist_r.v"
+    },
+    {
+      "id": "e039",
+      "a": "wrist_r.a",
+      "b": "r.finger5.a",
+      "kind": "artery",
+      "points": [
+        [
+          233.0,
+          732.0
+        ],
+        [
+          236.3,
+          767.0
+        ],
+        [
+          239.0,
+          795.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "wrist_r.a → r.finger5.a",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "wrist_r.a → r.finger5.a"
+    },
+    {
+      "id": "e040",
+      "a": "r.finger5.a",
+      "b": "r.finger5.v",
+      "kind": "exchange",
+      "points": [
+        [
+          239.0,
+          795.0
+        ],
+        [
+          241.0,
+          798.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "r.finger5.a → r.finger5.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "r.finger5.a → r.finger5.v"
+    },
+    {
+      "id": "e041",
+      "a": "r.finger5.v",
+      "b": "wrist_r.v",
+      "kind": "vein",
+      "points": [
+        [
+          241.0,
+          798.0
+        ],
+        [
+          236.2,
+          770.0
+        ],
+        [
+          232.0,
+          742.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "r.finger5.v → wrist_r.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "r.finger5.v → wrist_r.v"
+    },
+    {
+      "id": "e042",
+      "a": "iliac.a",
+      "b": "hip_r.a",
+      "kind": "artery",
+      "points": [
+        [
+          509.0,
+          747.0
+        ],
+        [
+          474.0,
+          754.0
+        ],
+        [
+          446.0,
+          772.0
+        ],
+        [
+          435.0,
+          801.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "iliac.a → hip_r.a",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "iliac.a → hip_r.a"
+    },
+    {
+      "id": "e043",
+      "a": "hip_r.v",
+      "b": "iliac.v",
+      "kind": "vein",
+      "points": [
+        [
+          439.0,
+          811.0
+        ],
+        [
+          452.0,
+          779.0
+        ],
+        [
+          477.0,
+          763.0
+        ],
+        [
+          509.0,
+          763.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "hip_r.v → iliac.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "iliac.v → hip_r.v"
+    },
+    {
+      "id": "e044",
+      "a": "hip_r.a",
+      "b": "foot_r.a",
+      "kind": "artery",
+      "points": [
+        [
+          435.0,
+          801.0
+        ],
+        [
+          440.0,
+          849.0
+        ],
+        [
+          443.0,
+          900.0
+        ],
+        [
+          433.0,
+          952.0
+        ],
+        [
+          420.0,
+          984.0
+        ],
+        [
+          411.0,
+          1027.0
+        ],
+        [
+          405.0,
+          1084.0
+        ],
+        [
+          401.0,
+          1152.0
+        ],
+        [
+          399.0,
+          1220.0
+        ],
+        [
+          399.0,
+          1280.0
+        ],
+        [
+          400.0,
+          1325.0
+        ],
+        [
+          396.0,
+          1360.0
+        ],
+        [
+          381.0,
+          1438.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "hip_r.a → foot_r.a",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "hip_r.a → foot_r.a"
+    },
+    {
+      "id": "e045",
+      "a": "foot_r.v",
+      "b": "calffork_r.v",
+      "kind": "vein",
+      "points": [
+        [
+          368.0,
+          1438.0
+        ],
+        [
+          397.0,
+          1350.0
+        ],
+        [
+          402.0,
+          1318.0
+        ],
+        [
+          399.0,
+          1265.0
+        ],
+        [
+          399.0,
+          1210.0
+        ],
+        [
+          398.0,
+          1150.0
+        ],
+        [
+          396.0,
+          1090.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "foot_r.v → calffork_r.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "foot_r.v → calffork_r.v"
+    },
+    {
+      "id": "e046",
+      "a": "calffork_r.v",
+      "b": "knee_r.v",
+      "kind": "vein",
+      "points": [
+        [
+          396.0,
+          1090.0
+        ],
+        [
+          397.0,
+          1035.0
+        ],
+        [
+          405.0,
+          985.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "calffork_r.v → knee_r.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "calffork_r.v → knee_r.v"
+    },
+    {
+      "id": "e047",
+      "a": "knee_r.v",
+      "b": "thighfork_r.v",
+      "kind": "vein",
+      "points": [
+        [
+          405.0,
+          985.0
+        ],
+        [
+          414.0,
+          943.0
+        ],
+        [
+          426.0,
+          896.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "knee_r.v → thighfork_r.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "knee_r.v → thighfork_r.v"
+    },
+    {
+      "id": "e048",
+      "a": "thighfork_r.v",
+      "b": "hip_r.v",
+      "kind": "vein",
+      "points": [
+        [
+          426.0,
+          896.0
+        ],
+        [
+          433.0,
+          854.0
+        ],
+        [
+          439.0,
+          811.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "thighfork_r.v → hip_r.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "thighfork_r.v → hip_r.v"
+    },
+    {
+      "id": "e049",
+      "a": "foot_r.a",
+      "b": "r.toe1.a",
+      "kind": "artery",
+      "points": [
+        [
+          381.0,
+          1438.0
+        ],
+        [
+          351.0,
+          1430.0
+        ],
+        [
+          351.0,
+          1435.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "foot_r.a → r.toe1.a",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "foot_r.a → r.toe1.a"
+    },
+    {
+      "id": "e050",
+      "a": "r.toe1.a",
+      "b": "r.toe1.v",
+      "kind": "exchange",
+      "points": [
+        [
+          351.0,
+          1435.0
+        ],
+        [
+          353.0,
+          1438.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "r.toe1.a → r.toe1.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "r.toe1.a → r.toe1.v"
+    },
+    {
+      "id": "e051",
+      "a": "r.toe1.v",
+      "b": "foot_r.v",
+      "kind": "vein",
+      "points": [
+        [
+          353.0,
+          1438.0
+        ],
+        [
+          355.0,
+          1431.0
+        ],
+        [
+          368.0,
+          1438.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "r.toe1.v → foot_r.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "r.toe1.v → foot_r.v"
+    },
+    {
+      "id": "e052",
+      "a": "foot_r.a",
+      "b": "r.toe2.a",
+      "kind": "artery",
+      "points": [
+        [
+          381.0,
+          1438.0
+        ],
+        [
+          365.0,
+          1433.0
+        ],
+        [
+          365.0,
+          1438.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "foot_r.a → r.toe2.a",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "foot_r.a → r.toe2.a"
+    },
+    {
+      "id": "e053",
+      "a": "r.toe2.a",
+      "b": "r.toe2.v",
+      "kind": "exchange",
+      "points": [
+        [
+          365.0,
+          1438.0
+        ],
+        [
+          367.0,
+          1441.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "r.toe2.a → r.toe2.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "r.toe2.a → r.toe2.v"
+    },
+    {
+      "id": "e054",
+      "a": "r.toe2.v",
+      "b": "foot_r.v",
+      "kind": "vein",
+      "points": [
+        [
+          367.0,
+          1441.0
+        ],
+        [
+          369.0,
+          1434.0
+        ],
+        [
+          368.0,
+          1438.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "r.toe2.v → foot_r.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "r.toe2.v → foot_r.v"
+    },
+    {
+      "id": "e055",
+      "a": "foot_r.a",
+      "b": "r.toe3.a",
+      "kind": "artery",
+      "points": [
+        [
+          381.0,
+          1438.0
+        ],
+        [
+          378.0,
+          1436.0
+        ],
+        [
+          378.0,
+          1441.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "foot_r.a → r.toe3.a",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "foot_r.a → r.toe3.a"
+    },
+    {
+      "id": "e056",
+      "a": "r.toe3.a",
+      "b": "r.toe3.v",
+      "kind": "exchange",
+      "points": [
+        [
+          378.0,
+          1441.0
+        ],
+        [
+          380.0,
+          1444.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "r.toe3.a → r.toe3.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "r.toe3.a → r.toe3.v"
+    },
+    {
+      "id": "e057",
+      "a": "r.toe3.v",
+      "b": "foot_r.v",
+      "kind": "vein",
+      "points": [
+        [
+          380.0,
+          1444.0
+        ],
+        [
+          382.0,
+          1437.0
+        ],
+        [
+          368.0,
+          1438.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "r.toe3.v → foot_r.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "r.toe3.v → foot_r.v"
+    },
+    {
+      "id": "e058",
+      "a": "foot_r.a",
+      "b": "r.toe4.a",
+      "kind": "artery",
+      "points": [
+        [
+          381.0,
+          1438.0
+        ],
+        [
+          392.0,
+          1438.0
+        ],
+        [
+          392.0,
+          1443.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "foot_r.a → r.toe4.a",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "foot_r.a → r.toe4.a"
+    },
+    {
+      "id": "e059",
+      "a": "r.toe4.a",
+      "b": "r.toe4.v",
+      "kind": "exchange",
+      "points": [
+        [
+          392.0,
+          1443.0
+        ],
+        [
+          394.0,
+          1446.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "r.toe4.a → r.toe4.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "r.toe4.a → r.toe4.v"
+    },
+    {
+      "id": "e060",
+      "a": "r.toe4.v",
+      "b": "foot_r.v",
+      "kind": "vein",
+      "points": [
+        [
+          394.0,
+          1446.0
+        ],
+        [
+          396.0,
+          1439.0
+        ],
+        [
+          368.0,
+          1438.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "r.toe4.v → foot_r.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "r.toe4.v → foot_r.v"
+    },
+    {
+      "id": "e061",
+      "a": "foot_r.a",
+      "b": "r.toe5.a",
+      "kind": "artery",
+      "points": [
+        [
+          381.0,
+          1438.0
+        ],
+        [
+          403.0,
+          1429.0
+        ],
+        [
+          403.0,
+          1434.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "foot_r.a → r.toe5.a",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "foot_r.a → r.toe5.a"
+    },
+    {
+      "id": "e062",
+      "a": "r.toe5.a",
+      "b": "r.toe5.v",
+      "kind": "exchange",
+      "points": [
+        [
+          403.0,
+          1434.0
+        ],
+        [
+          405.0,
+          1437.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "r.toe5.a → r.toe5.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "r.toe5.a → r.toe5.v"
+    },
+    {
+      "id": "e063",
+      "a": "r.toe5.v",
+      "b": "foot_r.v",
+      "kind": "vein",
+      "points": [
+        [
+          405.0,
+          1437.0
+        ],
+        [
+          407.0,
+          1430.0
+        ],
+        [
+          368.0,
+          1438.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "r.toe5.v → foot_r.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "r.toe5.v → foot_r.v"
+    },
+    {
+      "id": "e064",
+      "a": "shoulder_r.a",
+      "b": "arm_r.a",
+      "kind": "artery",
+      "points": [
+        [
+          420.0,
+          286.0
+        ],
+        [
+          360,
+          379
+        ],
+        [
+          327,
+          465
+        ]
+      ],
+      "status": "new",
+      "group": "tissue",
+      "label": "shoulder_r.a → arm_r.a",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e065",
+      "a": "arm_r.a",
+      "b": "arm_r.v",
+      "kind": "exchange",
+      "points": [
+        [
+          327,
+          465
+        ],
+        [
+          322,
+          480
+        ]
+      ],
+      "status": "new",
+      "group": "tissue",
+      "label": "右臂组织微循环（合并示意）",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e066",
+      "a": "arm_r.v",
+      "b": "armfork_r.v",
+      "kind": "vein",
+      "points": [
+        [
+          322,
+          480
+        ],
+        [
+          335.0,
+          416.0
+        ]
+      ],
+      "status": "new",
+      "group": "tissue",
+      "label": "arm_r.v → armfork_r.v",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e067",
+      "a": "hip_r.a",
+      "b": "leg_r.a",
+      "kind": "artery",
+      "points": [
+        [
+          435.0,
+          801.0
+        ],
+        [
+          430,
+          890
+        ]
+      ],
+      "status": "new",
+      "group": "tissue",
+      "label": "hip_r.a → leg_r.a",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e068",
+      "a": "leg_r.a",
+      "b": "leg_r.v",
+      "kind": "exchange",
+      "points": [
+        [
+          430,
+          890
+        ],
+        [
+          433,
+          915
+        ]
+      ],
+      "status": "new",
+      "group": "tissue",
+      "label": "右腿组织微循环（合并示意）",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e069",
+      "a": "leg_r.v",
+      "b": "thighfork_r.v",
+      "kind": "vein",
+      "points": [
+        [
+          433,
+          915
+        ],
+        [
+          426.0,
+          896.0
+        ]
+      ],
+      "status": "new",
+      "group": "tissue",
+      "label": "leg_r.v → thighfork_r.v",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e070",
+      "a": "arch",
+      "b": "shoulder_l.a",
+      "kind": "artery",
+      "points": [
+        [
+          514.0,
+          341.0
+        ],
+        [
+          532.0,
+          320.0
+        ],
+        [
+          537.0,
+          294.0
+        ],
+        [
+          555.0,
+          280.0
+        ],
+        [
+          577.0,
+          278.0
+        ],
+        [
+          598.0,
+          286.0
+        ]
+      ],
+      "status": "retain",
+      "group": "head",
+      "label": "arch → shoulder_l.a",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "arch → shoulder_l.a"
+    },
+    {
+      "id": "e071",
+      "a": "shoulder_l.a",
+      "b": "head_l.a",
+      "kind": "artery",
+      "points": [
+        [
+          598.0,
+          286.0
+        ],
+        [
+          568.0,
+          272.0
+        ],
+        [
+          549.0,
+          255.0
+        ],
+        [
+          540.0,
+          230.0
+        ],
+        [
+          539.0,
+          191.0
+        ],
+        [
+          539.0,
+          146.0
+        ]
+      ],
+      "status": "retain",
+      "group": "head",
+      "label": "shoulder_l.a → head_l.a",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "shoulder_l.a → head_l.a"
+    },
+    {
+      "id": "e072",
+      "a": "head_l.a",
+      "b": "brain_l",
+      "kind": "artery",
+      "points": [
+        [
+          539.0,
+          146.0
+        ],
+        [
+          540.0,
+          126.0
+        ],
+        [
+          530.0,
+          111.0
+        ],
+        [
+          521.0,
+          95.0
+        ]
+      ],
+      "status": "retain",
+      "group": "head",
+      "label": "head_l.a → brain_l",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "head_l.a → brain_l"
+    },
+    {
+      "id": "e073",
+      "a": "brain_l",
+      "b": "head_l.v",
+      "kind": "exchange",
+      "points": [
+        [
+          521.0,
+          95.0
+        ],
+        [
+          527.0,
+          110.0
+        ],
+        [
+          529.0,
+          125.0
+        ],
+        [
+          527.0,
+          150.0
+        ]
+      ],
+      "status": "retain",
+      "group": "head",
+      "label": "brain_l → head_l.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "brain_l → head_l.v"
+    },
+    {
+      "id": "e074",
+      "a": "head_l.v",
+      "b": "heart.v",
+      "kind": "vein",
+      "points": [
+        [
+          527.0,
+          150.0
+        ],
+        [
+          529.0,
+          191.0
+        ],
+        [
+          533.0,
+          230.0
+        ],
+        [
+          542.0,
+          258.0
+        ],
+        [
+          553.0,
+          278.0
+        ],
+        [
+          539.0,
+          303.0
+        ],
+        [
+          532.0,
+          336.0
+        ],
+        [
+          515.0,
+          366.0
+        ],
+        [
+          483.0,
+          379.0
+        ]
+      ],
+      "status": "retain",
+      "group": "head",
+      "label": "head_l.v → heart.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "head_l.v → heart.v"
+    },
+    {
+      "id": "e075",
+      "a": "shoulder_l.a",
+      "b": "wrist_l.a",
+      "kind": "artery",
+      "points": [
+        [
+          598.0,
+          286.0
+        ],
+        [
+          625.0,
+          290.0
+        ],
+        [
+          646.0,
+          305.0
+        ],
+        [
+          663.0,
+          344.0
+        ],
+        [
+          684.0,
+          392.0
+        ],
+        [
+          697.0,
+          430.0
+        ],
+        [
+          711.0,
+          479.0
+        ],
+        [
+          722.0,
+          523.0
+        ],
+        [
+          726.0,
+          555.0
+        ],
+        [
+          748.0,
+          602.0
+        ],
+        [
+          765.0,
+          660.0
+        ],
+        [
+          782.0,
+          732.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "shoulder_l.a → wrist_l.a",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "shoulder_l.a → wrist_l.a"
+    },
+    {
+      "id": "e076",
+      "a": "wrist_l.v",
+      "b": "elbow_l.v",
+      "kind": "vein",
+      "points": [
+        [
+          782.0,
+          742.0
+        ],
+        [
+          780.0,
+          724.0
+        ],
+        [
+          765.0,
+          676.0
+        ],
+        [
+          754.0,
+          633.0
+        ],
+        [
+          736.0,
+          587.0
+        ],
+        [
+          726.0,
+          555.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "wrist_l.v → elbow_l.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "wrist_l.v → elbow_l.v"
+    },
+    {
+      "id": "e077",
+      "a": "elbow_l.v",
+      "b": "armfork_l.v",
+      "kind": "vein",
+      "points": [
+        [
+          726.0,
+          555.0
+        ],
+        [
+          711.0,
+          507.0
+        ],
+        [
+          700.0,
+          456.0
+        ],
+        [
+          684.0,
+          416.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "elbow_l.v → armfork_l.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "elbow_l.v → armfork_l.v"
+    },
+    {
+      "id": "e078",
+      "a": "armfork_l.v",
+      "b": "shoulder_l.v",
+      "kind": "vein",
+      "points": [
+        [
+          684.0,
+          416.0
+        ],
+        [
+          664.0,
+          377.0
+        ],
+        [
+          646.0,
+          335.0
+        ],
+        [
+          624.0,
+          310.0
+        ],
+        [
+          596.0,
+          297.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "armfork_l.v → shoulder_l.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "armfork_l.v → shoulder_l.v"
+    },
+    {
+      "id": "e079",
+      "a": "shoulder_l.v",
+      "b": "heart.v",
+      "kind": "vein",
+      "points": [
+        [
+          596.0,
+          297.0
+        ],
+        [
+          558.0,
+          292.0
+        ],
+        [
+          483.0,
+          379.0
+        ]
+      ],
+      "status": "revise",
+      "group": "limbs",
+      "label": "上肢深层回心接头",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "shoulder_l.v → heart.v"
+    },
+    {
+      "id": "e080",
+      "a": "wrist_l.a",
+      "b": "l.finger1.a",
+      "kind": "artery",
+      "points": [
+        [
+          782.0,
+          732.0
+        ],
+        [
+          810.6,
+          767.0
+        ],
+        [
+          834.0,
+          779.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "wrist_l.a → l.finger1.a",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "wrist_l.a → l.finger1.a"
+    },
+    {
+      "id": "e081",
+      "a": "l.finger1.a",
+      "b": "l.finger1.v",
+      "kind": "exchange",
+      "points": [
+        [
+          834.0,
+          779.0
+        ],
+        [
+          836.0,
+          782.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "l.finger1.a → l.finger1.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "l.finger1.a → l.finger1.v"
+    },
+    {
+      "id": "e082",
+      "a": "l.finger1.v",
+      "b": "wrist_l.v",
+      "kind": "vein",
+      "points": [
+        [
+          836.0,
+          782.0
+        ],
+        [
+          813.2,
+          770.0
+        ],
+        [
+          782.0,
+          742.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "l.finger1.v → wrist_l.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "l.finger1.v → wrist_l.v"
+    },
+    {
+      "id": "e083",
+      "a": "wrist_l.a",
+      "b": "l.finger2.a",
+      "kind": "artery",
+      "points": [
+        [
+          782.0,
+          732.0
+        ],
+        [
+          802.9,
+          767.0
+        ],
+        [
+          820.0,
+          802.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "wrist_l.a → l.finger2.a",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "wrist_l.a → l.finger2.a"
+    },
+    {
+      "id": "e084",
+      "a": "l.finger2.a",
+      "b": "l.finger2.v",
+      "kind": "exchange",
+      "points": [
+        [
+          820.0,
+          802.0
+        ],
+        [
+          822.0,
+          805.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "l.finger2.a → l.finger2.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "l.finger2.a → l.finger2.v"
+    },
+    {
+      "id": "e085",
+      "a": "l.finger2.v",
+      "b": "wrist_l.v",
+      "kind": "vein",
+      "points": [
+        [
+          822.0,
+          805.0
+        ],
+        [
+          804.8,
+          770.0
+        ],
+        [
+          782.0,
+          742.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "l.finger2.v → wrist_l.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "l.finger2.v → wrist_l.v"
+    },
+    {
+      "id": "e086",
+      "a": "wrist_l.a",
+      "b": "l.finger3.a",
+      "kind": "artery",
+      "points": [
+        [
+          782.0,
+          732.0
+        ],
+        [
+          793.55,
+          767.0
+        ],
+        [
+          803.0,
+          810.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "wrist_l.a → l.finger3.a",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "wrist_l.a → l.finger3.a"
+    },
+    {
+      "id": "e087",
+      "a": "l.finger3.a",
+      "b": "l.finger3.v",
+      "kind": "exchange",
+      "points": [
+        [
+          803.0,
+          810.0
+        ],
+        [
+          805.0,
+          813.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "l.finger3.a → l.finger3.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "l.finger3.a → l.finger3.v"
+    },
+    {
+      "id": "e088",
+      "a": "l.finger3.v",
+      "b": "wrist_l.v",
+      "kind": "vein",
+      "points": [
+        [
+          805.0,
+          813.0
+        ],
+        [
+          794.6,
+          770.0
+        ],
+        [
+          782.0,
+          742.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "l.finger3.v → wrist_l.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "l.finger3.v → wrist_l.v"
+    },
+    {
+      "id": "e089",
+      "a": "wrist_l.a",
+      "b": "l.finger4.a",
+      "kind": "artery",
+      "points": [
+        [
+          782.0,
+          732.0
+        ],
+        [
+          784.2,
+          767.0
+        ],
+        [
+          786.0,
+          805.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "wrist_l.a → l.finger4.a",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "wrist_l.a → l.finger4.a"
+    },
+    {
+      "id": "e090",
+      "a": "l.finger4.a",
+      "b": "l.finger4.v",
+      "kind": "exchange",
+      "points": [
+        [
+          786.0,
+          805.0
+        ],
+        [
+          788.0,
+          808.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "l.finger4.a → l.finger4.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "l.finger4.a → l.finger4.v"
+    },
+    {
+      "id": "e091",
+      "a": "l.finger4.v",
+      "b": "wrist_l.v",
+      "kind": "vein",
+      "points": [
+        [
+          788.0,
+          808.0
+        ],
+        [
+          784.4,
+          770.0
+        ],
+        [
+          782.0,
+          742.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "l.finger4.v → wrist_l.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "l.finger4.v → wrist_l.v"
+    },
+    {
+      "id": "e092",
+      "a": "wrist_l.a",
+      "b": "l.finger5.a",
+      "kind": "artery",
+      "points": [
+        [
+          782.0,
+          732.0
+        ],
+        [
+          778.15,
+          767.0
+        ],
+        [
+          775.0,
+          795.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "wrist_l.a → l.finger5.a",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "wrist_l.a → l.finger5.a"
+    },
+    {
+      "id": "e093",
+      "a": "l.finger5.a",
+      "b": "l.finger5.v",
+      "kind": "exchange",
+      "points": [
+        [
+          775.0,
+          795.0
+        ],
+        [
+          777.0,
+          798.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "l.finger5.a → l.finger5.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "l.finger5.a → l.finger5.v"
+    },
+    {
+      "id": "e094",
+      "a": "l.finger5.v",
+      "b": "wrist_l.v",
+      "kind": "vein",
+      "points": [
+        [
+          777.0,
+          798.0
+        ],
+        [
+          777.8,
+          770.0
+        ],
+        [
+          782.0,
+          742.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "l.finger5.v → wrist_l.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "l.finger5.v → wrist_l.v"
+    },
+    {
+      "id": "e095",
+      "a": "iliac.a",
+      "b": "hip_l.a",
+      "kind": "artery",
+      "points": [
+        [
+          509.0,
+          747.0
+        ],
+        [
+          544.0,
+          754.0
+        ],
+        [
+          568.0,
+          773.0
+        ],
+        [
+          577.0,
+          802.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "iliac.a → hip_l.a",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "iliac.a → hip_l.a"
+    },
+    {
+      "id": "e096",
+      "a": "hip_l.v",
+      "b": "iliac.v",
+      "kind": "vein",
+      "points": [
+        [
+          579.0,
+          811.0
+        ],
+        [
+          565.0,
+          779.0
+        ],
+        [
+          540.0,
+          763.0
+        ],
+        [
+          509.0,
+          763.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "hip_l.v → iliac.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "iliac.v → hip_l.v"
+    },
+    {
+      "id": "e097",
+      "a": "hip_l.a",
+      "b": "foot_l.a",
+      "kind": "artery",
+      "points": [
+        [
+          577.0,
+          802.0
+        ],
+        [
+          573.0,
+          850.0
+        ],
+        [
+          570.0,
+          901.0
+        ],
+        [
+          580.0,
+          952.0
+        ],
+        [
+          594.0,
+          984.0
+        ],
+        [
+          600.0,
+          1027.0
+        ],
+        [
+          606.0,
+          1084.0
+        ],
+        [
+          609.0,
+          1152.0
+        ],
+        [
+          610.0,
+          1220.0
+        ],
+        [
+          609.0,
+          1280.0
+        ],
+        [
+          609.0,
+          1325.0
+        ],
+        [
+          614.0,
+          1360.0
+        ],
+        [
+          629.0,
+          1438.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "hip_l.a → foot_l.a",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "hip_l.a → foot_l.a"
+    },
+    {
+      "id": "e098",
+      "a": "foot_l.v",
+      "b": "calffork_l.v",
+      "kind": "vein",
+      "points": [
+        [
+          647.0,
+          1438.0
+        ],
+        [
+          614.0,
+          1350.0
+        ],
+        [
+          609.0,
+          1318.0
+        ],
+        [
+          615.0,
+          1265.0
+        ],
+        [
+          615.0,
+          1210.0
+        ],
+        [
+          617.0,
+          1150.0
+        ],
+        [
+          620.0,
+          1090.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "foot_l.v → calffork_l.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "foot_l.v → calffork_l.v"
+    },
+    {
+      "id": "e099",
+      "a": "calffork_l.v",
+      "b": "knee_l.v",
+      "kind": "vein",
+      "points": [
+        [
+          620.0,
+          1090.0
+        ],
+        [
+          619.0,
+          1035.0
+        ],
+        [
+          612.0,
+          985.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "calffork_l.v → knee_l.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "calffork_l.v → knee_l.v"
+    },
+    {
+      "id": "e100",
+      "a": "knee_l.v",
+      "b": "thighfork_l.v",
+      "kind": "vein",
+      "points": [
+        [
+          612.0,
+          985.0
+        ],
+        [
+          602.0,
+          943.0
+        ],
+        [
+          593.0,
+          896.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "knee_l.v → thighfork_l.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "knee_l.v → thighfork_l.v"
+    },
+    {
+      "id": "e101",
+      "a": "thighfork_l.v",
+      "b": "hip_l.v",
+      "kind": "vein",
+      "points": [
+        [
+          593.0,
+          896.0
+        ],
+        [
+          587.0,
+          854.0
+        ],
+        [
+          579.0,
+          811.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "thighfork_l.v → hip_l.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "thighfork_l.v → hip_l.v"
+    },
+    {
+      "id": "e102",
+      "a": "foot_l.a",
+      "b": "l.toe1.a",
+      "kind": "artery",
+      "points": [
+        [
+          629.0,
+          1438.0
+        ],
+        [
+          666.0,
+          1430.0
+        ],
+        [
+          666.0,
+          1435.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "foot_l.a → l.toe1.a",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "foot_l.a → l.toe1.a"
+    },
+    {
+      "id": "e103",
+      "a": "l.toe1.a",
+      "b": "l.toe1.v",
+      "kind": "exchange",
+      "points": [
+        [
+          666.0,
+          1435.0
+        ],
+        [
+          668.0,
+          1438.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "l.toe1.a → l.toe1.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "l.toe1.a → l.toe1.v"
+    },
+    {
+      "id": "e104",
+      "a": "l.toe1.v",
+      "b": "foot_l.v",
+      "kind": "vein",
+      "points": [
+        [
+          668.0,
+          1438.0
+        ],
+        [
+          670.0,
+          1431.0
+        ],
+        [
+          647.0,
+          1438.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "l.toe1.v → foot_l.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "l.toe1.v → foot_l.v"
+    },
+    {
+      "id": "e105",
+      "a": "foot_l.a",
+      "b": "l.toe2.a",
+      "kind": "artery",
+      "points": [
+        [
+          629.0,
+          1438.0
+        ],
+        [
+          653.0,
+          1433.0
+        ],
+        [
+          653.0,
+          1438.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "foot_l.a → l.toe2.a",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "foot_l.a → l.toe2.a"
+    },
+    {
+      "id": "e106",
+      "a": "l.toe2.a",
+      "b": "l.toe2.v",
+      "kind": "exchange",
+      "points": [
+        [
+          653.0,
+          1438.0
+        ],
+        [
+          655.0,
+          1441.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "l.toe2.a → l.toe2.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "l.toe2.a → l.toe2.v"
+    },
+    {
+      "id": "e107",
+      "a": "l.toe2.v",
+      "b": "foot_l.v",
+      "kind": "vein",
+      "points": [
+        [
+          655.0,
+          1441.0
+        ],
+        [
+          657.0,
+          1434.0
+        ],
+        [
+          647.0,
+          1438.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "l.toe2.v → foot_l.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "l.toe2.v → foot_l.v"
+    },
+    {
+      "id": "e108",
+      "a": "foot_l.a",
+      "b": "l.toe3.a",
+      "kind": "artery",
+      "points": [
+        [
+          629.0,
+          1438.0
+        ],
+        [
+          639.0,
+          1436.0
+        ],
+        [
+          639.0,
+          1441.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "foot_l.a → l.toe3.a",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "foot_l.a → l.toe3.a"
+    },
+    {
+      "id": "e109",
+      "a": "l.toe3.a",
+      "b": "l.toe3.v",
+      "kind": "exchange",
+      "points": [
+        [
+          639.0,
+          1441.0
+        ],
+        [
+          641.0,
+          1444.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "l.toe3.a → l.toe3.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "l.toe3.a → l.toe3.v"
+    },
+    {
+      "id": "e110",
+      "a": "l.toe3.v",
+      "b": "foot_l.v",
+      "kind": "vein",
+      "points": [
+        [
+          641.0,
+          1444.0
+        ],
+        [
+          643.0,
+          1437.0
+        ],
+        [
+          647.0,
+          1438.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "l.toe3.v → foot_l.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "l.toe3.v → foot_l.v"
+    },
+    {
+      "id": "e111",
+      "a": "foot_l.a",
+      "b": "l.toe4.a",
+      "kind": "artery",
+      "points": [
+        [
+          629.0,
+          1438.0
+        ],
+        [
+          626.0,
+          1438.0
+        ],
+        [
+          626.0,
+          1443.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "foot_l.a → l.toe4.a",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "foot_l.a → l.toe4.a"
+    },
+    {
+      "id": "e112",
+      "a": "l.toe4.a",
+      "b": "l.toe4.v",
+      "kind": "exchange",
+      "points": [
+        [
+          626.0,
+          1443.0
+        ],
+        [
+          628.0,
+          1446.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "l.toe4.a → l.toe4.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "l.toe4.a → l.toe4.v"
+    },
+    {
+      "id": "e113",
+      "a": "l.toe4.v",
+      "b": "foot_l.v",
+      "kind": "vein",
+      "points": [
+        [
+          628.0,
+          1446.0
+        ],
+        [
+          630.0,
+          1439.0
+        ],
+        [
+          647.0,
+          1438.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "l.toe4.v → foot_l.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "l.toe4.v → foot_l.v"
+    },
+    {
+      "id": "e114",
+      "a": "foot_l.a",
+      "b": "l.toe5.a",
+      "kind": "artery",
+      "points": [
+        [
+          629.0,
+          1438.0
+        ],
+        [
+          616.0,
+          1429.0
+        ],
+        [
+          616.0,
+          1434.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "foot_l.a → l.toe5.a",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "foot_l.a → l.toe5.a"
+    },
+    {
+      "id": "e115",
+      "a": "l.toe5.a",
+      "b": "l.toe5.v",
+      "kind": "exchange",
+      "points": [
+        [
+          616.0,
+          1434.0
+        ],
+        [
+          618.0,
+          1437.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "l.toe5.a → l.toe5.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "l.toe5.a → l.toe5.v"
+    },
+    {
+      "id": "e116",
+      "a": "l.toe5.v",
+      "b": "foot_l.v",
+      "kind": "vein",
+      "points": [
+        [
+          618.0,
+          1437.0
+        ],
+        [
+          620.0,
+          1430.0
+        ],
+        [
+          647.0,
+          1438.0
+        ]
+      ],
+      "status": "retain",
+      "group": "limbs",
+      "label": "l.toe5.v → foot_l.v",
+      "depth": "schematic; occlusion not yet authored",
+      "sourceEdge": "l.toe5.v → foot_l.v"
+    },
+    {
+      "id": "e117",
+      "a": "shoulder_l.a",
+      "b": "arm_l.a",
+      "kind": "artery",
+      "points": [
+        [
+          598.0,
+          286.0
+        ],
+        [
+          657,
+          379
+        ],
+        [
+          692,
+          465
+        ]
+      ],
+      "status": "new",
+      "group": "tissue",
+      "label": "shoulder_l.a → arm_l.a",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e118",
+      "a": "arm_l.a",
+      "b": "arm_l.v",
+      "kind": "exchange",
+      "points": [
+        [
+          692,
+          465
+        ],
+        [
+          696,
+          480
+        ]
+      ],
+      "status": "new",
+      "group": "tissue",
+      "label": "左臂组织微循环（合并示意）",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e119",
+      "a": "arm_l.v",
+      "b": "armfork_l.v",
+      "kind": "vein",
+      "points": [
+        [
+          696,
+          480
+        ],
+        [
+          684.0,
+          416.0
+        ]
+      ],
+      "status": "new",
+      "group": "tissue",
+      "label": "arm_l.v → armfork_l.v",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e120",
+      "a": "hip_l.a",
+      "b": "leg_l.a",
+      "kind": "artery",
+      "points": [
+        [
+          577.0,
+          802.0
+        ],
+        [
+          588,
+          890
+        ]
+      ],
+      "status": "new",
+      "group": "tissue",
+      "label": "hip_l.a → leg_l.a",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e121",
+      "a": "leg_l.a",
+      "b": "leg_l.v",
+      "kind": "exchange",
+      "points": [
+        [
+          588,
+          890
+        ],
+        [
+          584,
+          915
+        ]
+      ],
+      "status": "new",
+      "group": "tissue",
+      "label": "左腿组织微循环（合并示意）",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e122",
+      "a": "leg_l.v",
+      "b": "thighfork_l.v",
+      "kind": "vein",
+      "points": [
+        [
+          584,
+          915
+        ],
+        [
+          593.0,
+          896.0
+        ]
+      ],
+      "status": "new",
+      "group": "tissue",
+      "label": "leg_l.v → thighfork_l.v",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e123",
+      "a": "aorta_upper",
+      "b": "celiac",
+      "kind": "artery",
+      "points": [
+        [
+          524.0,
+          481.0
+        ],
+        [
+          537,
+          489
+        ]
+      ],
+      "status": "revise",
+      "group": "viscera",
+      "label": "aorta_upper → celiac",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e124",
+      "a": "celiac",
+      "b": "liver.a",
+      "kind": "artery",
+      "points": [
+        [
+          537,
+          489
+        ],
+        [
+          508,
+          493
+        ],
+        [
+          481,
+          496
+        ]
+      ],
+      "status": "revise",
+      "group": "viscera",
+      "label": "celiac → liver.a",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e125",
+      "a": "liver.a",
+      "b": "liver.bed",
+      "kind": "exchange",
+      "points": [
+        [
+          481,
+          496
+        ],
+        [
+          447,
+          516
+        ]
+      ],
+      "status": "new",
+      "group": "viscera",
+      "label": "liver.a → liver.bed",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e126",
+      "a": "portal",
+      "b": "liver.p",
+      "kind": "portal",
+      "points": [
+        [
+          491,
+          553
+        ],
+        [
+          499,
+          537
+        ],
+        [
+          489,
+          519
+        ]
+      ],
+      "status": "new",
+      "group": "portal",
+      "label": "portal → liver.p",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e127",
+      "a": "liver.p",
+      "b": "liver.bed",
+      "kind": "portal",
+      "points": [
+        [
+          489,
+          519
+        ],
+        [
+          468,
+          518
+        ],
+        [
+          447,
+          516
+        ]
+      ],
+      "status": "new",
+      "group": "portal",
+      "label": "liver.p → liver.bed",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e128",
+      "a": "liver.bed",
+      "b": "liver.v",
+      "kind": "exchange",
+      "points": [
+        [
+          447,
+          516
+        ],
+        [
+          460,
+          536
+        ]
+      ],
+      "status": "new",
+      "group": "viscera",
+      "label": "liver.bed → liver.v",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e129",
+      "a": "liver.v",
+      "b": "cava_upper",
+      "kind": "vein",
+      "points": [
+        [
+          460,
+          536
+        ],
+        [
+          477.0,
+          521.0
+        ]
+      ],
+      "status": "revise",
+      "group": "viscera",
+      "label": "liver.v → cava_upper",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e130",
+      "a": "celiac",
+      "b": "stomach.a",
+      "kind": "artery",
+      "points": [
+        [
+          537,
+          489
+        ],
+        [
+          552,
+          490
+        ],
+        [
+          566,
+          503
+        ]
+      ],
+      "status": "revise",
+      "group": "viscera",
+      "label": "celiac → stomach.a",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e131",
+      "a": "stomach.a",
+      "b": "stomach.v",
+      "kind": "exchange",
+      "points": [
+        [
+          566,
+          503
+        ],
+        [
+          568,
+          535
+        ]
+      ],
+      "status": "new",
+      "group": "viscera",
+      "label": "胃微循环（合并示意）",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e132",
+      "a": "stomach.v",
+      "b": "portal",
+      "kind": "portal",
+      "points": [
+        [
+          568,
+          535
+        ],
+        [
+          548,
+          553
+        ],
+        [
+          521,
+          563
+        ],
+        [
+          491,
+          553
+        ]
+      ],
+      "status": "revise",
+      "group": "portal",
+      "label": "stomach.v → portal",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e133",
+      "a": "celiac",
+      "b": "pancreas.a",
+      "kind": "artery",
+      "points": [
+        [
+          537,
+          489
+        ],
+        [
+          542,
+          537
+        ],
+        [
+          548,
+          565
+        ],
+        [
+          547,
+          582
+        ]
+      ],
+      "status": "new",
+      "group": "viscera",
+      "label": "celiac → pancreas.a",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e134",
+      "a": "pancreas.a",
+      "b": "pancreas.v",
+      "kind": "exchange",
+      "points": [
+        [
+          547,
+          582
+        ],
+        [
+          515,
+          587
+        ]
+      ],
+      "status": "new",
+      "group": "viscera",
+      "label": "胰微循环（合并示意）",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e135",
+      "a": "pancreas.v",
+      "b": "portal",
+      "kind": "portal",
+      "points": [
+        [
+          515,
+          587
+        ],
+        [
+          499,
+          581
+        ],
+        [
+          491,
+          553
+        ]
+      ],
+      "status": "new",
+      "group": "portal",
+      "label": "pancreas.v → portal",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e136",
+      "a": "aorta_mid",
+      "b": "mesenteric_upper",
+      "kind": "artery",
+      "points": [
+        [
+          515.0,
+          582.0
+        ],
+        [
+          524,
+          606
+        ]
+      ],
+      "status": "new",
+      "group": "viscera",
+      "label": "aorta_mid → mesenteric_upper",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e137",
+      "a": "aorta_abd",
+      "b": "mesenteric_lower",
+      "kind": "artery",
+      "points": [
+        [
+          518.0,
+          635.0
+        ],
+        [
+          525,
+          664
+        ]
+      ],
+      "status": "new",
+      "group": "viscera",
+      "label": "aorta_abd → mesenteric_lower",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e138",
+      "a": "mesenteric_upper",
+      "b": "pancreas.a",
+      "kind": "artery",
+      "points": [
+        [
+          524,
+          606
+        ],
+        [
+          551,
+          611
+        ],
+        [
+          561,
+          594
+        ],
+        [
+          547,
+          582
+        ]
+      ],
+      "status": "new",
+      "group": "viscera",
+      "label": "胰的肠系膜上供血支路（合并示意）",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e139",
+      "a": "mesenteric_upper",
+      "b": "small_intestine.a",
+      "kind": "artery",
+      "points": [
+        [
+          524,
+          606
+        ],
+        [
+          500,
+          634
+        ],
+        [
+          492,
+          673
+        ]
+      ],
+      "status": "revise",
+      "group": "viscera",
+      "label": "mesenteric_upper → small_intestine.a",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e140",
+      "a": "small_intestine.a",
+      "b": "small_intestine.v",
+      "kind": "exchange",
+      "points": [
+        [
+          492,
+          673
+        ],
+        [
+          535,
+          701
+        ]
+      ],
+      "status": "new",
+      "group": "viscera",
+      "label": "小肠微循环（合并示意）",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e141",
+      "a": "small_intestine.v",
+      "b": "portal",
+      "kind": "portal",
+      "points": [
+        [
+          535,
+          701
+        ],
+        [
+          552,
+          665
+        ],
+        [
+          544,
+          613
+        ],
+        [
+          512,
+          577
+        ],
+        [
+          491,
+          553
+        ]
+      ],
+      "status": "revise",
+      "group": "portal",
+      "label": "small_intestine.v → portal",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e142",
+      "a": "mesenteric_upper",
+      "b": "colon_proximal.a",
+      "kind": "artery",
+      "points": [
+        [
+          524,
+          606
+        ],
+        [
+          475,
+          627
+        ],
+        [
+          451,
+          657
+        ]
+      ],
+      "status": "revise",
+      "group": "viscera",
+      "label": "mesenteric_upper → colon_proximal.a",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e143",
+      "a": "colon_proximal.a",
+      "b": "colon_proximal.v",
+      "kind": "exchange",
+      "points": [
+        [
+          451,
+          657
+        ],
+        [
+          459,
+          711
+        ]
+      ],
+      "status": "new",
+      "group": "viscera",
+      "label": "大肠近端组微循环（合并示意）",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e144",
+      "a": "colon_proximal.v",
+      "b": "portal",
+      "kind": "portal",
+      "points": [
+        [
+          459,
+          711
+        ],
+        [
+          473,
+          719
+        ],
+        [
+          485,
+          711
+        ],
+        [
+          487,
+          622
+        ],
+        [
+          491,
+          553
+        ]
+      ],
+      "status": "revise",
+      "group": "portal",
+      "label": "colon_proximal.v → portal",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e145",
+      "a": "mesenteric_lower",
+      "b": "colon_distal.a",
+      "kind": "artery",
+      "points": [
+        [
+          525,
+          664
+        ],
+        [
+          567,
+          666
+        ]
+      ],
+      "status": "revise",
+      "group": "viscera",
+      "label": "mesenteric_lower → colon_distal.a",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e146",
+      "a": "colon_distal.a",
+      "b": "colon_distal.v",
+      "kind": "exchange",
+      "points": [
+        [
+          567,
+          666
+        ],
+        [
+          565,
+          713
+        ]
+      ],
+      "status": "new",
+      "group": "viscera",
+      "label": "大肠远端组微循环（合并示意）",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e147",
+      "a": "colon_distal.v",
+      "b": "portal",
+      "kind": "portal",
+      "points": [
+        [
+          565,
+          713
+        ],
+        [
+          583,
+          722
+        ],
+        [
+          600,
+          693
+        ],
+        [
+          608,
+          613
+        ],
+        [
+          550,
+          572
+        ],
+        [
+          491,
+          553
+        ]
+      ],
+      "status": "revise",
+      "group": "portal",
+      "label": "colon_distal.v → portal",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e148",
+      "a": "aorta_mid",
+      "b": "kidney_r.a",
+      "kind": "artery",
+      "points": [
+        [
+          515.0,
+          582.0
+        ],
+        [
+          472,
+          578
+        ],
+        [
+          426,
+          590
+        ]
+      ],
+      "status": "revise",
+      "group": "viscera",
+      "label": "aorta_mid → kidney_r.a",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e149",
+      "a": "kidney_r.a",
+      "b": "kidney_r.v",
+      "kind": "exchange",
+      "points": [
+        [
+          426,
+          590
+        ],
+        [
+          429,
+          625
+        ]
+      ],
+      "status": "new",
+      "group": "viscera",
+      "label": "右肾微循环（合并示意）",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e150",
+      "a": "kidney_r.v",
+      "b": "cava_abdominal",
+      "kind": "vein",
+      "points": [
+        [
+          429,
+          625
+        ],
+        [
+          453,
+          624
+        ],
+        [
+          477,
+          603
+        ]
+      ],
+      "status": "revise",
+      "group": "viscera",
+      "label": "kidney_r.v → cava_abdominal",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e151",
+      "a": "aorta_mid",
+      "b": "kidney_l.a",
+      "kind": "artery",
+      "points": [
+        [
+          515.0,
+          582.0
+        ],
+        [
+          555,
+          578
+        ],
+        [
+          591,
+          590
+        ]
+      ],
+      "status": "revise",
+      "group": "viscera",
+      "label": "aorta_mid → kidney_l.a",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e152",
+      "a": "kidney_l.a",
+      "b": "kidney_l.v",
+      "kind": "exchange",
+      "points": [
+        [
+          591,
+          590
+        ],
+        [
+          590,
+          625
+        ]
+      ],
+      "status": "new",
+      "group": "viscera",
+      "label": "左肾微循环（合并示意）",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e153",
+      "a": "kidney_l.v",
+      "b": "cava_abdominal",
+      "kind": "vein",
+      "points": [
+        [
+          590,
+          625
+        ],
+        [
+          539,
+          615
+        ],
+        [
+          477,
+          603
+        ]
+      ],
+      "status": "revise",
+      "group": "viscera",
+      "label": "kidney_l.v → cava_abdominal",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e154",
+      "a": "iliac.a",
+      "b": "bladder.a",
+      "kind": "artery",
+      "points": [
+        [
+          509.0,
+          747.0
+        ],
+        [
+          541,
+          745
+        ],
+        [
+          539,
+          756
+        ],
+        [
+          523,
+          756
+        ]
+      ],
+      "status": "revise",
+      "group": "viscera",
+      "label": "iliac.a → bladder.a",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e155",
+      "a": "bladder.a",
+      "b": "bladder.v",
+      "kind": "exchange",
+      "points": [
+        [
+          523,
+          756
+        ],
+        [
+          491,
+          772
+        ]
+      ],
+      "status": "new",
+      "group": "viscera",
+      "label": "膀胱微循环（合并示意）",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e156",
+      "a": "bladder.v",
+      "b": "iliac.v",
+      "kind": "vein",
+      "points": [
+        [
+          491,
+          772
+        ],
+        [
+          484,
+          786
+        ],
+        [
+          505,
+          793
+        ],
+        [
+          509.0,
+          763.0
+        ]
+      ],
+      "status": "revise",
+      "group": "viscera",
+      "label": "bladder.v → iliac.v",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e157",
+      "a": "left_heart",
+      "b": "coronary.a",
+      "kind": "artery",
+      "points": [
+        [
+          538,
+          422
+        ],
+        [
+          542,
+          401
+        ],
+        [
+          524,
+          401
+        ]
+      ],
+      "status": "new",
+      "group": "heart",
+      "label": "left_heart → coronary.a",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e158",
+      "a": "coronary.a",
+      "b": "coronary.v",
+      "kind": "exchange",
+      "points": [
+        [
+          524,
+          401
+        ],
+        [
+          513,
+          438
+        ]
+      ],
+      "status": "new",
+      "group": "heart",
+      "label": "心肌微循环（合并示意）",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e159",
+      "a": "coronary.v",
+      "b": "right_heart",
+      "kind": "vein",
+      "points": [
+        [
+          513,
+          438
+        ],
+        [
+          499,
+          438
+        ],
+        [
+          493,
+          414
+        ]
+      ],
+      "status": "new",
+      "group": "heart",
+      "label": "coronary.v → right_heart",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e160",
+      "a": "aorta_mid",
+      "b": "trunk.a",
+      "kind": "artery",
+      "points": [
+        [
+          515.0,
+          582.0
+        ],
+        [
+          463,
+          565
+        ],
+        [
+          402,
+          574
+        ],
+        [
+          390,
+          588
+        ]
+      ],
+      "status": "new",
+      "group": "tissue",
+      "label": "aorta_mid → trunk.a",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e161",
+      "a": "trunk.a",
+      "b": "trunk.v",
+      "kind": "exchange",
+      "points": [
+        [
+          390,
+          588
+        ],
+        [
+          388,
+          629
+        ]
+      ],
+      "status": "new",
+      "group": "tissue",
+      "label": "躯干组织微循环（合并示意）",
+      "depth": "schematic; occlusion not yet authored"
+    },
+    {
+      "id": "e162",
+      "a": "trunk.v",
+      "b": "cava_abdominal",
+      "kind": "vein",
+      "points": [
+        [
+          388,
+          629
+        ],
+        [
+          402,
+          643
+        ],
+        [
+          452,
+          634
+        ],
+        [
+          477,
+          603
+        ]
+      ],
+      "status": "new",
+      "group": "tissue",
+      "label": "trunk.v → cava_abdominal",
+      "depth": "schematic; occlusion not yet authored"
+    }
+  ],
+  "organs": [
+    {
+      "id": "lung_r",
+      "name": "右肺",
+      "inlet": "lung_r.a",
+      "outlet": "lung_r.v",
+      "returnViaLiver": false
+    },
+    {
+      "id": "lung_l",
+      "name": "左肺",
+      "inlet": "lung_l.a",
+      "outlet": "lung_l.v",
+      "returnViaLiver": false
+    },
+    {
+      "id": "brain_r",
+      "name": "脑右侧",
+      "inlet": "brain_r",
+      "outlet": "head_r.v",
+      "returnViaLiver": false
+    },
+    {
+      "id": "arm_r",
+      "name": "右臂组织",
+      "inlet": "arm_r.a",
+      "outlet": "arm_r.v",
+      "returnViaLiver": false
+    },
+    {
+      "id": "leg_r",
+      "name": "右腿组织",
+      "inlet": "leg_r.a",
+      "outlet": "leg_r.v",
+      "returnViaLiver": false
+    },
+    {
+      "id": "brain_l",
+      "name": "脑左侧",
+      "inlet": "brain_l",
+      "outlet": "head_l.v",
+      "returnViaLiver": false
+    },
+    {
+      "id": "arm_l",
+      "name": "左臂组织",
+      "inlet": "arm_l.a",
+      "outlet": "arm_l.v",
+      "returnViaLiver": false
+    },
+    {
+      "id": "leg_l",
+      "name": "左腿组织",
+      "inlet": "leg_l.a",
+      "outlet": "leg_l.v",
+      "returnViaLiver": false
+    },
+    {
+      "id": "liver",
+      "name": "肝",
+      "inlet": "liver.a",
+      "secondaryInlet": "liver.p",
+      "outlet": "liver.v",
+      "returnViaLiver": false
+    },
+    {
+      "id": "stomach",
+      "name": "胃",
+      "inlet": "stomach.a",
+      "outlet": "stomach.v",
+      "returnViaLiver": true
+    },
+    {
+      "id": "pancreas",
+      "name": "胰",
+      "inlet": "pancreas.a",
+      "outlet": "pancreas.v",
+      "returnViaLiver": true
+    },
+    {
+      "id": "small_intestine",
+      "name": "小肠",
+      "inlet": "small_intestine.a",
+      "outlet": "small_intestine.v",
+      "returnViaLiver": true
+    },
+    {
+      "id": "colon_proximal",
+      "name": "大肠近端组",
+      "inlet": "colon_proximal.a",
+      "outlet": "colon_proximal.v",
+      "returnViaLiver": true
+    },
+    {
+      "id": "colon_distal",
+      "name": "大肠远端组",
+      "inlet": "colon_distal.a",
+      "outlet": "colon_distal.v",
+      "returnViaLiver": true
+    },
+    {
+      "id": "kidney_r",
+      "name": "右肾",
+      "inlet": "kidney_r.a",
+      "outlet": "kidney_r.v",
+      "returnViaLiver": false
+    },
+    {
+      "id": "kidney_l",
+      "name": "左肾",
+      "inlet": "kidney_l.a",
+      "outlet": "kidney_l.v",
+      "returnViaLiver": false
+    },
+    {
+      "id": "bladder",
+      "name": "膀胱",
+      "inlet": "bladder.a",
+      "outlet": "bladder.v",
+      "returnViaLiver": false
+    },
+    {
+      "id": "coronary",
+      "name": "心肌",
+      "inlet": "coronary.a",
+      "outlet": "coronary.v",
+      "returnViaLiver": false
+    },
+    {
+      "id": "trunk",
+      "name": "躯干组织",
+      "inlet": "trunk.a",
+      "outlet": "trunk.v",
+      "returnViaLiver": false
+    }
+  ],
+  "statusCounts": {
+    "revise": 28,
+    "new": 42,
+    "retain": 92
+  },
+  "runtimeModified": false,
+  "currentRegionMapping": {
+    "brain": [
+      "brain_r",
+      "brain_l"
+    ],
+    "heart": [
+      "coronary"
+    ],
+    "large_intestine": [
+      "colon_proximal",
+      "colon_distal"
+    ],
+    "lung_r": [
+      "lung_r"
+    ],
+    "lung_l": [
+      "lung_l"
+    ],
+    "liver": [
+      "liver"
+    ],
+    "stomach": [
+      "stomach"
+    ],
+    "pancreas": [
+      "pancreas"
+    ],
+    "small_intestine": [
+      "small_intestine"
+    ],
+    "kidney_r": [
+      "kidney_r"
+    ],
+    "kidney_l": [
+      "kidney_l"
+    ],
+    "bladder": [
+      "bladder"
+    ]
+  },
+  "limitations": [
+    "Coordinates of new ports are candidates, not validated organ-wall gates.",
+    "Crossings without shared node IDs are not connected. Depth and occlusion unresolved.",
+    "Arrows denote blood flow; unit movement permissions are not decided.",
+    "Celiac branches and venous confluences are aggregated; pancreas includes celiac and superior mesenteric supplies with fine branches omitted.",
+    "Large intestine has two supply groups; rectal systemic drainage omitted at this stage.",
+    "Bronchial systemic supply and detailed coronary/heart chamber anatomy are omitted.",
+    "No new spleen or other absent organ artwork; no digestive, airway, urinary, or lymphatic routes.",
+    "Whole-body diagram does not certify exact existing or proposed vessel anatomy."
+  ],
+  "sources": [
+    "https://www.ncbi.nlm.nih.gov/books/NBK554457/?report=reader",
+    "https://www.ncbi.nlm.nih.gov/sites/books/NBK554589/"
+  ]
+}

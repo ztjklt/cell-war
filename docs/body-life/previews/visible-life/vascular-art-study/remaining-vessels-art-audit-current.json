@@ -1,0 +1,146 @@
+{
+  "schema": "remaining-vessels-independent-art-audit/current-v1",
+  "date": "2026-10-10",
+  "status": "CURRENT_PAINT_CANDIDATES_IMPROVED_REGISTRATION_NOT_PASSED",
+  "pageSummary": "胸部保留补回的红色供血弧与气道遮挡；下腹蓝色露帽已移除，膀胱橙色核心干净，旧蓝主干仍在，未见新增支线。两块可继续作为美术候选；固定端口、主图像素对齐和实际通路尚未通过。",
+  "inputHashes": {
+    "assets/image/anatomy-reference/vascular-study/remaining-vessels/gpt-chest-v4.png": "1249bfa92bbc8f945d3a0fcfe73a8cc4e290ed316f87a4c3accbe2bee6b9ec9c",
+    "assets/image/anatomy-reference/vascular-study/remaining-vessels/gpt-lower-abdomen-v5.png": "550e9039bbf0d4f640f0dc2c8ad31b2e2ce7799183fe004f317d9b4ddb4e4b7a",
+    "docs/body-life/vascular-art-study/remaining-vessels-inputs/chest-prompt-v4.txt": "11dd5a5a2f645f0684f0700da7afe987b9ade243ec9f82c2c61e3e423a26b6c1",
+    "docs/body-life/vascular-art-study/remaining-vessels-inputs/lower-abdomen-prompt-v5.txt": "8a36dc8787a04d3ad6a9fb0e1907b78983ad6999a2ddd0234f3a9783181bf422",
+    "docs/body-life/vascular-art-study/remaining-vessels-inputs/bladder-wall-visibility.json": "594551c44784393eba648294cf60cff3a790d1b582d83df841cad274eef5e24a",
+    "docs/body-life/vascular-art-study/final-reference-data.json": "3890744e2fcaf9e9907c85513e170e479f67b7fbb1fbf06385ac02bd80e8550c",
+    "docs/body-life/vascular-art-study/remaining-vessels-inputs/registration.json": "501c60d42175a16fe1b9fa8d8c2fa7965baeaea2b0b1cb65837b055126ec2851",
+    "assets/image/anatomy-reference/reference.png": "9a04e39961c07073cd9fdcfcdc2c98253ccc25d968e97dbea1f36669e06b5d9f",
+    "docs/body-life/vascular-art-study/remaining-vessels-art-audit.json": "af686672d355809470986753ee71123de3394f0ec3913e0b191463df193f8a8a",
+    "docs/body-life/vascular-art-study/remaining-vessels-art-audit-v3.json": "7f82103444cc3bdbd4662cd430956adc48279a4a8b47afc8450f428f0c053a14",
+    "docs/body-life/vascular-art-study/remaining-vessels-art-audit-v4.json": "81752a50f7abfe1d5959eeaa0bea52fba8c4933a7031255878bf91d2760cb901"
+  },
+  "actualImagesViewedThisReview": [
+    "assets/image/anatomy-reference/vascular-study/remaining-vessels/gpt-lower-abdomen-v5.png"
+  ],
+  "actualImagesViewedInPriorAudit": [
+    "assets/image/anatomy-reference/vascular-study/remaining-vessels/gpt-chest-v4.png"
+  ],
+  "chest": {
+    "paintingStatus": "CLEAR_IMPROVEMENT_CANDIDATE_ONLY",
+    "resolvedSinceV3": [
+      {
+        "id": "supply-access-restored",
+        "finding": "Two red access arcs now join the mauve lung-loop tops; the v3 wholesale deletion of the visible supply arcs is repaired in appearance.",
+        "intendedEdges": [
+          "e172",
+          "e174"
+        ]
+      },
+      {
+        "id": "airway-depth-improved",
+        "finding": "Near each hilum, the red access now disappears behind the lighter matte-blue bronchial foreground. The darker glossy blood loops remain distinguishable from the flat lighter blue airway tree; this is easier to read than the v2 exposed red bridges and v3 purple-only airway contact."
+      }
+    ],
+    "redBlueFalseJunctionReview": "No new obvious red-to-dark-blue systemic T-junction is visible in this v4 comparison. A red/blue projected contact at a lung hilum is now covered by foreground, rather than visibly welded to the deep blue trunk. This visual observation does not certify shared-node topology or exact hidden interval boundaries.",
+    "overDeletionReview": "The two major missing lung supply arcs are restored. Coronary/functional central blood paths and all smaller registered visible intervals still cannot be individually certified from the beauty crop.",
+    "newIndependentPortObserved": false,
+    "remainingLimits": [
+      "Exact lengths/endpoints of the restored red arcs have not been registered against the fixed guide; a model-created short extension could still fall into a frozen hidden span.",
+      "Macro lungs/heart/shoulders are recognizable, but exact silhouettes and untouched crop-boundary pixels are not certified.",
+      "Blood-air separation is visually improved, not a complete exact-mask collision/separation PASS."
+    ],
+    "requiredNextAction": "Use this corrected material candidate in a controlled source-coordinate composition or port/hidden-mask comparison before declaring the chest route artwork final; do not add branches or erase the two required red access arcs again.",
+    "reviewEvidence": "Actual chest v4 image was viewed for remaining-vessels-art-audit-v4.json. Current SHA matches that viewed image; this current audit carries that visual conclusion forward."
+  },
+  "lowerAbdomen": {
+    "paintingStatus": "EXPOSED_BLUE_CAP_REMOVED_ORANGE_CORE_REMAINS_CLEAN",
+    "actualImageViewed": true,
+    "checks": [
+      {
+        "id": "left-blue-approach-cut-cap",
+        "visualResult": "RESOLVED",
+        "finding": "The isolated rounded blue cap previously seen under the left lower bowel and above the broad blue arc is absent. Existing dark purple tissue fills this gap without a new connector.",
+        "approximatePriorSourceRegion": [
+          468,
+          738,
+          478,
+          747
+        ],
+        "coordinateLimit": "Prior proportional source mapping is a paint-location aid, not an exact registered-port measurement."
+      },
+      {
+        "id": "bladder-orange-core",
+        "visualResult": "CLEAN",
+        "finding": "The orange face remains clear of the former purple/red interior loop, indentation and groove; its rim and outlet are recognizable."
+      },
+      {
+        "id": "old-blue-trunk",
+        "visualResult": "VISUALLY_RETAINED",
+        "finding": "The broad blue arc behind the bladder and the blue descending return at the left are still visible. No route was visibly extended to replace the erased cap. Exact original pixels are not certified."
+      },
+      {
+        "id": "new-branch-check",
+        "visualResult": "NO_OBVIOUS_ADDITION",
+        "finding": "No new local fork, exposed cap or red-to-blue welded T-junction is apparent. The upper-right red short approach still tucks behind bowel/bladder foreground. This is a visual observation, not graph certification."
+      }
+    ],
+    "fixedPortDesignAnchors": {
+      "bladder.entry": [
+        536.3294117647059,
+        750.7176470588236
+      ],
+      "bladder.exit": [
+        476.6928327645051,
+        754.6109215017065
+      ]
+    },
+    "displayPolicyChecked": {
+      "hideOnOrangeFace": [
+        "e143",
+        "e197",
+        "e198"
+      ],
+      "namedPortsEqualFrozenReference": true,
+      "topologyEdited": false,
+      "productionInstalled": false
+    },
+    "remainingLimits": [
+      "The full-image GPT output does not prove that all pixels outside the requested small edit were unchanged.",
+      "The short peripheral approaches are not registered proof of landing on the two frozen named ports.",
+      "Existing broad blue image arcs remain unregistered pigment until matched to exact final-reference visible and hidden masks.",
+      "Frozen e143/e197/e198 paths still run inside the bladder outline; hiding their painting does not establish a wall-only RTS movement domain."
+    ]
+  },
+  "immutableReferenceChecks": {
+    "sourceHashMatchedRegistration": true,
+    "finalReferenceHashMatchedRegistration": true,
+    "headLimbEdgesExcludedFromEditableInventory": true,
+    "historicalAuditsNotOverwritten": true,
+    "candidateImageDimensions": {
+      "gpt-chest-v4.png": [
+        1536,
+        1024
+      ],
+      "gpt-lower-abdomen-v5.png": [
+        1536,
+        1024
+      ]
+    },
+    "candidateSourceCoordinateRegistrationCertified": false,
+    "candidateOriginalPixelIdentityCertified": false
+  },
+  "deliveryVerdict": {
+    "paintingImproved": true,
+    "knownMinorBlueCapPaintFixResolved": true,
+    "nextArtCandidateUsable": true,
+    "safeForDirectMainMapReplacement": false,
+    "strictFixedPortsPassed": false,
+    "strictRegisteredCoordinatesPassed": false,
+    "allHiddenSpanMasksPassed": false,
+    "fullBodyArtworkComplete": false,
+    "rtsMovementCertified": false
+  },
+  "nextRequiredVerification": "Before direct main-map replacement, register these crop materials in the frozen source coordinate system and compare all named ports, visible intervals, hidden masks, organ foreground and crop joins. Do not add branches to disguise hidden spans.",
+  "scopeLimits": [
+    "Central chest v4 and lower-abdomen v5 painting only; no production or frozen geometry modified.",
+    "No anatomy/clinical certification and no runtime movement, clearance or cell-passing test was performed.",
+    "No rejected stomach 0.15 battlefield was resumed."
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "schema": "heart-same-handle-atlas/v2",
+  "sourceBox": [
+    468,
+    326,
+    568,
+    467
+  ],
+  "pixelSize": [
+    1200,
+    3384
+  ],
+  "panels": [
+    {
+      "id": "static-clean-bed",
+      "uvRect": [
+        0,
+        0,
+        1200,
+        1692
+      ]
+    },
+    {
+      "id": "animated-heart-and-original-vessels",
+      "uvRect": [
+        0,
+        1692,
+        1200,
+        3384
+      ]
+    }
+  ],
+  "inputs": {
+    "/tmp/heart-v1-staging/uv-registration/heart-cfe96d99-uv-registered.png": "d83c47a1d067ffd28fffbe48c54088c532f72a7c87fa62e9ec2d5f613a26db4a",
+    "/Users/jitian/.codex/generated_images/01a12c06-12f6-72a2-829f-a4bbf5e5fb71/exec-2d6d9d0c-361c-4b52-ad76-34de92f45888.png": "fa77888a0b6012e3faae78dde03908eeddbc7209355fa7f93e7d72c5b995c39a",
+    "/Users/jitian/Documents/ChatGPT/细胞战争真/docs/heart-v1/qa/display-preview/context-baseline-quiet-base.png": "d23373d40d05f564905dbf8131517952ca5cfa5656b1282299df47abac941028",
+    "/tmp/heart-v1-staging/assets/registered-vessels.png": "1ffc60d08640712d2b4380af2a8bca1d00cdcd3c473105127bed71e63d76e4c5"
+  },
+  "atlasSha256": "8d30d44546c8e6ea62006e6d69296f87a40d5cfba1aec8507ea9bf28c945fed9",
+  "existingVesselSourcePixelsEdited": false,
+  "globalRoutesEdited": false,
+  "imagesPerContext": 42,
+  "decodedRGBABytesPerContext": 273177480,
+  "maxDecodedRGBABytesPerContext": 301989888,
+  "nativeEvidence": false,
+  "notes": [
+    "Static bed only replaces the old cardiac footprint; cream trachea excluded.",
+    "GPT heart and registered project vessel pixels share one heartbeat mesh.",
+    "Packing is an asset registration operation, not new programmatic painting."
+  ]
+}

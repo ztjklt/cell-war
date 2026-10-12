@@ -1,0 +1,186 @@
+{
+  "status": "PASS_FINAL_V3_REGISTRATION_AND_FROZEN_GEOMETRY_AUDIT",
+  "nativeEvidence": false,
+  "productionInstalled": false,
+  "newRoomWallNavigationVerified": false,
+  "frozenFieldsEqualV1AndRegistration": {
+    "sourceBox": true,
+    "outerPath": true,
+    "foodPath": true,
+    "tissuePath": true,
+    "outerRings": true,
+    "foodRings": true,
+    "tissueRings": true,
+    "gates": true,
+    "worldTransform": true,
+    "organBounds": true
+  },
+  "gridsIdenticalToV1": true,
+  "textureAddsCollision": false,
+  "grids": [
+    {
+      "kind": "scout",
+      "radiusSource": 0.21875,
+      "validPoints": 7599,
+      "adjacencySweeps": 56762,
+      "illegalSweeps": 0,
+      "safeAreaOutsideRadiusErodedOuter": 0.0,
+      "safeAreaInsideRadiusExpandedFood": 0.0
+    },
+    {
+      "kind": "siege",
+      "radiusSource": 0.53125,
+      "validPoints": 7046,
+      "adjacencySweeps": 52466,
+      "illegalSweeps": 0,
+      "safeAreaOutsideRadiusErodedOuter": 0.0,
+      "safeAreaInsideRadiusExpandedFood": 0.0
+    }
+  ],
+  "inlet": {
+    "sourcePointsExactlyFrozen": true,
+    "lumenWidthSource": 7,
+    "wallWidthSource": 10.4,
+    "cardiaIntersectionSource": [
+      569.9588724959868,
+      481.03278002163734
+    ],
+    "cellEntry": false,
+    "visibleClipSymmetricDifferenceArea": 1.828761516001461e-05,
+    "foregroundIds": [
+      "heart",
+      "lung_l",
+      "lung_r"
+    ],
+    "foodCoreMatches": true
+  },
+  "registration": [
+    {
+      "layer": "base",
+      "rawRect": [
+        476,
+        448,
+        152,
+        152
+      ],
+      "explicitPreserveAspectRatio": "none",
+      "canvasRect": [
+        464,
+        448,
+        180,
+        180
+      ],
+      "rawEmbeddedHashMatches": true,
+      "nativeRimCrossingFoodCoreArea": 0
+    },
+    {
+      "layer": "layer",
+      "rawRect": [
+        476,
+        448,
+        152,
+        152
+      ],
+      "explicitPreserveAspectRatio": "none",
+      "canvasRect": [
+        464,
+        448,
+        180,
+        180
+      ],
+      "rawEmbeddedHashMatches": true,
+      "nativeRimCrossingFoodCoreArea": 0
+    }
+  ],
+  "alpha": [
+    {
+      "layer": "base",
+      "nontransparentPixels": 1071229,
+      "edgeAAPixelCentersOutsideContext": 2966,
+      "pixelsWhollyOutsideVisibleContext": 0
+    },
+    {
+      "layer": "layer",
+      "nontransparentPixels": 1071229,
+      "edgeAAPixelCentersOutsideContext": 2966,
+      "pixelsWhollyOutsideVisibleContext": 0
+    }
+  ],
+  "registeredVesselCountFrozen": 80,
+  "baseExcludesRegisteredBloodInk": true,
+  "promptAndRawHashesVerified": true,
+  "visualReview": {
+    "images": [
+      "registered-upper.png",
+      "art-overview.png",
+      "browser-inlet-015-v3.png"
+    ],
+    "findings": [
+      "Esophagus appears behind the heart/lungs in the registered upper-body image.",
+      "Food inlet visibly opens into the stomach without a transverse native outline across its lumen.",
+      "Multiple room wall ends show visible gaps into the central colored floor; this is a visual observation only.",
+      "Browser inset at .15 shows the inlet without a crosswise cap; new room collision and production organ wall remain uninstalled."
+    ]
+  },
+  "limits": [
+    "Old 109228 grid sweeps test the unchanged old tissue/food/blood boundary only; they do not certify the new room walls or gaps as navigable.",
+    "Explicit food context outside the stomach is visual only and cellEntry=false; organ tissue collider remains frozen.",
+    "No native engine run or performance claim. Native preview was stopped by the project workflow."
+  ],
+  "inputHashesStart": {
+    "docs/body-life/vascular-art-study/stomach-terrain-v2/registration.json": "2488a33168ea607a5dc69369a86f7ee884e2eb3af14ce7773c0ea5f599dcd8c7",
+    "docs/body-life/vascular-art-study/stomach-terrain-v2/data.json": "afcf1d2c97fd67dc8eb9cb6f34aa10831409c3e8f1c0b17a7f151d64388ad699",
+    "docs/body-life/vascular-art-study/stomach-terrain-v2/checks.json": "ee50b67b16a1243388fdca3448b8e378d167ec77b08b5267f1098e2cf5bbf7a3",
+    "assets/image/anatomy-reference/vascular-study/stomach-terrain-v2/terrain-layer-v2.png": "a6b1144af40387cdab2357c83a39616b3000a0bfa0d7b5f4efb46bbcfcb16723",
+    "assets/image/anatomy-reference/vascular-study/stomach-terrain-v2/terrain-layer-v2.svg": "57512764859f869a738800ec70eae5dc0452d0cdc9ca6e49f6a2a53e9c2c133f",
+    "assets/image/anatomy-reference/vascular-study/stomach-terrain-v2/gpt-inlet-clarity-v3.png": "b3d28b2c98a14ec1ecb2f0c08c7540460c4c67abb2ffd643140af9436cc08e9d",
+    "assets/image/anatomy-reference/vascular-study/stomach-terrain-v2/mapping.json": "d3338d7f951d5c889ee8f95adb9d17c87d95db1f4ee4eb54a979dca11430165b",
+    "docs/body-life/vascular-art-study/stomach-terrain-v2/terrain-layer.png": "a6b1144af40387cdab2357c83a39616b3000a0bfa0d7b5f4efb46bbcfcb16723",
+    "docs/body-life/vascular-art-study/stomach-organic.html": "8f84bfe3875984921700c252510cf96aecaf5ae5a238236181418c5b732c357e",
+    "docs/body-life/vascular-art-study/stomach-organic.js": "468e3cdc0dae87ef236c5cacbccd5de33a667fca0f5a2376e64ca27433b15afa",
+    "docs/body-life/vascular-art-study/stomach-terrain-v1/data.json": "51f8eef53701a92527e94da40d453454e441943c17bbfcf34f252b8757b61472",
+    "docs/body-life/vascular-art-study/stomach-terrain-v1/registration.json": "44a634a24c34a6018501ceffb656b9ef0716c50c63e86c1e964a391b16618f1e",
+    "docs/body-life/vascular-art-study/final-reference-data.json": "3890744e2fcaf9e9907c85513e170e479f67b7fbb1fbf06385ac02bd80e8550c",
+    "docs/body-life/vascular-art-study/registered-vessels/geometry.json": "37c6cbcdbdea7fa88cd17079a54db62ee46745158874c27432eea4dd2d850a8b",
+    "scripts/war/OrganBoundariesData.lua": "b4617ba302f4deab54ffdb9a7be0750b1ab63000a50a8395e151456ad2e34e24",
+    "scripts/qa/check_gastric_organic_terrain.py": "2eff1eba73a2ffd794340f9166d6f8dd34a25d2b1fe71ef49a49b196e0968a29",
+    "assets/image/anatomy-reference/vascular-study/stomach-terrain-v2/terrain-base-v2.png": "abb0516477f4872e06fbbb1924c6a333710bc00aea4571d005288cf01ec0eafd",
+    "assets/image/anatomy-reference/vascular-study/stomach-terrain-v2/terrain-base-v2.svg": "54c33e079a84dc4c95bd260434ec4a0beb2212b2f5de20120b79f2f6def45cfd",
+    "docs/body-life/vascular-art-study/stomach-terrain-v2/terrain-base.png": "abb0516477f4872e06fbbb1924c6a333710bc00aea4571d005288cf01ec0eafd",
+    "docs/body-life/vascular-art-study/stomach-terrain-v2/inlet-geometry.json": "f70b7a32274c689cbcc011ef8e07c7ed44dedb4d42ed0da756f2849e7bdb263b",
+    "docs/body-life/vascular-art-study/stomach-terrain-v2/prompt.txt": "b84dac7234f6c688f040ab30c58da1881ec3120e47a30e2908779b68318a966a",
+    "docs/body-life/vascular-art-study/stomach-terrain-v2/prompt-inlet-clarity.txt": "b84dac7234f6c688f040ab30c58da1881ec3120e47a30e2908779b68318a966a",
+    "docs/body-life/vascular-art-study/stomach-terrain-v2/browser-evidence-v3.json": "b947461999ea511f9272e519aa831e3634e301cbf1c64540e3c0ae2b36e9a6e9",
+    "docs/body-life/vascular-art-study/stomach-terrain-v2/registered-upper.png": "82be887cd31f411bc5be91235c05bb460932d1d9ac77da9d83fb31d14a9415f5",
+    "docs/body-life/vascular-art-study/stomach-terrain-v2/art-overview.png": "2ff1d1fbaf395a2c063d4d2439cb1d2207cb6be053dd0cb3653dd3cb361cb006",
+    "docs/body-life/vascular-art-study/stomach-terrain-v2/browser-inlet-015-v3.png": "f614341a6900059268b13a01c10c8d8c481cf1255cfa62b4ccd4e1867765c54e"
+  },
+  "inputHashesEnd": {
+    "docs/body-life/vascular-art-study/stomach-terrain-v2/registration.json": "2488a33168ea607a5dc69369a86f7ee884e2eb3af14ce7773c0ea5f599dcd8c7",
+    "docs/body-life/vascular-art-study/stomach-terrain-v2/data.json": "afcf1d2c97fd67dc8eb9cb6f34aa10831409c3e8f1c0b17a7f151d64388ad699",
+    "docs/body-life/vascular-art-study/stomach-terrain-v2/checks.json": "ee50b67b16a1243388fdca3448b8e378d167ec77b08b5267f1098e2cf5bbf7a3",
+    "assets/image/anatomy-reference/vascular-study/stomach-terrain-v2/terrain-layer-v2.png": "a6b1144af40387cdab2357c83a39616b3000a0bfa0d7b5f4efb46bbcfcb16723",
+    "assets/image/anatomy-reference/vascular-study/stomach-terrain-v2/terrain-layer-v2.svg": "57512764859f869a738800ec70eae5dc0452d0cdc9ca6e49f6a2a53e9c2c133f",
+    "assets/image/anatomy-reference/vascular-study/stomach-terrain-v2/gpt-inlet-clarity-v3.png": "b3d28b2c98a14ec1ecb2f0c08c7540460c4c67abb2ffd643140af9436cc08e9d",
+    "assets/image/anatomy-reference/vascular-study/stomach-terrain-v2/mapping.json": "d3338d7f951d5c889ee8f95adb9d17c87d95db1f4ee4eb54a979dca11430165b",
+    "docs/body-life/vascular-art-study/stomach-terrain-v2/terrain-layer.png": "a6b1144af40387cdab2357c83a39616b3000a0bfa0d7b5f4efb46bbcfcb16723",
+    "docs/body-life/vascular-art-study/stomach-organic.html": "8f84bfe3875984921700c252510cf96aecaf5ae5a238236181418c5b732c357e",
+    "docs/body-life/vascular-art-study/stomach-organic.js": "468e3cdc0dae87ef236c5cacbccd5de33a667fca0f5a2376e64ca27433b15afa",
+    "docs/body-life/vascular-art-study/stomach-terrain-v1/data.json": "51f8eef53701a92527e94da40d453454e441943c17bbfcf34f252b8757b61472",
+    "docs/body-life/vascular-art-study/stomach-terrain-v1/registration.json": "44a634a24c34a6018501ceffb656b9ef0716c50c63e86c1e964a391b16618f1e",
+    "docs/body-life/vascular-art-study/final-reference-data.json": "3890744e2fcaf9e9907c85513e170e479f67b7fbb1fbf06385ac02bd80e8550c",
+    "docs/body-life/vascular-art-study/registered-vessels/geometry.json": "37c6cbcdbdea7fa88cd17079a54db62ee46745158874c27432eea4dd2d850a8b",
+    "scripts/war/OrganBoundariesData.lua": "b4617ba302f4deab54ffdb9a7be0750b1ab63000a50a8395e151456ad2e34e24",
+    "scripts/qa/check_gastric_organic_terrain.py": "2eff1eba73a2ffd794340f9166d6f8dd34a25d2b1fe71ef49a49b196e0968a29",
+    "assets/image/anatomy-reference/vascular-study/stomach-terrain-v2/terrain-base-v2.png": "abb0516477f4872e06fbbb1924c6a333710bc00aea4571d005288cf01ec0eafd",
+    "assets/image/anatomy-reference/vascular-study/stomach-terrain-v2/terrain-base-v2.svg": "54c33e079a84dc4c95bd260434ec4a0beb2212b2f5de20120b79f2f6def45cfd",
+    "docs/body-life/vascular-art-study/stomach-terrain-v2/terrain-base.png": "abb0516477f4872e06fbbb1924c6a333710bc00aea4571d005288cf01ec0eafd",
+    "docs/body-life/vascular-art-study/stomach-terrain-v2/inlet-geometry.json": "f70b7a32274c689cbcc011ef8e07c7ed44dedb4d42ed0da756f2849e7bdb263b",
+    "docs/body-life/vascular-art-study/stomach-terrain-v2/prompt.txt": "b84dac7234f6c688f040ab30c58da1881ec3120e47a30e2908779b68318a966a",
+    "docs/body-life/vascular-art-study/stomach-terrain-v2/prompt-inlet-clarity.txt": "b84dac7234f6c688f040ab30c58da1881ec3120e47a30e2908779b68318a966a",
+    "docs/body-life/vascular-art-study/stomach-terrain-v2/browser-evidence-v3.json": "b947461999ea511f9272e519aa831e3634e301cbf1c64540e3c0ae2b36e9a6e9",
+    "docs/body-life/vascular-art-study/stomach-terrain-v2/registered-upper.png": "82be887cd31f411bc5be91235c05bb460932d1d9ac77da9d83fb31d14a9415f5",
+    "docs/body-life/vascular-art-study/stomach-terrain-v2/art-overview.png": "2ff1d1fbaf395a2c063d4d2439cb1d2207cb6be053dd0cb3653dd3cb361cb006",
+    "docs/body-life/vascular-art-study/stomach-terrain-v2/browser-inlet-015-v3.png": "f614341a6900059268b13a01c10c8d8c481cf1255cfa62b4ccd4e1867765c54e"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "recordedAt": "2026-10-09T19:14:42.814016+08:00",
+  "stage": "Practical source-derived close-up fills; heartbeat and flow only",
+  "activeEffects": [
+    "heart contraction/rebound and local heartbeat shading",
+    "full-body visible vessel flow"
+  ],
+  "restored": [
+    "non-heart organs remain static"
+  ],
+  "inactive": [
+    "GPT generated organ tissue layers",
+    "organ membrane/foreground reconstruction",
+    "lung breathing and secondary-organ perfusion"
+  ],
+  "retained": [
+    "original anatomyVersion=4 image and geometry",
+    "sandbox/full-map routing fix",
+    "other project updates",
+    "original game realTime sharing and resource release"
+  ],
+  "tests": {
+    "regression": 191,
+    "integration": 9,
+    "resources": 11,
+    "scopeChecks": 14,
+    "total": 228,
+    "allPassed": true,
+    "currentRevision": true,
+    "reportDirectory": "practical-fill",
+    "fillChecks": 3
+  },
+  "archivedPreviousImplementation": "archive/before-heart-flow-only",
+  "runtimeSha256": {
+    "ReferenceArt.lua": "531b702ffad15afa57a4f25f95952af834a865f0474f06dc372aef4213eea8ca",
+    "BodyLife.lua": "2a6a5570822e732ebff5008aa20cd64501b1c40d932ce1bbea2faefea24906df",
+    "BodyLifeAssets.lua": "1b762b0766f655ed057245427522c99b45decac45cb7e52fb0ef844f825a47b0",
+    "BodyLifeShading.lua": "acac07c2be8577fbecf9a6edd6307fe9acdea25e919a2ce24ce568615436c745",
+    "BodyLifeFlow.lua": "d6e50b9a7d348aff611b976a3dd46db6e1f913eba1009769ea31b257803a903a",
+    "ReferenceFill.lua": "d4287cd705c2c6b8a54f7ed192d56e61ffc7750586395d3075898baeea681ae6"
+  },
+  "preview": "previews/visible-life/fill.html",
+  "noRemoteBuildCommitPublish": true,
+  "closeupFill": {
+    "sourceDerived": true,
+    "inventedCellularDecorations": false,
+    "enlargingSeamStroke": false,
+    "transition": [
+      0.085,
+      0.15
+    ],
+    "details": "smooth organ folds, edges and quiet layered colors"
+  }
+}

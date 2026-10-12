@@ -1,0 +1,425 @@
+{
+  "nativeEvidence": false,
+  "passed": 7,
+  "total": 7,
+  "results": [
+    {
+      "name": "Actual configured HD kinds load lazily per context; missing overrides use atlas; all owned handles release",
+      "pass": true
+    },
+    {
+      "name": "Every organ rejects boundary vertices and the large-intestine cavity remains empty",
+      "pass": true
+    },
+    {
+      "name": "All twelve actual field draw clips have nonzero interior coverage, preserve protected space and large-gut cavity",
+      "pass": true
+    },
+    {
+      "name": "Close-up navigation and animation leave Save snapshot and simulation random state unchanged",
+      "pass": true
+    },
+    {
+      "name": "Missing atlas actually falls back to existing tissue drawing without absent anatomy",
+      "pass": true
+    },
+    {
+      "name": "Atlas and membranes retain identical logical drawing commands at DPR 1/2/3",
+      "pass": true
+    },
+    {
+      "name": "Entry fade and .1499/.1501 atlas transition remain continuous in actual lossless frames",
+      "pass": true
+    }
+  ],
+  "evidence": {
+    "resourceStrategy": {
+      "configuredKinds": [
+        "bladder",
+        "brain",
+        "heart",
+        "kidney",
+        "large-intestine",
+        "liver",
+        "lung",
+        "pancreas",
+        "small-intestine",
+        "stomach"
+      ],
+      "atlasLoadsBeforeVisibility": 1,
+      "overrides": "lazy per visible shared kind/context; failure cached with atlas fallback",
+      "failureValues": [
+        "nil",
+        0,
+        -1
+      ]
+    },
+    "boundaries": {
+      "brain": {
+        "testedBoundaryVertices": 753,
+        "interiorGridSamples": 713,
+        "cavities": 0
+      },
+      "lung_r": {
+        "testedBoundaryVertices": 1664,
+        "interiorGridSamples": 915,
+        "cavities": 0
+      },
+      "lung_l": {
+        "testedBoundaryVertices": 1607,
+        "interiorGridSamples": 840,
+        "cavities": 0
+      },
+      "liver": {
+        "testedBoundaryVertices": 459,
+        "interiorGridSamples": 609,
+        "cavities": 0
+      },
+      "stomach": {
+        "testedBoundaryVertices": 363,
+        "interiorGridSamples": 588,
+        "cavities": 0
+      },
+      "pancreas": {
+        "testedBoundaryVertices": 234,
+        "interiorGridSamples": 139,
+        "cavities": 0
+      },
+      "kidney_r": {
+        "testedBoundaryVertices": 297,
+        "interiorGridSamples": 152,
+        "cavities": 0
+      },
+      "kidney_l": {
+        "testedBoundaryVertices": 297,
+        "interiorGridSamples": 143,
+        "cavities": 0
+      },
+      "large_intestine": {
+        "testedBoundaryVertices": 1009,
+        "interiorGridSamples": 626,
+        "cavities": 1
+      },
+      "small_intestine": {
+        "testedBoundaryVertices": 391,
+        "interiorGridSamples": 474,
+        "cavities": 0
+      },
+      "bladder": {
+        "testedBoundaryVertices": 272,
+        "interiorGridSamples": 283,
+        "cavities": 0
+      },
+      "heart": {
+        "testedBoundaryVertices": 1001,
+        "interiorGridSamples": 192,
+        "cavities": 0
+      }
+    },
+    "renderedFieldClips": {
+      "brain": {
+        "actualFieldPaths": 4,
+        "renderedPixels": 149802,
+        "interiorCorePixels": 124103,
+        "coreCoverage": 1.0,
+        "protectedPixelsPainted": 0,
+        "edgeMarginSourcePixels": 2
+      },
+      "lung_r": {
+        "actualFieldPaths": 2,
+        "renderedPixels": 49202,
+        "interiorCorePixels": 34656,
+        "coreCoverage": 1.0,
+        "protectedPixelsPainted": 0,
+        "edgeMarginSourcePixels": 2
+      },
+      "lung_l": {
+        "actualFieldPaths": 2,
+        "renderedPixels": 45228,
+        "interiorCorePixels": 30964,
+        "coreCoverage": 1.0,
+        "protectedPixelsPainted": 0,
+        "edgeMarginSourcePixels": 2
+      },
+      "liver": {
+        "actualFieldPaths": 1,
+        "renderedPixels": 116849,
+        "interiorCorePixels": 99666,
+        "coreCoverage": 1.0,
+        "protectedPixelsPainted": 0,
+        "edgeMarginSourcePixels": 2
+      },
+      "stomach": {
+        "actualFieldPaths": 1,
+        "renderedPixels": 121804,
+        "interiorCorePixels": 103821,
+        "coreCoverage": 1.0,
+        "protectedPixelsPainted": 0,
+        "edgeMarginSourcePixels": 2
+      },
+      "pancreas": {
+        "actualFieldPaths": 1,
+        "renderedPixels": 69431,
+        "interiorCorePixels": 48229,
+        "coreCoverage": 1.0,
+        "protectedPixelsPainted": 0,
+        "edgeMarginSourcePixels": 2
+      },
+      "kidney_r": {
+        "actualFieldPaths": 1,
+        "renderedPixels": 49798,
+        "interiorCorePixels": 34181,
+        "coreCoverage": 1.0,
+        "protectedPixelsPainted": 0,
+        "edgeMarginSourcePixels": 2
+      },
+      "kidney_l": {
+        "actualFieldPaths": 1,
+        "renderedPixels": 48586,
+        "interiorCorePixels": 33173,
+        "coreCoverage": 1.0,
+        "protectedPixelsPainted": 0,
+        "edgeMarginSourcePixels": 2
+      },
+      "large_intestine": {
+        "actualFieldPaths": 2,
+        "renderedPixels": 62339,
+        "interiorCorePixels": 42798,
+        "coreCoverage": 1.0,
+        "protectedPixelsPainted": 0,
+        "edgeMarginSourcePixels": 2
+      },
+      "small_intestine": {
+        "actualFieldPaths": 1,
+        "renderedPixels": 157883,
+        "interiorCorePixels": 136595,
+        "coreCoverage": 1.0,
+        "protectedPixelsPainted": 0,
+        "edgeMarginSourcePixels": 2
+      },
+      "bladder": {
+        "actualFieldPaths": 1,
+        "renderedPixels": 95670,
+        "interiorCorePixels": 77830,
+        "coreCoverage": 1.0,
+        "protectedPixelsPainted": 0,
+        "edgeMarginSourcePixels": 2
+      },
+      "heart": {
+        "actualFieldPaths": 6,
+        "renderedPixels": 78203,
+        "interiorCorePixels": 39273,
+        "coreCoverage": 1.0,
+        "protectedPixelsPainted": 0,
+        "edgeMarginSourcePixels": 2
+      }
+    },
+    "organsAtZoom04": {
+      "brain": {
+        "renderedFieldsAndMarrow": 1,
+        "tissueFocus": [
+          508,
+          63
+        ],
+        "geometryCenter": [
+          510.5,
+          73.0
+        ]
+      },
+      "lung_r": {
+        "renderedFieldsAndMarrow": 1,
+        "tissueFocus": [
+          451,
+          408
+        ],
+        "geometryCenter": [
+          425.5,
+          386.0
+        ]
+      },
+      "lung_l": {
+        "renderedFieldsAndMarrow": 1,
+        "tissueFocus": [
+          580,
+          443
+        ],
+        "geometryCenter": [
+          590.0,
+          387.0
+        ]
+      },
+      "liver": {
+        "renderedFieldsAndMarrow": 1,
+        "tissueFocus": [
+          442,
+          511
+        ],
+        "geometryCenter": [
+          461.5,
+          520.0
+        ]
+      },
+      "stomach": {
+        "renderedFieldsAndMarrow": 1,
+        "tissueFocus": [
+          574,
+          514
+        ],
+        "geometryCenter": [
+          553.5,
+          514.5
+        ]
+      },
+      "pancreas": {
+        "renderedFieldsAndMarrow": 1,
+        "tissueFocus": [
+          514,
+          584
+        ],
+        "geometryCenter": [
+          529.0,
+          586.0
+        ]
+      },
+      "kidney_r": {
+        "renderedFieldsAndMarrow": 1,
+        "tissueFocus": [
+          412,
+          605
+        ],
+        "geometryCenter": [
+          421.5,
+          610.0
+        ]
+      },
+      "kidney_l": {
+        "renderedFieldsAndMarrow": 1,
+        "tissueFocus": [
+          606,
+          608
+        ],
+        "geometryCenter": [
+          600.5,
+          610.5
+        ]
+      },
+      "large_intestine": {
+        "renderedFieldsAndMarrow": 1,
+        "tissueFocus": [
+          542,
+          634
+        ],
+        "geometryCenter": [
+          511.0,
+          677.5
+        ]
+      },
+      "small_intestine": {
+        "renderedFieldsAndMarrow": 1,
+        "tissueFocus": [
+          507,
+          691
+        ],
+        "geometryCenter": [
+          507.5,
+          691.5
+        ]
+      },
+      "bladder": {
+        "renderedFieldsAndMarrow": 1,
+        "tissueFocus": [
+          507,
+          769
+        ],
+        "geometryCenter": [
+          508.0,
+          775.0
+        ]
+      },
+      "heart": {
+        "renderedFieldsAndMarrow": 1,
+        "tissueFocus": [
+          514,
+          418
+        ],
+        "geometryCenter": [
+          517.0,
+          398.5
+        ]
+      }
+    },
+    "actualHighResolutionLoads": {
+      "bladder": true,
+      "brain": true,
+      "heart": true,
+      "kidney": true,
+      "large-intestine": true,
+      "liver": true,
+      "lung": true,
+      "pancreas": true,
+      "small-intestine": true,
+      "stomach": true
+    },
+    "continuousLOD": {
+      "0.079999/0.080001": {
+        "rawMeanRgbDifference": 0.019044054672122,
+        "rawP99RgbDifference": 1.0,
+        "registrationScale": 0.9999750003124961,
+        "meanRgbDifference": 0.03597906231880188,
+        "p99RgbDifference": 0.9757446050643921,
+        "maxRgbDifference": 2.1300201416015625
+      },
+      "0.1499/0.1501": {
+        "rawMeanRgbDifference": 0.8113889098167419,
+        "rawP99RgbDifference": 7.0,
+        "registrationScale": 0.9986675549633577,
+        "meanRgbDifference": 0.46463292837142944,
+        "p99RgbDifference": 4.161216735839844,
+        "maxRgbDifference": 27.639755249023438
+      },
+      "0.199999/0.200001": {
+        "rawMeanRgbDifference": 0.10779405385255814,
+        "rawP99RgbDifference": 1.0,
+        "registrationScale": 0.9999900000499997,
+        "meanRgbDifference": 0.11064706742763519,
+        "p99RgbDifference": 1.01068115234375,
+        "maxRgbDifference": 2.970611572265625
+      },
+      "0.399999/0.400001": {
+        "rawMeanRgbDifference": 0.0062619359232485294,
+        "rawP99RgbDifference": 0.0,
+        "registrationScale": 0.9999950000125,
+        "meanRgbDifference": 0.008163340389728546,
+        "p99RgbDifference": 0.029296875,
+        "maxRgbDifference": 1.98883056640625
+      },
+      "0.899999/0.900001": {
+        "rawMeanRgbDifference": 0.0010351561941206455,
+        "rawP99RgbDifference": 0.0,
+        "registrationScale": 0.9999977777802469,
+        "meanRgbDifference": 0.001241481862962246,
+        "p99RgbDifference": 0.0019378662109375,
+        "maxRgbDifference": 1.002532958984375
+      }
+    }
+  },
+  "runtimeSha256": {
+    "scripts/war/OrganDetail.lua": "bd7f566670bb137fa9c67dfc691f7a2e757e53855566f3133cb13f7eced64ee9",
+    "scripts/war/OrganBoundariesData.lua": "b4617ba302f4deab54ffdb9a7be0750b1ab63000a50a8395e151456ad2e34e24",
+    "scripts/war/OrganBoundariesAcceptance.lua": "eed26bfd9462b4a89e19d33d38752d829f85cecdfde541adbdbfa94ec6e7c0ed",
+    "scripts/war/OrganBoundaries.lua": "2ed755f869951fba0805374c7cc814211329d01961668aa5fd217cd25e19dbf7",
+    "scripts/war/OrganForeground.lua": "fa0abbec69438fc0940b733c8f027dcce6f3d505491911a239f00d89cf5cb5df",
+    "scripts/war/OrganForegroundAcceptance.lua": "db82651dd9b1096059f2f5e0b34744a40f744c5abaee1fa160889acec3f52be0",
+    "scripts/war/OrganForegroundData.lua": "41e802820b87a58481964f772b8351c8f6f13e6a81414a03ee66ddeafac3ea63",
+    "scripts/war/ReferenceArt.lua": "8246e713b8118a75b59eb804e2bd9bf4069b4db85d5f06185c50e5cd5fb324b7",
+    "scripts/war/Render.lua": "3588ed6a96d8805b5e4dca42799e99fa082a87b2e668e209afebdd40b3891b92",
+    "scripts/war/HUD.lua": "b40e0f229f48cf7419c640127be08fbdf755b796f282f6e0b7b2a7b7790c1996",
+    "scripts/war/SmoothTerrain.lua": "4b509bb66fe04fe3ecfb4ee5fb5c59c4e3e007e87cd9bade71c8f43ef962cff6",
+    "scripts/war/BodyLife.lua": "a21e5c99d8f24ba997b9c875bee3cc9dd7892fdcbd6fe5bba61e9395fa13358d"
+  },
+  "limitations": [
+    "Context load failure is mocked; actual resource pixels are used for rendering checks.",
+    "Geometry and image differences do not establish perceptible motion or visual attractiveness.",
+    "Cairo filtering/AA differs from native NanoVG; no native frame time claim."
+  ]
+}

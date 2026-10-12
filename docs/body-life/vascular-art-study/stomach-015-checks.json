@@ -1,0 +1,68 @@
+{
+  "schema": "stomach-015-review/v1",
+  "status": "PASS_ISOLATED_STOMACH_ART_AND_NAV",
+  "sourceSha256": "9a04e39961c07073cd9fdcfcdc2c98253ccc25d968e97dbea1f36669e06b5d9f",
+  "finalReferenceSha256": "3890744e2fcaf9e9907c85513e170e479f67b7fbb1fbf06385ac02bd80e8550c",
+  "independentAuditSha256": "ad0bb8fcb040ea4fa3a6237ffdaf79c6f8ae87c08166f0fc5dd965d2d8873f04",
+  "navigationReportSha256": "b720c0f840c4f8e465d5bdb7ba7bb642947a2999e81a8be1c39efb05bcd044e5",
+  "renderReportSha256": "f647c5ce1b2e11b6a41a9d1e06cae70cde1fcad7c95b512829037b4b2d01535a",
+  "pageSha256": "b1722b8b10cdbac81e15a1fb08ea39e52baf0a75d38cf4cf0bac309703b639aa",
+  "pageScriptSha256": "e3d63f88d9126c3776d9b80f30afbadd9149d0d55a256b79ad2794b830f1d6ef",
+  "artCheckScriptSha256": "83b5e8e4cc5e9909a348189dc7cde74930368f857d66178882bc4f31f75f0cb4",
+  "independentArtChecks": 19,
+  "soloStagesPassed": 22,
+  "queuedStagesPassed": 4,
+  "foodGeometryShared": true,
+  "gateAnchorsUnchanged": true,
+  "joiningEdges": 5,
+  "joiningVisiblePieces": 6,
+  "outsideBandChangedPixels": 0,
+  "brainAndLimbsOriginalPixels": true,
+  "logicalProjectionSamples": 75,
+  "contextHandlesPeak": 2,
+  "contextReopenCycles": 25,
+  "handlesAfterRelease": 0,
+  "sourcePixelAt015LogicalPixels": 9.6,
+  "near015MeanRgbDifferences": [
+    1.4207016317016317,
+    1.3964685314685314
+  ],
+  "productionInstalled": false,
+  "nativeEvidence": false,
+  "fullBodyCertified": false,
+  "generationMode": "GPT builtin imagegen; generated texture/underlay clipped by frozen source-coordinate geometry",
+  "limits": [
+    "Actual isolated Lua draw calls rendered through SVG/Cairo, not native NanoVG GPU.",
+    "Caller must normalize physical screen size/input with DPR as in existing Render; this checks logical View coordinates.",
+    "No production Render/HUD entry has been changed; no native performance claim.",
+    "Actual Lua movement uses an isolated opt-in final vascular fixture; production world/render entries unchanged.",
+    "Food-hidden vessel spans retain depth. They are not openings into the food lumen.",
+    "Only the registered upper/lower joining band and gastric pilot are reviewed; remaining body art unchanged."
+  ],
+  "browserEvidenceSha256": "fedbeebf12f156a7f0241837940efd2c8d46e4ebd26229d9785945b579ae5f07",
+  "browserReviewedViewports": [
+    [
+      1440,
+      900
+    ],
+    [
+      1024,
+      768
+    ],
+    [
+      844,
+      390
+    ],
+    [
+      430,
+      932
+    ],
+    [
+      360,
+      780
+    ]
+  ],
+  "browserReplayVerified": true,
+  "browserTransitionVerified": true,
+  "browserConsoleErrors": 0
+}

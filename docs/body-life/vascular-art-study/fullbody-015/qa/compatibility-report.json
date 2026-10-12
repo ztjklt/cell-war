@@ -1,0 +1,170 @@
+{
+  "schema": "fullbody-015-save-compatibility/v1",
+  "nativeEvidence": false,
+  "status": "PASS",
+  "rows": [
+    {
+      "id": "legacy-fixtures/sandbox-anatomy-1.json",
+      "status": "PASS",
+      "networkEdges": 120,
+      "entities": 0,
+      "mode": "sandbox",
+      "positionErrors": 0,
+      "anatomyVersion": 1,
+      "saveVersion": 9,
+      "laneErrors": 0,
+      "rngUnchanged": true,
+      "organEnabled": false,
+      "enabled": false
+    },
+    {
+      "id": "legacy-fixtures/sandbox-anatomy-2.json",
+      "status": "PASS",
+      "networkEdges": 144,
+      "entities": 0,
+      "mode": "sandbox",
+      "positionErrors": 0,
+      "anatomyVersion": 2,
+      "saveVersion": 9,
+      "laneErrors": 0,
+      "rngUnchanged": true,
+      "organEnabled": false,
+      "enabled": false
+    },
+    {
+      "id": "legacy-fixtures/sandbox-anatomy-3.json",
+      "status": "PASS",
+      "networkEdges": 111,
+      "entities": 0,
+      "mode": "sandbox",
+      "positionErrors": 0,
+      "anatomyVersion": 3,
+      "saveVersion": 9,
+      "laneErrors": 0,
+      "rngUnchanged": true,
+      "organEnabled": false,
+      "enabled": false
+    },
+    {
+      "id": "legacy-fixtures/sandbox-anatomy-4.json",
+      "status": "PASS",
+      "networkEdges": 131,
+      "entities": 0,
+      "mode": "sandbox",
+      "positionErrors": 0,
+      "anatomyVersion": 4,
+      "saveVersion": 9,
+      "laneErrors": 0,
+      "rngUnchanged": true,
+      "organEnabled": false,
+      "enabled": false
+    },
+    {
+      "id": "legacy-fixtures/campaign-anatomy-4.json",
+      "status": "PASS",
+      "networkEdges": 0,
+      "entities": 0,
+      "mode": "campaign",
+      "positionErrors": 0,
+      "anatomyVersion": 4,
+      "saveVersion": 9,
+      "laneErrors": 0,
+      "rngUnchanged": true,
+      "organEnabled": false,
+      "enabled": false
+    },
+    {
+      "id": "new-fullbody-factory-save-step",
+      "status": "PASS",
+      "partialReason": "INCOMPLETE_FULLBODY_ORGAN_SET",
+      "steppedTime": 0.9999999999999999,
+      "saveVersion": 9,
+      "steppedTick": 10,
+      "restoredFlag": 1,
+      "oldEnableRejected": true,
+      "positionErrors": 0.0,
+      "laneErrors": 0,
+      "activeOrgans": [
+        "bladder",
+        "brain",
+        "heart",
+        "kidney_l",
+        "kidney_r",
+        "large_intestine",
+        "liver",
+        "lung_l",
+        "lung_r",
+        "pancreas",
+        "small_intestine",
+        "stomach"
+      ],
+      "edges": 202,
+      "oldReason": "UNSUPPORTED_STATE",
+      "snapshotFlag": 1,
+      "duplicateUnmodified": true,
+      "partialEnableRejected": true,
+      "partialUnmodified": true,
+      "duplicateEnableRejected": true,
+      "duplicateReason": "INVALID_FULLBODY_ORGAN_SET",
+      "campaignEnableRejected": true,
+      "campaignUnmodified": true,
+      "campaignReason": "UNSUPPORTED_STATE",
+      "newFlag": 1
+    }
+  ],
+  "saveVersion": 9,
+  "newFullbodyModeExplicitOptIn": true,
+  "legacyFixtureHashes": [
+    {
+      "mode": "sandbox",
+      "anatomyVersion": 1,
+      "file": "legacy-fixtures/sandbox-anatomy-1.json",
+      "sha256": "a3a4e482374e340e7c2e01b99fc37a11641b7da183879e84a23e5e9452baf25e"
+    },
+    {
+      "mode": "sandbox",
+      "anatomyVersion": 2,
+      "file": "legacy-fixtures/sandbox-anatomy-2.json",
+      "sha256": "117ff644f546aa9329b4a15d93a5a00d2df5c0d9d43115544075e34e5d4bdd98"
+    },
+    {
+      "mode": "sandbox",
+      "anatomyVersion": 3,
+      "file": "legacy-fixtures/sandbox-anatomy-3.json",
+      "sha256": "f161f4bf7c7ee3564f102b1f1209fa355982eb2f781d36a16979feb94c6f8ca5"
+    },
+    {
+      "mode": "sandbox",
+      "anatomyVersion": 4,
+      "file": "legacy-fixtures/sandbox-anatomy-4.json",
+      "sha256": "02c982d080cc6277493887f61bcb865c1dc923342d5e3bb85f4ad07834237c14"
+    },
+    {
+      "mode": "campaign",
+      "anatomyVersion": 4,
+      "file": "legacy-fixtures/campaign-anatomy-4.json",
+      "sha256": "f9dcb7c75d108a1a40dd34fc3f283f815cb1fdc27632f983676758d50c140e87"
+    }
+  ],
+  "inputHashes": {
+    "scripts/war/FullBodyBattlefield.lua": "46a9281dee121e56f5d233dc8e8180fee7b89ff1b20212d362a2530f88d41176",
+    "scripts/war/OrganBattlefield.lua": "ca36d24918c84abb7483ee837406415cb0b748331d2f43e60b622d0bf746c1da",
+    "scripts/war/OrganBattlefieldCore.lua": "41dc5346891a599ff16e7b19beb5390854f6b5cbf56fbc743a496582c08e1dd0",
+    "scripts/war/OrganBattlefieldData.lua": "047dce28da8aa19d893a9116258631cf71c039ecb44b7c63478d40043cd9c273",
+    "scripts/war/GastricBattlefield.lua": "789066936c29437cfcbc47490a7527288700e82c02b88b3e19458f69906b2b46",
+    "scripts/war/GastricBattlefieldData.lua": "81cbe1eedd29506a13fa19a7edd079d7f93b3eb58b4a9e4282e98277854b279d",
+    "scripts/war/OrganTrial.lua": "e11935c5029e54850dd3d23ad3e7fe5354c9b5f075925e49cb28c0ad31c5a632",
+    "scripts/war/OrganTraffic.lua": "1a697c02db73c8f43b051c0600ee271e89f6eb35bf02af1c7cd7d883399c2b39",
+    "scripts/war/GastricTraffic.lua": "d04b89128fedb033d67b9eef01a72f5c2733b5942a0e87656e00d9b883ee3e6d",
+    "scripts/war/Commands.lua": "b40d46c64a176fb5cdae65916073bd444c4be4c091f3249ff60487e8e1a28f83",
+    "scripts/war/Path.lua": "c8eb23b1f625faa494dfefeae9928efb055f51ae7637480b7e58ac1afd3d9cf3",
+    "scripts/war/Simulation.lua": "d2ac9af3594e5a41167f6d96b2e2b7b3b3ee9a9a756839d4f1586b5b2f4cc41b",
+    "scripts/war/CellCollision.lua": "60ca9d78278db42fb6043926547ff17eed33eacd03f3d5075935fc076cba6cd8",
+    "scripts/war/Motion.lua": "7fe39b4a715b5b0b5398e5ef7e6f0fe2bd8987e47359e6083d46a5db467829a5",
+    "scripts/war/Save.lua": "e02942109947e2a1741bb8f12a76051274ac7a43b12785478b2e9f0216e2c66e",
+    "scripts/war/World.lua": "285c2de577634a916aee0bf6cc15a7a6ad151b2d14b58b016c54a7c8a7637076",
+    "scripts/war/Vessels.lua": "f3446be1fccb99107b1322275ee4651d9d9b7c4aeb28a4ce36b3d1809d94c026",
+    "scripts/war/Data.lua": "65d658b9a07e038135a772f258fe8c0cd117408803187646d91d357835646778",
+    "scripts/war/Util.lua": "bd35c4e904854a00b98825fe2cc422eaa74d4f87308c8a336f25f9cd76131c0d"
+  }
+}

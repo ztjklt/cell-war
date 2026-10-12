@@ -1,0 +1,89 @@
+{
+  "status": "SCOPED_REVIEW_COMPLETE_WITH_OPEN_FAILURES",
+  "summary": {
+    "portTests": {
+      "total": 36,
+      "passed": 35
+    },
+    "tissueTests": {
+      "total": 72,
+      "passed": 68
+    },
+    "radiusNegativeTests": {
+      "total": 12,
+      "passed": 12
+    }
+  },
+  "productionInstalled": false,
+  "nativeEvidence": false,
+  "preview": "stopped; not restarted",
+  "browser": {
+    "viewportWidth": 319,
+    "checks": [
+      "summary matches report",
+      "failed left lung replay reaches 70 seconds",
+      "heart A* diagnostic displayed",
+      "siege tissue sample arrived",
+      "replan failure retains two retries",
+      "empty size group handled",
+      "playback advances and stops at recorded end",
+      "coverage heart displays 2/6 local size probes",
+      "no browser console errors observed"
+    ],
+    "screenshot": "clearance-browser.png"
+  },
+  "unresolved": [
+    {
+      "group": "portTests",
+      "id": "lung_l.entry.reverse",
+      "kind": "scout",
+      "reason": "movement did not arrive within 70 seconds",
+      "directSegmentClear": false,
+      "gridStartClear": true,
+      "gridGoalClear": true
+    },
+    {
+      "group": "tissueTests",
+      "id": "heart.forward",
+      "kind": "scout",
+      "reason": "actual A* failed",
+      "directSegmentClear": true,
+      "gridStartClear": true,
+      "gridGoalClear": false
+    },
+    {
+      "group": "tissueTests",
+      "id": "heart.reverse",
+      "kind": "scout",
+      "reason": "actual A* failed",
+      "directSegmentClear": true,
+      "gridStartClear": false,
+      "gridGoalClear": true
+    },
+    {
+      "group": "tissueTests",
+      "id": "heart.forward",
+      "kind": "worker",
+      "reason": "actual A* failed",
+      "directSegmentClear": true,
+      "gridStartClear": true,
+      "gridGoalClear": false
+    },
+    {
+      "group": "tissueTests",
+      "id": "heart.reverse",
+      "kind": "worker",
+      "reason": "actual A* failed",
+      "directSegmentClear": true,
+      "gridStartClear": false,
+      "gridGoalClear": true
+    }
+  ],
+  "hashes": {
+    "clearance-evidence/report.json": "45ac52c38ff74232058adef8694ee93158bd264b11e553fba772aeff963cd23e",
+    "clearance.html": "183144566d5fea1fd274d893ed3f85d81d81d8b27a5a5fc9a8fa301fdd3f4fd5",
+    "clearance.js": "7f6f2716aa5f70f04318dfd3bf1fd0dc0b38259ec94f7f09d9aa15d78dcb7d6b",
+    "whole-body-progress.json": "ce2f26f86a824a70f91e41786cbaa44535b58fb50f890d17c66a1eb6c74582f8"
+  },
+  "note": "12/12 negative tests are geometric radius checks. Four geometric center points also fail existing vessel walls; pointFits records this separately. No full-organ connectivity or native acceptance."
+}

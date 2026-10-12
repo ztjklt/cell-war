@@ -1,0 +1,60 @@
+{
+  "schema": "gastric-battlefield-qa-plan/v1",
+  "status": "WAITING_FOR_FINAL_PRODUCTION_INTERFACE",
+  "nativeEvidence": false,
+  "runtimeScope": "actual production World/Path/Commands/CellCollision/Workers/Simulation; no attachForTest or ReferenceVessels injection",
+  "checks": [
+    {
+      "id": "source-lock",
+      "requirement": "Original source picture, final graph, two original membrane centers and food passage remain frozen."
+    },
+    {
+      "id": "full-disk",
+      "requirement": "Every approved room center/door/rally fits scout and siege full collider; near-wall centers reject when disk crosses outer/food/new interior/blood walls."
+    },
+    {
+      "id": "swept-wall",
+      "requirement": "Whole displacement capsules cannot tunnel across walls, cut corners or enter food, including large dt attempts."
+    },
+    {
+      "id": "all-rooms",
+      "requirement": "Real Commands move from rally to each room and back, scout and siege, all recorded substeps independently legal."
+    },
+    {
+      "id": "food-target",
+      "requirement": "Commands/Path reject exact food destinations without nearest-floor silent coercion into a different room."
+    },
+    {
+      "id": "fixed-membranes",
+      "requirement": "Both fixed blood/tissue membranes allow both directions for scout and siege; non-membrane vessel walls remain sealed."
+    },
+    {
+      "id": "mixed-meeting",
+      "requirement": "Opposite scout/siege and siege/siege requests complete in real production movement without disk overlaps, deadlock or blocking exit."
+    },
+    {
+      "id": "multiselect",
+      "requirement": "6+ mixed units receive distinct safe production destinations, finish without overlap or parking in membrane/room door clearance."
+    },
+    {
+      "id": "projection-dpr",
+      "requirement": "Actual View projection/unprojection at .085/.115/.15/.18 and DPR1/2/3 does not move collision, walls, ports or unit coordinates."
+    },
+    {
+      "id": "save",
+      "requirement": "Snapshot/restore retain active gastric gameplay state and exact unit positions/lanes while legacy anatomy1/2/3 and defaultv4 paths stay equivalent to baseline."
+    },
+    {
+      "id": "regressions",
+      "requirement": "ReferenceAcceptance17/17, BattleHUDAcceptance66/66, ZoomAcceptance5/5 remain at captured baseline."
+    }
+  ],
+  "evidenceRequirements": [
+    "Input hashes and production interfaces",
+    "Per-route actual Motion.record substeps plus per-frame endpoint capture",
+    "Independent source-geometry disk/capsule oracle",
+    "Real multi-unit separation and arrival records",
+    "No browser-only movement presented as actual gameplay",
+    "Native preview stopped; native evidence remains UNDETERMINED"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "organ-atlas-native-probe-isolated-selftest/v1",
+  "status": "PASS",
+  "nativeEvidence": false,
+  "scope": "Isolated Lua5.4 mock callbacks/APIs only. No Runtime controlled, framebuffer captured, or native image measured.",
+  "checks": [
+    "opt-in-disabled has no effects",
+    "isolated receiver preserves main receiver",
+    "R.draw return preserved",
+    "24 positive 16x16 handles remain LOADING_PLACEHOLDER",
+    "all24 exact authored dimensions MEASURED",
+    "expected pixelSize absent remains UNDETERMINED",
+    "dimension binding failure remains UNDETERMINED",
+    "invalid dimensions FAIL",
+    "warmup and screenshot frames excluded",
+    "unfocused samples excluded",
+    "visible background screenshot allowed with focus metadata",
+    "modal screenshot rejected",
+    "TakeScreenShot false remains UNDETERMINED",
+    "File open rejection retained accurately",
+    "state/time untouched",
+    "expected-release rejects remaining handles",
+    "expected-release zero handles observed",
+    "active trial missing resources fails",
+    "lifecycle intermediates observational",
+    "finish restores wrappers and presentation"
+  ],
+  "probeSha256": "c614158979f686e2a019e8a0b6d2ada3529661f89301a7d0d292fd05ee05b4ce",
+  "postExecutionChanges": "Optional metadata read uses rawget; final focused resource test re-executed. Full callback test remains attributed to testedFullCallbackProbeSha256.",
+  "testedFullCallbackProbeSha256": "fc0c9ffc87cb250124b68e9258710b6d0dcf3eeb72e323dbcd43e10619b25562",
+  "finalFocusedResourceProbeSha256": "c614158979f686e2a019e8a0b6d2ada3529661f89301a7d0d292fd05ee05b4ce"
+}

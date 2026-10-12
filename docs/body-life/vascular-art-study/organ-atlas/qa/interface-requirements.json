@@ -1,0 +1,106 @@
+{
+  "authoring": {
+    "membranes": [
+      "id",
+      "organId",
+      "edgeId",
+      "laneIndex",
+      "pipeAnchorSource",
+      "tissueAnchorSource",
+      "rawThroatRings",
+      "throatRings"
+    ],
+    "ports": "All frozen ports, exact original source coordinates, original edge IDs",
+    "rawDomains": [
+      "outerRings",
+      "tissueRings",
+      "foodAirUrineRings",
+      "wallRings",
+      "reservedLocalFeatures[].rawRings"
+    ],
+    "sourceTransform": {
+      "oy": 512,
+      "sx": 2,
+      "sy": 2
+    },
+    "unavailable": "Missing safe access is explicitly unavailable, never accepted from artwork alone"
+  },
+  "evidence": {
+    "fail": "An observed production behavior violates its explicit contract",
+    "nativeEvidence": false,
+    "pass": "Exact independent geometry or actual named production API succeeded",
+    "undetermined": "Interface/input/native evidence missing or tested hashes changed"
+  },
+  "forbiddenQaSubstitutions": [
+    "attachForTest",
+    "package.loaded ReferenceVessels replacement",
+    "JS movement",
+    "QA-only route/controller",
+    "teleport completion"
+  ],
+  "production": {
+    "activation": {
+      "anatomyVersion": 4,
+      "organBattlefieldIds": [
+        "brain",
+        "lung_r",
+        "lung_l",
+        "liver",
+        "stomach",
+        "pancreas",
+        "kidney_r",
+        "kidney_l",
+        "large_intestine",
+        "small_intestine",
+        "bladder",
+        "heart"
+      ],
+      "organBattlefieldVersion": 1
+    },
+    "facade": "war.OrganBattlefield",
+    "factory": "war.OrganTrial.new(seed, organIds)",
+    "movement": [
+      "war.Commands.spawn",
+      "war.Commands.execute",
+      "war.Simulation.step",
+      "war.Motion.record (read-only observation)"
+    ],
+    "requiredExports": [
+      "enabled",
+      "enable",
+      "pointAllowed",
+      "sweep",
+      "lane",
+      "beginRoute",
+      "resumeRoute",
+      "cancelRoute",
+      "projectTarget",
+      "formation",
+      "organAt",
+      "activeOrgans",
+      "trafficData"
+    ],
+    "transit": "e.gastricTransit={gateId,fromLane,toLane}; no implicit layer change"
+  },
+  "render": {
+    "artLifecycle": [
+      "prepare(vg)",
+      "release(vg)"
+    ],
+    "dprs": [
+      1,
+      2,
+      3
+    ],
+    "entry": "Actual war.Render.draw",
+    "resources": "Per-context image handles and exact crop source bounds; separate image/mask hashes",
+    "zooms": [
+      0.085,
+      0.115,
+      0.149,
+      0.15,
+      0.18
+    ]
+  },
+  "schema": "organ-atlas-independent-qa-interfaces/v1"
+}

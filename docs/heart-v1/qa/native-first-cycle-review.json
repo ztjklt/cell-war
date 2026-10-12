@@ -1,0 +1,77 @@
+{
+  "schema": "heart-native-v2-first-cycle-review/v1",
+  "nativeEvidence": true,
+  "checks": [
+    {
+      "name": "9 view phases completed with all external acknowledgements",
+      "passed": true
+    },
+    {
+      "name": "9 phases share safe384trianglemesh and18 fixed sections",
+      "passed": true
+    },
+    {
+      "name": "fullbody simulation and visibility stayed unchanged during views",
+      "passed": true
+    },
+    {
+      "name": "two live contexts retained84registeredresources",
+      "passed": true
+    },
+    {
+      "name": "real1xnativecommands completed8cases",
+      "passed": true
+    },
+    {
+      "name": "tricuspid visited its authored passage",
+      "passed": true
+    },
+    {
+      "name": "pulmonary visited its authored passage",
+      "passed": true
+    },
+    {
+      "name": "mitral visited its authored passage",
+      "passed": true
+    },
+    {
+      "name": "aortic visited its authored passage",
+      "passed": true
+    },
+    {
+      "name": "systemic_return visited its authored passage",
+      "passed": true
+    },
+    {
+      "name": "pulmonary_return_l visited its authored passage",
+      "passed": true
+    },
+    {
+      "name": "all4nativechambers recorded real50damage",
+      "passed": true
+    },
+    {
+      "name": "native septum stops crosswall sweep and damage",
+      "passed": true
+    },
+    {
+      "name": "25exactwindowPNGs retainrecordedSHA",
+      "passed": true
+    }
+  ],
+  "passed": 14,
+  "total": 14,
+  "visualGameplayStatus": "PASS",
+  "performanceStatus": "FAIL",
+  "overallStatus": "PERFORMANCE_OPTIMIZATION_PENDING",
+  "physicalWidth": 2498,
+  "physicalHeight": 1404,
+  "dpr": 2,
+  "notes": [
+    "Source actor positions are fixture-only; commands and normal main Update supplied movement at 1x.",
+    "Gameplay captures were sometimes subject to the normal30FPS inactive-window cap; separate ABBA explicitly measured continuous motion at inactive60FPS.",
+    "The default HUD partly covers the .15 combat capture; a .09 repeat will improve all-four-center visibility.",
+    "CLI preview check reports existing missing3D Cube/Day/DaySpecularHDR_QualityLow.dds; this2D acceptance uses the recorded exact native window.",
+    "CPU ratio failure remains FAIL and is not hidden by the stable frame pacing."
+  ]
+}

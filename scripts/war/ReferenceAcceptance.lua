@@ -9,10 +9,10 @@ function Q.run()
   x,y=M.source(x,y);assert(x==512 and y==768)
   assert(#M.organs==12 and not M.byId.spleen and not M.byId.mouth)
   for _,o in ipairs(M.organs) do assert(M.contains(M.outline,o.x,o.y),o.id) end
-  for _,p in ipairs({{512,60},{201,865},{248,859},{792,869},{330,1463},{398,1483},{685,1463},{628,1485}}) do local wx,wy=M.world(p[1],p[2]);assert(M.contains(M.outline,wx,wy),'lost finger/toe '..p[1]) end
+  for _,p in ipairs({{509,60},{173,873},{229,864},{840,873},{334,1473},{393,1483},{678,1473},{615,1483}}) do local wx,wy=M.world(p[1],p[2]);assert(M.contains(M.outline,wx,wy),'lost finger/toe '..p[1]) end
  end)
  test('新开局为气管守卫，八名守卫都在合法气管格内',function()
-  for _,seed in ipairs({1,73,2026}) do local s=S.new(seed);assert(s.version==8 and s.anatomyVersion==3 and s.campaign.event.id=='trachea' and s.campaign.terrainVersion==3)
+  for _,seed in ipairs({1,73,2026}) do local s=S.new(seed);assert(s.version==9 and s.anatomyVersion==4 and s.campaign.event.id=='trachea' and s.campaign.terrainVersion==4)
    local count=0;for _,e in pairs(s.entities) do count=count+1;assert(e.faction==1 and W.land(s,math.floor(e.x),math.floor(e.y)) and e.vesselLane==0) end
    assert(count==8 and next(s.resources)==nil and #W.vessels(s).edges==0 and #G.airways==15)
    for _,z in ipairs(G.zones) do assert(T.zone(z.x,z.y,s) and W.land(s,z.x,z.y)) end
@@ -72,14 +72,28 @@ function Q.run()
   local reward=s.factions[1].stock.relic;Camp.succeed(s);assert(reward==1 and s.factions[1].stock.relic==reward)
   assert(not Camp.start(s,'lungs') and #Camp.randomCandidates(s)==0)
  end)
- test('移动中v8读档、失败重试及旧v7鼻腔检查点保持各自几何',function()
+ test('移动中v9读档、失败重试及旧v7鼻腔检查点保持各自几何',function()
   local s=S.new(73);local e=s.entities[next(s.entities)]
   C.execute(s,{kind='move',faction=1,ids={e.id},x=G.entry.x,y=G.entry.y});for _=1,50 do S.step(s,.1) end
-  local q=Save.restore(Save.snapshot(s));assert(q.anatomyVersion==3 and q.entities[e.id].x==e.x and q.entities[e.id].y==e.y and #q.entities[e.id].orders==1)
+  local q=Save.restore(Save.snapshot(s));assert(q.anatomyVersion==4 and q.entities[e.id].x==e.x and q.entities[e.id].y==e.y and #q.entities[e.id].orders==1)
   Camp.fail(q);q=Camp.retry(q);assert(q.time==0 and q.campaign.event.id=='trachea' and q.campaign.event.status=='active')
   local old=S.new(73,'campaign',2);local snap=Save.snapshot(old);snap.version=7;snap.campaign.checkpoint.version=7
   q=Save.restore(snap);assert(q.anatomyVersion==2 and q.campaign.event.id=='nasal' and #W.vessels(q).edges==12)
   Camp.fail(q);q=Camp.retry(q);assert(q.campaign.event.id=='nasal' and q.time==0)
+ end)
+ test('旧v8气管记录与沙盒沿用原图、原战场和原位置',function()
+  local Old=require('war.LegacyTracheaTerrainV3');local OldMap=require('war.LegacyReferenceMapV3')
+  for _,mode in ipairs({'campaign','sandbox'}) do
+   local old=S.new(73,mode,3);local snap=Save.snapshot(old);snap.version=8
+   if snap.campaign then snap.campaign.checkpoint.version=8 end
+   local e=old.entities[next(old.entities)];local q=Save.restore(snap)
+   assert(q.anatomyVersion==3 and q.entities[e.id].x==e.x and q.entities[e.id].y==e.y)
+   assert(require('war.ReferenceMaps').forState(q)==OldMap and OldMap.reference:find('reference%-v3'))
+   if mode=='campaign' then
+    assert(require('war.CampaignData').forState(q)==Old and Old.bounds.y==880 and G.bounds.y==828)
+    Camp.fail(q);q=Camp.retry(q);assert(q.anatomyVersion==3 and q.campaign.terrainVersion==3)
+   else assert(W.vessels(q).version==3 and W.starts(q)==OldMap.starts) end
+  end
  end)
  test('沙盒出生区可建设和采集，AI使用新的阵营出生点',function()
   local s=S.new(73,'sandbox');for i,b in ipairs(W.starts(s)) do
@@ -93,7 +107,7 @@ function Q.run()
   require('war.AI').think(s,2)
  end)
  test('三次血管曲线与采样一致、交叉不允许换道',function()
-  local s=W.generate(73);W.rebuild(s);local net=W.vessels(s);assert(net.version==3 and #net.edges>80)
+  local s=W.generate(73);W.rebuild(s);local net=W.vessels(s);assert(net.version==4 and #net.edges>80)
   local checked=0
   for id,e in ipairs(net.edges) do
    for _,p in ipairs(e.points) do assert(M.contains(M.outline,p[1],p[2]),'vessel exits body: '..e.name) end

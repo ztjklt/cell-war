@@ -1,0 +1,4652 @@
+{
+  "schema": "fullbody-third-repair-logical-baseline/v1",
+  "baselineCaptureManifestSha256": "ccc8e18ee68bd53863c43084ac710e1aa0644d7a818d1a197de0101a34667e14",
+  "compilerBaselinePath": "docs/body-life/vascular-art-study/fullbody-015/bake/third-repair/baseline-native003.json",
+  "compilerBaselineSha256": "4713f3efff828898b80cc2fc625027d8b571bfe2bf9d0f922656074437291fe2",
+  "graphSha256": "3890744e2fcaf9e9907c85513e170e479f67b7fbb1fbf06385ac02bd80e8550c",
+  "quietBaseSha256": "ef4cb61f0a4013a5f23ddbc8a23a3de54f43a333d664c5397349e6d45c8c3a47",
+  "edges": [
+    {
+      "id": "e001",
+      "a": "heart.v",
+      "b": "right_heart",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "6d38e096975f316266e5e0bc75315957be36f1d1311808a313383cfd974aaf59",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e002",
+      "a": "right_heart",
+      "b": "pulmonary_trunk",
+      "system": "artery",
+      "widthSource": 4,
+      "sourceSampleSha256": "37ec4ed61b2980b658f6bf6abe9fcfa708c18414543d7a0c8d33a44ae9ba0dc5",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e003",
+      "a": "pulmonary_trunk",
+      "b": "lung_r.entry",
+      "system": "artery",
+      "widthSource": 4,
+      "sourceSampleSha256": "8977b2913d97759e56f09e837b4825c9a7a166caa3384ffdaa47302da65d04ad",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 11.604491616013915,
+          "endDistance": 25.71973541745143,
+          "sourceStart": [
+            498.58473382176203,
+            356.95854493966266
+          ],
+          "sourceEnd": [
+            487.00169377882787,
+            364.48330724639226
+          ],
+          "foregroundIds": [
+            "air.right"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e004",
+      "a": "lung_r.a",
+      "b": "lung_r.v",
+      "system": "capillary",
+      "widthSource": 4,
+      "sourceSampleSha256": "076247fe2c539c9b6ce78979f85c1155be756f8a085020d2f18e83e9b1e4c889",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.0,
+          "endDistance": 4.2160342928947525,
+          "sourceStart": [
+            439.0,
+            350.0
+          ],
+          "sourceEnd": [
+            435.5501319369119,
+            352.3488865225266
+          ],
+          "foregroundIds": [
+            "lung_r.reserved",
+            "reference.airway-foreground"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 15.602689647327761,
+          "endDistance": 26.88523056222194,
+          "sourceStart": [
+            430.2087617858521,
+            362.3165099268819
+          ],
+          "sourceEnd": [
+            427.3264729551034,
+            373.2161508712168
+          ],
+          "foregroundIds": [
+            "lung_r.reserved",
+            "reference.airway-foreground"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 46.3716350473517,
+          "endDistance": 58.4285429990402,
+          "sourceStart": [
+            424.8466443074274,
+            392.5272982284928
+          ],
+          "sourceEnd": [
+            424.83217581222976,
+            404.58
+          ],
+          "foregroundIds": [
+            "lung_r.reserved",
+            "reference.airway-foreground"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 65.61131774427281,
+          "endDistance": 82.39698908510793,
+          "sourceStart": [
+            425.39699305343504,
+            411.739028483291
+          ],
+          "sourceEnd": [
+            430.2463502750872,
+            427.62740101451925
+          ],
+          "foregroundIds": [
+            "lung_r.reserved",
+            "reference.airway-foreground"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e005",
+      "a": "lung_r.exit",
+      "b": "left_heart",
+      "system": "vein",
+      "widthSource": 4,
+      "sourceSampleSha256": "9f3740c382aaf2cfbb93551d3d90334adfde67847b438ada97f700f3ae83a776",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 92.15827265150841,
+          "endDistance": 95.00732490003178,
+          "sourceStart": [
+            536.6870480677178,
+            424.5283702648465
+          ],
+          "sourceEnd": [
+            538.0,
+            422.0
+          ],
+          "foregroundIds": [
+            "food.esophagus",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e006",
+      "a": "pulmonary_trunk",
+      "b": "lung_l.entry",
+      "system": "artery",
+      "widthSource": 4,
+      "sourceSampleSha256": "ca1d61f8436db9953d86e3cbd5cd66545e1558620266484021da281cdb44116a",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 12.487744860950764,
+          "endDistance": 40.25069197238155,
+          "sourceStart": [
+            522.405442683283,
+            356.25533982220827
+          ],
+          "sourceEnd": [
+            541.4487996080353,
+            374.0489955903969
+          ],
+          "foregroundIds": [
+            "food.esophagus",
+            "air.left",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e007",
+      "a": "lung_l.a",
+      "b": "lung_l.v",
+      "system": "capillary",
+      "widthSource": 4,
+      "sourceSampleSha256": "257b5d2a26a3f9fec6264ddedc566b33c77c9df76d4541f6afd0212c1cf86eb8",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.0,
+          "endDistance": 3.0376309064805693,
+          "sourceStart": [
+            580.0,
+            350.0
+          ],
+          "sourceEnd": [
+            582.5764476669071,
+            351.57230939785313
+          ],
+          "foregroundIds": [
+            "lung_l.reserved",
+            "reference.airway-foreground"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 14.522320005041648,
+          "endDistance": 27.077561008420762,
+          "sourceStart": [
+            588.2316764610376,
+            361.4395757098766
+          ],
+          "sourceEnd": [
+            591.3913579880383,
+            373.58
+          ],
+          "foregroundIds": [
+            "lung_l.reserved",
+            "reference.airway-foreground"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 46.154034863066876,
+          "endDistance": 59.39120445244654,
+          "sourceStart": [
+            594.3716881370899,
+            392.42
+          ],
+          "sourceEnd": [
+            596.1032622057144,
+            405.54137583490706
+          ],
+          "foregroundIds": [
+            "lung_l.reserved",
+            "reference.airway-foreground"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 69.58204755346853,
+          "endDistance": 85.08418836360325,
+          "sourceStart": [
+            596.5651257966065,
+            415.716323395829
+          ],
+          "sourceEnd": [
+            592.0,
+            430.0
+          ],
+          "foregroundIds": [
+            "lung_l.reserved",
+            "reference.airway-foreground"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e008",
+      "a": "lung_l.exit",
+      "b": "left_heart",
+      "system": "vein",
+      "widthSource": 4,
+      "sourceSampleSha256": "473db978699e1367227fad22554ecb4dd60b7762e67997565329ef176acb6bcc",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.0,
+          "endDistance": 10.021854775600776,
+          "sourceStart": [
+            545.0,
+            414.0
+          ],
+          "sourceEnd": [
+            547.2245931725187,
+            423.2156239001438
+          ],
+          "foregroundIds": [
+            "food.esophagus",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 28.397100511546498,
+          "endDistance": 41.54828866300715,
+          "sourceStart": [
+            546.8116780171331,
+            431.497108035636
+          ],
+          "sourceEnd": [
+            538.0,
+            422.0
+          ],
+          "foregroundIds": [
+            "food.esophagus",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e009",
+      "a": "arch",
+      "b": "aorta_upper",
+      "system": "artery",
+      "widthSource": 7,
+      "sourceSampleSha256": "3826fb641c98778f943285ba7d73a83e0de94112c3144cd4c398a15da2e601d6",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.0,
+          "endDistance": 65.45144630083608,
+          "sourceStart": [
+            514.0,
+            341.0
+          ],
+          "sourceEnd": [
+            547.3476922388516,
+            396.1014478209906
+          ],
+          "foregroundIds": [
+            "food.esophagus",
+            "air.trachea",
+            "air.left",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 125.26022575567937,
+          "endDistance": 149.98132520022375,
+          "sourceStart": [
+            547.2094541927046,
+            453.57906112870836
+          ],
+          "sourceEnd": [
+            531.3606425581122,
+            472.24066214563976
+          ],
+          "foregroundIds": [
+            "food.esophagus",
+            "food.stomach",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e010",
+      "a": "aorta_upper",
+      "b": "aorta_mid",
+      "system": "artery",
+      "widthSource": 7,
+      "sourceSampleSha256": "10a3b602ee8c3d89414b6381a294984e50ff96d0399b6682df7b1905c7e7dae5",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 63.17346796224356,
+          "endDistance": 77.63845473078702,
+          "sourceStart": [
+            515.3966854204524,
+            543.3400752699345
+          ],
+          "sourceEnd": [
+            515.0239021979189,
+            557.7999262723039
+          ],
+          "foregroundIds": [
+            "food.stomach",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 100.73031125960165,
+          "endDistance": 101.83949605769266,
+          "sourceStart": [
+            514.9817027873424,
+            580.890966552427
+          ],
+          "sourceEnd": [
+            515.0,
+            582.0
+          ],
+          "foregroundIds": [
+            "pancreas.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e011",
+      "a": "aorta_mid",
+      "b": "aorta_abd",
+      "system": "artery",
+      "widthSource": 7,
+      "sourceSampleSha256": "7b3f94a0fe5f1a82424a9a847c18db1606312adad9dfe4dce10cbbd9bccc8257",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.0,
+          "endDistance": 7.8513925015968855,
+          "sourceStart": [
+            515.0,
+            582.0
+          ],
+          "sourceEnd": [
+            515.2962851961296,
+            589.8454712720785
+          ],
+          "foregroundIds": [
+            "pancreas.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 30.713609215727363,
+          "endDistance": 45.2063236471789,
+          "sourceStart": [
+            516.7310083559412,
+            612.6623741192388
+          ],
+          "sourceEnd": [
+            517.6459873188321,
+            627.1261009107754
+          ],
+          "foregroundIds": [
+            "food.duodenum",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 48.56718268242922,
+          "endDistance": 53.08841010527424,
+          "sourceStart": [
+            517.8212062640109,
+            630.4823812339907
+          ],
+          "sourceEnd": [
+            518.0,
+            635.0
+          ],
+          "foregroundIds": [
+            "food.colon",
+            "large_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e012",
+      "a": "aorta_abd",
+      "b": "iliac.a",
+      "system": "artery",
+      "widthSource": 7,
+      "sourceSampleSha256": "d7ffe39e9b515395e5872ae3dc178ff5b6af50784ba34e4da16b2f57b1fd68ec",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.0,
+          "endDistance": 9.784462333503042,
+          "sourceStart": [
+            518.0,
+            635.0
+          ],
+          "sourceEnd": [
+            518.2340230442534,
+            644.7816358240159
+          ],
+          "foregroundIds": [
+            "food.colon",
+            "large_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 14.497772750636674,
+          "endDistance": 38.90026795105959,
+          "sourceStart": [
+            518.3189636081514,
+            649.4941778818725
+          ],
+          "sourceEnd": [
+            518.3634437643174,
+            673.895420064098
+          ],
+          "foregroundIds": [
+            "food.connector",
+            "food.small",
+            "small_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 42.90334197676071,
+          "endDistance": 55.42634624910263,
+          "sourceStart": [
+            518.2565080732578,
+            677.8970294938025
+          ],
+          "sourceEnd": [
+            517.0870200800391,
+            690.3548820348526
+          ],
+          "foregroundIds": [
+            "food.small",
+            "small_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 57.51712158095283,
+          "endDistance": 70.86930140777189,
+          "sourceStart": [
+            516.7545023007679,
+            692.4190382107436
+          ],
+          "sourceEnd": [
+            514.3725629640477,
+            705.556758882047
+          ],
+          "foregroundIds": [
+            "food.small",
+            "small_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 76.65952177337567,
+          "endDistance": 89.35786841177737,
+          "sourceStart": [
+            513.308405984554,
+            711.248345542659
+          ],
+          "sourceEnd": [
+            511.763998381508,
+            723.8271505735266
+          ],
+          "foregroundIds": [
+            "food.small",
+            "small_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 109.71778322516852,
+          "endDistance": 113.08089279269576,
+          "sourceStart": [
+            510.6060714008134,
+            744.0719480617724
+          ],
+          "sourceEnd": [
+            509.0,
+            747.0
+          ],
+          "foregroundIds": [
+            "bladder.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e013",
+      "a": "iliac.v",
+      "b": "cava_abdominal",
+      "system": "vein",
+      "widthSource": 7,
+      "sourceSampleSha256": "e720abe8b259bafbf86a7a831e36c731145d8c06f4b9a2a60bdff42d037ecdb8",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.0,
+          "endDistance": 20.241673564511476,
+          "sourceStart": [
+            509.0,
+            763.0
+          ],
+          "sourceEnd": [
+            499.5758999063457,
+            745.2100265385615
+          ],
+          "foregroundIds": [
+            "urine.bl_left",
+            "bladder.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 49.518397211186915,
+          "endDistance": 62.01607307520863,
+          "sourceStart": [
+            486.13322822845373,
+            719.4673700540841
+          ],
+          "sourceEnd": [
+            483.5487110820884,
+            707.241704704048
+          ],
+          "foregroundIds": [
+            "food.small",
+            "small_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 62.58785153132646,
+          "endDistance": 95.81779165452363,
+          "sourceStart": [
+            483.4453530496615,
+            706.6793457226238
+          ],
+          "sourceEnd": [
+            478.89754158916617,
+            673.7732422998743
+          ],
+          "foregroundIds": [
+            "food.small",
+            "small_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 96.48498793307674,
+          "endDistance": 108.47579144655552,
+          "sourceStart": [
+            478.84709267730085,
+            673.1079566755284
+          ],
+          "sourceEnd": [
+            478.22770761161934,
+            661.1337118096602
+          ],
+          "foregroundIds": [
+            "food.connector",
+            "food.small",
+            "small_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 122.25075705430376,
+          "endDistance": 136.88270441701877,
+          "sourceStart": [
+            477.79314669988673,
+            647.3656905106714
+          ],
+          "sourceEnd": [
+            477.46472191395884,
+            632.737456935039
+          ],
+          "foregroundIds": [
+            "food.colon",
+            "large_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 150.1007278182985,
+          "endDistance": 166.62383921253013,
+          "sourceStart": [
+            477.23524989568483,
+            619.5214334278348
+          ],
+          "sourceEnd": [
+            477.0,
+            603.0
+          ],
+          "foregroundIds": [
+            "food.duodenum",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e014",
+      "a": "cava_abdominal",
+      "b": "cava_upper",
+      "system": "vein",
+      "widthSource": 7,
+      "sourceSampleSha256": "6b623c97781d97f8f319964185dba98fc14733c11419892303cb8aabb0467350",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.0,
+          "endDistance": 14.388834458055284,
+          "sourceStart": [
+            477.0,
+            603.0
+          ],
+          "sourceEnd": [
+            476.9318727404426,
+            588.6114277806201
+          ],
+          "foregroundIds": [
+            "food.duodenum",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 26.810213840636727,
+          "endDistance": 51.73975503311313,
+          "sourceStart": [
+            476.95193454749995,
+            576.1900683649068
+          ],
+          "sourceEnd": [
+            477.02411556403297,
+            551.2606531064725
+          ],
+          "foregroundIds": [
+            "food.duodenum",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e015",
+      "a": "cava_upper",
+      "b": "heart.v",
+      "system": "vein",
+      "widthSource": 7,
+      "sourceSampleSha256": "493ea44ed77b79d08d99539e9285d7282959a76969c1ff2a51399269ad91b531",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e016",
+      "a": "head_r.a",
+      "b": "brain_r.entry",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "48f234912fb9ce570c2fb2bb9c39980d82d6433592d7e55ad71fe1e417e25189",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e017",
+      "a": "head_r.v",
+      "b": "heart.v",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "113b054966a083538342d4e57284ee8fc7aca69bcefb847bc73ca52f151ebccc",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 214.44977616950106,
+          "endDistance": 226.3639177624496,
+          "sourceStart": [
+            485.76748245451466,
+            353.5333498008594
+          ],
+          "sourceEnd": [
+            484.58985956626685,
+            365.38829561484727
+          ],
+          "foregroundIds": [
+            "air.right"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e018",
+      "a": "shoulder_r.a",
+      "b": "wrist_r.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "4399f602c36aa4e3cbcb1e1e42d8425b5f882503e52b2970f68748fcb07b6de2",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e019",
+      "a": "wrist_r.v",
+      "b": "elbow_r.v",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "b57e455109eaaa3d5deed362501774ae62385ff16da180acc1459ababbc9fbe2",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e020",
+      "a": "elbow_r.v",
+      "b": "armfork_r.v",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "3f7e292f92675d7b490ad6de26ec671a6a96f42cfdfe2acc264795c136d33522",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e021",
+      "a": "armfork_r.v",
+      "b": "shoulder_r.v",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "d77e61b1257fb5d4fa7368622d6eb9b7345f94370af8ecd99adba1feb7248809",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e022",
+      "a": "shoulder_r.v",
+      "b": "heart.v",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "870cd154398dab36f68ed4ae87e3ceca347e1b082ed301d8a65701c6c60edd0c",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 107.02626529669827,
+          "endDistance": 117.06633362669764,
+          "sourceStart": [
+            478.91231934565326,
+            357.7770222015831
+          ],
+          "sourceEnd": [
+            481.0325465171466,
+            367.5904417881122
+          ],
+          "foregroundIds": [
+            "air.right"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e023",
+      "a": "wrist_r.a",
+      "b": "r.finger1.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "c19cc66f9ccde33f63efc01e292ff2a4ce6df1cac3370f86046d2657f5a13243",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e024",
+      "a": "r.finger1.a",
+      "b": "r.finger1.v",
+      "system": "capillary",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "821b769950fc0f68317ba70c05b43d549d1b7d119afcc0d9ae4aa6153d860992",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e025",
+      "a": "r.finger1.v",
+      "b": "wrist_r.v",
+      "system": "vein",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "34931be65f899073d5f0afefb2fc87a1a73479590f717d57bf9ac4070bd733c8",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e026",
+      "a": "wrist_r.a",
+      "b": "r.finger2.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "49a6b85843730bc032a5519b131e9da04a536deec8ca4fb01f69ff71a6e2c13b",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e027",
+      "a": "r.finger2.a",
+      "b": "r.finger2.v",
+      "system": "capillary",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "118bcc8a3670185de0e704388ba37a1dbad8a896b91e682ab6f6344531634bed",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e028",
+      "a": "r.finger2.v",
+      "b": "wrist_r.v",
+      "system": "vein",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "e3762011c4124a4b1107aad20f89394fca3b6780baab020186aa38872dd9ea77",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e029",
+      "a": "wrist_r.a",
+      "b": "r.finger3.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "a5ed1e6f1be4050b2e1a00d5eba71c25e9a435afcebded08074cd1cf25635c37",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e030",
+      "a": "r.finger3.a",
+      "b": "r.finger3.v",
+      "system": "capillary",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "1377335d267816887f909bda85ca1a2134a07a143f49cdfb4cffc7f260864602",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e031",
+      "a": "r.finger3.v",
+      "b": "wrist_r.v",
+      "system": "vein",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "dbe44d5ccacdf316525076ded85e4f981ee3037372c8545a42ef2bb407c0fd27",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e032",
+      "a": "wrist_r.a",
+      "b": "r.finger4.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "f56be8ebca4151109609b1fcceb1a5b57b44ba92587671f269a68a2414d28f19",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e033",
+      "a": "r.finger4.a",
+      "b": "r.finger4.v",
+      "system": "capillary",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "470855ddc9a4ce6eb3e049f0fd519df523d85e5234651e078d69c3dcbc5aaa3b",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e034",
+      "a": "r.finger4.v",
+      "b": "wrist_r.v",
+      "system": "vein",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "83ee775048cf18bc82b08150e758af7b0f69c92720ed37cd03bd66a9ec4488e2",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e035",
+      "a": "wrist_r.a",
+      "b": "r.finger5.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "f25e732ff048601580253ad7564484107080d8c0b78aed2be13d1e745b3e35a8",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e036",
+      "a": "r.finger5.a",
+      "b": "r.finger5.v",
+      "system": "capillary",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "294302920b565fb3b9d50139b5d33953f0ffb271bfa81d195d3a68a02ff1ce2f",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e037",
+      "a": "r.finger5.v",
+      "b": "wrist_r.v",
+      "system": "vein",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "76afcbcef32329d442aec265d72db451d6f463c7002f43336a939b8e02a460ec",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e038",
+      "a": "iliac.a",
+      "b": "hip_r.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "d60124c6f73dd8c3a0020e6ae499f75c41c8d9aa43b1cebab79b7b39c866a8bf",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.0,
+          "endDistance": 13.55198940633077,
+          "sourceStart": [
+            509.0,
+            747.0
+          ],
+          "sourceEnd": [
+            495.59481728189627,
+            748.9848025083045
+          ],
+          "foregroundIds": [
+            "bladder.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 17.968216994208447,
+          "endDistance": 29.28962336465218,
+          "sourceStart": [
+            491.2439552956669,
+            749.7415728090562
+          ],
+          "sourceEnd": [
+            480.1712497247058,
+            752.0909420023524
+          ],
+          "foregroundIds": [
+            "urine.right"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e039",
+      "a": "hip_r.v",
+      "b": "iliac.v",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "7a0d93ac4b85ade897c2775fe78394f8d7c7d8c9255547497744016b1f14c546",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 72.87371253220975,
+          "endDistance": 96.74830850379226,
+          "sourceStart": [
+            485.14790284651536,
+            762.0940197961215
+          ],
+          "sourceEnd": [
+            509.0,
+            763.0
+          ],
+          "foregroundIds": [
+            "urine.bl_right",
+            "urine.bl_left",
+            "bladder.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e040",
+      "a": "hip_r.a",
+      "b": "foot_r.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "65f0ec5ff743dd35bfb34f70ada5e72cc5e20b08bb3626bd516b39d61fdcb698",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e041",
+      "a": "foot_r.v",
+      "b": "calffork_r.v",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "8c01fbf53d03472b79037b732c6cc9f41cefe3dd4ccd22817e93631f5780a292",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e042",
+      "a": "calffork_r.v",
+      "b": "knee_r.v",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "dbe0112f49c5eb9e8546995bb40cac0b11e1474cdf4ddbcbace259ff00e5d974",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e043",
+      "a": "knee_r.v",
+      "b": "thighfork_r.v",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "10d06368e1e6952412c8d43def4d6411eecd6476e5eba257959ca5daf19c522f",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e044",
+      "a": "thighfork_r.v",
+      "b": "hip_r.v",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "8bea2994a83288a2e68902b4d3d9ac7ceafc2e3df35ea00e26e5266b6d57b80b",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e045",
+      "a": "foot_r.a",
+      "b": "r.toe1.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "0991a26d32edb1747a59a398a5e53fd432216ae639e73ecd347338428b6ba129",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e046",
+      "a": "r.toe1.a",
+      "b": "r.toe1.v",
+      "system": "capillary",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "c4854cf8b34063184cfd6e67e968de625a5b11dd0fb819461dff0c3a866b5749",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e047",
+      "a": "r.toe1.v",
+      "b": "foot_r.v",
+      "system": "vein",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "7f28dbbef4c3e214461be5027f553c4dab1e36d7e132d893f1c7db1bb666901d",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e048",
+      "a": "foot_r.a",
+      "b": "r.toe2.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "2dd825c64104a99caa11a560827090d458b499bb9f8f13661091952e927497a8",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e049",
+      "a": "r.toe2.a",
+      "b": "r.toe2.v",
+      "system": "capillary",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "b493faefafc7a8994eb85d0b73a1fc7a53275985c508299b1fc587596fc88b50",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e050",
+      "a": "r.toe2.v",
+      "b": "foot_r.v",
+      "system": "vein",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "699d6c525537e457c311d28845d4a0ca79fcaa3f83dd4e0e06e0538485861401",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e051",
+      "a": "foot_r.a",
+      "b": "r.toe3.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "a7f640bdd2939e1fb6f00e7e2e4f086ef5c1d5b7c410fcc20b24ab4643867ecc",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e052",
+      "a": "r.toe3.a",
+      "b": "r.toe3.v",
+      "system": "capillary",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "87c181340a6685ae9699e5495f6179131bfdd86307f1a539abdc7cbd4f9c50ac",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e053",
+      "a": "r.toe3.v",
+      "b": "foot_r.v",
+      "system": "vein",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "266dbe2494c66f617b2b1e5fde40a494bb2bb622ab67772c07431ee85f8e634a",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e054",
+      "a": "foot_r.a",
+      "b": "r.toe4.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "64443558b45ec16bb633b8b3411982d2253c6dcc235587450c61af1afbedd69a",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e055",
+      "a": "r.toe4.a",
+      "b": "r.toe4.v",
+      "system": "capillary",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "4616f2894719f3642f26a669543ec8fdddc23559f868371aece4d719e1109ce1",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e056",
+      "a": "r.toe4.v",
+      "b": "foot_r.v",
+      "system": "vein",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "681d4024cb0a2159ee8c43398a7b4c571d9e84c8e616ea1c1538a7697110eeba",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e057",
+      "a": "foot_r.a",
+      "b": "r.toe5.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "664fd63adbc8ebb658060c9cf26520724e0f0c05667e27022bc1cce78d0d7aa0",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e058",
+      "a": "r.toe5.a",
+      "b": "r.toe5.v",
+      "system": "capillary",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "3549fa159f65df064ef4d5e407a5304ab663ce0d2bfbae45931aa42c363743a0",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e059",
+      "a": "r.toe5.v",
+      "b": "foot_r.v",
+      "system": "vein",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "388182e660b8c8f8c2f63cca537b09a93c3eaf35e79ef95c6f1239350d6e37ae",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e060",
+      "a": "shoulder_r.a",
+      "b": "arm_r.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "234339b60450a663bc47a0b79e20c5b63cfb9508340b5465da64dc4722b973f8",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e061",
+      "a": "arm_r.a",
+      "b": "arm_r.v",
+      "system": "capillary",
+      "widthSource": 2,
+      "sourceSampleSha256": "94cf4938768355d257309f15e1297a8e59ab58d66c03b3816d0d68ed14f4c3e1",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e062",
+      "a": "arm_r.v",
+      "b": "armfork_r.v",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "ec74a6828cd06fa33bf1eca4b893d0bfde1aa8d97e3617ad11c1579856e71c72",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e063",
+      "a": "hip_r.a",
+      "b": "leg_r.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "75559bf465059893b317efcc91da6a144af45bbeb3b97c02e2654ea8ff6c713e",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e064",
+      "a": "leg_r.a",
+      "b": "leg_r.v",
+      "system": "capillary",
+      "widthSource": 2,
+      "sourceSampleSha256": "9af4cb289526cb69a19c212009a01b995b0f95625bac710f36e343e1ff79bb1a",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e065",
+      "a": "leg_r.v",
+      "b": "thighfork_r.v",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "8203065e76b50c898636773ba7c6bbc2d0a27b6bd0958609fb2b4c9275efe103",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e066",
+      "a": "head_l.a",
+      "b": "brain_l.entry",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "2b04c846999e0edbb47ebafbba5cf949cd21fbcb0f945a706d8713cceaa3021d",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e067",
+      "a": "head_l.v",
+      "b": "heart.v",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "0926d805a49bc2d541163462723fcbc741f1f0d031ec8fa51552d644d5bcb9fc",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 191.5131640668738,
+          "endDistance": 206.97282716063057,
+          "sourceStart": [
+            533.1374597451863,
+            332.2420039161503
+          ],
+          "sourceEnd": [
+            527.394558261625,
+            346.56806416751306
+          ],
+          "foregroundIds": [
+            "food.esophagus",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 207.90118362367068,
+          "endDistance": 217.36802023290096,
+          "sourceStart": [
+            526.9898567561685,
+            347.40356398217455
+          ],
+          "sourceEnd": [
+            522.558282348838,
+            355.7668012206863
+          ],
+          "foregroundIds": [
+            "air.left"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e068",
+      "a": "shoulder_l.a",
+      "b": "wrist_l.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "4d8f34c1a21c237e6c2ba258e21ae9e08a4d6cf08dffd8ce5fea07f28365437b",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e069",
+      "a": "wrist_l.v",
+      "b": "elbow_l.v",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "5aa4893528ce285a6a40d83af4a61a03bef9b82215514fce79ba012070dbefde",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e070",
+      "a": "elbow_l.v",
+      "b": "armfork_l.v",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "197ddf21f9de4e5c73dde031c888e1b5b3f9c48103e852d4a678442b4d5bbd6d",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e071",
+      "a": "armfork_l.v",
+      "b": "shoulder_l.v",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "bc106dda802d5d18b8e6f4d8cbcf6dc1b253075ff63b22d11891a6347c6f1875",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e072",
+      "a": "shoulder_l.v",
+      "b": "heart.v",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "acecb94a741282e185586aefb205d7c226f908728a1765866e7c60e7cfaeb881",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 77.16241737765067,
+          "endDistance": 89.62172873380953,
+          "sourceStart": [
+            531.3698221498437,
+            318.9847219510807
+          ],
+          "sourceEnd": [
+            523.0643979947131,
+            328.2719291330954
+          ],
+          "foregroundIds": [
+            "food.esophagus",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 102.91352700635383,
+          "endDistance": 123.86179886731108,
+          "sourceStart": [
+            514.3324630853656,
+            338.2930396620676
+          ],
+          "sourceEnd": [
+            500.8695599827801,
+            354.3415836266164
+          ],
+          "foregroundIds": [
+            "air.trachea",
+            "air.right",
+            "air.left"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e073",
+      "a": "wrist_l.a",
+      "b": "l.finger1.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "e98ba33dfecaf1b5a60cdbe3bbceaebaaabeab347a91193d9393f97ee0d9bbf7",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e074",
+      "a": "l.finger1.a",
+      "b": "l.finger1.v",
+      "system": "capillary",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "be97a351f01742a2fc1708bad0d7f58c6df21226ff8367f69ddbf178cf622073",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e075",
+      "a": "l.finger1.v",
+      "b": "wrist_l.v",
+      "system": "vein",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "0886089b166b92b1a4bb1f39b0c486381e15b3d8d6c7392f308e88501bc6a311",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e076",
+      "a": "wrist_l.a",
+      "b": "l.finger2.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "58839ee201eb6776d664ee56d4421cb6eeff98985682084b144cbe617665e86a",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e077",
+      "a": "l.finger2.a",
+      "b": "l.finger2.v",
+      "system": "capillary",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "067a5ee71636757993a644afa2fe58ecc46bd75ea7e0e98a77ed8a92242ef47b",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e078",
+      "a": "l.finger2.v",
+      "b": "wrist_l.v",
+      "system": "vein",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "0046f6864b3ef36892b110153804c48454ad7e82863f1ae4538d05e57e784ba6",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e079",
+      "a": "wrist_l.a",
+      "b": "l.finger3.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "02fe02d39f398cd322ca8b2acb00c0b4ac23e561625cd7531bd6a45aa8190aba",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e080",
+      "a": "l.finger3.a",
+      "b": "l.finger3.v",
+      "system": "capillary",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "60e96a864f8f8ea4c5868d1c8544d083e5a7440867c24d9e571ce18fc347aaf6",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e081",
+      "a": "l.finger3.v",
+      "b": "wrist_l.v",
+      "system": "vein",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "a43be84b6687b0ea448a7b158c0df03d4a3723a68b01a495a31970f513ae5614",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e082",
+      "a": "wrist_l.a",
+      "b": "l.finger4.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "866eed9e914e29cbeb88b1b5f633b3e1713ac6fc1b50fb83371141072dff550f",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e083",
+      "a": "l.finger4.a",
+      "b": "l.finger4.v",
+      "system": "capillary",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "15f06645e51dbced10e81d179636932c5519197decedae7734ea405ea8d3cb0d",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e084",
+      "a": "l.finger4.v",
+      "b": "wrist_l.v",
+      "system": "vein",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "bba826d33e662e9a32e85fdb72a94be1444dddd2e429f98f15485f950f61facd",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e085",
+      "a": "wrist_l.a",
+      "b": "l.finger5.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "924428e03d1ac5799a2cf07af4207df4b7e90b058bdb4ee84d12231b5f9c565b",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e086",
+      "a": "l.finger5.a",
+      "b": "l.finger5.v",
+      "system": "capillary",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "270a68337beecbf205d929359368e36828cddab0bcfdb779131e1fb816b69cca",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e087",
+      "a": "l.finger5.v",
+      "b": "wrist_l.v",
+      "system": "vein",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "bc2bb3f77a95c82d9043b04b079e1e94c12f7580d249e06ca4b3d9e390547ad3",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e088",
+      "a": "iliac.a",
+      "b": "hip_l.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "d5bc8b450840947c9767e15701931489cdcdcfcdb61e21e07484adbe298127b4",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.0,
+          "endDistance": 17.810933057835133,
+          "sourceStart": [
+            509.0,
+            747.0
+          ],
+          "sourceEnd": [
+            526.6540541461653,
+            749.1812824593471
+          ],
+          "foregroundIds": [
+            "urine.left",
+            "urine.bl_left",
+            "bladder.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 22.14310906959401,
+          "endDistance": 31.466734826808104,
+          "sourceStart": [
+            530.8932061709529,
+            750.0735215587785
+          ],
+          "sourceEnd": [
+            539.8983526720331,
+            752.4779417883911
+          ],
+          "foregroundIds": [
+            "food.rectum"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e089",
+      "a": "hip_l.v",
+      "b": "iliac.v",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "b35c193387dd8e6710b907c76bedb6ec459f8ab8fe45768795ed8e5b5877e2bc",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 63.07781418416531,
+          "endDistance": 72.0945099402978,
+          "sourceStart": [
+            541.8355454064608,
+            763.6168000113502
+          ],
+          "sourceEnd": [
+            532.9901678667152,
+            762.1310513094113
+          ],
+          "foregroundIds": [
+            "food.rectum"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 74.04207426634073,
+          "endDistance": 96.10750640684776,
+          "sourceStart": [
+            531.0430189647287,
+            762.0936320948149
+          ],
+          "sourceEnd": [
+            509.0,
+            763.0
+          ],
+          "foregroundIds": [
+            "urine.bl_left",
+            "bladder.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e090",
+      "a": "hip_l.a",
+      "b": "foot_l.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "61dce020ed3adcedeb9f3f89e282871cfeb1dcc90777adf9e88cde4b4bd7af0b",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e091",
+      "a": "foot_l.v",
+      "b": "calffork_l.v",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "b9808884beab98de222d17c9220c02f528908f2a75b68b975043a74bf654eb41",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e092",
+      "a": "calffork_l.v",
+      "b": "knee_l.v",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "608a2b35661c014457f645f2fe0b212de26a97fa952046bde807ee1e24f7ece4",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e093",
+      "a": "knee_l.v",
+      "b": "thighfork_l.v",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "967f9317c5aeee36621224e046147a84871712afb6f3216bea729d3175d34916",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e094",
+      "a": "thighfork_l.v",
+      "b": "hip_l.v",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "08263e535f4a8e754334023a016ac5c2ee83e7df62e2faf5fabbb6dcb5c6b912",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e095",
+      "a": "foot_l.a",
+      "b": "l.toe1.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "51bd4168ea69113416d2f11204f248a48b976864e9efc60ac19ccf53e22ef07f",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e096",
+      "a": "l.toe1.a",
+      "b": "l.toe1.v",
+      "system": "capillary",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "3637807ab86261dee7b7697849434b9c9c36cee0ebf40b1b68d27f43558ed312",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e097",
+      "a": "l.toe1.v",
+      "b": "foot_l.v",
+      "system": "vein",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "4b2edc2b61f61b964ec56c89ab17fadd2e0e3ff2bab911937d5dc887942b42e8",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e098",
+      "a": "foot_l.a",
+      "b": "l.toe2.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "ed98bce3b6703d27b3fedc21a73aeb14bf383912ed9412c5889a24e8724691aa",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e099",
+      "a": "l.toe2.a",
+      "b": "l.toe2.v",
+      "system": "capillary",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "9912d418bc0961508407a5609891be6d7c94735dbfbaa89247464cecb171ca52",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e100",
+      "a": "l.toe2.v",
+      "b": "foot_l.v",
+      "system": "vein",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "b9999d25427bf3427cd577e416be5e02aff63648a5e7129fe9bd3382fdde77a0",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e101",
+      "a": "foot_l.a",
+      "b": "l.toe3.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "b2e67d0e1ae8fc1f8aec054c4a25e613e3827a8dc1c39590aedbbff7da697a35",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e102",
+      "a": "l.toe3.a",
+      "b": "l.toe3.v",
+      "system": "capillary",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "c322d534579a1e2ef0056a22082bcdc9008c8b10d3a3189bda9d9eff3db05152",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e103",
+      "a": "l.toe3.v",
+      "b": "foot_l.v",
+      "system": "vein",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "fb44e6347c96a70750be6778f267b9900ba4523cf985a95780471dadd445346c",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e104",
+      "a": "foot_l.a",
+      "b": "l.toe4.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "7d5406fbff643579b857fe3bd95c62f9d392ec8ca305ab0b1432f3b364dd348f",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e105",
+      "a": "l.toe4.a",
+      "b": "l.toe4.v",
+      "system": "capillary",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "ad817bd1e4fc56ad750ed41110322ef48dd2e2b28505b533c84c8b4630e38e92",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e106",
+      "a": "l.toe4.v",
+      "b": "foot_l.v",
+      "system": "vein",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "f460c88d80a43d705f354336fa9a00918ae94c3431b5ae806ad15273ac35b39e",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e107",
+      "a": "foot_l.a",
+      "b": "l.toe5.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "72fde5fcf7e4c5485db2fe9669ec86ffdc1110f40fb2fe355ad8102219570a9e",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e108",
+      "a": "l.toe5.a",
+      "b": "l.toe5.v",
+      "system": "capillary",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "b24f0883251495322875f6e22f0aa15141b84517f1d509183d4938bc3dc98dcd",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e109",
+      "a": "l.toe5.v",
+      "b": "foot_l.v",
+      "system": "vein",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "83e14ffa82bda60513c51c70494921f9fbb3653f99c100d467da30ee3b121812",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e110",
+      "a": "shoulder_l.a",
+      "b": "arm_l.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "f4231a7c70c74f2f4df0cfba86b628b5cacdd5969f5a26ce2cd289b291e0c847",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e111",
+      "a": "arm_l.a",
+      "b": "arm_l.v",
+      "system": "capillary",
+      "widthSource": 2,
+      "sourceSampleSha256": "276c2e65a18463ca8f953990bec29414d92f7221d7df5c158dc8ce134d5bcf1e",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e112",
+      "a": "arm_l.v",
+      "b": "armfork_l.v",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "69d67b7825afaba041295ee1be5a7a88f9a98e8e302c11a49568eda77f17dc91",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e113",
+      "a": "hip_l.a",
+      "b": "leg_l.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "30cc793318504ae449437a66bdc27aa29e633c89cdcb1c584a1943e034d34ff7",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e114",
+      "a": "leg_l.a",
+      "b": "leg_l.v",
+      "system": "capillary",
+      "widthSource": 2,
+      "sourceSampleSha256": "f70e52951d5480d23ab3eef5eba817c8c670ad1acc8afb2b2081db469cf2dec1",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e115",
+      "a": "leg_l.v",
+      "b": "thighfork_l.v",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "b536bbbc9dd8ce3c8edd96fdf37494713988dc0a2e506563efb8dc02e1d5f519",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e116",
+      "a": "aorta_upper",
+      "b": "celiac",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "1bc740bf8255df11ec666781ada1cbadf444be6e3a2c688435ea13bbed9da3c2",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e117",
+      "a": "celiac",
+      "b": "liver.entry",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "8a353b261ee64364a858c65296a377a54a8a388447872df2ffaf0ec36fdb577d",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e118",
+      "a": "liver.a",
+      "b": "liver.bed",
+      "system": "capillary",
+      "widthSource": 2,
+      "sourceSampleSha256": "c143c2fa69114fe17be747c917eecda0ea6ee2b00428c69f9316e1ddc7175014",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e119",
+      "a": "portal",
+      "b": "liver.portal_entry",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "93b0f32e3a1185064fa1d5b40dad6723ddf61ea903bc66fc9496c6297dde996f",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 4.23796448401239,
+          "endDistance": 14.85420512136071,
+          "sourceStart": [
+            522.8373343701327,
+            556.7721562394682
+          ],
+          "sourceEnd": [
+            523.5124649653274,
+            546.1782555911104
+          ],
+          "foregroundIds": [
+            "food.stomach",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e120",
+      "a": "liver.p",
+      "b": "liver.bed",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "9ef287acf87c93a21a7770aad6e28ef3d01e3aee845827fe5a1d4ac8acfcfd1c",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e121",
+      "a": "liver.bed",
+      "b": "liver.v",
+      "system": "capillary",
+      "widthSource": 2,
+      "sourceSampleSha256": "ab8cc126131e370ce86850803dc0fbdddb40c982aabc9198bf7e477c999a6db2",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e122",
+      "a": "liver.exit",
+      "b": "cava_upper",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "5636a7d4de17546706d579231702df3c89c095f5bccaaabe550d61b9242d17cf",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e123",
+      "a": "celiac",
+      "b": "stomach.entry",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "83b17bd17a44030c0fb2e9c9adde0110c893339675dcea72e82467f3b0bf966c",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e124",
+      "a": "stomach.a",
+      "b": "stomach.v",
+      "system": "capillary",
+      "widthSource": 2,
+      "sourceSampleSha256": "0e9b22e0823c0beaec1bfd9e41c624be88fbaffffe2a9b4a8772ba81c4b40b46",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e125",
+      "a": "celiac",
+      "b": "pancreas.entry",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "2a58c7b72817582ac5537e8ea0b224cd4d9bfc6801f3940f6b1e86a3e0a916b1",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 94.81082469915972,
+          "endDistance": 105.94243693181916,
+          "sourceStart": [
+            479.2549738404697,
+            552.1469420195698
+          ],
+          "sourceEnd": [
+            486.6809858240453,
+            560.1333700034555
+          ],
+          "foregroundIds": [
+            "food.duodenum",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e126",
+      "a": "pancreas.a",
+      "b": "pancreas.v",
+      "system": "capillary",
+      "widthSource": 2,
+      "sourceSampleSha256": "d1f47de723e806452cdbbc8c376e6cbf2bf45f88ae54ffde5321c95c587c9871",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.0,
+          "endDistance": 32.73569373538343,
+          "sourceStart": [
+            547.0,
+            582.0
+          ],
+          "sourceEnd": [
+            515.0,
+            587.0
+          ],
+          "foregroundIds": [
+            "pancreas.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e127",
+      "a": "aorta_mid",
+      "b": "mesenteric_upper",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "b11e041908965da3210c4d6f74594662e1ecc692338fd37fcd62b623cb1f44a9",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.9066768433055595,
+          "endDistance": 6.1884711349902375,
+          "sourceStart": [
+            515.195382406403,
+            582.8850644168753
+          ],
+          "sourceEnd": [
+            517.1500354474763,
+            587.7839938722152
+          ],
+          "foregroundIds": [
+            "pancreas.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e128",
+      "a": "aorta_abd",
+      "b": "mesenteric_lower",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "f8483023880e206d29382d7def3ba3b11954d19651ab2d69f8fd17eafea7e986",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.0,
+          "endDistance": 7.452376861712908,
+          "sourceStart": [
+            518.0,
+            635.0
+          ],
+          "sourceEnd": [
+            518.8062032681744,
+            642.4080494563747
+          ],
+          "foregroundIds": [
+            "food.colon",
+            "large_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 16.150255752956486,
+          "endDistance": 25.529222741620586,
+          "sourceStart": [
+            519.9004447125396,
+            651.0353175390039
+          ],
+          "sourceEnd": [
+            522.3009017410152,
+            660.0788329019044
+          ],
+          "foregroundIds": [
+            "food.connector"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 28.044075761357597,
+          "endDistance": 30.333697161338552,
+          "sourceStart": [
+            523.4874625591749,
+            662.2923875750607
+          ],
+          "sourceEnd": [
+            525.0,
+            664.0
+          ],
+          "foregroundIds": [
+            "food.small",
+            "small_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e129",
+      "a": "mesenteric_upper",
+      "b": "pancreas.entry",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "d9ec066c54de9c9aad018b8822e05c20268a393e83d4041f25f7243463e1450c",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 30.027913764664724,
+          "endDistance": 36.36333102787796,
+          "sourceStart": [
+            546.253086942636,
+            585.8920102658931
+          ],
+          "sourceEnd": [
+            549.6929395873186,
+            580.6028729941032
+          ],
+          "foregroundIds": [
+            "pancreas.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e130",
+      "a": "mesenteric_upper",
+      "b": "small_intestine.entry",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "6f1f70fba7ebb3c7a634ff8d50ca7add55921a2de4ede6a0437f4377528b6009",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 11.44657920143613,
+          "endDistance": 25.112498452604427,
+          "sourceStart": [
+            516.5165615601941,
+            614.6615419311765
+          ],
+          "sourceEnd": [
+            507.60050995374763,
+            625.0182347298927
+          ],
+          "foregroundIds": [
+            "food.duodenum",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 40.77423578673631,
+          "endDistance": 55.40558361058561,
+          "sourceStart": [
+            497.3642183905917,
+            636.8670899895576
+          ],
+          "sourceEnd": [
+            487.32369296548904,
+            647.5009198597668
+          ],
+          "foregroundIds": [
+            "food.colon",
+            "large_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e131",
+      "a": "small_intestine.a",
+      "b": "small_intestine.v",
+      "system": "capillary",
+      "widthSource": 2,
+      "sourceSampleSha256": "a27a19e57e132f5c4717dec6298507d25fddf4434139629a0c23bff88abf5a4e",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 5.763580482717004,
+          "endDistance": 18.479559632445262,
+          "sourceStart": [
+            495.9407130117406,
+            677.2053989846854
+          ],
+          "sourceEnd": [
+            505.1294844442492,
+            685.9911517462506
+          ],
+          "foregroundIds": [
+            "food.small",
+            "small_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 33.05622240120044,
+          "endDistance": 53.00620881858581,
+          "sourceStart": [
+            516.5776510679483,
+            694.9976715795531
+          ],
+          "sourceEnd": [
+            535.0,
+            701.0
+          ],
+          "foregroundIds": [
+            "food.small",
+            "small_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e132",
+      "a": "mesenteric_upper",
+      "b": "colon_proximal.entry",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "373ed7478084056983355a48c32bad5a072465308e9cf44d39c7ac83ca537beb",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 12.426903553678827,
+          "endDistance": 27.457144958449472,
+          "sourceStart": [
+            515.084930839366,
+            614.6558856555394
+          ],
+          "sourceEnd": [
+            504.09129134087306,
+            624.9051075900621
+          ],
+          "foregroundIds": [
+            "food.duodenum",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 46.25744101134251,
+          "endDistance": 59.16643064319008,
+          "sourceStart": [
+            490.2747730774232,
+            637.6548061354652
+          ],
+          "sourceEnd": [
+            480.7882262229488,
+            646.4096563967288
+          ],
+          "foregroundIds": [
+            "food.colon",
+            "large_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e133",
+      "a": "colon_proximal.a",
+      "b": "colon_proximal.v",
+      "system": "capillary",
+      "widthSource": 2,
+      "sourceSampleSha256": "32195d86642e1f9f6291c40077b3208ef914f929568d741366074671e5e407ce",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 14.620600948972164,
+          "endDistance": 52.347287840705064,
+          "sourceStart": [
+            444.90660404001613,
+            669.4502045096517
+          ],
+          "sourceEnd": [
+            453.1597181537378,
+            705.7193951646456
+          ],
+          "foregroundIds": [
+            "food.colon",
+            "large_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 58.66781079709516,
+          "endDistance": 60.35911262726372,
+          "sourceStart": [
+            457.4785528269144,
+            710.27
+          ],
+          "sourceEnd": [
+            459.0,
+            711.0
+          ],
+          "foregroundIds": [
+            "food.ileocecal",
+            "large_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e134",
+      "a": "mesenteric_lower",
+      "b": "colon_distal.entry",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "7fccfbf1f03b7d083e22d09d2a6ebd41dd63158ea70531f60755433c5969e729",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.0,
+          "endDistance": 14.424860628790686,
+          "sourceStart": [
+            525.0,
+            664.0
+          ],
+          "sourceEnd": [
+            538.9636505680966,
+            666.3367632450598
+          ],
+          "foregroundIds": [
+            "food.small",
+            "small_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e135",
+      "a": "colon_distal.a",
+      "b": "colon_distal.v",
+      "system": "capillary",
+      "widthSource": 2,
+      "sourceSampleSha256": "66b7460c6c24dd4da62f9943d62505ab3bbf1e96eb88b8fbc596eab8bb6b7798",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 3.1312528954645487,
+          "endDistance": 49.7275855218437,
+          "sourceStart": [
+            568.6778383492313,
+            668.6349274043548
+          ],
+          "sourceEnd": [
+            565.0103122305316,
+            712.9925959986624
+          ],
+          "foregroundIds": [
+            "food.colon",
+            "large_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e136",
+      "a": "aorta_mid",
+      "b": "kidney_r.entry",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "5e171ab7a4e4c9d59b2b634d1310d413193a26272a8f10f99679a2fd8c85b7b2",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.9028845904232465,
+          "endDistance": 6.127960154751127,
+          "sourceStart": [
+            515.1732667601059,
+            582.8857851871393
+          ],
+          "sourceEnd": [
+            516.957572432723,
+            587.7902664276758
+          ],
+          "foregroundIds": [
+            "pancreas.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 61.73860708167428,
+          "endDistance": 75.48035816397889,
+          "sourceStart": [
+            485.4361289966924,
+            610.1333281876651
+          ],
+          "sourceEnd": [
+            471.69911457785474,
+            609.7973089991978
+          ],
+          "foregroundIds": [
+            "food.duodenum",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e137",
+      "a": "kidney_r.a",
+      "b": "kidney_r.v",
+      "system": "capillary",
+      "widthSource": 2,
+      "sourceSampleSha256": "11ba066a7ad90d04e69108f7945b1ea1bdc7dea67a2aaebb1e040a5a285bb2c9",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 24.2370605817167,
+          "endDistance": 32.19938891926995,
+          "sourceStart": [
+            422.30719848940305,
+            612.7892954393241
+          ],
+          "sourceEnd": [
+            424.7025627677339,
+            620.3603475916882
+          ],
+          "foregroundIds": [
+            "kidney_r.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e138",
+      "a": "kidney_r.exit",
+      "b": "cava_abdominal",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "e952bfb0d70b8c473f705369f5576a9abc1ab7bb86eba5dfef30cb6678de39ae",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.0,
+          "endDistance": 5.6522970613975145,
+          "sourceStart": [
+            435.0945945945946,
+            617.9324324324324
+          ],
+          "sourceEnd": [
+            440.67356406979223,
+            618.1064404755577
+          ],
+          "foregroundIds": [
+            "urine.right"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 40.81283424442712,
+          "endDistance": 49.49155739902813,
+          "sourceStart": [
+            471.72350572404946,
+            609.8406277196076
+          ],
+          "sourceEnd": [
+            477.0,
+            603.0
+          ],
+          "foregroundIds": [
+            "food.duodenum",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e139",
+      "a": "aorta_mid",
+      "b": "kidney_l.entry",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "2beca2f329b9f3199892dc5f44da08fe6f2de760380dd60671f6bc2edb76bac5",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 2.4058681271748887,
+          "endDistance": 15.34660347969924,
+          "sourceStart": [
+            517.2626426362837,
+            582.8176904101861
+          ],
+          "sourceEnd": [
+            529.3701634653629,
+            587.38572810242
+          ],
+          "foregroundIds": [
+            "pancreas.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e140",
+      "a": "kidney_l.a",
+      "b": "kidney_l.v",
+      "system": "capillary",
+      "widthSource": 2,
+      "sourceSampleSha256": "c2d8caaef445edd70c571b0f3cbefd3f974a1f9ed1779995c8638f36ac388d2c",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 15.603033971028447,
+          "endDistance": 31.076968383934993,
+          "sourceStart": [
+            592.8515225173345,
+            605.4790647882237
+          ],
+          "sourceEnd": [
+            593.1096333378343,
+            620.8642903058776
+          ],
+          "foregroundIds": [
+            "kidney_l.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e141",
+      "a": "kidney_l.exit",
+      "b": "cava_abdominal",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "ed4d9c4fa4ceff3aa881c768c374e8fd55f821508ce3447d689c8733f2ccdfb1",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.0,
+          "endDistance": 7.558913597408134,
+          "sourceStart": [
+            584.0,
+            619.0
+          ],
+          "sourceEnd": [
+            576.5430254005793,
+            619.5720987177981
+          ],
+          "foregroundIds": [
+            "urine.left"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 23.963437883933132,
+          "endDistance": 83.77190865691048,
+          "sourceStart": [
+            561.4344920008814,
+            625.9134533195136
+          ],
+          "sourceEnd": [
+            507.05718203911124,
+            614.5352856216034
+          ],
+          "foregroundIds": [
+            "food.duodenum",
+            "food.connector",
+            "food.colon",
+            "large_intestine.reserved",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 113.51504971497566,
+          "endDistance": 116.37195829802982,
+          "sourceStart": [
+            479.8501036019546,
+            602.9541053316153
+          ],
+          "sourceEnd": [
+            477.0,
+            603.0
+          ],
+          "foregroundIds": [
+            "food.duodenum",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e142",
+      "a": "iliac.a",
+      "b": "bladder.entry",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "ecbd059bcda56c22f00cc7e3c1abeeda2de3aa0ebf6e5c4db8b578098fcdf15e",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.0,
+          "endDistance": 4.128238855185421,
+          "sourceStart": [
+            509.0,
+            747.0
+          ],
+          "sourceEnd": [
+            513.0865183367284,
+            746.4149436004474
+          ],
+          "foregroundIds": [
+            "bladder.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 4.6773216079780555,
+          "endDistance": 33.13676291724745,
+          "sourceStart": [
+            513.6296085680217,
+            746.3340432331265
+          ],
+          "sourceEnd": [
+            541.6866615413733,
+            745.5481949824726
+          ],
+          "foregroundIds": [
+            "food.rectum",
+            "urine.left",
+            "urine.bl_left",
+            "bladder.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 41.9465214990833,
+          "endDistance": 50.290886112141216,
+          "sourceStart": [
+            540.1646984440393,
+            754.0094299774269
+          ],
+          "sourceEnd": [
+            536.3294117647059,
+            750.7176470588236
+          ],
+          "foregroundIds": [
+            "food.rectum"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e143",
+      "a": "bladder.a",
+      "b": "bladder.v",
+      "system": "capillary",
+      "widthSource": 2,
+      "sourceSampleSha256": "18770455f4631160b88bb366b42f4af7d13a7c635afa1749623c84fd602a7aa5",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.0,
+          "endDistance": 57.00860782891384,
+          "sourceStart": [
+            523.0,
+            756.0
+          ],
+          "sourceEnd": [
+            491.0,
+            772.0
+          ],
+          "foregroundIds": [
+            "urine.bl_right",
+            "urine.bl_left",
+            "bladder.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e144",
+      "a": "bladder.exit",
+      "b": "iliac.v",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "28a6749af1e6862416f6df098aac28c78af60806530b89ac04f0c9fabaf1ce4c",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 58.12555906255189,
+          "endDistance": 88.77958986145215,
+          "sourceStart": [
+            505.27000000000004,
+            792.735740071613
+          ],
+          "sourceEnd": [
+            509.0,
+            763.0
+          ],
+          "foregroundIds": [
+            "urine.bl_right",
+            "urine.bl_left",
+            "urine.urethra",
+            "bladder.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e145",
+      "a": "coronary.a",
+      "b": "coronary.v",
+      "system": "capillary",
+      "widthSource": 2,
+      "sourceSampleSha256": "0d8e3895f89639d4d5680c2e3375b830903a89dae810c75581968ce60f792961",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e146",
+      "a": "coronary.exit",
+      "b": "right_heart",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "b91e207b744b692db329ff1bb7dfae0e24518a1bc82cae265efddfcb45914fca",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e147",
+      "a": "aorta_mid",
+      "b": "trunk.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "498c510d9f2ae46f1031e3dc6b581993d9537a62585d8d3fe18ebff5a67b45a5",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 39.23888638472809,
+          "endDistance": 50.02646276657037,
+          "sourceStart": [
+            478.1965993990425,
+            568.4109310698203
+          ],
+          "sourceEnd": [
+            467.7681448861313,
+            565.6708891108844
+          ],
+          "foregroundIds": [
+            "food.duodenum",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e148",
+      "a": "trunk.a",
+      "b": "trunk.v",
+      "system": "capillary",
+      "widthSource": 2,
+      "sourceSampleSha256": "26d09f7d0724ad1eb2cf99975fd0a91f36c8f35d8ba1580030dbdf2a85164f0e",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e149",
+      "a": "trunk.v",
+      "b": "cava_abdominal",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "03875512eb6a9774da623cb755ab9cbdc59f812c8f839c5af5ac754dab33e941",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 44.76817647331558,
+          "endDistance": 52.915769373136264,
+          "sourceStart": [
+            426.27000000000004,
+            641.2178496819428
+          ],
+          "sourceEnd": [
+            434.27461627301017,
+            639.7028892896972
+          ],
+          "foregroundIds": [
+            "urine.right"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 58.07105191509485,
+          "endDistance": 80.78252302802521,
+          "sourceStart": [
+            439.29110017971476,
+            638.516147991873
+          ],
+          "sourceEnd": [
+            459.2099623652563,
+            628.3380671380506
+          ],
+          "foregroundIds": [
+            "food.colon",
+            "large_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 102.48894690706408,
+          "endDistance": 111.93591976544987,
+          "sourceStart": [
+            472.7019778537541,
+            611.3934504128815
+          ],
+          "sourceEnd": [
+            477.0,
+            603.0
+          ],
+          "foregroundIds": [
+            "food.duodenum",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e150",
+      "a": "left_heart",
+      "b": "aortic_root",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "5a173ee0467cce080d8cec4c0f22f113f8ade9be9354d0d920067880c6aa00c2",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.0,
+          "endDistance": 17.471936135976833,
+          "sourceStart": [
+            538.0,
+            422.0
+          ],
+          "sourceEnd": [
+            545.8786216579546,
+            406.41777284337473
+          ],
+          "foregroundIds": [
+            "food.esophagus",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 34.15971491686828,
+          "endDistance": 50.221397987401275,
+          "sourceStart": [
+            545.0693986195142,
+            390.7727941001946
+          ],
+          "sourceEnd": [
+            534.9518747872826,
+            378.3051584312095
+          ],
+          "foregroundIds": [
+            "food.esophagus",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e151",
+      "a": "aortic_root",
+      "b": "arch",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "bfbba93aaa2cdbd3994510a9d7ad86ec0da9896464a8f3c25aab4422e1ab6a5d",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 14.611426517288606,
+          "endDistance": 41.762283885672616,
+          "sourceStart": [
+            530.9694822798427,
+            360.5464522423838
+          ],
+          "sourceEnd": [
+            514.0,
+            341.0
+          ],
+          "foregroundIds": [
+            "air.trachea",
+            "air.left"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e152",
+      "a": "aortic_root",
+      "b": "coronary.entry",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "344593c79ae82225be7a4cd47539a30135fdeb1482754191c14a84395c34a04a",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 6.171382054244057,
+          "endDistance": 23.05109620193274,
+          "sourceStart": [
+            535.0813624989987,
+            380.8085875243877
+          ],
+          "sourceEnd": [
+            541.7692307692307,
+            384.1538461538462
+          ],
+          "foregroundIds": [
+            "food.esophagus",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e153",
+      "a": "arch",
+      "b": "brachiocephalic",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "cecae566b2bedee01fc4f3bec80be0939414a8bc271451d1e2fcd429817ffacb",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.0,
+          "endDistance": 21.29938902727163,
+          "sourceStart": [
+            514.0,
+            341.0
+          ],
+          "sourceEnd": [
+            502.27330576005795,
+            323.2935130572656
+          ],
+          "foregroundIds": [
+            "air.trachea",
+            "air.left"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e154",
+      "a": "brachiocephalic",
+      "b": "head_r.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "27b7e85a24f587421fcd6b703a86d1026991f882d45a04d0cb69d9aa4b3c244f",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e155",
+      "a": "brachiocephalic",
+      "b": "shoulder_r.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "17e844d23dbc674a9d99b53f38f2bc6f307eb6d49efb5bec8fd99dffe5f2f455",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e156",
+      "a": "arch",
+      "b": "carotid_l",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "e723af1fb19351b1fd68f993e9de44326764d4d5fac56556928220268e6bc806",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.0,
+          "endDistance": 8.714569007103128,
+          "sourceStart": [
+            514.0,
+            341.0
+          ],
+          "sourceEnd": [
+            514.4925522117696,
+            332.369741985117
+          ],
+          "foregroundIds": [
+            "air.trachea",
+            "air.left"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 33.31195378444913,
+          "endDistance": 51.4061081387252,
+          "sourceStart": [
+            520.4287824417477,
+            308.50481248585504
+          ],
+          "sourceEnd": [
+            525.0,
+            291.0
+          ],
+          "foregroundIds": [
+            "food.esophagus",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e157",
+      "a": "carotid_l",
+      "b": "head_l.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "4d7cedfb3e5f6064c9e9ea6355afdaaef5f3e7f08cfd4e38df7a3f94dfccfc35",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.0,
+          "endDistance": 7.83726195980726,
+          "sourceStart": [
+            525.0,
+            291.0
+          ],
+          "sourceEnd": [
+            527.73,
+            283.65608891104125
+          ],
+          "foregroundIds": [
+            "food.esophagus",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e158",
+      "a": "arch",
+      "b": "subclavian_l",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "6df831165c2c3b32fcbacb664ce4d1e244a70493114c3c4a7ae676c82d1f6b8d",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.0,
+          "endDistance": 1.5669681870432748,
+          "sourceStart": [
+            514.0,
+            341.0
+          ],
+          "sourceEnd": [
+            514.300700008885,
+            339.46827349184684
+          ],
+          "foregroundIds": [
+            "air.trachea",
+            "air.left"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 14.76501672649426,
+          "endDistance": 25.742893231203002,
+          "sourceStart": [
+            523.2982483322992,
+            330.02580666499085
+          ],
+          "sourceEnd": [
+            531.9402945407794,
+            323.26326488309815
+          ],
+          "foregroundIds": [
+            "food.esophagus",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e159",
+      "a": "subclavian_l",
+      "b": "shoulder_l.a",
+      "system": "artery",
+      "widthSource": 3,
+      "sourceSampleSha256": "f19f7a028b0cf2513a80fb2a1d42bb0d6a0bd9c97a2c5b427b1574dbab017fb0",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e160",
+      "a": "brain_r",
+      "b": "brain_r.v",
+      "system": "capillary",
+      "widthSource": 2,
+      "sourceSampleSha256": "b1a283045fc0dfeaf8a968321c8f4a13febe2c420eb2bcbd645b777f17a2be76",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e161",
+      "a": "brain_r.exit",
+      "b": "head_r.v",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "17a21291052d4bbbc227e7a714aa20d7536591bdfc5b208dd1ef8adbded297dc",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e162",
+      "a": "brain_l",
+      "b": "brain_l.v",
+      "system": "capillary",
+      "widthSource": 2,
+      "sourceSampleSha256": "1bd1b5a37a4a2cdb1e8ea9f890d93ffcf8d34b79a3131b76ae25885f977dd0a7",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e163",
+      "a": "brain_l.exit",
+      "b": "head_l.v",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "7dcc70932ba0e7c201433246dd4acaffc23ee4f0cc644b2e72b933c1744b1cd8",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e164",
+      "a": "stomach.exit",
+      "b": "portal",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "3ba4d18b4e127f0741cecd4c13f4d34e6fc51382754a4c640d3702d51bda38be",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 44.850874106469035,
+          "endDistance": 59.97755526691287,
+          "sourceStart": [
+            540.0578514883292,
+            552.0584593215146
+          ],
+          "sourceEnd": [
+            526.1360477799553,
+            557.8777167595259
+          ],
+          "foregroundIds": [
+            "food.stomach",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e165",
+      "a": "pancreas.exit",
+      "b": "pancreatic_venous_group",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "1e4e5a4f7b044da78ee8eab02569c62f1c8c1968c1180f55b3c872847848590e",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 13.83178034721497,
+          "endDistance": 19.219163835344673,
+          "sourceStart": [
+            504.48727623499553,
+            588.1966854199721
+          ],
+          "sourceEnd": [
+            506.4231733251608,
+            583.1709591797969
+          ],
+          "foregroundIds": [
+            "pancreas.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e166",
+      "a": "small_intestine.exit",
+      "b": "mesenteric_vein",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "11388a5cd8d6e9b569f96da069b8455ecfdf23ed43b96d8e48677ae7943261ca",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 32.736641913014225,
+          "endDistance": 48.730084984695615,
+          "sourceStart": [
+            535.3517755964205,
+            635.9080031845635
+          ],
+          "sourceEnd": [
+            530.1388639574344,
+            620.8191603700449
+          ],
+          "foregroundIds": [
+            "food.connector",
+            "food.colon",
+            "large_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 49.182757791195776,
+          "endDistance": 49.560973800166195,
+          "sourceStart": [
+            530.0597210160817,
+            620.3734666723885
+          ],
+          "sourceEnd": [
+            530.0,
+            620.0
+          ],
+          "foregroundIds": [
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e167",
+      "a": "colon_proximal.exit",
+      "b": "mesenteric_vein",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "c8a5da3f003e1c0981f5c4c82fd0d48243ae511b15cc41877a7495265cb8790c",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 6.793909150592888,
+          "endDistance": 16.5226086449135,
+          "sourceStart": [
+            469.67322417029897,
+            709.77
+          ],
+          "sourceEnd": [
+            474.47181937801787,
+            718.23
+          ],
+          "foregroundIds": [
+            "food.ileocecal",
+            "small_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 18.297689631647298,
+          "endDistance": 27.078648696783674,
+          "sourceStart": [
+            475.3383202878648,
+            718.23
+          ],
+          "sourceEnd": [
+            477.6303889798623,
+            709.77
+          ],
+          "foregroundIds": [
+            "food.ileocecal",
+            "small_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 36.002069431012295,
+          "endDistance": 45.92477800608545,
+          "sourceStart": [
+            478.86177353447124,
+            700.9338301508534
+          ],
+          "sourceEnd": [
+            479.7897821335127,
+            691.0548366001345
+          ],
+          "foregroundIds": [
+            "food.small",
+            "small_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 48.39419482092475,
+          "endDistance": 61.16538459269828,
+          "sourceStart": [
+            480.00145475582076,
+            688.5945085860303
+          ],
+          "sourceEnd": [
+            481.3111593929151,
+            675.8918749953806
+          ],
+          "foregroundIds": [
+            "food.small",
+            "small_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 65.61680075428819,
+          "endDistance": 75.22638477193365,
+          "sourceStart": [
+            481.9995070980245,
+            671.4944088886663
+          ],
+          "sourceEnd": [
+            484.78727696027204,
+            662.3377527260632
+          ],
+          "foregroundIds": [
+            "food.connector",
+            "food.small",
+            "small_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 96.25858188728871,
+          "endDistance": 112.05681078076026,
+          "sourceStart": [
+            498.27487541975796,
+            646.2841218092924
+          ],
+          "sourceEnd": [
+            509.79890941357775,
+            635.4854576536702
+          ],
+          "foregroundIds": [
+            "food.colon",
+            "large_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 128.4841371843578,
+          "endDistance": 137.6709548240608,
+          "sourceStart": [
+            523.439916189058,
+            626.3383999229399
+          ],
+          "sourceEnd": [
+            530.0,
+            620.0
+          ],
+          "foregroundIds": [
+            "food.duodenum",
+            "food.connector",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e168",
+      "a": "colon_distal.exit",
+      "b": "hindgut_vein",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "15c4a63a2ce19e1b368beb9dfa95580165e28ed056fb3d6146130c90507e2e46",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 12.470020301430887,
+          "endDistance": 21.95368874580484,
+          "sourceStart": [
+            564.0504518693053,
+            713.8407086826825
+          ],
+          "sourceEnd": [
+            572.8567131497606,
+            717.3534008229067
+          ],
+          "foregroundIds": [
+            "food.colon",
+            "large_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 24.07170613431042,
+          "endDistance": 33.332387792426935,
+          "sourceStart": [
+            574.8742786317208,
+            717.9974647132373
+          ],
+          "sourceEnd": [
+            583.9882803802972,
+            718.907127470392
+          ],
+          "foregroundIds": [
+            "urine.left"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 80.28769980128794,
+          "endDistance": 97.65462702892479,
+          "sourceStart": [
+            595.5191435889865,
+            675.6799370238015
+          ],
+          "sourceEnd": [
+            587.7062197662833,
+            660.2360506080706
+          ],
+          "foregroundIds": [
+            "urine.left"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 121.56592840718241,
+          "endDistance": 141.94839366377082,
+          "sourceStart": [
+            571.9864935332023,
+            642.6085068489832
+          ],
+          "sourceEnd": [
+            555.0,
+            632.0
+          ],
+          "foregroundIds": [
+            "food.colon",
+            "large_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e169",
+      "a": "mesenteric_vein",
+      "b": "portal",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "40f1535950e8204ae69316c447d0e0dc6d2ed29579bf8d724ead1e5e6544f824",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.0,
+          "endDistance": 1.4576232353460312,
+          "sourceStart": [
+            530.0,
+            620.0
+          ],
+          "sourceEnd": [
+            529.8609708327327,
+            618.5496337588886
+          ],
+          "foregroundIds": [
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 33.15886638462459,
+          "endDistance": 38.24055686175995,
+          "sourceStart": [
+            532.654401688816,
+            587.11415207112
+          ],
+          "sourceEnd": [
+            531.1239018704442,
+            582.2717105951685
+          ],
+          "foregroundIds": [
+            "pancreas.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e170",
+      "a": "hindgut_vein",
+      "b": "pancreatic_venous_group",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "1cc1620f8f61322c5eab6fe66df471c41bfc8ce265eef46dcccfbcf1b4fd78c0",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.0,
+          "endDistance": 11.378908166561652,
+          "sourceStart": [
+            555.0,
+            632.0
+          ],
+          "sourceEnd": [
+            557.8918181843612,
+            621.2594200809768
+          ],
+          "foregroundIds": [
+            "food.colon",
+            "large_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 55.805443190823,
+          "endDistance": 62.425872735800034,
+          "sourceStart": [
+            543.1723395197903,
+            586.1688833713829
+          ],
+          "sourceEnd": [
+            538.3612262101369,
+            581.6212773754542
+          ],
+          "foregroundIds": [
+            "pancreas.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e171",
+      "a": "pancreatic_venous_group",
+      "b": "portal",
+      "system": "vein",
+      "widthSource": 3,
+      "sourceSampleSha256": "06775666f0269448c7e1886428310e82b77150b3823c5bfda7bbda4e98770a3e",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e172",
+      "a": "lung_r.entry",
+      "b": "lung_r.a",
+      "system": "artery",
+      "widthSource": 2,
+      "sourceSampleSha256": "f916fcf359cc6f6ab2391c9651e2bf787d1c3b7d02c2f252e52807a5bf02a34d",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 1.589521310862041,
+          "endDistance": 15.69266247433491,
+          "sourceStart": [
+            473.58,
+            373.90063389621326
+          ],
+          "sourceEnd": [
+            462.04238111361667,
+            366.0789477743034
+          ],
+          "foregroundIds": [
+            "air.right",
+            "lung_r.reserved",
+            "reference.airway-foreground"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 34.233337629024724,
+          "endDistance": 44.78336230402039,
+          "sourceStart": [
+            448.58,
+            353.3451476158149
+          ],
+          "sourceEnd": [
+            439.0,
+            350.0
+          ],
+          "foregroundIds": [
+            "lung_r.reserved",
+            "reference.airway-foreground"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e173",
+      "a": "lung_r.v",
+      "b": "lung_r.exit",
+      "system": "vein",
+      "widthSource": 2,
+      "sourceSampleSha256": "cce011e2dd3038cc8630dd0a4d797a990423fbb0f8087aee4d104ecc84c51d7c",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 2.500846693216692,
+          "endDistance": 13.665193752872435,
+          "sourceStart": [
+            435.42,
+            430.53625892810453
+          ],
+          "sourceEnd": [
+            445.50750139934195,
+            426.1138437291072
+          ],
+          "foregroundIds": [
+            "lung_r.reserved",
+            "reference.airway-foreground"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e174",
+      "a": "lung_l.entry",
+      "b": "lung_l.a",
+      "system": "artery",
+      "widthSource": 2,
+      "sourceSampleSha256": "ff0d23d15fdb0431bd47d92d31ab85d10f8d4f0f94da240efd7ef3a3d299940b",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.0,
+          "endDistance": 2.2688362144287075,
+          "sourceStart": [
+            541.4487996080353,
+            374.0489955903969
+          ],
+          "sourceEnd": [
+            543.7050787467113,
+            374.0755322898236
+          ],
+          "foregroundIds": [
+            "food.esophagus",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 7.573912230437889,
+          "endDistance": 19.389237713789903,
+          "sourceStart": [
+            548.5698515897734,
+            372.0463580828474
+          ],
+          "sourceEnd": [
+            557.6765937173352,
+            364.54781797975016
+          ],
+          "foregroundIds": [
+            "air.left",
+            "lung_l.reserved",
+            "reference.airway-foreground"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 34.03023523321906,
+          "endDistance": 47.00587219000533,
+          "sourceStart": [
+            568.42,
+            354.6062289724148
+          ],
+          "sourceEnd": [
+            580.0,
+            350.0
+          ],
+          "foregroundIds": [
+            "lung_l.reserved",
+            "reference.airway-foreground"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e175",
+      "a": "lung_l.v",
+      "b": "lung_l.exit",
+      "system": "vein",
+      "widthSource": 2,
+      "sourceSampleSha256": "06cfcf427eb29e2a7af9bdfcd53c01c4c909a66de25f95fdb11b57fc6bf79e26",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.0,
+          "endDistance": 1.7450791081070027,
+          "sourceStart": [
+            592.0,
+            430.0
+          ],
+          "sourceEnd": [
+            590.42,
+            430.7220857328175
+          ],
+          "foregroundIds": [
+            "lung_l.reserved",
+            "reference.airway-foreground"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 7.682014502055071,
+          "endDistance": 17.837874215566792,
+          "sourceStart": [
+            584.58,
+            430.2549462821873
+          ],
+          "sourceEnd": [
+            575.42,
+            425.9140731147991
+          ],
+          "foregroundIds": [
+            "lung_l.reserved",
+            "reference.airway-foreground"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 51.06765415395056,
+          "endDistance": 52.009423372284125,
+          "sourceStart": [
+            545.7401394065357,
+            413.42003837976404
+          ],
+          "sourceEnd": [
+            545.0,
+            414.0
+          ],
+          "foregroundIds": [
+            "food.esophagus",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e176",
+      "a": "brain_r.entry",
+      "b": "brain_r",
+      "system": "artery",
+      "widthSource": 2,
+      "sourceSampleSha256": "6d4a6751ce9c86aed492096cdcbe19acd41abe5c1e04d993325f1ce6de723037",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e177",
+      "a": "brain_r.v",
+      "b": "brain_r.exit",
+      "system": "vein",
+      "widthSource": 2,
+      "sourceSampleSha256": "e480ebe234bef9eb8c9d4ad28aeb198d323050915dcd42d7039ab85cd3c21e27",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e178",
+      "a": "brain_l.entry",
+      "b": "brain_l",
+      "system": "artery",
+      "widthSource": 2,
+      "sourceSampleSha256": "c6fde5bcc785203349b5c6ed70dd20d8aedc1c152a516edc9959b38b933f8cc1",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e179",
+      "a": "brain_l.v",
+      "b": "brain_l.exit",
+      "system": "vein",
+      "widthSource": 2,
+      "sourceSampleSha256": "8e1c5df1c44889fe9c84d3c76c32ff6511273deedf30dd9d28e6de0c7dad71c8",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e180",
+      "a": "liver.entry",
+      "b": "liver.a",
+      "system": "artery",
+      "widthSource": 2,
+      "sourceSampleSha256": "08e2f9899fd09a10f58fdc7a9ae28dd736b5faa7366549a4d7de394a792f4cfb",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e181",
+      "a": "liver.v",
+      "b": "liver.exit",
+      "system": "vein",
+      "widthSource": 2,
+      "sourceSampleSha256": "9a095ce18f474dea1e2db8e8d70795d30f4039c6ac1b0664d5a9614d45427475",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e182",
+      "a": "liver.portal_entry",
+      "b": "liver.p",
+      "system": "vein",
+      "widthSource": 2,
+      "sourceSampleSha256": "ea5cbe48c25d3d1c5d66f57cb88a4b81da19465b4658dc1d264857c59d0a91f1",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e183",
+      "a": "stomach.entry",
+      "b": "stomach.a",
+      "system": "artery",
+      "widthSource": 2,
+      "sourceSampleSha256": "2985194554595c77ed9501243b2b46c89972c2beab9863f797392a86eaf9e60d",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e184",
+      "a": "stomach.v",
+      "b": "stomach.exit",
+      "system": "vein",
+      "widthSource": 2,
+      "sourceSampleSha256": "71ee74ceceb87d01ec5f03f47bc4612bf9676a77afb0ce8825462c6c2346a620",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e185",
+      "a": "pancreas.entry",
+      "b": "pancreas.a",
+      "system": "artery",
+      "widthSource": 2,
+      "sourceSampleSha256": "bbf43a8b7660d862ef0a86fcbe48e8a4ce6d69be5650dfbca42a61473b1d544c",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 6.016008342968699,
+          "endDistance": 7.0738360281704145,
+          "sourceStart": [
+            547.7704493152726,
+            581.2776663335029
+          ],
+          "sourceEnd": [
+            547.0,
+            582.0
+          ],
+          "foregroundIds": [
+            "pancreas.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e186",
+      "a": "pancreas.v",
+      "b": "pancreas.exit",
+      "system": "vein",
+      "widthSource": 2,
+      "sourceSampleSha256": "4a9665dade9cd7258c9deb4be1af9134b81a4141a8d97dd82d0c60a92f6e2a91",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.0,
+          "endDistance": 0.6065448955494785,
+          "sourceStart": [
+            515.0,
+            587.0
+          ],
+          "sourceEnd": [
+            514.5200777118674,
+            587.3694412615805
+          ],
+          "foregroundIds": [
+            "pancreas.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e187",
+      "a": "small_intestine.entry",
+      "b": "small_intestine.a",
+      "system": "artery",
+      "widthSource": 2,
+      "sourceSampleSha256": "9ba5edd0e81f1585f0449009f647b97ac2c00ecbae2a072659e2a07b9230b59b",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 7.733165275480355,
+          "endDistance": 18.802234919805855,
+          "sourceStart": [
+            485.1977549494661,
+            662.8039457870295
+          ],
+          "sourceEnd": [
+            491.20890870964007,
+            672.0744195850733
+          ],
+          "foregroundIds": [
+            "food.connector",
+            "food.small",
+            "small_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e188",
+      "a": "small_intestine.v",
+      "b": "small_intestine.exit",
+      "system": "vein",
+      "widthSource": 2,
+      "sourceSampleSha256": "a879657a414ca572211ea6fa22351ff12ecd0b857cf9ea611611042a8682675b",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.0,
+          "endDistance": 3.494205081407169,
+          "sourceStart": [
+            535.0,
+            701.0
+          ],
+          "sourceEnd": [
+            537.9695435123562,
+            699.2087703516787
+          ],
+          "foregroundIds": [
+            "food.small",
+            "small_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e189",
+      "a": "colon_proximal.entry",
+      "b": "colon_proximal.a",
+      "system": "artery",
+      "widthSource": 2,
+      "sourceSampleSha256": "afee24b4cc4d67e5f50ec6ce6e8dc705c750df4fc5ac1532de1cb9538a678bd0",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e190",
+      "a": "colon_proximal.v",
+      "b": "colon_proximal.exit",
+      "system": "vein",
+      "widthSource": 2,
+      "sourceSampleSha256": "13923c502138a5d6f750406cc0e873ff1021b81955e6d8d12f17d02562fe70aa",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.0,
+          "endDistance": 1.7512908833092184,
+          "sourceStart": [
+            459.0,
+            711.0
+          ],
+          "sourceEnd": [
+            460.4835140762774,
+            710.27
+          ],
+          "foregroundIds": [
+            "food.ileocecal",
+            "large_intestine.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e191",
+      "a": "colon_distal.entry",
+      "b": "colon_distal.a",
+      "system": "artery",
+      "widthSource": 2,
+      "sourceSampleSha256": "fe9b617791a2dc1389e5071c09c479ea976b049c6806c673690b388b120aced7",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e192",
+      "a": "colon_distal.v",
+      "b": "colon_distal.exit",
+      "system": "vein",
+      "widthSource": 2,
+      "sourceSampleSha256": "080c0a5df6d8f3f1e7b356e9d35e228dd4fe5d7ee7c19c128c62fb5d3a89d884",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e193",
+      "a": "kidney_r.entry",
+      "b": "kidney_r.a",
+      "system": "artery",
+      "widthSource": 2,
+      "sourceSampleSha256": "7db48c45d8b872594f35a63f4774aefcae699b709a0c714b317be74ad9136339",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e194",
+      "a": "kidney_r.v",
+      "b": "kidney_r.exit",
+      "system": "vein",
+      "widthSource": 2,
+      "sourceSampleSha256": "64f3fbf9a2e2895631c1c8c8a7c1060c051c098f641f26ee83928676cc1049db",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 5.391898903277175,
+          "endDistance": 9.709014849256645,
+          "sourceStart": [
+            432.47398545762644,
+            621.2805958494454
+          ],
+          "sourceEnd": [
+            435.0945945945946,
+            617.9324324324324
+          ],
+          "foregroundIds": [
+            "urine.right"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e195",
+      "a": "kidney_l.entry",
+      "b": "kidney_l.a",
+      "system": "artery",
+      "widthSource": 2,
+      "sourceSampleSha256": "6053358d0b4cf20fe03e11fb3bfabce21419234c9a17688ed2567a5d3cc79e69",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 2.973191529099464,
+          "endDistance": 5.480781442325959,
+          "sourceStart": [
+            587.8466316706778,
+            607.9209795104209
+          ],
+          "sourceEnd": [
+            588.7421927829893,
+            605.5830097286843
+          ],
+          "foregroundIds": [
+            "kidney_l.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e196",
+      "a": "kidney_l.v",
+      "b": "kidney_l.exit",
+      "system": "vein",
+      "widthSource": 2,
+      "sourceSampleSha256": "e9c18899201e4625ee5a8e4bd3eea1ea48553986841f0ef8876b60582cc1621d",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "e197",
+      "a": "bladder.entry",
+      "b": "bladder.a",
+      "system": "artery",
+      "widthSource": 2,
+      "sourceSampleSha256": "47fb5cac8bb5221a4b30aa0394750c306b9a317dc006df8d335e67a53fee0394",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.0,
+          "endDistance": 4.8484961514704805,
+          "sourceStart": [
+            536.3294117647059,
+            750.7176470588236
+          ],
+          "sourceEnd": [
+            531.5558840933213,
+            750.9657652299151
+          ],
+          "foregroundIds": [
+            "food.rectum"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 11.12563946533483,
+          "endDistance": 14.94545502612199,
+          "sourceStart": [
+            525.8243376536502,
+            753.4737037923628
+          ],
+          "sourceEnd": [
+            523.0,
+            756.0
+          ],
+          "foregroundIds": [
+            "bladder.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e198",
+      "a": "bladder.v",
+      "b": "bladder.exit",
+      "system": "vein",
+      "widthSource": 2,
+      "sourceSampleSha256": "f6bee9f93a1ee85ccd2d8a82c3dabee6a9c2084a15221d4d803bd34abcd12933",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.0,
+          "endDistance": 10.251050354020446,
+          "sourceStart": [
+            491.0,
+            772.0
+          ],
+          "sourceEnd": [
+            485.4378406394785,
+            763.4376202659301
+          ],
+          "foregroundIds": [
+            "bladder.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e199",
+      "a": "coronary.entry",
+      "b": "coronary.a",
+      "system": "artery",
+      "widthSource": 2,
+      "sourceSampleSha256": "fcf6ac0330f8d09cb6be9b00be457c02cd555d134c371014a0db49bf81d1f724",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 0.0,
+          "endDistance": 6.573117082794157,
+          "sourceStart": [
+            541.7692307692307,
+            384.1538461538462
+          ],
+          "sourceEnd": [
+            535.8429670991925,
+            385.85335406431483
+          ],
+          "foregroundIds": [
+            "food.esophagus",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    },
+    {
+      "id": "e200",
+      "a": "coronary.v",
+      "b": "coronary.exit",
+      "system": "vein",
+      "widthSource": 2,
+      "sourceSampleSha256": "2ac544b2d298c7afa7b1ad6788f3db9125ec20df6c03a1e9cdc83f6ee898bfe9",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "access.arm_r",
+      "a": "arm_r.a",
+      "b": "arm_r.tissue_access.tip",
+      "system": "capillary",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "378653052fbd90d6147da6583a1fcb999893c86cad1edec4f03b118bae4acbe3",
+      "routeEdited": false,
+      "protectedForegroundIntervals": []
+    },
+    {
+      "id": "study.stomach.wall_service",
+      "a": "stomach.a",
+      "b": "stomach.v",
+      "system": "capillary",
+      "widthSource": 1.5,
+      "sourceSampleSha256": "88de3d7e8c339710756ab51e4cc3bde23f696c35705fd8069aa6d43abebe3c7c",
+      "routeEdited": false,
+      "protectedForegroundIntervals": [
+        {
+          "startDistance": 24.608955469800577,
+          "endDistance": 45.98382093957047,
+          "sourceStart": [
+            589.47018245807,
+            510.3394230185987
+          ],
+          "sourceEnd": [
+            608.2109026433975,
+            520.4173426375517
+          ],
+          "foregroundIds": [
+            "food.stomach",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        },
+        {
+          "startDistance": 90.37225554929195,
+          "endDistance": 103.12500440772594,
+          "sourceStart": [
+            586.3467697437012,
+            553.4239280050194
+          ],
+          "sourceEnd": [
+            576.0222291266508,
+            548.9097256563258
+          ],
+          "foregroundIds": [
+            "food.stomach",
+            "stomach.reserved"
+          ],
+          "unitDepth": "under-foreground",
+          "connectsToForeground": false,
+          "reason": "full-width tube hidden beneath reserved foreground; rounded mouth retained before crossing"
+        }
+      ]
+    }
+  ]
+}

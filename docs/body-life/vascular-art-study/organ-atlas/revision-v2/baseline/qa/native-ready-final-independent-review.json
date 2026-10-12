@@ -1,0 +1,145 @@
+{
+  "schema": "organ-atlas-ready-independent-review/v2",
+  "nativeEvidence": false,
+  "scope": "Actual production ready function with instrumented mock image metadata; no native Runtime touched.",
+  "testedHashes": {
+    "OrganAtlasArt.lua": "17ed3df534e311eb717c65a6c81ba273d16c0f2dec406401fd80ddc276b4bb16",
+    "GastricArt.lua": "4460ab0fd73343eb089ac5a5eb70a9cf53243e979912dee835a039c98cd9df3f",
+    "OrganAtlasArtData.lua": "0158ab97daa71c1ae7f55dc067133602f19195c9c90fba69f5a73e783063eb77"
+  },
+  "unchangedHandleHotReloadControl": {
+    "expectedWidth": 1692,
+    "ready": true,
+    "actualWidth": 16
+  },
+  "results": [
+    {
+      "passed": true,
+      "name": "16x16-world-rejected"
+    },
+    {
+      "passed": true,
+      "name": "16x16-ui-rejected"
+    },
+    {
+      "passed": true,
+      "name": "partial-world-rejected"
+    },
+    {
+      "passed": true,
+      "name": "complete-world-accepted"
+    },
+    {
+      "passed": true,
+      "name": "ui-independent-and-still-rejected"
+    },
+    {
+      "passed": true,
+      "name": "complete-ui-accepted"
+    },
+    {
+      "passed": true,
+      "name": "unchanged-cache-accepted"
+    },
+    {
+      "passed": true,
+      "name": "unchanged-cache-no-native-query"
+    },
+    {
+      "passed": true,
+      "name": "wrong-mode-rejected"
+    },
+    {
+      "passed": true,
+      "name": "empty-id-list-rejected"
+    },
+    {
+      "passed": true,
+      "name": "single-subset-accepted"
+    },
+    {
+      "passed": true,
+      "name": "same-array-append-placeholder-rejected"
+    },
+    {
+      "passed": true,
+      "name": "same-array-append-loaded-accepted"
+    },
+    {
+      "passed": true,
+      "name": "same-count-replaced-id-placeholder-rejected"
+    },
+    {
+      "passed": true,
+      "name": "same-count-replaced-id-loaded-accepted"
+    },
+    {
+      "passed": true,
+      "name": "same-table-replaced-handle-placeholder-rejected"
+    },
+    {
+      "passed": true,
+      "name": "same-table-replaced-handle-loaded-accepted"
+    },
+    {
+      "passed": true,
+      "name": "restored-handle-rechecked-accepted"
+    },
+    {
+      "passed": true,
+      "name": "all-after-mutated-cache-accepted"
+    },
+    {
+      "passed": true,
+      "name": "stomach-replaced-handle-placeholder-rejected"
+    },
+    {
+      "passed": true,
+      "name": "stomach-replaced-handle-loaded-accepted"
+    },
+    {
+      "passed": true,
+      "name": "nil-release-safe"
+    },
+    {
+      "passed": true,
+      "name": "release-invalidates-loaded-cache"
+    },
+    {
+      "passed": true,
+      "name": "released-context-rejected"
+    },
+    {
+      "passed": true,
+      "name": "released-world-keeps-ui-ready"
+    },
+    {
+      "passed": true,
+      "name": "reprepare-placeholder-rejected"
+    },
+    {
+      "passed": true,
+      "name": "reprepared-full-loaded-accepted"
+    },
+    {
+      "passed": true,
+      "name": "unknown-id-rejected"
+    },
+    {
+      "passed": true,
+      "name": "nonpositive-handle-rejected"
+    },
+    {
+      "passed": true,
+      "name": "final-current-set-loaded-accepted"
+    }
+  ],
+  "passed": 30,
+  "total": 30,
+  "status": "PASS",
+  "limits": [
+    "Completed native handles are treated as immutable until prepare/release or requested-id/handle signature changes. A later same-handle hot reload is outside this cache guarantee.",
+    "Mock dimension tests verify the exact production guard, not native decoding, pixels, GPU execution or framebuffer appearance.",
+    "Prior review v1 is preserved as the pre-fix control."
+  ]
+}

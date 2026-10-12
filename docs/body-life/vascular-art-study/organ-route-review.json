@@ -1,0 +1,116 @@
+{
+  "scope": "Full-route, membrane and crowd review batch; not final body reconstruction",
+  "productionInstalled": false,
+  "nativeConfirmed": false,
+  "productionBaselineFilesUnchanged": 8,
+  "reports": {
+    "organ-route-evidence/report.json": {
+      "sha256": "7c3325160ba7af56fafe3146a7cf01141628dd35e6b70c889f5936b06d15317e",
+      "summary": {
+        "routes": 42,
+        "passed": 27,
+        "stages": 208,
+        "stagesPassed": 193
+      }
+    },
+    "liver-additional-gate-evidence/report.json": {
+      "sha256": "b8eddcd43cf25e3766bcbf4bb4134a31f607a3baeadcbb802253509302bf69a6",
+      "summary": {
+        "routes": 3,
+        "passed": 3,
+        "stages": 18,
+        "stagesPassed": 18
+      }
+    },
+    "bladder-additional-gate-evidence/report.json": {
+      "sha256": "d7f6d40db76c39b6845a4b728321c986235a574e83d9b51e3d2021bb1fb3bedb",
+      "summary": {
+        "routes": 3,
+        "passed": 3,
+        "stages": 18,
+        "stagesPassed": 18
+      }
+    },
+    "body-region-route-evidence/report.json": {
+      "sha256": "fd72dcf5435e2e1dc269dd7371db6924070be3ca1bc854ff8d1e5f3522156765",
+      "summary": {
+        "routes": 15,
+        "passed": 0,
+        "cpuBudgetExceeded": 11,
+        "simulationBudgetExceeded": 0,
+        "endpointFailures": 4,
+        "invalidSteps": 0,
+        "radiusViolations": 0,
+        "negativeTests": 3,
+        "negativePassed": 3
+      }
+    },
+    "organ-route-crowd-evidence/report.json": {
+      "sha256": "dc746000285b5de45eca9d49a4c6f5a0b85d8b84e58703682a291ee1d8587258",
+      "summary": {
+        "scenarios": 7,
+        "passed": 0,
+        "spawnedUnits": 42,
+        "completedUnits": 28,
+        "stagesCompleted": 59,
+        "illegalMoves": 0,
+        "radiusViolations": 0,
+        "overlapObservations": 0
+      }
+    },
+    "organ-route-crowd-evidence/solitary-control.json": {
+      "sha256": "a3c557b1ae7ed17c4013d5cf842efb9b0d613ea279afc00ffc1b493d60d25958",
+      "summary": {
+        "tests": 14,
+        "passed": 12,
+        "cpuUnconfirmed": 1,
+        "actualAStarFailed": 1,
+        "simulationTimeouts": 0,
+        "netStepRejections": 0,
+        "radiusViolations": 0
+      }
+    },
+    "organ-route-crowd-evidence/solitary-grid-control.json": {
+      "sha256": "f868787c88240d2dcf94e26bb34936eeebc85059b31cb0b70e61ac3cfd376ce1",
+      "summary": {
+        "tests": 2,
+        "passed": 0,
+        "cpuUnconfirmed": 1,
+        "actualAStarFailed": 1,
+        "simulationTimeouts": 0,
+        "netStepRejections": 0,
+        "radiusViolations": 0
+      }
+    }
+  },
+  "browser": {
+    "page": "organ-routes.html",
+    "observed": [
+      "Original 27/42 full routes and individual failures",
+      "Liver siege six-stage local roundtrip",
+      "Bladder siege six-stage local roundtrip",
+      "Explicit crowd and body-route limitations"
+    ],
+    "screenshot": "organ-routes-browser.png",
+    "desktop1440Visual": "UNDETERMINED: IAB screenshot remained clipped to side-panel width; viewport override reset",
+    "defaultPaneVisual": "Reviewed screenshot and DOM"
+  },
+  "lspSeverity1": {
+    "OrganRouteCollisionStudy.lua": 0,
+    "OrganRouteNavigationStudy.lua": 0,
+    "OrganRouteGridConnectorStudy.lua": 0
+  },
+  "annotationOnlyFollowup": "typing-only-followup.json",
+  "preview": {
+    "process_alive": false,
+    "reload_id": 22,
+    "restarted": false
+  },
+  "nextUnfinished": [
+    "Organ exact-endpoint access and return failures",
+    "Body region macro navigation CPU and fixed exit clearance",
+    "Gate crowd staging and fair traffic after single-unit approach fixes",
+    "Fixed-boundary low-noise art and .15 zoom handover",
+    "Native gameplay and performance acceptance"
+  ]
+}

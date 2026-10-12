@@ -1,6 +1,13 @@
 local D,U=require("war.Data"),require("war.Util")
 local E={}
 function E.food(s,f) local n=0 for _,b in ipairs(s.factions[f].food) do n=n+b.amount end return n end
+function E.stomachGlucose(s,f) local n=0 for _,b in ipairs(s.factions[f].food) do n=n+(b.stomachGlucose or 0) end return n end
+function E.consumeStomachGlucose(s,f,n)
+ local remaining=n;local fa=s.factions[f]
+ for _,b in ipairs(fa.food) do local take=math.min(remaining,b.stomachGlucose or 0);b.amount=b.amount-take;b.stomachGlucose=(b.stomachGlucose or 0)-take;remaining=remaining-take end
+ for i=#fa.food,1,-1 do if fa.food[i].amount<=0 then table.remove(fa.food,i) end end
+ return n-remaining
+end
 function E.count(s,f,kind) local n=0 for _,e in pairs(s.entities) do if U.alive(e) and e.faction==f and (not kind or e.kind==kind) then n=n+1 end end return n end
 function E.population(s,f,queues)
  local n,cap=0,0
@@ -16,19 +23,20 @@ function E.stock(s,f,k) if k=="food" then return E.food(s,f) end return s.factio
 function E.afford(s,f,c) for k,n in pairs(c) do if E.stock(s,f,k)<n then return false,"缺少"..D.names[k] end end return true end
 function E.consumeFood(s,f,n)
  local fa=s.factions[f];local remaining=n
- for _,b in ipairs(fa.food) do local take=math.min(remaining,b.amount);b.amount=b.amount-take;remaining=remaining-take;if remaining<=0 then break end end
+ for _,b in ipairs(fa.food) do local take=math.min(remaining,b.amount);b.stomachGlucose=math.max(0,(b.stomachGlucose or 0)-take);b.amount=b.amount-take;remaining=remaining-take;if remaining<=0 then break end end
  for i=#fa.food,1,-1 do if fa.food[i].amount<=0 then table.remove(fa.food,i) end end
  return n-remaining
 end
-function E.pay(s,f,c) local ok,why=E.afford(s,f,c);if not ok then return false,why end
- for k,n in pairs(c) do if k=="food" then E.consumeFood(s,f,n) else s.factions[f].stock[k]=s.factions[f].stock[k]-n end end return true
+function E.pay(s,f,c,stomachFood) local ok,why=E.afford(s,f,c);if not ok then return false,why end
+ if stomachFood and E.stomachGlucose(s,f)<(c.food or 0) then return false,"缺少胃部葡萄糖" end
+ for k,n in pairs(c) do if k=="food" then if stomachFood then E.consumeStomachGlucose(s,f,n) else E.consumeFood(s,f,n) end else s.factions[f].stock[k]=s.factions[f].stock[k]-n end end return true
 end
-function E.add(s,f,k,n)
+function E.add(s,f,k,n,source)
  local fa=s.factions[f]
- if k=="food" then local last=fa.food[#fa.food];if last and math.abs(last.born-s.time)<60 then last.amount=last.amount+n else fa.food[#fa.food+1]={amount=n,born=s.time} end
+ if k=="food" then local last=fa.food[#fa.food];if last and math.abs(last.born-s.time)<60 and (last.source or "")==(source or "") then last.amount=last.amount+n;last.stomachGlucose=(last.stomachGlucose or 0)+(source=="stomach" and n or 0) else fa.food[#fa.food+1]={amount=n,born=s.time,source=source,stomachGlucose=source=="stomach" and n or 0} end
  else fa.stock[k]=(fa.stock[k] or 0)+n end
 end
-function E.refund(s,f,c,ratio) for k,n in pairs(c) do E.add(s,f,k,math.floor(n*ratio)) end end
+function E.refund(s,f,c,ratio,foodSource) for k,n in pairs(c) do E.add(s,f,k,math.floor(n*ratio),k=="food" and foodSource or nil) end end
 function E.spoil(s)
  for _,fa in ipairs(s.factions) do local ttl=(fa.tech.storage and 6 or 3)*D.DAY
   for i=#fa.food,1,-1 do if s.time-fa.food[i].born>ttl then table.remove(fa.food,i) end end

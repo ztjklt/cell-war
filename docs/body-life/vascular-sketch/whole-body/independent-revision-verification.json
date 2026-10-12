@@ -1,0 +1,44 @@
+{
+  "failures": [],
+  "warnings": [
+    "Protected zones are candidate interface circles only; complete digestive/airway/bone masks and cell clearance remain outside this schematic review."
+  ],
+  "metrics": {
+    "unrelatedNodePenetrations": [],
+    "nodeCount": 162,
+    "edgeCount": 200,
+    "organBeds": 19,
+    "sourceOrganRegions": 12,
+    "crossings": 160,
+    "junctionRegions": 1,
+    "collinearOverlaps": []
+  },
+  "status": "PASS_DESIGN_DATA_ONLY",
+  "mutations": [
+    {
+      "case": "coronary_to_right",
+      "rejected": true,
+      "failures": [
+        "coronary: supply uses wrong vascular phase",
+        "coronary supply not from aortic root"
+      ]
+    },
+    {
+      "case": "lung_vein_to_right",
+      "rejected": true,
+      "failures": [
+        "lung_r: return uses wrong vascular phase"
+      ]
+    },
+    {
+      "case": "exchange_bypass",
+      "rejected": true,
+      "failures": [
+        "systemic exchange bypass"
+      ]
+    }
+  ],
+  "inputSha256": "c2e5c51890098e8d162cb9db3cb8235ac77490a56d9aca2a211b44c26aabedfc",
+  "scope": "Independent source-coordinate design checks. Does not certify medical detail, final visibility, image quality, unit clearance or native runtime.",
+  "runtimeTested": false
+}

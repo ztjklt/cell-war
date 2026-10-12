@@ -1,0 +1,30 @@
+{
+  "schema": "candidate-j-promotion-interface/v1",
+  "status": "PREPARED_NOT_EXECUTED",
+  "candidateManifestPath": "docs/body-life/vascular-art-study/fullbody-015/bake/fourth-candidate-j/manifest.json",
+  "candidateManifestSha256": "4f7c350a5629ab4cb34acf0a2fc1257e661c80b28be1acd73b97a3566bb960b0",
+  "contractPath": "docs/body-life/vascular-art-study/fullbody-015/bake/fourth-candidate-j/rgb-padding-contract.json",
+  "contractSha256": "c8e96568791a63eff1c6e600a4689908bcd4488b3576af091835a5570cfb48a1",
+  "activeManifestPath": "docs/body-life/vascular-art-study/fullbody-015/bake/manifest.json",
+  "expectedActiveManifestSha256BeforePromotion": "047244928344daae38b12073b68468d3fb111804a216a85ad26a8f19407066e4",
+  "candidateAssetsAlreadyAtFinalNewResourcePaths": true,
+  "assetCount": 41,
+  "newAssetCount": 35,
+  "frozenEntireAssets": [
+    "arch-roof-and-junction",
+    "heart",
+    "heart-venous-junction",
+    "lung-left-airway-mouths",
+    "lung_l",
+    "lung_r"
+  ],
+  "alphaChangedPixels": 0,
+  "visibleRgbChangedPixels": 0,
+  "beforeActivation": [
+    "Independently check every candidate file against SHA and alpha/positiveRGB against frozen baseline.",
+    "Require active baseline SHA or explicitly rebase permitted metadata while preserving J pixel hashes.",
+    "Regenerate FullBodyMapArtData from J runtimeSpec using established publish tool only after root promotion authorization.",
+    "Do not claim native pass from diagnostic composites; current new native captures must verify all known fringe locations."
+  ],
+  "noRuntimeResourceRemapNeeded": "All35 candidate resources point at final v4j paths; 6 cardio/arch references are unchanged."
+}

@@ -1,0 +1,13 @@
+{
+  "schema": "author-offline-loader-error/v1",
+  "status": "FAILED_LIFECYCLE_LOAD_BEFORE_TESTS",
+  "stage": "Private Data dofile path syntax",
+  "exactError": "lupa.lua54.LuaSyntaxError: error loading code: [string \"<python>\"]:1: missing '{' near '\"/Users/jitian/Documents/ChatGPT/\\u7'",
+  "rootCause": "json.dumps default ASCII escapes Chinese path as \\uXXXX; Lua 5.4 strings require actual UTF-8 or Lua escapes.",
+  "candidateManifestPath": "docs/body-life/vascular-art-study/fullbody-015/bake/fifth-candidate-m/manifest.json",
+  "candidateManifestSha256": "641a40b5d7afa32e9c7bfa424dccac68e97323db30e4b4d71d40b41260b9ad15",
+  "candidateCoreFilesModifiedDuringRecovery": false,
+  "repair": "Use lua.globals().candidateRuntimePath and dofile(candidateRuntimePath), no quoted shell or Lua string interpolation.",
+  "archivedAuthorSource": "source-archive/build-m-candidate.source.py",
+  "nativeEvidence": false
+}

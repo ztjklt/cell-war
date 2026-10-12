@@ -1,0 +1,2842 @@
+{
+  "schema": "fullbody-native004-next-batch-proposal/v1",
+  "status": "PROPOSAL_ONLY_NOT_AUTHORIZED_OR_GENERATED",
+  "frozenMaterialManifestSha256": "77e67f6ae0c8db8935a4803f7495ea979efa991a6ca3a1817412ec8c53a03352",
+  "quietBaseSha256": "ef4cb61f0a4013a5f23ddbc8a23a3de54f43a333d664c5397349e6d45c8c3a47",
+  "nativeDriverSha256": "8f585fb253e6172528874a05b8722ca83933627dc14bb1859ef5b550cb4a86be",
+  "patches": [
+    {
+      "id": "arch-roof-and-junction",
+      "kind": "foreground-and-junction",
+      "sourceBox": [
+        489,
+        319,
+        564,
+        374
+      ],
+      "pixelSizeProposed": [
+        1254,
+        1254
+      ],
+      "minimumEffectivePixelsPerSource": 16.72,
+      "evidencePath": "docs/body-life/vascular-art-study/fullbody-015/native-004/20-aortic-arch-z0.15.png",
+      "evidenceSha256": "8afe95f8b096d268cef1a8345f2e9e21f33e86682358290f77e316b6b568102f",
+      "camera": {
+        "y": 1210,
+        "x": 1056
+      },
+      "zoom": 0.15,
+      "approximateIssueAnchorsSource": [
+        [
+          509.3,
+          334.9
+        ],
+        [
+          513.8,
+          342.1
+        ],
+        [
+          532.7,
+          347.8
+        ]
+      ],
+      "anchorToleranceSource": 2,
+      "problem": "奶油气路周围短红片、蓝尖片和楔孔；红主干内部横向细线。",
+      "edgeIds": [
+        "e002",
+        "e003",
+        "e006",
+        "e009",
+        "e067",
+        "e072",
+        "e151",
+        "e153",
+        "e156",
+        "e158",
+        "e174"
+      ],
+      "fixedCropPorts": [
+        {
+          "edgeId": "e002",
+          "system": "artery",
+          "layer": 30,
+          "source": [
+            495.41682,
+            374.0
+          ],
+          "widthSource": 4,
+          "directionIntoCrop": [
+            0.34058715,
+            -0.94021295
+          ],
+          "sourceSampleSha256": "37ec4ed61b2980b658f6bf6abe9fcfa708c18414543d7a0c8d33a44ae9ba0dc5"
+        },
+        {
+          "edgeId": "e003",
+          "system": "artery",
+          "layer": 30,
+          "source": [
+            489.0,
+            362.35675
+          ],
+          "widthSource": 4,
+          "directionIntoCrop": [
+            0.70098002,
+            -0.71318091
+          ],
+          "sourceSampleSha256": "8977b2913d97759e56f09e837b4825c9a7a166caa3384ffdaa47302da65d04ad"
+        },
+        {
+          "edgeId": "e006",
+          "system": "artery",
+          "layer": 30,
+          "source": [
+            541.25102,
+            374.0
+          ],
+          "widthSource": 4,
+          "directionIntoCrop": [
+            -0.93905544,
+            -0.34376573
+          ],
+          "sourceSampleSha256": "ca1d61f8436db9953d86e3cbd5cd66545e1558620266484021da281cdb44116a"
+        },
+        {
+          "edgeId": "e009",
+          "system": "artery",
+          "layer": 10,
+          "source": [
+            539.01108,
+            374.0
+          ],
+          "widthSource": 7,
+          "directionIntoCrop": [
+            -0.3856353,
+            -0.9226513
+          ],
+          "sourceSampleSha256": "3826fb641c98778f943285ba7d73a83e0de94112c3144cd4c398a15da2e601d6"
+        },
+        {
+          "edgeId": "e067",
+          "system": "vein",
+          "layer": 25,
+          "source": [
+            535.63235,
+            319.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.16229852,
+            0.9867417
+          ],
+          "sourceSampleSha256": "0926d805a49bc2d541163462723fcbc741f1f0d031ec8fa51552d644d5bcb9fc"
+        },
+        {
+          "edgeId": "e067",
+          "system": "vein",
+          "layer": 25,
+          "source": [
+            491.8511,
+            374.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.95031414,
+            -0.31129253
+          ],
+          "sourceSampleSha256": "0926d805a49bc2d541163462723fcbc741f1f0d031ec8fa51552d644d5bcb9fc"
+        },
+        {
+          "edgeId": "e072",
+          "system": "vein",
+          "layer": 55,
+          "source": [
+            531.35598,
+            319.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.67133516,
+            0.7411539
+          ],
+          "sourceSampleSha256": "acecb94a741282e185586aefb205d7c226f908728a1765866e7c60e7cfaeb881"
+        },
+        {
+          "edgeId": "e072",
+          "system": "vein",
+          "layer": 55,
+          "source": [
+            489.0,
+            369.57518
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.58915808,
+            -0.80801779
+          ],
+          "sourceSampleSha256": "acecb94a741282e185586aefb205d7c226f908728a1765866e7c60e7cfaeb881"
+        },
+        {
+          "edgeId": "e151",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            532.72475,
+            374.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.22332912,
+            -0.9747431
+          ],
+          "sourceSampleSha256": "bfbba93aaa2cdbd3994510a9d7ad86ec0da9896464a8f3c25aab4422e1ab6a5d"
+        },
+        {
+          "edgeId": "e153",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            500.73937,
+            319.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.31477984,
+            0.94916471
+          ],
+          "sourceSampleSha256": "cecae566b2bedee01fc4f3bec80be0939414a8bc271451d1e2fcd429817ffacb"
+        },
+        {
+          "edgeId": "e156",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            518.0,
+            319.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.22192998,
+            0.97506261
+          ],
+          "sourceSampleSha256": "e723af1fb19351b1fd68f993e9de44326764d4d5fac56556928220268e6bc806"
+        },
+        {
+          "edgeId": "e158",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            535.22738,
+            319.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.48808455,
+            0.87279635
+          ],
+          "sourceSampleSha256": "6df831165c2c3b32fcbacb664ce4d1e244a70493114c3c4a7ae676c82d1f6b8d"
+        },
+        {
+          "edgeId": "e174",
+          "system": "artery",
+          "layer": 60,
+          "source": [
+            544.1125,
+            374.0
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            0.9733758,
+            -0.22921508
+          ],
+          "sourceSampleSha256": "ff0d23d15fdb0431bd47d92d31ab85d10f8d4f0f94da240efd7ef3a3d299940b"
+        },
+        {
+          "edgeId": "e174",
+          "system": "artery",
+          "layer": 60,
+          "source": [
+            564.0,
+            358.5183
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            -0.72997697,
+            0.68347175
+          ],
+          "sourceSampleSha256": "ff0d23d15fdb0431bd47d92d31ab85d10f8d4f0f94da240efd7ef3a3d299940b"
+        }
+      ],
+      "internalGraphEndpoints": [
+        {
+          "edgeId": "e002",
+          "system": "artery",
+          "layer": 30,
+          "source": [
+            510.0,
+            355.0
+          ],
+          "widthSource": 4,
+          "directionIntoCrop": [
+            -0.93641675,
+            0.35088982
+          ],
+          "sourceSampleSha256": "37ec4ed61b2980b658f6bf6abe9fcfa708c18414543d7a0c8d33a44ae9ba0dc5"
+        },
+        {
+          "edgeId": "e003",
+          "system": "artery",
+          "layer": 30,
+          "source": [
+            510.0,
+            355.0
+          ],
+          "widthSource": 4,
+          "directionIntoCrop": [
+            -0.99943616,
+            0.03357631
+          ],
+          "sourceSampleSha256": "8977b2913d97759e56f09e837b4825c9a7a166caa3384ffdaa47302da65d04ad"
+        },
+        {
+          "edgeId": "e006",
+          "system": "artery",
+          "layer": 30,
+          "source": [
+            510.0,
+            355.0
+          ],
+          "widthSource": 4,
+          "directionIntoCrop": [
+            0.99991233,
+            -0.01324149
+          ],
+          "sourceSampleSha256": "ca1d61f8436db9953d86e3cbd5cd66545e1558620266484021da281cdb44116a"
+        },
+        {
+          "edgeId": "e009",
+          "system": "artery",
+          "layer": 10,
+          "source": [
+            514.0,
+            341.0
+          ],
+          "widthSource": 7,
+          "directionIntoCrop": [
+            0.61946372,
+            0.78502529
+          ],
+          "sourceSampleSha256": "3826fb641c98778f943285ba7d73a83e0de94112c3144cd4c398a15da2e601d6"
+        },
+        {
+          "edgeId": "e151",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            514.0,
+            341.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.69755589,
+            0.71653038
+          ],
+          "sourceSampleSha256": "bfbba93aaa2cdbd3994510a9d7ad86ec0da9896464a8f3c25aab4422e1ab6a5d"
+        },
+        {
+          "edgeId": "e153",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            514.0,
+            341.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.61313138,
+            -0.78998095
+          ],
+          "sourceSampleSha256": "cecae566b2bedee01fc4f3bec80be0939414a8bc271451d1e2fcd429817ffacb"
+        },
+        {
+          "edgeId": "e156",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            514.0,
+            341.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.23530396,
+            -0.97192183
+          ],
+          "sourceSampleSha256": "e723af1fb19351b1fd68f993e9de44326764d4d5fac56556928220268e6bc806"
+        },
+        {
+          "edgeId": "e158",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            514.0,
+            341.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.07763854,
+            -0.99698157
+          ],
+          "sourceSampleSha256": "6df831165c2c3b32fcbacb664ce4d1e244a70493114c3c4a7ae676c82d1f6b8d"
+        }
+      ],
+      "geometryNeverInferredFromGeneratedPixels": true
+    },
+    {
+      "id": "celiac-stomach-complete-junction",
+      "kind": "complete-junction",
+      "sourceBox": [
+        507,
+        472,
+        579,
+        540
+      ],
+      "pixelSizeProposed": [
+        1254,
+        1254
+      ],
+      "minimumEffectivePixelsPerSource": 17.416666666666668,
+      "evidencePath": "docs/body-life/vascular-art-study/fullbody-015/native-004/21-celiac-stomach-z0.15.png",
+      "evidenceSha256": "1b4a9b9f0df5913681d11b8b5bafe1753352e30cb4b9259b241985773b0fbcbd",
+      "camera": {
+        "y": 1492,
+        "x": 1064
+      },
+      "zoom": 0.15,
+      "approximateIssueAnchorsSource": [
+        [
+          520.2,
+          482.6
+        ],
+        [
+          537.7,
+          489.5
+        ],
+        [
+          543,
+          490.6
+        ]
+      ],
+      "anchorToleranceSource": 2,
+      "problem": "红色真实分支内部斜直线缝、胃壁接口处纹理硬切。",
+      "edgeIds": [
+        "e009",
+        "e010",
+        "e116",
+        "e117",
+        "e119",
+        "e123",
+        "e124",
+        "e125",
+        "e164",
+        "e180",
+        "e182",
+        "e183",
+        "e184",
+        "study.stomach.wall_service"
+      ],
+      "fixedCropPorts": [
+        {
+          "edgeId": "e009",
+          "system": "artery",
+          "layer": 10,
+          "source": [
+            531.61188,
+            472.0
+          ],
+          "widthSource": 7,
+          "directionIntoCrop": [
+            -0.72201713,
+            0.69187518
+          ],
+          "sourceSampleSha256": "3826fb641c98778f943285ba7d73a83e0de94112c3144cd4c398a15da2e601d6"
+        },
+        {
+          "edgeId": "e010",
+          "system": "artery",
+          "layer": 10,
+          "source": [
+            515.54284,
+            540.0
+          ],
+          "widthSource": 7,
+          "directionIntoCrop": [
+            0.04946968,
+            -0.99877563
+          ],
+          "sourceSampleSha256": "10a3b602ee8c3d89414b6381a294984e50ff96d0399b6682df7b1905c7e7dae5"
+        },
+        {
+          "edgeId": "e119",
+          "system": "vein",
+          "layer": 15,
+          "source": [
+            523.0,
+            540.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.31978195,
+            -0.94749116
+          ],
+          "sourceSampleSha256": "93b0f32e3a1185064fa1d5b40dad6723ddf61ea903bc66fc9496c6297dde996f"
+        },
+        {
+          "edgeId": "e125",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            507.0,
+            528.73065
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.82491719,
+            -0.5652536
+          ],
+          "sourceSampleSha256": "2a58c7b72817582ac5537e8ea0b224cd4d9bfc6801f3940f6b1e86a3e0a916b1"
+        },
+        {
+          "edgeId": "e164",
+          "system": "vein",
+          "layer": 15,
+          "source": [
+            549.12679,
+            540.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.55725576,
+            -0.83034091
+          ],
+          "sourceSampleSha256": "3ba4d18b4e127f0741cecd4c13f4d34e6fc51382754a4c640d3702d51bda38be"
+        },
+        {
+          "edgeId": "e180",
+          "system": "artery",
+          "layer": 60,
+          "source": [
+            507.0,
+            507.99523
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            0.89101093,
+            0.45398186
+          ],
+          "sourceSampleSha256": "08e2f9899fd09a10f58fdc7a9ae28dd736b5faa7366549a4d7de394a792f4cfb"
+        },
+        {
+          "edgeId": "e182",
+          "system": "vein",
+          "layer": 60,
+          "source": [
+            507.0,
+            519.46691
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            0.97604506,
+            0.21756846
+          ],
+          "sourceSampleSha256": "ea5cbe48c25d3d1c5d66f57cb88a4b81da19465b4658dc1d264857c59d0a91f1"
+        },
+        {
+          "edgeId": "study.stomach.wall_service",
+          "system": "capillary",
+          "layer": 35,
+          "source": [
+            579.0,
+            506.6488
+          ],
+          "widthSource": 1.5,
+          "directionIntoCrop": [
+            -0.95291489,
+            -0.30323789
+          ],
+          "sourceSampleSha256": "88de3d7e8c339710756ab51e4cc3bde23f696c35705fd8069aa6d43abebe3c7c"
+        },
+        {
+          "edgeId": "study.stomach.wall_service",
+          "system": "capillary",
+          "layer": 35,
+          "source": [
+            571.41332,
+            540.0
+          ],
+          "widthSource": 1.5,
+          "directionIntoCrop": [
+            -0.46884324,
+            -0.88328139
+          ],
+          "sourceSampleSha256": "88de3d7e8c339710756ab51e4cc3bde23f696c35705fd8069aa6d43abebe3c7c"
+        }
+      ],
+      "internalGraphEndpoints": [
+        {
+          "edgeId": "e009",
+          "system": "artery",
+          "layer": 10,
+          "source": [
+            524.0,
+            481.0
+          ],
+          "widthSource": 7,
+          "directionIntoCrop": [
+            0.44939131,
+            -0.89333501
+          ],
+          "sourceSampleSha256": "3826fb641c98778f943285ba7d73a83e0de94112c3144cd4c398a15da2e601d6"
+        },
+        {
+          "edgeId": "e010",
+          "system": "artery",
+          "layer": 10,
+          "source": [
+            524.0,
+            481.0
+          ],
+          "widthSource": 7,
+          "directionIntoCrop": [
+            -0.42357648,
+            0.90586035
+          ],
+          "sourceSampleSha256": "10a3b602ee8c3d89414b6381a294984e50ff96d0399b6682df7b1905c7e7dae5"
+        },
+        {
+          "edgeId": "e116",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            524.0,
+            481.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.21874474,
+            0.97578212
+          ],
+          "sourceSampleSha256": "1bc740bf8255df11ec666781ada1cbadf444be6e3a2c688435ea13bbed9da3c2"
+        },
+        {
+          "edgeId": "e116",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            537.0,
+            489.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.95151771,
+            -0.30759397
+          ],
+          "sourceSampleSha256": "1bc740bf8255df11ec666781ada1cbadf444be6e3a2c688435ea13bbed9da3c2"
+        },
+        {
+          "edgeId": "e117",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            537.0,
+            489.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.99956646,
+            0.02944308
+          ],
+          "sourceSampleSha256": "8a353b261ee64364a858c65296a377a54a8a388447872df2ffaf0ec36fdb577d"
+        },
+        {
+          "edgeId": "e117",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            520.37931,
+            509.44828
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.48813868,
+            -0.87276608
+          ],
+          "sourceSampleSha256": "8a353b261ee64364a858c65296a377a54a8a388447872df2ffaf0ec36fdb577d"
+        },
+        {
+          "edgeId": "e119",
+          "system": "vein",
+          "layer": 15,
+          "source": [
+            509.7953,
+            520.44172
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.85296061,
+            0.52197528
+          ],
+          "sourceSampleSha256": "93b0f32e3a1185064fa1d5b40dad6723ddf61ea903bc66fc9496c6297dde996f"
+        },
+        {
+          "edgeId": "e123",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            537.0,
+            489.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.99891014,
+            -0.04667477
+          ],
+          "sourceSampleSha256": "83b17bd17a44030c0fb2e9c9adde0110c893339675dcea72e82467f3b0bf966c"
+        },
+        {
+          "edgeId": "e123",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            548.176,
+            502.032
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.44049375,
+            -0.89775568
+          ],
+          "sourceSampleSha256": "83b17bd17a44030c0fb2e9c9adde0110c893339675dcea72e82467f3b0bf966c"
+        },
+        {
+          "edgeId": "e124",
+          "system": "capillary",
+          "layer": 60,
+          "source": [
+            566.0,
+            503.0
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            0.68139796,
+            0.73191313
+          ],
+          "sourceSampleSha256": "0e9b22e0823c0beaec1bfd9e41c624be88fbaffffe2a9b4a8772ba81c4b40b46"
+        },
+        {
+          "edgeId": "e124",
+          "system": "capillary",
+          "layer": 60,
+          "source": [
+            568.0,
+            535.0
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            -0.30359028,
+            -0.95280268
+          ],
+          "sourceSampleSha256": "0e9b22e0823c0beaec1bfd9e41c624be88fbaffffe2a9b4a8772ba81c4b40b46"
+        },
+        {
+          "edgeId": "e125",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            537.0,
+            489.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.33148914,
+            0.94345904
+          ],
+          "sourceSampleSha256": "2a58c7b72817582ac5537e8ea0b224cd4d9bfc6801f3940f6b1e86a3e0a916b1"
+        },
+        {
+          "edgeId": "e164",
+          "system": "vein",
+          "layer": 15,
+          "source": [
+            539.0,
+            520.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.67146069,
+            0.74104018
+          ],
+          "sourceSampleSha256": "3ba4d18b4e127f0741cecd4c13f4d34e6fc51382754a4c640d3702d51bda38be"
+        },
+        {
+          "edgeId": "e180",
+          "system": "artery",
+          "layer": 60,
+          "source": [
+            520.37931,
+            509.44828
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            -0.62270633,
+            0.78245564
+          ],
+          "sourceSampleSha256": "08e2f9899fd09a10f58fdc7a9ae28dd736b5faa7366549a4d7de394a792f4cfb"
+        },
+        {
+          "edgeId": "e182",
+          "system": "vein",
+          "layer": 60,
+          "source": [
+            509.7953,
+            520.44172
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            -0.88326612,
+            -0.46887201
+          ],
+          "sourceSampleSha256": "ea5cbe48c25d3d1c5d66f57cb88a4b81da19465b4658dc1d264857c59d0a91f1"
+        },
+        {
+          "edgeId": "e183",
+          "system": "artery",
+          "layer": 60,
+          "source": [
+            548.176,
+            502.032
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            0.63330296,
+            0.77390398
+          ],
+          "sourceSampleSha256": "2985194554595c77ed9501243b2b46c89972c2beab9863f797392a86eaf9e60d"
+        },
+        {
+          "edgeId": "e183",
+          "system": "artery",
+          "layer": 60,
+          "source": [
+            566.0,
+            503.0
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            -0.98175542,
+            -0.19014809
+          ],
+          "sourceSampleSha256": "2985194554595c77ed9501243b2b46c89972c2beab9863f797392a86eaf9e60d"
+        },
+        {
+          "edgeId": "e184",
+          "system": "vein",
+          "layer": 60,
+          "source": [
+            568.0,
+            535.0
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            -0.7512343,
+            -0.66003563
+          ],
+          "sourceSampleSha256": "71ee74ceceb87d01ec5f03f47bc4612bf9676a77afb0ce8825462c6c2346a620"
+        },
+        {
+          "edgeId": "e184",
+          "system": "vein",
+          "layer": 60,
+          "source": [
+            539.0,
+            520.0
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            0.75216157,
+            -0.65897873
+          ],
+          "sourceSampleSha256": "71ee74ceceb87d01ec5f03f47bc4612bf9676a77afb0ce8825462c6c2346a620"
+        },
+        {
+          "edgeId": "study.stomach.wall_service",
+          "system": "capillary",
+          "layer": 35,
+          "source": [
+            566.0,
+            503.0
+          ],
+          "widthSource": 1.5,
+          "directionIntoCrop": [
+            0.97306853,
+            0.23051602
+          ],
+          "sourceSampleSha256": "88de3d7e8c339710756ab51e4cc3bde23f696c35705fd8069aa6d43abebe3c7c"
+        },
+        {
+          "edgeId": "study.stomach.wall_service",
+          "system": "capillary",
+          "layer": 35,
+          "source": [
+            568.0,
+            535.0
+          ],
+          "widthSource": 1.5,
+          "directionIntoCrop": [
+            0.72895205,
+            0.68456476
+          ],
+          "sourceSampleSha256": "88de3d7e8c339710756ab51e4cc3bde23f696c35705fd8069aa6d43abebe3c7c"
+        }
+      ],
+      "geometryNeverInferredFromGeneratedPixels": true
+    },
+    {
+      "id": "pancreas-duct-and-crossings",
+      "kind": "foreground-and-junction",
+      "sourceBox": [
+        506,
+        557,
+        562,
+        606
+      ],
+      "pixelSizeProposed": [
+        1254,
+        1254
+      ],
+      "minimumEffectivePixelsPerSource": 22.392857142857142,
+      "evidencePath": "docs/body-life/vascular-art-study/fullbody-015/native-004/06-pancreas-z0.15.png",
+      "evidenceSha256": "96f9d9c2210365bf01785a9e6fc1e0b80092029f0d7836e75d98f32e7176766c",
+      "camera": {
+        "y": 1681.0316593925281,
+        "x": 1116.1502880969042
+      },
+      "zoom": 0.15,
+      "approximateIssueAnchorsSource": [
+        [
+          514.8,
+          568.1
+        ],
+        [
+          522.8,
+          572.6
+        ],
+        [
+          514.8,
+          581.5
+        ]
+      ],
+      "anchorToleranceSource": 2,
+      "problem": "纵向红管与蓝管有矩形材质接边；导管口边仍需高清薄唇。",
+      "edgeIds": [
+        "e010",
+        "e011",
+        "e119",
+        "e125",
+        "e126",
+        "e127",
+        "e129",
+        "e136",
+        "e139",
+        "e147",
+        "e164",
+        "e165",
+        "e169",
+        "e170",
+        "e171",
+        "e185",
+        "e186"
+      ],
+      "fixedCropPorts": [
+        {
+          "edgeId": "e010",
+          "system": "artery",
+          "layer": 10,
+          "source": [
+            515.03653,
+            557.0
+          ],
+          "widthSource": 7,
+          "directionIntoCrop": [
+            -0.01603079,
+            0.9998715
+          ],
+          "sourceSampleSha256": "10a3b602ee8c3d89414b6381a294984e50ff96d0399b6682df7b1905c7e7dae5"
+        },
+        {
+          "edgeId": "e011",
+          "system": "artery",
+          "layer": 10,
+          "source": [
+            516.28374,
+            606.0
+          ],
+          "widthSource": 7,
+          "directionIntoCrop": [
+            -0.0665157,
+            -0.99778538
+          ],
+          "sourceSampleSha256": "7b3f94a0fe5f1a82424a9a847c18db1606312adad9dfe4dce10cbbd9bccc8257"
+        },
+        {
+          "edgeId": "e119",
+          "system": "vein",
+          "layer": 15,
+          "source": [
+            522.82965,
+            557.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.02703712,
+            0.99963443
+          ],
+          "sourceSampleSha256": "93b0f32e3a1185064fa1d5b40dad6723ddf61ea903bc66fc9496c6297dde996f"
+        },
+        {
+          "edgeId": "e125",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            506.0,
+            565.75939
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.99759337,
+            0.06933591
+          ],
+          "sourceSampleSha256": "2a58c7b72817582ac5537e8ea0b224cd4d9bfc6801f3940f6b1e86a3e0a916b1"
+        },
+        {
+          "edgeId": "e127",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            524.0,
+            606.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.13719633,
+            -0.99054387
+          ],
+          "sourceSampleSha256": "b11e041908965da3210c4d6f74594662e1ecc692338fd37fcd62b623cb1f44a9"
+        },
+        {
+          "edgeId": "e129",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            524.0,
+            606.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.66159791,
+            -0.74985879
+          ],
+          "sourceSampleSha256": "d9ec066c54de9c9aad018b8822e05c20268a393e83d4041f25f7243463e1450c"
+        },
+        {
+          "edgeId": "e136",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            520.53201,
+            606.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.75994275,
+            -0.64999002
+          ],
+          "sourceSampleSha256": "5e171ab7a4e4c9d59b2b634d1310d413193a26272a8f10f99679a2fd8c85b7b2"
+        },
+        {
+          "edgeId": "e139",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            562.0,
+            600.47396
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.87653641,
+            -0.48133557
+          ],
+          "sourceSampleSha256": "2beca2f329b9f3199892dc5f44da08fe6f2de760380dd60671f6bc2edb76bac5"
+        },
+        {
+          "edgeId": "e147",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            506.0,
+            578.58959
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.9318998,
+            0.36271581
+          ],
+          "sourceSampleSha256": "498c510d9f2ae46f1031e3dc6b581993d9537a62585d8d3fe18ebff5a67b45a5"
+        },
+        {
+          "edgeId": "e164",
+          "system": "vein",
+          "layer": 15,
+          "source": [
+            527.6973,
+            557.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.8850997,
+            0.46540146
+          ],
+          "sourceSampleSha256": "3ba4d18b4e127f0741cecd4c13f4d34e6fc51382754a4c640d3702d51bda38be"
+        },
+        {
+          "edgeId": "e165",
+          "system": "vein",
+          "layer": 15,
+          "source": [
+            506.0,
+            584.16827
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.38609674,
+            -0.92245829
+          ],
+          "sourceSampleSha256": "1e4e5a4f7b044da78ee8eab02569c62f1c8c1968c1180f55b3c872847848590e"
+        },
+        {
+          "edgeId": "e169",
+          "system": "vein",
+          "layer": 15,
+          "source": [
+            531.1605,
+            606.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.16541792,
+            -0.98622356
+          ],
+          "sourceSampleSha256": "40f1535950e8204ae69316c447d0e0dc6d2ed29579bf8d724ead1e5e6544f824"
+        },
+        {
+          "edgeId": "e170",
+          "system": "vein",
+          "layer": 15,
+          "source": [
+            562.0,
+            604.62406
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.50968938,
+            -0.86035849
+          ],
+          "sourceSampleSha256": "1cc1620f8f61322c5eab6fe66df471c41bfc8ce265eef46dcccfbcf1b4fd78c0"
+        },
+        {
+          "edgeId": "e186",
+          "system": "vein",
+          "layer": 60,
+          "source": [
+            506.0,
+            601.16284
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            0.94028414,
+            -0.34039056
+          ],
+          "sourceSampleSha256": "4a9665dade9cd7258c9deb4be1af9134b81a4141a8d97dd82d0c60a92f6e2a91"
+        }
+      ],
+      "internalGraphEndpoints": [
+        {
+          "edgeId": "e010",
+          "system": "artery",
+          "layer": 10,
+          "source": [
+            515.0,
+            582.0
+          ],
+          "widthSource": 7,
+          "directionIntoCrop": [
+            -0.01746715,
+            -0.99984744
+          ],
+          "sourceSampleSha256": "10a3b602ee8c3d89414b6381a294984e50ff96d0399b6682df7b1905c7e7dae5"
+        },
+        {
+          "edgeId": "e011",
+          "system": "artery",
+          "layer": 10,
+          "source": [
+            515.0,
+            582.0
+          ],
+          "widthSource": 7,
+          "directionIntoCrop": [
+            0.0196153,
+            0.9998076
+          ],
+          "sourceSampleSha256": "7b3f94a0fe5f1a82424a9a847c18db1606312adad9dfe4dce10cbbd9bccc8257"
+        },
+        {
+          "edgeId": "e119",
+          "system": "vein",
+          "layer": 15,
+          "source": [
+            523.0,
+            561.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.14969477,
+            -0.98873226
+          ],
+          "sourceSampleSha256": "93b0f32e3a1185064fa1d5b40dad6723ddf61ea903bc66fc9496c6297dde996f"
+        },
+        {
+          "edgeId": "e125",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            550.04972,
+            575.94475
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.45480598,
+            -0.89059055
+          ],
+          "sourceSampleSha256": "2a58c7b72817582ac5537e8ea0b224cd4d9bfc6801f3940f6b1e86a3e0a916b1"
+        },
+        {
+          "edgeId": "e126",
+          "system": "capillary",
+          "layer": 60,
+          "source": [
+            547.0,
+            582.0
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            -0.82573563,
+            0.56405733
+          ],
+          "sourceSampleSha256": "d1f47de723e806452cdbbc8c376e6cbf2bf45f88ae54ffde5321c95c587c9871"
+        },
+        {
+          "edgeId": "e126",
+          "system": "capillary",
+          "layer": 60,
+          "source": [
+            515.0,
+            587.0
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            0.86504441,
+            -0.5016953
+          ],
+          "sourceSampleSha256": "d1f47de723e806452cdbbc8c376e6cbf2bf45f88ae54ffde5321c95c587c9871"
+        },
+        {
+          "edgeId": "e127",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            515.0,
+            582.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.19099923,
+            0.98159019
+          ],
+          "sourceSampleSha256": "b11e041908965da3210c4d6f74594662e1ecc692338fd37fcd62b623cb1f44a9"
+        },
+        {
+          "edgeId": "e129",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            550.04972,
+            575.94475
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.28092084,
+            0.95973094
+          ],
+          "sourceSampleSha256": "d9ec066c54de9c9aad018b8822e05c20268a393e83d4041f25f7243463e1450c"
+        },
+        {
+          "edgeId": "e136",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            515.0,
+            582.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.16695517,
+            0.98596449
+          ],
+          "sourceSampleSha256": "5e171ab7a4e4c9d59b2b634d1310d413193a26272a8f10f99679a2fd8c85b7b2"
+        },
+        {
+          "edgeId": "e139",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            515.0,
+            582.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.94168244,
+            0.33650286
+          ],
+          "sourceSampleSha256": "2beca2f329b9f3199892dc5f44da08fe6f2de760380dd60671f6bc2edb76bac5"
+        },
+        {
+          "edgeId": "e147",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            515.0,
+            582.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.94144425,
+            -0.33716868
+          ],
+          "sourceSampleSha256": "498c510d9f2ae46f1031e3dc6b581993d9537a62585d8d3fe18ebff5a67b45a5"
+        },
+        {
+          "edgeId": "e164",
+          "system": "vein",
+          "layer": 15,
+          "source": [
+            523.0,
+            561.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.40711871,
+            -0.91337526
+          ],
+          "sourceSampleSha256": "3ba4d18b4e127f0741cecd4c13f4d34e6fc51382754a4c640d3702d51bda38be"
+        },
+        {
+          "edgeId": "e165",
+          "system": "vein",
+          "layer": 15,
+          "source": [
+            528.0,
+            571.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.95447481,
+            -0.29829154
+          ],
+          "sourceSampleSha256": "1e4e5a4f7b044da78ee8eab02569c62f1c8c1968c1180f55b3c872847848590e"
+        },
+        {
+          "edgeId": "e169",
+          "system": "vein",
+          "layer": 15,
+          "source": [
+            523.0,
+            561.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.18420359,
+            0.98288811
+          ],
+          "sourceSampleSha256": "40f1535950e8204ae69316c447d0e0dc6d2ed29579bf8d724ead1e5e6544f824"
+        },
+        {
+          "edgeId": "e170",
+          "system": "vein",
+          "layer": 15,
+          "source": [
+            528.0,
+            571.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.59454051,
+            0.80406565
+          ],
+          "sourceSampleSha256": "1cc1620f8f61322c5eab6fe66df471c41bfc8ce265eef46dcccfbcf1b4fd78c0"
+        },
+        {
+          "edgeId": "e171",
+          "system": "vein",
+          "layer": 15,
+          "source": [
+            528.0,
+            571.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.57427018,
+            -0.81866584
+          ],
+          "sourceSampleSha256": "06775666f0269448c7e1886428310e82b77150b3823c5bfda7bbda4e98770a3e"
+        },
+        {
+          "edgeId": "e171",
+          "system": "vein",
+          "layer": 15,
+          "source": [
+            523.0,
+            561.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.25465895,
+            0.96703093
+          ],
+          "sourceSampleSha256": "06775666f0269448c7e1886428310e82b77150b3823c5bfda7bbda4e98770a3e"
+        },
+        {
+          "edgeId": "e185",
+          "system": "artery",
+          "layer": 60,
+          "source": [
+            550.04972,
+            575.94475
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            0.27519031,
+            0.96138977
+          ],
+          "sourceSampleSha256": "bbf43a8b7660d862ef0a86fcbe48e8a4ce6d69be5650dfbca42a61473b1d544c"
+        },
+        {
+          "edgeId": "e185",
+          "system": "artery",
+          "layer": 60,
+          "source": [
+            547.0,
+            582.0
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            0.77105082,
+            -0.63677361
+          ],
+          "sourceSampleSha256": "bbf43a8b7660d862ef0a86fcbe48e8a4ce6d69be5650dfbca42a61473b1d544c"
+        },
+        {
+          "edgeId": "e186",
+          "system": "vein",
+          "layer": 60,
+          "source": [
+            515.0,
+            587.0
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            -0.81081188,
+            0.58530684
+          ],
+          "sourceSampleSha256": "4a9665dade9cd7258c9deb4be1af9134b81a4141a8d97dd82d0c60a92f6e2a91"
+        }
+      ],
+      "geometryNeverInferredFromGeneratedPixels": true
+    },
+    {
+      "id": "kidney-right-hilum",
+      "kind": "foreground-and-junction",
+      "sourceBox": [
+        425,
+        593,
+        452,
+        631
+      ],
+      "pixelSizeProposed": [
+        1254,
+        1254
+      ],
+      "minimumEffectivePixelsPerSource": 33.0,
+      "evidencePath": "docs/body-life/vascular-art-study/fullbody-015/native-004/07-kidney_r-z0.15.png",
+      "evidenceSha256": "fae81225baf98050062ca130122ccf99e0a9bba1679706b01cb0a28ba33cc692",
+      "camera": {
+        "y": 1732.349437248223,
+        "x": 822.5534903755783
+      },
+      "zoom": 0.15,
+      "approximateIssueAnchorsSource": [
+        [
+          434.5,
+          618.9
+        ]
+      ],
+      "anchorToleranceSource": 2,
+      "problem": "蓝肾门切边尖楔和台阶，邻近红粉交接细线。",
+      "edgeIds": [
+        "e136",
+        "e137",
+        "e138",
+        "e193",
+        "e194"
+      ],
+      "fixedCropPorts": [
+        {
+          "edgeId": "e136",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            452.0,
+            608.09597
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.98841998,
+            -0.15174301
+          ],
+          "sourceSampleSha256": "5e171ab7a4e4c9d59b2b634d1310d413193a26272a8f10f99679a2fd8c85b7b2"
+        },
+        {
+          "edgeId": "e137",
+          "system": "capillary",
+          "layer": 60,
+          "source": [
+            425.0,
+            620.94307
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            0.48190082,
+            0.87622577
+          ],
+          "sourceSampleSha256": "11ba066a7ad90d04e69108f7945b1ea1bdc7dea67a2aaebb1e040a5a285bb2c9"
+        },
+        {
+          "edgeId": "e138",
+          "system": "vein",
+          "layer": 25,
+          "source": [
+            452.0,
+            621.09794
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.98565287,
+            -0.16878512
+          ],
+          "sourceSampleSha256": "e952bfb0d70b8c473f705369f5576a9abc1ab7bb86eba5dfef30cb6678de39ae"
+        },
+        {
+          "edgeId": "e193",
+          "system": "artery",
+          "layer": 60,
+          "source": [
+            430.98001,
+            593.0
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            0.59435499,
+            0.8042028
+          ],
+          "sourceSampleSha256": "7db48c45d8b872594f35a63f4774aefcae699b709a0c714b317be74ad9136339"
+        }
+      ],
+      "internalGraphEndpoints": [
+        {
+          "edgeId": "e136",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            439.88841,
+            604.93133
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.90633422,
+            0.42256157
+          ],
+          "sourceSampleSha256": "5e171ab7a4e4c9d59b2b634d1310d413193a26272a8f10f99679a2fd8c85b7b2"
+        },
+        {
+          "edgeId": "e137",
+          "system": "capillary",
+          "layer": 60,
+          "source": [
+            429.0,
+            625.0
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            -0.93504703,
+            -0.3545237
+          ],
+          "sourceSampleSha256": "11ba066a7ad90d04e69108f7945b1ea1bdc7dea67a2aaebb1e040a5a285bb2c9"
+        },
+        {
+          "edgeId": "e138",
+          "system": "vein",
+          "layer": 25,
+          "source": [
+            435.09459,
+            617.93243
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.95325365,
+            -0.30217126
+          ],
+          "sourceSampleSha256": "e952bfb0d70b8c473f705369f5576a9abc1ab7bb86eba5dfef30cb6678de39ae"
+        },
+        {
+          "edgeId": "e193",
+          "system": "artery",
+          "layer": 60,
+          "source": [
+            439.88841,
+            604.93133
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            -0.87489169,
+            -0.48431863
+          ],
+          "sourceSampleSha256": "7db48c45d8b872594f35a63f4774aefcae699b709a0c714b317be74ad9136339"
+        },
+        {
+          "edgeId": "e194",
+          "system": "vein",
+          "layer": 60,
+          "source": [
+            429.0,
+            625.0
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            0.99421912,
+            0.10737013
+          ],
+          "sourceSampleSha256": "64f3fbf9a2e2895631c1c8c8a7c1060c051c098f641f26ee83928676cc1049db"
+        },
+        {
+          "edgeId": "e194",
+          "system": "vein",
+          "layer": 60,
+          "source": [
+            435.09459,
+            617.93243
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            -0.88117399,
+            0.47279214
+          ],
+          "sourceSampleSha256": "64f3fbf9a2e2895631c1c8c8a7c1060c051c098f641f26ee83928676cc1049db"
+        }
+      ],
+      "geometryNeverInferredFromGeneratedPixels": true
+    },
+    {
+      "id": "kidney-left-hilum",
+      "kind": "foreground-and-junction",
+      "sourceBox": [
+        567,
+        588,
+        601,
+        634
+      ],
+      "pixelSizeProposed": [
+        1254,
+        1254
+      ],
+      "minimumEffectivePixelsPerSource": 27.26086956521739,
+      "evidencePath": "docs/body-life/vascular-art-study/fullbody-015/native-004/08-kidney_l-z0.15.png",
+      "evidenceSha256": "5c078d849a149c6417cdc2699bfb027e52e9dbc7ba765a591a7c016049a590f6",
+      "camera": {
+        "y": 1731.379110398568,
+        "x": 1215.15185181795
+      },
+      "zoom": 0.15,
+      "approximateIssueAnchorsSource": [
+        [
+          578.2,
+          619
+        ]
+      ],
+      "anchorToleranceSource": 2,
+      "problem": "蓝肾门穿出边阶梯凹口，前景背景衔接较模糊。",
+      "edgeIds": [
+        "e139",
+        "e140",
+        "e141",
+        "e195",
+        "e196"
+      ],
+      "fixedCropPorts": [
+        {
+          "edgeId": "e139",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            567.0,
+            603.42982
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.85535842,
+            0.51803665
+          ],
+          "sourceSampleSha256": "2beca2f329b9f3199892dc5f44da08fe6f2de760380dd60671f6bc2edb76bac5"
+        },
+        {
+          "edgeId": "e141",
+          "system": "vein",
+          "layer": 25,
+          "source": [
+            567.0,
+            623.29291
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.90954143,
+            -0.41561327
+          ],
+          "sourceSampleSha256": "ed4d9c4fa4ceff3aa881c768c374e8fd55f821508ce3447d689c8733f2ccdfb1"
+        }
+      ],
+      "internalGraphEndpoints": [
+        {
+          "edgeId": "e139",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            585.88108,
+            610.08649
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.91325499,
+            0.40738841
+          ],
+          "sourceSampleSha256": "2beca2f329b9f3199892dc5f44da08fe6f2de760380dd60671f6bc2edb76bac5"
+        },
+        {
+          "edgeId": "e140",
+          "system": "capillary",
+          "layer": 60,
+          "source": [
+            591.0,
+            590.0
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            -0.0148324,
+            0.99988999
+          ],
+          "sourceSampleSha256": "c2d8caaef445edd70c571b0f3cbefd3f974a1f9ed1779995c8638f36ac388d2c"
+        },
+        {
+          "edgeId": "e140",
+          "system": "capillary",
+          "layer": 60,
+          "source": [
+            590.0,
+            625.0
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            0.91073707,
+            -0.41298668
+          ],
+          "sourceSampleSha256": "c2d8caaef445edd70c571b0f3cbefd3f974a1f9ed1779995c8638f36ac388d2c"
+        },
+        {
+          "edgeId": "e141",
+          "system": "vein",
+          "layer": 25,
+          "source": [
+            584.0,
+            619.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.97652049,
+            -0.21542452
+          ],
+          "sourceSampleSha256": "ed4d9c4fa4ceff3aa881c768c374e8fd55f821508ce3447d689c8733f2ccdfb1"
+        },
+        {
+          "edgeId": "e195",
+          "system": "artery",
+          "layer": 60,
+          "source": [
+            585.88108,
+            610.08649
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            0.86378783,
+            -0.50385572
+          ],
+          "sourceSampleSha256": "6053358d0b4cf20fe03e11fb3bfabce21419234c9a17688ed2567a5d3cc79e69"
+        },
+        {
+          "edgeId": "e195",
+          "system": "artery",
+          "layer": 60,
+          "source": [
+            591.0,
+            590.0
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            -0.22916215,
+            0.97338826
+          ],
+          "sourceSampleSha256": "6053358d0b4cf20fe03e11fb3bfabce21419234c9a17688ed2567a5d3cc79e69"
+        },
+        {
+          "edgeId": "e196",
+          "system": "vein",
+          "layer": 60,
+          "source": [
+            590.0,
+            625.0
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            -0.98858684,
+            0.15065211
+          ],
+          "sourceSampleSha256": "e9c18899201e4625ee5a8e4bd3eea1ea48553986841f0ef8876b60582cc1621d"
+        },
+        {
+          "edgeId": "e196",
+          "system": "vein",
+          "layer": 60,
+          "source": [
+            584.0,
+            619.0
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            0.92214117,
+            0.38685354
+          ],
+          "sourceSampleSha256": "e9c18899201e4625ee5a8e4bd3eea1ea48553986841f0ef8876b60582cc1621d"
+        }
+      ],
+      "geometryNeverInferredFromGeneratedPixels": true
+    },
+    {
+      "id": "large-gut-open-mouths",
+      "kind": "foreground-open-mouths",
+      "sourceBox": [
+        508,
+        658,
+        532,
+        690
+      ],
+      "pixelSizeProposed": [
+        1254,
+        1254
+      ],
+      "minimumEffectivePixelsPerSource": 39.1875,
+      "evidencePath": "docs/body-life/vascular-art-study/fullbody-015/native-004/09-large_intestine-z0.15.png",
+      "evidenceSha256": "821736990aa22f82873c75c1ad3515ed8e670b4b938285fefc2f5c36dc244def",
+      "camera": {
+        "y": 1859.8319011858528,
+        "x": 1129.0957588737895
+      },
+      "zoom": 0.15,
+      "approximateIssueAnchorsSource": [
+        [
+          518.4,
+          670.3
+        ],
+        [
+          518.4,
+          681
+        ]
+      ],
+      "anchorToleranceSource": 2,
+      "problem": "红主干上下口边阶梯和方形贴纸感。",
+      "edgeIds": [
+        "e012",
+        "e128",
+        "e131",
+        "e134"
+      ],
+      "fixedCropPorts": [
+        {
+          "edgeId": "e012",
+          "system": "artery",
+          "layer": 10,
+          "source": [
+            518.42248,
+            658.0
+          ],
+          "widthSource": 7,
+          "directionIntoCrop": [
+            0.00770279,
+            0.99997033
+          ],
+          "sourceSampleSha256": "d7ffe39e9b515395e5872ae3dc178ff5b6af50784ba34e4da16b2f57b1fd68ec"
+        },
+        {
+          "edgeId": "e012",
+          "system": "artery",
+          "layer": 10,
+          "source": [
+            517.14203,
+            690.0
+          ],
+          "widthSource": 7,
+          "directionIntoCrop": [
+            0.15112978,
+            -0.98851393
+          ],
+          "sourceSampleSha256": "d7ffe39e9b515395e5872ae3dc178ff5b6af50784ba34e4da16b2f57b1fd68ec"
+        },
+        {
+          "edgeId": "e128",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            521.51735,
+            658.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.31785421,
+            0.9481396
+          ],
+          "sourceSampleSha256": "f8483023880e206d29382d7def3ba3b11954d19651ab2d69f8fd17eafea7e986"
+        },
+        {
+          "edgeId": "e131",
+          "system": "capillary",
+          "layer": 60,
+          "source": [
+            508.0,
+            688.46837
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            0.76676376,
+            0.64192939
+          ],
+          "sourceSampleSha256": "a27a19e57e132f5c4717dec6298507d25fddf4434139629a0c23bff88abf5a4e"
+        },
+        {
+          "edgeId": "e131",
+          "system": "capillary",
+          "layer": 60,
+          "source": [
+            509.85885,
+            690.0
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            -0.77678295,
+            -0.6297684
+          ],
+          "sourceSampleSha256": "a27a19e57e132f5c4717dec6298507d25fddf4434139629a0c23bff88abf5a4e"
+        },
+        {
+          "edgeId": "e134",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            532.0,
+            666.25517
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.99482219,
+            -0.10163075
+          ],
+          "sourceSampleSha256": "7fccfbf1f03b7d083e22d09d2a6ebd41dd63158ea70531f60755433c5969e729"
+        }
+      ],
+      "internalGraphEndpoints": [
+        {
+          "edgeId": "e128",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            525.0,
+            664.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.75495333,
+            -0.65577852
+          ],
+          "sourceSampleSha256": "f8483023880e206d29382d7def3ba3b11954d19651ab2d69f8fd17eafea7e986"
+        },
+        {
+          "edgeId": "e134",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            525.0,
+            664.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.79587443,
+            0.60546172
+          ],
+          "sourceSampleSha256": "7fccfbf1f03b7d083e22d09d2a6ebd41dd63158ea70531f60755433c5969e729"
+        }
+      ],
+      "geometryNeverInferredFromGeneratedPixels": true
+    },
+    {
+      "id": "small-gut-open-mouths",
+      "kind": "foreground-open-mouths",
+      "sourceBox": [
+        474,
+        660,
+        550,
+        714
+      ],
+      "pixelSizeProposed": [
+        1254,
+        1254
+      ],
+      "minimumEffectivePixelsPerSource": 16.5,
+      "evidencePath": "docs/body-life/vascular-art-study/fullbody-015/native-004/10-small_intestine-z0.15.png",
+      "evidenceSha256": "a93f6b83a53b6ba639a5e09c8ed8d2a2b4a6e7d5f15e0923bf4c4b4b38a4ab0b",
+      "camera": {
+        "y": 1902.8086737325598,
+        "x": 1001.6763066149477
+      },
+      "zoom": 0.15,
+      "approximateIssueAnchorsSource": [
+        [
+          480.3,
+          683.1
+        ],
+        [
+          517.4,
+          674
+        ],
+        [
+          517.4,
+          697.7
+        ]
+      ],
+      "anchorToleranceSource": 2,
+      "problem": "多个红蓝下穿口低分辨率锯齿切边。",
+      "edgeIds": [
+        "e012",
+        "e013",
+        "e128",
+        "e131",
+        "e134",
+        "e166",
+        "e167",
+        "e187",
+        "e188"
+      ],
+      "fixedCropPorts": [
+        {
+          "edgeId": "e012",
+          "system": "artery",
+          "layer": 10,
+          "source": [
+            518.43605,
+            660.0
+          ],
+          "widthSource": 7,
+          "directionIntoCrop": [
+            0.00538059,
+            0.99998552
+          ],
+          "sourceSampleSha256": "d7ffe39e9b515395e5872ae3dc178ff5b6af50784ba34e4da16b2f57b1fd68ec"
+        },
+        {
+          "edgeId": "e012",
+          "system": "artery",
+          "layer": 10,
+          "source": [
+            512.81199,
+            714.0
+          ],
+          "widthSource": 7,
+          "directionIntoCrop": [
+            0.17434229,
+            -0.98468511
+          ],
+          "sourceSampleSha256": "d7ffe39e9b515395e5872ae3dc178ff5b6af50784ba34e4da16b2f57b1fd68ec"
+        },
+        {
+          "edgeId": "e013",
+          "system": "vein",
+          "layer": 20,
+          "source": [
+            484.88402,
+            714.0
+          ],
+          "widthSource": 7,
+          "directionIntoCrop": [
+            -0.2067459,
+            -0.97839467
+          ],
+          "sourceSampleSha256": "e720abe8b259bafbf86a7a831e36c731145d8c06f4b9a2a60bdff42d037ecdb8"
+        },
+        {
+          "edgeId": "e013",
+          "system": "vein",
+          "layer": 20,
+          "source": [
+            478.18471,
+            660.0
+          ],
+          "widthSource": 7,
+          "directionIntoCrop": [
+            0.03741272,
+            0.9992999
+          ],
+          "sourceSampleSha256": "e720abe8b259bafbf86a7a831e36c731145d8c06f4b9a2a60bdff42d037ecdb8"
+        },
+        {
+          "edgeId": "e128",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            522.26671,
+            660.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.40548308,
+            0.91410255
+          ],
+          "sourceSampleSha256": "f8483023880e206d29382d7def3ba3b11954d19651ab2d69f8fd17eafea7e986"
+        },
+        {
+          "edgeId": "e134",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            550.0,
+            665.41096
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.99544313,
+            0.09535706
+          ],
+          "sourceSampleSha256": "7fccfbf1f03b7d083e22d09d2a6ebd41dd63158ea70531f60755433c5969e729"
+        },
+        {
+          "edgeId": "e166",
+          "system": "vein",
+          "layer": 15,
+          "source": [
+            546.67249,
+            660.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.41533505,
+            0.90966851
+          ],
+          "sourceSampleSha256": "11388a5cd8d6e9b569f96da069b8455ecfdf23ed43b96d8e48677ae7943261ca"
+        },
+        {
+          "edgeId": "e167",
+          "system": "vein",
+          "layer": 15,
+          "source": [
+            476.7157,
+            714.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.24572604,
+            -0.96933932
+          ],
+          "sourceSampleSha256": "c8a5da3f003e1c0981f5c4c82fd0d48243ae511b15cc41877a7495265cb8790c"
+        },
+        {
+          "edgeId": "e167",
+          "system": "vein",
+          "layer": 15,
+          "source": [
+            486.21031,
+            660.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.55302708,
+            0.83316328
+          ],
+          "sourceSampleSha256": "c8a5da3f003e1c0981f5c4c82fd0d48243ae511b15cc41877a7495265cb8790c"
+        },
+        {
+          "edgeId": "e187",
+          "system": "artery",
+          "layer": 60,
+          "source": [
+            483.96254,
+            660.0
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            0.35855132,
+            0.93351002
+          ],
+          "sourceSampleSha256": "9ba5edd0e81f1585f0449009f647b97ac2c00ecbae2a072659e2a07b9230b59b"
+        }
+      ],
+      "internalGraphEndpoints": [
+        {
+          "edgeId": "e128",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            525.0,
+            664.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.75495333,
+            -0.65577852
+          ],
+          "sourceSampleSha256": "f8483023880e206d29382d7def3ba3b11954d19651ab2d69f8fd17eafea7e986"
+        },
+        {
+          "edgeId": "e131",
+          "system": "capillary",
+          "layer": 60,
+          "source": [
+            492.0,
+            673.0
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            0.66938135,
+            0.74291898
+          ],
+          "sourceSampleSha256": "a27a19e57e132f5c4717dec6298507d25fddf4434139629a0c23bff88abf5a4e"
+        },
+        {
+          "edgeId": "e131",
+          "system": "capillary",
+          "layer": 60,
+          "source": [
+            535.0,
+            701.0
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            -0.96070717,
+            0.27756391
+          ],
+          "sourceSampleSha256": "a27a19e57e132f5c4717dec6298507d25fddf4434139629a0c23bff88abf5a4e"
+        },
+        {
+          "edgeId": "e134",
+          "system": "artery",
+          "layer": 25,
+          "source": [
+            525.0,
+            664.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.79587443,
+            0.60546172
+          ],
+          "sourceSampleSha256": "7fccfbf1f03b7d083e22d09d2a6ebd41dd63158ea70531f60755433c5969e729"
+        },
+        {
+          "edgeId": "e166",
+          "system": "vein",
+          "layer": 15,
+          "source": [
+            549.22,
+            665.54
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.21139779,
+            -0.97740011
+          ],
+          "sourceSampleSha256": "11388a5cd8d6e9b569f96da069b8455ecfdf23ed43b96d8e48677ae7943261ca"
+        },
+        {
+          "edgeId": "e187",
+          "system": "artery",
+          "layer": 60,
+          "source": [
+            492.0,
+            673.0
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            -0.66125859,
+            -0.75015803
+          ],
+          "sourceSampleSha256": "9ba5edd0e81f1585f0449009f647b97ac2c00ecbae2a072659e2a07b9230b59b"
+        },
+        {
+          "edgeId": "e188",
+          "system": "vein",
+          "layer": 60,
+          "source": [
+            535.0,
+            701.0
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            0.94325944,
+            -0.33205667
+          ],
+          "sourceSampleSha256": "a879657a414ca572211ea6fa22351ff12ecd0b857cf9ea611611042a8682675b"
+        },
+        {
+          "edgeId": "e188",
+          "system": "vein",
+          "layer": 60,
+          "source": [
+            549.22,
+            665.54
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            0.0232392,
+            0.99972993
+          ],
+          "sourceSampleSha256": "a879657a414ca572211ea6fa22351ff12ecd0b857cf9ea611611042a8682675b"
+        }
+      ],
+      "geometryNeverInferredFromGeneratedPixels": true
+    },
+    {
+      "id": "lung-left-airway-mouths",
+      "kind": "foreground-open-mouths",
+      "sourceBox": [
+        578,
+        362,
+        603,
+        407
+      ],
+      "pixelSizeProposed": [
+        1254,
+        1254
+      ],
+      "minimumEffectivePixelsPerSource": 27.866666666666667,
+      "evidencePath": "docs/body-life/vascular-art-study/fullbody-015/native-004/05-lung_l-z0.15.png",
+      "evidenceSha256": "61a5ccc5196d5be4f9423e46958722469e654b0700e63447689682c000f1a266",
+      "camera": {
+        "y": 1286.6395794292855,
+        "x": 1219.7357457285038
+      },
+      "zoom": 0.15,
+      "approximateIssueAnchorsSource": [
+        [
+          590.5,
+          370.8
+        ],
+        [
+          596.4,
+          397.2
+        ]
+      ],
+      "anchorToleranceSource": 2,
+      "problem": "气路旁粉色毛细血管锯齿/点状切口。",
+      "edgeIds": [
+        "e007"
+      ],
+      "fixedCropPorts": [
+        {
+          "edgeId": "e007",
+          "system": "capillary",
+          "layer": 30,
+          "source": [
+            588.42513,
+            362.0
+          ],
+          "widthSource": 4,
+          "directionIntoCrop": [
+            0.31801231,
+            0.94808658
+          ],
+          "sourceSampleSha256": "257b5d2a26a3f9fec6264ddedc566b33c77c9df76d4541f6afd0212c1cf86eb8"
+        },
+        {
+          "edgeId": "e007",
+          "system": "capillary",
+          "layer": 30,
+          "source": [
+            596.23369,
+            407.0
+          ],
+          "widthSource": 4,
+          "directionIntoCrop": [
+            -0.08490126,
+            -0.99638937
+          ],
+          "sourceSampleSha256": "257b5d2a26a3f9fec6264ddedc566b33c77c9df76d4541f6afd0212c1cf86eb8"
+        }
+      ],
+      "internalGraphEndpoints": [],
+      "geometryNeverInferredFromGeneratedPixels": true
+    },
+    {
+      "id": "heart-venous-junction",
+      "kind": "complete-junction",
+      "sourceBox": [
+        473,
+        370,
+        500,
+        410
+      ],
+      "pixelSizeProposed": [
+        1254,
+        1254
+      ],
+      "minimumEffectivePixelsPerSource": 31.35,
+      "evidencePath": "docs/body-life/vascular-art-study/fullbody-015/native-004/12-heart-z0.15.png",
+      "evidenceSha256": "aa0775e9fe3f2bc8d4541f3d4d729ce44a7f7e8ff032c5ee18577706777ce4b2",
+      "camera": {
+        "y": 1305.693206511241,
+        "x": 1033.3013879867644
+      },
+      "zoom": 0.15,
+      "approximateIssueAnchorsSource": [
+        [
+          482.7,
+          396.3
+        ],
+        [
+          474.1,
+          374.4
+        ]
+      ],
+      "anchorToleranceSource": 2,
+      "problem": "左蓝支真实汇合斜直线缝，上方红短片贴纸感。",
+      "edgeIds": [
+        "e001",
+        "e002",
+        "e003",
+        "e015",
+        "e017",
+        "e022",
+        "e067",
+        "e072",
+        "e172"
+      ],
+      "fixedCropPorts": [
+        {
+          "edgeId": "e001",
+          "system": "vein",
+          "layer": 25,
+          "source": [
+            490.35889,
+            410.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.61905764,
+            -0.78534555
+          ],
+          "sourceSampleSha256": "6d38e096975f316266e5e0bc75315957be36f1d1311808a313383cfd974aaf59"
+        },
+        {
+          "edgeId": "e002",
+          "system": "artery",
+          "layer": 30,
+          "source": [
+            492.53981,
+            410.0
+          ],
+          "widthSource": 4,
+          "directionIntoCrop": [
+            -0.09368534,
+            -0.99560186
+          ],
+          "sourceSampleSha256": "37ec4ed61b2980b658f6bf6abe9fcfa708c18414543d7a0c8d33a44ae9ba0dc5"
+        },
+        {
+          "edgeId": "e002",
+          "system": "artery",
+          "layer": 30,
+          "source": [
+            497.00813,
+            370.0
+          ],
+          "widthSource": 4,
+          "directionIntoCrop": [
+            -0.40457275,
+            0.91450582
+          ],
+          "sourceSampleSha256": "37ec4ed61b2980b658f6bf6abe9fcfa708c18414543d7a0c8d33a44ae9ba0dc5"
+        },
+        {
+          "edgeId": "e003",
+          "system": "artery",
+          "layer": 30,
+          "source": [
+            481.79142,
+            370.0
+          ],
+          "widthSource": 4,
+          "directionIntoCrop": [
+            -0.72455666,
+            0.68921523
+          ],
+          "sourceSampleSha256": "8977b2913d97759e56f09e837b4825c9a7a166caa3384ffdaa47302da65d04ad"
+        },
+        {
+          "edgeId": "e015",
+          "system": "vein",
+          "layer": 20,
+          "source": [
+            480.97517,
+            410.0
+          ],
+          "widthSource": 7,
+          "directionIntoCrop": [
+            0.05816192,
+            -0.99830716
+          ],
+          "sourceSampleSha256": "493ea44ed77b79d08d99539e9285d7282959a76969c1ff2a51399269ad91b531"
+        },
+        {
+          "edgeId": "e017",
+          "system": "vein",
+          "layer": 25,
+          "source": [
+            484.0425,
+            370.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.11974725,
+            0.99280441
+          ],
+          "sourceSampleSha256": "113b054966a083538342d4e57284ee8fc7aca69bcefb847bc73ca52f151ebccc"
+        },
+        {
+          "edgeId": "e022",
+          "system": "vein",
+          "layer": 55,
+          "source": [
+            481.51166,
+            370.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.19006488,
+            0.98177153
+          ],
+          "sourceSampleSha256": "870cd154398dab36f68ed4ae87e3ceca347e1b082ed301d8a65701c6c60edd0c"
+        },
+        {
+          "edgeId": "e067",
+          "system": "vein",
+          "layer": 25,
+          "source": [
+            500.0,
+            371.68823
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.96741792,
+            0.25318484
+          ],
+          "sourceSampleSha256": "0926d805a49bc2d541163462723fcbc741f1f0d031ec8fa51552d644d5bcb9fc"
+        },
+        {
+          "edgeId": "e072",
+          "system": "vein",
+          "layer": 55,
+          "source": [
+            488.6919,
+            370.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.58492387,
+            0.8110882
+          ],
+          "sourceSampleSha256": "acecb94a741282e185586aefb205d7c226f908728a1765866e7c60e7cfaeb881"
+        },
+        {
+          "edgeId": "e172",
+          "system": "artery",
+          "layer": 60,
+          "source": [
+            473.0,
+            373.76752
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            0.97190749,
+            0.23536318
+          ],
+          "sourceSampleSha256": "f916fcf359cc6f6ab2391c9651e2bf787d1c3b7d02c2f252e52807a5bf02a34d"
+        }
+      ],
+      "internalGraphEndpoints": [
+        {
+          "edgeId": "e001",
+          "system": "vein",
+          "layer": 25,
+          "source": [
+            483.0,
+            379.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.11082039,
+            0.99384045
+          ],
+          "sourceSampleSha256": "6d38e096975f316266e5e0bc75315957be36f1d1311808a313383cfd974aaf59"
+        },
+        {
+          "edgeId": "e003",
+          "system": "artery",
+          "layer": 30,
+          "source": [
+            475.16139,
+            374.01501
+          ],
+          "widthSource": 4,
+          "directionIntoCrop": [
+            0.99456295,
+            -0.10413715
+          ],
+          "sourceSampleSha256": "8977b2913d97759e56f09e837b4825c9a7a166caa3384ffdaa47302da65d04ad"
+        },
+        {
+          "edgeId": "e015",
+          "system": "vein",
+          "layer": 20,
+          "source": [
+            483.0,
+            379.0
+          ],
+          "widthSource": 7,
+          "directionIntoCrop": [
+            -0.0731201,
+            0.99732314
+          ],
+          "sourceSampleSha256": "493ea44ed77b79d08d99539e9285d7282959a76969c1ff2a51399269ad91b531"
+        },
+        {
+          "edgeId": "e017",
+          "system": "vein",
+          "layer": 25,
+          "source": [
+            483.0,
+            379.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.10081145,
+            -0.99490555
+          ],
+          "sourceSampleSha256": "113b054966a083538342d4e57284ee8fc7aca69bcefb847bc73ca52f151ebccc"
+        },
+        {
+          "edgeId": "e022",
+          "system": "vein",
+          "layer": 55,
+          "source": [
+            483.0,
+            379.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            -0.11513657,
+            -0.99334967
+          ],
+          "sourceSampleSha256": "870cd154398dab36f68ed4ae87e3ceca347e1b082ed301d8a65701c6c60edd0c"
+        },
+        {
+          "edgeId": "e067",
+          "system": "vein",
+          "layer": 25,
+          "source": [
+            483.0,
+            379.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.62720512,
+            -0.77885412
+          ],
+          "sourceSampleSha256": "0926d805a49bc2d541163462723fcbc741f1f0d031ec8fa51552d644d5bcb9fc"
+        },
+        {
+          "edgeId": "e072",
+          "system": "vein",
+          "layer": 55,
+          "source": [
+            483.0,
+            379.0
+          ],
+          "widthSource": 3,
+          "directionIntoCrop": [
+            0.41397008,
+            -0.91029049
+          ],
+          "sourceSampleSha256": "acecb94a741282e185586aefb205d7c226f908728a1765866e7c60e7cfaeb881"
+        },
+        {
+          "edgeId": "e172",
+          "system": "artery",
+          "layer": 60,
+          "source": [
+            475.16139,
+            374.01501
+          ],
+          "widthSource": 2,
+          "directionIntoCrop": [
+            -0.999766,
+            0.02163193
+          ],
+          "sourceSampleSha256": "f916fcf359cc6f6ab2391c9651e2bf787d1c3b7d02c2f252e52807a5bf02a34d"
+        }
+      ],
+      "geometryNeverInferredFromGeneratedPixels": true
+    }
+  ],
+  "rootCause": [
+    "4x pigment-derived foreground steps can span2.4logicalpixels at0.15. Upsampling the quantized contour cannot recover smooth shape.",
+    "GPT region materials currently replace internal RGB only; complete outside banks and some junctions are still independently sampled strips."
+  ],
+  "policy": {
+    "noNewImagesGenerated": true,
+    "noFrozenAssetsChanged": true,
+    "noGeometryWidthOrCollisionChange": true,
+    "preserve202": true,
+    "preserveLegacy135": true,
+    "preserveQuietEf4": true
+  },
+  "strategy": [
+    "Generate local high-resolution visible foreground lip alpha/material plus complete same-system node bank+floor material; fixed sourceBox and crop ports, never a new whole-body background.",
+    "Define one explicit high-resolution edge from the accepted visible lip, use the same edge/alpha for foreground raster, blood clipping and unit display; do not threshold generated colors into new topology.",
+    "Replace the entire same-system shared-node union including outside bank once. Different-system projected crossings remain independent planes.",
+    "Blend ports longitudinally over1.5-2existing tube widths using a common source-space UV phase and one outer bank; no transverse crop seam or internal wall across a true node.",
+    "Record contain contentBox, fixed ports, raw SHA and accepted patch mask. Native0.15 + unit movement must be read before claiming acceptance."
+  ],
+  "acceptance": [
+    "No floating shard/capsule or cream wedge hole; mouth attaches to visible foreground lip.",
+    "True named-node merger has no transverse interior outline; unrelated projected crossing never becomes junction.",
+    "Blood does not enter actual food/air/urine cavity.",
+    "202samples/widths and organ silhouettes unchanged; display intervals may only change to match the accepted local lip.",
+    "Numerical coverage and visual smoothness remain separate results."
+  ],
+  "sharedPipeScope": {
+    "status": "PROPOSAL_ONLY",
+    "generationStarted": false,
+    "implementationStarted": false,
+    "coverage": {
+      "frozenEdgeCount": 202,
+      "mainTrunks": true,
+      "branches": true,
+      "headAndLimbsIncluded": true,
+      "localPatchCount": 9,
+      "localPatchesAloneSufficient": false
+    },
+    "reason": [
+      "Current strip phase is sourceX*13+sourceY*7, not along frozen vessel arc/tangent; fibers read as unrelated diagonal ribbon marks.",
+      "Current bank uses one upper-row profile and at most0.45sourcepx; its relative thickness vanishes on wide trunks.",
+      "Current regional GPT patches exclude outside banks and replace interior RGB only, so the whole pipe appearance does not become one material."
+    ],
+    "gptSourcesProposed": [
+      {
+        "id": "artery",
+        "content": "two separately readable continuous side banks + quiet flat passable lumen",
+        "style": "true2Dtopdown, pastel organic cartoon, minimal shading, low highlight, no green",
+        "preserveExistingRouteWidth": true
+      },
+      {
+        "id": "vein",
+        "content": "two separately readable continuous side banks + quiet flat passable lumen",
+        "style": "true2Dtopdown, pastel organic cartoon, minimal shading, low highlight, no green",
+        "preserveExistingRouteWidth": true
+      },
+      {
+        "id": "capillary",
+        "content": "two separately readable continuous side banks + quiet flat passable lumen",
+        "style": "true2Dtopdown, pastel organic cartoon, minimal shading, low highlight, no green",
+        "preserveExistingRouteWidth": true
+      }
+    ],
+    "mapping": {
+      "geometryAuthority": "frozen202 source samples, registered physical vessel footprints, real named graph nodes",
+      "longitudinal": "arc length from frozen centerline; cached pixel-to-arc relation; deterministic source-space phase propagated from immutable graph anchors",
+      "transverse": "signed normalized cross-vessel coordinate with separate left/right generated bank profiles and flat central floor",
+      "node": "replace the entire true-node bank+floor union once; port blend longitudinally over1.5-2existing widths, no interior transverse wall",
+      "crossing": "independent systems at projected crossings remain separate ordered planes; never union by image overlap",
+      "width": "all final footprint/samples/widths fixed; bank carving stays within that same footprint"
+    },
+    "localForeground": {
+      "patches": "all9 existing fixed-source patches, all fixed ports retained",
+      "highResolution": "explicit accepted local lip alpha/edge in original sourceBox, minimum16effective pixels/source where feasible; contain-crop registration",
+      "singleBoundary": "one accepted visible lip boundary used for foreground art, blood clipping, open-mouth position and display-only unit depth",
+      "noTopologyInference": "generated pixel colors do not define navigation or graph topology; do not reuse4x color threshold as final lip shape",
+      "foodAirUrine": "keep each functional cavity independent; hidden blood passes underneath and never becomes a connection to that cavity"
+    },
+    "unchanged": [
+      "202 frozen route samples and widths",
+      "organ silhouettes/positions and game projection",
+      "legacy135 protectedForegroundIntervals audit field",
+      "quiet ef4 whole-body background",
+      "navigation/collision/Save/RNG"
+    ],
+    "sequence": [
+      "Confirm these two coupled scopes together; nine local crops cannot solve shared whole-body ribbon appearance alone.",
+      "Generate and inspect3 whole-pipe GPT source types, retaining raw sources and crop metadata.",
+      "Map main trunks first then branches; replace actual-node complete wall+floor while leaving projected cross-system crossings separate.",
+      "Generate/register9 local high-resolution foreground lips and complete joints where needed; same edge/alpha drives raster/clipping/display depth.",
+      "Inspect native0.15 on both ordinary long segments and every local patch, plus actual1x unit movement; record any remaining defect before visual acceptance."
+    ],
+    "acceptance": [
+      "Continuous left/right walls and quiet flat lumen read as one organic vessel along straight/curved ordinary segments.",
+      "Main trunk→branch true junction is open and contains no transverse internal bank or stamp seam.",
+      "Independent system crossings preserve a readable over/under relation and do not become false junctions.",
+      "Every hidden mouth is attached to its actual foreground lip, with no isolated shard, wedge hole, capsule or stair-step crop.",
+      "No blood floor enters actual food/air/urine cavities; display units hide at the same accepted lip.",
+      "Whole202 numerical coverage and route stability are checked separately from native visual acceptance."
+    ]
+  },
+  "scopeSummary": "PROPOSAL_ONLY: shared complete pipe material for all202 routes plus the9 fixed local high-resolution lips/joints; no generation or frozen asset/code edits."
+}

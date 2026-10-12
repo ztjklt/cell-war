@@ -1,0 +1,4387 @@
+{
+  "config": {
+    "actors": [
+      {
+        "kind": "scout",
+        "lane": 0,
+        "targetLane": 0,
+        "targetOrgan": "large_intestine",
+        "tx": 1140.1965999718695,
+        "ty": 1860.2042385676307,
+        "x": 1129.0957588737895,
+        "y": 1859.8319011858528
+      },
+      {
+        "kind": "siege",
+        "lane": 0,
+        "targetLane": 0,
+        "targetOrgan": "large_intestine",
+        "tx": 1129.0957588737895,
+        "ty": 1859.8319011858528,
+        "x": 1140.1965999718695,
+        "y": 1860.2042385676307
+      }
+    ],
+    "caseOrgans": [
+      "large_intestine"
+    ],
+    "id": "large_intestine/meeting/scout-siege",
+    "organs": [
+      "brain",
+      "lung_r",
+      "lung_l",
+      "liver",
+      "stomach",
+      "pancreas",
+      "kidney_r",
+      "kidney_l",
+      "large_intestine",
+      "small_intestine",
+      "bladder",
+      "heart"
+    ]
+  },
+  "nativeEvidence": false,
+  "navigationSubstituted": false,
+  "result": {
+    "activeOrgans": [
+      "bladder",
+      "brain",
+      "heart",
+      "kidney_l",
+      "kidney_r",
+      "large_intestine",
+      "liver",
+      "lung_l",
+      "lung_r",
+      "pancreas",
+      "small_intestine",
+      "stomach"
+    ],
+    "commands": [
+      {
+        "accepted": true,
+        "id": 18,
+        "order": {
+          "lane": 0,
+          "x": 1141.4016862458284,
+          "y": 1862.9515585475958
+        },
+        "requested": {
+          "x": 1140.1965999718695,
+          "y": 1860.2042385676307
+        }
+      },
+      {
+        "accepted": true,
+        "id": 19,
+        "order": {
+          "lane": 0,
+          "x": 1133.0957588737895,
+          "y": 1859.8319011858528
+        },
+        "requested": {
+          "x": 1129.0957588737895,
+          "y": 1859.8319011858528
+        }
+      }
+    ],
+    "completed": true,
+    "elapsed": 6.299999999999994,
+    "endpoints": [
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "ordersRemaining": 0,
+        "organId": "large_intestine",
+        "pathFailed": false,
+        "phase": "end",
+        "tick": 63,
+        "time": 6.299999999999994,
+        "x": 1141.4016862458284,
+        "y": 1862.9515585475958
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "ordersRemaining": 0,
+        "organId": "large_intestine",
+        "pathFailed": false,
+        "phase": "end",
+        "tick": 63,
+        "time": 6.299999999999994,
+        "x": 1133.0964489907121,
+        "y": 1859.831937372598
+      }
+    ],
+    "frames": [
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 1,
+            "time": 0.1,
+            "x": 1129.0957588737895,
+            "y": 1859.8319011858528
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 1,
+            "time": 0.1,
+            "x": 1140.1965999718695,
+            "y": 1860.2042385676307
+          }
+        ],
+        "time": 0.1
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 2,
+            "time": 0.2,
+            "x": 1129.3610912518443,
+            "y": 1859.8991652027353
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 2,
+            "time": 0.2,
+            "x": 1140.0978902146862,
+            "y": 1860.1990626550821
+          }
+        ],
+        "time": 0.2
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 3,
+            "time": 0.30000000000000004,
+            "x": 1129.669112720865,
+            "y": 1859.9772512676334
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 3,
+            "time": 0.30000000000000004,
+            "x": 1139.9832991322214,
+            "y": 1860.1930539945542
+          }
+        ],
+        "time": 0.30000000000000004
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 4,
+            "time": 0.4,
+            "x": 1129.9980322783222,
+            "y": 1860.060635175877
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 4,
+            "time": 0.4,
+            "x": 1139.8609334794223,
+            "y": 1860.1866376691987
+          }
+        ],
+        "time": 0.4
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 5,
+            "time": 0.5,
+            "x": 1130.3371823206742,
+            "y": 1860.146612599144
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 5,
+            "time": 0.5,
+            "x": 1139.7347618505594,
+            "y": 1860.180021774927
+          }
+        ],
+        "time": 0.5
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 6,
+            "time": 0.6,
+            "x": 1130.6813406115796,
+            "y": 1860.2338596560596
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 6,
+            "time": 0.6,
+            "x": 1139.6067270378578,
+            "y": 1860.1733081833568
+          }
+        ],
+        "time": 0.6
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 7,
+            "time": 0.7,
+            "x": 1131.0279506487932,
+            "y": 1860.3217282515386
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 7,
+            "time": 0.7,
+            "x": 1139.477780119048,
+            "y": 1860.1665467648888
+          }
+        ],
+        "time": 0.7
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 8,
+            "time": 0.7999999999999999,
+            "x": 1131.3757609179636,
+            "y": 1860.4099011160374
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 8,
+            "time": 0.7999999999999999,
+            "x": 1139.3483866863003,
+            "y": 1860.1597619331621
+          }
+        ],
+        "time": 0.7999999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 9,
+            "time": 0.8999999999999999,
+            "x": 1131.7241587506778,
+            "y": 1860.498222932897
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 9,
+            "time": 0.8999999999999999,
+            "x": 1139.2187746663783,
+            "y": 1860.15296563967
+          }
+        ],
+        "time": 0.8999999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 10,
+            "time": 0.9999999999999999,
+            "x": 1132.0728442202244,
+            "y": 1860.5866176681427
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 10,
+            "time": 0.9999999999999999,
+            "x": 1139.0890556389284,
+            "y": 1860.1461637351658
+          }
+        ],
+        "time": 0.9999999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 11,
+            "time": 1.0999999999999999,
+            "x": 1132.4216704999833,
+            "y": 1860.675048099976
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 11,
+            "time": 1.0999999999999999,
+            "x": 1138.9592842268355,
+            "y": 1860.1393590838377
+          }
+        ],
+        "time": 1.0999999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 12,
+            "time": 1.2,
+            "x": 1132.7705657122071,
+            "y": 1860.7634960067762
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 12,
+            "time": 1.2,
+            "x": 1138.8294871702776,
+            "y": 1860.1325530878248
+          }
+        ],
+        "time": 1.2
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 13,
+            "time": 1.3,
+            "x": 1133.1194946697442,
+            "y": 1860.8519524683006
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 13,
+            "time": 1.3,
+            "x": 1138.6996775596858,
+            "y": 1860.1257464335329
+          }
+        ],
+        "time": 1.3
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 14,
+            "time": 1.4000000000000001,
+            "x": 1133.468440147018,
+            "y": 1860.940413117719
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 14,
+            "time": 1.4000000000000001,
+            "x": 1138.5698618033714,
+            "y": 1860.1189394569858
+          }
+        ],
+        "time": 1.4000000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 15,
+            "time": 1.5000000000000002,
+            "x": 1133.817393711391,
+            "y": 1861.0288758172856
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 15,
+            "time": 1.5000000000000002,
+            "x": 1138.4400430384696,
+            "y": 1860.1121323226814
+          }
+        ],
+        "time": 1.5000000000000002
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 16,
+            "time": 1.6000000000000003,
+            "x": 1134.166351234736,
+            "y": 1861.1173395204855
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 16,
+            "time": 1.6000000000000003,
+            "x": 1138.3102228007392,
+            "y": 1860.1053251111482
+          }
+        ],
+        "time": 1.6000000000000003
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 17,
+            "time": 1.7000000000000004,
+            "x": 1134.515310696163,
+            "y": 1861.2058037150057
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 17,
+            "time": 1.7000000000000004,
+            "x": 1138.1804018419978,
+            "y": 1860.0985178618082
+          }
+        ],
+        "time": 1.7000000000000004
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 18,
+            "time": 1.8000000000000005,
+            "x": 1134.8642711063615,
+            "y": 1861.2942681500474
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 18,
+            "time": 1.8000000000000005,
+            "x": 1138.0505805302912,
+            "y": 1860.0917105939604
+          }
+        ],
+        "time": 1.8000000000000005
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 19,
+            "time": 1.9000000000000006,
+            "x": 1135.2132319810235,
+            "y": 1861.3827327028346
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 19,
+            "time": 1.9000000000000006,
+            "x": 1137.9207590457936,
+            "y": 1860.084903317052
+          }
+        ],
+        "time": 1.9000000000000006
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 20,
+            "time": 2.0000000000000004,
+            "x": 1135.5621930830596,
+            "y": 1861.471197313263
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 20,
+            "time": 2.0000000000000004,
+            "x": 1137.7909374767075,
+            "y": 1860.0780960357083
+          }
+        ],
+        "time": 2.0000000000000004
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 21,
+            "time": 2.1000000000000005,
+            "x": 1135.9111542964047,
+            "y": 1861.5596619519092
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 21,
+            "time": 2.1000000000000005,
+            "x": 1137.661115866212,
+            "y": 1860.0712887521931
+          }
+        ],
+        "time": 2.1000000000000005
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 22,
+            "time": 2.2000000000000006,
+            "x": 1136.2601155642403,
+            "y": 1861.6481266043693
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 22,
+            "time": 2.2000000000000006,
+            "x": 1137.5312942354446,
+            "y": 1860.0644814676152
+          }
+        ],
+        "time": 2.2000000000000006
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 23,
+            "time": 2.3000000000000007,
+            "x": 1136.6090768587512,
+            "y": 1861.736591263592
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 23,
+            "time": 2.3000000000000007,
+            "x": 1137.4014725947536,
+            "y": 1860.0576741825168
+          }
+        ],
+        "time": 2.3000000000000007
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 24,
+            "time": 2.400000000000001,
+            "x": 1136.9580381663209,
+            "y": 1861.8250559261248
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 24,
+            "time": 2.400000000000001,
+            "x": 1137.2716509492045,
+            "y": 1860.0508668971638
+          }
+        ],
+        "time": 2.400000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 25,
+            "time": 2.500000000000001,
+            "x": 1137.3069994802834,
+            "y": 1861.9135205902785
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 25,
+            "time": 2.500000000000001,
+            "x": 1137.141829301277,
+            "y": 1860.044059611686
+          }
+        ],
+        "time": 2.500000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 26,
+            "time": 2.600000000000001,
+            "x": 1137.6559607973752,
+            "y": 1862.0019852552255
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 26,
+            "time": 2.600000000000001,
+            "x": 1137.0120076521853,
+            "y": 1860.0372523261472
+          }
+        ],
+        "time": 2.600000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 27,
+            "time": 2.700000000000001,
+            "x": 1138.004922115999,
+            "y": 1862.0904499205608
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 27,
+            "time": 2.700000000000001,
+            "x": 1136.8821860025237,
+            "y": 1860.0304450405783
+          }
+        ],
+        "time": 2.700000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 28,
+            "time": 2.800000000000001,
+            "x": 1138.353883435373,
+            "y": 1862.1789145860862
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 28,
+            "time": 2.800000000000001,
+            "x": 1136.752364352583,
+            "y": 1860.023637754995
+          }
+        ],
+        "time": 2.800000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 29,
+            "time": 2.9000000000000012,
+            "x": 1138.7028447551143,
+            "y": 1862.2673792517048
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 29,
+            "time": 2.9000000000000012,
+            "x": 1136.6225427025058,
+            "y": 1860.0168304694043
+          }
+        ],
+        "time": 2.9000000000000012
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 30,
+            "time": 3.0000000000000013,
+            "x": 1139.051806075035,
+            "y": 1862.355843917369
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 30,
+            "time": 3.0000000000000013,
+            "x": 1136.4927210523617,
+            "y": 1860.0100231838103
+          }
+        ],
+        "time": 3.0000000000000013
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 31,
+            "time": 3.1000000000000014,
+            "x": 1139.4007673950439,
+            "y": 1862.4443085830553
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 31,
+            "time": 3.1000000000000014,
+            "x": 1136.362899402185,
+            "y": 1860.0032158982144
+          }
+        ],
+        "time": 3.1000000000000014
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 32,
+            "time": 3.2000000000000015,
+            "x": 1139.7497287150957,
+            "y": 1862.5327732487528
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 32,
+            "time": 3.2000000000000015,
+            "x": 1136.233077751992,
+            "y": 1859.9964086126179
+          }
+        ],
+        "time": 3.2000000000000015
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 33,
+            "time": 3.3000000000000016,
+            "x": 1140.0986900351686,
+            "y": 1862.6212379144556
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 33,
+            "time": 3.3000000000000016,
+            "x": 1136.1032561017912,
+            "y": 1859.9896013270209
+          }
+        ],
+        "time": 3.3000000000000016
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 34,
+            "time": 3.4000000000000017,
+            "x": 1140.447651355252,
+            "y": 1862.7097025801609
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 34,
+            "time": 3.4000000000000017,
+            "x": 1135.9734344515866,
+            "y": 1859.9827940414236
+          }
+        ],
+        "time": 3.4000000000000017
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 35,
+            "time": 3.5000000000000018,
+            "x": 1140.7966126753404,
+            "y": 1862.7981672458675
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 35,
+            "time": 3.5000000000000018,
+            "x": 1135.8436128013802,
+            "y": 1859.9759867558264
+          }
+        ],
+        "time": 3.5000000000000018
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 36,
+            "time": 3.600000000000002,
+            "x": 1141.119926765985,
+            "y": 1862.8801301205492
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 36,
+            "time": 3.600000000000002,
+            "x": 1135.713791151173,
+            "y": 1859.969179470229
+          }
+        ],
+        "time": 3.600000000000002
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 37,
+            "time": 3.700000000000002,
+            "x": 1141.345808591229,
+            "y": 1862.9373930864112
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 37,
+            "time": 3.700000000000002,
+            "x": 1135.5839695009652,
+            "y": 1859.9623721846315
+          }
+        ],
+        "time": 3.700000000000002
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 38,
+            "time": 3.800000000000002,
+            "x": 1141.4016862458284,
+            "y": 1862.9515585475958
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 38,
+            "time": 3.800000000000002,
+            "x": 1135.4541478507572,
+            "y": 1859.955564899034
+          }
+        ],
+        "time": 3.800000000000002
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 39,
+            "time": 3.900000000000002,
+            "x": 1141.4016862458284,
+            "y": 1862.9515585475958
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 39,
+            "time": 3.900000000000002,
+            "x": 1135.324326200549,
+            "y": 1859.9487576134366
+          }
+        ],
+        "time": 3.900000000000002
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 40,
+            "time": 4.000000000000002,
+            "x": 1141.4016862458284,
+            "y": 1862.9515585475958
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 40,
+            "time": 4.000000000000002,
+            "x": 1135.1945045503408,
+            "y": 1859.941950327839
+          }
+        ],
+        "time": 4.000000000000002
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 41,
+            "time": 4.100000000000001,
+            "x": 1141.4016862458284,
+            "y": 1862.9515585475958
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 41,
+            "time": 4.100000000000001,
+            "x": 1135.0646829001325,
+            "y": 1859.9351430422416
+          }
+        ],
+        "time": 4.100000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 42,
+            "time": 4.200000000000001,
+            "x": 1141.4016862458284,
+            "y": 1862.9515585475958
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 42,
+            "time": 4.200000000000001,
+            "x": 1134.9348612499243,
+            "y": 1859.9283357566442
+          }
+        ],
+        "time": 4.200000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 43,
+            "time": 4.300000000000001,
+            "x": 1141.4016862458284,
+            "y": 1862.9515585475958
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 43,
+            "time": 4.300000000000001,
+            "x": 1134.805039599716,
+            "y": 1859.9215284710467
+          }
+        ],
+        "time": 4.300000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 44,
+            "time": 4.4,
+            "x": 1141.4016862458284,
+            "y": 1862.9515585475958
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 44,
+            "time": 4.4,
+            "x": 1134.675217949508,
+            "y": 1859.9147211854493
+          }
+        ],
+        "time": 4.4
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 45,
+            "time": 4.5,
+            "x": 1141.4016862458284,
+            "y": 1862.9515585475958
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 45,
+            "time": 4.5,
+            "x": 1134.5453962992997,
+            "y": 1859.9079138998518
+          }
+        ],
+        "time": 4.5
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 46,
+            "time": 4.6,
+            "x": 1141.4016862458284,
+            "y": 1862.9515585475958
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 46,
+            "time": 4.6,
+            "x": 1134.4155746490915,
+            "y": 1859.9011066142543
+          }
+        ],
+        "time": 4.6
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 47,
+            "time": 4.699999999999999,
+            "x": 1141.4016862458284,
+            "y": 1862.9515585475958
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 47,
+            "time": 4.699999999999999,
+            "x": 1134.2857529988833,
+            "y": 1859.8942993286569
+          }
+        ],
+        "time": 4.699999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 48,
+            "time": 4.799999999999999,
+            "x": 1141.4016862458284,
+            "y": 1862.9515585475958
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 48,
+            "time": 4.799999999999999,
+            "x": 1134.155931348675,
+            "y": 1859.8874920430594
+          }
+        ],
+        "time": 4.799999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 49,
+            "time": 4.899999999999999,
+            "x": 1141.4016862458284,
+            "y": 1862.9515585475958
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 49,
+            "time": 4.899999999999999,
+            "x": 1134.0261096984668,
+            "y": 1859.880684757462
+          }
+        ],
+        "time": 4.899999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 50,
+            "time": 4.999999999999998,
+            "x": 1141.4016862458284,
+            "y": 1862.9515585475958
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 50,
+            "time": 4.999999999999998,
+            "x": 1133.8962880482586,
+            "y": 1859.8738774718645
+          }
+        ],
+        "time": 4.999999999999998
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 51,
+            "time": 5.099999999999998,
+            "x": 1141.4016862458284,
+            "y": 1862.9515585475958
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 51,
+            "time": 5.099999999999998,
+            "x": 1133.7664663980504,
+            "y": 1859.867070186267
+          }
+        ],
+        "time": 5.099999999999998
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 52,
+            "time": 5.1999999999999975,
+            "x": 1141.4016862458284,
+            "y": 1862.9515585475958
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 52,
+            "time": 5.1999999999999975,
+            "x": 1133.6416973507246,
+            "y": 1859.8605278373022
+          }
+        ],
+        "time": 5.1999999999999975
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 53,
+            "time": 5.299999999999997,
+            "x": 1141.4016862458284,
+            "y": 1862.9515585475958
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 53,
+            "time": 5.299999999999997,
+            "x": 1133.531229794583,
+            "y": 1859.8547353966524
+          }
+        ],
+        "time": 5.299999999999997
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 54,
+            "time": 5.399999999999997,
+            "x": 1141.4016862458284,
+            "y": 1862.9515585475958
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 54,
+            "time": 5.399999999999997,
+            "x": 1133.4382356728834,
+            "y": 1859.849859187297
+          }
+        ],
+        "time": 5.399999999999997
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 55,
+            "time": 5.4999999999999964,
+            "x": 1141.4016862458284,
+            "y": 1862.9515585475958
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 55,
+            "time": 5.4999999999999964,
+            "x": 1133.362611312785,
+            "y": 1859.8458937730807
+          }
+        ],
+        "time": 5.4999999999999964
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 56,
+            "time": 5.599999999999996,
+            "x": 1141.4016862458284,
+            "y": 1862.9515585475958
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 56,
+            "time": 5.599999999999996,
+            "x": 1133.3026593190298,
+            "y": 1859.842750149941
+          }
+        ],
+        "time": 5.599999999999996
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 57,
+            "time": 5.699999999999996,
+            "x": 1141.4016862458284,
+            "y": 1862.9515585475958
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 57,
+            "time": 5.699999999999996,
+            "x": 1133.2560630149046,
+            "y": 1859.8403068413752
+          }
+        ],
+        "time": 5.699999999999996
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 58,
+            "time": 5.799999999999995,
+            "x": 1141.4016862458284,
+            "y": 1862.9515585475958
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 58,
+            "time": 5.799999999999995,
+            "x": 1133.218673103148,
+            "y": 1859.8383462761892
+          }
+        ],
+        "time": 5.799999999999995
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 59,
+            "time": 5.899999999999995,
+            "x": 1141.4016862458284,
+            "y": 1862.9515585475958
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 59,
+            "time": 5.899999999999995,
+            "x": 1133.1857901039896,
+            "y": 1859.8366220339983
+          }
+        ],
+        "time": 5.899999999999995
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 60,
+            "time": 5.999999999999995,
+            "x": 1141.4016862458284,
+            "y": 1862.9515585475958
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 60,
+            "time": 5.999999999999995,
+            "x": 1133.1551134263043,
+            "y": 1859.8350134817588
+          }
+        ],
+        "time": 5.999999999999995
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 61,
+            "time": 6.099999999999994,
+            "x": 1141.4016862458284,
+            "y": 1862.9515585475958
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 61,
+            "time": 6.099999999999994,
+            "x": 1133.1255168348944,
+            "y": 1859.8334615645701
+          }
+        ],
+        "time": 6.099999999999994
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 62,
+            "time": 6.199999999999994,
+            "x": 1141.4016862458284,
+            "y": 1862.9515585475958
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 62,
+            "time": 6.199999999999994,
+            "x": 1133.0964489907121,
+            "y": 1859.831937372598
+          }
+        ],
+        "time": 6.199999999999994
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 63,
+            "time": 6.299999999999994,
+            "x": 1141.4016862458284,
+            "y": 1862.9515585475958
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "large_intestine",
+            "phase": "frame",
+            "tick": 63,
+            "time": 6.299999999999994,
+            "x": 1133.0964489907121,
+            "y": 1859.831937372598
+          }
+        ],
+        "time": 6.299999999999994
+      }
+    ],
+    "goals": [
+      {
+        "id": 18,
+        "lane": 0,
+        "organId": "large_intestine",
+        "x": 1141.4016862458284,
+        "y": 1862.9515585475958
+      },
+      {
+        "id": 19,
+        "lane": 0,
+        "organId": "large_intestine",
+        "x": 1133.0957588737895,
+        "y": 1859.8319011858528
+      }
+    ],
+    "id": "large_intestine/meeting/scout-siege",
+    "minimumFrameDiskGapWorld": 0.30169356109013723,
+    "networkEdges": 202,
+    "save": {
+      "flag": 1,
+      "ids": [
+        "bladder",
+        "brain",
+        "heart",
+        "kidney_l",
+        "kidney_r",
+        "large_intestine",
+        "liver",
+        "lung_l",
+        "lung_r",
+        "pancreas",
+        "small_intestine",
+        "stomach"
+      ],
+      "laneErrors": 0,
+      "positionErrors": 0.0,
+      "restored": true,
+      "restoredFlag": 1,
+      "restoredIds": [
+        "bladder",
+        "brain",
+        "heart",
+        "kidney_l",
+        "kidney_r",
+        "large_intestine",
+        "liver",
+        "lung_l",
+        "lung_r",
+        "pancreas",
+        "small_intestine",
+        "stomach"
+      ],
+      "restoredNetworkEdges": 202,
+      "version": 9
+    },
+    "setupCommands": {},
+    "setupElapsed": 0,
+    "spawnErrors": {},
+    "starts": [
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "spawn",
+        "tick": 0,
+        "time": 0,
+        "x": 1129.0957588737895,
+        "y": 1859.8319011858528
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "spawn",
+        "tick": 0,
+        "time": 0,
+        "x": 1140.1965999718695,
+        "y": 1860.2042385676307
+      }
+    ],
+    "trace": [
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 1,
+        "time": 0.1,
+        "x": 1129.0957588737895,
+        "y": 1859.8319011858528
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 1,
+        "time": 0.1,
+        "x": 1140.1965999718695,
+        "y": 1860.2042385676307
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 2,
+        "time": 0.2,
+        "x": 1129.3610912518443,
+        "y": 1859.8991652027353
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 2,
+        "time": 0.2,
+        "x": 1140.0978902146862,
+        "y": 1860.1990626550821
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 2,
+        "time": 0.2,
+        "x": 1129.3610912518443,
+        "y": 1859.8991652027353
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 2,
+        "time": 0.2,
+        "x": 1140.0978902146862,
+        "y": 1860.1990626550821
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 3,
+        "time": 0.30000000000000004,
+        "x": 1129.669112720865,
+        "y": 1859.9772512676334
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 3,
+        "time": 0.30000000000000004,
+        "x": 1139.9832991322214,
+        "y": 1860.1930539945542
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 3,
+        "time": 0.30000000000000004,
+        "x": 1129.669112720865,
+        "y": 1859.9772512676334
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 3,
+        "time": 0.30000000000000004,
+        "x": 1139.9832991322214,
+        "y": 1860.1930539945542
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 4,
+        "time": 0.4,
+        "x": 1129.9980322783222,
+        "y": 1860.060635175877
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 4,
+        "time": 0.4,
+        "x": 1139.8609334794223,
+        "y": 1860.1866376691987
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 4,
+        "time": 0.4,
+        "x": 1129.9980322783222,
+        "y": 1860.060635175877
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 4,
+        "time": 0.4,
+        "x": 1139.8609334794223,
+        "y": 1860.1866376691987
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 5,
+        "time": 0.5,
+        "x": 1130.3371823206742,
+        "y": 1860.146612599144
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 5,
+        "time": 0.5,
+        "x": 1139.7347618505594,
+        "y": 1860.180021774927
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 5,
+        "time": 0.5,
+        "x": 1130.3371823206742,
+        "y": 1860.146612599144
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 5,
+        "time": 0.5,
+        "x": 1139.7347618505594,
+        "y": 1860.180021774927
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 6,
+        "time": 0.6,
+        "x": 1130.6813406115796,
+        "y": 1860.2338596560596
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 6,
+        "time": 0.6,
+        "x": 1139.6067270378578,
+        "y": 1860.1733081833568
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 6,
+        "time": 0.6,
+        "x": 1130.6813406115796,
+        "y": 1860.2338596560596
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 6,
+        "time": 0.6,
+        "x": 1139.6067270378578,
+        "y": 1860.1733081833568
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 7,
+        "time": 0.7,
+        "x": 1131.0279506487932,
+        "y": 1860.3217282515386
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 7,
+        "time": 0.7,
+        "x": 1139.477780119048,
+        "y": 1860.1665467648888
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 7,
+        "time": 0.7,
+        "x": 1131.0279506487932,
+        "y": 1860.3217282515386
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 7,
+        "time": 0.7,
+        "x": 1139.477780119048,
+        "y": 1860.1665467648888
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 8,
+        "time": 0.7999999999999999,
+        "x": 1131.3757609179636,
+        "y": 1860.4099011160374
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 8,
+        "time": 0.7999999999999999,
+        "x": 1139.3483866863003,
+        "y": 1860.1597619331621
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 8,
+        "time": 0.7999999999999999,
+        "x": 1131.3757609179636,
+        "y": 1860.4099011160374
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 8,
+        "time": 0.7999999999999999,
+        "x": 1139.3483866863003,
+        "y": 1860.1597619331621
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 9,
+        "time": 0.8999999999999999,
+        "x": 1131.7241587506778,
+        "y": 1860.498222932897
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 9,
+        "time": 0.8999999999999999,
+        "x": 1139.2187746663783,
+        "y": 1860.15296563967
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 9,
+        "time": 0.8999999999999999,
+        "x": 1131.7241587506778,
+        "y": 1860.498222932897
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 9,
+        "time": 0.8999999999999999,
+        "x": 1139.2187746663783,
+        "y": 1860.15296563967
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 10,
+        "time": 0.9999999999999999,
+        "x": 1132.0728442202244,
+        "y": 1860.5866176681427
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 10,
+        "time": 0.9999999999999999,
+        "x": 1139.0890556389284,
+        "y": 1860.1461637351658
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 10,
+        "time": 0.9999999999999999,
+        "x": 1132.0728442202244,
+        "y": 1860.5866176681427
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 10,
+        "time": 0.9999999999999999,
+        "x": 1139.0890556389284,
+        "y": 1860.1461637351658
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 11,
+        "time": 1.0999999999999999,
+        "x": 1132.4216704999833,
+        "y": 1860.675048099976
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 11,
+        "time": 1.0999999999999999,
+        "x": 1138.9592842268355,
+        "y": 1860.1393590838377
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 11,
+        "time": 1.0999999999999999,
+        "x": 1132.4216704999833,
+        "y": 1860.675048099976
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 11,
+        "time": 1.0999999999999999,
+        "x": 1138.9592842268355,
+        "y": 1860.1393590838377
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 12,
+        "time": 1.2,
+        "x": 1132.7705657122071,
+        "y": 1860.7634960067762
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 12,
+        "time": 1.2,
+        "x": 1138.8294871702776,
+        "y": 1860.1325530878248
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 12,
+        "time": 1.2,
+        "x": 1132.7705657122071,
+        "y": 1860.7634960067762
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 12,
+        "time": 1.2,
+        "x": 1138.8294871702776,
+        "y": 1860.1325530878248
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 13,
+        "time": 1.3,
+        "x": 1133.1194946697442,
+        "y": 1860.8519524683006
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 13,
+        "time": 1.3,
+        "x": 1138.6996775596858,
+        "y": 1860.1257464335329
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 13,
+        "time": 1.3,
+        "x": 1133.1194946697442,
+        "y": 1860.8519524683006
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 13,
+        "time": 1.3,
+        "x": 1138.6996775596858,
+        "y": 1860.1257464335329
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 14,
+        "time": 1.4000000000000001,
+        "x": 1133.468440147018,
+        "y": 1860.940413117719
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 14,
+        "time": 1.4000000000000001,
+        "x": 1138.5698618033714,
+        "y": 1860.1189394569858
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 14,
+        "time": 1.4000000000000001,
+        "x": 1133.468440147018,
+        "y": 1860.940413117719
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 14,
+        "time": 1.4000000000000001,
+        "x": 1138.5698618033714,
+        "y": 1860.1189394569858
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 15,
+        "time": 1.5000000000000002,
+        "x": 1133.817393711391,
+        "y": 1861.0288758172856
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 15,
+        "time": 1.5000000000000002,
+        "x": 1138.4400430384696,
+        "y": 1860.1121323226814
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 15,
+        "time": 1.5000000000000002,
+        "x": 1133.817393711391,
+        "y": 1861.0288758172856
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 15,
+        "time": 1.5000000000000002,
+        "x": 1138.4400430384696,
+        "y": 1860.1121323226814
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 16,
+        "time": 1.6000000000000003,
+        "x": 1134.166351234736,
+        "y": 1861.1173395204855
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 16,
+        "time": 1.6000000000000003,
+        "x": 1138.3102228007392,
+        "y": 1860.1053251111482
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 16,
+        "time": 1.6000000000000003,
+        "x": 1134.166351234736,
+        "y": 1861.1173395204855
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 16,
+        "time": 1.6000000000000003,
+        "x": 1138.3102228007392,
+        "y": 1860.1053251111482
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 17,
+        "time": 1.7000000000000004,
+        "x": 1134.515310696163,
+        "y": 1861.2058037150057
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 17,
+        "time": 1.7000000000000004,
+        "x": 1138.1804018419978,
+        "y": 1860.0985178618082
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 17,
+        "time": 1.7000000000000004,
+        "x": 1134.515310696163,
+        "y": 1861.2058037150057
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 17,
+        "time": 1.7000000000000004,
+        "x": 1138.1804018419978,
+        "y": 1860.0985178618082
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 18,
+        "time": 1.8000000000000005,
+        "x": 1134.8642711063615,
+        "y": 1861.2942681500474
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 18,
+        "time": 1.8000000000000005,
+        "x": 1138.0505805302912,
+        "y": 1860.0917105939604
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 18,
+        "time": 1.8000000000000005,
+        "x": 1134.8642711063615,
+        "y": 1861.2942681500474
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 18,
+        "time": 1.8000000000000005,
+        "x": 1138.0505805302912,
+        "y": 1860.0917105939604
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 19,
+        "time": 1.9000000000000006,
+        "x": 1135.2132319810235,
+        "y": 1861.3827327028346
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 19,
+        "time": 1.9000000000000006,
+        "x": 1137.9207590457936,
+        "y": 1860.084903317052
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 19,
+        "time": 1.9000000000000006,
+        "x": 1135.2132319810235,
+        "y": 1861.3827327028346
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 19,
+        "time": 1.9000000000000006,
+        "x": 1137.9207590457936,
+        "y": 1860.084903317052
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 20,
+        "time": 2.0000000000000004,
+        "x": 1135.5621930830596,
+        "y": 1861.471197313263
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 20,
+        "time": 2.0000000000000004,
+        "x": 1137.7909374767075,
+        "y": 1860.0780960357083
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 20,
+        "time": 2.0000000000000004,
+        "x": 1135.5621930830596,
+        "y": 1861.471197313263
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 20,
+        "time": 2.0000000000000004,
+        "x": 1137.7909374767075,
+        "y": 1860.0780960357083
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 21,
+        "time": 2.1000000000000005,
+        "x": 1135.9111542964047,
+        "y": 1861.5596619519092
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 21,
+        "time": 2.1000000000000005,
+        "x": 1137.661115866212,
+        "y": 1860.0712887521931
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 21,
+        "time": 2.1000000000000005,
+        "x": 1135.9111542964047,
+        "y": 1861.5596619519092
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 21,
+        "time": 2.1000000000000005,
+        "x": 1137.661115866212,
+        "y": 1860.0712887521931
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 22,
+        "time": 2.2000000000000006,
+        "x": 1136.2601155642403,
+        "y": 1861.6481266043693
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 22,
+        "time": 2.2000000000000006,
+        "x": 1137.5312942354446,
+        "y": 1860.0644814676152
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 22,
+        "time": 2.2000000000000006,
+        "x": 1136.2601155642403,
+        "y": 1861.6481266043693
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 22,
+        "time": 2.2000000000000006,
+        "x": 1137.5312942354446,
+        "y": 1860.0644814676152
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 23,
+        "time": 2.3000000000000007,
+        "x": 1136.6090768587512,
+        "y": 1861.736591263592
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 23,
+        "time": 2.3000000000000007,
+        "x": 1137.4014725947536,
+        "y": 1860.0576741825168
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 23,
+        "time": 2.3000000000000007,
+        "x": 1136.6090768587512,
+        "y": 1861.736591263592
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 23,
+        "time": 2.3000000000000007,
+        "x": 1137.4014725947536,
+        "y": 1860.0576741825168
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 24,
+        "time": 2.400000000000001,
+        "x": 1136.9580381663209,
+        "y": 1861.8250559261248
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 24,
+        "time": 2.400000000000001,
+        "x": 1137.2716509492045,
+        "y": 1860.0508668971638
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 24,
+        "time": 2.400000000000001,
+        "x": 1136.9580381663209,
+        "y": 1861.8250559261248
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 24,
+        "time": 2.400000000000001,
+        "x": 1137.2716509492045,
+        "y": 1860.0508668971638
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 25,
+        "time": 2.500000000000001,
+        "x": 1137.3069994802834,
+        "y": 1861.9135205902785
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 25,
+        "time": 2.500000000000001,
+        "x": 1137.141829301277,
+        "y": 1860.044059611686
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 25,
+        "time": 2.500000000000001,
+        "x": 1137.3069994802834,
+        "y": 1861.9135205902785
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 25,
+        "time": 2.500000000000001,
+        "x": 1137.141829301277,
+        "y": 1860.044059611686
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 26,
+        "time": 2.600000000000001,
+        "x": 1137.6559607973752,
+        "y": 1862.0019852552255
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 26,
+        "time": 2.600000000000001,
+        "x": 1137.0120076521853,
+        "y": 1860.0372523261472
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 26,
+        "time": 2.600000000000001,
+        "x": 1137.6559607973752,
+        "y": 1862.0019852552255
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 26,
+        "time": 2.600000000000001,
+        "x": 1137.0120076521853,
+        "y": 1860.0372523261472
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 27,
+        "time": 2.700000000000001,
+        "x": 1138.004922115999,
+        "y": 1862.0904499205608
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 27,
+        "time": 2.700000000000001,
+        "x": 1136.8821860025237,
+        "y": 1860.0304450405783
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 27,
+        "time": 2.700000000000001,
+        "x": 1138.004922115999,
+        "y": 1862.0904499205608
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 27,
+        "time": 2.700000000000001,
+        "x": 1136.8821860025237,
+        "y": 1860.0304450405783
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 28,
+        "time": 2.800000000000001,
+        "x": 1138.353883435373,
+        "y": 1862.1789145860862
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 28,
+        "time": 2.800000000000001,
+        "x": 1136.752364352583,
+        "y": 1860.023637754995
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 28,
+        "time": 2.800000000000001,
+        "x": 1138.353883435373,
+        "y": 1862.1789145860862
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 28,
+        "time": 2.800000000000001,
+        "x": 1136.752364352583,
+        "y": 1860.023637754995
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 29,
+        "time": 2.9000000000000012,
+        "x": 1138.7028447551143,
+        "y": 1862.2673792517048
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 29,
+        "time": 2.9000000000000012,
+        "x": 1136.6225427025058,
+        "y": 1860.0168304694043
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 29,
+        "time": 2.9000000000000012,
+        "x": 1138.7028447551143,
+        "y": 1862.2673792517048
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 29,
+        "time": 2.9000000000000012,
+        "x": 1136.6225427025058,
+        "y": 1860.0168304694043
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 30,
+        "time": 3.0000000000000013,
+        "x": 1139.051806075035,
+        "y": 1862.355843917369
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 30,
+        "time": 3.0000000000000013,
+        "x": 1136.4927210523617,
+        "y": 1860.0100231838103
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 30,
+        "time": 3.0000000000000013,
+        "x": 1139.051806075035,
+        "y": 1862.355843917369
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 30,
+        "time": 3.0000000000000013,
+        "x": 1136.4927210523617,
+        "y": 1860.0100231838103
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 31,
+        "time": 3.1000000000000014,
+        "x": 1139.4007673950439,
+        "y": 1862.4443085830553
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 31,
+        "time": 3.1000000000000014,
+        "x": 1136.362899402185,
+        "y": 1860.0032158982144
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 31,
+        "time": 3.1000000000000014,
+        "x": 1139.4007673950439,
+        "y": 1862.4443085830553
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 31,
+        "time": 3.1000000000000014,
+        "x": 1136.362899402185,
+        "y": 1860.0032158982144
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 32,
+        "time": 3.2000000000000015,
+        "x": 1139.7497287150957,
+        "y": 1862.5327732487528
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 32,
+        "time": 3.2000000000000015,
+        "x": 1136.233077751992,
+        "y": 1859.9964086126179
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 32,
+        "time": 3.2000000000000015,
+        "x": 1139.7497287150957,
+        "y": 1862.5327732487528
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 32,
+        "time": 3.2000000000000015,
+        "x": 1136.233077751992,
+        "y": 1859.9964086126179
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 33,
+        "time": 3.3000000000000016,
+        "x": 1140.0986900351686,
+        "y": 1862.6212379144556
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 33,
+        "time": 3.3000000000000016,
+        "x": 1136.1032561017912,
+        "y": 1859.9896013270209
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 33,
+        "time": 3.3000000000000016,
+        "x": 1140.0986900351686,
+        "y": 1862.6212379144556
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 33,
+        "time": 3.3000000000000016,
+        "x": 1136.1032561017912,
+        "y": 1859.9896013270209
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 34,
+        "time": 3.4000000000000017,
+        "x": 1140.447651355252,
+        "y": 1862.7097025801609
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 34,
+        "time": 3.4000000000000017,
+        "x": 1135.9734344515866,
+        "y": 1859.9827940414236
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 34,
+        "time": 3.4000000000000017,
+        "x": 1140.447651355252,
+        "y": 1862.7097025801609
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 34,
+        "time": 3.4000000000000017,
+        "x": 1135.9734344515866,
+        "y": 1859.9827940414236
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 35,
+        "time": 3.5000000000000018,
+        "x": 1140.7966126753404,
+        "y": 1862.7981672458675
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 35,
+        "time": 3.5000000000000018,
+        "x": 1135.8436128013802,
+        "y": 1859.9759867558264
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 35,
+        "time": 3.5000000000000018,
+        "x": 1140.7966126753404,
+        "y": 1862.7981672458675
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 35,
+        "time": 3.5000000000000018,
+        "x": 1135.8436128013802,
+        "y": 1859.9759867558264
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 36,
+        "time": 3.600000000000002,
+        "x": 1141.119926765985,
+        "y": 1862.8801301205492
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 36,
+        "time": 3.600000000000002,
+        "x": 1135.713791151173,
+        "y": 1859.969179470229
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 36,
+        "time": 3.600000000000002,
+        "x": 1141.119926765985,
+        "y": 1862.8801301205492
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 36,
+        "time": 3.600000000000002,
+        "x": 1135.713791151173,
+        "y": 1859.969179470229
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 37,
+        "time": 3.700000000000002,
+        "x": 1141.345808591229,
+        "y": 1862.9373930864112
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 37,
+        "time": 3.700000000000002,
+        "x": 1135.5839695009652,
+        "y": 1859.9623721846315
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 37,
+        "time": 3.700000000000002,
+        "x": 1141.345808591229,
+        "y": 1862.9373930864112
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 37,
+        "time": 3.700000000000002,
+        "x": 1135.5839695009652,
+        "y": 1859.9623721846315
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 38,
+        "time": 3.800000000000002,
+        "x": 1141.4016862458284,
+        "y": 1862.9515585475958
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 38,
+        "time": 3.800000000000002,
+        "x": 1135.4541478507572,
+        "y": 1859.955564899034
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 38,
+        "time": 3.800000000000002,
+        "x": 1141.4016862458284,
+        "y": 1862.9515585475958
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 38,
+        "time": 3.800000000000002,
+        "x": 1135.4541478507572,
+        "y": 1859.955564899034
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 39,
+        "time": 3.900000000000002,
+        "x": 1135.324326200549,
+        "y": 1859.9487576134366
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 39,
+        "time": 3.900000000000002,
+        "x": 1141.4016862458284,
+        "y": 1862.9515585475958
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 39,
+        "time": 3.900000000000002,
+        "x": 1135.324326200549,
+        "y": 1859.9487576134366
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 40,
+        "time": 4.000000000000002,
+        "x": 1135.1945045503408,
+        "y": 1859.941950327839
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 40,
+        "time": 4.000000000000002,
+        "x": 1141.4016862458284,
+        "y": 1862.9515585475958
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 40,
+        "time": 4.000000000000002,
+        "x": 1135.1945045503408,
+        "y": 1859.941950327839
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 41,
+        "time": 4.100000000000001,
+        "x": 1135.0646829001325,
+        "y": 1859.9351430422416
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 41,
+        "time": 4.100000000000001,
+        "x": 1141.4016862458284,
+        "y": 1862.9515585475958
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 41,
+        "time": 4.100000000000001,
+        "x": 1135.0646829001325,
+        "y": 1859.9351430422416
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 42,
+        "time": 4.200000000000001,
+        "x": 1134.9348612499243,
+        "y": 1859.9283357566442
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 42,
+        "time": 4.200000000000001,
+        "x": 1141.4016862458284,
+        "y": 1862.9515585475958
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 42,
+        "time": 4.200000000000001,
+        "x": 1134.9348612499243,
+        "y": 1859.9283357566442
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 43,
+        "time": 4.300000000000001,
+        "x": 1134.805039599716,
+        "y": 1859.9215284710467
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 43,
+        "time": 4.300000000000001,
+        "x": 1141.4016862458284,
+        "y": 1862.9515585475958
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 43,
+        "time": 4.300000000000001,
+        "x": 1134.805039599716,
+        "y": 1859.9215284710467
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 44,
+        "time": 4.4,
+        "x": 1134.675217949508,
+        "y": 1859.9147211854493
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 44,
+        "time": 4.4,
+        "x": 1141.4016862458284,
+        "y": 1862.9515585475958
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 44,
+        "time": 4.4,
+        "x": 1134.675217949508,
+        "y": 1859.9147211854493
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 45,
+        "time": 4.5,
+        "x": 1134.5453962992997,
+        "y": 1859.9079138998518
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 45,
+        "time": 4.5,
+        "x": 1141.4016862458284,
+        "y": 1862.9515585475958
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 45,
+        "time": 4.5,
+        "x": 1134.5453962992997,
+        "y": 1859.9079138998518
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 46,
+        "time": 4.6,
+        "x": 1134.4155746490915,
+        "y": 1859.9011066142543
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 46,
+        "time": 4.6,
+        "x": 1141.4016862458284,
+        "y": 1862.9515585475958
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 46,
+        "time": 4.6,
+        "x": 1134.4155746490915,
+        "y": 1859.9011066142543
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 47,
+        "time": 4.699999999999999,
+        "x": 1134.2857529988833,
+        "y": 1859.8942993286569
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 47,
+        "time": 4.699999999999999,
+        "x": 1141.4016862458284,
+        "y": 1862.9515585475958
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 47,
+        "time": 4.699999999999999,
+        "x": 1134.2857529988833,
+        "y": 1859.8942993286569
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 48,
+        "time": 4.799999999999999,
+        "x": 1134.155931348675,
+        "y": 1859.8874920430594
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 48,
+        "time": 4.799999999999999,
+        "x": 1141.4016862458284,
+        "y": 1862.9515585475958
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 48,
+        "time": 4.799999999999999,
+        "x": 1134.155931348675,
+        "y": 1859.8874920430594
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 49,
+        "time": 4.899999999999999,
+        "x": 1134.0261096984668,
+        "y": 1859.880684757462
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 49,
+        "time": 4.899999999999999,
+        "x": 1141.4016862458284,
+        "y": 1862.9515585475958
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 49,
+        "time": 4.899999999999999,
+        "x": 1134.0261096984668,
+        "y": 1859.880684757462
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 50,
+        "time": 4.999999999999998,
+        "x": 1133.8962880482586,
+        "y": 1859.8738774718645
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 50,
+        "time": 4.999999999999998,
+        "x": 1141.4016862458284,
+        "y": 1862.9515585475958
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 50,
+        "time": 4.999999999999998,
+        "x": 1133.8962880482586,
+        "y": 1859.8738774718645
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 51,
+        "time": 5.099999999999998,
+        "x": 1133.7664663980504,
+        "y": 1859.867070186267
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 51,
+        "time": 5.099999999999998,
+        "x": 1141.4016862458284,
+        "y": 1862.9515585475958
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 51,
+        "time": 5.099999999999998,
+        "x": 1133.7664663980504,
+        "y": 1859.867070186267
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 52,
+        "time": 5.1999999999999975,
+        "x": 1133.6416973507246,
+        "y": 1859.8605278373022
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 52,
+        "time": 5.1999999999999975,
+        "x": 1141.4016862458284,
+        "y": 1862.9515585475958
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 52,
+        "time": 5.1999999999999975,
+        "x": 1133.6416973507246,
+        "y": 1859.8605278373022
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 53,
+        "time": 5.299999999999997,
+        "x": 1133.531229794583,
+        "y": 1859.8547353966524
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 53,
+        "time": 5.299999999999997,
+        "x": 1141.4016862458284,
+        "y": 1862.9515585475958
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 53,
+        "time": 5.299999999999997,
+        "x": 1133.531229794583,
+        "y": 1859.8547353966524
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 54,
+        "time": 5.399999999999997,
+        "x": 1133.4382356728834,
+        "y": 1859.849859187297
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 54,
+        "time": 5.399999999999997,
+        "x": 1141.4016862458284,
+        "y": 1862.9515585475958
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 54,
+        "time": 5.399999999999997,
+        "x": 1133.4382356728834,
+        "y": 1859.849859187297
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 55,
+        "time": 5.4999999999999964,
+        "x": 1133.362611312785,
+        "y": 1859.8458937730807
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 55,
+        "time": 5.4999999999999964,
+        "x": 1141.4016862458284,
+        "y": 1862.9515585475958
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 55,
+        "time": 5.4999999999999964,
+        "x": 1133.362611312785,
+        "y": 1859.8458937730807
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 56,
+        "time": 5.599999999999996,
+        "x": 1133.3026593190298,
+        "y": 1859.842750149941
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 56,
+        "time": 5.599999999999996,
+        "x": 1141.4016862458284,
+        "y": 1862.9515585475958
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 56,
+        "time": 5.599999999999996,
+        "x": 1133.3026593190298,
+        "y": 1859.842750149941
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 57,
+        "time": 5.699999999999996,
+        "x": 1133.2560630149046,
+        "y": 1859.8403068413752
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 57,
+        "time": 5.699999999999996,
+        "x": 1141.4016862458284,
+        "y": 1862.9515585475958
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 57,
+        "time": 5.699999999999996,
+        "x": 1133.2560630149046,
+        "y": 1859.8403068413752
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 58,
+        "time": 5.799999999999995,
+        "x": 1133.218673103148,
+        "y": 1859.8383462761892
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 58,
+        "time": 5.799999999999995,
+        "x": 1141.4016862458284,
+        "y": 1862.9515585475958
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 58,
+        "time": 5.799999999999995,
+        "x": 1133.218673103148,
+        "y": 1859.8383462761892
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 59,
+        "time": 5.899999999999995,
+        "x": 1133.1857901039896,
+        "y": 1859.8366220339983
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 59,
+        "time": 5.899999999999995,
+        "x": 1141.4016862458284,
+        "y": 1862.9515585475958
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 59,
+        "time": 5.899999999999995,
+        "x": 1133.1857901039896,
+        "y": 1859.8366220339983
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 60,
+        "time": 5.999999999999995,
+        "x": 1133.1551134263043,
+        "y": 1859.8350134817588
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 60,
+        "time": 5.999999999999995,
+        "x": 1141.4016862458284,
+        "y": 1862.9515585475958
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 60,
+        "time": 5.999999999999995,
+        "x": 1133.1551134263043,
+        "y": 1859.8350134817588
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 61,
+        "time": 6.099999999999994,
+        "x": 1133.1255168348944,
+        "y": 1859.8334615645701
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 61,
+        "time": 6.099999999999994,
+        "x": 1141.4016862458284,
+        "y": 1862.9515585475958
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 61,
+        "time": 6.099999999999994,
+        "x": 1133.1255168348944,
+        "y": 1859.8334615645701
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 62,
+        "time": 6.199999999999994,
+        "x": 1133.0964489907121,
+        "y": 1859.831937372598
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 62,
+        "time": 6.199999999999994,
+        "x": 1141.4016862458284,
+        "y": 1862.9515585475958
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 62,
+        "time": 6.199999999999994,
+        "x": 1133.0964489907121,
+        "y": 1859.831937372598
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 63,
+        "time": 6.299999999999994,
+        "x": 1141.4016862458284,
+        "y": 1862.9515585475958
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "large_intestine",
+        "phase": "substep",
+        "tick": 63,
+        "time": 6.299999999999994,
+        "x": 1133.0964489907121,
+        "y": 1859.831937372598
+      }
+    ],
+    "trafficStats": {
+      "activePairs": 0,
+      "cancelled": 0,
+      "conflicts": 0,
+      "deadReleased": 0,
+      "expired": 0,
+      "maxPairs": 0,
+      "maxPlanningSlice": 5.000000015797923e-06,
+      "noBay": 0,
+      "resumed": 0,
+      "routeRequests": 0,
+      "waits": 0,
+      "yields": 0
+    }
+  },
+  "schema": "organ-atlas-actual-lua-trace/v1"
+}

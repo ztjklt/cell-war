@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>全身血管与器官 · 原图重合标注</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#182d2a;color:#e3ebe1;font:14px/1.6 system-ui}main{max-width:1440px;margin:auto;padding:18px}a{color:#bddbc8}h1{font-size:23px;margin:8px 0}h2{font-size:17px;margin:0 0 8px}p{margin:8px 0}.muted{color:#b6c9be;font-size:12px}.toolbar,.legend{display:flex;gap:8px 14px;flex-wrap:wrap;align-items:center;margin:10px 0}.toolbar label{display:flex;align-items:center;gap:5px}button,select,input{font:inherit}button,select{border:1px solid #668472;border-radius:6px;background:#2a433b;color:inherit;padding:7px 9px;cursor:pointer}button[aria-pressed=true]{background:#496c54}.legend label{display:flex;gap:5px;align-items:center;font-size:13px}.swatch{width:20px;height:4px;display:inline-block;border-radius:2px}.layout{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(300px,1fr);gap:16px}.map-panel,.detail{background:#223a32;border:1px solid #456757;border-radius:9px;padding:12px;min-width:0}.map-panel{position:sticky;top:10px;align-self:start}.map{display:block;width:100%;height:720px;background:#f5f4ed;border-radius:5px;touch-action:none;cursor:grab}.map:active{cursor:grabbing}.status{border-left:3px solid #bba777;background:#30453a;padding:9px 12px;font-size:13px}.selected{border-left-color:#9ac7b1}.case-list{max-height:400px;overflow:auto;display:grid;gap:5px;margin:10px 0}.case{display:block;width:100%;text-align:left;border-left-width:4px;font-size:12px}.case small{display:block;color:#c5d3c6}.case.active{background:#44614c;border-right-color:#d6d8b5}.detail-card{padding:12px;background:#294137;border:1px solid #5b7864;border-radius:6px;margin:12px 0}.detail-card p{overflow-wrap:anywhere}.tag{display:inline-block;border-radius:3px;padding:1px 6px;margin-right:5px;background:#425c49}.channels{display:flex;flex-wrap:wrap;gap:5px}.channels button{font-size:12px}.channels button.active{border-color:#d2bfed;background:#5a4c64}.review-table{width:100%;border-collapse:collapse;font-size:12px;margin:10px 0}.review-table th,.review-table td{border-bottom:1px solid #496958;padding:7px;text-align:left}.review-table td button{font-size:12px;padding:3px 7px}.danger{color:#ecc898}.tiny{font-size:11px;color:#b5c9b9}#error{color:#f4b8a1}.note-list{padding-left:20px;font-size:12px}footer{font-size:12px;margin-top:18px}details{margin-top:10px}input[type=range]{width:100px}#mapZoom{font-variant-numeric:tabular-nums}.region-bar{display:flex;flex-wrap:wrap;gap:5px}.region-bar button{padding:4px 8px;font-size:12px}@media(max-width:850px){main{padding:12px}.layout{grid-template-columns:1fr}.map-panel{position:relative;top:0}.map{height:520px}h1{font-size:20px}.case-list{max-height:260px}.toolbar{gap:7px}.legend{gap:7px 11px}}
+</style>
+<main>
+<a href="final-reference.html">查看血管参考定稿</a> · <a href="organ-routes.html">返回血管编辑器</a> · <a href="stomach-user-edit-review.html">你的胃部修改</a>
+<h1>全身血管与器官 · 原图重合标注</h1>
+<p>保留原人体图、器官位置和你改的胃壁线。绿色表示现有接入关系；橙色标局部绕开建议；蓝色标前景遮挡建议；紫色标待接入的位置。</p>
+<p id="summary" class="muted">正在核对原图与草稿…</p><p id="error" role="alert"></p>
+<div class="toolbar">
+<label>部位 <select id="organSelect" aria-label="标注部位"><option value="all">全身总图</option></select></label>
+<button id="fitBody">全身</button><button id="fitHead">头部</button><button id="fitTorso">胸腹</button><button id="fitArms">双臂</button><button id="fitLegs">双腿</button><button id="zoomPlus" aria-label="放大标注图">＋</button><button id="zoomMinus" aria-label="缩小标注图">−</button>
+<button id="zoom015">0.15 接入通道</button><span id="mapZoom" class="muted"></span>
+</div>
+<div class="legend">
+<label><input type="checkbox" id="showNetwork" checked>完整血管底图</label>
+<label><input type="checkbox" id="showConnect" checked><span class="swatch" style="background:#288665"></span>已有连接</label>
+<label><input type="checkbox" id="showReroute" checked><span class="swatch" style="background:#dc852e"></span>建议绕开</label>
+<label><input type="checkbox" id="showOcclude" checked><span class="swatch" style="background:#467ab8"></span>可以遮挡</label>
+<label><input type="checkbox" id="showPending" checked><span class="swatch" style="background:#9e61ba"></span>待接入</label>
+<label><input type="checkbox" id="showPassages">食物／气道／尿路冲突</label>
+<label><input type="checkbox" id="showChannels">0.15 通道候选</label>
+</div>
+<p class="muted">完整底线：红色供血、蓝色回流、灰紫色交换血管。覆盖其上的绿／橙／蓝虚线／紫标记表示器官重合处理。</p>
+<div class="layout">
+<section class="map-panel" aria-label="原图上的全身血管标注">
+<svg id="overlapMap" class="map" viewBox="0 0 1024 1536" role="img" aria-label="原人体图上的器官连接、绕开与遮挡标注" tabindex="0"><image href="coverage-reference.png" width="1024" height="1536" opacity=".72"/><g id="organOutlines"></g><g id="baseVessels"></g><g id="passageAreas"></g><g id="overlapLines"></g><g id="passageLines"></g><g id="channelLines"></g><g id="portMarkers"></g><g id="annotationLabels"></g><g id="selectionMarker"></g></svg>
+<p id="mapCaption" class="tiny">滚轮缩放，拖动画布平移。点击器官名称或彩色线段，查看具体连接依据。</p>
+</section>
+<section class="detail" aria-label="重合位置逐项说明">
+<h2 id="regionTitle">全身标注台账</h2><p id="regionSummary" class="muted"></p>
+<div id="regionButtons" class="region-bar"></div>
+<div id="caseDetail" class="detail-card"><p>点击一条标注。颜色决定建议处理方式；真正接入必须有命名接口，不由画面相交产生。</p></div>
+<h2>本部位的固定接口与 0.15 通道</h2><div id="channelButtons" class="channels"></div><p id="channelDetail" class="muted"></p>
+<label>查看条目 <select id="caseFilter" aria-label="重合条目类型"><option value="all">全部器官重合</option><option value="connect">已有连接</option><option value="reroute">建议绕开</option><option value="occlude">可以遮挡</option><option value="pending">待接入</option><option value="passages">独立腔道冲突</option></select></label>
+<div id="caseList" class="case-list" aria-label="逐项重合记录"></div>
+<details open><summary>全身器官覆盖</summary><table class="review-table"><thead><tr><th>器官</th><th>连接</th><th>绕开</th><th>遮挡</th><th>待接入</th></tr></thead><tbody id="organRows"></tbody></table></details>
+<p class="status">绿色只表示草稿中的命名接入或所属关系。橙色、蓝色和紫色是待讨论的设计方案；本轮没有改原血管坐标，也没有把新通道安装进游戏。</p>
+<details><summary>标注规则与限制</summary><ul id="limitations" class="note-list"></ul><p class="tiny">心脏循环枢纽与心肺接续单独判定，不能把它们误标成无关血管。食物、气道和尿路不能因交叉成为血管入口。0.15 通道保留冻结接口；管腔到组织的进出仍要经过指定膜口。</p></details>
+</section>
+</div>
+<footer><a href="vascular-organ-overlap-overview.svg">查看完整原图标注 SVG</a> · <a href="vascular-organ-overlap-data.json">完整坐标与分类记录</a> · <a href="overlap-independent-audit.json">独立复核</a> · <a href="maintenance.html">维护说明</a></footer>
+</main>
+<script src="vascular-organ-overlap.js"></script>
+</html>

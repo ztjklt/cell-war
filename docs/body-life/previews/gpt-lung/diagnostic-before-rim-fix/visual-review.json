@@ -1,0 +1,33 @@
+{
+  "nativeEvidence": false,
+  "assetMode": "GPT-generated lung tissue sampled only inside the two lungs; other organs and protected foreground use original source pixels.",
+  "visualStatus": "needs_edge_repair",
+  "observations": [
+    "Original lung bronchial trees remain visible and connected.",
+    "Left lung lower inner border shows fragmented bright pixels in chest-1.92.png and digestive-4.8.png; generated border registration requires repair."
+  ],
+  "limitations": [
+    "The passing fixed-pixel test excludes a 3px raster-edge margin and does not cover this visible edge artifact.",
+    "Offline Cairo renders do not replace native GPU acceptance."
+  ],
+  "animations": {
+    "whole": {
+      "decodedFrames": 180,
+      "durationMs": 15000,
+      "differentConsecutiveFrames": 179,
+      "sourcesChangedDuringExport": []
+    },
+    "chest": {
+      "decodedFrames": 180,
+      "durationMs": 15000,
+      "differentConsecutiveFrames": 179,
+      "sourcesChangedDuringExport": []
+    },
+    "digestive": {
+      "decodedFrames": 180,
+      "durationMs": 15000,
+      "differentConsecutiveFrames": 179,
+      "sourcesChangedDuringExport": []
+    }
+  }
+}

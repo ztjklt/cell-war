@@ -1,0 +1,1407 @@
+{
+  "schema": "organ-atlas-native-independent-audit/v1",
+  "runId": "run-004",
+  "status": "UNDETERMINED",
+  "sourceHashes": {
+    "report.json": "e3c8211794913f6e4820ec0c261f68f3ba547f8f4e67ae2cbc299da2f18ccb0b",
+    "harness.json": "9ecdb94eef0d91203a1b9b3c3be4eed1e7158681803b2eff55b4d541d42c7ef0",
+    "inputs.json": "d2fc31f3c4b05a8b5f91b208a765e08ee0782fb2cb9a5f544962043ef3406986"
+  },
+  "scope": "Readonly audit of the actual native run-004 exported report and preserved inputs.json; current art/probe/harness production inputs independently verified. Main only contained a temporary opt-in native hook during sampling; it is restored after completion.",
+  "engineSettings": {
+    "maxInactiveFps": 30,
+    "maxFps": 60,
+    "timeStepSmoothing": 2,
+    "vSync": false
+  },
+  "physicalSizes": [
+    [
+      2498,
+      1404,
+      2
+    ]
+  ],
+  "wallClock": {
+    "status": "UNAVAILABLE_NATIVE_BINDING_ERROR",
+    "startedError": "[string \"qa/OrganAtlasNativeProbe\"]:19: error in function 'GetSystemTime'.\n     argument #1 is 'Time'; 'Time' expected.\n",
+    "finishedError": "[string \"qa/OrganAtlasNativeProbe\"]:19: error in function 'GetSystemTime'.\n     argument #1 is 'Time'; 'Time' expected.\n",
+    "validWallTimePhases": 0
+  },
+  "performance": {
+    "measurementStatus": "MEASURED",
+    "requestedP95FrameDeltaAcceptance": "UNDETERMINED",
+    "method": "Four same-camera/zoom fixtures with off/on/off/on draw wrappers; same trial/nav/sim flags, 30 warmup and 240 focused paused actual R.draw samples per phase. Compare each on phase with preceding off phase.",
+    "cpuScope": "os.clock process CPU; Lua/tessellation/native API submission; excludes later GPU execution and UI widget rendering.",
+    "updateScope": "Unclamped Update event TimeStep; engine pacing, FPS caps, smoothing, scheduling and probe overhead remain included. Not a GPU query.",
+    "uiPopupPerformance": "UNDETERMINED",
+    "phases": [
+      {
+        "label": "perf-liver-z0.15-off-73",
+        "artEnabled": false,
+        "zoom": 0.15,
+        "validFrames": 240,
+        "rawUpdateSamples": 240,
+        "cpuSamples": 240,
+        "actualAllFocused": true,
+        "actualAllPaused": true,
+        "cameraVariants": 1,
+        "cpuP95Ms": 3.15599999999705,
+        "rawUpdateP95Ms": 18.538501113653183,
+        "resources": {
+          "label": "phase-start-perf-liver-z0.15-off-73",
+          "frame": 7433,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        },
+        "discarded": {
+          "warmup": 30,
+          "screenshot-frame": 1
+        }
+      },
+      {
+        "label": "perf-liver-z0.15-on-74",
+        "artEnabled": true,
+        "zoom": 0.15,
+        "validFrames": 240,
+        "rawUpdateSamples": 240,
+        "cpuSamples": 240,
+        "actualAllFocused": true,
+        "actualAllPaused": true,
+        "cameraVariants": 1,
+        "cpuP95Ms": 3.485999999995215,
+        "rawUpdateP95Ms": 18.457498401403427,
+        "resources": {
+          "label": "phase-start-perf-liver-z0.15-on-74",
+          "frame": 7713,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        },
+        "discarded": {
+          "warmup": 30,
+          "screenshot-frame": 1
+        }
+      },
+      {
+        "label": "perf-liver-z0.15-off-75",
+        "artEnabled": false,
+        "zoom": 0.15,
+        "validFrames": 240,
+        "rawUpdateSamples": 240,
+        "cpuSamples": 240,
+        "actualAllFocused": true,
+        "actualAllPaused": true,
+        "cameraVariants": 1,
+        "cpuP95Ms": 3.2629999999969073,
+        "rawUpdateP95Ms": 18.52250099182129,
+        "resources": {
+          "label": "phase-start-perf-liver-z0.15-off-75",
+          "frame": 7993,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        },
+        "discarded": {
+          "warmup": 30,
+          "screenshot-frame": 1
+        }
+      },
+      {
+        "label": "perf-liver-z0.15-on-76",
+        "artEnabled": true,
+        "zoom": 0.15,
+        "validFrames": 240,
+        "rawUpdateSamples": 240,
+        "cpuSamples": 240,
+        "actualAllFocused": true,
+        "actualAllPaused": true,
+        "cameraVariants": 1,
+        "cpuP95Ms": 3.621000000002539,
+        "rawUpdateP95Ms": 18.434999510645866,
+        "resources": {
+          "label": "phase-start-perf-liver-z0.15-on-76",
+          "frame": 8273,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        },
+        "discarded": {
+          "warmup": 30,
+          "screenshot-frame": 1
+        }
+      },
+      {
+        "label": "perf-stomach-z0.15-off-77",
+        "artEnabled": false,
+        "zoom": 0.15,
+        "validFrames": 240,
+        "rawUpdateSamples": 240,
+        "cpuSamples": 240,
+        "actualAllFocused": true,
+        "actualAllPaused": true,
+        "cameraVariants": 1,
+        "cpuP95Ms": 3.137000000002388,
+        "rawUpdateP95Ms": 18.524501472711563,
+        "resources": {
+          "label": "phase-start-perf-stomach-z0.15-off-77",
+          "frame": 8553,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        },
+        "discarded": {
+          "warmup": 30,
+          "screenshot-frame": 1
+        }
+      },
+      {
+        "label": "perf-stomach-z0.15-on-78",
+        "artEnabled": true,
+        "zoom": 0.15,
+        "validFrames": 240,
+        "rawUpdateSamples": 240,
+        "cpuSamples": 240,
+        "actualAllFocused": true,
+        "actualAllPaused": true,
+        "cameraVariants": 1,
+        "cpuP95Ms": 3.467000000000553,
+        "rawUpdateP95Ms": 18.55349913239479,
+        "resources": {
+          "label": "phase-start-perf-stomach-z0.15-on-78",
+          "frame": 8833,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        },
+        "discarded": {
+          "warmup": 30,
+          "screenshot-frame": 1
+        }
+      },
+      {
+        "label": "perf-stomach-z0.15-off-79",
+        "artEnabled": false,
+        "zoom": 0.15,
+        "validFrames": 240,
+        "rawUpdateSamples": 240,
+        "cpuSamples": 240,
+        "actualAllFocused": true,
+        "actualAllPaused": true,
+        "cameraVariants": 1,
+        "cpuP95Ms": 3.1110000000040827,
+        "rawUpdateP95Ms": 18.540499731898308,
+        "resources": {
+          "label": "phase-start-perf-stomach-z0.15-off-79",
+          "frame": 9113,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        },
+        "discarded": {
+          "warmup": 30,
+          "screenshot-frame": 1
+        }
+      },
+      {
+        "label": "perf-stomach-z0.15-on-80",
+        "artEnabled": true,
+        "zoom": 0.15,
+        "validFrames": 240,
+        "rawUpdateSamples": 240,
+        "cpuSamples": 240,
+        "actualAllFocused": true,
+        "actualAllPaused": true,
+        "cameraVariants": 1,
+        "cpuP95Ms": 3.4419999999926176,
+        "rawUpdateP95Ms": 18.42449977993965,
+        "resources": {
+          "label": "phase-start-perf-stomach-z0.15-on-80",
+          "frame": 9393,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        },
+        "discarded": {
+          "warmup": 30,
+          "screenshot-frame": 1
+        }
+      },
+      {
+        "label": "perf-stomach-z0.12-off-81",
+        "artEnabled": false,
+        "zoom": 0.12,
+        "validFrames": 240,
+        "rawUpdateSamples": 240,
+        "cpuSamples": 240,
+        "actualAllFocused": true,
+        "actualAllPaused": true,
+        "cameraVariants": 1,
+        "cpuP95Ms": 3.3690000000063947,
+        "rawUpdateP95Ms": 18.541499972343445,
+        "resources": {
+          "label": "phase-start-perf-stomach-z0.12-off-81",
+          "frame": 9673,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        },
+        "discarded": {
+          "warmup": 30,
+          "screenshot-frame": 1
+        }
+      },
+      {
+        "label": "perf-stomach-z0.12-on-82",
+        "artEnabled": true,
+        "zoom": 0.12,
+        "validFrames": 240,
+        "rawUpdateSamples": 240,
+        "cpuSamples": 240,
+        "actualAllFocused": true,
+        "actualAllPaused": true,
+        "cameraVariants": 1,
+        "cpuP95Ms": 3.777000000013686,
+        "rawUpdateP95Ms": 18.39650049805641,
+        "resources": {
+          "label": "phase-start-perf-stomach-z0.12-on-82",
+          "frame": 9953,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        },
+        "discarded": {
+          "warmup": 30,
+          "screenshot-frame": 1
+        }
+      },
+      {
+        "label": "perf-stomach-z0.12-off-83",
+        "artEnabled": false,
+        "zoom": 0.12,
+        "validFrames": 240,
+        "rawUpdateSamples": 240,
+        "cpuSamples": 240,
+        "actualAllFocused": true,
+        "actualAllPaused": true,
+        "cameraVariants": 1,
+        "cpuP95Ms": 3.3180000000072596,
+        "rawUpdateP95Ms": 18.489500507712364,
+        "resources": {
+          "label": "phase-start-perf-stomach-z0.12-off-83",
+          "frame": 10233,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        },
+        "discarded": {
+          "warmup": 30,
+          "screenshot-frame": 1
+        }
+      },
+      {
+        "label": "perf-stomach-z0.12-on-84",
+        "artEnabled": true,
+        "zoom": 0.12,
+        "validFrames": 240,
+        "rawUpdateSamples": 240,
+        "cpuSamples": 240,
+        "actualAllFocused": true,
+        "actualAllPaused": true,
+        "cameraVariants": 1,
+        "cpuP95Ms": 3.857999999993922,
+        "rawUpdateP95Ms": 18.478000536561012,
+        "resources": {
+          "label": "phase-start-perf-stomach-z0.12-on-84",
+          "frame": 10513,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        },
+        "discarded": {
+          "warmup": 30,
+          "screenshot-frame": 1
+        }
+      },
+      {
+        "label": "perf-whole-body-z0.006-off-85",
+        "artEnabled": false,
+        "zoom": 0.006,
+        "validFrames": 240,
+        "rawUpdateSamples": 240,
+        "cpuSamples": 240,
+        "actualAllFocused": true,
+        "actualAllPaused": true,
+        "cameraVariants": 1,
+        "cpuP95Ms": 1.207999999991216,
+        "rawUpdateP95Ms": 18.390998244285583,
+        "resources": {
+          "label": "phase-start-perf-whole-body-z0.006-off-85",
+          "frame": 10793,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        },
+        "discarded": {
+          "warmup": 30,
+          "screenshot-frame": 1
+        }
+      },
+      {
+        "label": "perf-whole-body-z0.006-on-86",
+        "artEnabled": true,
+        "zoom": 0.006,
+        "validFrames": 240,
+        "rawUpdateSamples": 240,
+        "cpuSamples": 240,
+        "actualAllFocused": true,
+        "actualAllPaused": true,
+        "cameraVariants": 1,
+        "cpuP95Ms": 1.3390000000015334,
+        "rawUpdateP95Ms": 18.33450049161911,
+        "resources": {
+          "label": "phase-start-perf-whole-body-z0.006-on-86",
+          "frame": 11073,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        },
+        "discarded": {
+          "warmup": 30,
+          "screenshot-frame": 1
+        }
+      },
+      {
+        "label": "perf-whole-body-z0.006-off-87",
+        "artEnabled": false,
+        "zoom": 0.006,
+        "validFrames": 240,
+        "rawUpdateSamples": 240,
+        "cpuSamples": 240,
+        "actualAllFocused": true,
+        "actualAllPaused": true,
+        "cameraVariants": 1,
+        "cpuP95Ms": 1.184999999992442,
+        "rawUpdateP95Ms": 18.41900125145912,
+        "resources": {
+          "label": "phase-start-perf-whole-body-z0.006-off-87",
+          "frame": 11353,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        },
+        "discarded": {
+          "warmup": 30,
+          "screenshot-frame": 1
+        }
+      },
+      {
+        "label": "perf-whole-body-z0.006-on-88",
+        "artEnabled": true,
+        "zoom": 0.006,
+        "validFrames": 240,
+        "rawUpdateSamples": 240,
+        "cpuSamples": 240,
+        "actualAllFocused": true,
+        "actualAllPaused": true,
+        "cameraVariants": 1,
+        "cpuP95Ms": 1.2100000000003774,
+        "rawUpdateP95Ms": 18.378499895334244,
+        "resources": {
+          "label": "phase-start-perf-whole-body-z0.006-on-88",
+          "frame": 11633,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        },
+        "discarded": {
+          "warmup": 30,
+          "screenshot-frame": 1
+        }
+      }
+    ],
+    "pairs": [
+      {
+        "off": "perf-liver-z0.15-off-73",
+        "on": "perf-liver-z0.15-on-74",
+        "organId": "liver",
+        "zoom": 0.15,
+        "sameMeasuredCamera": true,
+        "cpuP95OnMinusOffMs": 0.3299999999981651,
+        "rawUpdateP95OnMinusOffMs": -0.08100271224975586,
+        "atlasAlpha": 1
+      },
+      {
+        "off": "perf-liver-z0.15-off-75",
+        "on": "perf-liver-z0.15-on-76",
+        "organId": "liver",
+        "zoom": 0.15,
+        "sameMeasuredCamera": true,
+        "cpuP95OnMinusOffMs": 0.3580000000056316,
+        "rawUpdateP95OnMinusOffMs": -0.08750148117542267,
+        "atlasAlpha": 1
+      },
+      {
+        "off": "perf-stomach-z0.15-off-77",
+        "on": "perf-stomach-z0.15-on-78",
+        "organId": "stomach",
+        "zoom": 0.15,
+        "sameMeasuredCamera": true,
+        "cpuP95OnMinusOffMs": 0.3299999999981651,
+        "rawUpdateP95OnMinusOffMs": 0.02899765968322754,
+        "atlasAlpha": 1
+      },
+      {
+        "off": "perf-stomach-z0.15-off-79",
+        "on": "perf-stomach-z0.15-on-80",
+        "organId": "stomach",
+        "zoom": 0.15,
+        "sameMeasuredCamera": true,
+        "cpuP95OnMinusOffMs": 0.3309999999885349,
+        "rawUpdateP95OnMinusOffMs": -0.11599995195865631,
+        "atlasAlpha": 1
+      },
+      {
+        "off": "perf-stomach-z0.12-off-81",
+        "on": "perf-stomach-z0.12-on-82",
+        "organId": "stomach",
+        "zoom": 0.12,
+        "sameMeasuredCamera": true,
+        "cpuP95OnMinusOffMs": 0.4080000000072914,
+        "rawUpdateP95OnMinusOffMs": -0.14499947428703308,
+        "atlasAlpha": 0.5575785161583976
+      },
+      {
+        "off": "perf-stomach-z0.12-off-83",
+        "on": "perf-stomach-z0.12-on-84",
+        "organId": "stomach",
+        "zoom": 0.12,
+        "sameMeasuredCamera": true,
+        "cpuP95OnMinusOffMs": 0.5399999999866623,
+        "rawUpdateP95OnMinusOffMs": -0.011499971151351929,
+        "atlasAlpha": 0.5575785161583976
+      },
+      {
+        "off": "perf-whole-body-z0.006-off-85",
+        "on": "perf-whole-body-z0.006-on-86",
+        "organId": "whole-body",
+        "zoom": 0.006,
+        "sameMeasuredCamera": true,
+        "cpuP95OnMinusOffMs": 0.1310000000103173,
+        "rawUpdateP95OnMinusOffMs": -0.05649775266647339,
+        "atlasAlpha": 0
+      },
+      {
+        "off": "perf-whole-body-z0.006-off-87",
+        "on": "perf-whole-body-z0.006-on-88",
+        "organId": "whole-body",
+        "zoom": 0.006,
+        "sameMeasuredCamera": true,
+        "cpuP95OnMinusOffMs": 0.02500000000793534,
+        "rawUpdateP95OnMinusOffMs": -0.04050135612487793,
+        "atlasAlpha": 0
+      }
+    ],
+    "cpuP95DeltaRangeMs": [
+      0.02500000000793534,
+      0.5399999999866623
+    ],
+    "rawUpdateP95DeltaRangeMs": [
+      -0.14499947428703308,
+      0.02899765968322754
+    ],
+    "activeAtlasCpuP95DeltaRangeMs": [
+      0.3299999999981651,
+      0.5399999999866623
+    ],
+    "validActualDrawSamplesAllPhases": 8160,
+    "allRecordedFramesFocused": true,
+    "limits": [
+      "Paused stationary 12-organ trial only; no moving battle, device resize, alternate native DPR or input interaction workload.",
+      "CPU os.clock measures process CPU of R.draw only, not wall duration, whole UI, whole frame or GPU execution.",
+      "Raw Update intervals include FPS cap, timestep smoothing, scheduling and probe/report overhead; small paired differences do not prove an uncapped full-frame 2ms budget.",
+      "On/off fixture order is off/on/off/on; time-dependent life animation still runs. No independent causal significance or confidence interval is claimed.",
+      "Full-body zoom .006 has atlas alpha zero in both arms and is a negative control, not a near-field atlas rendering workload."
+    ]
+  },
+  "pause": {
+    "status": "PASS",
+    "checkpoints": 92,
+    "saveUnchangedAll": true,
+    "visibilityUnchangedAll": true,
+    "simulationTimes": [
+      0
+    ],
+    "ticks": [
+      0
+    ],
+    "rngStates": [
+      1791694555
+    ],
+    "popupChecks": [
+      {
+        "status": "PASS",
+        "realTime": 224.56410675309598,
+        "rng": 1791694555,
+        "simulationTime": 0,
+        "tick": 0,
+        "visibilityUnchanged": true,
+        "saveUnchanged": true,
+        "label": "popup-open"
+      },
+      {
+        "status": "PASS",
+        "realTime": 229.1564982831478,
+        "rng": 1791694555,
+        "simulationTime": 0,
+        "tick": 0,
+        "visibilityUnchanged": true,
+        "saveUnchanged": true,
+        "label": "popup-after-four-seconds"
+      }
+    ],
+    "limits": [
+      "Checkpoint Save.snapshot and visibility equality are checked; this is not a raw per-frame deep identity of every transient private cache.",
+      "The popup stage is 240 actual Update ticks; the label four-seconds is nominal at maxFps=60, not measured wall-clock duration.",
+      "Advancing realTime while paused is measured; visible motion is UNDETERMINED because framebuffer captures failed."
+    ],
+    "popupEngineRealTimeAdvance": 4.592391530051827
+  },
+  "resourceCycles": {
+    "status": "PASS_HANDLES_ONLY",
+    "count": 25,
+    "zeroHandlesAfterEveryRelease": true,
+    "expectedPositiveAfterEveryPrepare": true,
+    "maxObservedImages": 24,
+    "cycles": [
+      {
+        "cycle": 1,
+        "afterRelease": 0,
+        "release": {
+          "label": "released-cycle-1",
+          "frame": 12154,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 0,
+          "expectedDimensionMatches": 0,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "intentionally-released-zero"
+        },
+        "prepare": {
+          "label": "resource-cycle-1",
+          "frame": 12154,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        }
+      },
+      {
+        "cycle": 2,
+        "afterRelease": 0,
+        "release": {
+          "label": "released-cycle-2",
+          "frame": 12164,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 0,
+          "expectedDimensionMatches": 0,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "intentionally-released-zero"
+        },
+        "prepare": {
+          "label": "resource-cycle-2",
+          "frame": 12164,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        }
+      },
+      {
+        "cycle": 3,
+        "afterRelease": 0,
+        "release": {
+          "label": "released-cycle-3",
+          "frame": 12174,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 0,
+          "expectedDimensionMatches": 0,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "intentionally-released-zero"
+        },
+        "prepare": {
+          "label": "resource-cycle-3",
+          "frame": 12174,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        }
+      },
+      {
+        "cycle": 4,
+        "afterRelease": 0,
+        "release": {
+          "label": "released-cycle-4",
+          "frame": 12184,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 0,
+          "expectedDimensionMatches": 0,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "intentionally-released-zero"
+        },
+        "prepare": {
+          "label": "resource-cycle-4",
+          "frame": 12184,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        }
+      },
+      {
+        "cycle": 5,
+        "afterRelease": 0,
+        "release": {
+          "label": "released-cycle-5",
+          "frame": 12194,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 0,
+          "expectedDimensionMatches": 0,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "intentionally-released-zero"
+        },
+        "prepare": {
+          "label": "resource-cycle-5",
+          "frame": 12194,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        }
+      },
+      {
+        "cycle": 6,
+        "afterRelease": 0,
+        "release": {
+          "label": "released-cycle-6",
+          "frame": 12204,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 0,
+          "expectedDimensionMatches": 0,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "intentionally-released-zero"
+        },
+        "prepare": {
+          "label": "resource-cycle-6",
+          "frame": 12204,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        }
+      },
+      {
+        "cycle": 7,
+        "afterRelease": 0,
+        "release": {
+          "label": "released-cycle-7",
+          "frame": 12214,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 0,
+          "expectedDimensionMatches": 0,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "intentionally-released-zero"
+        },
+        "prepare": {
+          "label": "resource-cycle-7",
+          "frame": 12214,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        }
+      },
+      {
+        "cycle": 8,
+        "afterRelease": 0,
+        "release": {
+          "label": "released-cycle-8",
+          "frame": 12224,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 0,
+          "expectedDimensionMatches": 0,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "intentionally-released-zero"
+        },
+        "prepare": {
+          "label": "resource-cycle-8",
+          "frame": 12224,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        }
+      },
+      {
+        "cycle": 9,
+        "afterRelease": 0,
+        "release": {
+          "label": "released-cycle-9",
+          "frame": 12234,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 0,
+          "expectedDimensionMatches": 0,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "intentionally-released-zero"
+        },
+        "prepare": {
+          "label": "resource-cycle-9",
+          "frame": 12234,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        }
+      },
+      {
+        "cycle": 10,
+        "afterRelease": 0,
+        "release": {
+          "label": "released-cycle-10",
+          "frame": 12244,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 0,
+          "expectedDimensionMatches": 0,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "intentionally-released-zero"
+        },
+        "prepare": {
+          "label": "resource-cycle-10",
+          "frame": 12244,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        }
+      },
+      {
+        "cycle": 11,
+        "afterRelease": 0,
+        "release": {
+          "label": "released-cycle-11",
+          "frame": 12254,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 0,
+          "expectedDimensionMatches": 0,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "intentionally-released-zero"
+        },
+        "prepare": {
+          "label": "resource-cycle-11",
+          "frame": 12254,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        }
+      },
+      {
+        "cycle": 12,
+        "afterRelease": 0,
+        "release": {
+          "label": "released-cycle-12",
+          "frame": 12264,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 0,
+          "expectedDimensionMatches": 0,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "intentionally-released-zero"
+        },
+        "prepare": {
+          "label": "resource-cycle-12",
+          "frame": 12264,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        }
+      },
+      {
+        "cycle": 13,
+        "afterRelease": 0,
+        "release": {
+          "label": "released-cycle-13",
+          "frame": 12274,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 0,
+          "expectedDimensionMatches": 0,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "intentionally-released-zero"
+        },
+        "prepare": {
+          "label": "resource-cycle-13",
+          "frame": 12274,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        }
+      },
+      {
+        "cycle": 14,
+        "afterRelease": 0,
+        "release": {
+          "label": "released-cycle-14",
+          "frame": 12284,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 0,
+          "expectedDimensionMatches": 0,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "intentionally-released-zero"
+        },
+        "prepare": {
+          "label": "resource-cycle-14",
+          "frame": 12284,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        }
+      },
+      {
+        "cycle": 15,
+        "afterRelease": 0,
+        "release": {
+          "label": "released-cycle-15",
+          "frame": 12294,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 0,
+          "expectedDimensionMatches": 0,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "intentionally-released-zero"
+        },
+        "prepare": {
+          "label": "resource-cycle-15",
+          "frame": 12294,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        }
+      },
+      {
+        "cycle": 16,
+        "afterRelease": 0,
+        "release": {
+          "label": "released-cycle-16",
+          "frame": 12304,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 0,
+          "expectedDimensionMatches": 0,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "intentionally-released-zero"
+        },
+        "prepare": {
+          "label": "resource-cycle-16",
+          "frame": 12304,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        }
+      },
+      {
+        "cycle": 17,
+        "afterRelease": 0,
+        "release": {
+          "label": "released-cycle-17",
+          "frame": 12314,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 0,
+          "expectedDimensionMatches": 0,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "intentionally-released-zero"
+        },
+        "prepare": {
+          "label": "resource-cycle-17",
+          "frame": 12314,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        }
+      },
+      {
+        "cycle": 18,
+        "afterRelease": 0,
+        "release": {
+          "label": "released-cycle-18",
+          "frame": 12324,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 0,
+          "expectedDimensionMatches": 0,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "intentionally-released-zero"
+        },
+        "prepare": {
+          "label": "resource-cycle-18",
+          "frame": 12324,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        }
+      },
+      {
+        "cycle": 19,
+        "afterRelease": 0,
+        "release": {
+          "label": "released-cycle-19",
+          "frame": 12334,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 0,
+          "expectedDimensionMatches": 0,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "intentionally-released-zero"
+        },
+        "prepare": {
+          "label": "resource-cycle-19",
+          "frame": 12334,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        }
+      },
+      {
+        "cycle": 20,
+        "afterRelease": 0,
+        "release": {
+          "label": "released-cycle-20",
+          "frame": 12344,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 0,
+          "expectedDimensionMatches": 0,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "intentionally-released-zero"
+        },
+        "prepare": {
+          "label": "resource-cycle-20",
+          "frame": 12344,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        }
+      },
+      {
+        "cycle": 21,
+        "afterRelease": 0,
+        "release": {
+          "label": "released-cycle-21",
+          "frame": 12354,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 0,
+          "expectedDimensionMatches": 0,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "intentionally-released-zero"
+        },
+        "prepare": {
+          "label": "resource-cycle-21",
+          "frame": 12354,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        }
+      },
+      {
+        "cycle": 22,
+        "afterRelease": 0,
+        "release": {
+          "label": "released-cycle-22",
+          "frame": 12364,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 0,
+          "expectedDimensionMatches": 0,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "intentionally-released-zero"
+        },
+        "prepare": {
+          "label": "resource-cycle-22",
+          "frame": 12364,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        }
+      },
+      {
+        "cycle": 23,
+        "afterRelease": 0,
+        "release": {
+          "label": "released-cycle-23",
+          "frame": 12374,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 0,
+          "expectedDimensionMatches": 0,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "intentionally-released-zero"
+        },
+        "prepare": {
+          "label": "resource-cycle-23",
+          "frame": 12374,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        }
+      },
+      {
+        "cycle": 24,
+        "afterRelease": 0,
+        "release": {
+          "label": "released-cycle-24",
+          "frame": 12384,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 0,
+          "expectedDimensionMatches": 0,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "intentionally-released-zero"
+        },
+        "prepare": {
+          "label": "resource-cycle-24",
+          "frame": 12384,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        }
+      },
+      {
+        "cycle": 25,
+        "afterRelease": 0,
+        "release": {
+          "label": "released-cycle-25",
+          "frame": 12394,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 0,
+          "expectedDimensionMatches": 0,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "intentionally-released-zero"
+        },
+        "prepare": {
+          "label": "resource-cycle-25",
+          "frame": 12394,
+          "recordedStatus": "MEASURED",
+          "positiveImages": 24,
+          "expectedDimensionMatches": 24,
+          "placeholder16": 0,
+          "failures": 0,
+          "unknown": 0,
+          "expectation": "current-mode-complete"
+        }
+      }
+    ],
+    "initialResources": {
+      "label": "loaded-before-sequence",
+      "frame": 233,
+      "recordedStatus": "MEASURED",
+      "positiveImages": 24,
+      "expectedDimensionMatches": 24,
+      "placeholder16": 0,
+      "failures": 0,
+      "unknown": 0,
+      "expectation": "current-mode-complete"
+    },
+    "finalResources": {
+      "label": "final-reprepared",
+      "frame": 12394,
+      "recordedStatus": "MEASURED",
+      "positiveImages": 24,
+      "expectedDimensionMatches": 24,
+      "placeholder16": 0,
+      "failures": 0,
+      "unknown": 0,
+      "expectation": "current-mode-complete"
+    },
+    "limits": [
+      "25 paired world/UI existing-context image release/prepare cycles prove handle bookkeeping bounded at 24→0→24. They do not recreate NanoVG contexts or prove zero GPU allocator leaks.",
+      "Positive handles are not loaded-image evidence. Run-002 recorded MEASURED for 16×16 placeholders; expected-dimension comparisons here explicitly invalidate that early classification.",
+      "All inspected phase-start and resource-cycle snapshots are compared with exact authored dimensions. Complete native dimensions demonstrate decoding, not correct visible compositing."
+    ],
+    "lifecycleCallCounts": {
+      "OrganAtlasArt prepare": 50,
+      "OrganAtlasArt release": 50,
+      "GastricArt prepare": 50,
+      "GastricArt release": 50
+    }
+  },
+  "screenshots": {
+    "status": "UNDETERMINED",
+    "probeRequests": 89,
+    "probeCaptured": 0,
+    "probeSaved": 0,
+    "mapRequests": 2,
+    "mapCaptured": 0,
+    "event": "EndRendering",
+    "limits": [
+      "Metal Graphics:TakeScreenShot returned false; no native pixels were available for independent review.",
+      "No native visual seams, transition quality, selected-cell readability or 15-second visible motion acceptance is claimed."
+    ]
+  },
+  "nativeGpuExecutionTiming": "UNDETERMINED",
+  "nativeGpuMemory": "UNDETERMINED",
+  "io": {
+    "directory": {
+      "created": true,
+      "path": "qa/organ-atlas-native/run-004"
+    },
+    "report": {
+      "saved": true,
+      "path": "qa/organ-atlas-native/run-004/report.json"
+    }
+  },
+  "harnessCompleted": true,
+  "harnessErrors": {},
+  "samplingInputs": {
+    "schema": "native-atlas-inputs/v1",
+    "runId": "run-004",
+    "inputHashes": {
+      "scripts/main.lua": "8c8726cfeba18a585c21cb376f9c82df86739ce18ff37599602167393ebd2e14",
+      "scripts/war/Render.lua": "0e84abb91789500f226b2a0f429432827e26da9c154d57974a774e38607b95bd",
+      "scripts/war/HUD.lua": "00d937dd8c08e96d288c217f84e853e5097ca62292cbe5c8590a6631c20394ee",
+      "scripts/war/OrganAtlasArt.lua": "17ed3df534e311eb717c65a6c81ba273d16c0f2dec406401fd80ddc276b4bb16",
+      "scripts/war/OrganAtlasArtData.lua": "0158ab97daa71c1ae7f55dc067133602f19195c9c90fba69f5a73e783063eb77",
+      "scripts/war/GastricArt.lua": "4460ab0fd73343eb089ac5a5eb70a9cf53243e979912dee835a039c98cd9df3f",
+      "scripts/qa/OrganAtlasNativeHarness.lua": "96b0b5dc167f9b6ceac21c53f79d26cd0ed9a7317e70cef4a4a1992409c82fda",
+      "scripts/qa/OrganAtlasNativeProbe.lua": "c614158979f686e2a019e8a0b6d2ada3529661f89301a7d0d292fd05ee05b4ce"
+    },
+    "mainInstrumentedOnly": true,
+    "originalMainSha256": "58214fb923a00ac5e5f1980a0cd68c5dac57e46de9db4d0d13395dfadcd5e583"
+  },
+  "inputIndependentVerification": {
+    "file": "qa/native-run004-inputs-independent-check.json",
+    "status": "PASS",
+    "duringRunShaMatches": 8,
+    "postRunExactSamplingMatches": 7,
+    "temporaryMainHookRemovedToExactBaseline": true
+  },
+  "artReadinessIndependentVerification": {
+    "file": "qa/native-ready-final-independent-review.json",
+    "status": "PASS",
+    "passed": 30,
+    "total": 30,
+    "nativeEvidence": false
+  },
+  "nativeImageDecoding": {
+    "status": "PASS",
+    "scope": "Existing world/UI native image handles queried against all 12 authored pixel sizes at every phase start and at all 25 post-prepare cycles. Does not establish displayed compositing quality.",
+    "initialStatus": "LOADING_PLACEHOLDER",
+    "initialLoadingImages": 24,
+    "phaseStartSnapshots": 88,
+    "allPhaseStartMeasured": true,
+    "resourceStatuses": {
+      "LOADING_PLACEHOLDER": 1,
+      "MEASURED": 341
+    }
+  },
+  "phaseCount": 88,
+  "phaseSampleCounts": {
+    "60": 72,
+    "240": 16
+  },
+  "nativeVisualAcceptance": "UNDETERMINED",
+  "limits": [
+    "All native evidence is this 2498×1404 physical, DPR2 window only. Existing offline/browser responsive and DPR1/3 checks retain their separate provenance.",
+    "The native harness used an actual production OrganTrial factory while paused. Production navigation movement PASS evidence was not rerun or replaced by static/native drawing.",
+    "No native PNG exists from this run: all framebuffer APIs returned false; source/atlas review and offline screenshots cannot substitute for native visual inspection.",
+    "Draw-only readiness/input hash changes do not invalidate unchanged navigation dependencies of prior 140 real Lua movement cases, but the old draw evidence is not relabeled as current."
+  ]
+}
