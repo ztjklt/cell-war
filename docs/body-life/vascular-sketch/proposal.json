@@ -1,0 +1,112 @@
+{
+  "referenceSha256": "9a04e39961c07073cd9fdcfcdc2c98253ccc25d968e97dbea1f36669e06b5d9f",
+  "sourceSize": [
+    1024,
+    1536
+  ],
+  "coordinates": "source image pixels; world=(2*x,2*y+512)",
+  "pins": {
+    "A": [
+      524.0,
+      481.0,
+      "主动脉现有锚点"
+    ],
+    "B": [
+      534,
+      487,
+      "腹腔供血分支 · 新接头"
+    ],
+    "C": [
+      555,
+      500,
+      "胃壁供血端口 · 候选"
+    ],
+    "D": [
+      557,
+      539,
+      "胃壁回流端口 · 候选"
+    ],
+    "E": [
+      492,
+      519,
+      "门静脉入肝端口 · 候选"
+    ],
+    "F": [
+      455,
+      505,
+      "肝内交换区 · 示意"
+    ],
+    "G": [
+      477.0,
+      521.0,
+      "腔静脉现有锚点"
+    ]
+  },
+  "proposedEdges": [
+    {
+      "id": "ab",
+      "a": "A",
+      "b": "B",
+      "kind": "artery",
+      "d": "M524 481 Q526 488 534 487",
+      "label": "腹腔供血接头"
+    },
+    {
+      "id": "bc",
+      "a": "B",
+      "b": "C",
+      "kind": "artery",
+      "d": "M534 487 C544 486 552 490 555 500",
+      "label": "胃部供血支路"
+    },
+    {
+      "id": "bf",
+      "a": "B",
+      "b": "F",
+      "kind": "artery",
+      "d": "M534 487 C515 490 477 490 455 505",
+      "label": "肝动脉支路（简化）"
+    },
+    {
+      "id": "cd",
+      "a": "C",
+      "b": "D",
+      "kind": "exchange",
+      "d": "M555 500 C565 510 568 527 557 539",
+      "label": "胃壁微循环（仅关系示意）"
+    },
+    {
+      "id": "de",
+      "a": "D",
+      "b": "E",
+      "kind": "portal",
+      "d": "M557 539 C543 552 527 550 516 541 S503 524 492 519",
+      "label": "胃回流经门静脉系统入肝（深层）"
+    },
+    {
+      "id": "ef",
+      "a": "E",
+      "b": "F",
+      "kind": "exchange",
+      "d": "M492 519 C493 506 471 500 455 505",
+      "label": "肝内交换（仅关系示意）"
+    },
+    {
+      "id": "fg",
+      "a": "F",
+      "b": "G",
+      "kind": "vein",
+      "d": "M455 505 Q453 520 477 521",
+      "label": "肝静脉回流接腔静脉（深层）"
+    }
+  ],
+  "existingRoutes": "existing-layout.json (exported current Lua graph; not verified anatomy)",
+  "unchangedImageEmbedded": true,
+  "runtimeModified": false,
+  "caveats": [
+    "C-D and E-F show exchange relationships, not final movement lanes.",
+    "Deep portal and hepatic return routes are schematic proposals.",
+    "Green digestive interfaces are candidate locations; full digestive continuity remains unaudited."
+  ],
+  "anatomyReference": "https://www.ncbi.nlm.nih.gov/books/NBK482334/"
+}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GPT 上腹部试样 · 原图固定位置</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#172c29;color:#e8eee7;font:14px/1.6 system-ui}main{max-width:1280px;margin:auto;padding:18px}h1{font-size:23px;margin:9px 0}h2{font-size:16px;margin:0 0 8px}p{margin:8px 0}a{color:#b8d7c5}.muted{font-size:12px;color:#bad0c2}.layout{display:grid;grid-template-columns:minmax(0,2fr) minmax(280px,1fr);gap:16px}.panel{min-width:0;background:#233b32;border:1px solid #496555;border-radius:9px;padding:12px}.toolbar{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0}button{font:inherit;background:#2c463a;color:inherit;border:1px solid #64806c;border-radius:6px;padding:6px 10px;cursor:pointer}button[aria-pressed=true]{background:#536f59;border-color:#b5c6a5}button:focus-visible,input:focus-visible{outline:2px solid #ecd6a4;outline-offset:2px}.map{display:block;width:100%;aspect-ratio:3/2;background:#fff;border-radius:5px;touch-action:none;cursor:grab}.map:active{cursor:grabbing}.map.body-view{aspect-ratio:auto;height:660px}.options{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:12px;margin:11px 0}.options label{display:flex;gap:5px;align-items:center}.status{padding:10px;border-left:3px solid #b7c998;background:#30473a;font-size:12px}.card{background:#2b4438;border-radius:6px;padding:12px;margin:12px 0}.card ul{padding-left:18px;margin:8px 0}.tiny{font-size:11px;color:#b9d0c0}details{margin:14px 0}summary{cursor:pointer}footer{margin:15px 0;font-size:12px}#error{color:#ffbda9}.swatch{display:inline-block;width:15px;height:4px;vertical-align:middle;border-radius:2px;margin-right:3px}.legend{font-size:12px;display:flex;gap:13px;flex-wrap:wrap}.sample-claim{margin-bottom:13px}.route-detail{font-size:12px;overflow-wrap:anywhere}@media(max-width:850px){main{padding:12px}.layout{grid-template-columns:1fr}h1{font-size:20px}.map.body-view{height:540px}.toolbar button{font-size:12px;padding:6px 8px}.panel{padding:10px}}
+</style>
+<main><p><a href="remaining-vessels.html">继续主图血管：胸部与下腹绘画候选、原图对照与遮挡复核</a></p>
+<a href="final-reference.html">定稿血管参考</a> · <a href="organ-routes.html">血管编辑器</a>
+<h1>GPT 上腹部试样</h1>
+<p class="sample-claim">器官按原图定位，血管沿用定稿线。保留低细节的卡通画风，脑部和四肢保留原图。</p>
+<div class="layout">
+<section class="panel">
+<div class="toolbar" aria-label="图像版本"><button id="showSample" aria-pressed="true">校准试样</button><button id="showOriginal" aria-pressed="false">原图对照</button><button id="showRaw" aria-pressed="false">GPT 初稿</button></div>
+<div class="toolbar" aria-label="取景"><button id="fitUpper">上腹部</button><button id="fitBody">全身试贴</button><button id="fitStomach">胃壁</button><button id="fitGates">胃壁两出口</button><button id="zoomPlus" aria-label="放大试样">＋</button><button id="zoomMinus" aria-label="缩小试样">−</button></div>
+<svg id="sampleMap" class="map" viewBox="350 450 324 216" role="img" aria-label="原图固定坐标上的 GPT 上腹部血管试样" tabindex="0">
+<defs><clipPath id="reviewCrop"><rect x="350" y="450" width="324" height="216"/></clipPath></defs>
+<image id="sourceArt" href="coverage-reference.png" width="1024" height="1536"/>
+<image id="sampleArt" href="upper-abdomen-output/registered-full-body.png" width="1024" height="1536"/>
+<image id="rawArt" href="upper-abdomen-output/gpt-beauty-v1.png" x="350" y="450" width="324" height="216" style="display:none"/>
+<g clip-path="url(#reviewCrop)"><g id="visibleLayer" style="display:none"></g><g id="deepLayer" style="display:none"></g><g id="organLayer" style="display:none"></g><g id="foodLayer" style="display:none"></g><g id="portLayer" style="display:none"></g><g id="gateLayer" style="display:none"></g><g id="selectedLayer"></g></g>
+</svg>
+<p id="viewCaption" class="muted">正在加载复核数据…</p>
+<div class="options"><label><input id="showGuide" type="checkbox">定稿线</label><label><input id="showDeep" type="checkbox">遮挡接续</label><label><input id="showPorts" type="checkbox">器官接口／胃壁口</label><label><input id="showOrgans" type="checkbox">固定轮廓</label><label><input id="showFood" type="checkbox">食物通路</label></div>
+<div class="legend"><span><i class="swatch" style="background:#c45a50"></i>供血</span><span><i class="swatch" style="background:#4a83ae"></i>回流</span><span><i class="swatch" style="background:#8a708b"></i>交换</span><span><i class="swatch" style="background:#536a73"></i>虚线：被前景遮住</span></div>
+<p class="tiny">滚轮缩放、拖动平移。交叉处不会自动连接；点击接口或血管可核对。</p><p id="error" role="alert"></p>
+</section>
+<section class="panel">
+<h2>这一版改了什么</h2>
+<div class="card"><ul><li>GPT 清理原来含混的血管底色，保留柔和组织和独立食物通路。</li><li>血管按固定管腔校准；隐藏处不补穿器官的明线。</li><li>很短的深层露出段降低强度，避免散落的蓝色方块。</li><li>胃壁两出口按定稿位置留下轻微开口纹。</li></ul></div>
+<p id="checkStatus" class="status">正在读取检查…</p>
+<p class="muted">这是主地图上腹部的美术试样。全身试贴用于看画风和位置；上下接缝仍需随相邻区域一起定稿。0.15 的战场和细胞移动尚未接入这张图。</p>
+<div id="routeDetail" class="card route-detail">打开“遮挡接续”，能看到血管在器官后方如何连上。灰色虚线是核对层，不会画进正式素材。</div>
+<details><summary>为什么还保留 GPT 初稿</summary><p class="muted">完整生图的画风接近原图，但补出了胃壁蓝色桥接，也漏掉定稿支线，因此初稿已排除。当前试样采用 GPT 分层素材，固定坐标与遮挡由校准层控制。</p></details>
+<details><summary>素材与提示词</summary><p class="tiny">使用 GPT 内置生图。器官外缘来自原图；内侧使用 GPT 清理底图。血管由固定管腔底色承接，GPT 管材以低强度覆盖，避免亮面干扰。</p><p><a href="upper-abdomen-generation.json">生成和组合记录</a> · <a href="upper-abdomen-inputs/prompt-v1.txt">初稿提示词</a> · <a href="upper-abdomen-inputs/prompt-vessels-v2.txt">管材提示词</a> · <a href="upper-abdomen-inputs/prompt-underlay-v2.txt">清理底图提示词</a></p></details>
+</section>
+</div>
+<footer><a href="upper-abdomen-output/registered-upper-abdomen.png">上腹部 PNG</a> · <a href="upper-abdomen-output/registered-full-body.png">全身试贴 PNG</a> · <a href="upper-abdomen-independent-audit.json">独立复核</a> · <a href="upper-abdomen-checks.json">校准检查</a> · <a href="maintenance.html#upper-abdomen-gpt-sample">维护记录</a></footer>
+</main>
+<script src="upper-abdomen-sample.js"></script>
+</html>

@@ -1,0 +1,61 @@
+{
+  "status": "HEART_ART_AND_FOUR_CONNECTION_GROUPS_ACTIVE_OFFLINE_VERIFIED",
+  "nativeEvidence": false,
+  "minZoom": 0.15,
+  "atlasResource": "image/anatomy-reference/vascular-study/heart-simple-20261012/ports-v4/heart-connected-atlas-v1.png",
+  "atlasSha256": "3fba8bc9f6fdbe7d4292ec43a19d60dbccfb725f04579c45c4af70e88abd5326",
+  "activeHeartVisualSha256": "fc24b87ddee2cb4facc726a30bb39774c688e3384dfe903fe0c520d31df7c9a7",
+  "activeRendererSha256": "4ad4a6d432567ac2016f7bc2aedcb56a7b7578c364d1051115406b48eda40f1d",
+  "registrationReport": "docs/heart-simple-20261012/ports-v4/registration.json",
+  "connectionGroups": [
+    {
+      "id": "systemic-return",
+      "target": "right_atrium",
+      "lanes": [
+        1,
+        15,
+        17
+      ]
+    },
+    {
+      "id": "pulmonary-return",
+      "target": "left_atrium",
+      "lanes": [
+        5,
+        8
+      ]
+    },
+    {
+      "id": "pulmonary-outflow",
+      "target": "right_ventricle",
+      "lanes": [
+        2,
+        3,
+        6,
+        208
+      ]
+    },
+    {
+      "id": "aortic-outflow",
+      "target": "left_ventricle",
+      "lanes": [
+        150,
+        210,
+        151
+      ]
+    }
+  ],
+  "renderSamples": 63,
+  "unitDepthSamples": 829,
+  "navigationPassed": 46,
+  "saveRuntimePassed": 33,
+  "navigationGeometryUnchanged": true,
+  "reusedNavigationReport": "docs/heart-simple-20261012/candidate-v1/navigation/production-report.json",
+  "reusedSaveReport": "docs/heart-simple-20261012/candidate-v1/save-runtime-report.json",
+  "lifecycleSpecsPerContext": 43,
+  "decodedBytesPerContext": 289830280,
+  "crossBoxRegistrationByteExact": true,
+  "previewIntent": "Remain stopped until the user requests a preview.",
+  "previewState": "stopped",
+  "deliveryFrame": "docs/heart-simple-20261012/ports-v4/full-heart-015.png"
+}

@@ -1,0 +1,5448 @@
+{
+  "schema": "vascular-draft/v1",
+  "baselineId": "navigation-b97a784b",
+  "coordinateSystem": {
+    "width": 1024,
+    "height": 1536,
+    "worldScale": 2,
+    "worldOffset": [
+      0,
+      512
+    ]
+  },
+  "status": "draft_requires_navigation_recheck",
+  "edges": [
+    {
+      "a": "heart.v",
+      "b": "right_heart",
+      "id": "e001",
+      "points": [
+        [
+          483,
+          379
+        ],
+        [
+          481,
+          397
+        ],
+        [
+          493,
+          414
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 25
+    },
+    {
+      "a": "right_heart",
+      "b": "pulmonary_trunk",
+      "id": "e002",
+      "points": [
+        [
+          493,
+          414
+        ],
+        [
+          492,
+          387
+        ],
+        [
+          498,
+          368
+        ],
+        [
+          510,
+          355
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 4,
+      "oxygen": "low",
+      "system": "artery",
+      "layer": 30
+    },
+    {
+      "a": "pulmonary_trunk",
+      "b": "lung_r.entry",
+      "id": "e003",
+      "points": [
+        [
+          510,
+          355
+        ],
+        [
+          493,
+          359
+        ],
+        [
+          475.1613941018767,
+          374.0150134048257
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 4,
+      "oxygen": "low",
+      "system": "artery",
+      "layer": 30
+    },
+    {
+      "a": "lung_r.a",
+      "b": "lung_r.v",
+      "id": "e004",
+      "points": [
+        [
+          439,
+          350
+        ],
+        [
+          425,
+          390
+        ],
+        [
+          433,
+          430
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 4,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 30
+    },
+    {
+      "a": "lung_r.exit",
+      "b": "left_heart",
+      "id": "e005",
+      "points": [
+        [
+          471.6707317073171,
+          410.9634146341464
+        ],
+        [
+          488,
+          435
+        ],
+        [
+          521,
+          446
+        ],
+        [
+          538,
+          422
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 4,
+      "oxygen": "high",
+      "system": "vein",
+      "layer": 30
+    },
+    {
+      "a": "pulmonary_trunk",
+      "b": "lung_l.entry",
+      "id": "e006",
+      "points": [
+        [
+          510,
+          355
+        ],
+        [
+          531,
+          359
+        ],
+        [
+          541.4487996080353,
+          374.0489955903969
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 4,
+      "oxygen": "low",
+      "system": "artery",
+      "layer": 30
+    },
+    {
+      "a": "lung_l.a",
+      "b": "lung_l.v",
+      "id": "e007",
+      "points": [
+        [
+          580,
+          350
+        ],
+        [
+          594,
+          390
+        ],
+        [
+          592,
+          430
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 4,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 30
+    },
+    {
+      "a": "lung_l.exit",
+      "b": "left_heart",
+      "id": "e008",
+      "points": [
+        [
+          545,
+          414
+        ],
+        [
+          551,
+          435
+        ],
+        [
+          538,
+          422
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 4,
+      "oxygen": "high",
+      "system": "vein",
+      "layer": 30
+    },
+    {
+      "a": "arch",
+      "b": "aorta_upper",
+      "id": "e009",
+      "points": [
+        [
+          514,
+          341
+        ],
+        [
+          535,
+          365
+        ],
+        [
+          555,
+          425
+        ],
+        [
+          545,
+          458
+        ],
+        [
+          524,
+          481
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 7,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 10
+    },
+    {
+      "a": "aorta_upper",
+      "b": "aorta_mid",
+      "id": "e010",
+      "points": [
+        [
+          524,
+          481
+        ],
+        [
+          516,
+          533
+        ],
+        [
+          515,
+          582
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 7,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 10
+    },
+    {
+      "a": "aorta_mid",
+      "b": "aorta_abd",
+      "id": "e011",
+      "points": [
+        [
+          515,
+          582
+        ],
+        [
+          518,
+          635
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 7,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 10
+    },
+    {
+      "a": "aorta_abd",
+      "b": "iliac.a",
+      "id": "e012",
+      "points": [
+        [
+          518,
+          635
+        ],
+        [
+          518,
+          683
+        ],
+        [
+          512,
+          719
+        ],
+        [
+          509,
+          747
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 7,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 10
+    },
+    {
+      "a": "iliac.v",
+      "b": "cava_abdominal",
+      "id": "e013",
+      "points": [
+        [
+          509,
+          763
+        ],
+        [
+          488,
+          726
+        ],
+        [
+          479,
+          675
+        ],
+        [
+          477,
+          603
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 7,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 20
+    },
+    {
+      "a": "cava_abdominal",
+      "b": "cava_upper",
+      "id": "e014",
+      "points": [
+        [
+          477,
+          603
+        ],
+        [
+          477,
+          557
+        ],
+        [
+          477,
+          521
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 7,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 20
+    },
+    {
+      "a": "cava_upper",
+      "b": "heart.v",
+      "id": "e015",
+      "points": [
+        [
+          477,
+          521
+        ],
+        [
+          480,
+          477
+        ],
+        [
+          480,
+          430
+        ],
+        [
+          483,
+          379
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 7,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 20
+    },
+    {
+      "a": "head_r.a",
+      "b": "brain_r.entry",
+      "id": "e016",
+      "points": [
+        [
+          480,
+          147
+        ],
+        [
+          479,
+          127
+        ],
+        [
+          488,
+          113
+        ],
+        [
+          484.9526813880126,
+          112.60567823343848
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 25
+    },
+    {
+      "a": "head_r.v",
+      "b": "heart.v",
+      "id": "e017",
+      "points": [
+        [
+          490,
+          150
+        ],
+        [
+          488,
+          191
+        ],
+        [
+          484,
+          229
+        ],
+        [
+          476,
+          258
+        ],
+        [
+          463,
+          278
+        ],
+        [
+          479,
+          305
+        ],
+        [
+          486,
+          345
+        ],
+        [
+          483,
+          379
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 25
+    },
+    {
+      "a": "shoulder_r.a",
+      "b": "wrist_r.a",
+      "id": "e018",
+      "points": [
+        [
+          420,
+          286
+        ],
+        [
+          395,
+          289
+        ],
+        [
+          376,
+          304
+        ],
+        [
+          355,
+          344
+        ],
+        [
+          334,
+          392
+        ],
+        [
+          320,
+          430
+        ],
+        [
+          308,
+          479
+        ],
+        [
+          297,
+          523
+        ],
+        [
+          305,
+          551
+        ],
+        [
+          271,
+          602
+        ],
+        [
+          253,
+          660
+        ],
+        [
+          233,
+          732
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 50
+    },
+    {
+      "a": "wrist_r.v",
+      "b": "elbow_r.v",
+      "id": "e019",
+      "points": [
+        [
+          232,
+          742
+        ],
+        [
+          237,
+          724
+        ],
+        [
+          252,
+          676
+        ],
+        [
+          264,
+          633
+        ],
+        [
+          282,
+          587
+        ],
+        [
+          292,
+          555
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "elbow_r.v",
+      "b": "armfork_r.v",
+      "id": "e020",
+      "points": [
+        [
+          292,
+          555
+        ],
+        [
+          306,
+          507
+        ],
+        [
+          319,
+          456
+        ],
+        [
+          335,
+          416
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "armfork_r.v",
+      "b": "shoulder_r.v",
+      "id": "e021",
+      "points": [
+        [
+          335,
+          416
+        ],
+        [
+          354,
+          377
+        ],
+        [
+          373,
+          335
+        ],
+        [
+          394,
+          310
+        ],
+        [
+          422,
+          297
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "shoulder_r.v",
+      "b": "heart.v",
+      "id": "e022",
+      "points": [
+        [
+          422,
+          297
+        ],
+        [
+          458,
+          292
+        ],
+        [
+          483,
+          379
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "wrist_r.a",
+      "b": "r.finger1.a",
+      "id": "e023",
+      "points": [
+        [
+          233,
+          732
+        ],
+        [
+          203.3,
+          767
+        ],
+        [
+          179,
+          779
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 50
+    },
+    {
+      "a": "r.finger1.a",
+      "b": "r.finger1.v",
+      "id": "e024",
+      "points": [
+        [
+          179,
+          779
+        ],
+        [
+          181,
+          782
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 1.5,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 55
+    },
+    {
+      "a": "r.finger1.v",
+      "b": "wrist_r.v",
+      "id": "e025",
+      "points": [
+        [
+          181,
+          782
+        ],
+        [
+          200.2,
+          770
+        ],
+        [
+          232,
+          742
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 1.5,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "wrist_r.a",
+      "b": "r.finger2.a",
+      "id": "e026",
+      "points": [
+        [
+          233,
+          732
+        ],
+        [
+          211,
+          767
+        ],
+        [
+          193,
+          802
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 50
+    },
+    {
+      "a": "r.finger2.a",
+      "b": "r.finger2.v",
+      "id": "e027",
+      "points": [
+        [
+          193,
+          802
+        ],
+        [
+          195,
+          805
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 1.5,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 55
+    },
+    {
+      "a": "r.finger2.v",
+      "b": "wrist_r.v",
+      "id": "e028",
+      "points": [
+        [
+          195,
+          805
+        ],
+        [
+          208.6,
+          770
+        ],
+        [
+          232,
+          742
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 1.5,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "wrist_r.a",
+      "b": "r.finger3.a",
+      "id": "e029",
+      "points": [
+        [
+          233,
+          732
+        ],
+        [
+          220.9,
+          767
+        ],
+        [
+          211,
+          810
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 50
+    },
+    {
+      "a": "r.finger3.a",
+      "b": "r.finger3.v",
+      "id": "e030",
+      "points": [
+        [
+          211,
+          810
+        ],
+        [
+          213,
+          813
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 1.5,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 55
+    },
+    {
+      "a": "r.finger3.v",
+      "b": "wrist_r.v",
+      "id": "e031",
+      "points": [
+        [
+          213,
+          813
+        ],
+        [
+          219.4,
+          770
+        ],
+        [
+          232,
+          742
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 1.5,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "wrist_r.a",
+      "b": "r.finger4.a",
+      "id": "e032",
+      "points": [
+        [
+          233,
+          732
+        ],
+        [
+          230.25,
+          767
+        ],
+        [
+          228,
+          805
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 50
+    },
+    {
+      "a": "r.finger4.a",
+      "b": "r.finger4.v",
+      "id": "e033",
+      "points": [
+        [
+          228,
+          805
+        ],
+        [
+          230,
+          808
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 1.5,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 55
+    },
+    {
+      "a": "r.finger4.v",
+      "b": "wrist_r.v",
+      "id": "e034",
+      "points": [
+        [
+          230,
+          808
+        ],
+        [
+          229.6,
+          770
+        ],
+        [
+          232,
+          742
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 1.5,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "wrist_r.a",
+      "b": "r.finger5.a",
+      "id": "e035",
+      "points": [
+        [
+          233,
+          732
+        ],
+        [
+          236.3,
+          767
+        ],
+        [
+          239,
+          795
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 50
+    },
+    {
+      "a": "r.finger5.a",
+      "b": "r.finger5.v",
+      "id": "e036",
+      "points": [
+        [
+          239,
+          795
+        ],
+        [
+          241,
+          798
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 1.5,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 55
+    },
+    {
+      "a": "r.finger5.v",
+      "b": "wrist_r.v",
+      "id": "e037",
+      "points": [
+        [
+          241,
+          798
+        ],
+        [
+          236.2,
+          770
+        ],
+        [
+          232,
+          742
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 1.5,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "iliac.a",
+      "b": "hip_r.a",
+      "id": "e038",
+      "points": [
+        [
+          509,
+          747
+        ],
+        [
+          474,
+          754
+        ],
+        [
+          446,
+          772
+        ],
+        [
+          435,
+          801
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 50
+    },
+    {
+      "a": "hip_r.v",
+      "b": "iliac.v",
+      "id": "e039",
+      "points": [
+        [
+          439,
+          811
+        ],
+        [
+          452,
+          779
+        ],
+        [
+          477,
+          763
+        ],
+        [
+          509,
+          763
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "hip_r.a",
+      "b": "foot_r.a",
+      "id": "e040",
+      "points": [
+        [
+          435,
+          801
+        ],
+        [
+          440,
+          849
+        ],
+        [
+          443,
+          900
+        ],
+        [
+          433,
+          952
+        ],
+        [
+          420,
+          984
+        ],
+        [
+          411,
+          1027
+        ],
+        [
+          405,
+          1084
+        ],
+        [
+          401,
+          1152
+        ],
+        [
+          399,
+          1220
+        ],
+        [
+          399,
+          1280
+        ],
+        [
+          400,
+          1325
+        ],
+        [
+          396,
+          1360
+        ],
+        [
+          381,
+          1438
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 50
+    },
+    {
+      "a": "foot_r.v",
+      "b": "calffork_r.v",
+      "id": "e041",
+      "points": [
+        [
+          368,
+          1438
+        ],
+        [
+          397,
+          1350
+        ],
+        [
+          402,
+          1318
+        ],
+        [
+          393,
+          1265
+        ],
+        [
+          393,
+          1210
+        ],
+        [
+          398,
+          1150
+        ],
+        [
+          396,
+          1090
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "calffork_r.v",
+      "b": "knee_r.v",
+      "id": "e042",
+      "points": [
+        [
+          396,
+          1090
+        ],
+        [
+          397,
+          1035
+        ],
+        [
+          405,
+          985
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "knee_r.v",
+      "b": "thighfork_r.v",
+      "id": "e043",
+      "points": [
+        [
+          405,
+          985
+        ],
+        [
+          414,
+          943
+        ],
+        [
+          426,
+          896
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "thighfork_r.v",
+      "b": "hip_r.v",
+      "id": "e044",
+      "points": [
+        [
+          426,
+          896
+        ],
+        [
+          433,
+          854
+        ],
+        [
+          439,
+          811
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "foot_r.a",
+      "b": "r.toe1.a",
+      "id": "e045",
+      "points": [
+        [
+          381,
+          1438
+        ],
+        [
+          351,
+          1430
+        ],
+        [
+          351,
+          1435
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 50
+    },
+    {
+      "a": "r.toe1.a",
+      "b": "r.toe1.v",
+      "id": "e046",
+      "points": [
+        [
+          351,
+          1435
+        ],
+        [
+          353,
+          1438
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 1.5,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 55
+    },
+    {
+      "a": "r.toe1.v",
+      "b": "foot_r.v",
+      "id": "e047",
+      "points": [
+        [
+          353,
+          1438
+        ],
+        [
+          355,
+          1431
+        ],
+        [
+          368,
+          1438
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 1.5,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "foot_r.a",
+      "b": "r.toe2.a",
+      "id": "e048",
+      "points": [
+        [
+          381,
+          1438
+        ],
+        [
+          365,
+          1433
+        ],
+        [
+          365,
+          1438
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 50
+    },
+    {
+      "a": "r.toe2.a",
+      "b": "r.toe2.v",
+      "id": "e049",
+      "points": [
+        [
+          365,
+          1438
+        ],
+        [
+          367,
+          1441
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 1.5,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 55
+    },
+    {
+      "a": "r.toe2.v",
+      "b": "foot_r.v",
+      "id": "e050",
+      "points": [
+        [
+          367,
+          1441
+        ],
+        [
+          369,
+          1434
+        ],
+        [
+          368,
+          1438
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 1.5,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "foot_r.a",
+      "b": "r.toe3.a",
+      "id": "e051",
+      "points": [
+        [
+          381,
+          1438
+        ],
+        [
+          378,
+          1436
+        ],
+        [
+          378,
+          1441
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 50
+    },
+    {
+      "a": "r.toe3.a",
+      "b": "r.toe3.v",
+      "id": "e052",
+      "points": [
+        [
+          378,
+          1441
+        ],
+        [
+          380,
+          1444
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 1.5,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 55
+    },
+    {
+      "a": "r.toe3.v",
+      "b": "foot_r.v",
+      "id": "e053",
+      "points": [
+        [
+          380,
+          1444
+        ],
+        [
+          382,
+          1437
+        ],
+        [
+          368,
+          1438
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 1.5,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "foot_r.a",
+      "b": "r.toe4.a",
+      "id": "e054",
+      "points": [
+        [
+          381,
+          1438
+        ],
+        [
+          392,
+          1438
+        ],
+        [
+          392,
+          1443
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 50
+    },
+    {
+      "a": "r.toe4.a",
+      "b": "r.toe4.v",
+      "id": "e055",
+      "points": [
+        [
+          392,
+          1443
+        ],
+        [
+          394,
+          1446
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 1.5,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 55
+    },
+    {
+      "a": "r.toe4.v",
+      "b": "foot_r.v",
+      "id": "e056",
+      "points": [
+        [
+          394,
+          1446
+        ],
+        [
+          396,
+          1439
+        ],
+        [
+          368,
+          1438
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 1.5,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "foot_r.a",
+      "b": "r.toe5.a",
+      "id": "e057",
+      "points": [
+        [
+          381,
+          1438
+        ],
+        [
+          403,
+          1429
+        ],
+        [
+          403,
+          1434
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 50
+    },
+    {
+      "a": "r.toe5.a",
+      "b": "r.toe5.v",
+      "id": "e058",
+      "points": [
+        [
+          403,
+          1434
+        ],
+        [
+          405,
+          1437
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 1.5,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 55
+    },
+    {
+      "a": "r.toe5.v",
+      "b": "foot_r.v",
+      "id": "e059",
+      "points": [
+        [
+          405,
+          1437
+        ],
+        [
+          407,
+          1430
+        ],
+        [
+          368,
+          1438
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 1.5,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "shoulder_r.a",
+      "b": "arm_r.a",
+      "id": "e060",
+      "points": [
+        [
+          420,
+          286
+        ],
+        [
+          360,
+          379
+        ],
+        [
+          327,
+          465
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 25
+    },
+    {
+      "a": "arm_r.a",
+      "b": "arm_r.v",
+      "id": "e061",
+      "points": [
+        [
+          327,
+          465
+        ],
+        [
+          322,
+          480
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 2,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 60
+    },
+    {
+      "a": "arm_r.v",
+      "b": "armfork_r.v",
+      "id": "e062",
+      "points": [
+        [
+          322,
+          480
+        ],
+        [
+          335,
+          416
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 25
+    },
+    {
+      "a": "hip_r.a",
+      "b": "leg_r.a",
+      "id": "e063",
+      "points": [
+        [
+          435,
+          801
+        ],
+        [
+          430,
+          890
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 25
+    },
+    {
+      "a": "leg_r.a",
+      "b": "leg_r.v",
+      "id": "e064",
+      "points": [
+        [
+          430,
+          890
+        ],
+        [
+          433,
+          915
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 2,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 60
+    },
+    {
+      "a": "leg_r.v",
+      "b": "thighfork_r.v",
+      "id": "e065",
+      "points": [
+        [
+          433,
+          915
+        ],
+        [
+          426,
+          896
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 25
+    },
+    {
+      "a": "head_l.a",
+      "b": "brain_l.entry",
+      "id": "e066",
+      "points": [
+        [
+          539,
+          146
+        ],
+        [
+          540,
+          126
+        ],
+        [
+          530,
+          111
+        ],
+        [
+          533.9943396226415,
+          113.1301886792453
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 25
+    },
+    {
+      "a": "head_l.v",
+      "b": "heart.v",
+      "id": "e067",
+      "points": [
+        [
+          527,
+          150
+        ],
+        [
+          529,
+          191
+        ],
+        [
+          533,
+          230
+        ],
+        [
+          542,
+          258
+        ],
+        [
+          553,
+          278
+        ],
+        [
+          539,
+          303
+        ],
+        [
+          532,
+          336
+        ],
+        [
+          515,
+          366
+        ],
+        [
+          483,
+          379
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 25
+    },
+    {
+      "a": "shoulder_l.a",
+      "b": "wrist_l.a",
+      "id": "e068",
+      "points": [
+        [
+          598,
+          286
+        ],
+        [
+          625,
+          290
+        ],
+        [
+          646,
+          305
+        ],
+        [
+          663,
+          344
+        ],
+        [
+          684,
+          392
+        ],
+        [
+          697,
+          430
+        ],
+        [
+          711,
+          479
+        ],
+        [
+          722,
+          523
+        ],
+        [
+          713,
+          551
+        ],
+        [
+          748,
+          602
+        ],
+        [
+          765,
+          660
+        ],
+        [
+          782,
+          732
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 50
+    },
+    {
+      "a": "wrist_l.v",
+      "b": "elbow_l.v",
+      "id": "e069",
+      "points": [
+        [
+          782,
+          742
+        ],
+        [
+          780,
+          724
+        ],
+        [
+          765,
+          676
+        ],
+        [
+          754,
+          633
+        ],
+        [
+          736,
+          587
+        ],
+        [
+          726,
+          555
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "elbow_l.v",
+      "b": "armfork_l.v",
+      "id": "e070",
+      "points": [
+        [
+          726,
+          555
+        ],
+        [
+          711,
+          507
+        ],
+        [
+          700,
+          456
+        ],
+        [
+          684,
+          416
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "armfork_l.v",
+      "b": "shoulder_l.v",
+      "id": "e071",
+      "points": [
+        [
+          684,
+          416
+        ],
+        [
+          664,
+          377
+        ],
+        [
+          646,
+          335
+        ],
+        [
+          624,
+          310
+        ],
+        [
+          596,
+          297
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "shoulder_l.v",
+      "b": "heart.v",
+      "id": "e072",
+      "points": [
+        [
+          596,
+          297
+        ],
+        [
+          558,
+          292
+        ],
+        [
+          483,
+          379
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "wrist_l.a",
+      "b": "l.finger1.a",
+      "id": "e073",
+      "points": [
+        [
+          782,
+          732
+        ],
+        [
+          810.6,
+          767
+        ],
+        [
+          834,
+          779
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 50
+    },
+    {
+      "a": "l.finger1.a",
+      "b": "l.finger1.v",
+      "id": "e074",
+      "points": [
+        [
+          834,
+          779
+        ],
+        [
+          836,
+          782
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 1.5,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 55
+    },
+    {
+      "a": "l.finger1.v",
+      "b": "wrist_l.v",
+      "id": "e075",
+      "points": [
+        [
+          836,
+          782
+        ],
+        [
+          813.2,
+          770
+        ],
+        [
+          782,
+          742
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 1.5,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "wrist_l.a",
+      "b": "l.finger2.a",
+      "id": "e076",
+      "points": [
+        [
+          782,
+          732
+        ],
+        [
+          802.9,
+          767
+        ],
+        [
+          820,
+          802
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 50
+    },
+    {
+      "a": "l.finger2.a",
+      "b": "l.finger2.v",
+      "id": "e077",
+      "points": [
+        [
+          820,
+          802
+        ],
+        [
+          822,
+          805
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 1.5,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 55
+    },
+    {
+      "a": "l.finger2.v",
+      "b": "wrist_l.v",
+      "id": "e078",
+      "points": [
+        [
+          822,
+          805
+        ],
+        [
+          804.8,
+          770
+        ],
+        [
+          782,
+          742
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 1.5,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "wrist_l.a",
+      "b": "l.finger3.a",
+      "id": "e079",
+      "points": [
+        [
+          782,
+          732
+        ],
+        [
+          793.55,
+          767
+        ],
+        [
+          803,
+          810
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 50
+    },
+    {
+      "a": "l.finger3.a",
+      "b": "l.finger3.v",
+      "id": "e080",
+      "points": [
+        [
+          803,
+          810
+        ],
+        [
+          805,
+          813
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 1.5,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 55
+    },
+    {
+      "a": "l.finger3.v",
+      "b": "wrist_l.v",
+      "id": "e081",
+      "points": [
+        [
+          805,
+          813
+        ],
+        [
+          794.6,
+          770
+        ],
+        [
+          782,
+          742
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 1.5,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "wrist_l.a",
+      "b": "l.finger4.a",
+      "id": "e082",
+      "points": [
+        [
+          782,
+          732
+        ],
+        [
+          784.2,
+          767
+        ],
+        [
+          786,
+          805
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 50
+    },
+    {
+      "a": "l.finger4.a",
+      "b": "l.finger4.v",
+      "id": "e083",
+      "points": [
+        [
+          786,
+          805
+        ],
+        [
+          788,
+          808
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 1.5,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 55
+    },
+    {
+      "a": "l.finger4.v",
+      "b": "wrist_l.v",
+      "id": "e084",
+      "points": [
+        [
+          788,
+          808
+        ],
+        [
+          784.4,
+          770
+        ],
+        [
+          782,
+          742
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 1.5,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "wrist_l.a",
+      "b": "l.finger5.a",
+      "id": "e085",
+      "points": [
+        [
+          782,
+          732
+        ],
+        [
+          778.15,
+          767
+        ],
+        [
+          775,
+          795
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 50
+    },
+    {
+      "a": "l.finger5.a",
+      "b": "l.finger5.v",
+      "id": "e086",
+      "points": [
+        [
+          775,
+          795
+        ],
+        [
+          777,
+          798
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 1.5,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 55
+    },
+    {
+      "a": "l.finger5.v",
+      "b": "wrist_l.v",
+      "id": "e087",
+      "points": [
+        [
+          777,
+          798
+        ],
+        [
+          777.8,
+          770
+        ],
+        [
+          782,
+          742
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 1.5,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "iliac.a",
+      "b": "hip_l.a",
+      "id": "e088",
+      "points": [
+        [
+          509,
+          747
+        ],
+        [
+          544,
+          754
+        ],
+        [
+          568,
+          773
+        ],
+        [
+          577,
+          802
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 50
+    },
+    {
+      "a": "hip_l.v",
+      "b": "iliac.v",
+      "id": "e089",
+      "points": [
+        [
+          579,
+          811
+        ],
+        [
+          565,
+          779
+        ],
+        [
+          540,
+          763
+        ],
+        [
+          509,
+          763
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "hip_l.a",
+      "b": "foot_l.a",
+      "id": "e090",
+      "points": [
+        [
+          577,
+          802
+        ],
+        [
+          573,
+          850
+        ],
+        [
+          570,
+          901
+        ],
+        [
+          580,
+          952
+        ],
+        [
+          594,
+          984
+        ],
+        [
+          600,
+          1027
+        ],
+        [
+          606,
+          1084
+        ],
+        [
+          609,
+          1152
+        ],
+        [
+          610,
+          1220
+        ],
+        [
+          609,
+          1280
+        ],
+        [
+          609,
+          1325
+        ],
+        [
+          614,
+          1360
+        ],
+        [
+          629,
+          1438
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 50
+    },
+    {
+      "a": "foot_l.v",
+      "b": "calffork_l.v",
+      "id": "e091",
+      "points": [
+        [
+          647,
+          1438
+        ],
+        [
+          614,
+          1350
+        ],
+        [
+          609,
+          1318
+        ],
+        [
+          615,
+          1265
+        ],
+        [
+          615,
+          1210
+        ],
+        [
+          617,
+          1150
+        ],
+        [
+          620,
+          1090
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "calffork_l.v",
+      "b": "knee_l.v",
+      "id": "e092",
+      "points": [
+        [
+          620,
+          1090
+        ],
+        [
+          619,
+          1035
+        ],
+        [
+          612,
+          985
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "knee_l.v",
+      "b": "thighfork_l.v",
+      "id": "e093",
+      "points": [
+        [
+          612,
+          985
+        ],
+        [
+          602,
+          943
+        ],
+        [
+          593,
+          896
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "thighfork_l.v",
+      "b": "hip_l.v",
+      "id": "e094",
+      "points": [
+        [
+          593,
+          896
+        ],
+        [
+          587,
+          854
+        ],
+        [
+          579,
+          811
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "foot_l.a",
+      "b": "l.toe1.a",
+      "id": "e095",
+      "points": [
+        [
+          629,
+          1438
+        ],
+        [
+          666,
+          1430
+        ],
+        [
+          666,
+          1435
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 50
+    },
+    {
+      "a": "l.toe1.a",
+      "b": "l.toe1.v",
+      "id": "e096",
+      "points": [
+        [
+          666,
+          1435
+        ],
+        [
+          668,
+          1438
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 1.5,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 55
+    },
+    {
+      "a": "l.toe1.v",
+      "b": "foot_l.v",
+      "id": "e097",
+      "points": [
+        [
+          668,
+          1438
+        ],
+        [
+          670,
+          1431
+        ],
+        [
+          647,
+          1438
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 1.5,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "foot_l.a",
+      "b": "l.toe2.a",
+      "id": "e098",
+      "points": [
+        [
+          629,
+          1438
+        ],
+        [
+          653,
+          1433
+        ],
+        [
+          653,
+          1438
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 50
+    },
+    {
+      "a": "l.toe2.a",
+      "b": "l.toe2.v",
+      "id": "e099",
+      "points": [
+        [
+          653,
+          1438
+        ],
+        [
+          655,
+          1441
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 1.5,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 55
+    },
+    {
+      "a": "l.toe2.v",
+      "b": "foot_l.v",
+      "id": "e100",
+      "points": [
+        [
+          655,
+          1441
+        ],
+        [
+          657,
+          1434
+        ],
+        [
+          647,
+          1438
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 1.5,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "foot_l.a",
+      "b": "l.toe3.a",
+      "id": "e101",
+      "points": [
+        [
+          629,
+          1438
+        ],
+        [
+          639,
+          1436
+        ],
+        [
+          639,
+          1441
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 50
+    },
+    {
+      "a": "l.toe3.a",
+      "b": "l.toe3.v",
+      "id": "e102",
+      "points": [
+        [
+          639,
+          1441
+        ],
+        [
+          641,
+          1444
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 1.5,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 55
+    },
+    {
+      "a": "l.toe3.v",
+      "b": "foot_l.v",
+      "id": "e103",
+      "points": [
+        [
+          641,
+          1444
+        ],
+        [
+          643,
+          1437
+        ],
+        [
+          647,
+          1438
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 1.5,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "foot_l.a",
+      "b": "l.toe4.a",
+      "id": "e104",
+      "points": [
+        [
+          629,
+          1438
+        ],
+        [
+          626,
+          1438
+        ],
+        [
+          626,
+          1443
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 50
+    },
+    {
+      "a": "l.toe4.a",
+      "b": "l.toe4.v",
+      "id": "e105",
+      "points": [
+        [
+          626,
+          1443
+        ],
+        [
+          628,
+          1446
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 1.5,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 55
+    },
+    {
+      "a": "l.toe4.v",
+      "b": "foot_l.v",
+      "id": "e106",
+      "points": [
+        [
+          628,
+          1446
+        ],
+        [
+          630,
+          1439
+        ],
+        [
+          647,
+          1438
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 1.5,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "foot_l.a",
+      "b": "l.toe5.a",
+      "id": "e107",
+      "points": [
+        [
+          629,
+          1438
+        ],
+        [
+          616,
+          1429
+        ],
+        [
+          616,
+          1434
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 50
+    },
+    {
+      "a": "l.toe5.a",
+      "b": "l.toe5.v",
+      "id": "e108",
+      "points": [
+        [
+          616,
+          1434
+        ],
+        [
+          618,
+          1437
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 1.5,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 55
+    },
+    {
+      "a": "l.toe5.v",
+      "b": "foot_l.v",
+      "id": "e109",
+      "points": [
+        [
+          618,
+          1437
+        ],
+        [
+          620,
+          1430
+        ],
+        [
+          647,
+          1438
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 1.5,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 55
+    },
+    {
+      "a": "shoulder_l.a",
+      "b": "arm_l.a",
+      "id": "e110",
+      "points": [
+        [
+          598,
+          286
+        ],
+        [
+          657,
+          379
+        ],
+        [
+          692,
+          465
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 25
+    },
+    {
+      "a": "arm_l.a",
+      "b": "arm_l.v",
+      "id": "e111",
+      "points": [
+        [
+          692,
+          465
+        ],
+        [
+          696,
+          480
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 2,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 60
+    },
+    {
+      "a": "arm_l.v",
+      "b": "armfork_l.v",
+      "id": "e112",
+      "points": [
+        [
+          696,
+          480
+        ],
+        [
+          684,
+          416
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 25
+    },
+    {
+      "a": "hip_l.a",
+      "b": "leg_l.a",
+      "id": "e113",
+      "points": [
+        [
+          577,
+          802
+        ],
+        [
+          588,
+          890
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 25
+    },
+    {
+      "a": "leg_l.a",
+      "b": "leg_l.v",
+      "id": "e114",
+      "points": [
+        [
+          588,
+          890
+        ],
+        [
+          584,
+          915
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 2,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 60
+    },
+    {
+      "a": "leg_l.v",
+      "b": "thighfork_l.v",
+      "id": "e115",
+      "points": [
+        [
+          584,
+          915
+        ],
+        [
+          593,
+          896
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 25
+    },
+    {
+      "a": "aorta_upper",
+      "b": "celiac",
+      "id": "e116",
+      "points": [
+        [
+          524,
+          481
+        ],
+        [
+          537,
+          489
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 25
+    },
+    {
+      "a": "celiac",
+      "b": "liver.entry",
+      "id": "e117",
+      "points": [
+        [
+          537,
+          489
+        ],
+        [
+          508,
+          493
+        ],
+        [
+          520.3793103448276,
+          509.44827586206895
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 25
+    },
+    {
+      "a": "liver.a",
+      "b": "liver.bed",
+      "id": "e118",
+      "points": [
+        [
+          481,
+          496
+        ],
+        [
+          447,
+          516
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 2,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 60
+    },
+    {
+      "a": "portal",
+      "b": "liver.portal_entry",
+      "id": "e119",
+      "points": [
+        [
+          523,
+          561
+        ],
+        [
+          523,
+          540
+        ],
+        [
+          509.7952987267385,
+          520.4417238001959
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 15
+    },
+    {
+      "a": "liver.p",
+      "b": "liver.bed",
+      "id": "e120",
+      "points": [
+        [
+          489,
+          519
+        ],
+        [
+          468,
+          518
+        ],
+        [
+          447,
+          516
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 15
+    },
+    {
+      "a": "liver.bed",
+      "b": "liver.v",
+      "id": "e121",
+      "points": [
+        [
+          447,
+          516
+        ],
+        [
+          460,
+          536
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 2,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 60
+    },
+    {
+      "a": "liver.exit",
+      "b": "cava_upper",
+      "id": "e122",
+      "points": [
+        [
+          474.0082191780822,
+          475.77808219178087
+        ],
+        [
+          477,
+          521
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 25
+    },
+    {
+      "a": "celiac",
+      "b": "stomach.entry",
+      "id": "e123",
+      "points": [
+        [
+          537,
+          489
+        ],
+        [
+          552,
+          490
+        ],
+        [
+          548.176,
+          502.0319999999999
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 25
+    },
+    {
+      "a": "stomach.a",
+      "b": "stomach.v",
+      "id": "e124",
+      "points": [
+        [
+          566,
+          503
+        ],
+        [
+          568,
+          535
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 2,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 60
+    },
+    {
+      "a": "celiac",
+      "b": "pancreas.entry",
+      "id": "e125",
+      "points": [
+        [
+          537,
+          489
+        ],
+        [
+          542,
+          537
+        ],
+        [
+          548,
+          565
+        ],
+        [
+          550.0497237569061,
+          575.9447513812155
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 25
+    },
+    {
+      "a": "pancreas.a",
+      "b": "pancreas.v",
+      "id": "e126",
+      "points": [
+        [
+          547,
+          582
+        ],
+        [
+          515,
+          587
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 2,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 60
+    },
+    {
+      "a": "aorta_mid",
+      "b": "mesenteric_upper",
+      "id": "e127",
+      "points": [
+        [
+          515,
+          582
+        ],
+        [
+          524,
+          606
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 25
+    },
+    {
+      "a": "aorta_abd",
+      "b": "mesenteric_lower",
+      "id": "e128",
+      "points": [
+        [
+          518,
+          635
+        ],
+        [
+          525,
+          664
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 25
+    },
+    {
+      "a": "mesenteric_upper",
+      "b": "pancreas.entry",
+      "id": "e129",
+      "points": [
+        [
+          524,
+          606
+        ],
+        [
+          551,
+          611
+        ],
+        [
+          561,
+          594
+        ],
+        [
+          550.0497237569061,
+          575.9447513812155
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 25
+    },
+    {
+      "a": "mesenteric_upper",
+      "b": "small_intestine.entry",
+      "id": "e130",
+      "points": [
+        [
+          524,
+          606
+        ],
+        [
+          500,
+          634
+        ],
+        [
+          483.0954128440367,
+          655.451376146789
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 25
+    },
+    {
+      "a": "small_intestine.a",
+      "b": "small_intestine.v",
+      "id": "e131",
+      "points": [
+        [
+          492,
+          673
+        ],
+        [
+          535,
+          701
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 2,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 60
+    },
+    {
+      "a": "mesenteric_upper",
+      "b": "colon_proximal.entry",
+      "id": "e132",
+      "points": [
+        [
+          524,
+          606
+        ],
+        [
+          475,
+          627
+        ],
+        [
+          460.09479553903344,
+          674.2732342007434
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 25
+    },
+    {
+      "a": "colon_proximal.a",
+      "b": "colon_proximal.v",
+      "id": "e133",
+      "points": [
+        [
+          451,
+          657
+        ],
+        [
+          459,
+          711
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 2,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 60
+    },
+    {
+      "a": "mesenteric_lower",
+      "b": "colon_distal.entry",
+      "id": "e134",
+      "points": [
+        [
+          525,
+          664
+        ],
+        [
+          559.0739726027397,
+          664.9972602739726
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 25
+    },
+    {
+      "a": "colon_distal.a",
+      "b": "colon_distal.v",
+      "id": "e135",
+      "points": [
+        [
+          567,
+          666
+        ],
+        [
+          565,
+          713
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 2,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 60
+    },
+    {
+      "a": "aorta_mid",
+      "b": "kidney_r.entry",
+      "id": "e136",
+      "points": [
+        [
+          515,
+          582
+        ],
+        [
+          476,
+          597
+        ],
+        [
+          439.88841201716735,
+          604.931330472103
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 25
+    },
+    {
+      "a": "kidney_r.a",
+      "b": "kidney_r.v",
+      "id": "e137",
+      "points": [
+        [
+          426,
+          590
+        ],
+        [
+          429,
+          625
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 2,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 60
+    },
+    {
+      "a": "kidney_r.exit",
+      "b": "cava_abdominal",
+      "id": "e138",
+      "points": [
+        [
+          435.0945945945946,
+          617.9324324324324
+        ],
+        [
+          456,
+          621
+        ],
+        [
+          477,
+          603
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 25
+    },
+    {
+      "a": "aorta_mid",
+      "b": "kidney_l.entry",
+      "id": "e139",
+      "points": [
+        [
+          515,
+          582
+        ],
+        [
+          559,
+          599
+        ],
+        [
+          585.8810810810811,
+          610.0864864864865
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 25
+    },
+    {
+      "a": "kidney_l.a",
+      "b": "kidney_l.v",
+      "id": "e140",
+      "points": [
+        [
+          591,
+          590
+        ],
+        [
+          590,
+          625
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 2,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 60
+    },
+    {
+      "a": "kidney_l.exit",
+      "b": "cava_abdominal",
+      "id": "e141",
+      "points": [
+        [
+          584,
+          619
+        ],
+        [
+          542,
+          632
+        ],
+        [
+          477,
+          603
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 25
+    },
+    {
+      "a": "iliac.a",
+      "b": "bladder.entry",
+      "id": "e142",
+      "points": [
+        [
+          509,
+          747
+        ],
+        [
+          541,
+          745
+        ],
+        [
+          539,
+          756
+        ],
+        [
+          536.3294117647059,
+          750.7176470588236
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 25
+    },
+    {
+      "a": "bladder.a",
+      "b": "bladder.v",
+      "id": "e143",
+      "points": [
+        [
+          523,
+          756
+        ],
+        [
+          525,
+          775
+        ],
+        [
+          505,
+          780
+        ],
+        [
+          491,
+          772
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 2,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 60
+    },
+    {
+      "a": "bladder.exit",
+      "b": "iliac.v",
+      "id": "e144",
+      "points": [
+        [
+          476.6928327645051,
+          754.6109215017065
+        ],
+        [
+          484,
+          786
+        ],
+        [
+          505,
+          793
+        ],
+        [
+          509,
+          763
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 25
+    },
+    {
+      "a": "coronary.a",
+      "b": "coronary.v",
+      "id": "e145",
+      "points": [
+        [
+          524,
+          401
+        ],
+        [
+          513,
+          438
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 2,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 60
+    },
+    {
+      "a": "coronary.exit",
+      "b": "right_heart",
+      "id": "e146",
+      "points": [
+        [
+          489.84615384615387,
+          432.7692307692307
+        ],
+        [
+          499,
+          438
+        ],
+        [
+          493,
+          414
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 25
+    },
+    {
+      "a": "aorta_mid",
+      "b": "trunk.a",
+      "id": "e147",
+      "points": [
+        [
+          515,
+          582
+        ],
+        [
+          463,
+          565
+        ],
+        [
+          402,
+          574
+        ],
+        [
+          390,
+          588
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 25
+    },
+    {
+      "a": "trunk.a",
+      "b": "trunk.v",
+      "id": "e148",
+      "points": [
+        [
+          390,
+          588
+        ],
+        [
+          388,
+          629
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 2,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 60
+    },
+    {
+      "a": "trunk.v",
+      "b": "cava_abdominal",
+      "id": "e149",
+      "points": [
+        [
+          388,
+          629
+        ],
+        [
+          402,
+          643
+        ],
+        [
+          452,
+          634
+        ],
+        [
+          477,
+          603
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 25
+    },
+    {
+      "a": "left_heart",
+      "b": "aortic_root",
+      "id": "e150",
+      "points": [
+        [
+          538,
+          422
+        ],
+        [
+          548,
+          397
+        ],
+        [
+          533,
+          375
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 25
+    },
+    {
+      "a": "aortic_root",
+      "b": "arch",
+      "id": "e151",
+      "points": [
+        [
+          533,
+          375
+        ],
+        [
+          529,
+          353
+        ],
+        [
+          514,
+          341
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 25
+    },
+    {
+      "a": "aortic_root",
+      "b": "coronary.entry",
+      "id": "e152",
+      "points": [
+        [
+          533,
+          375
+        ],
+        [
+          540,
+          390
+        ],
+        [
+          541.7692307692307,
+          384.1538461538462
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 25
+    },
+    {
+      "a": "arch",
+      "b": "brachiocephalic",
+      "id": "e153",
+      "points": [
+        [
+          514,
+          341
+        ],
+        [
+          503,
+          325
+        ],
+        [
+          495,
+          300
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 25
+    },
+    {
+      "a": "brachiocephalic",
+      "b": "head_r.a",
+      "id": "e154",
+      "points": [
+        [
+          495,
+          300
+        ],
+        [
+          479,
+          254
+        ],
+        [
+          480,
+          191
+        ],
+        [
+          480,
+          147
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 25
+    },
+    {
+      "a": "brachiocephalic",
+      "b": "shoulder_r.a",
+      "id": "e155",
+      "points": [
+        [
+          495,
+          300
+        ],
+        [
+          467,
+          280
+        ],
+        [
+          442,
+          278
+        ],
+        [
+          420,
+          286
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 25
+    },
+    {
+      "a": "arch",
+      "b": "carotid_l",
+      "id": "e156",
+      "points": [
+        [
+          514,
+          341
+        ],
+        [
+          518,
+          319
+        ],
+        [
+          525,
+          291
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 25
+    },
+    {
+      "a": "carotid_l",
+      "b": "head_l.a",
+      "id": "e157",
+      "points": [
+        [
+          525,
+          291
+        ],
+        [
+          539,
+          253
+        ],
+        [
+          539,
+          191
+        ],
+        [
+          539,
+          146
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 25
+    },
+    {
+      "a": "arch",
+      "b": "subclavian_l",
+      "id": "e158",
+      "points": [
+        [
+          514,
+          341
+        ],
+        [
+          534,
+          321
+        ],
+        [
+          549,
+          291
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 25
+    },
+    {
+      "a": "subclavian_l",
+      "b": "shoulder_l.a",
+      "id": "e159",
+      "points": [
+        [
+          549,
+          291
+        ],
+        [
+          577,
+          278
+        ],
+        [
+          598,
+          286
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 3,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 25
+    },
+    {
+      "a": "brain_r",
+      "b": "brain_r.v",
+      "id": "e160",
+      "points": [
+        [
+          496,
+          95
+        ],
+        [
+          486,
+          103
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 2,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 60
+    },
+    {
+      "a": "brain_r.exit",
+      "b": "head_r.v",
+      "id": "e161",
+      "points": [
+        [
+          499,
+          106
+        ],
+        [
+          495,
+          127
+        ],
+        [
+          490,
+          150
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 25
+    },
+    {
+      "a": "brain_l",
+      "b": "brain_l.v",
+      "id": "e162",
+      "points": [
+        [
+          521,
+          95
+        ],
+        [
+          537,
+          103
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 2,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 60
+    },
+    {
+      "a": "brain_l.exit",
+      "b": "head_l.v",
+      "id": "e163",
+      "points": [
+        [
+          551.0056603773585,
+          113.8698113207547
+        ],
+        [
+          530,
+          131
+        ],
+        [
+          527,
+          150
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 25
+    },
+    {
+      "a": "stomach.exit",
+      "b": "portal",
+      "id": "e164",
+      "points": [
+        [
+          539,
+          520
+        ],
+        [
+          552,
+          547
+        ],
+        [
+          537,
+          553
+        ],
+        [
+          523,
+          561
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 15
+    },
+    {
+      "a": "pancreas.exit",
+      "b": "pancreatic_venous_group",
+      "id": "e165",
+      "points": [
+        [
+          504.9945205479452,
+          601.0520547945206
+        ],
+        [
+          512,
+          573
+        ],
+        [
+          528,
+          571
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 15
+    },
+    {
+      "a": "small_intestine.exit",
+      "b": "mesenteric_vein",
+      "id": "e166",
+      "points": [
+        [
+          549.22,
+          665.54
+        ],
+        [
+          548,
+          663
+        ],
+        [
+          530,
+          620
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 15
+    },
+    {
+      "a": "colon_proximal.exit",
+      "b": "mesenteric_vein",
+      "id": "e167",
+      "points": [
+        [
+          464.7529411764706,
+          705.3882352941176
+        ],
+        [
+          475,
+          719
+        ],
+        [
+          484,
+          664
+        ],
+        [
+          508,
+          637
+        ],
+        [
+          530,
+          620
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 15
+    },
+    {
+      "a": "colon_distal.exit",
+      "b": "hindgut_vein",
+      "id": "e168",
+      "points": [
+        [
+          552.4901639344263,
+          709.1918032786886
+        ],
+        [
+          586,
+          718
+        ],
+        [
+          596,
+          678
+        ],
+        [
+          577,
+          646
+        ],
+        [
+          555,
+          632
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 15
+    },
+    {
+      "a": "mesenteric_vein",
+      "b": "portal",
+      "id": "e169",
+      "points": [
+        [
+          530,
+          620
+        ],
+        [
+          533,
+          589
+        ],
+        [
+          523,
+          561
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 15
+    },
+    {
+      "a": "hindgut_vein",
+      "b": "pancreatic_venous_group",
+      "id": "e170",
+      "points": [
+        [
+          555,
+          632
+        ],
+        [
+          563,
+          607
+        ],
+        [
+          544,
+          587
+        ],
+        [
+          528,
+          571
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 15
+    },
+    {
+      "a": "pancreatic_venous_group",
+      "b": "portal",
+      "id": "e171",
+      "points": [
+        [
+          528,
+          571
+        ],
+        [
+          523,
+          561
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 3,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 15
+    },
+    {
+      "a": "lung_r.entry",
+      "b": "lung_r.a",
+      "id": "e172",
+      "points": [
+        [
+          475.1613941018767,
+          374.0150134048257
+        ],
+        [
+          439,
+          350
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 2,
+      "oxygen": "low",
+      "system": "artery",
+      "layer": 60
+    },
+    {
+      "a": "lung_r.v",
+      "b": "lung_r.exit",
+      "id": "e173",
+      "points": [
+        [
+          433,
+          430
+        ],
+        [
+          471.6707317073171,
+          410.9634146341464
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 2,
+      "oxygen": "high",
+      "system": "vein",
+      "layer": 60
+    },
+    {
+      "a": "lung_l.entry",
+      "b": "lung_l.a",
+      "id": "e174",
+      "points": [
+        [
+          541.4487996080353,
+          374.0489955903969
+        ],
+        [
+          580,
+          350
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 2,
+      "oxygen": "low",
+      "system": "artery",
+      "layer": 60
+    },
+    {
+      "a": "lung_l.v",
+      "b": "lung_l.exit",
+      "id": "e175",
+      "points": [
+        [
+          592,
+          430
+        ],
+        [
+          545,
+          414
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 2,
+      "oxygen": "high",
+      "system": "vein",
+      "layer": 60
+    },
+    {
+      "a": "brain_r.entry",
+      "b": "brain_r",
+      "id": "e176",
+      "points": [
+        [
+          484.9526813880126,
+          112.60567823343848
+        ],
+        [
+          496,
+          95
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 2,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 60
+    },
+    {
+      "a": "brain_r.v",
+      "b": "brain_r.exit",
+      "id": "e177",
+      "points": [
+        [
+          486,
+          103
+        ],
+        [
+          499,
+          106
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 2,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 60
+    },
+    {
+      "a": "brain_l.entry",
+      "b": "brain_l",
+      "id": "e178",
+      "points": [
+        [
+          533.9943396226415,
+          113.1301886792453
+        ],
+        [
+          521,
+          95
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 2,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 60
+    },
+    {
+      "a": "brain_l.v",
+      "b": "brain_l.exit",
+      "id": "e179",
+      "points": [
+        [
+          537,
+          103
+        ],
+        [
+          551.0056603773585,
+          113.8698113207547
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 2,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 60
+    },
+    {
+      "a": "liver.entry",
+      "b": "liver.a",
+      "id": "e180",
+      "points": [
+        [
+          520.3793103448276,
+          509.44827586206895
+        ],
+        [
+          481,
+          496
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 2,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 60
+    },
+    {
+      "a": "liver.v",
+      "b": "liver.exit",
+      "id": "e181",
+      "points": [
+        [
+          460,
+          536
+        ],
+        [
+          474.0082191780822,
+          475.77808219178087
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 2,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 60
+    },
+    {
+      "a": "liver.portal_entry",
+      "b": "liver.p",
+      "id": "e182",
+      "points": [
+        [
+          509.7952987267385,
+          520.4417238001959
+        ],
+        [
+          489,
+          519
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 2,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 60
+    },
+    {
+      "a": "stomach.entry",
+      "b": "stomach.a",
+      "id": "e183",
+      "points": [
+        [
+          548.176,
+          502.0319999999999
+        ],
+        [
+          566,
+          503
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 2,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 60
+    },
+    {
+      "a": "stomach.v",
+      "b": "stomach.exit",
+      "id": "e184",
+      "points": [
+        [
+          568,
+          535
+        ],
+        [
+          539,
+          520
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 2,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 60
+    },
+    {
+      "a": "pancreas.entry",
+      "b": "pancreas.a",
+      "id": "e185",
+      "points": [
+        [
+          550.0497237569061,
+          575.9447513812155
+        ],
+        [
+          547,
+          582
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 2,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 60
+    },
+    {
+      "a": "pancreas.v",
+      "b": "pancreas.exit",
+      "id": "e186",
+      "points": [
+        [
+          515,
+          587
+        ],
+        [
+          504.9945205479452,
+          601.0520547945206
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 2,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 60
+    },
+    {
+      "a": "small_intestine.entry",
+      "b": "small_intestine.a",
+      "id": "e187",
+      "points": [
+        [
+          483.0954128440367,
+          655.451376146789
+        ],
+        [
+          492,
+          673
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 2,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 60
+    },
+    {
+      "a": "small_intestine.v",
+      "b": "small_intestine.exit",
+      "id": "e188",
+      "points": [
+        [
+          535,
+          701
+        ],
+        [
+          549.22,
+          665.54
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 2,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 60
+    },
+    {
+      "a": "colon_proximal.entry",
+      "b": "colon_proximal.a",
+      "id": "e189",
+      "points": [
+        [
+          460.09479553903344,
+          674.2732342007434
+        ],
+        [
+          451,
+          657
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 2,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 60
+    },
+    {
+      "a": "colon_proximal.v",
+      "b": "colon_proximal.exit",
+      "id": "e190",
+      "points": [
+        [
+          459,
+          711
+        ],
+        [
+          464.7529411764706,
+          705.3882352941176
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 2,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 60
+    },
+    {
+      "a": "colon_distal.entry",
+      "b": "colon_distal.a",
+      "id": "e191",
+      "points": [
+        [
+          559.0739726027397,
+          664.9972602739726
+        ],
+        [
+          567,
+          666
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 2,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 60
+    },
+    {
+      "a": "colon_distal.v",
+      "b": "colon_distal.exit",
+      "id": "e192",
+      "points": [
+        [
+          565,
+          713
+        ],
+        [
+          552.4901639344263,
+          709.1918032786886
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 2,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 60
+    },
+    {
+      "a": "kidney_r.entry",
+      "b": "kidney_r.a",
+      "id": "e193",
+      "points": [
+        [
+          439.88841201716735,
+          604.931330472103
+        ],
+        [
+          426,
+          590
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 2,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 60
+    },
+    {
+      "a": "kidney_r.v",
+      "b": "kidney_r.exit",
+      "id": "e194",
+      "points": [
+        [
+          429,
+          625
+        ],
+        [
+          435.0945945945946,
+          617.9324324324324
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 2,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 60
+    },
+    {
+      "a": "kidney_l.entry",
+      "b": "kidney_l.a",
+      "id": "e195",
+      "points": [
+        [
+          585.8810810810811,
+          610.0864864864865
+        ],
+        [
+          591,
+          590
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 2,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 60
+    },
+    {
+      "a": "kidney_l.v",
+      "b": "kidney_l.exit",
+      "id": "e196",
+      "points": [
+        [
+          590,
+          625
+        ],
+        [
+          584,
+          619
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 2,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 60
+    },
+    {
+      "a": "bladder.entry",
+      "b": "bladder.a",
+      "id": "e197",
+      "points": [
+        [
+          536.3294117647059,
+          750.7176470588236
+        ],
+        [
+          523,
+          756
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 2,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 60
+    },
+    {
+      "a": "bladder.v",
+      "b": "bladder.exit",
+      "id": "e198",
+      "points": [
+        [
+          491,
+          772
+        ],
+        [
+          476.6928327645051,
+          754.6109215017065
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 2,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 60
+    },
+    {
+      "a": "coronary.entry",
+      "b": "coronary.a",
+      "id": "e199",
+      "points": [
+        [
+          541.7692307692307,
+          384.1538461538462
+        ],
+        [
+          524,
+          401
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 2,
+      "oxygen": "high",
+      "system": "artery",
+      "layer": 60
+    },
+    {
+      "a": "coronary.v",
+      "b": "coronary.exit",
+      "id": "e200",
+      "points": [
+        [
+          513,
+          438
+        ],
+        [
+          489.84615384615387,
+          432.7692307692307
+        ]
+      ],
+      "kind": "vein",
+      "lumenWidthSource": 2,
+      "oxygen": "low",
+      "system": "vein",
+      "layer": 60
+    },
+    {
+      "a": "arm_r.a",
+      "b": "arm_r.tissue_access.tip",
+      "id": "access.arm_r",
+      "points": [
+        [
+          327,
+          465
+        ],
+        [
+          335,
+          465
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 1.5,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 35
+    },
+    {
+      "a": "stomach.v",
+      "b": "study.stomach.wall_service.outer",
+      "id": "study.stomach.wall_service",
+      "points": [
+        [
+          568,
+          535
+        ],
+        [
+          581.226806640625,
+          554.0888061523438
+        ],
+        [
+          601.757568359375,
+          542.8837890625
+        ],
+        [
+          609.6319580078125,
+          521.8223266601562
+        ],
+        [
+          566,
+          503
+        ]
+      ],
+      "kind": "artery",
+      "lumenWidthSource": 1.5,
+      "oxygen": "exchange",
+      "system": "capillary",
+      "layer": 35
+    }
+  ],
+  "changes": {
+    "added": [],
+    "deleted": [],
+    "modified": [
+      "study.stomach.wall_service"
+    ]
+  },
+  "logicalGates": [
+    {
+      "y": 349.08155976232376,
+      "radius": 1.9,
+      "id": "lung_r.tissue_access",
+      "added": false,
+      "edgeId": "e004",
+      "x": 436.7826891219729,
+      "nx": -0.9238795325112868,
+      "py": 350,
+      "px": 439,
+      "ny": -0.38268343236508967
+    },
+    {
+      "y": 350,
+      "radius": 1.9,
+      "id": "lung_l.tissue_access",
+      "added": false,
+      "edgeId": "e007",
+      "x": 577.6,
+      "nx": -1,
+      "py": 350,
+      "px": 580,
+      "ny": 1.2246467991473532e-16
+    },
+    {
+      "y": 94.01005050633881,
+      "radius": 1.9,
+      "id": "brain_r.tissue_access",
+      "added": false,
+      "edgeId": "e160",
+      "x": 495.0100505063388,
+      "nx": -0.7071067811865477,
+      "py": 95,
+      "px": 496,
+      "ny": -0.7071067811865475
+    },
+    {
+      "y": 466.15,
+      "radius": 1.9,
+      "id": "arm_r.tissue_access",
+      "added": false,
+      "edgeId": "access.arm_r",
+      "x": 328,
+      "nx": 6.123233995736766e-17,
+      "py": 465,
+      "px": 328,
+      "ny": 1
+    },
+    {
+      "y": 892.7640195808099,
+      "radius": 1.9,
+      "id": "leg_r.tissue_access",
+      "added": false,
+      "edgeId": "e064",
+      "x": 429.6407137829242,
+      "nx": -0.3826834323650897,
+      "py": 891.4705882352941,
+      "px": 430.1764705882353,
+      "ny": 0.9238795325112867
+    },
+    {
+      "y": 96.29343134551578,
+      "radius": 1.9,
+      "id": "brain_l.tissue_access",
+      "added": false,
+      "edgeId": "e162",
+      "x": 520.4642431946888,
+      "nx": -0.3826834323650897,
+      "py": 95,
+      "px": 521,
+      "ny": 0.9238795325112867
+    },
+    {
+      "y": 466.94200680531117,
+      "radius": 1.9,
+      "id": "arm_l.tissue_access",
+      "added": false,
+      "edgeId": "e111",
+      "x": 691.0815686544842,
+      "nx": -0.9238795325112867,
+      "py": 466.40625,
+      "px": 692.375,
+      "ny": 0.3826834323650899
+    },
+    {
+      "y": 891.4705882352941,
+      "radius": 1.9,
+      "id": "leg_l.tissue_access",
+      "added": false,
+      "edgeId": "e114",
+      "x": 586.364705882353,
+      "nx": -1,
+      "py": 891.4705882352941,
+      "px": 587.7647058823529,
+      "ny": 1.2246467991473532e-16
+    },
+    {
+      "y": 495.01005050633887,
+      "radius": 1.9,
+      "id": "liver.tissue_access",
+      "added": false,
+      "edgeId": "e118",
+      "x": 481.9899494936612,
+      "nx": 0.7071067811865474,
+      "py": 496,
+      "px": 481,
+      "ny": -0.7071067811865477
+    },
+    {
+      "y": 503.98994949366113,
+      "radius": 1.9,
+      "id": "stomach.tissue_access",
+      "added": false,
+      "edgeId": "e124",
+      "x": 565.0100505063389,
+      "nx": -0.7071067811865475,
+      "py": 503,
+      "px": 566,
+      "ny": 0.7071067811865476
+    },
+    {
+      "y": 580.7065686544842,
+      "radius": 1.9,
+      "id": "pancreas.tissue_access",
+      "added": false,
+      "edgeId": "e126",
+      "x": 546.4642431946888,
+      "nx": -0.38268343236509034,
+      "py": 582,
+      "px": 547,
+      "ny": -0.9238795325112865
+    },
+    {
+      "y": 674.2934313455158,
+      "radius": 1.9,
+      "id": "small_intestine.tissue_access",
+      "added": false,
+      "edgeId": "e131",
+      "x": 491.4642431946889,
+      "nx": -0.3826834323650897,
+      "py": 673,
+      "px": 492,
+      "ny": 0.9238795325112867
+    },
+    {
+      "y": 657,
+      "radius": 1.9,
+      "id": "colon_proximal.tissue_access",
+      "added": false,
+      "edgeId": "e133",
+      "x": 449.6,
+      "nx": -1,
+      "py": 657,
+      "px": 451,
+      "ny": 1.2246467991473532e-16
+    },
+    {
+      "y": 665.0100505063389,
+      "radius": 1.9,
+      "id": "colon_distal.tissue_access",
+      "added": false,
+      "edgeId": "e135",
+      "x": 566.0100505063389,
+      "nx": -0.7071067811865477,
+      "py": 666,
+      "px": 567,
+      "ny": -0.7071067811865475
+    },
+    {
+      "y": 590,
+      "radius": 1.9,
+      "id": "kidney_r.tissue_access",
+      "added": false,
+      "edgeId": "e137",
+      "x": 424.6,
+      "nx": -1,
+      "py": 590,
+      "px": 426,
+      "ny": 1.2246467991473532e-16
+    },
+    {
+      "y": 590,
+      "radius": 1.9,
+      "id": "kidney_l.tissue_access",
+      "added": false,
+      "edgeId": "e140",
+      "x": 589.6,
+      "nx": -1,
+      "py": 590,
+      "px": 591,
+      "ny": 1.2246467991473532e-16
+    },
+    {
+      "y": 756,
+      "radius": 1.9,
+      "id": "bladder.tissue_access",
+      "added": false,
+      "edgeId": "e143",
+      "x": 521.6,
+      "nx": -1,
+      "py": 756,
+      "px": 523,
+      "ny": 1.2246467991473532e-16
+    },
+    {
+      "y": 400.46424319468883,
+      "radius": 1.9,
+      "id": "coronary.tissue_access",
+      "added": false,
+      "edgeId": "e145",
+      "x": 522.7065686544842,
+      "nx": -0.9238795325112868,
+      "py": 401,
+      "px": 524,
+      "ny": -0.38268343236508967
+    },
+    {
+      "y": 589.4819277108434,
+      "radius": 1.9,
+      "id": "trunk.tissue_access",
+      "added": false,
+      "edgeId": "e148",
+      "x": 388.52771084337354,
+      "nx": -1,
+      "py": 589.4819277108434,
+      "px": 389.9277108433735,
+      "ny": 1.2246467991473532e-16
+    },
+    {
+      "y": 527.0323573685471,
+      "radius": 1.9,
+      "id": "study.stomach.portal_bank.inner",
+      "added": false,
+      "edgeId": "e184",
+      "x": 555.6431920864233,
+      "nx": 0.45942291887376663,
+      "py": 528.2758620689655,
+      "px": 555,
+      "ny": -0.8882176431559489
+    },
+    {
+      "y": 529.5193667693839,
+      "radius": 1.9,
+      "id": "study.stomach.portal_bank.lower",
+      "added": false,
+      "edgeId": "e184",
+      "x": 554.3568079135767,
+      "nx": -0.45942291887376663,
+      "py": 528.2758620689655,
+      "px": 555,
+      "ny": 0.8882176431559489
+    },
+    {
+      "y": 529.85,
+      "radius": 1.9,
+      "id": "study.stomach.wall_service.inner",
+      "added": false,
+      "edgeId": "study.stomach.wall_service",
+      "x": 576,
+      "nx": 0,
+      "py": 531,
+      "px": 576,
+      "ny": -1
+    },
+    {
+      "y": 531.85,
+      "radius": 1.9,
+      "id": "study.stomach.wall_service.outer",
+      "added": false,
+      "edgeId": "study.stomach.wall_service",
+      "x": 611,
+      "nx": 0,
+      "py": 533,
+      "px": 611,
+      "ny": -1
+    },
+    {
+      "y": 692.7271439226666,
+      "radius": 1.9,
+      "id": "study.small_intestine.deep_access",
+      "added": true,
+      "edgeId": "e188",
+      "x": 539.8259158577889,
+      "nx": 0.9281514094401471,
+      "py": 692.2060599334073,
+      "px": 538.5265038845727,
+      "ny": 0.37220284947091475
+    },
+    {
+      "y": 513.7806338709311,
+      "radius": 1.9,
+      "id": "study.liver.deep_access",
+      "added": true,
+      "edgeId": "e118",
+      "x": 448.011690810153,
+      "nx": -0.5070201265633939,
+      "py": 514.9873417721519,
+      "px": 448.72151898734177,
+      "ny": -0.8619342151577696
+    },
+    {
+      "y": 766.5713900196234,
+      "radius": 1.9,
+      "id": "study.bladder.deep_access",
+      "added": true,
+      "edgeId": "e143",
+      "x": 525.5205127622951,
+      "nx": 0.9945054529214061,
+      "py": 766.7179487179487,
+      "px": 524.1282051282051,
+      "ny": -0.10468478451804275
+    },
+    {
+      "y": 664.2143204428783,
+      "radius": 1.9,
+      "id": "study.colon_distal.junction_access",
+      "added": true,
+      "edgeId": "e191",
+      "x": 564.0396525123949,
+      "nx": 0.12551182756067705,
+      "py": 665.6032494155183,
+      "px": 563.86393595381,
+      "ny": -0.9920921233143518
+    },
+    {
+      "y": 466.15,
+      "radius": 1.9,
+      "id": "body.arm_r.clear_bank",
+      "added": true,
+      "edgeId": "access.arm_r",
+      "x": 332,
+      "nx": 0,
+      "py": 465,
+      "px": 332,
+      "ny": 1
+    },
+    {
+      "y": 891.4705882352941,
+      "radius": 1.9,
+      "id": "body.leg_r.clear_bank",
+      "added": true,
+      "edgeId": "e064",
+      "x": 431.5764705882353,
+      "nx": 1,
+      "py": 891.4705882352941,
+      "px": 430.1764705882353,
+      "ny": 0
+    }
+  ],
+  "preservedSections": {
+    "edges": [
+      "e016",
+      "e017",
+      "e018",
+      "e019",
+      "e020",
+      "e021",
+      "e022",
+      "e023",
+      "e024",
+      "e025",
+      "e026",
+      "e027",
+      "e028",
+      "e029",
+      "e030",
+      "e031",
+      "e032",
+      "e033",
+      "e034",
+      "e035",
+      "e036",
+      "e037",
+      "e038",
+      "e039",
+      "e040",
+      "e041",
+      "e042",
+      "e043",
+      "e044",
+      "e045",
+      "e046",
+      "e047",
+      "e048",
+      "e049",
+      "e050",
+      "e051",
+      "e052",
+      "e053",
+      "e054",
+      "e055",
+      "e056",
+      "e057",
+      "e058",
+      "e059",
+      "e060",
+      "e061",
+      "e062",
+      "e063",
+      "e064",
+      "e065",
+      "e066",
+      "e067",
+      "e068",
+      "e069",
+      "e070",
+      "e071",
+      "e072",
+      "e073",
+      "e074",
+      "e075",
+      "e076",
+      "e077",
+      "e078",
+      "e079",
+      "e080",
+      "e081",
+      "e082",
+      "e083",
+      "e084",
+      "e085",
+      "e086",
+      "e087",
+      "e088",
+      "e089",
+      "e090",
+      "e091",
+      "e092",
+      "e093",
+      "e094",
+      "e095",
+      "e096",
+      "e097",
+      "e098",
+      "e099",
+      "e100",
+      "e101",
+      "e102",
+      "e103",
+      "e104",
+      "e105",
+      "e106",
+      "e107",
+      "e108",
+      "e109",
+      "e110",
+      "e111",
+      "e112",
+      "e113",
+      "e114",
+      "e115",
+      "e153",
+      "e154",
+      "e155",
+      "e156",
+      "e157",
+      "e158",
+      "e159",
+      "e160",
+      "e161",
+      "e162",
+      "e163",
+      "e176",
+      "e177",
+      "e178",
+      "e179",
+      "access.arm_r"
+    ],
+    "lockedNodes": {
+      "arch": [
+        514,
+        341
+      ],
+      "heart.v": [
+        483,
+        379
+      ],
+      "iliac.a": [
+        509,
+        747
+      ],
+      "iliac.v": [
+        509,
+        763
+      ]
+    }
+  },
+  "rendering": {
+    "centralTubePreview": true,
+    "curvedPreview": true,
+    "curveStrength": 0.8,
+    "curveAlgorithm": "bounded-cubic-v1",
+    "sourceAnchorsUnchanged": true,
+    "collisionGeometryRemainsBaseline": true
+  },
+  "note": "Logical gates retain baseline coordinates and require reassignment after vessel edits. Line crossings alone do not create connected junctions."
+}

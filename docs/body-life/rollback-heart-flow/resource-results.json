@@ -1,0 +1,65 @@
+{
+  "nativeEvidence": false,
+  "passed": 11,
+  "total": 11,
+  "results": [
+    {
+      "name": "Current BodyLifeAssets count determines per-context loads and releases",
+      "pass": true,
+      "configuredLayers": 1
+    },
+    {
+      "name": "Three-layer source/tissue/foreground packs cache and release independently",
+      "pass": true,
+      "configuredLayers": 3
+    },
+    {
+      "name": "Missing source (nil) rejects pack, releases partial handles and keeps static fallback",
+      "pass": true,
+      "configuredLayers": 3
+    },
+    {
+      "name": "Missing source (0) rejects pack, releases partial handles and keeps static fallback",
+      "pass": true,
+      "configuredLayers": 3
+    },
+    {
+      "name": "Missing source (-1) rejects pack, releases partial handles and keeps static fallback",
+      "pass": true,
+      "configuredLayers": 3
+    },
+    {
+      "name": "Missing tissue (nil) rejects pack, releases partial handles and keeps static fallback",
+      "pass": true,
+      "configuredLayers": 3
+    },
+    {
+      "name": "Missing tissue (0) rejects pack, releases partial handles and keeps static fallback",
+      "pass": true,
+      "configuredLayers": 3
+    },
+    {
+      "name": "Missing tissue (-1) rejects pack, releases partial handles and keeps static fallback",
+      "pass": true,
+      "configuredLayers": 3
+    },
+    {
+      "name": "Missing foreground (nil) rejects pack, releases partial handles and keeps static fallback",
+      "pass": true,
+      "configuredLayers": 3
+    },
+    {
+      "name": "Missing foreground (0) rejects pack, releases partial handles and keeps static fallback",
+      "pass": true,
+      "configuredLayers": 3
+    },
+    {
+      "name": "Missing foreground (-1) rejects pack, releases partial handles and keeps static fallback",
+      "pass": true,
+      "configuredLayers": 3
+    }
+  ],
+  "limitations": [
+    "NanoVG image loading is mocked; generated image content and native GPU upload are not verified."
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "schema": "independent-final-reference-audit/v1",
+  "status": "PASS_ART_REFERENCE",
+  "scope": "原图坐标与分层血管美术参考独立计算复核；不包含原生视觉、碰撞、细胞移动或RTS会车验收。",
+  "inputHashes": {
+    "final-reference-data.json": "3890744e2fcaf9e9907c85513e170e479f67b7fbb1fbf06385ac02bd80e8550c",
+    "final-reference-guide.svg": "8103046c35409a7f34b398a46babe36ee097221e2bf2682ce2c5d49713c13622",
+    "user-drafts/stomach-20261010-original.json": "c482ffe322d0a23f13ef37d37991caf0b2152e0c471b7a73180ce326a94210e7",
+    "vascular-organ-overlap-data.json": "61926c40eb0df5c30cafeda05d10e5edac96ab72f6b41ef4fee99e9bd1d9a10a",
+    "interface-contract.json": "86878d45e150353b439fb0ea8e12ad22649185ff143d5dff4a8465cea8fa8253",
+    "central-vessel-connections.json": "c3b27fd52bf17fc1f9fd20df08c9b8e29be542f718ed01d309e698ec917a4294",
+    "organ-layers.json": "43c5adbd65f481e64642242f3bc57b9fcc3c981633b70f86b014606ac49edb3d",
+    "vascular-editor-core.js": "97e750e37130ae114a7cc3beeb8dc946f9593a76978b07d9bcf057a61e1ed33f"
+  },
+  "checks": {
+    "202_unique_edges_and_exact_named_endpoints": {
+      "pass": true,
+      "details": []
+    },
+    "116_protected_points_unchanged": {
+      "pass": true
+    },
+    "116_protected_curve_commands_and_dense_samples_unchanged": {
+      "pass": true,
+      "details": []
+    },
+    "13_directed_supply_exchange_return_loops": {
+      "pass": true,
+      "details": [
+        {
+          "organ": "lung_r",
+          "pass": true
+        },
+        {
+          "organ": "lung_l",
+          "pass": true
+        },
+        {
+          "organ": "liver",
+          "pass": true
+        },
+        {
+          "organ": "stomach",
+          "pass": true
+        },
+        {
+          "organ": "pancreas",
+          "pass": true
+        },
+        {
+          "organ": "small_intestine",
+          "pass": true
+        },
+        {
+          "organ": "colon_proximal",
+          "pass": true
+        },
+        {
+          "organ": "colon_distal",
+          "pass": true
+        },
+        {
+          "organ": "kidney_r",
+          "pass": true
+        },
+        {
+          "organ": "kidney_l",
+          "pass": true
+        },
+        {
+          "organ": "bladder",
+          "pass": true
+        },
+        {
+          "organ": "coronary",
+          "pass": true
+        },
+        {
+          "organ": "trunk",
+          "pass": true
+        }
+      ]
+    },
+    "48_original_decisions_18_reroute_30_occlude_covered": {
+      "pass": true
+    },
+    "user_stomach_wall_reversed_shape_and_named_supply_return": {
+      "pass": true
+    },
+    "217_occlusion_distances_endpoints_consistent": {
+      "pass": true,
+      "details": []
+    },
+    "visible_hidden_partition_covers_foreign_organs_and_16_passages": {
+      "pass": true,
+      "details": {
+        "issues": [],
+        "intervalEndpointToleranceSource": 1e-06,
+        "maxIntervalEndpointErrorSource": 0,
+        "method": "逐foreign器官及通路clip，投影为弧长区间，独立合并区间后比较；新增血管交叉遮挡分别验证在线和覆盖交点。避免浮点近共线LineString union双重计长。",
+        "visibleLeakMaxSource": 1.0189740167680807e-05
+      }
+    },
+    "only_four_simplified_routes_changed": {
+      "pass": true,
+      "details": [
+        "e125",
+        "e129",
+        "e132",
+        "e136"
+      ]
+    },
+    "18_unnamed_crossings_have_precise_underpass_occlusion": {
+      "pass": true,
+      "details": []
+    },
+    "four_routes_have_no_micro_tail_or_self_intersection": {
+      "pass": true,
+      "details": [
+        {
+          "edgeId": "e125",
+          "authoringPoints": 7,
+          "minSpanSource": 14.0,
+          "maxTurningAngleDegrees": 70.01689347810002,
+          "lengthSource": 173.0785763944406,
+          "isSimple": true,
+          "hiddenFraction": 0.23073997776593266
+        },
+        {
+          "edgeId": "e129",
+          "authoringPoints": 2,
+          "minSpanSource": 39.77318289184394,
+          "maxTurningAngleDegrees": 0,
+          "lengthSource": 41.13706654901595,
+          "isSimple": true,
+          "hiddenFraction": 0.1985547886426344
+        },
+        {
+          "edgeId": "e132",
+          "authoringPoints": 3,
+          "minSpanSource": 5.9184356920466445,
+          "maxTurningAngleDegrees": 90.51412276494236,
+          "lengthSource": 99.30838507989857,
+          "isSimple": true,
+          "hiddenFraction": 0.42789561155978895
+        },
+        {
+          "edgeId": "e136",
+          "authoringPoints": 4,
+          "minSpanSource": 15.231546211727817,
+          "maxTurningAngleDegrees": 84.45153370628194,
+          "lengthSource": 107.82127524354674,
+          "isSimple": true,
+          "hiddenFraction": 0.5100449543416651
+        }
+      ]
+    },
+    "two_stomach_exits_normals_junction_distance_and_food_clearance": {
+      "pass": true,
+      "details": [
+        {
+          "id": "study.stomach.wall_service.inner",
+          "pass": true,
+          "normalDotTangent": 4.6259488702544e-17,
+          "distanceToJunctionSource": 6.041675467624984,
+          "wholeExitSegmentFoodClearanceSource": 6.497146115199173,
+          "gateCircleInsideStomach": true,
+          "anchorDistanceSource": 2.5753021710952737e-14
+        },
+        {
+          "id": "study.stomach.wall_service.outer",
+          "pass": true,
+          "normalDotTangent": -4.6259765794090355e-17,
+          "distanceToJunctionSource": 58.600000000000044,
+          "wholeExitSegmentFoodClearanceSource": 5.422612817549606,
+          "gateCircleInsideStomach": true,
+          "anchorDistanceSource": 2.6228707380321024e-14
+        }
+      ]
+    },
+    "reference_scope_is_art_only": {
+      "pass": true
+    },
+    "input_sources_stable_during_audit": {
+      "pass": true
+    },
+    "all_new_unnamed_centerline_crossings_are_recorded": {
+      "pass": true,
+      "details": {
+        "allChangedEdgePairsExamined": true,
+        "expectedUnnamedPointCrossings": 18,
+        "recordedCrossings": 18,
+        "missing": [],
+        "scope": "中心线交点。只排除同名节点3源像素以内既有接续；近并行管腔净空不属于本项保证。"
+      }
+    },
+    "16_route_sourceD_match_original_curves": {
+      "pass": true,
+      "details": {
+        "count": 16,
+        "mismatchedEdgeIds": [],
+        "comparison": "VascularEditorCore.curvedNetwork(original user draft,0.8).get(edgeId).d"
+      }
+    },
+    "sourceD_only_change_preserves_previous_audited_geometry": {
+      "pass": true,
+      "details": {
+        "previousFinalDataSha256": "a41b2123b3c2eae13813c83b6f5696bdd8f37a8aef518b5310454e91d52576b7",
+        "latestDataWithSourceDRemovedSha256": "a41b2123b3c2eae13813c83b6f5696bdd8f37a8aef518b5310454e91d52576b7"
+      }
+    }
+  },
+  "errors": [],
+  "observations": [
+    {
+      "edgeId": "e125",
+      "severity": "non_blocking_art_tradeoff",
+      "note": "仍采用较长的胃外侧曲线，约173.08源像素；没有短尾或折返，隐藏比例约23.1%。这是绕开胃主体的美术取舍，不是生理最短路证明。"
+    },
+    {
+      "edgeId": "e050",
+      "severity": "preexisting_protected_geometry",
+      "note": "保护曲线原有非simple形状未改变，本轮不能把它计作新增绕行失败。"
+    }
+  ],
+  "limits": [
+    "所有深层/遮挡是游戏投影设计候选，不是临床解剖事实。",
+    "计算在当前0.8曲线采样、指定器官轮廓和通路数据上成立；栅格生图仍需按固定坐标复核。",
+    "18个新增交叉保持无命名连接，遮挡不意味着单位能跨血管转路。",
+    "仅验证胃壁两出口的美术定位、法线和几何食物净空；没有安装或验证混合细胞实际移动、出门或会车。",
+    "生产地图、存档和头四肢受保护曲线没有替换。"
+  ],
+  "generatorSha256": "f77b87e9b2d23914ced16dd95f6ef0d05601493f0f27d651857b9d7a4d93e02e"
+}

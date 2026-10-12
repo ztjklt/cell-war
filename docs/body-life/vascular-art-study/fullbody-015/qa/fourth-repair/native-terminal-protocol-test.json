@@ -1,0 +1,237 @@
+{
+  "schema": "fullbody-native-terminal-protocol-test/v1",
+  "status": "PASS",
+  "passed": 54,
+  "total": 54,
+  "checks": [
+    {
+      "name": "case1: first arrival waits for terminal renders",
+      "pass": true
+    },
+    {
+      "name": "case1: one completed render is insufficient",
+      "pass": true
+    },
+    {
+      "name": "case1: second completed render becomes terminal-ready",
+      "pass": true
+    },
+    {
+      "name": "case1: actual final QA positions validate all helper goals",
+      "pass": true
+    },
+    {
+      "name": "case1: wrong ACK stateRunId cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case1: wrong ACK index cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case1: wrong ACK terminal cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case1: wrong ACK pngSha256 cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case1: wrong ACK pngPath cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case1: paused terminal preserves simulation/entities/commands",
+      "pass": true
+    },
+    {
+      "name": "case1: exact PNG acknowledgement persisted before advance",
+      "pass": true
+    },
+    {
+      "name": "case1: only acknowledged case advances",
+      "pass": true
+    },
+    {
+      "name": "case2: first arrival waits for terminal renders",
+      "pass": true
+    },
+    {
+      "name": "case2: one completed render is insufficient",
+      "pass": true
+    },
+    {
+      "name": "case2: second completed render becomes terminal-ready",
+      "pass": true
+    },
+    {
+      "name": "case2: actual final QA positions validate all helper goals",
+      "pass": true
+    },
+    {
+      "name": "case2: wrong ACK stateRunId cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case2: wrong ACK index cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case2: wrong ACK terminal cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case2: wrong ACK pngSha256 cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case2: wrong ACK pngPath cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case2: paused terminal preserves simulation/entities/commands",
+      "pass": true
+    },
+    {
+      "name": "case2: exact PNG acknowledgement persisted before advance",
+      "pass": true
+    },
+    {
+      "name": "case2: only acknowledged case advances",
+      "pass": true
+    },
+    {
+      "name": "case3: first arrival waits for terminal renders",
+      "pass": true
+    },
+    {
+      "name": "case3: one completed render is insufficient",
+      "pass": true
+    },
+    {
+      "name": "case3: second completed render becomes terminal-ready",
+      "pass": true
+    },
+    {
+      "name": "case3: actual final QA positions validate all helper goals",
+      "pass": true
+    },
+    {
+      "name": "case3: wrong ACK stateRunId cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case3: wrong ACK index cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case3: wrong ACK terminal cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case3: wrong ACK pngSha256 cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case3: wrong ACK pngPath cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case3: paused terminal preserves simulation/entities/commands",
+      "pass": true
+    },
+    {
+      "name": "case3: exact PNG acknowledgement persisted before advance",
+      "pass": true
+    },
+    {
+      "name": "case3: only acknowledged case advances",
+      "pass": true
+    },
+    {
+      "name": "case4: first arrival waits for terminal renders",
+      "pass": true
+    },
+    {
+      "name": "case4: one completed render is insufficient",
+      "pass": true
+    },
+    {
+      "name": "case4: second completed render becomes terminal-ready",
+      "pass": true
+    },
+    {
+      "name": "case4: actual final QA positions validate all helper goals",
+      "pass": true
+    },
+    {
+      "name": "case4: wrong ACK stateRunId cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case4: wrong ACK index cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case4: wrong ACK terminal cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case4: wrong ACK pngSha256 cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case4: wrong ACK pngPath cannot advance",
+      "pass": true
+    },
+    {
+      "name": "case4: paused terminal preserves simulation/entities/commands",
+      "pass": true
+    },
+    {
+      "name": "case4: exact PNG acknowledgement persisted before advance",
+      "pass": true
+    },
+    {
+      "name": "case4: only acknowledged case advances",
+      "pass": true
+    },
+    {
+      "name": "all four actual QA configurations finish only with four terminal ACKs",
+      "pass": true
+    },
+    {
+      "name": "normal speed is retained",
+      "pass": true
+    },
+    {
+      "name": "Motion.record and event subscriptions restored on finish",
+      "pass": true
+    },
+    {
+      "name": "missing terminal ACK fails explicitly after bounded wait",
+      "pass": true
+    },
+    {
+      "name": "timeout restores Motion.record/subscriptions",
+      "pass": true
+    },
+    {
+      "name": "64 characters without hexadecimal content do not count as PNG SHA",
+      "pass": true
+    }
+  ],
+  "inputHashes": {
+    "scripts/qa/check_fullbody_native_terminal_protocol.py": "0b09f0657757977ccc901292b2a8107521a6f6c965e04b3e54f01cbc464044fc",
+    ".tmp/fullbody-015/capture-movement-004.py": "c4e24d34d7545b6e48249b8b2f9b59925ac4f02bc263b6291cb133b836a1a9da",
+    "scripts/qa/FullBodyMapNativeMovement.lua": "c041505b0f2dce6c396fef045ebf5d30789dc2f434d3b50e949d6893c648be37",
+    "scripts/qa/FullBodyMapNativeMovementData.lua": "d5082b890a90796d0fee40ea12783a6c25d2d2e4bc498a76c0648e2433606f08"
+  },
+  "changedDuringChecks": [],
+  "nativeEvidence": false,
+  "scope": "Actual QA Lua driver and four actual configs with mocked event/File/resource/motion engine; pure screenshot-helper predicates.",
+  "limits": [
+    "No actual screenshots, native UI, preview status/refresh, production path planning or GPU resources were used.",
+    "Four final real PNGs plus current material bindings must still be captured and independently viewed after candidate freeze."
+  ]
+}

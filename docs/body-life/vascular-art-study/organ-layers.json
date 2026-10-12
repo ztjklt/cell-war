@@ -1,0 +1,181 @@
+{
+  "status": "candidate_gameplay_depth_contract",
+  "productionInstalled": false,
+  "nativeConfirmed": false,
+  "basis": "Existing graph node namespaces; original coordinates, original gates and original organ targets unchanged. Requires gameplay and visual review; not inferred physical anatomy.",
+  "zones": [
+    {
+      "id": "brain",
+      "nodeNamespaces": [
+        "brain_r",
+        "brain_l"
+      ],
+      "tissueWallEdges": [
+        "e177",
+        "e179",
+        "e160",
+        "e162"
+      ],
+      "extraStudyEdges": [],
+      "rule": "Only explicitly organ-owned vessels bound this tissue plane; every blood lane retains the complete original graph. Foreign projected vessels cannot become tissue entrances."
+    },
+    {
+      "id": "lung_r",
+      "nodeNamespaces": [
+        "lung_r"
+      ],
+      "tissueWallEdges": [
+        "e004",
+        "e172",
+        "e173"
+      ],
+      "extraStudyEdges": [],
+      "rule": "Only explicitly organ-owned vessels bound this tissue plane; every blood lane retains the complete original graph. Foreign projected vessels cannot become tissue entrances."
+    },
+    {
+      "id": "lung_l",
+      "nodeNamespaces": [
+        "lung_l"
+      ],
+      "tissueWallEdges": [
+        "e007",
+        "e174",
+        "e175"
+      ],
+      "extraStudyEdges": [],
+      "rule": "Only explicitly organ-owned vessels bound this tissue plane; every blood lane retains the complete original graph. Foreign projected vessels cannot become tissue entrances."
+    },
+    {
+      "id": "liver",
+      "nodeNamespaces": [
+        "liver"
+      ],
+      "tissueWallEdges": [
+        "e118",
+        "e120",
+        "e121",
+        "e180",
+        "e181",
+        "e182"
+      ],
+      "extraStudyEdges": [],
+      "rule": "Only explicitly organ-owned vessels bound this tissue plane; every blood lane retains the complete original graph. Foreign projected vessels cannot become tissue entrances."
+    },
+    {
+      "id": "stomach",
+      "nodeNamespaces": [
+        "stomach"
+      ],
+      "tissueWallEdges": [
+        "e124",
+        "e183",
+        "e184"
+      ],
+      "extraStudyEdges": [
+        "study.stomach.wall_service"
+      ],
+      "rule": "Only explicitly organ-owned vessels bound this tissue plane; every blood lane retains the complete original graph. Foreign projected vessels cannot become tissue entrances."
+    },
+    {
+      "id": "pancreas",
+      "nodeNamespaces": [
+        "pancreas"
+      ],
+      "tissueWallEdges": [
+        "e126",
+        "e185",
+        "e186"
+      ],
+      "extraStudyEdges": [],
+      "rule": "Only explicitly organ-owned vessels bound this tissue plane; every blood lane retains the complete original graph. Foreign projected vessels cannot become tissue entrances."
+    },
+    {
+      "id": "kidney_r",
+      "nodeNamespaces": [
+        "kidney_r"
+      ],
+      "tissueWallEdges": [
+        "e137",
+        "e193",
+        "e194"
+      ],
+      "extraStudyEdges": [],
+      "rule": "Only explicitly organ-owned vessels bound this tissue plane; every blood lane retains the complete original graph. Foreign projected vessels cannot become tissue entrances."
+    },
+    {
+      "id": "kidney_l",
+      "nodeNamespaces": [
+        "kidney_l"
+      ],
+      "tissueWallEdges": [
+        "e140",
+        "e195",
+        "e196"
+      ],
+      "extraStudyEdges": [],
+      "rule": "Only explicitly organ-owned vessels bound this tissue plane; every blood lane retains the complete original graph. Foreign projected vessels cannot become tissue entrances."
+    },
+    {
+      "id": "large_intestine",
+      "nodeNamespaces": [
+        "colon_proximal",
+        "colon_distal"
+      ],
+      "tissueWallEdges": [
+        "e133",
+        "e135",
+        "e189",
+        "e190",
+        "e191",
+        "e192"
+      ],
+      "extraStudyEdges": [],
+      "rule": "Only explicitly organ-owned vessels bound this tissue plane; every blood lane retains the complete original graph. Foreign projected vessels cannot become tissue entrances."
+    },
+    {
+      "id": "small_intestine",
+      "nodeNamespaces": [
+        "small_intestine"
+      ],
+      "tissueWallEdges": [
+        "e131",
+        "e187",
+        "e188"
+      ],
+      "extraStudyEdges": [],
+      "rule": "Only explicitly organ-owned vessels bound this tissue plane; every blood lane retains the complete original graph. Foreign projected vessels cannot become tissue entrances."
+    },
+    {
+      "id": "bladder",
+      "nodeNamespaces": [
+        "bladder"
+      ],
+      "tissueWallEdges": [
+        "e143",
+        "e197",
+        "e198"
+      ],
+      "extraStudyEdges": [],
+      "rule": "Only explicitly organ-owned vessels bound this tissue plane; every blood lane retains the complete original graph. Foreign projected vessels cannot become tissue entrances."
+    },
+    {
+      "id": "heart",
+      "nodeNamespaces": [
+        "coronary"
+      ],
+      "tissueWallEdges": [
+        "e145",
+        "e199",
+        "e200"
+      ],
+      "extraStudyEdges": [],
+      "rule": "Only explicitly organ-owned vessels bound this tissue plane; every blood lane retains the complete original graph. Foreign projected vessels cannot become tissue entrances."
+    }
+  ],
+  "sourceHashes": {
+    "network.json": "c2e5c51890098e8d162cb9db3cb8235ac77490a56d9aca2a211b44c26aabedfc",
+    "passages-data.json": "37c4cfcaa565a15bccf8d23bd5ad26151f14c13562aeb375320a4e80f1998ae5",
+    "interface-contract.json": "86878d45e150353b439fb0ea8e12ad22649185ff143d5dff4a8465cea8fa8253"
+  },
+  "scriptSha256": "7d6545050981d01250978ec92c8045cb83af75be2f20595b7d95b25bcc4e67d4"
+}

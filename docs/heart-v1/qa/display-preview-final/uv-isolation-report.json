@@ -1,0 +1,22 @@
+{
+  "schema": "heart-canonical-panel-UV-isolation/v1",
+  "nativeEvidence": false,
+  "diagnosticNormalizedPanelUV": true,
+  "method": "Both unchanged actual Lua draws pass their authored panel to the same 1200x1692 cropped in-memory texture at canonical sourceBox UV; no production/backend file or asset is modified. Separate delivered renders continue to use the full atlas.",
+  "records": [
+    {
+      "phase": 0.0,
+      "differentPixels": 0,
+      "maxChannelDifference": 0,
+      "pixelExact": true
+    },
+    {
+      "phase": 0.3,
+      "differentPixels": 0,
+      "maxChannelDifference": 0,
+      "pixelExact": true
+    }
+  ],
+  "canonicalPanelPixelExact": true,
+  "conclusion": "The observed old-v2 / new-v4 full-atlas Cairo difference is isolated to atlas surface UV placement and bilinear sampling; unchanged pixel source and unchanged display geometry render identically after canonical UV normalization."
+}

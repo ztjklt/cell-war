@@ -1,0 +1,269 @@
+{
+  "schema": "registered-vessels-actual-glyph-atlas/v1",
+  "nativeEvidence": false,
+  "productionInstalled": false,
+  "backend": "actual Render.draw entity branch through SVG/Cairo",
+  "textures": [
+    {
+      "file": "textures/white-cell.png",
+      "source": "assets/image/cells-v3/white-cell.png",
+      "sha256": "83308b9a25ac81356446132f6550d5fd6a46aa87ac9cb8612a676f7c39af7424",
+      "pixelsUnchanged": true
+    },
+    {
+      "file": "textures/red-cell.png",
+      "source": "assets/image/cells-v3/red-cell.png",
+      "sha256": "430d071d8a380c4783b786f767bb1ee24509128837730731f4339792d03d3c9c",
+      "pixelsUnchanged": true
+    },
+    {
+      "file": "textures/platelet.png",
+      "source": "assets/image/cells-v3/platelet.png",
+      "sha256": "36a89cb8630889a527320f0bbe8edd5adc9f4ebaad321eab9651f6b72511f98f",
+      "pixelsUnchanged": true
+    }
+  ],
+  "sprites": {
+    "scout-normal": {
+      "file": "scout-normal.svg",
+      "png": "scout-normal.png",
+      "kind": "scout",
+      "selected": false,
+      "hpFraction": 1,
+      "mode": "actual-Render.draw-unit",
+      "encodingZoom": 1,
+      "logicalSideAtEncodingZoom": 128,
+      "centerLogical": [
+        64,
+        64
+      ],
+      "sourceSide": 2,
+      "cellRadiusWorld": 0.4375,
+      "cellRadiusSource": 0.21875,
+      "faction": 1,
+      "fixedPoseTime": 0.6,
+      "fixedEntityId": 1,
+      "sha256": "9a3e1ee51f0b67c387d863550528c8cbf3bb5159a28263ded528648392bebe1a"
+    },
+    "scout-selected": {
+      "file": "scout-selected.svg",
+      "png": "scout-selected.png",
+      "kind": "scout",
+      "selected": true,
+      "hpFraction": 0.65,
+      "mode": "actual-Render.draw-unit",
+      "encodingZoom": 1,
+      "logicalSideAtEncodingZoom": 128,
+      "centerLogical": [
+        64,
+        64
+      ],
+      "sourceSide": 2,
+      "cellRadiusWorld": 0.4375,
+      "cellRadiusSource": 0.21875,
+      "faction": 1,
+      "fixedPoseTime": 0.6,
+      "fixedEntityId": 1,
+      "sha256": "3f63bdae184f44295c8df6dee07c4eb92751fa3b7ad32f86859c40ae1c284b56"
+    },
+    "siege-normal": {
+      "file": "siege-normal.svg",
+      "png": "siege-normal.png",
+      "kind": "siege",
+      "selected": false,
+      "hpFraction": 1,
+      "mode": "actual-Render.draw-unit",
+      "encodingZoom": 1,
+      "logicalSideAtEncodingZoom": 128,
+      "centerLogical": [
+        64,
+        64
+      ],
+      "sourceSide": 2,
+      "cellRadiusWorld": 1.0625,
+      "cellRadiusSource": 0.53125,
+      "faction": 1,
+      "fixedPoseTime": 0.6,
+      "fixedEntityId": 1,
+      "sha256": "55d970cc4be993c5c346f2fff779cb32ec6fec2e4e185329348fe7f296b16849"
+    },
+    "siege-selected": {
+      "file": "siege-selected.svg",
+      "png": "siege-selected.png",
+      "kind": "siege",
+      "selected": true,
+      "hpFraction": 0.65,
+      "mode": "actual-Render.draw-unit",
+      "encodingZoom": 1,
+      "logicalSideAtEncodingZoom": 128,
+      "centerLogical": [
+        64,
+        64
+      ],
+      "sourceSide": 2,
+      "cellRadiusWorld": 1.0625,
+      "cellRadiusSource": 0.53125,
+      "faction": 1,
+      "fixedPoseTime": 0.6,
+      "fixedEntityId": 1,
+      "sha256": "f35ee6b35704791e02b58213c8a2eabb707da4d610edac71d576d33d096ef3ec"
+    },
+    "worker-normal": {
+      "file": "worker-normal.svg",
+      "png": "worker-normal.png",
+      "kind": "worker",
+      "selected": false,
+      "hpFraction": 1,
+      "mode": "actual-Render.draw-unit",
+      "encodingZoom": 1,
+      "logicalSideAtEncodingZoom": 128,
+      "centerLogical": [
+        64,
+        64
+      ],
+      "sourceSide": 2,
+      "cellRadiusWorld": 0.59375,
+      "cellRadiusSource": 0.296875,
+      "faction": 1,
+      "fixedPoseTime": 0.6,
+      "fixedEntityId": 1,
+      "sha256": "4639de41a719c23cc2ef52467ead20cea79cce8b6c0ae20af602e77783af77c1"
+    },
+    "worker-selected": {
+      "file": "worker-selected.svg",
+      "png": "worker-selected.png",
+      "kind": "worker",
+      "selected": true,
+      "hpFraction": 0.65,
+      "mode": "actual-Render.draw-unit",
+      "encodingZoom": 1,
+      "logicalSideAtEncodingZoom": 128,
+      "centerLogical": [
+        64,
+        64
+      ],
+      "sourceSide": 2,
+      "cellRadiusWorld": 0.59375,
+      "cellRadiusSource": 0.296875,
+      "faction": 1,
+      "fixedPoseTime": 0.6,
+      "fixedEntityId": 1,
+      "sha256": "124e73cd50b08942d921a371767ab500ae064f4b00056bdc63daa5acdb94c161"
+    },
+    "virus-normal": {
+      "file": "virus-normal.svg",
+      "png": "virus-normal.png",
+      "kind": "virus",
+      "selected": false,
+      "hpFraction": 1,
+      "mode": "actual-Render.draw-unit",
+      "encodingZoom": 1,
+      "logicalSideAtEncodingZoom": 128,
+      "centerLogical": [
+        64,
+        64
+      ],
+      "sourceSide": 2,
+      "cellRadiusWorld": 0.5625,
+      "cellRadiusSource": 0.28125,
+      "faction": 2,
+      "fixedPoseTime": 0.6,
+      "fixedEntityId": 1,
+      "sha256": "725d9076e18a542e9ae1dfaa356ef22f5347dd473d87ff78a1e056d198e0d1a4"
+    },
+    "virus-selected": {
+      "file": "virus-selected.svg",
+      "png": "virus-selected.png",
+      "kind": "virus",
+      "selected": true,
+      "hpFraction": 0.65,
+      "mode": "actual-Render.draw-unit",
+      "encodingZoom": 1,
+      "logicalSideAtEncodingZoom": 128,
+      "centerLogical": [
+        64,
+        64
+      ],
+      "sourceSide": 2,
+      "cellRadiusWorld": 0.5625,
+      "cellRadiusSource": 0.28125,
+      "faction": 2,
+      "fixedPoseTime": 0.6,
+      "fixedEntityId": 1,
+      "sha256": "6ad89a30a252819b6211cbe506d426b9bf43982a85fac69a55fa805e317475a3"
+    },
+    "ally-normal-far": {
+      "file": "ally-normal-far.svg",
+      "kind": "scout",
+      "selected": false,
+      "mode": "actual-Render.draw-far-dot",
+      "encodingZoom": 0.085,
+      "logicalSide": 16,
+      "centerLogical": [
+        8,
+        8
+      ],
+      "radiusLogical": 2,
+      "selectionRadiusLogical": null,
+      "sourceSideFormula": "16 / (64 * zoom)",
+      "faction": 1,
+      "sha256": "bccb8352113619a4da56d9a7e7422d13ae7eb3f50c9437315e8263309cc93ba6"
+    },
+    "ally-selected-far": {
+      "file": "ally-selected-far.svg",
+      "kind": "scout",
+      "selected": true,
+      "mode": "actual-Render.draw-far-dot",
+      "encodingZoom": 0.085,
+      "logicalSide": 16,
+      "centerLogical": [
+        8,
+        8
+      ],
+      "radiusLogical": 2,
+      "selectionRadiusLogical": 4,
+      "sourceSideFormula": "16 / (64 * zoom)",
+      "faction": 1,
+      "sha256": "00f73c23147808932f747d088ea70038fd349f82c3ad5cd67526a5da2d577a99"
+    },
+    "enemy-normal-far": {
+      "file": "enemy-normal-far.svg",
+      "kind": "virus",
+      "selected": false,
+      "mode": "actual-Render.draw-far-dot",
+      "encodingZoom": 0.085,
+      "logicalSide": 16,
+      "centerLogical": [
+        8,
+        8
+      ],
+      "radiusLogical": 2,
+      "selectionRadiusLogical": null,
+      "sourceSideFormula": "16 / (64 * zoom)",
+      "faction": 2,
+      "sha256": "9783d61a43cfdebd8117830c01b861280d254ae9944f17aa73ca0cdc8869d112"
+    },
+    "enemy-selected-far": {
+      "file": "enemy-selected-far.svg",
+      "kind": "virus",
+      "selected": true,
+      "mode": "actual-Render.draw-far-dot",
+      "encodingZoom": 0.085,
+      "logicalSide": 16,
+      "centerLogical": [
+        8,
+        8
+      ],
+      "radiusLogical": 2,
+      "selectionRadiusLogical": 4,
+      "sourceSideFormula": "16 / (64 * zoom)",
+      "faction": 2,
+      "sha256": "a6213b4d85d181c953ce0169489beef0b9d27535af65b2796a57fc620c234ee9"
+    }
+  },
+  "display": {
+    "near": "At zoom >= .14 use kind-normal/selected: image source width = 2, centered on source position.",
+    "far": "At zoom < .14 use ally/enemy-normal/selected-far: source width = 16/(64*zoom).",
+    "warning": "The fixed .6-second pose is a glyph fixture; movement comes only from the recorded Lua trace."
+  }
+}

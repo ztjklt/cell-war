@@ -1,0 +1,5824 @@
+{
+  "config": {
+    "actors": [
+      {
+        "kind": "scout",
+        "lane": 0,
+        "targetLane": 0,
+        "targetOrgan": "pancreas",
+        "tx": 1003.0465602969543,
+        "ty": 1698.5646097542758,
+        "x": 989.8450731707317,
+        "y": 1700.6110588235294
+      },
+      {
+        "kind": "siege",
+        "lane": 0,
+        "targetLane": 0,
+        "targetOrgan": "pancreas",
+        "tx": 989.8450731707317,
+        "ty": 1700.6110588235294,
+        "x": 1003.0465602969543,
+        "y": 1698.5646097542758
+      }
+    ],
+    "caseOrgans": [
+      "brain",
+      "lung_r",
+      "lung_l",
+      "liver",
+      "stomach",
+      "pancreas",
+      "kidney_r",
+      "kidney_l",
+      "large_intestine",
+      "small_intestine",
+      "bladder",
+      "heart"
+    ],
+    "id": "pancreas/pancreas.visual-chamber.2/meeting/scout-siege",
+    "maxTime": 300,
+    "organs": [
+      "brain",
+      "lung_r",
+      "lung_l",
+      "liver",
+      "stomach",
+      "pancreas",
+      "kidney_r",
+      "kidney_l",
+      "large_intestine",
+      "small_intestine",
+      "bladder",
+      "heart"
+    ]
+  },
+  "nativeEvidence": false,
+  "navigationSubstituted": false,
+  "result": {
+    "activeOrgans": [
+      "bladder",
+      "brain",
+      "heart",
+      "kidney_l",
+      "kidney_r",
+      "large_intestine",
+      "liver",
+      "lung_l",
+      "lung_r",
+      "pancreas",
+      "small_intestine",
+      "stomach"
+    ],
+    "commands": [
+      {
+        "accepted": true,
+        "id": 18,
+        "order": {
+          "lane": 0,
+          "x": 1006.0465602969543,
+          "y": 1698.5646097542758
+        },
+        "requested": {
+          "x": 1003.0465602969543,
+          "y": 1698.5646097542758
+        }
+      },
+      {
+        "accepted": true,
+        "id": 19,
+        "order": {
+          "lane": 0,
+          "x": 993.8450731707317,
+          "y": 1700.6110588235294
+        },
+        "requested": {
+          "x": 989.8450731707317,
+          "y": 1700.6110588235294
+        }
+      }
+    ],
+    "completed": true,
+    "elapsed": 8.399999999999986,
+    "endpoints": [
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "ordersRemaining": 0,
+        "organId": "pancreas",
+        "pathFailed": false,
+        "phase": "end",
+        "tick": 84,
+        "time": 8.399999999999986,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "ordersRemaining": 0,
+        "organId": "pancreas",
+        "pathFailed": false,
+        "phase": "end",
+        "tick": 84,
+        "time": 8.399999999999986,
+        "x": 993.8509991121008,
+        "y": 1700.610047248223
+      }
+    ],
+    "frames": [
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 1,
+            "time": 0.1,
+            "x": 989.8450731707317,
+            "y": 1700.6110588235294
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 1,
+            "time": 0.1,
+            "x": 1003.0465602969543,
+            "y": 1698.5646097542758
+          }
+        ],
+        "time": 0.1
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 2,
+            "time": 0.2,
+            "x": 990.1166409618558,
+            "y": 1700.5767564382572
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 2,
+            "time": 0.2,
+            "x": 1002.9500724494802,
+            "y": 1698.586069053512
+          }
+        ],
+        "time": 0.2
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 3,
+            "time": 0.30000000000000004,
+            "x": 990.4319010540239,
+            "y": 1700.5369351726436
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 3,
+            "time": 0.30000000000000004,
+            "x": 1002.8380607578068,
+            "y": 1698.6109809203683
+          }
+        ],
+        "time": 0.30000000000000004
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 4,
+            "time": 0.4,
+            "x": 990.7685503477551,
+            "y": 1700.4944121851886
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 4,
+            "time": 0.4,
+            "x": 1002.7184494976815,
+            "y": 1698.6375829629076
+          }
+        ],
+        "time": 0.4
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 5,
+            "time": 0.5,
+            "x": 991.115670546716,
+            "y": 1700.4505665923398
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 5,
+            "time": 0.5,
+            "x": 1002.5951179322043,
+            "y": 1698.6650124168555
+          }
+        ],
+        "time": 0.5
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 6,
+            "time": 0.6,
+            "x": 991.4679166900002,
+            "y": 1700.4060735290514
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 6,
+            "time": 0.6,
+            "x": 1002.469965122271,
+            "y": 1698.6928469231575
+          }
+        ],
+        "time": 0.6
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 7,
+            "time": 0.7,
+            "x": 991.8226721965751,
+            "y": 1700.3612635020095
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 7,
+            "time": 0.7,
+            "x": 1002.3439207373043,
+            "y": 1698.7208797194612
+          }
+        ],
+        "time": 0.7
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 8,
+            "time": 0.7999999999999999,
+            "x": 992.1786561410199,
+            "y": 1700.3162983080058
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 8,
+            "time": 0.7999999999999999,
+            "x": 1002.217439889216,
+            "y": 1698.7490095869814
+          }
+        ],
+        "time": 0.7999999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 9,
+            "time": 0.8999999999999999,
+            "x": 992.5352414569782,
+            "y": 1700.2712571533102
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 9,
+            "time": 0.8999999999999999,
+            "x": 1002.0907453742469,
+            "y": 1698.7771869749058
+          }
+        ],
+        "time": 0.8999999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 10,
+            "time": 0.9999999999999999,
+            "x": 992.892121169345,
+            "y": 1700.2261788126914
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 10,
+            "time": 0.9999999999999999,
+            "x": 1001.9639462604384,
+            "y": 1698.805387626048
+          }
+        ],
+        "time": 0.9999999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 11,
+            "time": 1.0999999999999999,
+            "x": 993.2491450010184,
+            "y": 1700.1810822680138
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 11,
+            "time": 1.0999999999999999,
+            "x": 1001.8370959411404,
+            "y": 1698.8335996655044
+          }
+        ],
+        "time": 1.0999999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 12,
+            "time": 1.2,
+            "x": 993.6062393850963,
+            "y": 1700.1359768116913
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 12,
+            "time": 1.2,
+            "x": 1001.7102205546222,
+            "y": 1698.861817280015
+          }
+        ],
+        "time": 1.2
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 13,
+            "time": 1.3,
+            "x": 993.9633683075153,
+            "y": 1700.0908669927474
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 13,
+            "time": 1.3,
+            "x": 1001.5833328966553,
+            "y": 1698.8900376237468
+          }
+        ],
+        "time": 1.3
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 14,
+            "time": 1.4000000000000001,
+            "x": 994.3205141378912,
+            "y": 1700.0457550381184
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 14,
+            "time": 1.4000000000000001,
+            "x": 1001.4564392313031,
+            "y": 1698.9182593035462
+          }
+        ],
+        "time": 1.4000000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 15,
+            "time": 1.5000000000000002,
+            "x": 994.6776682454164,
+            "y": 1700.0006420379825
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 15,
+            "time": 1.5000000000000002,
+            "x": 1001.3295426250855,
+            "y": 1698.9464816374061
+          }
+        ],
+        "time": 1.5000000000000002
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 16,
+            "time": 1.6000000000000003,
+            "x": 995.0348264049509,
+            "y": 1699.9555285260276
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 16,
+            "time": 1.6000000000000003,
+            "x": 1001.2026445791919,
+            "y": 1698.9747042914562
+          }
+        ],
+        "time": 1.6000000000000003
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 17,
+            "time": 1.7000000000000004,
+            "x": 995.3919865481128,
+            "y": 1699.910414763516
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 17,
+            "time": 1.7000000000000004,
+            "x": 1001.0757458285168,
+            "y": 1699.0029271022524
+          }
+        ],
+        "time": 1.7000000000000004
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 18,
+            "time": 1.8000000000000005,
+            "x": 995.7491476623429,
+            "y": 1699.8653008783463
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 18,
+            "time": 1.8000000000000005,
+            "x": 1000.9488467328218,
+            "y": 1699.0311499897828
+          }
+        ],
+        "time": 1.8000000000000005
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 19,
+            "time": 1.9000000000000006,
+            "x": 996.1063092519514,
+            "y": 1699.8201869331303
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 19,
+            "time": 1.9000000000000006,
+            "x": 1000.8219474682253,
+            "y": 1699.0593729148775
+          }
+        ],
+        "time": 1.9000000000000006
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 20,
+            "time": 2.0000000000000004,
+            "x": 996.4634710742774,
+            "y": 1699.7750729585193
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 20,
+            "time": 2.0000000000000004,
+            "x": 1000.6950481209443,
+            "y": 1699.0875958583615
+          }
+        ],
+        "time": 2.0000000000000004
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 21,
+            "time": 2.1000000000000005,
+            "x": 996.8206330105284,
+            "y": 1699.7299589695183
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 21,
+            "time": 2.1000000000000005,
+            "x": 1000.5681487331859,
+            "y": 1699.115818810848
+          }
+        ],
+        "time": 2.1000000000000005
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 22,
+            "time": 2.2000000000000006,
+            "x": 997.1777950025503,
+            "y": 1699.6848449734725
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 22,
+            "time": 2.2000000000000006,
+            "x": 1000.4412493256121,
+            "y": 1699.1440417677413
+          }
+        ],
+        "time": 2.2000000000000006
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 23,
+            "time": 2.3000000000000007,
+            "x": 997.5349570218744,
+            "y": 1699.6397309739782
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 23,
+            "time": 2.3000000000000007,
+            "x": 1000.3143499083379,
+            "y": 1699.172264726792
+          }
+        ],
+        "time": 2.3000000000000007
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 24,
+            "time": 2.400000000000001,
+            "x": 997.8921190545642,
+            "y": 1699.5946169727956
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 24,
+            "time": 2.400000000000001,
+            "x": 1000.1874504863149,
+            "y": 1699.200487686899
+          }
+        ],
+        "time": 2.400000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 25,
+            "time": 2.500000000000001,
+            "x": 998.249281093797,
+            "y": 1699.5495029707868
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 25,
+            "time": 2.500000000000001,
+            "x": 1000.0605510619671,
+            "y": 1699.2287106475228
+          }
+        ],
+        "time": 2.500000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 26,
+            "time": 2.600000000000001,
+            "x": 998.5819192171479,
+            "y": 1699.4930723668801
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 26,
+            "time": 2.600000000000001,
+            "x": 1000.0753481035532,
+            "y": 1699.311862777399
+          }
+        ],
+        "time": 2.600000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 27,
+            "time": 2.700000000000001,
+            "x": 998.5562741079758,
+            "y": 1699.2620140955885
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 27,
+            "time": 2.700000000000001,
+            "x": 1000.056375256603,
+            "y": 1699.3422680683095
+          }
+        ],
+        "time": 2.700000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 28,
+            "time": 2.800000000000001,
+            "x": 998.522899637555,
+            "y": 1698.903564455904
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 28,
+            "time": 2.800000000000001,
+            "x": 999.9491347850932,
+            "y": 1699.3747598809753
+          }
+        ],
+        "time": 2.800000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 29,
+            "time": 2.9000000000000012,
+            "x": 998.5631635210706,
+            "y": 1698.7818450763984
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 29,
+            "time": 2.9000000000000012,
+            "x": 999.9148043094124,
+            "y": 1699.4406630172368
+          }
+        ],
+        "time": 2.9000000000000012
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 30,
+            "time": 3.0000000000000013,
+            "x": 998.6380022355575,
+            "y": 1698.6322769548754
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 30,
+            "time": 3.0000000000000013,
+            "x": 999.8587119008846,
+            "y": 1699.5111620581135
+          }
+        ],
+        "time": 3.0000000000000013
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 31,
+            "time": 3.1000000000000014,
+            "x": 998.7645884754068,
+            "y": 1698.4605694948518
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 31,
+            "time": 3.1000000000000014,
+            "x": 999.7734394800545,
+            "y": 1699.5766111251432
+          }
+        ],
+        "time": 3.1000000000000014
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 32,
+            "time": 3.2000000000000015,
+            "x": 998.9623728599496,
+            "y": 1698.2856730586334
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 32,
+            "time": 3.2000000000000015,
+            "x": 999.6568926755732,
+            "y": 1699.6189644488861
+          }
+        ],
+        "time": 3.2000000000000015
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 33,
+            "time": 3.3000000000000016,
+            "x": 999.2405982358929,
+            "y": 1698.142791914534
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 33,
+            "time": 3.3000000000000016,
+            "x": 999.5287463276482,
+            "y": 1699.6408394005775
+          }
+        ],
+        "time": 3.3000000000000016
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 34,
+            "time": 3.4000000000000017,
+            "x": 999.5945154839932,
+            "y": 1698.1201487090696
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 34,
+            "time": 3.4000000000000017,
+            "x": 999.4005999797192,
+            "y": 1699.6627143522696
+          }
+        ],
+        "time": 3.4000000000000017
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 35,
+            "time": 3.5000000000000018,
+            "x": 999.9536643403884,
+            "y": 1698.1448893425782
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 35,
+            "time": 3.5000000000000018,
+            "x": 999.2724536317885,
+            "y": 1699.684589303962
+          }
+        ],
+        "time": 3.5000000000000018
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 36,
+            "time": 3.600000000000002,
+            "x": 1000.3128131967861,
+            "y": 1698.1696299760868
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 36,
+            "time": 3.600000000000002,
+            "x": 999.1443072838568,
+            "y": 1699.7064642556545
+          }
+        ],
+        "time": 3.600000000000002
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 37,
+            "time": 3.700000000000002,
+            "x": 1000.6719620531851,
+            "y": 1698.1943706095956
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 37,
+            "time": 3.700000000000002,
+            "x": 999.0161609359247,
+            "y": 1699.728339207347
+          }
+        ],
+        "time": 3.700000000000002
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 38,
+            "time": 3.800000000000002,
+            "x": 1001.0311109095848,
+            "y": 1698.2191112431044
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 38,
+            "time": 3.800000000000002,
+            "x": 998.8880145879924,
+            "y": 1699.7502141590396
+          }
+        ],
+        "time": 3.800000000000002
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 39,
+            "time": 3.900000000000002,
+            "x": 1001.3902597659846,
+            "y": 1698.2438518766132
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 39,
+            "time": 3.900000000000002,
+            "x": 998.75986824006,
+            "y": 1699.7720891107322
+          }
+        ],
+        "time": 3.900000000000002
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 40,
+            "time": 4.000000000000002,
+            "x": 1001.7494086223847,
+            "y": 1698.268592510122
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 40,
+            "time": 4.000000000000002,
+            "x": 998.6317218921275,
+            "y": 1699.793964062425
+          }
+        ],
+        "time": 4.000000000000002
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 41,
+            "time": 4.100000000000001,
+            "x": 1002.1085574787849,
+            "y": 1698.293333143631
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 41,
+            "time": 4.100000000000001,
+            "x": 998.5035755441951,
+            "y": 1699.8158390141177
+          }
+        ],
+        "time": 4.100000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 42,
+            "time": 4.200000000000001,
+            "x": 1002.4677063351851,
+            "y": 1698.3180737771397
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 42,
+            "time": 4.200000000000001,
+            "x": 998.3754291962625,
+            "y": 1699.8377139658105
+          }
+        ],
+        "time": 4.200000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 43,
+            "time": 4.300000000000001,
+            "x": 1002.8268551915853,
+            "y": 1698.3428144106485
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 43,
+            "time": 4.300000000000001,
+            "x": 998.24728284833,
+            "y": 1699.8595889175033
+          }
+        ],
+        "time": 4.300000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 44,
+            "time": 4.4,
+            "x": 1003.1860040479855,
+            "y": 1698.3675550441574
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 44,
+            "time": 4.4,
+            "x": 998.1191365003974,
+            "y": 1699.8814638691958
+          }
+        ],
+        "time": 4.4
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 45,
+            "time": 4.5,
+            "x": 1003.5451529043858,
+            "y": 1698.3922956776662
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 45,
+            "time": 4.5,
+            "x": 997.9909901524649,
+            "y": 1699.9033388208886
+          }
+        ],
+        "time": 4.5
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 46,
+            "time": 4.6,
+            "x": 1003.904301760786,
+            "y": 1698.417036311175
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 46,
+            "time": 4.6,
+            "x": 997.8628438045323,
+            "y": 1699.9252137725812
+          }
+        ],
+        "time": 4.6
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 47,
+            "time": 4.699999999999999,
+            "x": 1004.2634506171862,
+            "y": 1698.4417769446839
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 47,
+            "time": 4.699999999999999,
+            "x": 997.7346974565997,
+            "y": 1699.947088724274
+          }
+        ],
+        "time": 4.699999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 48,
+            "time": 4.799999999999999,
+            "x": 1004.6225994735864,
+            "y": 1698.4665175781927
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 48,
+            "time": 4.799999999999999,
+            "x": 997.6065511086672,
+            "y": 1699.9689636759667
+          }
+        ],
+        "time": 4.799999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 49,
+            "time": 4.899999999999999,
+            "x": 1004.9817483299867,
+            "y": 1698.4912582117017
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 49,
+            "time": 4.899999999999999,
+            "x": 997.4784047607346,
+            "y": 1699.9908386276593
+          }
+        ],
+        "time": 4.899999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 50,
+            "time": 4.999999999999998,
+            "x": 1005.3408971863869,
+            "y": 1698.5159988452106
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 50,
+            "time": 4.999999999999998,
+            "x": 997.3502584128021,
+            "y": 1700.012713579352
+          }
+        ],
+        "time": 4.999999999999998
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 51,
+            "time": 5.099999999999998,
+            "x": 1005.6954196851332,
+            "y": 1698.5404207835124
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 51,
+            "time": 5.099999999999998,
+            "x": 997.2221120648695,
+            "y": 1700.0345885310446
+          }
+        ],
+        "time": 5.099999999999998
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 52,
+            "time": 5.1999999999999975,
+            "x": 1005.954607634948,
+            "y": 1698.5582754250129
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 52,
+            "time": 5.1999999999999975,
+            "x": 997.093965716937,
+            "y": 1700.0564634827374
+          }
+        ],
+        "time": 5.1999999999999975
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 53,
+            "time": 5.299999999999997,
+            "x": 1006.0465602969543,
+            "y": 1698.5646097542758
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 53,
+            "time": 5.299999999999997,
+            "x": 996.9658193690044,
+            "y": 1700.07833843443
+          }
+        ],
+        "time": 5.299999999999997
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 54,
+            "time": 5.399999999999997,
+            "x": 1006.0465602969543,
+            "y": 1698.5646097542758
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 54,
+            "time": 5.399999999999997,
+            "x": 996.8376730210719,
+            "y": 1700.1002133861227
+          }
+        ],
+        "time": 5.399999999999997
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 55,
+            "time": 5.4999999999999964,
+            "x": 1006.0465602969543,
+            "y": 1698.5646097542758
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 55,
+            "time": 5.4999999999999964,
+            "x": 996.7095266731393,
+            "y": 1700.1220883378153
+          }
+        ],
+        "time": 5.4999999999999964
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 56,
+            "time": 5.599999999999996,
+            "x": 1006.0465602969543,
+            "y": 1698.5646097542758
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 56,
+            "time": 5.599999999999996,
+            "x": 996.5813803252067,
+            "y": 1700.143963289508
+          }
+        ],
+        "time": 5.599999999999996
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 57,
+            "time": 5.699999999999996,
+            "x": 1006.0465602969543,
+            "y": 1698.5646097542758
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 57,
+            "time": 5.699999999999996,
+            "x": 996.4532339772742,
+            "y": 1700.1658382412006
+          }
+        ],
+        "time": 5.699999999999996
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 58,
+            "time": 5.799999999999995,
+            "x": 1006.0465602969543,
+            "y": 1698.5646097542758
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 58,
+            "time": 5.799999999999995,
+            "x": 996.3250876293416,
+            "y": 1700.1877131928934
+          }
+        ],
+        "time": 5.799999999999995
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 59,
+            "time": 5.899999999999995,
+            "x": 1006.0465602969543,
+            "y": 1698.5646097542758
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 59,
+            "time": 5.899999999999995,
+            "x": 996.1969412814091,
+            "y": 1700.209588144586
+          }
+        ],
+        "time": 5.899999999999995
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 60,
+            "time": 5.999999999999995,
+            "x": 1006.0465602969543,
+            "y": 1698.5646097542758
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 60,
+            "time": 5.999999999999995,
+            "x": 996.0687949334765,
+            "y": 1700.2314630962787
+          }
+        ],
+        "time": 5.999999999999995
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 61,
+            "time": 6.099999999999994,
+            "x": 1006.0465602969543,
+            "y": 1698.5646097542758
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 61,
+            "time": 6.099999999999994,
+            "x": 995.940648585544,
+            "y": 1700.2533380479713
+          }
+        ],
+        "time": 6.099999999999994
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 62,
+            "time": 6.199999999999994,
+            "x": 1006.0465602969543,
+            "y": 1698.5646097542758
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 62,
+            "time": 6.199999999999994,
+            "x": 995.8125022376114,
+            "y": 1700.275212999664
+          }
+        ],
+        "time": 6.199999999999994
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 63,
+            "time": 6.299999999999994,
+            "x": 1006.0465602969543,
+            "y": 1698.5646097542758
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 63,
+            "time": 6.299999999999994,
+            "x": 995.6843558896788,
+            "y": 1700.2970879513566
+          }
+        ],
+        "time": 6.299999999999994
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 64,
+            "time": 6.399999999999993,
+            "x": 1006.0465602969543,
+            "y": 1698.5646097542758
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 64,
+            "time": 6.399999999999993,
+            "x": 995.5562095417463,
+            "y": 1700.3189629030494
+          }
+        ],
+        "time": 6.399999999999993
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 65,
+            "time": 6.499999999999993,
+            "x": 1006.0465602969543,
+            "y": 1698.5646097542758
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 65,
+            "time": 6.499999999999993,
+            "x": 995.4280631938137,
+            "y": 1700.340837854742
+          }
+        ],
+        "time": 6.499999999999993
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 66,
+            "time": 6.5999999999999925,
+            "x": 1006.0465602969543,
+            "y": 1698.5646097542758
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 66,
+            "time": 6.5999999999999925,
+            "x": 995.2999168458812,
+            "y": 1700.3627128064347
+          }
+        ],
+        "time": 6.5999999999999925
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 67,
+            "time": 6.699999999999992,
+            "x": 1006.0465602969543,
+            "y": 1698.5646097542758
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 67,
+            "time": 6.699999999999992,
+            "x": 995.1717704979486,
+            "y": 1700.3845877581273
+          }
+        ],
+        "time": 6.699999999999992
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 68,
+            "time": 6.799999999999992,
+            "x": 1006.0465602969543,
+            "y": 1698.5646097542758
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 68,
+            "time": 6.799999999999992,
+            "x": 995.0436241500161,
+            "y": 1700.40646270982
+          }
+        ],
+        "time": 6.799999999999992
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 69,
+            "time": 6.8999999999999915,
+            "x": 1006.0465602969543,
+            "y": 1698.5646097542758
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 69,
+            "time": 6.8999999999999915,
+            "x": 994.9154778020835,
+            "y": 1700.4283376615128
+          }
+        ],
+        "time": 6.8999999999999915
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 70,
+            "time": 6.999999999999991,
+            "x": 1006.0465602969543,
+            "y": 1698.5646097542758
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 70,
+            "time": 6.999999999999991,
+            "x": 994.787331454151,
+            "y": 1700.4502126132054
+          }
+        ],
+        "time": 6.999999999999991
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 71,
+            "time": 7.099999999999991,
+            "x": 1006.0465602969543,
+            "y": 1698.5646097542758
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 71,
+            "time": 7.099999999999991,
+            "x": 994.6591851062184,
+            "y": 1700.4720875648982
+          }
+        ],
+        "time": 7.099999999999991
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 72,
+            "time": 7.19999999999999,
+            "x": 1006.0465602969543,
+            "y": 1698.5646097542758
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 72,
+            "time": 7.19999999999999,
+            "x": 994.5310387582858,
+            "y": 1700.4939625165907
+          }
+        ],
+        "time": 7.19999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 73,
+            "time": 7.29999999999999,
+            "x": 1006.0465602969543,
+            "y": 1698.5646097542758
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 73,
+            "time": 7.29999999999999,
+            "x": 994.4056128440204,
+            "y": 1700.5153730823995
+          }
+        ],
+        "time": 7.29999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 74,
+            "time": 7.39999999999999,
+            "x": 1006.0465602969543,
+            "y": 1698.5646097542758
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 74,
+            "time": 7.39999999999999,
+            "x": 994.2934089975469,
+            "y": 1700.5345266030495
+          }
+        ],
+        "time": 7.39999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 75,
+            "time": 7.499999999999989,
+            "x": 1006.0465602969543,
+            "y": 1698.5646097542758
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 75,
+            "time": 7.499999999999989,
+            "x": 994.1983147620888,
+            "y": 1700.5507594636847
+          }
+        ],
+        "time": 7.499999999999989
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 76,
+            "time": 7.599999999999989,
+            "x": 1006.0465602969543,
+            "y": 1698.5646097542758
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 76,
+            "time": 7.599999999999989,
+            "x": 994.1206112710448,
+            "y": 1700.564023674022
+          }
+        ],
+        "time": 7.599999999999989
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 77,
+            "time": 7.699999999999989,
+            "x": 1006.0465602969543,
+            "y": 1698.5646097542758
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 77,
+            "time": 7.699999999999989,
+            "x": 994.0587875186837,
+            "y": 1700.5745771671038
+          }
+        ],
+        "time": 7.699999999999989
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 78,
+            "time": 7.799999999999988,
+            "x": 1006.0465602969543,
+            "y": 1698.5646097542758
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 78,
+            "time": 7.799999999999988,
+            "x": 994.0105984149565,
+            "y": 1700.5828031862854
+          }
+        ],
+        "time": 7.799999999999988
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 79,
+            "time": 7.899999999999988,
+            "x": 1006.0465602969543,
+            "y": 1698.5646097542758
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 79,
+            "time": 7.899999999999988,
+            "x": 993.9726168992834,
+            "y": 1700.5892867407056
+          }
+        ],
+        "time": 7.899999999999988
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 80,
+            "time": 7.999999999999988,
+            "x": 1006.0465602969543,
+            "y": 1698.5646097542758
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 80,
+            "time": 7.999999999999988,
+            "x": 993.9396324232064,
+            "y": 1700.5949172860346
+          }
+        ],
+        "time": 7.999999999999988
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 81,
+            "time": 8.099999999999987,
+            "x": 1006.0465602969543,
+            "y": 1698.5646097542758
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 81,
+            "time": 8.099999999999987,
+            "x": 993.9090942061862,
+            "y": 1700.6001302478776
+          }
+        ],
+        "time": 8.099999999999987
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 82,
+            "time": 8.199999999999987,
+            "x": 1006.0465602969543,
+            "y": 1698.5646097542758
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 82,
+            "time": 8.199999999999987,
+            "x": 993.8797535348843,
+            "y": 1700.6051387852078
+          }
+        ],
+        "time": 8.199999999999987
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 83,
+            "time": 8.299999999999986,
+            "x": 1006.0465602969543,
+            "y": 1698.5646097542758
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 83,
+            "time": 8.299999999999986,
+            "x": 993.8509991121008,
+            "y": 1700.610047248223
+          }
+        ],
+        "time": 8.299999999999986
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 84,
+            "time": 8.399999999999986,
+            "x": 1006.0465602969543,
+            "y": 1698.5646097542758
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "pancreas",
+            "phase": "frame",
+            "tick": 84,
+            "time": 8.399999999999986,
+            "x": 993.8509991121008,
+            "y": 1700.610047248223
+          }
+        ],
+        "time": 8.399999999999986
+      }
+    ],
+    "goals": [
+      {
+        "id": 18,
+        "lane": 0,
+        "organId": "pancreas",
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "lane": 0,
+        "organId": "pancreas",
+        "x": 993.8450731707317,
+        "y": 1700.6110588235294
+      }
+    ],
+    "id": "pancreas/pancreas.visual-chamber.2/meeting/scout-siege",
+    "minimumFrameDiskGapWorld": 0.0020558660320373345,
+    "networkEdges": 202,
+    "save": {
+      "flag": 1,
+      "ids": [
+        "bladder",
+        "brain",
+        "heart",
+        "kidney_l",
+        "kidney_r",
+        "large_intestine",
+        "liver",
+        "lung_l",
+        "lung_r",
+        "pancreas",
+        "small_intestine",
+        "stomach"
+      ],
+      "laneErrors": 0,
+      "positionErrors": 0.0,
+      "restored": true,
+      "restoredFlag": 1,
+      "restoredIds": [
+        "bladder",
+        "brain",
+        "heart",
+        "kidney_l",
+        "kidney_r",
+        "large_intestine",
+        "liver",
+        "lung_l",
+        "lung_r",
+        "pancreas",
+        "small_intestine",
+        "stomach"
+      ],
+      "restoredNetworkEdges": 202,
+      "version": 9
+    },
+    "setupCommands": {},
+    "setupElapsed": 0,
+    "spawnErrors": {},
+    "starts": [
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "spawn",
+        "tick": 0,
+        "time": 0,
+        "x": 989.8450731707317,
+        "y": 1700.6110588235294
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "spawn",
+        "tick": 0,
+        "time": 0,
+        "x": 1003.0465602969543,
+        "y": 1698.5646097542758
+      }
+    ],
+    "trace": [
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 1,
+        "time": 0.1,
+        "x": 989.8450731707317,
+        "y": 1700.6110588235294
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 1,
+        "time": 0.1,
+        "x": 1003.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 2,
+        "time": 0.2,
+        "x": 990.1166409618558,
+        "y": 1700.5767564382572
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 2,
+        "time": 0.2,
+        "x": 1002.9500724494802,
+        "y": 1698.586069053512
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 2,
+        "time": 0.2,
+        "x": 990.1166409618558,
+        "y": 1700.5767564382572
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 2,
+        "time": 0.2,
+        "x": 1002.9500724494802,
+        "y": 1698.586069053512
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 3,
+        "time": 0.30000000000000004,
+        "x": 990.4319010540239,
+        "y": 1700.5369351726436
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 3,
+        "time": 0.30000000000000004,
+        "x": 1002.8380607578068,
+        "y": 1698.6109809203683
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 3,
+        "time": 0.30000000000000004,
+        "x": 990.4319010540239,
+        "y": 1700.5369351726436
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 3,
+        "time": 0.30000000000000004,
+        "x": 1002.8380607578068,
+        "y": 1698.6109809203683
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 4,
+        "time": 0.4,
+        "x": 990.7685503477551,
+        "y": 1700.4944121851886
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 4,
+        "time": 0.4,
+        "x": 1002.7184494976815,
+        "y": 1698.6375829629076
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 4,
+        "time": 0.4,
+        "x": 990.7685503477551,
+        "y": 1700.4944121851886
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 4,
+        "time": 0.4,
+        "x": 1002.7184494976815,
+        "y": 1698.6375829629076
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 5,
+        "time": 0.5,
+        "x": 991.115670546716,
+        "y": 1700.4505665923398
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 5,
+        "time": 0.5,
+        "x": 1002.5951179322043,
+        "y": 1698.6650124168555
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 5,
+        "time": 0.5,
+        "x": 991.115670546716,
+        "y": 1700.4505665923398
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 5,
+        "time": 0.5,
+        "x": 1002.5951179322043,
+        "y": 1698.6650124168555
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 6,
+        "time": 0.6,
+        "x": 991.4679166900002,
+        "y": 1700.4060735290514
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 6,
+        "time": 0.6,
+        "x": 1002.469965122271,
+        "y": 1698.6928469231575
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 6,
+        "time": 0.6,
+        "x": 991.4679166900002,
+        "y": 1700.4060735290514
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 6,
+        "time": 0.6,
+        "x": 1002.469965122271,
+        "y": 1698.6928469231575
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 7,
+        "time": 0.7,
+        "x": 991.8226721965751,
+        "y": 1700.3612635020095
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 7,
+        "time": 0.7,
+        "x": 1002.3439207373043,
+        "y": 1698.7208797194612
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 7,
+        "time": 0.7,
+        "x": 991.8226721965751,
+        "y": 1700.3612635020095
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 7,
+        "time": 0.7,
+        "x": 1002.3439207373043,
+        "y": 1698.7208797194612
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 8,
+        "time": 0.7999999999999999,
+        "x": 992.1786561410199,
+        "y": 1700.3162983080058
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 8,
+        "time": 0.7999999999999999,
+        "x": 1002.217439889216,
+        "y": 1698.7490095869814
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 8,
+        "time": 0.7999999999999999,
+        "x": 992.1786561410199,
+        "y": 1700.3162983080058
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 8,
+        "time": 0.7999999999999999,
+        "x": 1002.217439889216,
+        "y": 1698.7490095869814
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 9,
+        "time": 0.8999999999999999,
+        "x": 992.5352414569782,
+        "y": 1700.2712571533102
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 9,
+        "time": 0.8999999999999999,
+        "x": 1002.0907453742469,
+        "y": 1698.7771869749058
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 9,
+        "time": 0.8999999999999999,
+        "x": 992.5352414569782,
+        "y": 1700.2712571533102
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 9,
+        "time": 0.8999999999999999,
+        "x": 1002.0907453742469,
+        "y": 1698.7771869749058
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 10,
+        "time": 0.9999999999999999,
+        "x": 992.892121169345,
+        "y": 1700.2261788126914
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 10,
+        "time": 0.9999999999999999,
+        "x": 1001.9639462604384,
+        "y": 1698.805387626048
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 10,
+        "time": 0.9999999999999999,
+        "x": 992.892121169345,
+        "y": 1700.2261788126914
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 10,
+        "time": 0.9999999999999999,
+        "x": 1001.9639462604384,
+        "y": 1698.805387626048
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 11,
+        "time": 1.0999999999999999,
+        "x": 993.2491450010184,
+        "y": 1700.1810822680138
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 11,
+        "time": 1.0999999999999999,
+        "x": 1001.8370959411404,
+        "y": 1698.8335996655044
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 11,
+        "time": 1.0999999999999999,
+        "x": 993.2491450010184,
+        "y": 1700.1810822680138
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 11,
+        "time": 1.0999999999999999,
+        "x": 1001.8370959411404,
+        "y": 1698.8335996655044
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 12,
+        "time": 1.2,
+        "x": 993.6062393850963,
+        "y": 1700.1359768116913
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 12,
+        "time": 1.2,
+        "x": 1001.7102205546222,
+        "y": 1698.861817280015
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 12,
+        "time": 1.2,
+        "x": 993.6062393850963,
+        "y": 1700.1359768116913
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 12,
+        "time": 1.2,
+        "x": 1001.7102205546222,
+        "y": 1698.861817280015
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 13,
+        "time": 1.3,
+        "x": 993.9633683075153,
+        "y": 1700.0908669927474
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 13,
+        "time": 1.3,
+        "x": 1001.5833328966553,
+        "y": 1698.8900376237468
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 13,
+        "time": 1.3,
+        "x": 993.9633683075153,
+        "y": 1700.0908669927474
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 13,
+        "time": 1.3,
+        "x": 1001.5833328966553,
+        "y": 1698.8900376237468
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 14,
+        "time": 1.4000000000000001,
+        "x": 994.3205141378912,
+        "y": 1700.0457550381184
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 14,
+        "time": 1.4000000000000001,
+        "x": 1001.4564392313031,
+        "y": 1698.9182593035462
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 14,
+        "time": 1.4000000000000001,
+        "x": 994.3205141378912,
+        "y": 1700.0457550381184
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 14,
+        "time": 1.4000000000000001,
+        "x": 1001.4564392313031,
+        "y": 1698.9182593035462
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 15,
+        "time": 1.5000000000000002,
+        "x": 994.6776682454164,
+        "y": 1700.0006420379825
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 15,
+        "time": 1.5000000000000002,
+        "x": 1001.3295426250855,
+        "y": 1698.9464816374061
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 15,
+        "time": 1.5000000000000002,
+        "x": 994.6776682454164,
+        "y": 1700.0006420379825
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 15,
+        "time": 1.5000000000000002,
+        "x": 1001.3295426250855,
+        "y": 1698.9464816374061
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 16,
+        "time": 1.6000000000000003,
+        "x": 995.0348264049509,
+        "y": 1699.9555285260276
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 16,
+        "time": 1.6000000000000003,
+        "x": 1001.2026445791919,
+        "y": 1698.9747042914562
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 16,
+        "time": 1.6000000000000003,
+        "x": 995.0348264049509,
+        "y": 1699.9555285260276
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 16,
+        "time": 1.6000000000000003,
+        "x": 1001.2026445791919,
+        "y": 1698.9747042914562
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 17,
+        "time": 1.7000000000000004,
+        "x": 995.3919865481128,
+        "y": 1699.910414763516
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 17,
+        "time": 1.7000000000000004,
+        "x": 1001.0757458285168,
+        "y": 1699.0029271022524
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 17,
+        "time": 1.7000000000000004,
+        "x": 995.3919865481128,
+        "y": 1699.910414763516
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 17,
+        "time": 1.7000000000000004,
+        "x": 1001.0757458285168,
+        "y": 1699.0029271022524
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 18,
+        "time": 1.8000000000000005,
+        "x": 995.7491476623429,
+        "y": 1699.8653008783463
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 18,
+        "time": 1.8000000000000005,
+        "x": 1000.9488467328218,
+        "y": 1699.0311499897828
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 18,
+        "time": 1.8000000000000005,
+        "x": 995.7491476623429,
+        "y": 1699.8653008783463
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 18,
+        "time": 1.8000000000000005,
+        "x": 1000.9488467328218,
+        "y": 1699.0311499897828
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 19,
+        "time": 1.9000000000000006,
+        "x": 996.1063092519514,
+        "y": 1699.8201869331303
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 19,
+        "time": 1.9000000000000006,
+        "x": 1000.8219474682253,
+        "y": 1699.0593729148775
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 19,
+        "time": 1.9000000000000006,
+        "x": 996.1063092519514,
+        "y": 1699.8201869331303
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 19,
+        "time": 1.9000000000000006,
+        "x": 1000.8219474682253,
+        "y": 1699.0593729148775
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 20,
+        "time": 2.0000000000000004,
+        "x": 996.4634710742774,
+        "y": 1699.7750729585193
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 20,
+        "time": 2.0000000000000004,
+        "x": 1000.6950481209443,
+        "y": 1699.0875958583615
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 20,
+        "time": 2.0000000000000004,
+        "x": 996.4634710742774,
+        "y": 1699.7750729585193
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 20,
+        "time": 2.0000000000000004,
+        "x": 1000.6950481209443,
+        "y": 1699.0875958583615
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 21,
+        "time": 2.1000000000000005,
+        "x": 996.8206330105284,
+        "y": 1699.7299589695183
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 21,
+        "time": 2.1000000000000005,
+        "x": 1000.5681487331859,
+        "y": 1699.115818810848
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 21,
+        "time": 2.1000000000000005,
+        "x": 996.8206330105284,
+        "y": 1699.7299589695183
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 21,
+        "time": 2.1000000000000005,
+        "x": 1000.5681487331859,
+        "y": 1699.115818810848
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 22,
+        "time": 2.2000000000000006,
+        "x": 997.1777950025503,
+        "y": 1699.6848449734725
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 22,
+        "time": 2.2000000000000006,
+        "x": 1000.4412493256121,
+        "y": 1699.1440417677413
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 22,
+        "time": 2.2000000000000006,
+        "x": 997.1777950025503,
+        "y": 1699.6848449734725
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 22,
+        "time": 2.2000000000000006,
+        "x": 1000.4412493256121,
+        "y": 1699.1440417677413
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 23,
+        "time": 2.3000000000000007,
+        "x": 997.5349570218744,
+        "y": 1699.6397309739782
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 23,
+        "time": 2.3000000000000007,
+        "x": 1000.3143499083379,
+        "y": 1699.172264726792
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 23,
+        "time": 2.3000000000000007,
+        "x": 997.5349570218744,
+        "y": 1699.6397309739782
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 23,
+        "time": 2.3000000000000007,
+        "x": 1000.3143499083379,
+        "y": 1699.172264726792
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 24,
+        "time": 2.400000000000001,
+        "x": 997.8921190545642,
+        "y": 1699.5946169727956
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 24,
+        "time": 2.400000000000001,
+        "x": 1000.1874504863149,
+        "y": 1699.200487686899
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 24,
+        "time": 2.400000000000001,
+        "x": 997.8921190545642,
+        "y": 1699.5946169727956
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 24,
+        "time": 2.400000000000001,
+        "x": 1000.1874504863149,
+        "y": 1699.200487686899
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 25,
+        "time": 2.500000000000001,
+        "x": 998.249281093797,
+        "y": 1699.5495029707868
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 25,
+        "time": 2.500000000000001,
+        "x": 1000.0605510619671,
+        "y": 1699.2287106475228
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 25,
+        "time": 2.500000000000001,
+        "x": 998.249281093797,
+        "y": 1699.5495029707868
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 25,
+        "time": 2.500000000000001,
+        "x": 1000.0605510619671,
+        "y": 1699.2287106475228
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 26,
+        "time": 2.600000000000001,
+        "x": 998.5819192171479,
+        "y": 1699.4930723668801
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 26,
+        "time": 2.600000000000001,
+        "x": 1000.0753481035532,
+        "y": 1699.311862777399
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 26,
+        "time": 2.600000000000001,
+        "x": 998.5819192171479,
+        "y": 1699.4930723668801
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 26,
+        "time": 2.600000000000001,
+        "x": 1000.0753481035532,
+        "y": 1699.311862777399
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 27,
+        "time": 2.700000000000001,
+        "x": 998.5562741079758,
+        "y": 1699.2620140955885
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 27,
+        "time": 2.700000000000001,
+        "x": 1000.056375256603,
+        "y": 1699.3422680683095
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 27,
+        "time": 2.700000000000001,
+        "x": 998.5562741079758,
+        "y": 1699.2620140955885
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 27,
+        "time": 2.700000000000001,
+        "x": 1000.056375256603,
+        "y": 1699.3422680683095
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 28,
+        "time": 2.800000000000001,
+        "x": 998.522899637555,
+        "y": 1698.903564455904
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 28,
+        "time": 2.800000000000001,
+        "x": 999.9491347850932,
+        "y": 1699.3747598809753
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 28,
+        "time": 2.800000000000001,
+        "x": 998.522899637555,
+        "y": 1698.903564455904
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 28,
+        "time": 2.800000000000001,
+        "x": 999.9491347850932,
+        "y": 1699.3747598809753
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 29,
+        "time": 2.9000000000000012,
+        "x": 998.5631635210706,
+        "y": 1698.7818450763984
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 29,
+        "time": 2.9000000000000012,
+        "x": 999.9148043094124,
+        "y": 1699.4406630172368
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 29,
+        "time": 2.9000000000000012,
+        "x": 998.5631635210706,
+        "y": 1698.7818450763984
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 29,
+        "time": 2.9000000000000012,
+        "x": 999.9148043094124,
+        "y": 1699.4406630172368
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 30,
+        "time": 3.0000000000000013,
+        "x": 998.6380022355575,
+        "y": 1698.6322769548754
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 30,
+        "time": 3.0000000000000013,
+        "x": 999.8587119008846,
+        "y": 1699.5111620581135
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 30,
+        "time": 3.0000000000000013,
+        "x": 998.6380022355575,
+        "y": 1698.6322769548754
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 30,
+        "time": 3.0000000000000013,
+        "x": 999.8587119008846,
+        "y": 1699.5111620581135
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 31,
+        "time": 3.1000000000000014,
+        "x": 998.7645884754068,
+        "y": 1698.4605694948518
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 31,
+        "time": 3.1000000000000014,
+        "x": 999.7734394800545,
+        "y": 1699.5766111251432
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 31,
+        "time": 3.1000000000000014,
+        "x": 998.7645884754068,
+        "y": 1698.4605694948518
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 31,
+        "time": 3.1000000000000014,
+        "x": 999.7734394800545,
+        "y": 1699.5766111251432
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 32,
+        "time": 3.2000000000000015,
+        "x": 998.9623728599496,
+        "y": 1698.2856730586334
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 32,
+        "time": 3.2000000000000015,
+        "x": 999.6568926755732,
+        "y": 1699.6189644488861
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 32,
+        "time": 3.2000000000000015,
+        "x": 998.9623728599496,
+        "y": 1698.2856730586334
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 32,
+        "time": 3.2000000000000015,
+        "x": 999.6568926755732,
+        "y": 1699.6189644488861
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 33,
+        "time": 3.3000000000000016,
+        "x": 999.2405982358929,
+        "y": 1698.142791914534
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 33,
+        "time": 3.3000000000000016,
+        "x": 999.5287463276482,
+        "y": 1699.6408394005775
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 33,
+        "time": 3.3000000000000016,
+        "x": 999.2405982358929,
+        "y": 1698.142791914534
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 33,
+        "time": 3.3000000000000016,
+        "x": 999.5287463276482,
+        "y": 1699.6408394005775
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 34,
+        "time": 3.4000000000000017,
+        "x": 999.5945154839932,
+        "y": 1698.1201487090696
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 34,
+        "time": 3.4000000000000017,
+        "x": 999.4005999797192,
+        "y": 1699.6627143522696
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 34,
+        "time": 3.4000000000000017,
+        "x": 999.5945154839932,
+        "y": 1698.1201487090696
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 34,
+        "time": 3.4000000000000017,
+        "x": 999.4005999797192,
+        "y": 1699.6627143522696
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 35,
+        "time": 3.5000000000000018,
+        "x": 999.9536643403884,
+        "y": 1698.1448893425782
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 35,
+        "time": 3.5000000000000018,
+        "x": 999.2724536317885,
+        "y": 1699.684589303962
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 35,
+        "time": 3.5000000000000018,
+        "x": 999.9536643403884,
+        "y": 1698.1448893425782
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 35,
+        "time": 3.5000000000000018,
+        "x": 999.2724536317885,
+        "y": 1699.684589303962
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 36,
+        "time": 3.600000000000002,
+        "x": 1000.3128131967861,
+        "y": 1698.1696299760868
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 36,
+        "time": 3.600000000000002,
+        "x": 999.1443072838568,
+        "y": 1699.7064642556545
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 36,
+        "time": 3.600000000000002,
+        "x": 1000.3128131967861,
+        "y": 1698.1696299760868
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 36,
+        "time": 3.600000000000002,
+        "x": 999.1443072838568,
+        "y": 1699.7064642556545
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 37,
+        "time": 3.700000000000002,
+        "x": 1000.6719620531851,
+        "y": 1698.1943706095956
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 37,
+        "time": 3.700000000000002,
+        "x": 999.0161609359247,
+        "y": 1699.728339207347
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 37,
+        "time": 3.700000000000002,
+        "x": 1000.6719620531851,
+        "y": 1698.1943706095956
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 37,
+        "time": 3.700000000000002,
+        "x": 999.0161609359247,
+        "y": 1699.728339207347
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 38,
+        "time": 3.800000000000002,
+        "x": 1001.0311109095848,
+        "y": 1698.2191112431044
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 38,
+        "time": 3.800000000000002,
+        "x": 998.8880145879924,
+        "y": 1699.7502141590396
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 38,
+        "time": 3.800000000000002,
+        "x": 1001.0311109095848,
+        "y": 1698.2191112431044
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 38,
+        "time": 3.800000000000002,
+        "x": 998.8880145879924,
+        "y": 1699.7502141590396
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 39,
+        "time": 3.900000000000002,
+        "x": 1001.3902597659846,
+        "y": 1698.2438518766132
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 39,
+        "time": 3.900000000000002,
+        "x": 998.75986824006,
+        "y": 1699.7720891107322
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 39,
+        "time": 3.900000000000002,
+        "x": 1001.3902597659846,
+        "y": 1698.2438518766132
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 39,
+        "time": 3.900000000000002,
+        "x": 998.75986824006,
+        "y": 1699.7720891107322
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 40,
+        "time": 4.000000000000002,
+        "x": 1001.7494086223847,
+        "y": 1698.268592510122
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 40,
+        "time": 4.000000000000002,
+        "x": 998.6317218921275,
+        "y": 1699.793964062425
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 40,
+        "time": 4.000000000000002,
+        "x": 1001.7494086223847,
+        "y": 1698.268592510122
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 40,
+        "time": 4.000000000000002,
+        "x": 998.6317218921275,
+        "y": 1699.793964062425
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 41,
+        "time": 4.100000000000001,
+        "x": 1002.1085574787849,
+        "y": 1698.293333143631
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 41,
+        "time": 4.100000000000001,
+        "x": 998.5035755441951,
+        "y": 1699.8158390141177
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 41,
+        "time": 4.100000000000001,
+        "x": 1002.1085574787849,
+        "y": 1698.293333143631
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 41,
+        "time": 4.100000000000001,
+        "x": 998.5035755441951,
+        "y": 1699.8158390141177
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 42,
+        "time": 4.200000000000001,
+        "x": 1002.4677063351851,
+        "y": 1698.3180737771397
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 42,
+        "time": 4.200000000000001,
+        "x": 998.3754291962625,
+        "y": 1699.8377139658105
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 42,
+        "time": 4.200000000000001,
+        "x": 1002.4677063351851,
+        "y": 1698.3180737771397
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 42,
+        "time": 4.200000000000001,
+        "x": 998.3754291962625,
+        "y": 1699.8377139658105
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 43,
+        "time": 4.300000000000001,
+        "x": 1002.8268551915853,
+        "y": 1698.3428144106485
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 43,
+        "time": 4.300000000000001,
+        "x": 998.24728284833,
+        "y": 1699.8595889175033
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 43,
+        "time": 4.300000000000001,
+        "x": 1002.8268551915853,
+        "y": 1698.3428144106485
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 43,
+        "time": 4.300000000000001,
+        "x": 998.24728284833,
+        "y": 1699.8595889175033
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 44,
+        "time": 4.4,
+        "x": 1003.1860040479855,
+        "y": 1698.3675550441574
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 44,
+        "time": 4.4,
+        "x": 998.1191365003974,
+        "y": 1699.8814638691958
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 44,
+        "time": 4.4,
+        "x": 1003.1860040479855,
+        "y": 1698.3675550441574
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 44,
+        "time": 4.4,
+        "x": 998.1191365003974,
+        "y": 1699.8814638691958
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 45,
+        "time": 4.5,
+        "x": 1003.5451529043858,
+        "y": 1698.3922956776662
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 45,
+        "time": 4.5,
+        "x": 997.9909901524649,
+        "y": 1699.9033388208886
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 45,
+        "time": 4.5,
+        "x": 1003.5451529043858,
+        "y": 1698.3922956776662
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 45,
+        "time": 4.5,
+        "x": 997.9909901524649,
+        "y": 1699.9033388208886
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 46,
+        "time": 4.6,
+        "x": 1003.904301760786,
+        "y": 1698.417036311175
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 46,
+        "time": 4.6,
+        "x": 997.8628438045323,
+        "y": 1699.9252137725812
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 46,
+        "time": 4.6,
+        "x": 1003.904301760786,
+        "y": 1698.417036311175
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 46,
+        "time": 4.6,
+        "x": 997.8628438045323,
+        "y": 1699.9252137725812
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 47,
+        "time": 4.699999999999999,
+        "x": 1004.2634506171862,
+        "y": 1698.4417769446839
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 47,
+        "time": 4.699999999999999,
+        "x": 997.7346974565997,
+        "y": 1699.947088724274
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 47,
+        "time": 4.699999999999999,
+        "x": 1004.2634506171862,
+        "y": 1698.4417769446839
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 47,
+        "time": 4.699999999999999,
+        "x": 997.7346974565997,
+        "y": 1699.947088724274
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 48,
+        "time": 4.799999999999999,
+        "x": 1004.6225994735864,
+        "y": 1698.4665175781927
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 48,
+        "time": 4.799999999999999,
+        "x": 997.6065511086672,
+        "y": 1699.9689636759667
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 48,
+        "time": 4.799999999999999,
+        "x": 1004.6225994735864,
+        "y": 1698.4665175781927
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 48,
+        "time": 4.799999999999999,
+        "x": 997.6065511086672,
+        "y": 1699.9689636759667
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 49,
+        "time": 4.899999999999999,
+        "x": 1004.9817483299867,
+        "y": 1698.4912582117017
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 49,
+        "time": 4.899999999999999,
+        "x": 997.4784047607346,
+        "y": 1699.9908386276593
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 49,
+        "time": 4.899999999999999,
+        "x": 1004.9817483299867,
+        "y": 1698.4912582117017
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 49,
+        "time": 4.899999999999999,
+        "x": 997.4784047607346,
+        "y": 1699.9908386276593
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 50,
+        "time": 4.999999999999998,
+        "x": 1005.3408971863869,
+        "y": 1698.5159988452106
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 50,
+        "time": 4.999999999999998,
+        "x": 997.3502584128021,
+        "y": 1700.012713579352
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 50,
+        "time": 4.999999999999998,
+        "x": 1005.3408971863869,
+        "y": 1698.5159988452106
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 50,
+        "time": 4.999999999999998,
+        "x": 997.3502584128021,
+        "y": 1700.012713579352
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 51,
+        "time": 5.099999999999998,
+        "x": 1005.6954196851332,
+        "y": 1698.5404207835124
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 51,
+        "time": 5.099999999999998,
+        "x": 997.2221120648695,
+        "y": 1700.0345885310446
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 51,
+        "time": 5.099999999999998,
+        "x": 1005.6954196851332,
+        "y": 1698.5404207835124
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 51,
+        "time": 5.099999999999998,
+        "x": 997.2221120648695,
+        "y": 1700.0345885310446
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 52,
+        "time": 5.1999999999999975,
+        "x": 1005.954607634948,
+        "y": 1698.5582754250129
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 52,
+        "time": 5.1999999999999975,
+        "x": 997.093965716937,
+        "y": 1700.0564634827374
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 52,
+        "time": 5.1999999999999975,
+        "x": 1005.954607634948,
+        "y": 1698.5582754250129
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 52,
+        "time": 5.1999999999999975,
+        "x": 997.093965716937,
+        "y": 1700.0564634827374
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 53,
+        "time": 5.299999999999997,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 53,
+        "time": 5.299999999999997,
+        "x": 996.9658193690044,
+        "y": 1700.07833843443
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 53,
+        "time": 5.299999999999997,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 53,
+        "time": 5.299999999999997,
+        "x": 996.9658193690044,
+        "y": 1700.07833843443
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 54,
+        "time": 5.399999999999997,
+        "x": 996.8376730210719,
+        "y": 1700.1002133861227
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 54,
+        "time": 5.399999999999997,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 54,
+        "time": 5.399999999999997,
+        "x": 996.8376730210719,
+        "y": 1700.1002133861227
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 55,
+        "time": 5.4999999999999964,
+        "x": 996.7095266731393,
+        "y": 1700.1220883378153
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 55,
+        "time": 5.4999999999999964,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 55,
+        "time": 5.4999999999999964,
+        "x": 996.7095266731393,
+        "y": 1700.1220883378153
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 56,
+        "time": 5.599999999999996,
+        "x": 996.5813803252067,
+        "y": 1700.143963289508
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 56,
+        "time": 5.599999999999996,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 56,
+        "time": 5.599999999999996,
+        "x": 996.5813803252067,
+        "y": 1700.143963289508
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 57,
+        "time": 5.699999999999996,
+        "x": 996.4532339772742,
+        "y": 1700.1658382412006
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 57,
+        "time": 5.699999999999996,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 57,
+        "time": 5.699999999999996,
+        "x": 996.4532339772742,
+        "y": 1700.1658382412006
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 58,
+        "time": 5.799999999999995,
+        "x": 996.3250876293416,
+        "y": 1700.1877131928934
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 58,
+        "time": 5.799999999999995,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 58,
+        "time": 5.799999999999995,
+        "x": 996.3250876293416,
+        "y": 1700.1877131928934
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 59,
+        "time": 5.899999999999995,
+        "x": 996.1969412814091,
+        "y": 1700.209588144586
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 59,
+        "time": 5.899999999999995,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 59,
+        "time": 5.899999999999995,
+        "x": 996.1969412814091,
+        "y": 1700.209588144586
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 60,
+        "time": 5.999999999999995,
+        "x": 996.0687949334765,
+        "y": 1700.2314630962787
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 60,
+        "time": 5.999999999999995,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 60,
+        "time": 5.999999999999995,
+        "x": 996.0687949334765,
+        "y": 1700.2314630962787
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 61,
+        "time": 6.099999999999994,
+        "x": 995.940648585544,
+        "y": 1700.2533380479713
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 61,
+        "time": 6.099999999999994,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 61,
+        "time": 6.099999999999994,
+        "x": 995.940648585544,
+        "y": 1700.2533380479713
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 62,
+        "time": 6.199999999999994,
+        "x": 995.8125022376114,
+        "y": 1700.275212999664
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 62,
+        "time": 6.199999999999994,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 62,
+        "time": 6.199999999999994,
+        "x": 995.8125022376114,
+        "y": 1700.275212999664
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 63,
+        "time": 6.299999999999994,
+        "x": 995.6843558896788,
+        "y": 1700.2970879513566
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 63,
+        "time": 6.299999999999994,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 63,
+        "time": 6.299999999999994,
+        "x": 995.6843558896788,
+        "y": 1700.2970879513566
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 64,
+        "time": 6.399999999999993,
+        "x": 995.5562095417463,
+        "y": 1700.3189629030494
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 64,
+        "time": 6.399999999999993,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 64,
+        "time": 6.399999999999993,
+        "x": 995.5562095417463,
+        "y": 1700.3189629030494
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 65,
+        "time": 6.499999999999993,
+        "x": 995.4280631938137,
+        "y": 1700.340837854742
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 65,
+        "time": 6.499999999999993,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 65,
+        "time": 6.499999999999993,
+        "x": 995.4280631938137,
+        "y": 1700.340837854742
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 66,
+        "time": 6.5999999999999925,
+        "x": 995.2999168458812,
+        "y": 1700.3627128064347
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 66,
+        "time": 6.5999999999999925,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 66,
+        "time": 6.5999999999999925,
+        "x": 995.2999168458812,
+        "y": 1700.3627128064347
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 67,
+        "time": 6.699999999999992,
+        "x": 995.1717704979486,
+        "y": 1700.3845877581273
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 67,
+        "time": 6.699999999999992,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 67,
+        "time": 6.699999999999992,
+        "x": 995.1717704979486,
+        "y": 1700.3845877581273
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 68,
+        "time": 6.799999999999992,
+        "x": 995.0436241500161,
+        "y": 1700.40646270982
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 68,
+        "time": 6.799999999999992,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 68,
+        "time": 6.799999999999992,
+        "x": 995.0436241500161,
+        "y": 1700.40646270982
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 69,
+        "time": 6.8999999999999915,
+        "x": 994.9154778020835,
+        "y": 1700.4283376615128
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 69,
+        "time": 6.8999999999999915,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 69,
+        "time": 6.8999999999999915,
+        "x": 994.9154778020835,
+        "y": 1700.4283376615128
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 70,
+        "time": 6.999999999999991,
+        "x": 994.787331454151,
+        "y": 1700.4502126132054
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 70,
+        "time": 6.999999999999991,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 70,
+        "time": 6.999999999999991,
+        "x": 994.787331454151,
+        "y": 1700.4502126132054
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 71,
+        "time": 7.099999999999991,
+        "x": 994.6591851062184,
+        "y": 1700.4720875648982
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 71,
+        "time": 7.099999999999991,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 71,
+        "time": 7.099999999999991,
+        "x": 994.6591851062184,
+        "y": 1700.4720875648982
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 72,
+        "time": 7.19999999999999,
+        "x": 994.5310387582858,
+        "y": 1700.4939625165907
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 72,
+        "time": 7.19999999999999,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 72,
+        "time": 7.19999999999999,
+        "x": 994.5310387582858,
+        "y": 1700.4939625165907
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 73,
+        "time": 7.29999999999999,
+        "x": 994.4056128440204,
+        "y": 1700.5153730823995
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 73,
+        "time": 7.29999999999999,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 73,
+        "time": 7.29999999999999,
+        "x": 994.4056128440204,
+        "y": 1700.5153730823995
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 74,
+        "time": 7.39999999999999,
+        "x": 994.2934089975469,
+        "y": 1700.5345266030495
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 74,
+        "time": 7.39999999999999,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 74,
+        "time": 7.39999999999999,
+        "x": 994.2934089975469,
+        "y": 1700.5345266030495
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 75,
+        "time": 7.499999999999989,
+        "x": 994.1983147620888,
+        "y": 1700.5507594636847
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 75,
+        "time": 7.499999999999989,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 75,
+        "time": 7.499999999999989,
+        "x": 994.1983147620888,
+        "y": 1700.5507594636847
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 76,
+        "time": 7.599999999999989,
+        "x": 994.1206112710448,
+        "y": 1700.564023674022
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 76,
+        "time": 7.599999999999989,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 76,
+        "time": 7.599999999999989,
+        "x": 994.1206112710448,
+        "y": 1700.564023674022
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 77,
+        "time": 7.699999999999989,
+        "x": 994.0587875186837,
+        "y": 1700.5745771671038
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 77,
+        "time": 7.699999999999989,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 77,
+        "time": 7.699999999999989,
+        "x": 994.0587875186837,
+        "y": 1700.5745771671038
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 78,
+        "time": 7.799999999999988,
+        "x": 994.0105984149565,
+        "y": 1700.5828031862854
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 78,
+        "time": 7.799999999999988,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 78,
+        "time": 7.799999999999988,
+        "x": 994.0105984149565,
+        "y": 1700.5828031862854
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 79,
+        "time": 7.899999999999988,
+        "x": 993.9726168992834,
+        "y": 1700.5892867407056
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 79,
+        "time": 7.899999999999988,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 79,
+        "time": 7.899999999999988,
+        "x": 993.9726168992834,
+        "y": 1700.5892867407056
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 80,
+        "time": 7.999999999999988,
+        "x": 993.9396324232064,
+        "y": 1700.5949172860346
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 80,
+        "time": 7.999999999999988,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 80,
+        "time": 7.999999999999988,
+        "x": 993.9396324232064,
+        "y": 1700.5949172860346
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 81,
+        "time": 8.099999999999987,
+        "x": 993.9090942061862,
+        "y": 1700.6001302478776
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 81,
+        "time": 8.099999999999987,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 81,
+        "time": 8.099999999999987,
+        "x": 993.9090942061862,
+        "y": 1700.6001302478776
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 82,
+        "time": 8.199999999999987,
+        "x": 993.8797535348843,
+        "y": 1700.6051387852078
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 82,
+        "time": 8.199999999999987,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 82,
+        "time": 8.199999999999987,
+        "x": 993.8797535348843,
+        "y": 1700.6051387852078
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 83,
+        "time": 8.299999999999986,
+        "x": 993.8509991121008,
+        "y": 1700.610047248223
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 83,
+        "time": 8.299999999999986,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 83,
+        "time": 8.299999999999986,
+        "x": 993.8509991121008,
+        "y": 1700.610047248223
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 84,
+        "time": 8.399999999999986,
+        "x": 1006.0465602969543,
+        "y": 1698.5646097542758
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "pancreas",
+        "phase": "substep",
+        "tick": 84,
+        "time": 8.399999999999986,
+        "x": 993.8509991121008,
+        "y": 1700.610047248223
+      }
+    ],
+    "trafficStats": {
+      "activePairs": 0,
+      "cancelled": 0,
+      "conflicts": 0,
+      "deadReleased": 0,
+      "expired": 0,
+      "maxPairs": 0,
+      "maxPlanningSlice": 4.9999999873762135e-06,
+      "noBay": 0,
+      "resumed": 0,
+      "routeRequests": 0,
+      "waits": 0,
+      "yields": 0
+    }
+  },
+  "schema": "organ-atlas-actual-lua-trace/v1"
+}

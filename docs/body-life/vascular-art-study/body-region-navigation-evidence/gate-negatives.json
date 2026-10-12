@@ -1,0 +1,578 @@
+{
+  "testedHashes": {
+    "scripts/qa/check_body_region_gate_negatives.py": "059ebcdfa578f662e115a18fee06c1f222f7db7c0bbd6c5dd26cd9a012c0efc4",
+    "scripts/war/BodyRegionAccessStudy.lua": "cd1598566751ec1df1a9935fd8d52dd577806d5be6f1937a18b610ba3642e37f",
+    "scripts/war/OrganAccessStudy.lua": "e6beebbfc5b2bcae9c11a5a416cb1b70b2acc3e46d5da2a588d017c8d598f272",
+    "scripts/war/StomachConnectivityStudy.lua": "a033e365cb3712acc101dbac24e1d4bb39261135207800e771a39badf22697c7",
+    "scripts/war/OrganRouteCollisionStudy.lua": "82e80251492a26de7915e61333047e30bef2a57b8d5e7d7cb0f3cf912820bc30",
+    "scripts/war/TissueGeometry.lua": "a012978451ba5195c4d747e36afa4da3319c9e62fc62a3d3f3e3269759b7ec6f",
+    "scripts/war/Path.lua": "fcb01be11c85b89564337639e14cb9e914a345da1f56428fd5474906290be014",
+    "scripts/war/World.lua": "2a789fe9178b06d62d6c19f36b64785624efb3c32f9b0cbf0226cb32c6a17359",
+    "scripts/war/Vessels.lua": "24850819241d673fff976e75d2ddd8183edf96271829434153747af11fa5a4cd",
+    "docs/body-life/vascular-art-study/body-region-candidates.json": "3d1bdb5846ebe15dfd68fd752042978dce50cba9b03a15846c91d4ac8254dc9a",
+    "docs/body-life/vascular-art-study/interface-contract.json": "86878d45e150353b439fb0ea8e12ad22649185ff143d5dff4a8465cea8fa8253",
+    "docs/body-life/vascular-art-study/passages-data.json": "37c4cfcaa565a15bccf8d23bd5ad26151f14c13562aeb375320a4e80f1998ae5",
+    "docs/body-life/vascular-art-study/network.json": "c2e5c51890098e8d162cb9db3cb8235ac77490a56d9aca2a211b44c26aabedfc"
+  },
+  "records": [
+    {
+      "from": {
+        "lane": 201,
+        "x": 664.0,
+        "y": 1442.0
+      },
+      "startAllowed": true,
+      "gateCount": 29,
+      "kind": "scout",
+      "freshNetworkRebuilt": true,
+      "pass": true,
+      "gate": "body.arm_r.clear_bank",
+      "clear": true,
+      "endAllowed": true,
+      "direction": "outward",
+      "gateRemoved": false,
+      "radius": 0.4375,
+      "to": {
+        "lane": 0,
+        "x": 664.0,
+        "y": 1449.5
+      }
+    },
+    {
+      "from": {
+        "lane": 0,
+        "x": 664.0,
+        "y": 1449.5
+      },
+      "startAllowed": true,
+      "gateCount": 29,
+      "kind": "scout",
+      "freshNetworkRebuilt": true,
+      "pass": true,
+      "gate": "body.arm_r.clear_bank",
+      "clear": true,
+      "endAllowed": true,
+      "direction": "inward",
+      "gateRemoved": false,
+      "radius": 0.4375,
+      "to": {
+        "lane": 201,
+        "x": 664.0,
+        "y": 1442.0
+      }
+    },
+    {
+      "from": {
+        "lane": 201,
+        "x": 664.0,
+        "y": 1442.0
+      },
+      "startAllowed": true,
+      "gateCount": 29,
+      "kind": "worker",
+      "freshNetworkRebuilt": true,
+      "pass": true,
+      "gate": "body.arm_r.clear_bank",
+      "clear": true,
+      "endAllowed": true,
+      "direction": "outward",
+      "gateRemoved": false,
+      "radius": 0.59375,
+      "to": {
+        "lane": 0,
+        "x": 664.0,
+        "y": 1449.5
+      }
+    },
+    {
+      "from": {
+        "lane": 0,
+        "x": 664.0,
+        "y": 1449.5
+      },
+      "startAllowed": true,
+      "gateCount": 29,
+      "kind": "worker",
+      "freshNetworkRebuilt": true,
+      "pass": true,
+      "gate": "body.arm_r.clear_bank",
+      "clear": true,
+      "endAllowed": true,
+      "direction": "inward",
+      "gateRemoved": false,
+      "radius": 0.59375,
+      "to": {
+        "lane": 201,
+        "x": 664.0,
+        "y": 1442.0
+      }
+    },
+    {
+      "from": {
+        "lane": 201,
+        "x": 664.0,
+        "y": 1442.0
+      },
+      "startAllowed": true,
+      "gateCount": 29,
+      "kind": "siege",
+      "freshNetworkRebuilt": true,
+      "pass": true,
+      "gate": "body.arm_r.clear_bank",
+      "clear": true,
+      "endAllowed": true,
+      "direction": "outward",
+      "gateRemoved": false,
+      "radius": 1.0625,
+      "to": {
+        "lane": 0,
+        "x": 664.0,
+        "y": 1449.5
+      }
+    },
+    {
+      "from": {
+        "lane": 0,
+        "x": 664.0,
+        "y": 1449.5
+      },
+      "startAllowed": true,
+      "gateCount": 29,
+      "kind": "siege",
+      "freshNetworkRebuilt": true,
+      "pass": true,
+      "gate": "body.arm_r.clear_bank",
+      "clear": true,
+      "endAllowed": true,
+      "direction": "inward",
+      "gateRemoved": false,
+      "radius": 1.0625,
+      "to": {
+        "lane": 201,
+        "x": 664.0,
+        "y": 1442.0
+      }
+    },
+    {
+      "clear": false,
+      "pass": true,
+      "radius": 0.4375,
+      "startAllowed": true,
+      "direction": "outward",
+      "endAllowed": true,
+      "gate": "body.arm_r.clear_bank",
+      "kind": "scout",
+      "freshNetworkRebuilt": true,
+      "gateCount": 28,
+      "to": {
+        "lane": 0,
+        "x": 664.0,
+        "y": 1449.5
+      },
+      "gateRemoved": true,
+      "from": {
+        "lane": 201,
+        "x": 664.0,
+        "y": 1442.0
+      }
+    },
+    {
+      "clear": false,
+      "pass": true,
+      "radius": 0.4375,
+      "startAllowed": true,
+      "direction": "inward",
+      "endAllowed": true,
+      "gate": "body.arm_r.clear_bank",
+      "kind": "scout",
+      "freshNetworkRebuilt": true,
+      "gateCount": 28,
+      "to": {
+        "lane": 201,
+        "x": 664.0,
+        "y": 1442.0
+      },
+      "gateRemoved": true,
+      "from": {
+        "lane": 0,
+        "x": 664.0,
+        "y": 1449.5
+      }
+    },
+    {
+      "clear": false,
+      "pass": true,
+      "radius": 0.59375,
+      "startAllowed": true,
+      "direction": "outward",
+      "endAllowed": true,
+      "gate": "body.arm_r.clear_bank",
+      "kind": "worker",
+      "freshNetworkRebuilt": true,
+      "gateCount": 28,
+      "to": {
+        "lane": 0,
+        "x": 664.0,
+        "y": 1449.5
+      },
+      "gateRemoved": true,
+      "from": {
+        "lane": 201,
+        "x": 664.0,
+        "y": 1442.0
+      }
+    },
+    {
+      "clear": false,
+      "pass": true,
+      "radius": 0.59375,
+      "startAllowed": true,
+      "direction": "inward",
+      "endAllowed": true,
+      "gate": "body.arm_r.clear_bank",
+      "kind": "worker",
+      "freshNetworkRebuilt": true,
+      "gateCount": 28,
+      "to": {
+        "lane": 201,
+        "x": 664.0,
+        "y": 1442.0
+      },
+      "gateRemoved": true,
+      "from": {
+        "lane": 0,
+        "x": 664.0,
+        "y": 1449.5
+      }
+    },
+    {
+      "clear": false,
+      "pass": true,
+      "radius": 1.0625,
+      "startAllowed": true,
+      "direction": "outward",
+      "endAllowed": true,
+      "gate": "body.arm_r.clear_bank",
+      "kind": "siege",
+      "freshNetworkRebuilt": true,
+      "gateCount": 28,
+      "to": {
+        "lane": 0,
+        "x": 664.0,
+        "y": 1449.5
+      },
+      "gateRemoved": true,
+      "from": {
+        "lane": 201,
+        "x": 664.0,
+        "y": 1442.0
+      }
+    },
+    {
+      "clear": false,
+      "pass": true,
+      "radius": 1.0625,
+      "startAllowed": true,
+      "direction": "inward",
+      "endAllowed": true,
+      "gate": "body.arm_r.clear_bank",
+      "kind": "siege",
+      "freshNetworkRebuilt": true,
+      "gateCount": 28,
+      "to": {
+        "lane": 201,
+        "x": 664.0,
+        "y": 1442.0
+      },
+      "gateRemoved": true,
+      "from": {
+        "lane": 0,
+        "x": 664.0,
+        "y": 1449.5
+      }
+    },
+    {
+      "freshNetworkRebuilt": true,
+      "gateCount": 29,
+      "kind": "scout",
+      "gate": "body.leg_r.clear_bank",
+      "clear": true,
+      "to": {
+        "lane": 0,
+        "y": 2294.9411764705883,
+        "x": 868.3529411764706
+      },
+      "radius": 0.4375,
+      "from": {
+        "lane": 64,
+        "y": 2294.9411764705883,
+        "x": 860.3529411764706
+      },
+      "endAllowed": true,
+      "direction": "outward",
+      "startAllowed": true,
+      "pass": true,
+      "gateRemoved": false
+    },
+    {
+      "freshNetworkRebuilt": true,
+      "gateCount": 29,
+      "kind": "scout",
+      "gate": "body.leg_r.clear_bank",
+      "clear": true,
+      "to": {
+        "lane": 64,
+        "y": 2294.9411764705883,
+        "x": 860.3529411764706
+      },
+      "radius": 0.4375,
+      "from": {
+        "lane": 0,
+        "y": 2294.9411764705883,
+        "x": 868.3529411764706
+      },
+      "endAllowed": true,
+      "direction": "inward",
+      "startAllowed": true,
+      "pass": true,
+      "gateRemoved": false
+    },
+    {
+      "freshNetworkRebuilt": true,
+      "gateCount": 29,
+      "kind": "worker",
+      "gate": "body.leg_r.clear_bank",
+      "clear": true,
+      "to": {
+        "lane": 0,
+        "y": 2294.9411764705883,
+        "x": 868.3529411764706
+      },
+      "radius": 0.59375,
+      "from": {
+        "lane": 64,
+        "y": 2294.9411764705883,
+        "x": 860.3529411764706
+      },
+      "endAllowed": true,
+      "direction": "outward",
+      "startAllowed": true,
+      "pass": true,
+      "gateRemoved": false
+    },
+    {
+      "freshNetworkRebuilt": true,
+      "gateCount": 29,
+      "kind": "worker",
+      "gate": "body.leg_r.clear_bank",
+      "clear": true,
+      "to": {
+        "lane": 64,
+        "y": 2294.9411764705883,
+        "x": 860.3529411764706
+      },
+      "radius": 0.59375,
+      "from": {
+        "lane": 0,
+        "y": 2294.9411764705883,
+        "x": 868.3529411764706
+      },
+      "endAllowed": true,
+      "direction": "inward",
+      "startAllowed": true,
+      "pass": true,
+      "gateRemoved": false
+    },
+    {
+      "freshNetworkRebuilt": true,
+      "gateCount": 29,
+      "kind": "siege",
+      "gate": "body.leg_r.clear_bank",
+      "clear": true,
+      "to": {
+        "lane": 0,
+        "y": 2294.9411764705883,
+        "x": 868.3529411764706
+      },
+      "radius": 1.0625,
+      "from": {
+        "lane": 64,
+        "y": 2294.9411764705883,
+        "x": 860.3529411764706
+      },
+      "endAllowed": true,
+      "direction": "outward",
+      "startAllowed": true,
+      "pass": true,
+      "gateRemoved": false
+    },
+    {
+      "freshNetworkRebuilt": true,
+      "gateCount": 29,
+      "kind": "siege",
+      "gate": "body.leg_r.clear_bank",
+      "clear": true,
+      "to": {
+        "lane": 64,
+        "y": 2294.9411764705883,
+        "x": 860.3529411764706
+      },
+      "radius": 1.0625,
+      "from": {
+        "lane": 0,
+        "y": 2294.9411764705883,
+        "x": 868.3529411764706
+      },
+      "endAllowed": true,
+      "direction": "inward",
+      "startAllowed": true,
+      "pass": true,
+      "gateRemoved": false
+    },
+    {
+      "clear": false,
+      "pass": true,
+      "radius": 0.4375,
+      "startAllowed": true,
+      "direction": "outward",
+      "endAllowed": true,
+      "gate": "body.leg_r.clear_bank",
+      "kind": "scout",
+      "freshNetworkRebuilt": true,
+      "gateCount": 28,
+      "to": {
+        "lane": 0,
+        "x": 868.3529411764706,
+        "y": 2294.9411764705883
+      },
+      "gateRemoved": true,
+      "from": {
+        "lane": 64,
+        "x": 860.3529411764706,
+        "y": 2294.9411764705883
+      }
+    },
+    {
+      "clear": false,
+      "pass": true,
+      "radius": 0.4375,
+      "startAllowed": true,
+      "direction": "inward",
+      "endAllowed": true,
+      "gate": "body.leg_r.clear_bank",
+      "kind": "scout",
+      "freshNetworkRebuilt": true,
+      "gateCount": 28,
+      "to": {
+        "lane": 64,
+        "x": 860.3529411764706,
+        "y": 2294.9411764705883
+      },
+      "gateRemoved": true,
+      "from": {
+        "lane": 0,
+        "x": 868.3529411764706,
+        "y": 2294.9411764705883
+      }
+    },
+    {
+      "clear": false,
+      "pass": true,
+      "radius": 0.59375,
+      "startAllowed": true,
+      "direction": "outward",
+      "endAllowed": true,
+      "gate": "body.leg_r.clear_bank",
+      "kind": "worker",
+      "freshNetworkRebuilt": true,
+      "gateCount": 28,
+      "to": {
+        "lane": 0,
+        "x": 868.3529411764706,
+        "y": 2294.9411764705883
+      },
+      "gateRemoved": true,
+      "from": {
+        "lane": 64,
+        "x": 860.3529411764706,
+        "y": 2294.9411764705883
+      }
+    },
+    {
+      "clear": false,
+      "pass": true,
+      "radius": 0.59375,
+      "startAllowed": true,
+      "direction": "inward",
+      "endAllowed": true,
+      "gate": "body.leg_r.clear_bank",
+      "kind": "worker",
+      "freshNetworkRebuilt": true,
+      "gateCount": 28,
+      "to": {
+        "lane": 64,
+        "x": 860.3529411764706,
+        "y": 2294.9411764705883
+      },
+      "gateRemoved": true,
+      "from": {
+        "lane": 0,
+        "x": 868.3529411764706,
+        "y": 2294.9411764705883
+      }
+    },
+    {
+      "clear": false,
+      "pass": true,
+      "radius": 1.0625,
+      "startAllowed": true,
+      "direction": "outward",
+      "endAllowed": true,
+      "gate": "body.leg_r.clear_bank",
+      "kind": "siege",
+      "freshNetworkRebuilt": true,
+      "gateCount": 28,
+      "to": {
+        "lane": 0,
+        "x": 868.3529411764706,
+        "y": 2294.9411764705883
+      },
+      "gateRemoved": true,
+      "from": {
+        "lane": 64,
+        "x": 860.3529411764706,
+        "y": 2294.9411764705883
+      }
+    },
+    {
+      "clear": false,
+      "pass": true,
+      "radius": 1.0625,
+      "startAllowed": true,
+      "direction": "inward",
+      "endAllowed": true,
+      "gate": "body.leg_r.clear_bank",
+      "kind": "siege",
+      "freshNetworkRebuilt": true,
+      "gateCount": 28,
+      "to": {
+        "lane": 64,
+        "x": 860.3529411764706,
+        "y": 2294.9411764705883
+      },
+      "gateRemoved": true,
+      "from": {
+        "lane": 0,
+        "x": 868.3529411764706,
+        "y": 2294.9411764705883
+      }
+    }
+  ],
+  "summary": {
+    "cases": 24,
+    "negativeCases": 12,
+    "positiveControls": 12,
+    "passed": 24
+  },
+  "method": "Independent Lua runtimes rebuild W.generate and Vessels gate buckets for each omitted gate, preserving exact coordinates and all radii. Same-lumen anchor to tissue endpoint, both directions; no wall widening."
+}

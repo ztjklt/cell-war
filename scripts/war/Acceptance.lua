@@ -95,7 +95,7 @@ function QA.run()
   u.x,u.y=B.x+4,B.y;u.hp=50;u.temp=20;u.returning=true;u.satiety=20;u.cargo={food=8};u.delivering=true;s.factions[1].food={}
   advance(s,200);expect(E.food(s,1)>0 and not next(u.cargo) and u.satiety>50,"hungry worker withheld carried food")
   u.orders={{kind="gather",target=U.key(B.x+6,B.y-1)}};u.x,u.y=B.x+4,B.y;u.returning=true;u.hp=20;u.satiety=100
-  local before=u.hp;require("war.Survival").update(s,10);expect(u.hp>before,"returning unit did not rest with a pending order")
+  local before=u.hp;require("war.Survival").update(s,10);expect(u.hp<=before,"returning unit healed outside kidney")
  end)
  test("敌方迷雾与自主发展",function()
   local s=Sim.new(107,"sandbox",2);A.think(s,2);expect(next(s.factions[2].ai.known)==nil,"AI discovered unseen camp")

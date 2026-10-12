@@ -1,0 +1,124 @@
+{
+  "scope": "Real original fixed membrane endpoints; same layer contract and same two shared adapters; only optional grid connector enabled",
+  "productionInstalled": false,
+  "nativeEvidence": false,
+  "cases": [
+    {
+      "id": "lung_l.outward",
+      "kind": "siege",
+      "fromSource": [
+        580.0,
+        350.0
+      ],
+      "toSource": [
+        575.0,
+        350.0
+      ],
+      "before": false,
+      "after": true,
+      "secondsAfter": 8.399999999999984,
+      "invalidSteps": 0,
+      "radiusViolations": 0
+    },
+    {
+      "id": "lung_l.inward",
+      "kind": "siege",
+      "fromSource": [
+        575.0,
+        350.0
+      ],
+      "toSource": [
+        580.0,
+        350.0
+      ],
+      "before": false,
+      "after": true,
+      "secondsAfter": 8.599999999999987,
+      "invalidSteps": 0,
+      "radiusViolations": 0
+    },
+    {
+      "id": "stomach.outward",
+      "kind": "siege",
+      "fromSource": [
+        566.0,
+        503.0
+      ],
+      "toSource": [
+        563.1715728752538,
+        505.8284271247462
+      ],
+      "before": false,
+      "after": false,
+      "secondsAfter": 12.000000000000036,
+      "invalidSteps": 0,
+      "radiusViolations": 0
+    },
+    {
+      "id": "stomach.inward",
+      "kind": "siege",
+      "fromSource": [
+        563.1715728752538,
+        505.8284271247462
+      ],
+      "toSource": [
+        566.0,
+        503.0
+      ],
+      "before": false,
+      "after": false,
+      "secondsAfter": 12.000000000000036,
+      "invalidSteps": 0,
+      "radiusViolations": 0
+    },
+    {
+      "id": "colon_distal.outward",
+      "kind": "siege",
+      "fromSource": [
+        567.0,
+        666.0
+      ],
+      "toSource": [
+        564.1715728752538,
+        663.1715728752538
+      ],
+      "before": false,
+      "after": false,
+      "secondsAfter": 12.000000000000036,
+      "invalidSteps": 0,
+      "radiusViolations": 0
+    },
+    {
+      "id": "colon_distal.inward",
+      "kind": "siege",
+      "fromSource": [
+        564.1715728752538,
+        663.1715728752538
+      ],
+      "toSource": [
+        567.0,
+        666.0
+      ],
+      "before": false,
+      "after": false,
+      "secondsAfter": 12.000000000000036,
+      "invalidSteps": 0,
+      "radiusViolations": 0
+    }
+  ],
+  "summary": {
+    "cases": 6,
+    "beforePassed": 0,
+    "afterPassed": 2
+  },
+  "beforeModuleHashes": {
+    "OrganRouteNavigationStudy.lua": "dafbec15bc0e0b50f30b56932643e15352bdd04046bb70bc7c92e74f2e2619f5",
+    "OrganRouteCollisionStudy.lua": "82e80251492a26de7915e61333047e30bef2a57b8d5e7d7cb0f3cf912820bc30"
+  },
+  "afterModuleHashes": {
+    "OrganRouteNavigationStudy.lua": "dafbec15bc0e0b50f30b56932643e15352bdd04046bb70bc7c92e74f2e2619f5",
+    "OrganRouteCollisionStudy.lua": "82e80251492a26de7915e61333047e30bef2a57b8d5e7d7cb0f3cf912820bc30",
+    "OrganRouteGridConnectorStudy.lua": "0bddd20317314495bd4bc6cf56c460eab8d539b53f39e1449f7cbd394e65da76"
+  },
+  "sourceLayerSha256": "43c5adbd65f481e64642242f3bc57b9fcc3c981633b70f86b014606ac49edb3d"
+}

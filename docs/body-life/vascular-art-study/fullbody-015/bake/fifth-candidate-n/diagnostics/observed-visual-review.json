@@ -1,0 +1,99 @@
+{
+  "schema": "candidate-n-author-direct-visual-review/v1",
+  "createdUTC": "2026-10-11T22:10:09.484796+00:00",
+  "status": "TARGET_MODEL_IMPROVED_NATIVE_UNCONFIRMED",
+  "authorReviewer": true,
+  "independentReviewer": false,
+  "nativeEvidence": false,
+  "wholeVisualAccepted": false,
+  "promoteAllowed": false,
+  "candidateManifestSha256": "5bafad7935d16f96f9ec7c29f75fbb0e77ab973d7ebae23f74756f4756bfbe20",
+  "contractSha256": "9a43c2096dc4759d14363291a5808c8e8ee3fc92cc39398ad4d0210e7757309d",
+  "privateRuntimeDataSha256": "926245b147d7b188958c169ffc81f13dee0df251d5c3c79b9aceba99dd523a5e",
+  "allFiveComparisonsActuallyObserved": true,
+  "rawPolygonsActuallyObserved": true,
+  "rawPolygonGuidePath": "docs/body-life/vascular-art-study/fullbody-015/bake/fifth-candidate-n/diagnostics/raw-rim-UV-polygons.png",
+  "rawPolygonGuideSha256": "0b7660a289dbe9a68eb0529545108fc349c8fc6f1b10a0d2846fe5c5797798e6",
+  "cases": [
+    {
+      "id": "entire-crop-true015",
+      "path": "docs/body-life/vascular-art-study/fullbody-015/bake/fifth-candidate-n/diagnostics/entire-crop-true015-compare.png",
+      "sha256": "92b098dddb28ea7e473a7d4cf969b51b50a523cce610015e526b1561f6c7ab2c",
+      "observed": true,
+      "sourceBox": [
+        507,
+        545,
+        532,
+        561
+      ],
+      "status": "TARGET_MODEL_IMPROVED_WITH_STYLE_WARNING",
+      "conclusion": "All four fixed mouth edges now have a visible warm coral rim in the model; the blue lower mouth is no longer bare and upper blue no longer has M dotted purple stripe. Side transitions are soft. The rim bands remain rather broad and light against the original floor; style/readability still needs root and actual native judgment.",
+      "nativeEvidence": false
+    },
+    {
+      "id": "e010-sourceStart",
+      "path": "docs/body-life/vascular-art-study/fullbody-015/bake/fifth-candidate-n/diagnostics/e010-sourceStart-compare.png",
+      "sha256": "093dba6f5d689a267e0634db829b0f9972060b14ec98854693c1656dc549b0aa",
+      "observed": true,
+      "sourceBox": [
+        511.26629511558815,
+        545.0700227622928,
+        519.2662951155882,
+        549.0700227622928
+      ],
+      "status": "TARGET_MODEL_IMPROVED_WITH_STYLE_WARNING",
+      "conclusion": "Upper red source UV follows the actual fixed foreground curve. Hard side color steps from M are softened. The pink lip still reads as a soft band rather than a very fine edge; no blue/black donor colors introduced.",
+      "nativeEvidence": false
+    },
+    {
+      "id": "e010-sourceEnd",
+      "path": "docs/body-life/vascular-art-study/fullbody-015/bake/fifth-candidate-n/diagnostics/e010-sourceEnd-compare.png",
+      "sha256": "d5d5c75be8b8079b97feafa8c308a31e4abdebd3461a76ca6c3a1908b06fa561",
+      "observed": true,
+      "sourceBox": [
+        511.08960118111736,
+        552.0699503410875,
+        519.0896011811174,
+        556.0699503410875
+      ],
+      "status": "TARGET_MODEL_IMPROVED_WITH_STYLE_WARNING",
+      "conclusion": "Lower red banks meet a continuous coral lip at the fixed roof edge; side/interior feather removes M abrupt rectangular splice. Lip highlight is broad and should be checked at .15 for excess contrast.",
+      "nativeEvidence": false
+    },
+    {
+      "id": "e119-sourceEnd",
+      "path": "docs/body-life/vascular-art-study/fullbody-015/bake/fifth-candidate-n/diagnostics/e119-sourceEnd-compare.png",
+      "sha256": "2bdecde18e0d39c1d06b03c70c4256f43e53dd2d44eae8e1ef16120945d5c618",
+      "observed": true,
+      "sourceBox": [
+        519.4323163071163,
+        545.9281666847154,
+        527.4323163071163,
+        549.9281666847154
+      ],
+      "status": "TARGET_MODEL_IMPROVED_WITH_STYLE_WARNING",
+      "conclusion": "Upper blue has a smooth coral band with no M dot-like transverse purple stripe. Only material lookup moved to the actual GPT coral rim. The tube outside bank is intact; no new transverse black wall is seen.",
+      "nativeEvidence": false
+    },
+    {
+      "id": "e119-sourceStart",
+      "path": "docs/body-life/vascular-art-study/fullbody-015/bake/fifth-candidate-n/diagnostics/e119-sourceStart-compare.png",
+      "sha256": "bbe589dbf343ca6e22c3ede7926ff36e37003776e02f1110890afb2238e0616f",
+      "observed": true,
+      "sourceBox": [
+        518.9270558237497,
+        552.9914649183452,
+        526.9270558237497,
+        556.9914649183452
+      ],
+      "status": "TARGET_MODEL_IMPROVED_WITH_STYLE_WARNING",
+      "conclusion": "Lower blue now has a coral rim at [522.927055824,554.991464918] through explicit raw material UV. No map mouth was moved; N support stayed within M. The rim remains pale and broad, requiring native readability judgment.",
+      "nativeEvidence": false
+    }
+  ],
+  "limits": [
+    "This is a private offline source-registration material result, not a native screenshot.",
+    "Root / independent review should assess whether broad soft rim bands are acceptable; author does not declare whole map art PASS.",
+    "Only one new43rdresource was authored. K original42 remain unchanged; M remains immutable FAIL."
+  ]
+}

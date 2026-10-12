@@ -1,0 +1,88 @@
+{
+  "status": "PASS_REFERENCE_VIEW",
+  "url": "http://127.0.0.1:57916/vascular-art-study/final-reference.html",
+  "viewportWidth": 408,
+  "summary": "48 项重合处理已确定 · 217 个精确遮挡段（含腔道与新交叉） · 13 组循环连接保留 · 本轮未生图",
+  "errorText": "",
+  "visiblePathSegments": 241,
+  "mergedHiddenPathSegments": 110,
+  "caseCount": 48,
+  "tests": [
+    {
+      "name": "deep layer toggle",
+      "before": 110,
+      "after": 0
+    },
+    {
+      "name": "four route decisions filter",
+      "count": 4
+    },
+    {
+      "name": "precise hidden segment",
+      "text": "H011 · e125 被 胃 遮挡：起点 (521.00, 566.60) → 终点 (547.70, 572.97)，长度 27.84 原图像素。独立深层血管；由该器官前景遮住此精确段，两端不建立器官连接。",
+      "markers": 2
+    },
+    {
+      "name": "stomach inner 0.15",
+      "zoom": "zoom 0.1500 · 9.60 逻辑像素 / 原图像素",
+      "text": "胃壁内侧组织出口\n\n供血口 stomach.a → 你画的胃壁曲线 → 回流口 stomach.v。原曲线形状没有重画；两个组织出口已重新落到管壁。\n\n管腔锚点 (571.39, 539.96)；管壁口 (570.38, 540.50)；组织侧 (567.68, 541.92)。\n\n沿管线距最近接头 6.04 原图像素，管壁口距食物投影 7.27 原图像素。朝向与管线切线垂直。\n\n淡金色是食物通路；绿色短箭头进入胃壁组织。这里确定入口位置，实际单位移动会在接入游戏时重测。"
+    },
+    {
+      "name": "stomach outer 0.15",
+      "zoom": "zoom 0.1500 · 9.60 逻辑像素 / 原图像素",
+      "text": "胃壁外侧组织出口\n\n供血口 stomach.a → 你画的胃壁曲线 → 回流口 stomach.v。原曲线形状没有重画；两个组织出口已重新落到管壁。\n\n管腔锚点 (608.58, 531.91)；管壁口 (609.63, 532.38)；组织侧 (612.41, 533.63)。\n\n沿管线距最近接头 58.60 原图像素，管壁口距食物投影 6.57 原图像素。朝向与管线切线垂直。\n\n淡金色是食物通路；绿色短箭头进入胃壁组织。这里确定入口位置，实际单位移动会在接入游戏时重测。"
+    },
+    {
+      "name": "map drag",
+      "before": "589.9328793651465 504.8283060268547 37.29166666666667 54.16666666666667",
+      "after": "593.0578793651465 502.74497269352133 37.29166666666667 54.16666666666667",
+      "changed": true
+    },
+    {
+      "name": "zoom button",
+      "text": "zoom 0.2250 · 14.40 逻辑像素 / 原图像素"
+    },
+    {
+      "name": "头部 focus",
+      "viewBox": "391.35 -29.84078212290501 237.29999999999995 344.68156424581"
+    },
+    {
+      "name": "双臂 focus",
+      "viewBox": "74.95000000000005 -39.41620111731834 870.0999999999999 1263.8324022346367"
+    },
+    {
+      "name": "双腿 focus",
+      "viewBox": "216.3195192307693 715.9250000000001 587.3609615384614 853.1499999999999"
+    }
+  ],
+  "consoleWarningsOrErrors": [],
+  "screenshots": [
+    "final-reference-browser.png",
+    "final-reference-stomach.png",
+    "final-reference-stomach-inner.png",
+    "final-reference-stomach-outer.png"
+  ],
+  "visualReview": [
+    "Full body retains accepted head and limb routes.",
+    "Actual detours use smooth curves without small reversal tails.",
+    "Stomach wall supply/return and two tissue exits carry separate labels.",
+    "Both 0.15 exits point into tissue and avoid the food region."
+  ],
+  "imageGenerated": false,
+  "productionInstalled": false,
+  "newMovementCertified": false,
+  "nativeConfirmed": false,
+  "inputHashes": {
+    "final-reference.html": "b3ba00ae1c40153ab8da10b9457e08e78f1755f1967b6637d68c82217166afba",
+    "final-reference.js": "f40393868758cb100b21d8337b0766392b2f1753e7676b69298dae9eaba8a1ee",
+    "final-reference-data.json": "3890744e2fcaf9e9907c85513e170e479f67b7fbb1fbf06385ac02bd80e8550c",
+    "final-reference-checks.json": "84416dc3bbc266d1a2ef7a19e69b9c549ef3f09c24820ff7d4af8f3cfd5049ec",
+    "independent-final-reference-audit.json": "4e18dc78788c10385a77143ddf95bdc5c30467c81575890da197b27d045ffd3d",
+    "coverage-reference.png": "9a04e39961c07073cd9fdcfcdc2c98253ccc25d968e97dbea1f36669e06b5d9f"
+  },
+  "nativePreview": {
+    "processAlive": false,
+    "reloadId": 22,
+    "restarted": false
+  }
+}

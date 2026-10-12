@@ -1,0 +1,207 @@
+{
+  "schema": "linked-group-idle-actual-observation/v1",
+  "status": "PASS_LINKED_TWO_CASES",
+  "oldObservationSha256": "3e9c7f84ca64ab3dcb5f1c6ecb3c19a736631218a571ae9c7d5c2ddfc94db986",
+  "newObservationSha256": "a4b6472c182020838dee63313cf0c48ddd6e73dcea66882881e92bbe4353d848",
+  "cases": [
+    "inherited-gastric/group/mixed-six-to-south_middle",
+    "inherited-gastric/group/single-siege-avoids-idle-siege"
+  ],
+  "allowedDifference": "Only qStep progress logging can select existing config.group coordinates or omit an idle target",
+  "scenarioCommandsAndOracleUnchanged": true,
+  "cpuRunRequiresRootP95End": true,
+  "originalFailuresPreserved": true,
+  "overallVisualAccepted": false,
+  "originalSourceContextPath": "/Users/jitian/Documents/ChatGPT/细胞战争真/.tmp/fullbody-015/scoped-current-navigation/physics-v4-current-004-run2/context.json",
+  "originalSourceContextSha256": "c4c3a1c4539705a3667eda075177509ca288e6ade7d859374d9c959ea233c7a7",
+  "originalMatrixSha256": "8c611df97c519c6405268cd3dfe0609abf7d99b5aa2d89b08056ff8ae2ad36da",
+  "originalFailureRecords": [
+    {
+      "id": "inherited-gastric/group/mixed-six-to-south_middle",
+      "path": "/Users/jitian/Documents/ChatGPT/细胞战争真/.tmp/fullbody-015/scoped-current-navigation/physics-v4-current-004-run2/fullbody/runs/1791755756110624000/cases/inherited-gastric__group__mixed-six-to-south_middle.json",
+      "sha256": "52f8a25996e635b11974292e19482f279094d886fc03bc29d00e22538c036572",
+      "actualTraceArtifact": {
+        "path": "fullbody/runs/1791755756110624000/cases/inherited-gastric__group__mixed-six-to-south_middle.json.trajectory.json.gz",
+        "sha256": "601375362baad221cc5190d8e92e5ba74636bd056ef50745bdb533d30f8ed976",
+        "bytes": 30242,
+        "encoding": "gzip-json",
+        "lossless": true
+      }
+    },
+    {
+      "id": "inherited-gastric/group/single-siege-avoids-idle-siege",
+      "path": "/Users/jitian/Documents/ChatGPT/细胞战争真/.tmp/fullbody-015/scoped-current-navigation/physics-v4-current-004-run2/fullbody/runs/1791755756110624000/cases/inherited-gastric__group__single-siege-avoids-idle-siege.json",
+      "sha256": "6a92ba731372888e4f8185dd63d4b38c936d43b749fa7727bdc5632001d6efef",
+      "actualTraceArtifact": {
+        "path": "fullbody/runs/1791755756110624000/cases/inherited-gastric__group__single-siege-avoids-idle-siege.json.trajectory.json.gz",
+        "sha256": "2a86eb2165900a31ad55a92d47f05715abd951ca490a8b8de4e5a8467df5ed3e",
+        "bytes": 12206,
+        "encoding": "gzip-json",
+        "lossless": true
+      }
+    }
+  ],
+  "baseObserverSha256": "c60fa4276f160d56b336ecb20795e34e6d98b7e418db7e1780c557153d4c3898",
+  "passiveAdapterSha256": "fa925703412432efd5e209fa0b59f51700b22f729de8f540aa9c57fae3099b5d",
+  "cpuLimitSeconds": 90,
+  "newCasesExecuted": 2,
+  "otherAcceptedCaseObservationsReexecuted": 0,
+  "contextPath": "/Users/jitian/Documents/ChatGPT/细胞战争真/.tmp/fullbody-015/scoped-current-navigation/linked-group-idle-005/context.json",
+  "contextSha256": "48e0621e3cb317249c63930cf87a67951e6f04fbf307587e58c49df6a5fc1449",
+  "observerAdaptationProofSha256": "921071ccfaebfcaff82ffcc623b0833c78b3335dfcb31024f513066607b0cf98",
+  "rows": [
+    {
+      "id": "inherited-gastric/group/mixed-six-to-south_middle",
+      "path": "/Users/jitian/Documents/ChatGPT/细胞战争真/.tmp/fullbody-015/scoped-current-navigation/linked-group-idle-005/actual/cases/inherited-gastric__group__mixed-six-to-south_middle.json",
+      "sha256": "313c0f702e50923d4f84848f8a2da59575e9623c3767e79d4d99ce99454cfb85",
+      "row": {
+        "id": "inherited-gastric/group/mixed-six-to-south_middle",
+        "family": "inherited-gastric",
+        "status": "PASS",
+        "completed": true,
+        "commandsValid": true,
+        "spawnErrors": {},
+        "arrivals": [
+          {
+            "id": 25,
+            "distanceWorld": 0.003804658825927846,
+            "laneMatches": true,
+            "organMatches": true
+          },
+          {
+            "id": 26,
+            "distanceWorld": 0.009478026678791395,
+            "laneMatches": true,
+            "organMatches": true
+          },
+          {
+            "id": 27,
+            "distanceWorld": 0.0,
+            "laneMatches": true,
+            "organMatches": true
+          },
+          {
+            "id": 28,
+            "distanceWorld": 0.015493098353211212,
+            "laneMatches": true,
+            "organMatches": true
+          },
+          {
+            "id": 29,
+            "distanceWorld": 0.0,
+            "laneMatches": true,
+            "organMatches": true
+          },
+          {
+            "id": 30,
+            "distanceWorld": 0.0,
+            "laneMatches": true,
+            "organMatches": true
+          }
+        ],
+        "savePassed": true,
+        "elapsedSimulationSeconds": 128.299999999997,
+        "setupSimulationSeconds": 0,
+        "disksChecked": 17719,
+        "capsulesChecked": 10021,
+        "geometryFailures": 0,
+        "firstGeometryFailures": [],
+        "unverifiedDomainPoints": 0,
+        "trafficStats": {
+          "resumed": 0,
+          "conflicts": 0,
+          "waits": 0,
+          "maxPlanningSlice": 6.000000000838668e-06,
+          "expired": 0,
+          "yields": 0,
+          "maxPairs": 0,
+          "activePairs": 0,
+          "noBay": 0,
+          "routeRequests": 0,
+          "deadReleased": 0,
+          "cancelled": 0
+        },
+        "visitedLanes": [
+          124,
+          183,
+          202
+        ],
+        "minimumFrameDiskGapWorld": 0.04999532540414453,
+        "endpointFailures": [],
+        "currentCardiacDependencyLanes": [],
+        "actualNavigationEdges": 210,
+        "additionalCurrentContractFailures": [],
+        "requiredCommonNavigationDependencyFailure": false,
+        "failureScope": null
+      },
+      "completeActual": true,
+      "actualTraceArtifact": {
+        "path": "actual/cases/inherited-gastric__group__mixed-six-to-south_middle.json.trajectory.json.gz",
+        "sha256": "646a1f764e98759b338bcdd660a802761ebcbcadd7a261e7d73ca63c82102e49",
+        "bytes": 273817,
+        "encoding": "gzip-json",
+        "lossless": true
+      }
+    },
+    {
+      "id": "inherited-gastric/group/single-siege-avoids-idle-siege",
+      "path": "/Users/jitian/Documents/ChatGPT/细胞战争真/.tmp/fullbody-015/scoped-current-navigation/linked-group-idle-005/actual/cases/inherited-gastric__group__single-siege-avoids-idle-siege.json",
+      "sha256": "7d9c15d44fe357d7b09c4c784c09b864cf0439ebde17ff5aced3e4b5c0320d08",
+      "row": {
+        "id": "inherited-gastric/group/single-siege-avoids-idle-siege",
+        "family": "inherited-gastric",
+        "status": "PASS",
+        "completed": true,
+        "commandsValid": true,
+        "spawnErrors": {},
+        "arrivals": [
+          {
+            "id": 25,
+            "distanceWorld": 0.01079138803356876,
+            "laneMatches": true,
+            "organMatches": true
+          }
+        ],
+        "savePassed": true,
+        "elapsedSimulationSeconds": 57.90000000000055,
+        "setupSimulationSeconds": 0,
+        "disksChecked": 2893,
+        "capsulesChecked": 1735,
+        "geometryFailures": 0,
+        "firstGeometryFailures": [],
+        "unverifiedDomainPoints": 0,
+        "trafficStats": {
+          "resumed": 0,
+          "conflicts": 0,
+          "waits": 0,
+          "maxPlanningSlice": 4.999999999810711e-06,
+          "expired": 0,
+          "yields": 0,
+          "maxPairs": 0,
+          "activePairs": 0,
+          "noBay": 0,
+          "routeRequests": 0,
+          "deadReleased": 0,
+          "cancelled": 0
+        },
+        "visitedLanes": [],
+        "minimumFrameDiskGapWorld": 2.384369140246534,
+        "endpointFailures": [],
+        "currentCardiacDependencyLanes": [],
+        "actualNavigationEdges": 210,
+        "additionalCurrentContractFailures": [],
+        "requiredCommonNavigationDependencyFailure": false,
+        "failureScope": null
+      },
+      "completeActual": true,
+      "actualTraceArtifact": {
+        "path": "actual/cases/inherited-gastric__group__single-siege-avoids-idle-siege.json.trajectory.json.gz",
+        "sha256": "c57d4a94f0097d1df3efcad4a9025ca88dc192a8ebec3fdd8303d3657c615f7d",
+        "bytes": 58745,
+        "encoding": "gzip-json",
+        "lossless": true
+      }
+    }
+  ],
+  "wholeBodyAccepted": false
+}

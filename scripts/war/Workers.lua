@@ -4,21 +4,27 @@ local function delivery(s,e,dt)
  local b=U.nearest(s,e.x,e.y,function(v) return v.faction==e.faction and v.category=="building" and v.complete and D.buildings[v.kind].supply end)
  if not b then return false end
  if C.go(s,e,b.x,b.y,dt,(D.buildings[b.kind].size or 1)*.5+1) then
-  for k,n in pairs(e.cargo) do E.add(s,e.faction,k,n);if e.faction==1 then s.delivered=(s.delivered or 0)+n end end
-  e.cargo={};e.delivering=false;e.path={};e.pathIndex=1;e.pathPending=false;e.orderToken=e.orderToken+1
+  for k,n in pairs(e.cargo) do
+   local glucose=k=="food" and math.min(e.cargoStomachGlucose or 0,n) or 0
+   if glucose>0 then E.add(s,e.faction,k,glucose,"stomach") end
+   if n>glucose then E.add(s,e.faction,k,n-glucose) end
+   if e.faction==1 then s.delivered=(s.delivered or 0)+n end
+  end
+  e.cargoStomachGlucose=0;e.cargo={};e.delivering=false;e.path={};e.pathIndex=1;e.pathPending=false;e.orderToken=e.orderToken+1
  end return true
 end
 function J.update(s,e,dt)
+ if not U.alive(e) then return end
  e.age=e.age+dt;e.cooldown=math.max(0,e.cooldown-dt)
  local workDt=dt*((e.satiety<20 or e.sanity<25 or e.temp<5 or e.temp>35) and .55 or 1)
- if e.life then e.life=e.life-dt;if e.life<=0 then e.hp=0;return end end
+ if e.life then e.life=e.life-dt;if e.life<=0 then F.damage(s,nil,e,e.hp,{cause="expired",raw=true});return end end
  local o=e.orders[1]
  if s.campaign and e.kind=="virus" then require("war.Campaign").virus(s,e,dt);return end
- if not s.campaign and e.faction>0 and (e.returning or e.satiety<30 or e.hp<e.maxHp*.22) then
+ if not s.campaign and e.faction>0 and (e.returning or e.satiety<30) then
   local home=U.nearest(s,e.x,e.y,function(b) return b.faction==e.faction and b.category=="building" and b.complete and D.buildings[b.kind].supply end)
   if home and U.dist(e,home)>7 then
    e.returning=true;C.go(s,e,home.x,home.y,dt,5);return
-  elseif e.returning and (e.satiety<65 or e.hp<e.maxHp*.35) then
+  elseif e.returning and e.satiety<65 then
    -- Hungry survivors must unload carried food before waiting to be fed.
    -- Otherwise an empty pantry can deadlock the last farmer at the camp.
    if next(e.cargo) then delivery(s,e,dt) end
@@ -29,10 +35,22 @@ function J.update(s,e,dt)
   local home=U.nearest(s,e.x,e.y,function(b) return b.faction==e.faction and b.category=="building" and b.complete and (b.kind=="fire" or b.kind=="core") end)
   if home then C.go(s,e,home.x,home.y,dt,3);return end
  end
- if e.faction==0 then
+ if e.faction==0 or e.kind=="herpes" or e.kind=="helicobacter" then
   local _,fraction=require("war.Survival").clock(s);local r=fraction>=.75 and 17 or 8
   local target=F.enemy(s,e,r,false)
+  if e.kind=="herpes" then
+   target=false;local best=math.huge
+   for _,v in ipairs(W.neighbors(s,e.x,e.y,D.units.herpes.range)) do
+    if U.alive(v) and v.faction~=e.faction and D.units.herpes.projectile.targetKinds[v.kind] and (e.faction==0 or W.visible(s,e.faction,v)) and (not s.campaign or require("war.Campaign").allowed(s,v.x,v.y)) then local distance=U.dist(e,v);if distance<best then target,best=v,distance end end
+   end
+  end
   if target then F.fight(s,e,target,dt,true) elseif e.home and U.dist(e,e.home)>2 then C.go(s,e,e.home.x,e.home.y,dt,2) end return
+ end
+ -- Explicit focus fire takes priority over opportunistic nearby targets.
+ if o and o.kind=="attack" then
+  local target=s.entities[o.target]
+  if U.alive(target) and target.faction~=e.faction and W.visible(s,e.faction,target) then F.fight(s,e,target,dt,true);return end
+  C.completeOrder(e);o=e.orders[1]
  end
  -- Retaliate without discarding work queues; workers only fight a nearby attacker.
  local activeAttack=o and (o.kind=="attack" or o.kind=="attackmove")
@@ -62,6 +80,7 @@ function J.update(s,e,dt)
   if C.go(s,e,r.x,r.y,dt,1.4) then
    e.work=e.work+workDt
    if e.work>=.7 then e.work=e.work-.7;local n=math.min(2,r.amount);r.amount=r.amount-n;e.cargo[r.kind]=(e.cargo[r.kind] or 0)+n
+    if r.kind=="food" and require("war.OrganRules").at(s,r.x,r.y)=="stomach" then e.cargoStomachGlucose=(e.cargoStomachGlucose or 0)+n end
     if e.cargo[r.kind]>=14 or r.amount<=0 then e.delivering=true;e.path={};e.pathIndex=1;e.pathPending=false;e.orderToken=e.orderToken+1 end
    end
   end
@@ -78,8 +97,15 @@ function J.update(s,e,dt)
       for _,v in pairs(s.entities) do if v.id~=e.id and v.orders and v.orders[1] and v.orders[1].kind=="farm" and v.orders[1].target==b.id then staffed=true end end
       if not staffed then C.order(s,e,{kind="farm",target=b.id}) end
      end
-    else b.progress=math.min(1,b.progress+workDt/D.buildings[b.kind].time);b.hp=math.max(b.hp,b.maxHp*b.progress)
-     if b.progress>=1 then b.complete=true;b.hp=b.maxHp;U.message(s,D.buildings[b.kind].name.."建造完成",b.faction);W.rebuild(s) end
+    else
+     b.builders=b.builders or {};b.builders[e.id]=true
+     b.progress=math.min(1,b.progress+workDt/D.buildings[b.kind].time);b.hp=math.max(b.hp,b.maxHp*b.progress)
+     if b.progress>=1 then
+      b.complete=true;b.hp=b.maxHp
+      local ids={};for id in pairs(b.builders) do ids[#ids+1]=tonumber(id) end;table.sort(ids)
+      for _,id in ipairs(ids) do local builder=s.entities[id];if U.alive(builder) then require("war.CombatStatus").apply(s,builder,"fatigue") end end
+      b.builders=nil;U.message(s,D.buildings[b.kind].name.."建造完成",b.faction);W.rebuild(s)
+     end
     end
    elseif o.kind=="repair" then
     if b.hp>=b.maxHp then C.completeOrder(e) else e.work=e.work+workDt;if e.work>=1 then e.work=0;if E.pay(s,e.faction,{wood=1}) then b.hp=math.min(b.maxHp,b.hp+20) end end end

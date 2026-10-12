@@ -1,0 +1,811 @@
+{
+  "schema": "fullbody-foreground-semantic-preflight/v1",
+  "createdAt": "2026-10-11T15:38:14.221389+00:00",
+  "status": "PASS",
+  "candidateAcceptance": false,
+  "nativeEvidence": false,
+  "scope": "Independent source-SVG/frozen organ semantics only; candidate is not frozen.",
+  "inputHashes": {
+    "scripts/qa/check_fullbody_foreground_semantics.py": "58c5b6d0cac6319ecf32a741b362649be7ef5e5f1f8de29e3aadc7e109163fa6",
+    "docs/body-life/vascular-art-study/fullbody-015/bake/fourth-guides/manifest-v7.json": "672bcd9942fe50c4f7117e021a4a270c894271688af8b64fc813178bd53c01cb",
+    "docs/body-life/vascular-art-study/final-reference-data.json": "3890744e2fcaf9e9907c85513e170e479f67b7fbb1fbf06385ac02bd80e8550c",
+    "docs/body-life/vascular-art-study/fullbody-015/bake/fourth-guides/shared-foreground-source-v7.svg": "aaec1bb01ef3de9be2bd887dfbcaaafea4f35811dff63f4f2c50cf97599162d1",
+    "docs/body-life/vascular-art-study/organ-atlas/geometry/brain.json": "e4f8cfaf2cc790cfef44054caa66417e48c524f02dcd0b6d24d0384c04a5892d",
+    "docs/body-life/vascular-art-study/organ-atlas/geometry/lung_r.json": "2bf0124fe0aa7af19716f8770443a22d402026b1df477f5399f06acee49f977f",
+    "docs/body-life/vascular-art-study/organ-atlas/geometry/lung_l.json": "d774795edbd4a2a350ca7f8cb65e2e7f8cf0185c8c59b6d5304d258f15b1fd3d",
+    "docs/body-life/vascular-art-study/organ-atlas/geometry/liver.json": "4880dc20aa7065fbf97307e5a0126c47c92f205d2177ac7511aa18b4bb8bd2a1",
+    "docs/body-life/vascular-art-study/stomach-playable/layout.json": "ee7c95a483e9bc3a264028392bdcc3c92c8cf7e4f76d3234a412980a232f32d9",
+    "docs/body-life/vascular-art-study/organ-atlas/geometry/pancreas.json": "71f92f8f1bbab015bd10d453be80e27c083be26910e5136c3ab4d2a27b177334",
+    "docs/body-life/vascular-art-study/organ-atlas/geometry/heart.json": "ec7c6afe126609c1bb65f99545f34a46c0b29cf79777fb474800afc0717e556a",
+    "docs/body-life/vascular-art-study/organ-atlas/geometry/kidney_r.json": "7375aa2dbfd68770d4ae04f810930f17c1b02e57ed1519af9d6f56ce2ea37be4",
+    "docs/body-life/vascular-art-study/organ-atlas/geometry/kidney_l.json": "edca415d9ecc05e0e7c8291d0d10eb035433239b3b61adf51ad6e7c892bdb1d3",
+    "docs/body-life/vascular-art-study/organ-atlas/geometry/small_intestine.json": "ba914d7aa148e761e55a811f6d4cf5b079d212af5eb6cdbb68294bcd5acc475f",
+    "docs/body-life/vascular-art-study/organ-atlas/geometry/large_intestine.json": "99fc96c48c5f93fe0464c1598cf4d6d5d72a552a4837b3a5068b48006f43e629",
+    "docs/body-life/vascular-art-study/organ-atlas/geometry/bladder.json": "31939931e4a10176e93a40c24d810c65cdd0473d8f37e248bc70edb2de3ea628"
+  },
+  "changedDuringChecks": [],
+  "checks": [
+    {
+      "id": "frozen biological and blood source",
+      "status": "PASS"
+    },
+    {
+      "id": "accepted shared SVG bytes",
+      "status": "PASS"
+    },
+    {
+      "id": "display classification does not define movement",
+      "status": "PASS"
+    },
+    {
+      "id": "registered roof geometry is finite and nonempty",
+      "status": "PASS"
+    },
+    {
+      "id": "air Y uses exact independent passage coordinates and widths",
+      "status": "PASS"
+    },
+    {
+      "id": "all twelve organ floor exclusions are explicit",
+      "status": "PASS"
+    },
+    {
+      "id": "floor exclusion binds frozen organ:brain",
+      "status": "PASS"
+    },
+    {
+      "id": "ordinary organ floor is not a roof:brain",
+      "status": "PASS",
+      "offendingAreaSource": 0.0,
+      "reservedRingCount": 0,
+      "firstOffendingSource": null,
+      "sourcePrecisionCoreGuard": 0.0001
+    },
+    {
+      "id": "floor exclusion binds frozen organ:lung_r",
+      "status": "PASS"
+    },
+    {
+      "id": "ordinary organ floor is not a roof:lung_r",
+      "status": "PASS",
+      "offendingAreaSource": 0.0,
+      "reservedRingCount": 2,
+      "firstOffendingSource": null,
+      "sourcePrecisionCoreGuard": 0.0001
+    },
+    {
+      "id": "floor exclusion binds frozen organ:lung_l",
+      "status": "PASS"
+    },
+    {
+      "id": "ordinary organ floor is not a roof:lung_l",
+      "status": "PASS",
+      "offendingAreaSource": 0.0,
+      "reservedRingCount": 2,
+      "firstOffendingSource": null,
+      "sourcePrecisionCoreGuard": 0.0001
+    },
+    {
+      "id": "floor exclusion binds frozen organ:liver",
+      "status": "PASS"
+    },
+    {
+      "id": "ordinary organ floor is not a roof:liver",
+      "status": "PASS",
+      "offendingAreaSource": 0.0,
+      "reservedRingCount": 0,
+      "firstOffendingSource": null,
+      "sourcePrecisionCoreGuard": 0.0001
+    },
+    {
+      "id": "floor exclusion binds frozen organ:stomach",
+      "status": "PASS"
+    },
+    {
+      "id": "ordinary organ floor is not a roof:stomach",
+      "status": "PASS",
+      "offendingAreaSource": 0.0,
+      "reservedRingCount": 1,
+      "firstOffendingSource": null,
+      "sourcePrecisionCoreGuard": 0.0001
+    },
+    {
+      "id": "floor exclusion binds frozen organ:pancreas",
+      "status": "PASS"
+    },
+    {
+      "id": "ordinary organ floor is not a roof:pancreas",
+      "status": "PASS",
+      "offendingAreaSource": 0.0,
+      "reservedRingCount": 1,
+      "firstOffendingSource": null,
+      "sourcePrecisionCoreGuard": 0.0001
+    },
+    {
+      "id": "floor exclusion binds frozen organ:heart",
+      "status": "PASS"
+    },
+    {
+      "id": "ordinary organ floor is not a roof:heart",
+      "status": "PASS",
+      "offendingAreaSource": 0.0,
+      "reservedRingCount": 0,
+      "firstOffendingSource": null,
+      "sourcePrecisionCoreGuard": 0.0001
+    },
+    {
+      "id": "floor exclusion binds frozen organ:kidney_r",
+      "status": "PASS"
+    },
+    {
+      "id": "ordinary organ floor is not a roof:kidney_r",
+      "status": "PASS",
+      "offendingAreaSource": 0.0,
+      "reservedRingCount": 1,
+      "firstOffendingSource": null,
+      "sourcePrecisionCoreGuard": 0.0001
+    },
+    {
+      "id": "floor exclusion binds frozen organ:kidney_l",
+      "status": "PASS"
+    },
+    {
+      "id": "ordinary organ floor is not a roof:kidney_l",
+      "status": "PASS",
+      "offendingAreaSource": 0.0,
+      "reservedRingCount": 1,
+      "firstOffendingSource": null,
+      "sourcePrecisionCoreGuard": 0.0001
+    },
+    {
+      "id": "floor exclusion binds frozen organ:small_intestine",
+      "status": "PASS"
+    },
+    {
+      "id": "ordinary organ floor is not a roof:small_intestine",
+      "status": "PASS",
+      "offendingAreaSource": 0.0,
+      "reservedRingCount": 1,
+      "firstOffendingSource": null,
+      "sourcePrecisionCoreGuard": 0.0001
+    },
+    {
+      "id": "floor exclusion binds frozen organ:large_intestine",
+      "status": "PASS"
+    },
+    {
+      "id": "ordinary organ floor is not a roof:large_intestine",
+      "status": "PASS",
+      "offendingAreaSource": 0.0,
+      "reservedRingCount": 1,
+      "firstOffendingSource": null,
+      "sourcePrecisionCoreGuard": 0.0001
+    },
+    {
+      "id": "floor exclusion binds frozen organ:bladder",
+      "status": "PASS"
+    },
+    {
+      "id": "ordinary organ floor is not a roof:bladder",
+      "status": "PASS",
+      "offendingAreaSource": 0.0,
+      "reservedRingCount": 1,
+      "firstOffendingSource": null,
+      "sourcePrecisionCoreGuard": 0.0001
+    },
+    {
+      "id": "heart has no implicit esophagus-colored roof",
+      "status": "PASS"
+    },
+    {
+      "id": "stomach food cavity core is protected",
+      "status": "PASS",
+      "missingFoodAreaSource": 0.0005029650280796805
+    },
+    {
+      "id": "canonical arch Y core is protected",
+      "status": "PASS",
+      "missingAirAreaSource": 0.00023828026746728836
+    },
+    {
+      "id": "confirmed gastric exterior ordinary floor is not a roof",
+      "status": "PASS",
+      "source": [
+        517,
+        618
+      ],
+      "logicallyInsideAbstractFoodRoute": true,
+      "actualExpectedRoof": false,
+      "reason": "Accepted visible ordinary orange floor; abstract duodenum is not a painted roof"
+    },
+    {
+      "id": "semantic depth probe:e153:10.95416146",
+      "status": "PASS",
+      "edgeId": "e153",
+      "source": [
+        507.4608719117715,
+        332.21308978155673
+      ],
+      "sourceDistance": 10.954161461162004,
+      "expectedHidden": true,
+      "actualSVGHidden": true,
+      "independentMeaning": "canonical-trachea-Y"
+    },
+    {
+      "id": "semantic depth probe:e153:10.33755225",
+      "status": "PASS",
+      "edgeId": "e153",
+      "source": [
+        507.81578375263433,
+        332.71731579151304
+      ],
+      "sourceDistance": 10.337552250487976,
+      "expectedHidden": true,
+      "actualSVGHidden": true,
+      "independentMeaning": "canonical-trachea-Y"
+    },
+    {
+      "id": "semantic depth probe:e153:9.72094304",
+      "status": "PASS",
+      "edgeId": "e153",
+      "source": [
+        508.1728626965243,
+        333.2200095300715
+      ],
+      "sourceDistance": 9.720943039813948,
+      "expectedHidden": true,
+      "actualSVGHidden": true,
+      "independentMeaning": "canonical-trachea-Y"
+    },
+    {
+      "id": "semantic depth probe:e153:9.10433383",
+      "status": "PASS",
+      "edgeId": "e153",
+      "source": [
+        508.53190047596416,
+        333.72130612283024
+      ],
+      "sourceDistance": 9.10433382913992,
+      "expectedHidden": true,
+      "actualSVGHidden": true,
+      "independentMeaning": "canonical-trachea-Y"
+    },
+    {
+      "id": "semantic depth probe:e153:8.48772462",
+      "status": "PASS",
+      "edgeId": "e153",
+      "source": [
+        508.8927778563872,
+        334.22128014097416
+      ],
+      "sourceDistance": 8.48772461846589,
+      "expectedHidden": true,
+      "actualSVGHidden": true,
+      "independentMeaning": "canonical-trachea-Y"
+    },
+    {
+      "id": "semantic depth probe:e153:7.87111541",
+      "status": "PASS",
+      "edgeId": "e153",
+      "source": [
+        509.25539029926915,
+        334.7199972493302
+      ],
+      "sourceDistance": 7.871115407791863,
+      "expectedHidden": true,
+      "actualSVGHidden": true,
+      "independentMeaning": "canonical-trachea-Y"
+    },
+    {
+      "id": "semantic depth probe:e153:7.25450620",
+      "status": "PASS",
+      "edgeId": "e153",
+      "source": [
+        509.61960231611334,
+        335.217547420525
+      ],
+      "sourceDistance": 7.254506197117834,
+      "expectedHidden": true,
+      "actualSVGHidden": true,
+      "independentMeaning": "canonical-trachea-Y"
+    },
+    {
+      "id": "semantic depth probe:e153:6.63789699",
+      "status": "PASS",
+      "edgeId": "e153",
+      "source": [
+        509.9853271412723,
+        335.71398673037237
+      ],
+      "sourceDistance": 6.637896986443806,
+      "expectedHidden": true,
+      "actualSVGHidden": true,
+      "independentMeaning": "canonical-trachea-Y"
+    },
+    {
+      "id": "semantic depth probe:e153:6.02128778",
+      "status": "PASS",
+      "edgeId": "e153",
+      "source": [
+        510.352500440841,
+        336.20935571710334
+      ],
+      "sourceDistance": 6.021287775769778,
+      "expectedHidden": true,
+      "actualSVGHidden": true,
+      "independentMeaning": "canonical-trachea-Y"
+    },
+    {
+      "id": "semantic depth probe:e153:5.40467857",
+      "status": "PASS",
+      "edgeId": "e153",
+      "source": [
+        510.7210231368058,
+        336.7037216641323
+      ],
+      "sourceDistance": 5.40467856509575,
+      "expectedHidden": true,
+      "actualSVGHidden": true,
+      "independentMeaning": "canonical-trachea-Y"
+    },
+    {
+      "id": "semantic depth probe:e153:4.78806935",
+      "status": "PASS",
+      "edgeId": "e153",
+      "source": [
+        511.0908299233438,
+        337.19712781270766
+      ],
+      "sourceDistance": 4.788069354421722,
+      "expectedHidden": true,
+      "actualSVGHidden": true,
+      "independentMeaning": "canonical-trachea-Y"
+    },
+    {
+      "id": "semantic depth probe:e009:24.22127291",
+      "status": "PASS",
+      "edgeId": "e009",
+      "source": [
+        530.5328495983763,
+        358.68996509884835
+      ],
+      "sourceDistance": 24.22127291367249,
+      "expectedHidden": false,
+      "actualSVGHidden": false,
+      "independentMeaning": "ordinary-red-main"
+    },
+    {
+      "id": "semantic depth probe:e009:32.29503055",
+      "status": "PASS",
+      "edgeId": "e009",
+      "source": [
+        535.1415176387101,
+        365.2912509534541
+      ],
+      "sourceDistance": 32.29503055156332,
+      "expectedHidden": false,
+      "actualSVGHidden": false,
+      "independentMeaning": "ordinary-red-main"
+    },
+    {
+      "id": "semantic depth probe:e009:40.36878819",
+      "status": "PASS",
+      "edgeId": "e009",
+      "source": [
+        538.4464376746573,
+        372.6567246844911
+      ],
+      "sourceDistance": 40.36878818945415,
+      "expectedHidden": false,
+      "actualSVGHidden": false,
+      "independentMeaning": "ordinary-red-main"
+    },
+    {
+      "id": "semantic depth probe:e151:2.08811419",
+      "status": "PASS",
+      "edgeId": "e151",
+      "source": [
+        532.5047326013465,
+        372.97269086668655
+      ],
+      "sourceDistance": 2.088114194283631,
+      "expectedHidden": false,
+      "actualSVGHidden": false,
+      "independentMeaning": "ordinary-red-main"
+    },
+    {
+      "id": "semantic depth probe:e151:4.17622839",
+      "status": "PASS",
+      "edgeId": "e151",
+      "source": [
+        532.1694100457075,
+        370.91190378140317
+      ],
+      "sourceDistance": 4.176228388567262,
+      "expectedHidden": false,
+      "actualSVGHidden": false,
+      "independentMeaning": "ordinary-red-main"
+    },
+    {
+      "id": "semantic depth probe:e151:8.35245678",
+      "status": "PASS",
+      "edgeId": "e151",
+      "source": [
+        531.6813811491228,
+        366.76448983812685
+      ],
+      "sourceDistance": 8.352456777134524,
+      "expectedHidden": false,
+      "actualSVGHidden": false,
+      "independentMeaning": "ordinary-red-main"
+    },
+    {
+      "id": "semantic depth probe:e151:12.52868517",
+      "status": "PASS",
+      "edgeId": "e151",
+      "source": [
+        531.2322529326418,
+        362.61251021489153
+      ],
+      "sourceDistance": 12.528685165701784,
+      "expectedHidden": false,
+      "actualSVGHidden": false,
+      "independentMeaning": "ordinary-red-main"
+    },
+    {
+      "id": "semantic depth probe:e151:16.70491355",
+      "status": "PASS",
+      "edgeId": "e151",
+      "source": [
+        530.6463862352108,
+        358.4781664619354
+      ],
+      "sourceDistance": 16.704913554269048,
+      "expectedHidden": false,
+      "actualSVGHidden": false,
+      "independentMeaning": "ordinary-red-main"
+    },
+    {
+      "id": "semantic depth probe:e156:0.00000000",
+      "status": "PASS",
+      "edgeId": "e156",
+      "source": [
+        514.0,
+        341.0
+      ],
+      "sourceDistance": 0.0,
+      "expectedHidden": false,
+      "actualSVGHidden": false,
+      "independentMeaning": "ordinary-red-main"
+    },
+    {
+      "id": "semantic depth probe:e156:5.14061081",
+      "status": "PASS",
+      "edgeId": "e156",
+      "source": [
+        513.8870261264415,
+        335.8909278161531
+      ],
+      "sourceDistance": 5.14061081387252,
+      "expectedHidden": false,
+      "actualSVGHidden": false,
+      "independentMeaning": "ordinary-red-main"
+    },
+    {
+      "id": "semantic depth probe:e156:10.28122163",
+      "status": "PASS",
+      "edgeId": "e156",
+      "source": [
+        514.8351181743849,
+        330.84103724130813
+      ],
+      "sourceDistance": 10.28122162774504,
+      "expectedHidden": false,
+      "actualSVGHidden": false,
+      "independentMeaning": "ordinary-red-main"
+    },
+    {
+      "id": "semantic depth probe:e156:15.42183244",
+      "status": "PASS",
+      "edgeId": "e156",
+      "source": [
+        516.137231573748,
+        325.8684551699626
+      ],
+      "sourceDistance": 15.42183244161756,
+      "expectedHidden": false,
+      "actualSVGHidden": false,
+      "independentMeaning": "ordinary-red-main"
+    },
+    {
+      "id": "semantic depth probe:e156:20.56244326",
+      "status": "PASS",
+      "edgeId": "e156",
+      "source": [
+        517.5243723004447,
+        320.9185775192009
+      ],
+      "sourceDistance": 20.56244325549008,
+      "expectedHidden": false,
+      "actualSVGHidden": false,
+      "independentMeaning": "ordinary-red-main"
+    },
+    {
+      "id": "semantic depth probe:e011:36.05742514",
+      "status": "PASS",
+      "edgeId": "e011",
+      "source": [
+        517.0849242154886,
+        617.9944566988381
+      ],
+      "sourceDistance": 36.05742513622905,
+      "expectedHidden": false,
+      "actualSVGHidden": false,
+      "independentMeaning": "confirmed-gastric-exterior-ordinary-floor"
+    },
+    {
+      "id": "negative control rejects false cream heart-floor island",
+      "status": "PASS"
+    },
+    {
+      "id": "negative control rejects missing trachea roof",
+      "status": "PASS"
+    }
+  ],
+  "semanticDepthProbes": [
+    {
+      "edgeId": "e153",
+      "sourceDistance": 10.954161461162004,
+      "source": [
+        507.4608719117715,
+        332.21308978155673
+      ],
+      "expectedHidden": true,
+      "reason": "canonical-trachea-Y"
+    },
+    {
+      "edgeId": "e153",
+      "sourceDistance": 10.337552250487976,
+      "source": [
+        507.81578375263433,
+        332.71731579151304
+      ],
+      "expectedHidden": true,
+      "reason": "canonical-trachea-Y"
+    },
+    {
+      "edgeId": "e153",
+      "sourceDistance": 9.720943039813948,
+      "source": [
+        508.1728626965243,
+        333.2200095300715
+      ],
+      "expectedHidden": true,
+      "reason": "canonical-trachea-Y"
+    },
+    {
+      "edgeId": "e153",
+      "sourceDistance": 9.10433382913992,
+      "source": [
+        508.53190047596416,
+        333.72130612283024
+      ],
+      "expectedHidden": true,
+      "reason": "canonical-trachea-Y"
+    },
+    {
+      "edgeId": "e153",
+      "sourceDistance": 8.48772461846589,
+      "source": [
+        508.8927778563872,
+        334.22128014097416
+      ],
+      "expectedHidden": true,
+      "reason": "canonical-trachea-Y"
+    },
+    {
+      "edgeId": "e153",
+      "sourceDistance": 7.871115407791863,
+      "source": [
+        509.25539029926915,
+        334.7199972493302
+      ],
+      "expectedHidden": true,
+      "reason": "canonical-trachea-Y"
+    },
+    {
+      "edgeId": "e153",
+      "sourceDistance": 7.254506197117834,
+      "source": [
+        509.61960231611334,
+        335.217547420525
+      ],
+      "expectedHidden": true,
+      "reason": "canonical-trachea-Y"
+    },
+    {
+      "edgeId": "e153",
+      "sourceDistance": 6.637896986443806,
+      "source": [
+        509.9853271412723,
+        335.71398673037237
+      ],
+      "expectedHidden": true,
+      "reason": "canonical-trachea-Y"
+    },
+    {
+      "edgeId": "e153",
+      "sourceDistance": 6.021287775769778,
+      "source": [
+        510.352500440841,
+        336.20935571710334
+      ],
+      "expectedHidden": true,
+      "reason": "canonical-trachea-Y"
+    },
+    {
+      "edgeId": "e153",
+      "sourceDistance": 5.40467856509575,
+      "source": [
+        510.7210231368058,
+        336.7037216641323
+      ],
+      "expectedHidden": true,
+      "reason": "canonical-trachea-Y"
+    },
+    {
+      "edgeId": "e153",
+      "sourceDistance": 4.788069354421722,
+      "source": [
+        511.0908299233438,
+        337.19712781270766
+      ],
+      "expectedHidden": true,
+      "reason": "canonical-trachea-Y"
+    },
+    {
+      "edgeId": "e009",
+      "sourceDistance": 24.22127291367249,
+      "source": [
+        530.5328495983763,
+        358.68996509884835
+      ],
+      "expectedHidden": false,
+      "reason": "ordinary-red-main"
+    },
+    {
+      "edgeId": "e009",
+      "sourceDistance": 32.29503055156332,
+      "source": [
+        535.1415176387101,
+        365.2912509534541
+      ],
+      "expectedHidden": false,
+      "reason": "ordinary-red-main"
+    },
+    {
+      "edgeId": "e009",
+      "sourceDistance": 40.36878818945415,
+      "source": [
+        538.4464376746573,
+        372.6567246844911
+      ],
+      "expectedHidden": false,
+      "reason": "ordinary-red-main"
+    },
+    {
+      "edgeId": "e151",
+      "sourceDistance": 2.088114194283631,
+      "source": [
+        532.5047326013465,
+        372.97269086668655
+      ],
+      "expectedHidden": false,
+      "reason": "ordinary-red-main"
+    },
+    {
+      "edgeId": "e151",
+      "sourceDistance": 4.176228388567262,
+      "source": [
+        532.1694100457075,
+        370.91190378140317
+      ],
+      "expectedHidden": false,
+      "reason": "ordinary-red-main"
+    },
+    {
+      "edgeId": "e151",
+      "sourceDistance": 8.352456777134524,
+      "source": [
+        531.6813811491228,
+        366.76448983812685
+      ],
+      "expectedHidden": false,
+      "reason": "ordinary-red-main"
+    },
+    {
+      "edgeId": "e151",
+      "sourceDistance": 12.528685165701784,
+      "source": [
+        531.2322529326418,
+        362.61251021489153
+      ],
+      "expectedHidden": false,
+      "reason": "ordinary-red-main"
+    },
+    {
+      "edgeId": "e151",
+      "sourceDistance": 16.704913554269048,
+      "source": [
+        530.6463862352108,
+        358.4781664619354
+      ],
+      "expectedHidden": false,
+      "reason": "ordinary-red-main"
+    },
+    {
+      "edgeId": "e156",
+      "sourceDistance": 0.0,
+      "source": [
+        514.0,
+        341.0
+      ],
+      "expectedHidden": false,
+      "reason": "ordinary-red-main"
+    },
+    {
+      "edgeId": "e156",
+      "sourceDistance": 5.14061081387252,
+      "source": [
+        513.8870261264415,
+        335.8909278161531
+      ],
+      "expectedHidden": false,
+      "reason": "ordinary-red-main"
+    },
+    {
+      "edgeId": "e156",
+      "sourceDistance": 10.28122162774504,
+      "source": [
+        514.8351181743849,
+        330.84103724130813
+      ],
+      "expectedHidden": false,
+      "reason": "ordinary-red-main"
+    },
+    {
+      "edgeId": "e156",
+      "sourceDistance": 15.42183244161756,
+      "source": [
+        516.137231573748,
+        325.8684551699626
+      ],
+      "expectedHidden": false,
+      "reason": "ordinary-red-main"
+    },
+    {
+      "edgeId": "e156",
+      "sourceDistance": 20.56244325549008,
+      "source": [
+        517.5243723004447,
+        320.9185775192009
+      ],
+      "expectedHidden": false,
+      "reason": "ordinary-red-main"
+    },
+    {
+      "edgeId": "e011",
+      "sourceDistance": 36.05742513622905,
+      "source": [
+        517.0849242154886,
+        617.9944566988381
+      ],
+      "expectedHidden": false,
+      "reason": "confirmed-gastric-exterior-ordinary-floor"
+    }
+  ],
+  "limits": [
+    "No candidate PNG decode or runtime/native validation in this preflight.",
+    "Color is never used to create navigation or infer a cell route."
+  ]
+}

@@ -53,7 +53,7 @@ function S.changeMap(oldState,targetMapId,spawnId)
   if e.category=="unit" and e.faction==1 and U.alive(e) then units[#units+1]=U.copy(e) end
  end
  table.sort(units,function(a,b) return a.id<b.id end)
- local nextState=W.generate(oldState.seed,oldState.legacyTerrain,"body","campaign",3,targetMapId)
+ local nextState=W.generate(oldState.seed,oldState.legacyTerrain,"body","campaign",oldState.anatomyVersion or 3,targetMapId)
  nextState.time=oldState.time;nextState.tick=oldState.tick;nextState.rng=oldState.rng;nextState.tutorial=oldState.tutorial;nextState.outcome="playing";nextState.nextId=math.max(nextState.nextId,maxId+1)
  for i=1,math.min(#oldState.factions,#nextState.factions) do
   local fa=U.copy(oldState.factions[i]);fa.seen={};fa.visible={};fa.mapSeen={};nextState.factions[i]=fa
@@ -77,6 +77,9 @@ function S.changeMap(oldState,targetMapId,spawnId)
  P.reset();nextState.factions[1].seenRevision=(nextState.factions[1].seenRevision or 0)+1;require("war.Campaign").checkpoint(nextState);return nextState
 end
 function S.step(s,dt)
+ if s.fullbodyBattlefieldVersion==1 then return require('war.FullBodyBattlefield').step(s,dt) end
+ if s.organBattlefieldVersion==1 then return require('war.OrganTrial').step(s,dt) end
+ if s.gastricBattlefieldVersion==1 then return require('war.GastricTrial').step(s,dt) end
  if s.outcome=="defeat" then return end
  C.process(s);spawnWildChunks(s);s.time=s.time+dt;s.tick=s.tick+1;s.messageTime=math.max(0,s.messageTime-dt)
  if s.campaign then require("war.Campaign").beforeStep(s,dt) end
@@ -84,6 +87,13 @@ function S.step(s,dt)
  local list={} for id,e in pairs(s.entities) do if U.alive(e) then list[#list+1]=id end end
  table.sort(list)
  for _,id in ipairs(list) do local e=s.entities[id]
+ if U.alive(e) then
+  if e.category=="unit" then
+   local Status=require("war.CombatStatus")
+   e.resolvingCombatState=true;e.nextCombatState=e.statuses and e.statuses.fatigue and "fatigued" or "idle"
+   require("war.OrganRules").update(s,e,dt);Status.update(s,e,dt)
+  end
+ if U.alive(e) then
   if e.category=="unit" then J.update(s,e,dt)
   elseif e.faction>0 then require("war.Combat").updateTower(s,e,dt)
   elseif e.kind=="nest" then
@@ -95,6 +105,11 @@ function S.step(s,dt)
    end
   end
  end
+ end end
+ for _,e in ipairs(Collision.units(s)) do
+  e.resolvingCombatState=false;require("war.CombatStatus").setState(s,e,e.nextCombatState or "idle");e.nextCombatState=nil
+ end
+ require("war.Combat").updateProjectiles(s,dt)
  B.update(s,dt)
  if s.tick%10==0 then
   if not s.campaign then V.update(s,1);E.spoil(s) end;W.fog(s)
@@ -121,10 +136,13 @@ function S.step(s,dt)
   if s.tutorial==5 and (s.trained or 0)>0 then s.tutorial=6 end
   end
  end
+ W.rebuild(s)
+ for _,e in ipairs(Collision.units(s)) do if U.alive(e) then require("war.Combat").contacts(s,e) end end
  Collision.resolve(s)
  for _,e in ipairs(Collision.units(s)) do Motion.record(e) end
  W.rebuild(s)
  if s.campaign then require("war.Campaign").afterStep(s,dt) else A.update(s,dt) end
+ require("war.CombatPresentation").update(s)
  for i=#s.effects,1,-1 do s.effects[i].ttl=s.effects[i].ttl-dt;if s.effects[i].ttl<=0 then table.remove(s.effects,i) end end
  -- Dead entities are pruned after effects, avoiding unbounded state growth.
  local ruins={}

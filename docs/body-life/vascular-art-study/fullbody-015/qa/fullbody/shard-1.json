@@ -1,0 +1,90 @@
+{
+  "cases": [
+    {
+      "id": "edge/e090/siege",
+      "family": "edge",
+      "edgeId": "e090",
+      "laneIndex": 90,
+      "system": "artery",
+      "sourceFractions": [
+        0.15,
+        0.85
+      ],
+      "actors": [
+        {
+          "kind": "siege",
+          "x": 1139.7572303144298,
+          "y": 2308.532244781477,
+          "tx": 1222.773353162712,
+          "ty": 3200.285140975857,
+          "lane": 90,
+          "targetLane": 90,
+          "targetOrgan": "bladder"
+        }
+      ],
+      "maxTime": 1800,
+      "caseOrgans": [],
+      "organs": [
+        "brain",
+        "lung_r",
+        "lung_l",
+        "liver",
+        "stomach",
+        "pancreas",
+        "kidney_r",
+        "kidney_l",
+        "large_intestine",
+        "small_intestine",
+        "bladder",
+        "heart"
+      ]
+    },
+    {
+      "id": "edge/e189/siege",
+      "family": "edge",
+      "edgeId": "e189",
+      "laneIndex": 189,
+      "system": "artery",
+      "sourceFractions": [
+        0.15,
+        0.85
+      ],
+      "actors": [
+        {
+          "kind": "siege",
+          "x": 917.9153806436515,
+          "y": 1854.8184674068991,
+          "tx": 907.3470905933455,
+          "ty": 1828.186597915866,
+          "lane": 189,
+          "targetLane": 189,
+          "targetOrgan": "small_intestine",
+          "setupSource": [
+            500.8381533074739,
+            695.4043368662799
+          ]
+        }
+      ],
+      "maxTime": 1800,
+      "caseOrgans": [],
+      "organs": [
+        "brain",
+        "lung_r",
+        "lung_l",
+        "liver",
+        "stomach",
+        "pancreas",
+        "kidney_r",
+        "kidney_l",
+        "large_intestine",
+        "small_intestine",
+        "bladder",
+        "heart"
+      ]
+    }
+  ],
+  "cpuLimitSeconds": 300.0,
+  "caseDirectory": "fullbody/runs/1791719235250328000/cases",
+  "observationMaxTime": 6000.0,
+  "setupMaxTime": 6000.0
+}

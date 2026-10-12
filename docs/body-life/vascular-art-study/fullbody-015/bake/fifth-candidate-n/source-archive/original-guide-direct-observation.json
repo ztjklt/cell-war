@@ -1,0 +1,24 @@
+{
+  "schema": "fixed-mouth-guides-direct-observation/v1",
+  "createdUTC": "2026-10-11T21:45:19.352585+00:00",
+  "status": "PASS_REFERENCE_GUIDES_ONLY",
+  "contractSha256": "ce30a75b412d0031b9733b206bd84d78de07df0239c76d65a23bf0f8ee32bce5",
+  "nativeEvidence": false,
+  "generated": false,
+  "productionEdited": false,
+  "observed": [
+    {
+      "path": ".tmp/fullbody-015/scoped-current-qa/fixed-mouth-guide-001/mouth-fixed-K-reference.png",
+      "sha256": "af02ce72caa55215e19f97129489c5d4496db9102fa967cd7738fe72c61eca86",
+      "observed": true,
+      "result": "K original crop shows fixed red and blue trunks crossing the existing pink stomach food strip. Upper and lower cuts are both within exact crop. No text, new geometry or candidate paint was added."
+    },
+    {
+      "path": ".tmp/fullbody-015/scoped-current-qa/fixed-mouth-guide-001/mouth-fixed-boundary-outline.png",
+      "sha256": "25825b7ff6c4825e0da662c958293d4380f29032a608a917b5e869f5a15817bb",
+      "observed": true,
+      "result": "All four fixed mouth points sit on yellow actual foreground boundaries. The mask-derived local roof lips are limited to blood footprints. Source content unchanged in size and placement; all text is in exterior margins. White trunk contours match the K crop."
+    }
+  ],
+  "nextStep": "Root can generate an RGB roof lip using these references; generated alpha/route silhouettes must not be accepted. Preserve source crop metadata when using the padded guide."
+}

@@ -1,0 +1,6202 @@
+{
+  "schema": "fullbody-015-production-motion-case/v1",
+  "nativeEvidence": false,
+  "productionNavigationSubstituted": false,
+  "config": {
+    "id": "gate/stomach/siege/gastric.local.central/exit",
+    "family": "gate",
+    "owner": "stomach",
+    "gateId": "gastric.local.central",
+    "direction": "exit",
+    "actors": [
+      {
+        "kind": "siege",
+        "x": 1154.6666666666667,
+        "y": 1576.0,
+        "tx": 1140.9007404819597,
+        "ty": 1588.5133992056965,
+        "lane": 0,
+        "targetLane": 202,
+        "targetOrgan": "stomach"
+      }
+    ],
+    "maxTime": 600,
+    "caseOrgans": [
+      "stomach"
+    ],
+    "organs": [
+      "brain",
+      "lung_r",
+      "lung_l",
+      "liver",
+      "stomach",
+      "pancreas",
+      "kidney_r",
+      "kidney_l",
+      "large_intestine",
+      "small_intestine",
+      "bladder",
+      "heart"
+    ]
+  },
+  "row": {
+    "id": "gate/stomach/siege/gastric.local.central/exit",
+    "family": "gate",
+    "status": "PASS",
+    "completed": true,
+    "commandsValid": true,
+    "spawnErrors": {},
+    "arrivals": [
+      {
+        "id": 18,
+        "distanceWorld": 0.0,
+        "laneMatches": true,
+        "organMatches": true
+      }
+    ],
+    "savePassed": true,
+    "elapsedSimulationSeconds": 14.599999999999964,
+    "setupSimulationSeconds": 0,
+    "disksChecked": 436,
+    "capsulesChecked": 290,
+    "geometryFailures": 0,
+    "firstGeometryFailures": [],
+    "unverifiedDomainPoints": 0,
+    "trafficStats": {
+      "resumed": 0,
+      "activePairs": 0,
+      "deadReleased": 0,
+      "cancelled": 0,
+      "maxPlanningSlice": 2.0000000020559128e-06,
+      "routeRequests": 0,
+      "maxPairs": 0,
+      "yields": 0,
+      "expired": 0,
+      "noBay": 0,
+      "waits": 0,
+      "conflicts": 0
+    },
+    "visitedLanes": [
+      202
+    ],
+    "minimumFrameDiskGapWorld": null,
+    "endpointFailures": []
+  },
+  "actual": {
+    "save": {
+      "flag": 1,
+      "restoredIds": [
+        "bladder",
+        "brain",
+        "heart",
+        "kidney_l",
+        "kidney_r",
+        "large_intestine",
+        "liver",
+        "lung_l",
+        "lung_r",
+        "pancreas",
+        "small_intestine",
+        "stomach"
+      ],
+      "restoredFlag": 1,
+      "restoredNetworkEdges": 202,
+      "restored": true,
+      "version": 9,
+      "positionErrors": 0.0,
+      "laneErrors": 0,
+      "ids": [
+        "bladder",
+        "brain",
+        "heart",
+        "kidney_l",
+        "kidney_r",
+        "large_intestine",
+        "liver",
+        "lung_l",
+        "lung_r",
+        "pancreas",
+        "small_intestine",
+        "stomach"
+      ]
+    },
+    "spawnErrors": {},
+    "starts": [
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "spawn",
+        "time": 0,
+        "y": 1576.0,
+        "kind": "siege",
+        "tick": 0,
+        "id": 18,
+        "x": 1154.6666666666667
+      }
+    ],
+    "networkEdges": 202,
+    "commands": [
+      {
+        "accepted": true,
+        "order": {
+          "lane": 202,
+          "y": 1588.5133992056965,
+          "x": 1140.9007404819597
+        },
+        "id": 18,
+        "requested": {
+          "y": 1588.5133992056965,
+          "x": 1140.9007404819597
+        }
+      }
+    ],
+    "trafficStats": {
+      "resumed": 0,
+      "activePairs": 0,
+      "deadReleased": 0,
+      "cancelled": 0,
+      "maxPlanningSlice": 2.0000000020559128e-06,
+      "routeRequests": 0,
+      "maxPairs": 0,
+      "yields": 0,
+      "expired": 0,
+      "noBay": 0,
+      "waits": 0,
+      "conflicts": 0
+    },
+    "frames": [
+      {
+        "time": 0.1,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 0.1,
+            "y": 1576.0,
+            "kind": "siege",
+            "tick": 1,
+            "id": 18,
+            "x": 1154.6666666666667
+          }
+        ]
+      },
+      {
+        "time": 0.2,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 0.2,
+            "y": 1576.0664874486342,
+            "kind": "siege",
+            "tick": 2,
+            "id": 18,
+            "x": 1154.593524165971
+          }
+        ]
+      },
+      {
+        "time": 0.30000000000000004,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 0.30000000000000004,
+            "y": 1576.1436720039073,
+            "kind": "siege",
+            "tick": 3,
+            "id": 18,
+            "x": 1154.508613833213
+          }
+        ]
+      },
+      {
+        "time": 0.4,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 0.4,
+            "y": 1576.226093238517,
+            "kind": "siege",
+            "tick": 4,
+            "id": 18,
+            "x": 1154.4179426564178
+          }
+        ]
+      },
+      {
+        "time": 0.5,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 0.5,
+            "y": 1576.3110780458196,
+            "kind": "siege",
+            "tick": 5,
+            "id": 18,
+            "x": 1154.3244513064722
+          }
+        ]
+      },
+      {
+        "time": 0.6,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 0.6,
+            "y": 1576.3973178287529,
+            "kind": "siege",
+            "tick": 6,
+            "id": 18,
+            "x": 1154.2295793642822
+          }
+        ]
+      },
+      {
+        "time": 0.7,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 0.7,
+            "y": 1576.4841719745389,
+            "kind": "siege",
+            "tick": 7,
+            "id": 18,
+            "x": 1154.1340315646737
+          }
+        ]
+      },
+      {
+        "time": 0.7999999999999999,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 0.7999999999999999,
+            "y": 1576.5713268765355,
+            "kind": "siege",
+            "tick": 8,
+            "id": 18,
+            "x": 1154.0381529047029
+          }
+        ]
+      },
+      {
+        "time": 0.8999999999999999,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 0.8999999999999999,
+            "y": 1576.6586290112266,
+            "kind": "siege",
+            "tick": 9,
+            "id": 18,
+            "x": 1153.9421122748013
+          }
+        ]
+      },
+      {
+        "time": 0.9999999999999999,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 0.9999999999999999,
+            "y": 1576.7460032224553,
+            "kind": "siege",
+            "tick": 10,
+            "id": 18,
+            "x": 1153.845992353871
+          }
+        ]
+      },
+      {
+        "time": 1.0999999999999999,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 1.0999999999999999,
+            "y": 1576.8334127181517,
+            "kind": "siege",
+            "tick": 11,
+            "id": 18,
+            "x": 1153.7498336166789
+          }
+        ]
+      },
+      {
+        "time": 1.2,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 1.2,
+            "y": 1576.9208394870652,
+            "kind": "siege",
+            "tick": 12,
+            "id": 18,
+            "x": 1153.6536558773096
+          }
+        ]
+      },
+      {
+        "time": 1.3,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 1.3,
+            "y": 1577.008274711938,
+            "kind": "siege",
+            "tick": 13,
+            "id": 18,
+            "x": 1153.557468835583
+          }
+        ]
+      },
+      {
+        "time": 1.4000000000000001,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 1.4000000000000001,
+            "y": 1577.0957140763549,
+            "kind": "siege",
+            "tick": 14,
+            "id": 18,
+            "x": 1153.4612772399648
+          }
+        ]
+      },
+      {
+        "time": 1.5000000000000002,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 1.5000000000000002,
+            "y": 1577.1831554672513,
+            "kind": "siege",
+            "tick": 15,
+            "id": 18,
+            "x": 1153.3650834150271
+          }
+        ]
+      },
+      {
+        "time": 1.6000000000000003,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 1.6000000000000003,
+            "y": 1577.2705978501938,
+            "kind": "siege",
+            "tick": 16,
+            "id": 18,
+            "x": 1153.2688884987447
+          }
+        ]
+      },
+      {
+        "time": 1.7000000000000004,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 1.7000000000000004,
+            "y": 1577.3580407187842,
+            "kind": "siege",
+            "tick": 17,
+            "id": 18,
+            "x": 1153.1726930482034
+          }
+        ]
+      },
+      {
+        "time": 1.8000000000000005,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 1.8000000000000005,
+            "y": 1577.4454838251195,
+            "kind": "siege",
+            "tick": 18,
+            "id": 18,
+            "x": 1153.0764973361202
+          }
+        ]
+      },
+      {
+        "time": 1.9000000000000006,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 1.9000000000000006,
+            "y": 1577.5329270478408,
+            "kind": "siege",
+            "tick": 19,
+            "id": 18,
+            "x": 1152.9803014960014
+          }
+        ]
+      },
+      {
+        "time": 2.0000000000000004,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 2.0000000000000004,
+            "y": 1577.6203703275378,
+            "kind": "siege",
+            "tick": 20,
+            "id": 18,
+            "x": 1152.8841055932037
+          }
+        ]
+      },
+      {
+        "time": 2.1000000000000005,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 2.1000000000000005,
+            "y": 1577.707813635127,
+            "kind": "siege",
+            "tick": 21,
+            "id": 18,
+            "x": 1152.7879096597221
+          }
+        ]
+      },
+      {
+        "time": 2.2000000000000006,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 2.2000000000000006,
+            "y": 1577.7952569563704,
+            "kind": "siege",
+            "tick": 22,
+            "id": 18,
+            "x": 1152.6917137112196
+          }
+        ]
+      },
+      {
+        "time": 2.3000000000000007,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 2.3000000000000007,
+            "y": 1577.8827002842982,
+            "kind": "siege",
+            "tick": 23,
+            "id": 18,
+            "x": 1152.5955177553635
+          }
+        ]
+      },
+      {
+        "time": 2.400000000000001,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 2.400000000000001,
+            "y": 1577.9701436154983,
+            "kind": "siege",
+            "tick": 24,
+            "id": 18,
+            "x": 1152.4993217959077
+          }
+        ]
+      },
+      {
+        "time": 2.500000000000001,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 2.500000000000001,
+            "y": 1578.0575869483002,
+            "kind": "siege",
+            "tick": 25,
+            "id": 18,
+            "x": 1152.4031258346897
+          }
+        ]
+      },
+      {
+        "time": 2.600000000000001,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 2.600000000000001,
+            "y": 1578.1450302818864,
+            "kind": "siege",
+            "tick": 26,
+            "id": 18,
+            "x": 1152.306929872609
+          }
+        ]
+      },
+      {
+        "time": 2.700000000000001,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 2.700000000000001,
+            "y": 1578.2324736158564,
+            "kind": "siege",
+            "tick": 27,
+            "id": 18,
+            "x": 1152.210733910106
+          }
+        ]
+      },
+      {
+        "time": 2.800000000000001,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 2.800000000000001,
+            "y": 1578.3199169500144,
+            "kind": "siege",
+            "tick": 28,
+            "id": 18,
+            "x": 1152.1145379473962
+          }
+        ]
+      },
+      {
+        "time": 2.9000000000000012,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 2.9000000000000012,
+            "y": 1578.4073602842645,
+            "kind": "siege",
+            "tick": 29,
+            "id": 18,
+            "x": 1152.0183419845853
+          }
+        ]
+      },
+      {
+        "time": 3.0000000000000013,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 3.0000000000000013,
+            "y": 1578.4948036185597,
+            "kind": "siege",
+            "tick": 30,
+            "id": 18,
+            "x": 1151.9221460217248
+          }
+        ]
+      },
+      {
+        "time": 3.1000000000000014,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 3.1000000000000014,
+            "y": 1578.5822469528769,
+            "kind": "siege",
+            "tick": 31,
+            "id": 18,
+            "x": 1151.82595005884
+          }
+        ]
+      },
+      {
+        "time": 3.2000000000000015,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 3.2000000000000015,
+            "y": 1578.6696902872047,
+            "kind": "siege",
+            "tick": 32,
+            "id": 18,
+            "x": 1151.7297540959432
+          }
+        ]
+      },
+      {
+        "time": 3.3000000000000016,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 3.3000000000000016,
+            "y": 1578.7571336215378,
+            "kind": "siege",
+            "tick": 33,
+            "id": 18,
+            "x": 1151.6335581330407
+          }
+        ]
+      },
+      {
+        "time": 3.4000000000000017,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 3.4000000000000017,
+            "y": 1578.8445769558737,
+            "kind": "siege",
+            "tick": 34,
+            "id": 18,
+            "x": 1151.5373621701353
+          }
+        ]
+      },
+      {
+        "time": 3.5000000000000018,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 3.5000000000000018,
+            "y": 1578.9320202902106,
+            "kind": "siege",
+            "tick": 35,
+            "id": 18,
+            "x": 1151.4411662072287
+          }
+        ]
+      },
+      {
+        "time": 3.600000000000002,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 3.600000000000002,
+            "y": 1579.0194636245483,
+            "kind": "siege",
+            "tick": 36,
+            "id": 18,
+            "x": 1151.3449702443213
+          }
+        ]
+      },
+      {
+        "time": 3.700000000000002,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 3.700000000000002,
+            "y": 1579.1069069588862,
+            "kind": "siege",
+            "tick": 37,
+            "id": 18,
+            "x": 1151.2487742814135
+          }
+        ]
+      },
+      {
+        "time": 3.800000000000002,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 3.800000000000002,
+            "y": 1579.1943502932243,
+            "kind": "siege",
+            "tick": 38,
+            "id": 18,
+            "x": 1151.1525783185057
+          }
+        ]
+      },
+      {
+        "time": 3.900000000000002,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 3.900000000000002,
+            "y": 1579.2817936275624,
+            "kind": "siege",
+            "tick": 39,
+            "id": 18,
+            "x": 1151.0563823555976
+          }
+        ]
+      },
+      {
+        "time": 4.000000000000002,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 4.000000000000002,
+            "y": 1579.3692369619005,
+            "kind": "siege",
+            "tick": 40,
+            "id": 18,
+            "x": 1150.9601863926896
+          }
+        ]
+      },
+      {
+        "time": 4.100000000000001,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 4.100000000000001,
+            "y": 1579.4566802962388,
+            "kind": "siege",
+            "tick": 41,
+            "id": 18,
+            "x": 1150.8639904297816
+          }
+        ]
+      },
+      {
+        "time": 4.200000000000001,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 4.200000000000001,
+            "y": 1579.5441236305771,
+            "kind": "siege",
+            "tick": 42,
+            "id": 18,
+            "x": 1150.7677944668735
+          }
+        ]
+      },
+      {
+        "time": 4.300000000000001,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 4.300000000000001,
+            "y": 1579.6315669649155,
+            "kind": "siege",
+            "tick": 43,
+            "id": 18,
+            "x": 1150.6715985039655
+          }
+        ]
+      },
+      {
+        "time": 4.4,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 4.4,
+            "y": 1579.7190102992538,
+            "kind": "siege",
+            "tick": 44,
+            "id": 18,
+            "x": 1150.5754025410574
+          }
+        ]
+      },
+      {
+        "time": 4.5,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 4.5,
+            "y": 1579.8064536335921,
+            "kind": "siege",
+            "tick": 45,
+            "id": 18,
+            "x": 1150.4792065781494
+          }
+        ]
+      },
+      {
+        "time": 4.6,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 4.6,
+            "y": 1579.8938969679305,
+            "kind": "siege",
+            "tick": 46,
+            "id": 18,
+            "x": 1150.3830106152413
+          }
+        ]
+      },
+      {
+        "time": 4.699999999999999,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 4.699999999999999,
+            "y": 1579.9813403022688,
+            "kind": "siege",
+            "tick": 47,
+            "id": 18,
+            "x": 1150.2868146523333
+          }
+        ]
+      },
+      {
+        "time": 4.799999999999999,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 4.799999999999999,
+            "y": 1580.0687836366071,
+            "kind": "siege",
+            "tick": 48,
+            "id": 18,
+            "x": 1150.1906186894253
+          }
+        ]
+      },
+      {
+        "time": 4.899999999999999,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 4.899999999999999,
+            "y": 1580.1562269709455,
+            "kind": "siege",
+            "tick": 49,
+            "id": 18,
+            "x": 1150.0944227265172
+          }
+        ]
+      },
+      {
+        "time": 4.999999999999998,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 4.999999999999998,
+            "y": 1580.2436703052838,
+            "kind": "siege",
+            "tick": 50,
+            "id": 18,
+            "x": 1149.9982267636092
+          }
+        ]
+      },
+      {
+        "time": 5.099999999999998,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 5.099999999999998,
+            "y": 1580.3311136396221,
+            "kind": "siege",
+            "tick": 51,
+            "id": 18,
+            "x": 1149.9020308007011
+          }
+        ]
+      },
+      {
+        "time": 5.1999999999999975,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 5.1999999999999975,
+            "y": 1580.4185569739604,
+            "kind": "siege",
+            "tick": 52,
+            "id": 18,
+            "x": 1149.805834837793
+          }
+        ]
+      },
+      {
+        "time": 5.299999999999997,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 5.299999999999997,
+            "y": 1580.5060003082988,
+            "kind": "siege",
+            "tick": 53,
+            "id": 18,
+            "x": 1149.709638874885
+          }
+        ]
+      },
+      {
+        "time": 5.399999999999997,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 5.399999999999997,
+            "y": 1580.593443642637,
+            "kind": "siege",
+            "tick": 54,
+            "id": 18,
+            "x": 1149.613442911977
+          }
+        ]
+      },
+      {
+        "time": 5.4999999999999964,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 5.4999999999999964,
+            "y": 1580.6808869769754,
+            "kind": "siege",
+            "tick": 55,
+            "id": 18,
+            "x": 1149.517246949069
+          }
+        ]
+      },
+      {
+        "time": 5.599999999999996,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 5.599999999999996,
+            "y": 1580.7683303113138,
+            "kind": "siege",
+            "tick": 56,
+            "id": 18,
+            "x": 1149.421050986161
+          }
+        ]
+      },
+      {
+        "time": 5.699999999999996,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 5.699999999999996,
+            "y": 1580.855773645652,
+            "kind": "siege",
+            "tick": 57,
+            "id": 18,
+            "x": 1149.324855023253
+          }
+        ]
+      },
+      {
+        "time": 5.799999999999995,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 5.799999999999995,
+            "y": 1580.9432169799904,
+            "kind": "siege",
+            "tick": 58,
+            "id": 18,
+            "x": 1149.2286590603449
+          }
+        ]
+      },
+      {
+        "time": 5.899999999999995,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 5.899999999999995,
+            "y": 1581.0306603143288,
+            "kind": "siege",
+            "tick": 59,
+            "id": 18,
+            "x": 1149.1324630974368
+          }
+        ]
+      },
+      {
+        "time": 5.999999999999995,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 5.999999999999995,
+            "y": 1581.118103648667,
+            "kind": "siege",
+            "tick": 60,
+            "id": 18,
+            "x": 1149.0362671345288
+          }
+        ]
+      },
+      {
+        "time": 6.099999999999994,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 6.099999999999994,
+            "y": 1581.2055469830054,
+            "kind": "siege",
+            "tick": 61,
+            "id": 18,
+            "x": 1148.9400711716207
+          }
+        ]
+      },
+      {
+        "time": 6.199999999999994,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 6.199999999999994,
+            "y": 1581.2929903173438,
+            "kind": "siege",
+            "tick": 62,
+            "id": 18,
+            "x": 1148.8438752087127
+          }
+        ]
+      },
+      {
+        "time": 6.299999999999994,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 6.299999999999994,
+            "y": 1581.380433651682,
+            "kind": "siege",
+            "tick": 63,
+            "id": 18,
+            "x": 1148.7476792458046
+          }
+        ]
+      },
+      {
+        "time": 6.399999999999993,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 6.399999999999993,
+            "y": 1581.4678769860204,
+            "kind": "siege",
+            "tick": 64,
+            "id": 18,
+            "x": 1148.6514832828966
+          }
+        ]
+      },
+      {
+        "time": 6.499999999999993,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 6.499999999999993,
+            "y": 1581.5553203203588,
+            "kind": "siege",
+            "tick": 65,
+            "id": 18,
+            "x": 1148.5552873199886
+          }
+        ]
+      },
+      {
+        "time": 6.5999999999999925,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 6.5999999999999925,
+            "y": 1581.642763654697,
+            "kind": "siege",
+            "tick": 66,
+            "id": 18,
+            "x": 1148.4590913570805
+          }
+        ]
+      },
+      {
+        "time": 6.699999999999992,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 6.699999999999992,
+            "y": 1581.7302069890354,
+            "kind": "siege",
+            "tick": 67,
+            "id": 18,
+            "x": 1148.3628953941725
+          }
+        ]
+      },
+      {
+        "time": 6.799999999999992,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 6.799999999999992,
+            "y": 1581.8176503233738,
+            "kind": "siege",
+            "tick": 68,
+            "id": 18,
+            "x": 1148.2666994312644
+          }
+        ]
+      },
+      {
+        "time": 6.8999999999999915,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 6.8999999999999915,
+            "y": 1581.905093657712,
+            "kind": "siege",
+            "tick": 69,
+            "id": 18,
+            "x": 1148.1705034683564
+          }
+        ]
+      },
+      {
+        "time": 6.999999999999991,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 6.999999999999991,
+            "y": 1581.9925369920504,
+            "kind": "siege",
+            "tick": 70,
+            "id": 18,
+            "x": 1148.0743075054484
+          }
+        ]
+      },
+      {
+        "time": 7.099999999999991,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 7.099999999999991,
+            "y": 1582.0799803263887,
+            "kind": "siege",
+            "tick": 71,
+            "id": 18,
+            "x": 1147.9781115425403
+          }
+        ]
+      },
+      {
+        "time": 7.19999999999999,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 7.19999999999999,
+            "y": 1582.167423660727,
+            "kind": "siege",
+            "tick": 72,
+            "id": 18,
+            "x": 1147.8819155796323
+          }
+        ]
+      },
+      {
+        "time": 7.29999999999999,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 7.29999999999999,
+            "y": 1582.2548669950654,
+            "kind": "siege",
+            "tick": 73,
+            "id": 18,
+            "x": 1147.7857196167242
+          }
+        ]
+      },
+      {
+        "time": 7.39999999999999,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 7.39999999999999,
+            "y": 1582.3423103294037,
+            "kind": "siege",
+            "tick": 74,
+            "id": 18,
+            "x": 1147.6895236538162
+          }
+        ]
+      },
+      {
+        "time": 7.499999999999989,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 7.499999999999989,
+            "y": 1582.429753663742,
+            "kind": "siege",
+            "tick": 75,
+            "id": 18,
+            "x": 1147.5933276909082
+          }
+        ]
+      },
+      {
+        "time": 7.599999999999989,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 7.599999999999989,
+            "y": 1582.5171969980804,
+            "kind": "siege",
+            "tick": 76,
+            "id": 18,
+            "x": 1147.497131728
+          }
+        ]
+      },
+      {
+        "time": 7.699999999999989,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 7.699999999999989,
+            "y": 1582.6046403324187,
+            "kind": "siege",
+            "tick": 77,
+            "id": 18,
+            "x": 1147.400935765092
+          }
+        ]
+      },
+      {
+        "time": 7.799999999999988,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 7.799999999999988,
+            "y": 1582.692083666757,
+            "kind": "siege",
+            "tick": 78,
+            "id": 18,
+            "x": 1147.304739802184
+          }
+        ]
+      },
+      {
+        "time": 7.899999999999988,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 7.899999999999988,
+            "y": 1582.7795270010954,
+            "kind": "siege",
+            "tick": 79,
+            "id": 18,
+            "x": 1147.208543839276
+          }
+        ]
+      },
+      {
+        "time": 7.999999999999988,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 7.999999999999988,
+            "y": 1582.8669703354335,
+            "kind": "siege",
+            "tick": 80,
+            "id": 18,
+            "x": 1147.112347876368
+          }
+        ]
+      },
+      {
+        "time": 8.099999999999987,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 8.099999999999987,
+            "y": 1582.9544136697716,
+            "kind": "siege",
+            "tick": 81,
+            "id": 18,
+            "x": 1147.01615191346
+          }
+        ]
+      },
+      {
+        "time": 8.199999999999987,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 8.199999999999987,
+            "y": 1583.04185700411,
+            "kind": "siege",
+            "tick": 82,
+            "id": 18,
+            "x": 1146.9199559505519
+          }
+        ]
+      },
+      {
+        "time": 8.299999999999986,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 8.299999999999986,
+            "y": 1583.129300338448,
+            "kind": "siege",
+            "tick": 83,
+            "id": 18,
+            "x": 1146.8237599876438
+          }
+        ]
+      },
+      {
+        "time": 8.399999999999986,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 8.399999999999986,
+            "y": 1583.2167436727862,
+            "kind": "siege",
+            "tick": 84,
+            "id": 18,
+            "x": 1146.7275640247358
+          }
+        ]
+      },
+      {
+        "time": 8.499999999999986,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 8.499999999999986,
+            "y": 1583.3041870071245,
+            "kind": "siege",
+            "tick": 85,
+            "id": 18,
+            "x": 1146.6313680618277
+          }
+        ]
+      },
+      {
+        "time": 8.599999999999985,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 8.599999999999985,
+            "y": 1583.3916303414626,
+            "kind": "siege",
+            "tick": 86,
+            "id": 18,
+            "x": 1146.5351720989197
+          }
+        ]
+      },
+      {
+        "time": 8.699999999999985,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 8.699999999999985,
+            "y": 1583.4790736758007,
+            "kind": "siege",
+            "tick": 87,
+            "id": 18,
+            "x": 1146.4389761360117
+          }
+        ]
+      },
+      {
+        "time": 8.799999999999985,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 8.799999999999985,
+            "y": 1583.566517010139,
+            "kind": "siege",
+            "tick": 88,
+            "id": 18,
+            "x": 1146.3427801731036
+          }
+        ]
+      },
+      {
+        "time": 8.899999999999984,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 8.899999999999984,
+            "y": 1583.6539603444771,
+            "kind": "siege",
+            "tick": 89,
+            "id": 18,
+            "x": 1146.2465842101956
+          }
+        ]
+      },
+      {
+        "time": 8.999999999999984,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 8.999999999999984,
+            "y": 1583.7414036788152,
+            "kind": "siege",
+            "tick": 90,
+            "id": 18,
+            "x": 1146.1503882472875
+          }
+        ]
+      },
+      {
+        "time": 9.099999999999984,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 9.099999999999984,
+            "y": 1583.8288470131536,
+            "kind": "siege",
+            "tick": 91,
+            "id": 18,
+            "x": 1146.0541922843795
+          }
+        ]
+      },
+      {
+        "time": 9.199999999999983,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 9.199999999999983,
+            "y": 1583.9162903474917,
+            "kind": "siege",
+            "tick": 92,
+            "id": 18,
+            "x": 1145.9579963214715
+          }
+        ]
+      },
+      {
+        "time": 9.299999999999983,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 9.299999999999983,
+            "y": 1584.0037336818298,
+            "kind": "siege",
+            "tick": 93,
+            "id": 18,
+            "x": 1145.8618003585634
+          }
+        ]
+      },
+      {
+        "time": 9.399999999999983,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 9.399999999999983,
+            "y": 1584.0911770161679,
+            "kind": "siege",
+            "tick": 94,
+            "id": 18,
+            "x": 1145.7656043956554
+          }
+        ]
+      },
+      {
+        "time": 9.499999999999982,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 9.499999999999982,
+            "y": 1584.1786203505062,
+            "kind": "siege",
+            "tick": 95,
+            "id": 18,
+            "x": 1145.6694084327473
+          }
+        ]
+      },
+      {
+        "time": 9.599999999999982,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 9.599999999999982,
+            "y": 1584.2660636848443,
+            "kind": "siege",
+            "tick": 96,
+            "id": 18,
+            "x": 1145.5732124698393
+          }
+        ]
+      },
+      {
+        "time": 9.699999999999982,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 9.699999999999982,
+            "y": 1584.3535070191824,
+            "kind": "siege",
+            "tick": 97,
+            "id": 18,
+            "x": 1145.4770165069312
+          }
+        ]
+      },
+      {
+        "time": 9.799999999999981,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 9.799999999999981,
+            "y": 1584.4409503535207,
+            "kind": "siege",
+            "tick": 98,
+            "id": 18,
+            "x": 1145.3808205440232
+          }
+        ]
+      },
+      {
+        "time": 9.89999999999998,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 9.89999999999998,
+            "y": 1584.5283936878589,
+            "kind": "siege",
+            "tick": 99,
+            "id": 18,
+            "x": 1145.2846245811152
+          }
+        ]
+      },
+      {
+        "time": 9.99999999999998,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 9.99999999999998,
+            "y": 1584.615837022197,
+            "kind": "siege",
+            "tick": 100,
+            "id": 18,
+            "x": 1145.1884286182071
+          }
+        ]
+      },
+      {
+        "time": 10.09999999999998,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 10.09999999999998,
+            "y": 1584.7032803565353,
+            "kind": "siege",
+            "tick": 101,
+            "id": 18,
+            "x": 1145.092232655299
+          }
+        ]
+      },
+      {
+        "time": 10.19999999999998,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 10.19999999999998,
+            "y": 1584.7907236908734,
+            "kind": "siege",
+            "tick": 102,
+            "id": 18,
+            "x": 1144.996036692391
+          }
+        ]
+      },
+      {
+        "time": 10.29999999999998,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 10.29999999999998,
+            "y": 1584.8835233667312,
+            "kind": "siege",
+            "tick": 103,
+            "id": 18,
+            "x": 1144.8939482456929
+          }
+        ]
+      },
+      {
+        "time": 10.399999999999979,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 10.399999999999979,
+            "y": 1584.9789451949055,
+            "kind": "siege",
+            "tick": 104,
+            "id": 18,
+            "x": 1144.7889751827013
+          }
+        ]
+      },
+      {
+        "time": 10.499999999999979,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 10.499999999999979,
+            "y": 1585.0756506758764,
+            "kind": "siege",
+            "tick": 105,
+            "id": 18,
+            "x": 1144.6825899798623
+          }
+        ]
+      },
+      {
+        "time": 10.599999999999978,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "phase": "frame",
+            "time": 10.599999999999978,
+            "y": 1585.1729845583677,
+            "kind": "siege",
+            "tick": 106,
+            "id": 18,
+            "x": 1144.5755134757387
+          }
+        ]
+      },
+      {
+        "time": 10.699999999999978,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "transit": {
+              "gateId": "gastric.local.central",
+              "toLane": 202,
+              "fromLane": 0
+            },
+            "phase": "frame",
+            "time": 10.699999999999978,
+            "y": 1585.2706260695822,
+            "kind": "siege",
+            "tick": 107,
+            "id": 18,
+            "x": 1144.468098550837
+          }
+        ]
+      },
+      {
+        "time": 10.799999999999978,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "transit": {
+              "gateId": "gastric.local.central",
+              "toLane": 202,
+              "fromLane": 0
+            },
+            "phase": "frame",
+            "time": 10.799999999999978,
+            "y": 1585.3684181778724,
+            "kind": "siege",
+            "tick": 108,
+            "id": 18,
+            "x": 1144.3605179548663
+          }
+        ]
+      },
+      {
+        "time": 10.899999999999977,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "transit": {
+              "gateId": "gastric.local.central",
+              "toLane": 202,
+              "fromLane": 0
+            },
+            "phase": "frame",
+            "time": 10.899999999999977,
+            "y": 1585.4662840097049,
+            "kind": "siege",
+            "tick": 109,
+            "id": 18,
+            "x": 1144.252856256005
+          }
+        ]
+      },
+      {
+        "time": 10.999999999999977,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "transit": {
+              "gateId": "gastric.local.central",
+              "toLane": 202,
+              "fromLane": 0
+            },
+            "phase": "frame",
+            "time": 10.999999999999977,
+            "y": 1585.5641859322827,
+            "kind": "siege",
+            "tick": 110,
+            "id": 18,
+            "x": 1144.1451548539005
+          }
+        ]
+      },
+      {
+        "time": 11.099999999999977,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "transit": {
+              "gateId": "gastric.local.central",
+              "toLane": 202,
+              "fromLane": 0
+            },
+            "phase": "frame",
+            "time": 11.099999999999977,
+            "y": 1585.6621055227838,
+            "kind": "siege",
+            "tick": 111,
+            "id": 18,
+            "x": 1144.0374340154042
+          }
+        ]
+      },
+      {
+        "time": 11.199999999999976,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "transit": {
+              "gateId": "gastric.local.central",
+              "toLane": 202,
+              "fromLane": 0
+            },
+            "phase": "frame",
+            "time": 11.199999999999976,
+            "y": 1585.7600337624694,
+            "kind": "siege",
+            "tick": 112,
+            "id": 18,
+            "x": 1143.9297036619844
+          }
+        ]
+      },
+      {
+        "time": 11.299999999999976,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "transit": {
+              "gateId": "gastric.local.central",
+              "toLane": 202,
+              "fromLane": 0
+            },
+            "phase": "frame",
+            "time": 11.299999999999976,
+            "y": 1585.8579662362913,
+            "kind": "siege",
+            "tick": 113,
+            "id": 18,
+            "x": 1143.8219686506131
+          }
+        ]
+      },
+      {
+        "time": 11.399999999999975,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "transit": {
+              "gateId": "gastric.local.central",
+              "toLane": 202,
+              "fromLane": 0
+            },
+            "phase": "frame",
+            "time": 11.399999999999975,
+            "y": 1585.955900782899,
+            "kind": "siege",
+            "tick": 114,
+            "id": 18,
+            "x": 1143.7142313589807
+          }
+        ]
+      },
+      {
+        "time": 11.499999999999975,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "transit": {
+              "gateId": "gastric.local.central",
+              "toLane": 202,
+              "fromLane": 0
+            },
+            "phase": "frame",
+            "time": 11.499999999999975,
+            "y": 1586.053836344222,
+            "kind": "siege",
+            "tick": 115,
+            "id": 18,
+            "x": 1143.6064929510653
+          }
+        ]
+      },
+      {
+        "time": 11.599999999999975,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "transit": {
+              "gateId": "gastric.local.central",
+              "toLane": 202,
+              "fromLane": 0
+            },
+            "phase": "frame",
+            "time": 11.599999999999975,
+            "y": 1586.1517724022901,
+            "kind": "siege",
+            "tick": 116,
+            "id": 18,
+            "x": 1143.498753996683
+          }
+        ]
+      },
+      {
+        "time": 11.699999999999974,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "transit": {
+              "gateId": "gastric.local.central",
+              "toLane": 202,
+              "fromLane": 0
+            },
+            "phase": "frame",
+            "time": 11.699999999999974,
+            "y": 1586.249708703536,
+            "kind": "siege",
+            "tick": 117,
+            "id": 18,
+            "x": 1143.3910147747824
+          }
+        ]
+      },
+      {
+        "time": 11.799999999999974,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "transit": {
+              "gateId": "gastric.local.central",
+              "toLane": 202,
+              "fromLane": 0
+            },
+            "phase": "frame",
+            "time": 11.799999999999974,
+            "y": 1586.3476451238273,
+            "kind": "siege",
+            "tick": 118,
+            "id": 18,
+            "x": 1143.2832754219205
+          }
+        ]
+      },
+      {
+        "time": 11.899999999999974,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "transit": {
+              "gateId": "gastric.local.central",
+              "toLane": 202,
+              "fromLane": 0
+            },
+            "phase": "frame",
+            "time": 11.899999999999974,
+            "y": 1586.4455816023965,
+            "kind": "siege",
+            "tick": 119,
+            "id": 18,
+            "x": 1143.1755360049474
+          }
+        ]
+      },
+      {
+        "time": 11.999999999999973,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "transit": {
+              "gateId": "gastric.local.central",
+              "toLane": 202,
+              "fromLane": 0
+            },
+            "phase": "frame",
+            "time": 11.999999999999973,
+            "y": 1586.543518109495,
+            "kind": "siege",
+            "tick": 120,
+            "id": 18,
+            "x": 1143.0677965565894
+          }
+        ]
+      },
+      {
+        "time": 12.099999999999973,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "transit": {
+              "gateId": "gastric.local.central",
+              "toLane": 202,
+              "fromLane": 0
+            },
+            "phase": "frame",
+            "time": 12.099999999999973,
+            "y": 1586.6414546305598,
+            "kind": "siege",
+            "tick": 121,
+            "id": 18,
+            "x": 1142.9600570928671
+          }
+        ]
+      },
+      {
+        "time": 12.199999999999973,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "transit": {
+              "gateId": "gastric.local.central",
+              "toLane": 202,
+              "fromLane": 0
+            },
+            "phase": "frame",
+            "time": 12.199999999999973,
+            "y": 1586.7393911584616,
+            "kind": "siege",
+            "tick": 122,
+            "id": 18,
+            "x": 1142.8523176216233
+          }
+        ]
+      },
+      {
+        "time": 12.299999999999972,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "transit": {
+              "gateId": "gastric.local.central",
+              "toLane": 202,
+              "fromLane": 0
+            },
+            "phase": "frame",
+            "time": 12.299999999999972,
+            "y": 1586.8373276897105,
+            "kind": "siege",
+            "tick": 123,
+            "id": 18,
+            "x": 1142.7445781466974
+          }
+        ]
+      },
+      {
+        "time": 12.399999999999972,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "transit": {
+              "gateId": "gastric.local.central",
+              "toLane": 202,
+              "fromLane": 0
+            },
+            "phase": "frame",
+            "time": 12.399999999999972,
+            "y": 1586.9352642225979,
+            "kind": "siege",
+            "tick": 124,
+            "id": 18,
+            "x": 1142.6368386699692
+          }
+        ]
+      },
+      {
+        "time": 12.499999999999972,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "transit": {
+              "gateId": "gastric.local.central",
+              "toLane": 202,
+              "fromLane": 0
+            },
+            "phase": "frame",
+            "time": 12.499999999999972,
+            "y": 1587.0332007562874,
+            "kind": "siege",
+            "tick": 125,
+            "id": 18,
+            "x": 1142.5290991923584
+          }
+        ]
+      },
+      {
+        "time": 12.599999999999971,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "transit": {
+              "gateId": "gastric.local.central",
+              "toLane": 202,
+              "fromLane": 0
+            },
+            "phase": "frame",
+            "time": 12.599999999999971,
+            "y": 1587.1311372903697,
+            "kind": "siege",
+            "tick": 126,
+            "id": 18,
+            "x": 1142.4213597143157
+          }
+        ]
+      },
+      {
+        "time": 12.69999999999997,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "transit": {
+              "gateId": "gastric.local.central",
+              "toLane": 202,
+              "fromLane": 0
+            },
+            "phase": "frame",
+            "time": 12.69999999999997,
+            "y": 1587.229073824644,
+            "kind": "siege",
+            "tick": 127,
+            "id": 18,
+            "x": 1142.3136202360615
+          }
+        ]
+      },
+      {
+        "time": 12.79999999999997,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "transit": {
+              "gateId": "gastric.local.central",
+              "toLane": 202,
+              "fromLane": 0
+            },
+            "phase": "frame",
+            "time": 12.79999999999997,
+            "y": 1587.3270103590125,
+            "kind": "siege",
+            "tick": 128,
+            "id": 18,
+            "x": 1142.2058807577037
+          }
+        ]
+      },
+      {
+        "time": 12.89999999999997,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "transit": {
+              "gateId": "gastric.local.central",
+              "toLane": 202,
+              "fromLane": 0
+            },
+            "phase": "frame",
+            "time": 12.89999999999997,
+            "y": 1587.4249468934272,
+            "kind": "siege",
+            "tick": 129,
+            "id": 18,
+            "x": 1142.0981412792953
+          }
+        ]
+      },
+      {
+        "time": 12.99999999999997,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "transit": {
+              "gateId": "gastric.local.central",
+              "toLane": 202,
+              "fromLane": 0
+            },
+            "phase": "frame",
+            "time": 12.99999999999997,
+            "y": 1587.5228834278644,
+            "kind": "siege",
+            "tick": 130,
+            "id": 18,
+            "x": 1141.990401800862
+          }
+        ]
+      },
+      {
+        "time": 13.09999999999997,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "transit": {
+              "gateId": "gastric.local.central",
+              "toLane": 202,
+              "fromLane": 0
+            },
+            "phase": "frame",
+            "time": 13.09999999999997,
+            "y": 1587.6208199623127,
+            "kind": "siege",
+            "tick": 131,
+            "id": 18,
+            "x": 1141.8826623224165
+          }
+        ]
+      },
+      {
+        "time": 13.199999999999969,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "transit": {
+              "gateId": "gastric.local.central",
+              "toLane": 202,
+              "fromLane": 0
+            },
+            "phase": "frame",
+            "time": 13.199999999999969,
+            "y": 1587.7187564967662,
+            "kind": "siege",
+            "tick": 132,
+            "id": 18,
+            "x": 1141.7749228439652
+          }
+        ]
+      },
+      {
+        "time": 13.299999999999969,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "transit": {
+              "gateId": "gastric.local.central",
+              "toLane": 202,
+              "fromLane": 0
+            },
+            "phase": "frame",
+            "time": 13.299999999999969,
+            "y": 1587.8166930312225,
+            "kind": "siege",
+            "tick": 133,
+            "id": 18,
+            "x": 1141.667183365511
+          }
+        ]
+      },
+      {
+        "time": 13.399999999999968,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "transit": {
+              "gateId": "gastric.local.central",
+              "toLane": 202,
+              "fromLane": 0
+            },
+            "phase": "frame",
+            "time": 13.399999999999968,
+            "y": 1587.9146295656801,
+            "kind": "siege",
+            "tick": 134,
+            "id": 18,
+            "x": 1141.5594438870553
+          }
+        ]
+      },
+      {
+        "time": 13.499999999999968,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "transit": {
+              "gateId": "gastric.local.central",
+              "toLane": 202,
+              "fromLane": 0
+            },
+            "phase": "frame",
+            "time": 13.499999999999968,
+            "y": 1588.0125661001384,
+            "kind": "siege",
+            "tick": 135,
+            "id": 18,
+            "x": 1141.451704408599
+          }
+        ]
+      },
+      {
+        "time": 13.599999999999968,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "transit": {
+              "gateId": "gastric.local.central",
+              "toLane": 202,
+              "fromLane": 0
+            },
+            "phase": "frame",
+            "time": 13.599999999999968,
+            "y": 1588.110502634597,
+            "kind": "siege",
+            "tick": 136,
+            "id": 18,
+            "x": 1141.3439649301422
+          }
+        ]
+      },
+      {
+        "time": 13.699999999999967,
+        "points": [
+          {
+            "lane": 0,
+            "organId": "stomach",
+            "transit": {
+              "gateId": "gastric.local.central",
+              "toLane": 202,
+              "fromLane": 0
+            },
+            "phase": "frame",
+            "time": 13.699999999999967,
+            "y": 1588.199438879365,
+            "kind": "siege",
+            "tick": 137,
+            "id": 18,
+            "x": 1141.2461266241394
+          }
+        ]
+      },
+      {
+        "time": 13.799999999999967,
+        "points": [
+          {
+            "lane": 202,
+            "phase": "frame",
+            "time": 13.799999999999967,
+            "y": 1588.2745262718163,
+            "kind": "siege",
+            "tick": 138,
+            "id": 18,
+            "x": 1141.1635233694285
+          }
+        ]
+      },
+      {
+        "time": 13.899999999999967,
+        "points": [
+          {
+            "lane": 202,
+            "phase": "frame",
+            "time": 13.899999999999967,
+            "y": 1588.3348616450878,
+            "kind": "siege",
+            "tick": 139,
+            "id": 18,
+            "x": 1141.097148735236
+          }
+        ]
+      },
+      {
+        "time": 13.999999999999966,
+        "points": [
+          {
+            "lane": 202,
+            "phase": "frame",
+            "time": 13.999999999999966,
+            "y": 1588.3815691619502,
+            "kind": "siege",
+            "tick": 140,
+            "id": 18,
+            "x": 1141.0457660358727
+          }
+        ]
+      },
+      {
+        "time": 14.099999999999966,
+        "points": [
+          {
+            "lane": 202,
+            "phase": "frame",
+            "time": 14.099999999999966,
+            "y": 1588.4166460891288,
+            "kind": "siege",
+            "tick": 141,
+            "id": 18,
+            "x": 1141.0071780884741
+          }
+        ]
+      },
+      {
+        "time": 14.199999999999966,
+        "points": [
+          {
+            "lane": 202,
+            "phase": "frame",
+            "time": 14.199999999999966,
+            "y": 1588.4448160608586,
+            "kind": "siege",
+            "tick": 142,
+            "id": 18,
+            "x": 1140.9761884472837
+          }
+        ]
+      },
+      {
+        "time": 14.299999999999965,
+        "points": [
+          {
+            "lane": 202,
+            "phase": "frame",
+            "time": 14.299999999999965,
+            "y": 1588.4696047901555,
+            "kind": "siege",
+            "tick": 143,
+            "id": 18,
+            "x": 1140.948918493524
+          }
+        ]
+      },
+      {
+        "time": 14.399999999999965,
+        "points": [
+          {
+            "lane": 202,
+            "phase": "frame",
+            "time": 14.399999999999965,
+            "y": 1588.4927382604205,
+            "kind": "siege",
+            "tick": 144,
+            "id": 18,
+            "x": 1140.9234694817223
+          }
+        ]
+      },
+      {
+        "time": 14.499999999999964,
+        "points": [
+          {
+            "lane": 202,
+            "phase": "frame",
+            "time": 14.499999999999964,
+            "y": 1588.5133992056965,
+            "kind": "siege",
+            "tick": 145,
+            "id": 18,
+            "x": 1140.9007404819597
+          }
+        ]
+      },
+      {
+        "time": 14.599999999999964,
+        "points": [
+          {
+            "lane": 202,
+            "phase": "frame",
+            "time": 14.599999999999964,
+            "y": 1588.5133992056965,
+            "kind": "siege",
+            "tick": 146,
+            "id": 18,
+            "x": 1140.9007404819597
+          }
+        ]
+      }
+    ],
+    "activeOrgans": [
+      "bladder",
+      "brain",
+      "heart",
+      "kidney_l",
+      "kidney_r",
+      "large_intestine",
+      "liver",
+      "lung_l",
+      "lung_r",
+      "pancreas",
+      "small_intestine",
+      "stomach"
+    ],
+    "endpoints": [
+      {
+        "lane": 202,
+        "phase": "end",
+        "time": 14.599999999999964,
+        "pathFailed": false,
+        "y": 1588.5133992056965,
+        "kind": "siege",
+        "ordersRemaining": 0,
+        "tick": 146,
+        "id": 18,
+        "x": 1140.9007404819597
+      }
+    ],
+    "trace": [
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 0.1,
+        "y": 1576.0,
+        "kind": "siege",
+        "tick": 1,
+        "id": 18,
+        "x": 1154.6666666666667
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 0.2,
+        "y": 1576.0664874486342,
+        "kind": "siege",
+        "tick": 2,
+        "id": 18,
+        "x": 1154.593524165971
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 0.2,
+        "y": 1576.0664874486342,
+        "kind": "siege",
+        "tick": 2,
+        "id": 18,
+        "x": 1154.593524165971
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 0.30000000000000004,
+        "y": 1576.1436720039073,
+        "kind": "siege",
+        "tick": 3,
+        "id": 18,
+        "x": 1154.508613833213
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 0.30000000000000004,
+        "y": 1576.1436720039073,
+        "kind": "siege",
+        "tick": 3,
+        "id": 18,
+        "x": 1154.508613833213
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 0.4,
+        "y": 1576.226093238517,
+        "kind": "siege",
+        "tick": 4,
+        "id": 18,
+        "x": 1154.4179426564178
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 0.4,
+        "y": 1576.226093238517,
+        "kind": "siege",
+        "tick": 4,
+        "id": 18,
+        "x": 1154.4179426564178
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 0.5,
+        "y": 1576.3110780458196,
+        "kind": "siege",
+        "tick": 5,
+        "id": 18,
+        "x": 1154.3244513064722
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 0.5,
+        "y": 1576.3110780458196,
+        "kind": "siege",
+        "tick": 5,
+        "id": 18,
+        "x": 1154.3244513064722
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 0.6,
+        "y": 1576.3973178287529,
+        "kind": "siege",
+        "tick": 6,
+        "id": 18,
+        "x": 1154.2295793642822
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 0.6,
+        "y": 1576.3973178287529,
+        "kind": "siege",
+        "tick": 6,
+        "id": 18,
+        "x": 1154.2295793642822
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 0.7,
+        "y": 1576.4841719745389,
+        "kind": "siege",
+        "tick": 7,
+        "id": 18,
+        "x": 1154.1340315646737
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 0.7,
+        "y": 1576.4841719745389,
+        "kind": "siege",
+        "tick": 7,
+        "id": 18,
+        "x": 1154.1340315646737
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 0.7999999999999999,
+        "y": 1576.5713268765355,
+        "kind": "siege",
+        "tick": 8,
+        "id": 18,
+        "x": 1154.0381529047029
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 0.7999999999999999,
+        "y": 1576.5713268765355,
+        "kind": "siege",
+        "tick": 8,
+        "id": 18,
+        "x": 1154.0381529047029
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 0.8999999999999999,
+        "y": 1576.6586290112266,
+        "kind": "siege",
+        "tick": 9,
+        "id": 18,
+        "x": 1153.9421122748013
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 0.8999999999999999,
+        "y": 1576.6586290112266,
+        "kind": "siege",
+        "tick": 9,
+        "id": 18,
+        "x": 1153.9421122748013
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 0.9999999999999999,
+        "y": 1576.7460032224553,
+        "kind": "siege",
+        "tick": 10,
+        "id": 18,
+        "x": 1153.845992353871
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 0.9999999999999999,
+        "y": 1576.7460032224553,
+        "kind": "siege",
+        "tick": 10,
+        "id": 18,
+        "x": 1153.845992353871
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 1.0999999999999999,
+        "y": 1576.8334127181517,
+        "kind": "siege",
+        "tick": 11,
+        "id": 18,
+        "x": 1153.7498336166789
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 1.0999999999999999,
+        "y": 1576.8334127181517,
+        "kind": "siege",
+        "tick": 11,
+        "id": 18,
+        "x": 1153.7498336166789
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 1.2,
+        "y": 1576.9208394870652,
+        "kind": "siege",
+        "tick": 12,
+        "id": 18,
+        "x": 1153.6536558773096
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 1.2,
+        "y": 1576.9208394870652,
+        "kind": "siege",
+        "tick": 12,
+        "id": 18,
+        "x": 1153.6536558773096
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 1.3,
+        "y": 1577.008274711938,
+        "kind": "siege",
+        "tick": 13,
+        "id": 18,
+        "x": 1153.557468835583
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 1.3,
+        "y": 1577.008274711938,
+        "kind": "siege",
+        "tick": 13,
+        "id": 18,
+        "x": 1153.557468835583
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 1.4000000000000001,
+        "y": 1577.0957140763549,
+        "kind": "siege",
+        "tick": 14,
+        "id": 18,
+        "x": 1153.4612772399648
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 1.4000000000000001,
+        "y": 1577.0957140763549,
+        "kind": "siege",
+        "tick": 14,
+        "id": 18,
+        "x": 1153.4612772399648
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 1.5000000000000002,
+        "y": 1577.1831554672513,
+        "kind": "siege",
+        "tick": 15,
+        "id": 18,
+        "x": 1153.3650834150271
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 1.5000000000000002,
+        "y": 1577.1831554672513,
+        "kind": "siege",
+        "tick": 15,
+        "id": 18,
+        "x": 1153.3650834150271
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 1.6000000000000003,
+        "y": 1577.2705978501938,
+        "kind": "siege",
+        "tick": 16,
+        "id": 18,
+        "x": 1153.2688884987447
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 1.6000000000000003,
+        "y": 1577.2705978501938,
+        "kind": "siege",
+        "tick": 16,
+        "id": 18,
+        "x": 1153.2688884987447
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 1.7000000000000004,
+        "y": 1577.3580407187842,
+        "kind": "siege",
+        "tick": 17,
+        "id": 18,
+        "x": 1153.1726930482034
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 1.7000000000000004,
+        "y": 1577.3580407187842,
+        "kind": "siege",
+        "tick": 17,
+        "id": 18,
+        "x": 1153.1726930482034
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 1.8000000000000005,
+        "y": 1577.4454838251195,
+        "kind": "siege",
+        "tick": 18,
+        "id": 18,
+        "x": 1153.0764973361202
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 1.8000000000000005,
+        "y": 1577.4454838251195,
+        "kind": "siege",
+        "tick": 18,
+        "id": 18,
+        "x": 1153.0764973361202
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 1.9000000000000006,
+        "y": 1577.5329270478408,
+        "kind": "siege",
+        "tick": 19,
+        "id": 18,
+        "x": 1152.9803014960014
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 1.9000000000000006,
+        "y": 1577.5329270478408,
+        "kind": "siege",
+        "tick": 19,
+        "id": 18,
+        "x": 1152.9803014960014
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 2.0000000000000004,
+        "y": 1577.6203703275378,
+        "kind": "siege",
+        "tick": 20,
+        "id": 18,
+        "x": 1152.8841055932037
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 2.0000000000000004,
+        "y": 1577.6203703275378,
+        "kind": "siege",
+        "tick": 20,
+        "id": 18,
+        "x": 1152.8841055932037
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 2.1000000000000005,
+        "y": 1577.707813635127,
+        "kind": "siege",
+        "tick": 21,
+        "id": 18,
+        "x": 1152.7879096597221
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 2.1000000000000005,
+        "y": 1577.707813635127,
+        "kind": "siege",
+        "tick": 21,
+        "id": 18,
+        "x": 1152.7879096597221
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 2.2000000000000006,
+        "y": 1577.7952569563704,
+        "kind": "siege",
+        "tick": 22,
+        "id": 18,
+        "x": 1152.6917137112196
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 2.2000000000000006,
+        "y": 1577.7952569563704,
+        "kind": "siege",
+        "tick": 22,
+        "id": 18,
+        "x": 1152.6917137112196
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 2.3000000000000007,
+        "y": 1577.8827002842982,
+        "kind": "siege",
+        "tick": 23,
+        "id": 18,
+        "x": 1152.5955177553635
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 2.3000000000000007,
+        "y": 1577.8827002842982,
+        "kind": "siege",
+        "tick": 23,
+        "id": 18,
+        "x": 1152.5955177553635
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 2.400000000000001,
+        "y": 1577.9701436154983,
+        "kind": "siege",
+        "tick": 24,
+        "id": 18,
+        "x": 1152.4993217959077
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 2.400000000000001,
+        "y": 1577.9701436154983,
+        "kind": "siege",
+        "tick": 24,
+        "id": 18,
+        "x": 1152.4993217959077
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 2.500000000000001,
+        "y": 1578.0575869483002,
+        "kind": "siege",
+        "tick": 25,
+        "id": 18,
+        "x": 1152.4031258346897
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 2.500000000000001,
+        "y": 1578.0575869483002,
+        "kind": "siege",
+        "tick": 25,
+        "id": 18,
+        "x": 1152.4031258346897
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 2.600000000000001,
+        "y": 1578.1450302818864,
+        "kind": "siege",
+        "tick": 26,
+        "id": 18,
+        "x": 1152.306929872609
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 2.600000000000001,
+        "y": 1578.1450302818864,
+        "kind": "siege",
+        "tick": 26,
+        "id": 18,
+        "x": 1152.306929872609
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 2.700000000000001,
+        "y": 1578.2324736158564,
+        "kind": "siege",
+        "tick": 27,
+        "id": 18,
+        "x": 1152.210733910106
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 2.700000000000001,
+        "y": 1578.2324736158564,
+        "kind": "siege",
+        "tick": 27,
+        "id": 18,
+        "x": 1152.210733910106
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 2.800000000000001,
+        "y": 1578.3199169500144,
+        "kind": "siege",
+        "tick": 28,
+        "id": 18,
+        "x": 1152.1145379473962
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 2.800000000000001,
+        "y": 1578.3199169500144,
+        "kind": "siege",
+        "tick": 28,
+        "id": 18,
+        "x": 1152.1145379473962
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 2.9000000000000012,
+        "y": 1578.4073602842645,
+        "kind": "siege",
+        "tick": 29,
+        "id": 18,
+        "x": 1152.0183419845853
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 2.9000000000000012,
+        "y": 1578.4073602842645,
+        "kind": "siege",
+        "tick": 29,
+        "id": 18,
+        "x": 1152.0183419845853
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 3.0000000000000013,
+        "y": 1578.4948036185597,
+        "kind": "siege",
+        "tick": 30,
+        "id": 18,
+        "x": 1151.9221460217248
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 3.0000000000000013,
+        "y": 1578.4948036185597,
+        "kind": "siege",
+        "tick": 30,
+        "id": 18,
+        "x": 1151.9221460217248
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 3.1000000000000014,
+        "y": 1578.5822469528769,
+        "kind": "siege",
+        "tick": 31,
+        "id": 18,
+        "x": 1151.82595005884
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 3.1000000000000014,
+        "y": 1578.5822469528769,
+        "kind": "siege",
+        "tick": 31,
+        "id": 18,
+        "x": 1151.82595005884
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 3.2000000000000015,
+        "y": 1578.6696902872047,
+        "kind": "siege",
+        "tick": 32,
+        "id": 18,
+        "x": 1151.7297540959432
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 3.2000000000000015,
+        "y": 1578.6696902872047,
+        "kind": "siege",
+        "tick": 32,
+        "id": 18,
+        "x": 1151.7297540959432
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 3.3000000000000016,
+        "y": 1578.7571336215378,
+        "kind": "siege",
+        "tick": 33,
+        "id": 18,
+        "x": 1151.6335581330407
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 3.3000000000000016,
+        "y": 1578.7571336215378,
+        "kind": "siege",
+        "tick": 33,
+        "id": 18,
+        "x": 1151.6335581330407
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 3.4000000000000017,
+        "y": 1578.8445769558737,
+        "kind": "siege",
+        "tick": 34,
+        "id": 18,
+        "x": 1151.5373621701353
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 3.4000000000000017,
+        "y": 1578.8445769558737,
+        "kind": "siege",
+        "tick": 34,
+        "id": 18,
+        "x": 1151.5373621701353
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 3.5000000000000018,
+        "y": 1578.9320202902106,
+        "kind": "siege",
+        "tick": 35,
+        "id": 18,
+        "x": 1151.4411662072287
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 3.5000000000000018,
+        "y": 1578.9320202902106,
+        "kind": "siege",
+        "tick": 35,
+        "id": 18,
+        "x": 1151.4411662072287
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 3.600000000000002,
+        "y": 1579.0194636245483,
+        "kind": "siege",
+        "tick": 36,
+        "id": 18,
+        "x": 1151.3449702443213
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 3.600000000000002,
+        "y": 1579.0194636245483,
+        "kind": "siege",
+        "tick": 36,
+        "id": 18,
+        "x": 1151.3449702443213
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 3.700000000000002,
+        "y": 1579.1069069588862,
+        "kind": "siege",
+        "tick": 37,
+        "id": 18,
+        "x": 1151.2487742814135
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 3.700000000000002,
+        "y": 1579.1069069588862,
+        "kind": "siege",
+        "tick": 37,
+        "id": 18,
+        "x": 1151.2487742814135
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 3.800000000000002,
+        "y": 1579.1943502932243,
+        "kind": "siege",
+        "tick": 38,
+        "id": 18,
+        "x": 1151.1525783185057
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 3.800000000000002,
+        "y": 1579.1943502932243,
+        "kind": "siege",
+        "tick": 38,
+        "id": 18,
+        "x": 1151.1525783185057
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 3.900000000000002,
+        "y": 1579.2817936275624,
+        "kind": "siege",
+        "tick": 39,
+        "id": 18,
+        "x": 1151.0563823555976
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 3.900000000000002,
+        "y": 1579.2817936275624,
+        "kind": "siege",
+        "tick": 39,
+        "id": 18,
+        "x": 1151.0563823555976
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 4.000000000000002,
+        "y": 1579.3692369619005,
+        "kind": "siege",
+        "tick": 40,
+        "id": 18,
+        "x": 1150.9601863926896
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 4.000000000000002,
+        "y": 1579.3692369619005,
+        "kind": "siege",
+        "tick": 40,
+        "id": 18,
+        "x": 1150.9601863926896
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 4.100000000000001,
+        "y": 1579.4566802962388,
+        "kind": "siege",
+        "tick": 41,
+        "id": 18,
+        "x": 1150.8639904297816
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 4.100000000000001,
+        "y": 1579.4566802962388,
+        "kind": "siege",
+        "tick": 41,
+        "id": 18,
+        "x": 1150.8639904297816
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 4.200000000000001,
+        "y": 1579.5441236305771,
+        "kind": "siege",
+        "tick": 42,
+        "id": 18,
+        "x": 1150.7677944668735
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 4.200000000000001,
+        "y": 1579.5441236305771,
+        "kind": "siege",
+        "tick": 42,
+        "id": 18,
+        "x": 1150.7677944668735
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 4.300000000000001,
+        "y": 1579.6315669649155,
+        "kind": "siege",
+        "tick": 43,
+        "id": 18,
+        "x": 1150.6715985039655
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 4.300000000000001,
+        "y": 1579.6315669649155,
+        "kind": "siege",
+        "tick": 43,
+        "id": 18,
+        "x": 1150.6715985039655
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 4.4,
+        "y": 1579.7190102992538,
+        "kind": "siege",
+        "tick": 44,
+        "id": 18,
+        "x": 1150.5754025410574
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 4.4,
+        "y": 1579.7190102992538,
+        "kind": "siege",
+        "tick": 44,
+        "id": 18,
+        "x": 1150.5754025410574
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 4.5,
+        "y": 1579.8064536335921,
+        "kind": "siege",
+        "tick": 45,
+        "id": 18,
+        "x": 1150.4792065781494
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 4.5,
+        "y": 1579.8064536335921,
+        "kind": "siege",
+        "tick": 45,
+        "id": 18,
+        "x": 1150.4792065781494
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 4.6,
+        "y": 1579.8938969679305,
+        "kind": "siege",
+        "tick": 46,
+        "id": 18,
+        "x": 1150.3830106152413
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 4.6,
+        "y": 1579.8938969679305,
+        "kind": "siege",
+        "tick": 46,
+        "id": 18,
+        "x": 1150.3830106152413
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 4.699999999999999,
+        "y": 1579.9813403022688,
+        "kind": "siege",
+        "tick": 47,
+        "id": 18,
+        "x": 1150.2868146523333
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 4.699999999999999,
+        "y": 1579.9813403022688,
+        "kind": "siege",
+        "tick": 47,
+        "id": 18,
+        "x": 1150.2868146523333
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 4.799999999999999,
+        "y": 1580.0687836366071,
+        "kind": "siege",
+        "tick": 48,
+        "id": 18,
+        "x": 1150.1906186894253
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 4.799999999999999,
+        "y": 1580.0687836366071,
+        "kind": "siege",
+        "tick": 48,
+        "id": 18,
+        "x": 1150.1906186894253
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 4.899999999999999,
+        "y": 1580.1562269709455,
+        "kind": "siege",
+        "tick": 49,
+        "id": 18,
+        "x": 1150.0944227265172
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 4.899999999999999,
+        "y": 1580.1562269709455,
+        "kind": "siege",
+        "tick": 49,
+        "id": 18,
+        "x": 1150.0944227265172
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 4.999999999999998,
+        "y": 1580.2436703052838,
+        "kind": "siege",
+        "tick": 50,
+        "id": 18,
+        "x": 1149.9982267636092
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 4.999999999999998,
+        "y": 1580.2436703052838,
+        "kind": "siege",
+        "tick": 50,
+        "id": 18,
+        "x": 1149.9982267636092
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 5.099999999999998,
+        "y": 1580.3311136396221,
+        "kind": "siege",
+        "tick": 51,
+        "id": 18,
+        "x": 1149.9020308007011
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 5.099999999999998,
+        "y": 1580.3311136396221,
+        "kind": "siege",
+        "tick": 51,
+        "id": 18,
+        "x": 1149.9020308007011
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 5.1999999999999975,
+        "y": 1580.4185569739604,
+        "kind": "siege",
+        "tick": 52,
+        "id": 18,
+        "x": 1149.805834837793
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 5.1999999999999975,
+        "y": 1580.4185569739604,
+        "kind": "siege",
+        "tick": 52,
+        "id": 18,
+        "x": 1149.805834837793
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 5.299999999999997,
+        "y": 1580.5060003082988,
+        "kind": "siege",
+        "tick": 53,
+        "id": 18,
+        "x": 1149.709638874885
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 5.299999999999997,
+        "y": 1580.5060003082988,
+        "kind": "siege",
+        "tick": 53,
+        "id": 18,
+        "x": 1149.709638874885
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 5.399999999999997,
+        "y": 1580.593443642637,
+        "kind": "siege",
+        "tick": 54,
+        "id": 18,
+        "x": 1149.613442911977
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 5.399999999999997,
+        "y": 1580.593443642637,
+        "kind": "siege",
+        "tick": 54,
+        "id": 18,
+        "x": 1149.613442911977
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 5.4999999999999964,
+        "y": 1580.6808869769754,
+        "kind": "siege",
+        "tick": 55,
+        "id": 18,
+        "x": 1149.517246949069
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 5.4999999999999964,
+        "y": 1580.6808869769754,
+        "kind": "siege",
+        "tick": 55,
+        "id": 18,
+        "x": 1149.517246949069
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 5.599999999999996,
+        "y": 1580.7683303113138,
+        "kind": "siege",
+        "tick": 56,
+        "id": 18,
+        "x": 1149.421050986161
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 5.599999999999996,
+        "y": 1580.7683303113138,
+        "kind": "siege",
+        "tick": 56,
+        "id": 18,
+        "x": 1149.421050986161
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 5.699999999999996,
+        "y": 1580.855773645652,
+        "kind": "siege",
+        "tick": 57,
+        "id": 18,
+        "x": 1149.324855023253
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 5.699999999999996,
+        "y": 1580.855773645652,
+        "kind": "siege",
+        "tick": 57,
+        "id": 18,
+        "x": 1149.324855023253
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 5.799999999999995,
+        "y": 1580.9432169799904,
+        "kind": "siege",
+        "tick": 58,
+        "id": 18,
+        "x": 1149.2286590603449
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 5.799999999999995,
+        "y": 1580.9432169799904,
+        "kind": "siege",
+        "tick": 58,
+        "id": 18,
+        "x": 1149.2286590603449
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 5.899999999999995,
+        "y": 1581.0306603143288,
+        "kind": "siege",
+        "tick": 59,
+        "id": 18,
+        "x": 1149.1324630974368
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 5.899999999999995,
+        "y": 1581.0306603143288,
+        "kind": "siege",
+        "tick": 59,
+        "id": 18,
+        "x": 1149.1324630974368
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 5.999999999999995,
+        "y": 1581.118103648667,
+        "kind": "siege",
+        "tick": 60,
+        "id": 18,
+        "x": 1149.0362671345288
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 5.999999999999995,
+        "y": 1581.118103648667,
+        "kind": "siege",
+        "tick": 60,
+        "id": 18,
+        "x": 1149.0362671345288
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 6.099999999999994,
+        "y": 1581.2055469830054,
+        "kind": "siege",
+        "tick": 61,
+        "id": 18,
+        "x": 1148.9400711716207
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 6.099999999999994,
+        "y": 1581.2055469830054,
+        "kind": "siege",
+        "tick": 61,
+        "id": 18,
+        "x": 1148.9400711716207
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 6.199999999999994,
+        "y": 1581.2929903173438,
+        "kind": "siege",
+        "tick": 62,
+        "id": 18,
+        "x": 1148.8438752087127
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 6.199999999999994,
+        "y": 1581.2929903173438,
+        "kind": "siege",
+        "tick": 62,
+        "id": 18,
+        "x": 1148.8438752087127
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 6.299999999999994,
+        "y": 1581.380433651682,
+        "kind": "siege",
+        "tick": 63,
+        "id": 18,
+        "x": 1148.7476792458046
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 6.299999999999994,
+        "y": 1581.380433651682,
+        "kind": "siege",
+        "tick": 63,
+        "id": 18,
+        "x": 1148.7476792458046
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 6.399999999999993,
+        "y": 1581.4678769860204,
+        "kind": "siege",
+        "tick": 64,
+        "id": 18,
+        "x": 1148.6514832828966
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 6.399999999999993,
+        "y": 1581.4678769860204,
+        "kind": "siege",
+        "tick": 64,
+        "id": 18,
+        "x": 1148.6514832828966
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 6.499999999999993,
+        "y": 1581.5553203203588,
+        "kind": "siege",
+        "tick": 65,
+        "id": 18,
+        "x": 1148.5552873199886
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 6.499999999999993,
+        "y": 1581.5553203203588,
+        "kind": "siege",
+        "tick": 65,
+        "id": 18,
+        "x": 1148.5552873199886
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 6.5999999999999925,
+        "y": 1581.642763654697,
+        "kind": "siege",
+        "tick": 66,
+        "id": 18,
+        "x": 1148.4590913570805
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 6.5999999999999925,
+        "y": 1581.642763654697,
+        "kind": "siege",
+        "tick": 66,
+        "id": 18,
+        "x": 1148.4590913570805
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 6.699999999999992,
+        "y": 1581.7302069890354,
+        "kind": "siege",
+        "tick": 67,
+        "id": 18,
+        "x": 1148.3628953941725
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 6.699999999999992,
+        "y": 1581.7302069890354,
+        "kind": "siege",
+        "tick": 67,
+        "id": 18,
+        "x": 1148.3628953941725
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 6.799999999999992,
+        "y": 1581.8176503233738,
+        "kind": "siege",
+        "tick": 68,
+        "id": 18,
+        "x": 1148.2666994312644
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 6.799999999999992,
+        "y": 1581.8176503233738,
+        "kind": "siege",
+        "tick": 68,
+        "id": 18,
+        "x": 1148.2666994312644
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 6.8999999999999915,
+        "y": 1581.905093657712,
+        "kind": "siege",
+        "tick": 69,
+        "id": 18,
+        "x": 1148.1705034683564
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 6.8999999999999915,
+        "y": 1581.905093657712,
+        "kind": "siege",
+        "tick": 69,
+        "id": 18,
+        "x": 1148.1705034683564
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 6.999999999999991,
+        "y": 1581.9925369920504,
+        "kind": "siege",
+        "tick": 70,
+        "id": 18,
+        "x": 1148.0743075054484
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 6.999999999999991,
+        "y": 1581.9925369920504,
+        "kind": "siege",
+        "tick": 70,
+        "id": 18,
+        "x": 1148.0743075054484
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 7.099999999999991,
+        "y": 1582.0799803263887,
+        "kind": "siege",
+        "tick": 71,
+        "id": 18,
+        "x": 1147.9781115425403
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 7.099999999999991,
+        "y": 1582.0799803263887,
+        "kind": "siege",
+        "tick": 71,
+        "id": 18,
+        "x": 1147.9781115425403
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 7.19999999999999,
+        "y": 1582.167423660727,
+        "kind": "siege",
+        "tick": 72,
+        "id": 18,
+        "x": 1147.8819155796323
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 7.19999999999999,
+        "y": 1582.167423660727,
+        "kind": "siege",
+        "tick": 72,
+        "id": 18,
+        "x": 1147.8819155796323
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 7.29999999999999,
+        "y": 1582.2548669950654,
+        "kind": "siege",
+        "tick": 73,
+        "id": 18,
+        "x": 1147.7857196167242
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 7.29999999999999,
+        "y": 1582.2548669950654,
+        "kind": "siege",
+        "tick": 73,
+        "id": 18,
+        "x": 1147.7857196167242
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 7.39999999999999,
+        "y": 1582.3423103294037,
+        "kind": "siege",
+        "tick": 74,
+        "id": 18,
+        "x": 1147.6895236538162
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 7.39999999999999,
+        "y": 1582.3423103294037,
+        "kind": "siege",
+        "tick": 74,
+        "id": 18,
+        "x": 1147.6895236538162
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 7.499999999999989,
+        "y": 1582.429753663742,
+        "kind": "siege",
+        "tick": 75,
+        "id": 18,
+        "x": 1147.5933276909082
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 7.499999999999989,
+        "y": 1582.429753663742,
+        "kind": "siege",
+        "tick": 75,
+        "id": 18,
+        "x": 1147.5933276909082
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 7.599999999999989,
+        "y": 1582.5171969980804,
+        "kind": "siege",
+        "tick": 76,
+        "id": 18,
+        "x": 1147.497131728
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 7.599999999999989,
+        "y": 1582.5171969980804,
+        "kind": "siege",
+        "tick": 76,
+        "id": 18,
+        "x": 1147.497131728
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 7.699999999999989,
+        "y": 1582.6046403324187,
+        "kind": "siege",
+        "tick": 77,
+        "id": 18,
+        "x": 1147.400935765092
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 7.699999999999989,
+        "y": 1582.6046403324187,
+        "kind": "siege",
+        "tick": 77,
+        "id": 18,
+        "x": 1147.400935765092
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 7.799999999999988,
+        "y": 1582.692083666757,
+        "kind": "siege",
+        "tick": 78,
+        "id": 18,
+        "x": 1147.304739802184
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 7.799999999999988,
+        "y": 1582.692083666757,
+        "kind": "siege",
+        "tick": 78,
+        "id": 18,
+        "x": 1147.304739802184
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 7.899999999999988,
+        "y": 1582.7795270010954,
+        "kind": "siege",
+        "tick": 79,
+        "id": 18,
+        "x": 1147.208543839276
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 7.899999999999988,
+        "y": 1582.7795270010954,
+        "kind": "siege",
+        "tick": 79,
+        "id": 18,
+        "x": 1147.208543839276
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 7.999999999999988,
+        "y": 1582.8669703354335,
+        "kind": "siege",
+        "tick": 80,
+        "id": 18,
+        "x": 1147.112347876368
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 7.999999999999988,
+        "y": 1582.8669703354335,
+        "kind": "siege",
+        "tick": 80,
+        "id": 18,
+        "x": 1147.112347876368
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 8.099999999999987,
+        "y": 1582.9544136697716,
+        "kind": "siege",
+        "tick": 81,
+        "id": 18,
+        "x": 1147.01615191346
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 8.099999999999987,
+        "y": 1582.9544136697716,
+        "kind": "siege",
+        "tick": 81,
+        "id": 18,
+        "x": 1147.01615191346
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 8.199999999999987,
+        "y": 1583.04185700411,
+        "kind": "siege",
+        "tick": 82,
+        "id": 18,
+        "x": 1146.9199559505519
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 8.199999999999987,
+        "y": 1583.04185700411,
+        "kind": "siege",
+        "tick": 82,
+        "id": 18,
+        "x": 1146.9199559505519
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 8.299999999999986,
+        "y": 1583.129300338448,
+        "kind": "siege",
+        "tick": 83,
+        "id": 18,
+        "x": 1146.8237599876438
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 8.299999999999986,
+        "y": 1583.129300338448,
+        "kind": "siege",
+        "tick": 83,
+        "id": 18,
+        "x": 1146.8237599876438
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 8.399999999999986,
+        "y": 1583.2167436727862,
+        "kind": "siege",
+        "tick": 84,
+        "id": 18,
+        "x": 1146.7275640247358
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 8.399999999999986,
+        "y": 1583.2167436727862,
+        "kind": "siege",
+        "tick": 84,
+        "id": 18,
+        "x": 1146.7275640247358
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 8.499999999999986,
+        "y": 1583.3041870071245,
+        "kind": "siege",
+        "tick": 85,
+        "id": 18,
+        "x": 1146.6313680618277
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 8.499999999999986,
+        "y": 1583.3041870071245,
+        "kind": "siege",
+        "tick": 85,
+        "id": 18,
+        "x": 1146.6313680618277
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 8.599999999999985,
+        "y": 1583.3916303414626,
+        "kind": "siege",
+        "tick": 86,
+        "id": 18,
+        "x": 1146.5351720989197
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 8.599999999999985,
+        "y": 1583.3916303414626,
+        "kind": "siege",
+        "tick": 86,
+        "id": 18,
+        "x": 1146.5351720989197
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 8.699999999999985,
+        "y": 1583.4790736758007,
+        "kind": "siege",
+        "tick": 87,
+        "id": 18,
+        "x": 1146.4389761360117
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 8.699999999999985,
+        "y": 1583.4790736758007,
+        "kind": "siege",
+        "tick": 87,
+        "id": 18,
+        "x": 1146.4389761360117
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 8.799999999999985,
+        "y": 1583.566517010139,
+        "kind": "siege",
+        "tick": 88,
+        "id": 18,
+        "x": 1146.3427801731036
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 8.799999999999985,
+        "y": 1583.566517010139,
+        "kind": "siege",
+        "tick": 88,
+        "id": 18,
+        "x": 1146.3427801731036
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 8.899999999999984,
+        "y": 1583.6539603444771,
+        "kind": "siege",
+        "tick": 89,
+        "id": 18,
+        "x": 1146.2465842101956
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 8.899999999999984,
+        "y": 1583.6539603444771,
+        "kind": "siege",
+        "tick": 89,
+        "id": 18,
+        "x": 1146.2465842101956
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 8.999999999999984,
+        "y": 1583.7414036788152,
+        "kind": "siege",
+        "tick": 90,
+        "id": 18,
+        "x": 1146.1503882472875
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 8.999999999999984,
+        "y": 1583.7414036788152,
+        "kind": "siege",
+        "tick": 90,
+        "id": 18,
+        "x": 1146.1503882472875
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 9.099999999999984,
+        "y": 1583.8288470131536,
+        "kind": "siege",
+        "tick": 91,
+        "id": 18,
+        "x": 1146.0541922843795
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 9.099999999999984,
+        "y": 1583.8288470131536,
+        "kind": "siege",
+        "tick": 91,
+        "id": 18,
+        "x": 1146.0541922843795
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 9.199999999999983,
+        "y": 1583.9162903474917,
+        "kind": "siege",
+        "tick": 92,
+        "id": 18,
+        "x": 1145.9579963214715
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 9.199999999999983,
+        "y": 1583.9162903474917,
+        "kind": "siege",
+        "tick": 92,
+        "id": 18,
+        "x": 1145.9579963214715
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 9.299999999999983,
+        "y": 1584.0037336818298,
+        "kind": "siege",
+        "tick": 93,
+        "id": 18,
+        "x": 1145.8618003585634
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 9.299999999999983,
+        "y": 1584.0037336818298,
+        "kind": "siege",
+        "tick": 93,
+        "id": 18,
+        "x": 1145.8618003585634
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 9.399999999999983,
+        "y": 1584.0911770161679,
+        "kind": "siege",
+        "tick": 94,
+        "id": 18,
+        "x": 1145.7656043956554
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 9.399999999999983,
+        "y": 1584.0911770161679,
+        "kind": "siege",
+        "tick": 94,
+        "id": 18,
+        "x": 1145.7656043956554
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 9.499999999999982,
+        "y": 1584.1786203505062,
+        "kind": "siege",
+        "tick": 95,
+        "id": 18,
+        "x": 1145.6694084327473
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 9.499999999999982,
+        "y": 1584.1786203505062,
+        "kind": "siege",
+        "tick": 95,
+        "id": 18,
+        "x": 1145.6694084327473
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 9.599999999999982,
+        "y": 1584.2660636848443,
+        "kind": "siege",
+        "tick": 96,
+        "id": 18,
+        "x": 1145.5732124698393
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 9.599999999999982,
+        "y": 1584.2660636848443,
+        "kind": "siege",
+        "tick": 96,
+        "id": 18,
+        "x": 1145.5732124698393
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 9.699999999999982,
+        "y": 1584.3535070191824,
+        "kind": "siege",
+        "tick": 97,
+        "id": 18,
+        "x": 1145.4770165069312
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 9.699999999999982,
+        "y": 1584.3535070191824,
+        "kind": "siege",
+        "tick": 97,
+        "id": 18,
+        "x": 1145.4770165069312
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 9.799999999999981,
+        "y": 1584.4409503535207,
+        "kind": "siege",
+        "tick": 98,
+        "id": 18,
+        "x": 1145.3808205440232
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 9.799999999999981,
+        "y": 1584.4409503535207,
+        "kind": "siege",
+        "tick": 98,
+        "id": 18,
+        "x": 1145.3808205440232
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 9.89999999999998,
+        "y": 1584.5283936878589,
+        "kind": "siege",
+        "tick": 99,
+        "id": 18,
+        "x": 1145.2846245811152
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 9.89999999999998,
+        "y": 1584.5283936878589,
+        "kind": "siege",
+        "tick": 99,
+        "id": 18,
+        "x": 1145.2846245811152
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 9.99999999999998,
+        "y": 1584.615837022197,
+        "kind": "siege",
+        "tick": 100,
+        "id": 18,
+        "x": 1145.1884286182071
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 9.99999999999998,
+        "y": 1584.615837022197,
+        "kind": "siege",
+        "tick": 100,
+        "id": 18,
+        "x": 1145.1884286182071
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 10.09999999999998,
+        "y": 1584.7032803565353,
+        "kind": "siege",
+        "tick": 101,
+        "id": 18,
+        "x": 1145.092232655299
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 10.09999999999998,
+        "y": 1584.7032803565353,
+        "kind": "siege",
+        "tick": 101,
+        "id": 18,
+        "x": 1145.092232655299
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 10.19999999999998,
+        "y": 1584.7907236908734,
+        "kind": "siege",
+        "tick": 102,
+        "id": 18,
+        "x": 1144.996036692391
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 10.19999999999998,
+        "y": 1584.7907236908734,
+        "kind": "siege",
+        "tick": 102,
+        "id": 18,
+        "x": 1144.996036692391
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 10.29999999999998,
+        "y": 1584.8835233667312,
+        "kind": "siege",
+        "tick": 103,
+        "id": 18,
+        "x": 1144.8939482456929
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 10.29999999999998,
+        "y": 1584.8835233667312,
+        "kind": "siege",
+        "tick": 103,
+        "id": 18,
+        "x": 1144.8939482456929
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 10.399999999999979,
+        "y": 1584.9789451949055,
+        "kind": "siege",
+        "tick": 104,
+        "id": 18,
+        "x": 1144.7889751827013
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 10.399999999999979,
+        "y": 1584.9789451949055,
+        "kind": "siege",
+        "tick": 104,
+        "id": 18,
+        "x": 1144.7889751827013
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 10.499999999999979,
+        "y": 1585.0756506758764,
+        "kind": "siege",
+        "tick": 105,
+        "id": 18,
+        "x": 1144.6825899798623
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 10.499999999999979,
+        "y": 1585.0756506758764,
+        "kind": "siege",
+        "tick": 105,
+        "id": 18,
+        "x": 1144.6825899798623
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 10.599999999999978,
+        "y": 1585.1729845583677,
+        "kind": "siege",
+        "tick": 106,
+        "id": 18,
+        "x": 1144.5755134757387
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "phase": "substep",
+        "time": 10.599999999999978,
+        "y": 1585.1729845583677,
+        "kind": "siege",
+        "tick": 106,
+        "id": 18,
+        "x": 1144.5755134757387
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 10.699999999999978,
+        "y": 1585.2706260695822,
+        "kind": "siege",
+        "tick": 107,
+        "id": 18,
+        "x": 1144.468098550837
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 10.699999999999978,
+        "y": 1585.2706260695822,
+        "kind": "siege",
+        "tick": 107,
+        "id": 18,
+        "x": 1144.468098550837
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 10.799999999999978,
+        "y": 1585.3684181778724,
+        "kind": "siege",
+        "tick": 108,
+        "id": 18,
+        "x": 1144.3605179548663
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 10.799999999999978,
+        "y": 1585.3684181778724,
+        "kind": "siege",
+        "tick": 108,
+        "id": 18,
+        "x": 1144.3605179548663
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 10.899999999999977,
+        "y": 1585.4662840097049,
+        "kind": "siege",
+        "tick": 109,
+        "id": 18,
+        "x": 1144.252856256005
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 10.899999999999977,
+        "y": 1585.4662840097049,
+        "kind": "siege",
+        "tick": 109,
+        "id": 18,
+        "x": 1144.252856256005
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 10.999999999999977,
+        "y": 1585.5641859322827,
+        "kind": "siege",
+        "tick": 110,
+        "id": 18,
+        "x": 1144.1451548539005
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 10.999999999999977,
+        "y": 1585.5641859322827,
+        "kind": "siege",
+        "tick": 110,
+        "id": 18,
+        "x": 1144.1451548539005
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 11.099999999999977,
+        "y": 1585.6621055227838,
+        "kind": "siege",
+        "tick": 111,
+        "id": 18,
+        "x": 1144.0374340154042
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 11.099999999999977,
+        "y": 1585.6621055227838,
+        "kind": "siege",
+        "tick": 111,
+        "id": 18,
+        "x": 1144.0374340154042
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 11.199999999999976,
+        "y": 1585.7600337624694,
+        "kind": "siege",
+        "tick": 112,
+        "id": 18,
+        "x": 1143.9297036619844
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 11.199999999999976,
+        "y": 1585.7600337624694,
+        "kind": "siege",
+        "tick": 112,
+        "id": 18,
+        "x": 1143.9297036619844
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 11.299999999999976,
+        "y": 1585.8579662362913,
+        "kind": "siege",
+        "tick": 113,
+        "id": 18,
+        "x": 1143.8219686506131
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 11.299999999999976,
+        "y": 1585.8579662362913,
+        "kind": "siege",
+        "tick": 113,
+        "id": 18,
+        "x": 1143.8219686506131
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 11.399999999999975,
+        "y": 1585.955900782899,
+        "kind": "siege",
+        "tick": 114,
+        "id": 18,
+        "x": 1143.7142313589807
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 11.399999999999975,
+        "y": 1585.955900782899,
+        "kind": "siege",
+        "tick": 114,
+        "id": 18,
+        "x": 1143.7142313589807
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 11.499999999999975,
+        "y": 1586.053836344222,
+        "kind": "siege",
+        "tick": 115,
+        "id": 18,
+        "x": 1143.6064929510653
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 11.499999999999975,
+        "y": 1586.053836344222,
+        "kind": "siege",
+        "tick": 115,
+        "id": 18,
+        "x": 1143.6064929510653
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 11.599999999999975,
+        "y": 1586.1517724022901,
+        "kind": "siege",
+        "tick": 116,
+        "id": 18,
+        "x": 1143.498753996683
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 11.599999999999975,
+        "y": 1586.1517724022901,
+        "kind": "siege",
+        "tick": 116,
+        "id": 18,
+        "x": 1143.498753996683
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 11.699999999999974,
+        "y": 1586.249708703536,
+        "kind": "siege",
+        "tick": 117,
+        "id": 18,
+        "x": 1143.3910147747824
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 11.699999999999974,
+        "y": 1586.249708703536,
+        "kind": "siege",
+        "tick": 117,
+        "id": 18,
+        "x": 1143.3910147747824
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 11.799999999999974,
+        "y": 1586.3476451238273,
+        "kind": "siege",
+        "tick": 118,
+        "id": 18,
+        "x": 1143.2832754219205
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 11.799999999999974,
+        "y": 1586.3476451238273,
+        "kind": "siege",
+        "tick": 118,
+        "id": 18,
+        "x": 1143.2832754219205
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 11.899999999999974,
+        "y": 1586.4455816023965,
+        "kind": "siege",
+        "tick": 119,
+        "id": 18,
+        "x": 1143.1755360049474
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 11.899999999999974,
+        "y": 1586.4455816023965,
+        "kind": "siege",
+        "tick": 119,
+        "id": 18,
+        "x": 1143.1755360049474
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 11.999999999999973,
+        "y": 1586.543518109495,
+        "kind": "siege",
+        "tick": 120,
+        "id": 18,
+        "x": 1143.0677965565894
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 11.999999999999973,
+        "y": 1586.543518109495,
+        "kind": "siege",
+        "tick": 120,
+        "id": 18,
+        "x": 1143.0677965565894
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 12.099999999999973,
+        "y": 1586.6414546305598,
+        "kind": "siege",
+        "tick": 121,
+        "id": 18,
+        "x": 1142.9600570928671
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 12.099999999999973,
+        "y": 1586.6414546305598,
+        "kind": "siege",
+        "tick": 121,
+        "id": 18,
+        "x": 1142.9600570928671
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 12.199999999999973,
+        "y": 1586.7393911584616,
+        "kind": "siege",
+        "tick": 122,
+        "id": 18,
+        "x": 1142.8523176216233
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 12.199999999999973,
+        "y": 1586.7393911584616,
+        "kind": "siege",
+        "tick": 122,
+        "id": 18,
+        "x": 1142.8523176216233
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 12.299999999999972,
+        "y": 1586.8373276897105,
+        "kind": "siege",
+        "tick": 123,
+        "id": 18,
+        "x": 1142.7445781466974
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 12.299999999999972,
+        "y": 1586.8373276897105,
+        "kind": "siege",
+        "tick": 123,
+        "id": 18,
+        "x": 1142.7445781466974
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 12.399999999999972,
+        "y": 1586.9352642225979,
+        "kind": "siege",
+        "tick": 124,
+        "id": 18,
+        "x": 1142.6368386699692
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 12.399999999999972,
+        "y": 1586.9352642225979,
+        "kind": "siege",
+        "tick": 124,
+        "id": 18,
+        "x": 1142.6368386699692
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 12.499999999999972,
+        "y": 1587.0332007562874,
+        "kind": "siege",
+        "tick": 125,
+        "id": 18,
+        "x": 1142.5290991923584
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 12.499999999999972,
+        "y": 1587.0332007562874,
+        "kind": "siege",
+        "tick": 125,
+        "id": 18,
+        "x": 1142.5290991923584
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 12.599999999999971,
+        "y": 1587.1311372903697,
+        "kind": "siege",
+        "tick": 126,
+        "id": 18,
+        "x": 1142.4213597143157
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 12.599999999999971,
+        "y": 1587.1311372903697,
+        "kind": "siege",
+        "tick": 126,
+        "id": 18,
+        "x": 1142.4213597143157
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 12.69999999999997,
+        "y": 1587.229073824644,
+        "kind": "siege",
+        "tick": 127,
+        "id": 18,
+        "x": 1142.3136202360615
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 12.69999999999997,
+        "y": 1587.229073824644,
+        "kind": "siege",
+        "tick": 127,
+        "id": 18,
+        "x": 1142.3136202360615
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 12.79999999999997,
+        "y": 1587.3270103590125,
+        "kind": "siege",
+        "tick": 128,
+        "id": 18,
+        "x": 1142.2058807577037
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 12.79999999999997,
+        "y": 1587.3270103590125,
+        "kind": "siege",
+        "tick": 128,
+        "id": 18,
+        "x": 1142.2058807577037
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 12.89999999999997,
+        "y": 1587.4249468934272,
+        "kind": "siege",
+        "tick": 129,
+        "id": 18,
+        "x": 1142.0981412792953
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 12.89999999999997,
+        "y": 1587.4249468934272,
+        "kind": "siege",
+        "tick": 129,
+        "id": 18,
+        "x": 1142.0981412792953
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 12.99999999999997,
+        "y": 1587.5228834278644,
+        "kind": "siege",
+        "tick": 130,
+        "id": 18,
+        "x": 1141.990401800862
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 12.99999999999997,
+        "y": 1587.5228834278644,
+        "kind": "siege",
+        "tick": 130,
+        "id": 18,
+        "x": 1141.990401800862
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 13.09999999999997,
+        "y": 1587.6208199623127,
+        "kind": "siege",
+        "tick": 131,
+        "id": 18,
+        "x": 1141.8826623224165
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 13.09999999999997,
+        "y": 1587.6208199623127,
+        "kind": "siege",
+        "tick": 131,
+        "id": 18,
+        "x": 1141.8826623224165
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 13.199999999999969,
+        "y": 1587.7187564967662,
+        "kind": "siege",
+        "tick": 132,
+        "id": 18,
+        "x": 1141.7749228439652
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 13.199999999999969,
+        "y": 1587.7187564967662,
+        "kind": "siege",
+        "tick": 132,
+        "id": 18,
+        "x": 1141.7749228439652
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 13.299999999999969,
+        "y": 1587.8166930312225,
+        "kind": "siege",
+        "tick": 133,
+        "id": 18,
+        "x": 1141.667183365511
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 13.299999999999969,
+        "y": 1587.8166930312225,
+        "kind": "siege",
+        "tick": 133,
+        "id": 18,
+        "x": 1141.667183365511
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 13.399999999999968,
+        "y": 1587.9146295656801,
+        "kind": "siege",
+        "tick": 134,
+        "id": 18,
+        "x": 1141.5594438870553
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 13.399999999999968,
+        "y": 1587.9146295656801,
+        "kind": "siege",
+        "tick": 134,
+        "id": 18,
+        "x": 1141.5594438870553
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 13.499999999999968,
+        "y": 1588.0125661001384,
+        "kind": "siege",
+        "tick": 135,
+        "id": 18,
+        "x": 1141.451704408599
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 13.499999999999968,
+        "y": 1588.0125661001384,
+        "kind": "siege",
+        "tick": 135,
+        "id": 18,
+        "x": 1141.451704408599
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 13.599999999999968,
+        "y": 1588.110502634597,
+        "kind": "siege",
+        "tick": 136,
+        "id": 18,
+        "x": 1141.3439649301422
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 13.599999999999968,
+        "y": 1588.110502634597,
+        "kind": "siege",
+        "tick": 136,
+        "id": 18,
+        "x": 1141.3439649301422
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 13.699999999999967,
+        "y": 1588.199438879365,
+        "kind": "siege",
+        "tick": 137,
+        "id": 18,
+        "x": 1141.2461266241394
+      },
+      {
+        "lane": 0,
+        "organId": "stomach",
+        "transit": {
+          "gateId": "gastric.local.central",
+          "toLane": 202,
+          "fromLane": 0
+        },
+        "phase": "substep",
+        "time": 13.699999999999967,
+        "y": 1588.199438879365,
+        "kind": "siege",
+        "tick": 137,
+        "id": 18,
+        "x": 1141.2461266241394
+      },
+      {
+        "lane": 202,
+        "phase": "substep",
+        "time": 13.799999999999967,
+        "y": 1588.2745262718163,
+        "kind": "siege",
+        "tick": 138,
+        "id": 18,
+        "x": 1141.1635233694285
+      },
+      {
+        "lane": 202,
+        "phase": "substep",
+        "time": 13.799999999999967,
+        "y": 1588.2745262718163,
+        "kind": "siege",
+        "tick": 138,
+        "id": 18,
+        "x": 1141.1635233694285
+      },
+      {
+        "lane": 202,
+        "phase": "substep",
+        "time": 13.899999999999967,
+        "y": 1588.3348616450878,
+        "kind": "siege",
+        "tick": 139,
+        "id": 18,
+        "x": 1141.097148735236
+      },
+      {
+        "lane": 202,
+        "phase": "substep",
+        "time": 13.899999999999967,
+        "y": 1588.3348616450878,
+        "kind": "siege",
+        "tick": 139,
+        "id": 18,
+        "x": 1141.097148735236
+      },
+      {
+        "lane": 202,
+        "phase": "substep",
+        "time": 13.999999999999966,
+        "y": 1588.3815691619502,
+        "kind": "siege",
+        "tick": 140,
+        "id": 18,
+        "x": 1141.0457660358727
+      },
+      {
+        "lane": 202,
+        "phase": "substep",
+        "time": 13.999999999999966,
+        "y": 1588.3815691619502,
+        "kind": "siege",
+        "tick": 140,
+        "id": 18,
+        "x": 1141.0457660358727
+      },
+      {
+        "lane": 202,
+        "phase": "substep",
+        "time": 14.099999999999966,
+        "y": 1588.4166460891288,
+        "kind": "siege",
+        "tick": 141,
+        "id": 18,
+        "x": 1141.0071780884741
+      },
+      {
+        "lane": 202,
+        "phase": "substep",
+        "time": 14.099999999999966,
+        "y": 1588.4166460891288,
+        "kind": "siege",
+        "tick": 141,
+        "id": 18,
+        "x": 1141.0071780884741
+      },
+      {
+        "lane": 202,
+        "phase": "substep",
+        "time": 14.199999999999966,
+        "y": 1588.4448160608586,
+        "kind": "siege",
+        "tick": 142,
+        "id": 18,
+        "x": 1140.9761884472837
+      },
+      {
+        "lane": 202,
+        "phase": "substep",
+        "time": 14.199999999999966,
+        "y": 1588.4448160608586,
+        "kind": "siege",
+        "tick": 142,
+        "id": 18,
+        "x": 1140.9761884472837
+      },
+      {
+        "lane": 202,
+        "phase": "substep",
+        "time": 14.299999999999965,
+        "y": 1588.4696047901555,
+        "kind": "siege",
+        "tick": 143,
+        "id": 18,
+        "x": 1140.948918493524
+      },
+      {
+        "lane": 202,
+        "phase": "substep",
+        "time": 14.299999999999965,
+        "y": 1588.4696047901555,
+        "kind": "siege",
+        "tick": 143,
+        "id": 18,
+        "x": 1140.948918493524
+      },
+      {
+        "lane": 202,
+        "phase": "substep",
+        "time": 14.399999999999965,
+        "y": 1588.4927382604205,
+        "kind": "siege",
+        "tick": 144,
+        "id": 18,
+        "x": 1140.9234694817223
+      },
+      {
+        "lane": 202,
+        "phase": "substep",
+        "time": 14.399999999999965,
+        "y": 1588.4927382604205,
+        "kind": "siege",
+        "tick": 144,
+        "id": 18,
+        "x": 1140.9234694817223
+      },
+      {
+        "lane": 202,
+        "phase": "substep",
+        "time": 14.499999999999964,
+        "y": 1588.5133992056965,
+        "kind": "siege",
+        "tick": 145,
+        "id": 18,
+        "x": 1140.9007404819597
+      },
+      {
+        "lane": 202,
+        "phase": "substep",
+        "time": 14.499999999999964,
+        "y": 1588.5133992056965,
+        "kind": "siege",
+        "tick": 145,
+        "id": 18,
+        "x": 1140.9007404819597
+      },
+      {
+        "lane": 202,
+        "phase": "substep",
+        "time": 14.599999999999964,
+        "y": 1588.5133992056965,
+        "kind": "siege",
+        "tick": 146,
+        "id": 18,
+        "x": 1140.9007404819597
+      }
+    ],
+    "setupCommands": {},
+    "completed": true,
+    "setupElapsed": 0,
+    "goals": [
+      {
+        "lane": 202,
+        "y": 1588.5133992056965,
+        "x": 1140.9007404819597,
+        "id": 18,
+        "organId": "stomach"
+      }
+    ],
+    "id": "gate/stomach/siege/gastric.local.central/exit",
+    "elapsed": 14.599999999999964
+  },
+  "inputHashes": {
+    "scripts/war/FullBodyBattlefield.lua": "d28b30024e20d37e9df2679ccb387fd0c091ba2e7fc437edf1f94541106a6366",
+    "scripts/war/FullBodyMapArt.lua": "7271eca0160be00f2a80dbc0b9db7f9b181db13ae20d4e9d6f7c9974b4e5a293",
+    "scripts/war/FullBodyMapArtData.lua": "5039018400869a482945389d80deb7db48d224e0f2b61e9cc49cbedd677c8b7f",
+    "scripts/war/OrganBattlefield.lua": "cd0194aa8016f2a0487c9fbaabe689b0de73fcf9dc1294a25bce37ee9520756b",
+    "scripts/war/OrganBattlefieldCore.lua": "40c670d25c69281b0d5663c684dcb699b6871c806000fd2e8f013601218c6b8d",
+    "scripts/war/OrganBattlefieldData.lua": "047dce28da8aa19d893a9116258631cf71c039ecb44b7c63478d40043cd9c273",
+    "scripts/war/GastricBattlefield.lua": "789066936c29437cfcbc47490a7527288700e82c02b88b3e19458f69906b2b46",
+    "scripts/war/GastricBattlefieldData.lua": "81cbe1eedd29506a13fa19a7edd079d7f93b3eb58b4a9e4282e98277854b279d",
+    "scripts/war/OrganTrial.lua": "2448272435d422dc9c10f13c54382727b93da03b9bce177235f0d58d7eb803fd",
+    "scripts/war/OrganTraffic.lua": "901ece0eb1bb68d22089d99c2b669c42270f34d66539f6daa1d1bb02786dab0f",
+    "scripts/war/GastricTraffic.lua": "d04b89128fedb033d67b9eef01a72f5c2733b5942a0e87656e00d9b883ee3e6d",
+    "scripts/war/Commands.lua": "d03717fefdd1aeb43d7d21948a6af149b5ba3401466b78c14cba1200c0d4655a",
+    "scripts/war/Path.lua": "a41c95130db4c45a96956c09ad122432055bd3cc0588835ae9cae5a321283929",
+    "scripts/war/Simulation.lua": "2df8aa4f850caa950c2abc48477cf0bdc71c3a7418d64c95567eb326b460ff43",
+    "scripts/war/CellCollision.lua": "a11dc894c9cf91347ff89e290301c0bb0889c520593d60cbe4c1bf122201d30f",
+    "scripts/war/Motion.lua": "7fe39b4a715b5b0b5398e5ef7e6f0fe2bd8987e47359e6083d46a5db467829a5",
+    "scripts/war/Save.lua": "29655d752131e7993d943f3996a3fe4d07ab02cf52065216594c48a8f21df36d",
+    "scripts/war/World.lua": "020f77336ced2aa0a4f7907aa79385c438eda38d76e2bc639d49ca864b70166c",
+    "scripts/war/Vessels.lua": "5302854eda3d7b29a238394db9b50662835ad2a76f69d0e3b9c42431c53b8d6e",
+    "scripts/war/Data.lua": "6aa40613c149a254391e68d5ffca3ef5f6b7d4dbba8a4861b6b8adb7983d5f33",
+    "scripts/war/Util.lua": "bd35c4e904854a00b98825fe2cc422eaa74d4f87308c8a336f25f9cd76131c0d"
+  }
+}

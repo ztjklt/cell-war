@@ -1,0 +1,6894 @@
+{
+  "schema": "fullbody-015-production-motion-case/v1",
+  "nativeEvidence": false,
+  "productionNavigationSubstituted": false,
+  "config": {
+    "id": "gate/kidney_r/siege/kidney_r.candidate.1/exit",
+    "family": "gate",
+    "owner": "kidney_r",
+    "gateId": "kidney_r.candidate.1",
+    "direction": "exit",
+    "actors": [
+      {
+        "kind": "siege",
+        "x": 822.5534903755783,
+        "y": 1732.349437248223,
+        "tx": 844.1469884430907,
+        "ty": 1735.010655693622,
+        "lane": 0,
+        "targetLane": 137,
+        "targetOrgan": "kidney_r"
+      }
+    ],
+    "maxTime": 600,
+    "caseOrgans": [
+      "kidney_r"
+    ],
+    "organs": [
+      "brain",
+      "lung_r",
+      "lung_l",
+      "liver",
+      "stomach",
+      "pancreas",
+      "kidney_r",
+      "kidney_l",
+      "large_intestine",
+      "small_intestine",
+      "bladder",
+      "heart"
+    ]
+  },
+  "row": {
+    "id": "gate/kidney_r/siege/kidney_r.candidate.1/exit",
+    "family": "gate",
+    "status": "PASS",
+    "completed": true,
+    "commandsValid": true,
+    "spawnErrors": {},
+    "arrivals": [
+      {
+        "id": 18,
+        "distanceWorld": 0.01906644325739917,
+        "laneMatches": true,
+        "organMatches": true
+      }
+    ],
+    "savePassed": true,
+    "elapsedSimulationSeconds": 17.099999999999973,
+    "setupSimulationSeconds": 0,
+    "disksChecked": 511,
+    "capsulesChecked": 340,
+    "geometryFailures": 0,
+    "firstGeometryFailures": [],
+    "unverifiedDomainPoints": 0,
+    "trafficStats": {
+      "deadReleased": 0,
+      "maxPlanningSlice": 2.00000000916134e-06,
+      "conflicts": 0,
+      "expired": 0,
+      "maxPairs": 0,
+      "resumed": 0,
+      "routeRequests": 0,
+      "yields": 0,
+      "cancelled": 0,
+      "waits": 0,
+      "noBay": 0,
+      "activePairs": 0
+    },
+    "visitedLanes": [
+      137
+    ],
+    "minimumFrameDiskGapWorld": null,
+    "endpointFailures": []
+  },
+  "actual": {
+    "activeOrgans": [
+      "bladder",
+      "brain",
+      "heart",
+      "kidney_l",
+      "kidney_r",
+      "large_intestine",
+      "liver",
+      "lung_l",
+      "lung_r",
+      "pancreas",
+      "small_intestine",
+      "stomach"
+    ],
+    "save": {
+      "version": 9,
+      "positionErrors": 0.0,
+      "restoredFlag": 1,
+      "restoredIds": [
+        "bladder",
+        "brain",
+        "heart",
+        "kidney_l",
+        "kidney_r",
+        "large_intestine",
+        "liver",
+        "lung_l",
+        "lung_r",
+        "pancreas",
+        "small_intestine",
+        "stomach"
+      ],
+      "restored": true,
+      "flag": 1,
+      "ids": [
+        "bladder",
+        "brain",
+        "heart",
+        "kidney_l",
+        "kidney_r",
+        "large_intestine",
+        "liver",
+        "lung_l",
+        "lung_r",
+        "pancreas",
+        "small_intestine",
+        "stomach"
+      ],
+      "restoredNetworkEdges": 202,
+      "laneErrors": 0
+    },
+    "setupCommands": {},
+    "setupElapsed": 0,
+    "starts": [
+      {
+        "lane": 0,
+        "phase": "spawn",
+        "kind": "siege",
+        "y": 1732.349437248223,
+        "tick": 0,
+        "time": 0,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 822.5534903755783
+      }
+    ],
+    "networkEdges": 202,
+    "trace": [
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.349437248223,
+        "tick": 1,
+        "time": 0.1,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 822.5534903755783
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.3615276431603,
+        "tick": 2,
+        "time": 0.2,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 822.6515935283521
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.3615276431603,
+        "tick": 2,
+        "time": 0.2,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 822.6515935283521
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.3755632510154,
+        "tick": 3,
+        "time": 0.30000000000000004,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 822.7654804103621
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.3755632510154,
+        "tick": 3,
+        "time": 0.30000000000000004,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 822.7654804103621
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.3905511216303,
+        "tick": 4,
+        "time": 0.4,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 822.8870940853762
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.3905511216303,
+        "tick": 4,
+        "time": 0.4,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 822.8870940853762
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.4060051645372,
+        "tick": 5,
+        "time": 0.5,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 823.0124903474608
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.4060051645372,
+        "tick": 5,
+        "time": 0.5,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 823.0124903474608
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.4216874182014,
+        "tick": 6,
+        "time": 0.6,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 823.1397383434972
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.4216874182014,
+        "tick": 6,
+        "time": 0.6,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 823.1397383434972
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.4374813905386,
+        "tick": 7,
+        "time": 0.7,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 823.2678928404455
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.4374813905386,
+        "tick": 7,
+        "time": 0.7,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 823.2678928404455
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.45333005382,
+        "tick": 8,
+        "time": 0.7999999999999999,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 823.3964911073546
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.45333005382,
+        "tick": 8,
+        "time": 0.7999999999999999,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 823.3964911073546
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.4692054905975,
+        "tick": 9,
+        "time": 0.8999999999999999,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 823.5253066181466
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.4692054905975,
+        "tick": 9,
+        "time": 0.8999999999999999,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 823.5253066181466
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.4850940341164,
+        "tick": 10,
+        "time": 0.9999999999999999,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 823.6542284788698
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.4850940341164,
+        "tick": 10,
+        "time": 0.9999999999999999,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 823.6542284788698
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.5009889939313,
+        "tick": 11,
+        "time": 1.0999999999999999,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 823.7832024023146
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.5009889939313,
+        "tick": 11,
+        "time": 1.0999999999999999,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 823.7832024023146
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.5168870947905,
+        "tick": 12,
+        "time": 1.2,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 823.9122018126307
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.5168870947905,
+        "tick": 12,
+        "time": 1.2,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 823.9122018126307
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.5327867333217,
+        "tick": 13,
+        "time": 1.3,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 824.0412136998319
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.5327867333217,
+        "tick": 13,
+        "time": 1.3,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 824.0412136998319
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.5486871246073,
+        "tick": 14,
+        "time": 1.4000000000000001,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 824.1702316949883
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.5486871246073,
+        "tick": 14,
+        "time": 1.4000000000000001,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 824.1702316949883
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.5645878843977,
+        "tick": 15,
+        "time": 1.5000000000000002,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 824.2992526802432
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.5645878843977,
+        "tick": 15,
+        "time": 1.5000000000000002,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 824.2992526802432
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.5804888245864,
+        "tick": 16,
+        "time": 1.6000000000000003,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 824.4282751292758
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.5804888245864,
+        "tick": 16,
+        "time": 1.6000000000000003,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 824.4282751292758
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.5963898530877,
+        "tick": 17,
+        "time": 1.7000000000000004,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 824.5572982948886
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.5963898530877,
+        "tick": 17,
+        "time": 1.7000000000000004,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 824.5572982948886
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.6122909248215,
+        "tick": 18,
+        "time": 1.8000000000000005,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 824.6863218112973
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.6122909248215,
+        "tick": 18,
+        "time": 1.8000000000000005,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 824.6863218112973
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.6281920177196,
+        "tick": 19,
+        "time": 1.9000000000000006,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 824.8153454994351
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.6281920177196,
+        "tick": 19,
+        "time": 1.9000000000000006,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 824.8153454994351
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.6440931209784,
+        "tick": 20,
+        "time": 2.0000000000000004,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 824.9443692716416
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.6440931209784,
+        "tick": 20,
+        "time": 2.0000000000000004,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 824.9443692716416
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.6599942293092,
+        "tick": 21,
+        "time": 2.1000000000000005,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 825.0733930850031
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.6599942293092,
+        "tick": 21,
+        "time": 2.1000000000000005,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 825.0733930850031
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.675895340123,
+        "tick": 22,
+        "time": 2.2000000000000006,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 825.2024169185117
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.675895340123,
+        "tick": 22,
+        "time": 2.2000000000000006,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 825.2024169185117
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.6917964521522,
+        "tick": 23,
+        "time": 2.3000000000000007,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 825.3314407618833
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.6917964521522,
+        "tick": 23,
+        "time": 2.3000000000000007,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 825.3314407618833
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.7076975647765,
+        "tick": 24,
+        "time": 2.400000000000001,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 825.4604646100831
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.7076975647765,
+        "tick": 24,
+        "time": 2.400000000000001,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 825.4604646100831
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.723598677692,
+        "tick": 25,
+        "time": 2.500000000000001,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 825.5894884606466
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.723598677692,
+        "tick": 25,
+        "time": 2.500000000000001,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 825.5894884606466
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.7394997907504,
+        "tick": 26,
+        "time": 2.600000000000001,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 825.7185123123672
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.7394997907504,
+        "tick": 26,
+        "time": 2.600000000000001,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 825.7185123123672
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.7554009038786,
+        "tick": 27,
+        "time": 2.700000000000001,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 825.8475361646542
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.7554009038786,
+        "tick": 27,
+        "time": 2.700000000000001,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 825.8475361646542
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.7713020170409,
+        "tick": 28,
+        "time": 2.800000000000001,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 825.9765600172185
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.7713020170409,
+        "tick": 28,
+        "time": 2.800000000000001,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 825.9765600172185
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.78720313022,
+        "tick": 29,
+        "time": 2.9000000000000012,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 826.1055838699185
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.78720313022,
+        "tick": 29,
+        "time": 2.9000000000000012,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 826.1055838699185
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.8031042434072,
+        "tick": 30,
+        "time": 3.0000000000000013,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 826.234607722685
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.8031042434072,
+        "tick": 30,
+        "time": 3.0000000000000013,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 826.234607722685
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.8190053565984,
+        "tick": 31,
+        "time": 3.1000000000000014,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 826.3636315754841
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.8190053565984,
+        "tick": 31,
+        "time": 3.1000000000000014,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 826.3636315754841
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.8349064697916,
+        "tick": 32,
+        "time": 3.2000000000000015,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 826.492655428299
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.8349064697916,
+        "tick": 32,
+        "time": 3.2000000000000015,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 826.492655428299
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.8508075829857,
+        "tick": 33,
+        "time": 3.3000000000000016,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 826.6216792811218
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.8508075829857,
+        "tick": 33,
+        "time": 3.3000000000000016,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 826.6216792811218
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.8667086961802,
+        "tick": 34,
+        "time": 3.4000000000000017,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 826.7507031339484
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.8667086961802,
+        "tick": 34,
+        "time": 3.4000000000000017,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 826.7507031339484
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.882609809375,
+        "tick": 35,
+        "time": 3.5000000000000018,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 826.8797269867769
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.882609809375,
+        "tick": 35,
+        "time": 3.5000000000000018,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 826.8797269867769
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.89851092257,
+        "tick": 36,
+        "time": 3.600000000000002,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 827.0087508396063
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.89851092257,
+        "tick": 36,
+        "time": 3.600000000000002,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 827.0087508396063
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.914412035765,
+        "tick": 37,
+        "time": 3.700000000000002,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 827.1377746924361
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.914412035765,
+        "tick": 37,
+        "time": 3.700000000000002,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 827.1377746924361
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.93031314896,
+        "tick": 38,
+        "time": 3.800000000000002,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 827.2667985452662
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.93031314896,
+        "tick": 38,
+        "time": 3.800000000000002,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 827.2667985452662
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.946214262155,
+        "tick": 39,
+        "time": 3.900000000000002,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 827.3958223980964
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.946214262155,
+        "tick": 39,
+        "time": 3.900000000000002,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 827.3958223980964
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.96211537535,
+        "tick": 40,
+        "time": 4.000000000000002,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 827.5248462509265
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.96211537535,
+        "tick": 40,
+        "time": 4.000000000000002,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 827.5248462509265
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.978016488545,
+        "tick": 41,
+        "time": 4.100000000000001,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 827.6538701037567
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.978016488545,
+        "tick": 41,
+        "time": 4.100000000000001,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 827.6538701037567
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.9939176017401,
+        "tick": 42,
+        "time": 4.200000000000001,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 827.7828939565869
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1732.9939176017401,
+        "tick": 42,
+        "time": 4.200000000000001,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 827.7828939565869
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.0098187149351,
+        "tick": 43,
+        "time": 4.300000000000001,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 827.9119178094171
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.0098187149351,
+        "tick": 43,
+        "time": 4.300000000000001,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 827.9119178094171
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.0257198281301,
+        "tick": 44,
+        "time": 4.4,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 828.0409416622473
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.0257198281301,
+        "tick": 44,
+        "time": 4.4,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 828.0409416622473
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.0416209413252,
+        "tick": 45,
+        "time": 4.5,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 828.1699655150775
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.0416209413252,
+        "tick": 45,
+        "time": 4.5,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 828.1699655150775
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.0575220545202,
+        "tick": 46,
+        "time": 4.6,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 828.2989893679077
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.0575220545202,
+        "tick": 46,
+        "time": 4.6,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 828.2989893679077
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.0734231677152,
+        "tick": 47,
+        "time": 4.699999999999999,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 828.4280132207379
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.0734231677152,
+        "tick": 47,
+        "time": 4.699999999999999,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 828.4280132207379
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.0893242809102,
+        "tick": 48,
+        "time": 4.799999999999999,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 828.557037073568
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.0893242809102,
+        "tick": 48,
+        "time": 4.799999999999999,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 828.557037073568
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.1052253941052,
+        "tick": 49,
+        "time": 4.899999999999999,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 828.6860609263982
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.1052253941052,
+        "tick": 49,
+        "time": 4.899999999999999,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 828.6860609263982
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.1211265073002,
+        "tick": 50,
+        "time": 4.999999999999998,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 828.8150847792284
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.1211265073002,
+        "tick": 50,
+        "time": 4.999999999999998,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 828.8150847792284
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.1370276204952,
+        "tick": 51,
+        "time": 5.099999999999998,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 828.9441086320586
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.1370276204952,
+        "tick": 51,
+        "time": 5.099999999999998,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 828.9441086320586
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.1529287336903,
+        "tick": 52,
+        "time": 5.1999999999999975,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 829.0731324848888
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.1529287336903,
+        "tick": 52,
+        "time": 5.1999999999999975,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 829.0731324848888
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.1688298468853,
+        "tick": 53,
+        "time": 5.299999999999997,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 829.202156337719
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.1688298468853,
+        "tick": 53,
+        "time": 5.299999999999997,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 829.202156337719
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.1847309600803,
+        "tick": 54,
+        "time": 5.399999999999997,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 829.3311801905492
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.1847309600803,
+        "tick": 54,
+        "time": 5.399999999999997,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 829.3311801905492
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.2006320732753,
+        "tick": 55,
+        "time": 5.4999999999999964,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 829.4602040433793
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.2006320732753,
+        "tick": 55,
+        "time": 5.4999999999999964,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 829.4602040433793
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.2165331864703,
+        "tick": 56,
+        "time": 5.599999999999996,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 829.5892278962095
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.2165331864703,
+        "tick": 56,
+        "time": 5.599999999999996,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 829.5892278962095
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.2324342996653,
+        "tick": 57,
+        "time": 5.699999999999996,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 829.7182517490397
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.2324342996653,
+        "tick": 57,
+        "time": 5.699999999999996,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 829.7182517490397
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.2483354128603,
+        "tick": 58,
+        "time": 5.799999999999995,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 829.8472756018699
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.2483354128603,
+        "tick": 58,
+        "time": 5.799999999999995,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 829.8472756018699
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.2642365260554,
+        "tick": 59,
+        "time": 5.899999999999995,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 829.9762994547001
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.2642365260554,
+        "tick": 59,
+        "time": 5.899999999999995,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 829.9762994547001
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.2801376392504,
+        "tick": 60,
+        "time": 5.999999999999995,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 830.1053233075303
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.2801376392504,
+        "tick": 60,
+        "time": 5.999999999999995,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 830.1053233075303
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.2960387524454,
+        "tick": 61,
+        "time": 6.099999999999994,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 830.2343471603605
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.2960387524454,
+        "tick": 61,
+        "time": 6.099999999999994,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 830.2343471603605
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.3119398656404,
+        "tick": 62,
+        "time": 6.199999999999994,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 830.3633710131907
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.3119398656404,
+        "tick": 62,
+        "time": 6.199999999999994,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 830.3633710131907
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.3278409788354,
+        "tick": 63,
+        "time": 6.299999999999994,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 830.4923948660208
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.3278409788354,
+        "tick": 63,
+        "time": 6.299999999999994,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 830.4923948660208
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.3437420920304,
+        "tick": 64,
+        "time": 6.399999999999993,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 830.621418718851
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.3437420920304,
+        "tick": 64,
+        "time": 6.399999999999993,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 830.621418718851
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.3596432052254,
+        "tick": 65,
+        "time": 6.499999999999993,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 830.7504425716812
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.3596432052254,
+        "tick": 65,
+        "time": 6.499999999999993,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 830.7504425716812
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.3755443184205,
+        "tick": 66,
+        "time": 6.5999999999999925,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 830.8794664245114
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.3755443184205,
+        "tick": 66,
+        "time": 6.5999999999999925,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 830.8794664245114
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.3914454316155,
+        "tick": 67,
+        "time": 6.699999999999992,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 831.0084902773416
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.3914454316155,
+        "tick": 67,
+        "time": 6.699999999999992,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 831.0084902773416
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.4073465448105,
+        "tick": 68,
+        "time": 6.799999999999992,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 831.1375141301718
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.4073465448105,
+        "tick": 68,
+        "time": 6.799999999999992,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 831.1375141301718
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.4232476580055,
+        "tick": 69,
+        "time": 6.8999999999999915,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 831.266537983002
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.4232476580055,
+        "tick": 69,
+        "time": 6.8999999999999915,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 831.266537983002
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.4391487712005,
+        "tick": 70,
+        "time": 6.999999999999991,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 831.3955618358322
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.4391487712005,
+        "tick": 70,
+        "time": 6.999999999999991,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 831.3955618358322
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.4550498843955,
+        "tick": 71,
+        "time": 7.099999999999991,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 831.5245856886623
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.4550498843955,
+        "tick": 71,
+        "time": 7.099999999999991,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 831.5245856886623
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.4709509975905,
+        "tick": 72,
+        "time": 7.19999999999999,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 831.6536095414925
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.4709509975905,
+        "tick": 72,
+        "time": 7.19999999999999,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 831.6536095414925
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.4868521107855,
+        "tick": 73,
+        "time": 7.29999999999999,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 831.7826333943227
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.4868521107855,
+        "tick": 73,
+        "time": 7.29999999999999,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 831.7826333943227
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.5027532239806,
+        "tick": 74,
+        "time": 7.39999999999999,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 831.9116572471529
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.5027532239806,
+        "tick": 74,
+        "time": 7.39999999999999,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 831.9116572471529
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.5186543371756,
+        "tick": 75,
+        "time": 7.499999999999989,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 832.0406810999831
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.5186543371756,
+        "tick": 75,
+        "time": 7.499999999999989,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 832.0406810999831
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.5345554503706,
+        "tick": 76,
+        "time": 7.599999999999989,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 832.1697049528133
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.5345554503706,
+        "tick": 76,
+        "time": 7.599999999999989,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 832.1697049528133
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.5504565635656,
+        "tick": 77,
+        "time": 7.699999999999989,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 832.2987288056435
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.5504565635656,
+        "tick": 77,
+        "time": 7.699999999999989,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 832.2987288056435
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.5663576767606,
+        "tick": 78,
+        "time": 7.799999999999988,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 832.4277526584737
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.5663576767606,
+        "tick": 78,
+        "time": 7.799999999999988,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 832.4277526584737
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.5822587899556,
+        "tick": 79,
+        "time": 7.899999999999988,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 832.5567765113038
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.5822587899556,
+        "tick": 79,
+        "time": 7.899999999999988,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 832.5567765113038
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.5981599031506,
+        "tick": 80,
+        "time": 7.999999999999988,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 832.685800364134
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.5981599031506,
+        "tick": 80,
+        "time": 7.999999999999988,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 832.685800364134
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.6140610163457,
+        "tick": 81,
+        "time": 8.099999999999987,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 832.8148242169642
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.6140610163457,
+        "tick": 81,
+        "time": 8.099999999999987,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 832.8148242169642
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.6299621295407,
+        "tick": 82,
+        "time": 8.199999999999987,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 832.9438480697944
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.6299621295407,
+        "tick": 82,
+        "time": 8.199999999999987,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 832.9438480697944
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.6458632427357,
+        "tick": 83,
+        "time": 8.299999999999986,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 833.0728719226246
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.6458632427357,
+        "tick": 83,
+        "time": 8.299999999999986,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 833.0728719226246
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.6617643559307,
+        "tick": 84,
+        "time": 8.399999999999986,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 833.2018957754548
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.6617643559307,
+        "tick": 84,
+        "time": 8.399999999999986,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 833.2018957754548
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.6776654691257,
+        "tick": 85,
+        "time": 8.499999999999986,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 833.330919628285
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.6776654691257,
+        "tick": 85,
+        "time": 8.499999999999986,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 833.330919628285
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.6935665823207,
+        "tick": 86,
+        "time": 8.599999999999985,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 833.4599434811151
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.6935665823207,
+        "tick": 86,
+        "time": 8.599999999999985,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 833.4599434811151
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.7094676955157,
+        "tick": 87,
+        "time": 8.699999999999985,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 833.5889673339453
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.7094676955157,
+        "tick": 87,
+        "time": 8.699999999999985,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 833.5889673339453
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.7253688087108,
+        "tick": 88,
+        "time": 8.799999999999985,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 833.7179911867755
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.7253688087108,
+        "tick": 88,
+        "time": 8.799999999999985,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 833.7179911867755
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.7412699219058,
+        "tick": 89,
+        "time": 8.899999999999984,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 833.8470150396057
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.7412699219058,
+        "tick": 89,
+        "time": 8.899999999999984,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 833.8470150396057
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.7571710351008,
+        "tick": 90,
+        "time": 8.999999999999984,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 833.9760388924359
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.7571710351008,
+        "tick": 90,
+        "time": 8.999999999999984,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 833.9760388924359
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.7730721482958,
+        "tick": 91,
+        "time": 9.099999999999984,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 834.1050627452661
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.7730721482958,
+        "tick": 91,
+        "time": 9.099999999999984,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 834.1050627452661
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.7889732614908,
+        "tick": 92,
+        "time": 9.199999999999983,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 834.2340865980963
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.7889732614908,
+        "tick": 92,
+        "time": 9.199999999999983,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 834.2340865980963
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.8048743746858,
+        "tick": 93,
+        "time": 9.299999999999983,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 834.3631104509265
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.8048743746858,
+        "tick": 93,
+        "time": 9.299999999999983,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 834.3631104509265
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.8207754878808,
+        "tick": 94,
+        "time": 9.399999999999983,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 834.4921343037566
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.8207754878808,
+        "tick": 94,
+        "time": 9.399999999999983,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 834.4921343037566
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.8366766010759,
+        "tick": 95,
+        "time": 9.499999999999982,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 834.6211581565868
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.8366766010759,
+        "tick": 95,
+        "time": 9.499999999999982,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 834.6211581565868
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.8525777142709,
+        "tick": 96,
+        "time": 9.599999999999982,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 834.750182009417
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.8525777142709,
+        "tick": 96,
+        "time": 9.599999999999982,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 834.750182009417
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.8684788274659,
+        "tick": 97,
+        "time": 9.699999999999982,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 834.8792058622472
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.8684788274659,
+        "tick": 97,
+        "time": 9.699999999999982,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 834.8792058622472
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.884379940661,
+        "tick": 98,
+        "time": 9.799999999999981,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 835.0082297150774
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.884379940661,
+        "tick": 98,
+        "time": 9.799999999999981,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 835.0082297150774
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.900281053856,
+        "tick": 99,
+        "time": 9.89999999999998,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 835.1372535679076
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.900281053856,
+        "tick": 99,
+        "time": 9.89999999999998,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 835.1372535679076
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.916182167051,
+        "tick": 100,
+        "time": 9.99999999999998,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 835.2662774207378
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.916182167051,
+        "tick": 100,
+        "time": 9.99999999999998,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 835.2662774207378
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.932083280246,
+        "tick": 101,
+        "time": 10.09999999999998,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 835.395301273568
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.932083280246,
+        "tick": 101,
+        "time": 10.09999999999998,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 835.395301273568
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.947984393441,
+        "tick": 102,
+        "time": 10.19999999999998,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 835.5243251263981
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.947984393441,
+        "tick": 102,
+        "time": 10.19999999999998,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 835.5243251263981
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.963885506636,
+        "tick": 103,
+        "time": 10.29999999999998,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 835.6533489792283
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.963885506636,
+        "tick": 103,
+        "time": 10.29999999999998,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 835.6533489792283
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.979786619831,
+        "tick": 104,
+        "time": 10.399999999999979,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 835.7823728320585
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.979786619831,
+        "tick": 104,
+        "time": 10.399999999999979,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 835.7823728320585
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.995687733026,
+        "tick": 105,
+        "time": 10.499999999999979,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 835.9113966848887
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1733.995687733026,
+        "tick": 105,
+        "time": 10.499999999999979,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 835.9113966848887
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.011588846221,
+        "tick": 106,
+        "time": 10.599999999999978,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 836.0404205377189
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.011588846221,
+        "tick": 106,
+        "time": 10.599999999999978,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 836.0404205377189
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.027489959416,
+        "tick": 107,
+        "time": 10.699999999999978,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 836.1694443905491
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.027489959416,
+        "tick": 107,
+        "time": 10.699999999999978,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 836.1694443905491
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.043391072611,
+        "tick": 108,
+        "time": 10.799999999999978,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 836.2984682433793
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.043391072611,
+        "tick": 108,
+        "time": 10.799999999999978,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 836.2984682433793
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.059292185806,
+        "tick": 109,
+        "time": 10.899999999999977,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 836.4274920962094
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.059292185806,
+        "tick": 109,
+        "time": 10.899999999999977,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 836.4274920962094
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.075193299001,
+        "tick": 110,
+        "time": 10.999999999999977,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 836.5565159490396
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.075193299001,
+        "tick": 110,
+        "time": 10.999999999999977,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 836.5565159490396
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.091094412196,
+        "tick": 111,
+        "time": 11.099999999999977,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 836.6855398018698
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.091094412196,
+        "tick": 111,
+        "time": 11.099999999999977,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 836.6855398018698
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.106995525391,
+        "tick": 112,
+        "time": 11.199999999999976,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 836.8145636547
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.106995525391,
+        "tick": 112,
+        "time": 11.199999999999976,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 836.8145636547
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.122896638586,
+        "tick": 113,
+        "time": 11.299999999999976,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 836.9435875075302
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.122896638586,
+        "tick": 113,
+        "time": 11.299999999999976,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 836.9435875075302
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.138797751781,
+        "tick": 114,
+        "time": 11.399999999999975,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 837.0726113603604
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.138797751781,
+        "tick": 114,
+        "time": 11.399999999999975,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 837.0726113603604
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.1546988649761,
+        "tick": 115,
+        "time": 11.499999999999975,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 837.2016352131906
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.1546988649761,
+        "tick": 115,
+        "time": 11.499999999999975,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 837.2016352131906
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.1705999781711,
+        "tick": 116,
+        "time": 11.599999999999975,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 837.3306590660208
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.1705999781711,
+        "tick": 116,
+        "time": 11.599999999999975,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 837.3306590660208
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.1865010913662,
+        "tick": 117,
+        "time": 11.699999999999974,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 837.459682918851
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.1865010913662,
+        "tick": 117,
+        "time": 11.699999999999974,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 837.459682918851
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.2024022045612,
+        "tick": 118,
+        "time": 11.799999999999974,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 837.5887067716811
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.2024022045612,
+        "tick": 118,
+        "time": 11.799999999999974,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 837.5887067716811
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.2183033177562,
+        "tick": 119,
+        "time": 11.899999999999974,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 837.7177306245113
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.2183033177562,
+        "tick": 119,
+        "time": 11.899999999999974,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 837.7177306245113
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.2342044309512,
+        "tick": 120,
+        "time": 11.999999999999973,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 837.8467544773415
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.2342044309512,
+        "tick": 120,
+        "time": 11.999999999999973,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 837.8467544773415
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.2501055441462,
+        "tick": 121,
+        "time": 12.099999999999973,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 837.9757783301717
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.2501055441462,
+        "tick": 121,
+        "time": 12.099999999999973,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 837.9757783301717
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.2660066573412,
+        "tick": 122,
+        "time": 12.199999999999973,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 838.1048021830019
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.2660066573412,
+        "tick": 122,
+        "time": 12.199999999999973,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 838.1048021830019
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.2819077705362,
+        "tick": 123,
+        "time": 12.299999999999972,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 838.2338260358321
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.2819077705362,
+        "tick": 123,
+        "time": 12.299999999999972,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 838.2338260358321
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.2978088837312,
+        "tick": 124,
+        "time": 12.399999999999972,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 838.3628498886623
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.2978088837312,
+        "tick": 124,
+        "time": 12.399999999999972,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 838.3628498886623
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.3137099969263,
+        "tick": 125,
+        "time": 12.499999999999972,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 838.4918737414924
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.3137099969263,
+        "tick": 125,
+        "time": 12.499999999999972,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 838.4918737414924
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.3296111101213,
+        "tick": 126,
+        "time": 12.599999999999971,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 838.6208975943226
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.3296111101213,
+        "tick": 126,
+        "time": 12.599999999999971,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 838.6208975943226
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.3455122233163,
+        "tick": 127,
+        "time": 12.69999999999997,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 838.7499214471528
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.3455122233163,
+        "tick": 127,
+        "time": 12.69999999999997,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 838.7499214471528
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.3614133365113,
+        "tick": 128,
+        "time": 12.79999999999997,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 838.878945299983
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.3614133365113,
+        "tick": 128,
+        "time": 12.79999999999997,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 838.878945299983
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.3773144497063,
+        "tick": 129,
+        "time": 12.89999999999997,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 839.0079691528132
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.3773144497063,
+        "tick": 129,
+        "time": 12.89999999999997,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 839.0079691528132
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.3932155629013,
+        "tick": 130,
+        "time": 12.99999999999997,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 839.1369930056434
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.3932155629013,
+        "tick": 130,
+        "time": 12.99999999999997,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 839.1369930056434
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.4091166760963,
+        "tick": 131,
+        "time": 13.09999999999997,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 839.2660168584736
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.4091166760963,
+        "tick": 131,
+        "time": 13.09999999999997,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 839.2660168584736
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.4250177892914,
+        "tick": 132,
+        "time": 13.199999999999969,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 839.3950407113037
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.4250177892914,
+        "tick": 132,
+        "time": 13.199999999999969,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 839.3950407113037
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.4409189024864,
+        "tick": 133,
+        "time": 13.299999999999969,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 839.5240645641339
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.4409189024864,
+        "tick": 133,
+        "time": 13.299999999999969,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 839.5240645641339
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.4568200156814,
+        "tick": 134,
+        "time": 13.399999999999968,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 839.6530884169641
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.4568200156814,
+        "tick": 134,
+        "time": 13.399999999999968,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 839.6530884169641
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.4727211288764,
+        "tick": 135,
+        "time": 13.499999999999968,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 839.7821122697943
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.4727211288764,
+        "tick": 135,
+        "time": 13.499999999999968,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 839.7821122697943
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.4886222420714,
+        "tick": 136,
+        "time": 13.599999999999968,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 839.9111361226245
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.4886222420714,
+        "tick": 136,
+        "time": 13.599999999999968,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 839.9111361226245
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.5045233552664,
+        "tick": 137,
+        "time": 13.699999999999967,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 840.0401599754547
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.5045233552664,
+        "tick": 137,
+        "time": 13.699999999999967,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 840.0401599754547
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.5213984911638,
+        "tick": 138,
+        "time": 13.799999999999967,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 840.1770871845001
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.5213984911638,
+        "tick": 138,
+        "time": 13.799999999999967,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 840.1770871845001
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.5387504517514,
+        "tick": 139,
+        "time": 13.899999999999967,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 840.3178834156632
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.5387504517514,
+        "tick": 139,
+        "time": 13.899999999999967,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 840.3178834156632
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.556335837889,
+        "tick": 140,
+        "time": 13.999999999999966,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 840.4605736943347
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.556335837889,
+        "tick": 140,
+        "time": 13.999999999999966,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 840.4605736943347
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.5740354955578,
+        "tick": 141,
+        "time": 14.099999999999966,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 840.6041911881666
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.5740354955578,
+        "tick": 141,
+        "time": 14.099999999999966,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 840.6041911881666
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.5917910939017,
+        "tick": 142,
+        "time": 14.199999999999966,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 840.748262592447
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.5917910939017,
+        "tick": 142,
+        "time": 14.199999999999966,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 840.748262592447
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.6095740775365,
+        "tick": 143,
+        "time": 14.299999999999965,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 840.8925562048015
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.6095740775365,
+        "tick": 143,
+        "time": 14.299999999999965,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 840.8925562048015
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.627370467412,
+        "tick": 144,
+        "time": 14.399999999999965,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 841.0369585972655
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.627370467412,
+        "tick": 144,
+        "time": 14.399999999999965,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 841.0369585972655
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.6451734202008,
+        "tick": 145,
+        "time": 14.499999999999964,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 841.1814142421249
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.6451734202008,
+        "tick": 145,
+        "time": 14.499999999999964,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 841.1814142421249
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.6629795858091,
+        "tick": 146,
+        "time": 14.599999999999964,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 841.3258959562502
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.6629795858091,
+        "tick": 146,
+        "time": 14.599999999999964,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 841.3258959562502
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.6807873242265,
+        "tick": 147,
+        "time": 14.699999999999964,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 841.4703904323671
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.6807873242265,
+        "tick": 147,
+        "time": 14.699999999999964,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 841.4703904323671
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.6985958325993,
+        "organId": "kidney_r",
+        "tick": 148,
+        "time": 14.799999999999963,
+        "id": 18,
+        "transit": {
+          "gateId": "kidney_r.candidate.1",
+          "fromLane": 0,
+          "toLane": 137
+        },
+        "x": 841.6148911560108
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.6985958325993,
+        "organId": "kidney_r",
+        "tick": 148,
+        "time": 14.799999999999963,
+        "id": 18,
+        "transit": {
+          "gateId": "kidney_r.candidate.1",
+          "fromLane": 0,
+          "toLane": 137
+        },
+        "x": 841.6148911560108
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.7164047178974,
+        "organId": "kidney_r",
+        "tick": 149,
+        "time": 14.899999999999963,
+        "id": 18,
+        "transit": {
+          "gateId": "kidney_r.candidate.1",
+          "fromLane": 0,
+          "toLane": 137
+        },
+        "x": 841.7593949380789
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.7164047178974,
+        "organId": "kidney_r",
+        "tick": 149,
+        "time": 14.899999999999963,
+        "id": 18,
+        "transit": {
+          "gateId": "kidney_r.candidate.1",
+          "fromLane": 0,
+          "toLane": 137
+        },
+        "x": 841.7593949380789
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.7342137877163,
+        "organId": "kidney_r",
+        "tick": 150,
+        "time": 14.999999999999963,
+        "id": 18,
+        "transit": {
+          "gateId": "kidney_r.candidate.1",
+          "fromLane": 0,
+          "toLane": 137
+        },
+        "x": 841.9039002173733
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.7342137877163,
+        "organId": "kidney_r",
+        "tick": 150,
+        "time": 14.999999999999963,
+        "id": 18,
+        "transit": {
+          "gateId": "kidney_r.candidate.1",
+          "fromLane": 0,
+          "toLane": 137
+        },
+        "x": 841.9039002173733
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.7520229478657,
+        "organId": "kidney_r",
+        "tick": 151,
+        "time": 15.099999999999962,
+        "id": 18,
+        "transit": {
+          "gateId": "kidney_r.candidate.1",
+          "fromLane": 0,
+          "toLane": 137
+        },
+        "x": 842.0484062296223
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.7520229478657,
+        "organId": "kidney_r",
+        "tick": 151,
+        "time": 15.099999999999962,
+        "id": 18,
+        "transit": {
+          "gateId": "kidney_r.candidate.1",
+          "fromLane": 0,
+          "toLane": 137
+        },
+        "x": 842.0484062296223
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.7698321522357,
+        "organId": "kidney_r",
+        "tick": 152,
+        "time": 15.199999999999962,
+        "id": 18,
+        "transit": {
+          "gateId": "kidney_r.candidate.1",
+          "fromLane": 0,
+          "toLane": 137
+        },
+        "x": 842.1929126006831
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.7698321522357,
+        "organId": "kidney_r",
+        "tick": 152,
+        "time": 15.199999999999962,
+        "id": 18,
+        "transit": {
+          "gateId": "kidney_r.candidate.1",
+          "fromLane": 0,
+          "toLane": 137
+        },
+        "x": 842.1929126006831
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.7876413782535,
+        "organId": "kidney_r",
+        "tick": 153,
+        "time": 15.299999999999962,
+        "id": 18,
+        "transit": {
+          "gateId": "kidney_r.candidate.1",
+          "fromLane": 0,
+          "toLane": 137
+        },
+        "x": 842.3374191473973
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.7876413782535,
+        "organId": "kidney_r",
+        "tick": 153,
+        "time": 15.299999999999962,
+        "id": 18,
+        "transit": {
+          "gateId": "kidney_r.candidate.1",
+          "fromLane": 0,
+          "toLane": 137
+        },
+        "x": 842.3374191473973
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.8054506148687,
+        "organId": "kidney_r",
+        "tick": 154,
+        "time": 15.399999999999961,
+        "id": 18,
+        "transit": {
+          "gateId": "kidney_r.candidate.1",
+          "fromLane": 0,
+          "toLane": 137
+        },
+        "x": 842.481925780101
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.8054506148687,
+        "organId": "kidney_r",
+        "tick": 154,
+        "time": 15.399999999999961,
+        "id": 18,
+        "transit": {
+          "gateId": "kidney_r.candidate.1",
+          "fromLane": 0,
+          "toLane": 137
+        },
+        "x": 842.481925780101
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.823259856672,
+        "organId": "kidney_r",
+        "tick": 155,
+        "time": 15.499999999999961,
+        "id": 18,
+        "transit": {
+          "gateId": "kidney_r.candidate.1",
+          "fromLane": 0,
+          "toLane": 137
+        },
+        "x": 842.6264324549003
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.823259856672,
+        "organId": "kidney_r",
+        "tick": 155,
+        "time": 15.499999999999961,
+        "id": 18,
+        "transit": {
+          "gateId": "kidney_r.candidate.1",
+          "fromLane": 0,
+          "toLane": 137
+        },
+        "x": 842.6264324549003
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.8410691010147,
+        "organId": "kidney_r",
+        "tick": 156,
+        "time": 15.59999999999996,
+        "id": 18,
+        "transit": {
+          "gateId": "kidney_r.candidate.1",
+          "fromLane": 0,
+          "toLane": 137
+        },
+        "x": 842.7709391503071
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.8410691010147,
+        "organId": "kidney_r",
+        "tick": 156,
+        "time": 15.59999999999996,
+        "id": 18,
+        "transit": {
+          "gateId": "kidney_r.candidate.1",
+          "fromLane": 0,
+          "toLane": 137
+        },
+        "x": 842.7709391503071
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.858878346601,
+        "organId": "kidney_r",
+        "tick": 157,
+        "time": 15.69999999999996,
+        "id": 18,
+        "transit": {
+          "gateId": "kidney_r.candidate.1",
+          "fromLane": 0,
+          "toLane": 137
+        },
+        "x": 842.9154458558021
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.858878346601,
+        "organId": "kidney_r",
+        "tick": 157,
+        "time": 15.69999999999996,
+        "id": 18,
+        "transit": {
+          "gateId": "kidney_r.candidate.1",
+          "fromLane": 0,
+          "toLane": 137
+        },
+        "x": 842.9154458558021
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.8766875927956,
+        "organId": "kidney_r",
+        "tick": 158,
+        "time": 15.79999999999996,
+        "id": 18,
+        "transit": {
+          "gateId": "kidney_r.candidate.1",
+          "fromLane": 0,
+          "toLane": 137
+        },
+        "x": 843.0599525662357
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.8766875927956,
+        "organId": "kidney_r",
+        "tick": 158,
+        "time": 15.79999999999996,
+        "id": 18,
+        "transit": {
+          "gateId": "kidney_r.candidate.1",
+          "fromLane": 0,
+          "toLane": 137
+        },
+        "x": 843.0599525662357
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.8944968392884,
+        "organId": "kidney_r",
+        "tick": 159,
+        "time": 15.89999999999996,
+        "id": 18,
+        "transit": {
+          "gateId": "kidney_r.candidate.1",
+          "fromLane": 0,
+          "toLane": 137
+        },
+        "x": 843.2044592790869
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.8944968392884,
+        "organId": "kidney_r",
+        "tick": 159,
+        "time": 15.89999999999996,
+        "id": 18,
+        "transit": {
+          "gateId": "kidney_r.candidate.1",
+          "fromLane": 0,
+          "toLane": 137
+        },
+        "x": 843.2044592790869
+      },
+      {
+        "lane": 137,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.912306085927,
+        "tick": 160,
+        "time": 15.99999999999996,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 843.3489659931217
+      },
+      {
+        "lane": 137,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.912306085927,
+        "tick": 160,
+        "time": 15.99999999999996,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 843.3489659931217
+      },
+      {
+        "lane": 137,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.930115332637,
+        "tick": 161,
+        "time": 16.09999999999996,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 843.4934727077359
+      },
+      {
+        "lane": 137,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.930115332637,
+        "tick": 161,
+        "time": 16.09999999999996,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 843.4934727077359
+      },
+      {
+        "lane": 137,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.947060426386,
+        "tick": 162,
+        "time": 16.19999999999996,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 843.6309675645598
+      },
+      {
+        "lane": 137,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.947060426386,
+        "tick": 162,
+        "time": 16.19999999999996,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 843.6309675645598
+      },
+      {
+        "lane": 137,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.9617833302586,
+        "tick": 163,
+        "time": 16.29999999999996,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 843.7504312624262
+      },
+      {
+        "lane": 137,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.9617833302586,
+        "tick": 163,
+        "time": 16.29999999999996,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 843.7504312624262
+      },
+      {
+        "lane": 137,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.9738551703629,
+        "tick": 164,
+        "time": 16.399999999999963,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 843.8483838586941
+      },
+      {
+        "lane": 137,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.9738551703629,
+        "tick": 164,
+        "time": 16.399999999999963,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 843.8483838586941
+      },
+      {
+        "lane": 137,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.9833474726456,
+        "tick": 165,
+        "time": 16.499999999999964,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 843.925405724882
+      },
+      {
+        "lane": 137,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.9833474726456,
+        "tick": 165,
+        "time": 16.499999999999964,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 843.925405724882
+      },
+      {
+        "lane": 137,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.9905691353295,
+        "tick": 166,
+        "time": 16.599999999999966,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 843.9840033043005
+      },
+      {
+        "lane": 137,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.9905691353295,
+        "tick": 166,
+        "time": 16.599999999999966,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 843.9840033043005
+      },
+      {
+        "lane": 137,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.9961044333465,
+        "tick": 167,
+        "time": 16.699999999999967,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 844.0289174853368
+      },
+      {
+        "lane": 137,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1734.9961044333465,
+        "tick": 167,
+        "time": 16.699999999999967,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 844.0289174853368
+      },
+      {
+        "lane": 137,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1735.0005999006116,
+        "tick": 168,
+        "time": 16.79999999999997,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 844.0653943344536
+      },
+      {
+        "lane": 137,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1735.0005999006116,
+        "tick": 168,
+        "time": 16.79999999999997,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 844.0653943344536
+      },
+      {
+        "lane": 137,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1735.0045863274047,
+        "tick": 169,
+        "time": 16.89999999999997,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 844.0977407581001
+      },
+      {
+        "lane": 137,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1735.0045863274047,
+        "tick": 169,
+        "time": 16.89999999999997,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 844.0977407581001
+      },
+      {
+        "lane": 137,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1735.0083235576801,
+        "tick": 170,
+        "time": 16.99999999999997,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 844.1280651664073
+      },
+      {
+        "lane": 137,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1735.0083235576801,
+        "tick": 170,
+        "time": 16.99999999999997,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 844.1280651664073
+      },
+      {
+        "lane": 137,
+        "phase": "substep",
+        "kind": "siege",
+        "y": 1735.0083235576801,
+        "tick": 171,
+        "time": 17.099999999999973,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 844.1280651664073
+      }
+    ],
+    "goals": [
+      {
+        "y": 1735.010655693622,
+        "lane": 137,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 844.1469884430907
+      }
+    ],
+    "trafficStats": {
+      "deadReleased": 0,
+      "maxPlanningSlice": 2.00000000916134e-06,
+      "conflicts": 0,
+      "expired": 0,
+      "maxPairs": 0,
+      "resumed": 0,
+      "routeRequests": 0,
+      "yields": 0,
+      "cancelled": 0,
+      "waits": 0,
+      "noBay": 0,
+      "activePairs": 0
+    },
+    "elapsed": 17.099999999999973,
+    "completed": true,
+    "endpoints": [
+      {
+        "lane": 137,
+        "phase": "end",
+        "kind": "siege",
+        "y": 1735.0083235576801,
+        "pathFailed": false,
+        "ordersRemaining": 0,
+        "tick": 171,
+        "time": 17.099999999999973,
+        "id": 18,
+        "organId": "kidney_r",
+        "x": 844.1280651664073
+      }
+    ],
+    "id": "gate/kidney_r/siege/kidney_r.candidate.1/exit",
+    "frames": [
+      {
+        "time": 0.1,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.349437248223,
+            "tick": 1,
+            "time": 0.1,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 822.5534903755783
+          }
+        ]
+      },
+      {
+        "time": 0.2,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.3615276431603,
+            "tick": 2,
+            "time": 0.2,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 822.6515935283521
+          }
+        ]
+      },
+      {
+        "time": 0.30000000000000004,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.3755632510154,
+            "tick": 3,
+            "time": 0.30000000000000004,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 822.7654804103621
+          }
+        ]
+      },
+      {
+        "time": 0.4,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.3905511216303,
+            "tick": 4,
+            "time": 0.4,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 822.8870940853762
+          }
+        ]
+      },
+      {
+        "time": 0.5,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.4060051645372,
+            "tick": 5,
+            "time": 0.5,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 823.0124903474608
+          }
+        ]
+      },
+      {
+        "time": 0.6,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.4216874182014,
+            "tick": 6,
+            "time": 0.6,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 823.1397383434972
+          }
+        ]
+      },
+      {
+        "time": 0.7,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.4374813905386,
+            "tick": 7,
+            "time": 0.7,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 823.2678928404455
+          }
+        ]
+      },
+      {
+        "time": 0.7999999999999999,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.45333005382,
+            "tick": 8,
+            "time": 0.7999999999999999,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 823.3964911073546
+          }
+        ]
+      },
+      {
+        "time": 0.8999999999999999,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.4692054905975,
+            "tick": 9,
+            "time": 0.8999999999999999,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 823.5253066181466
+          }
+        ]
+      },
+      {
+        "time": 0.9999999999999999,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.4850940341164,
+            "tick": 10,
+            "time": 0.9999999999999999,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 823.6542284788698
+          }
+        ]
+      },
+      {
+        "time": 1.0999999999999999,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.5009889939313,
+            "tick": 11,
+            "time": 1.0999999999999999,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 823.7832024023146
+          }
+        ]
+      },
+      {
+        "time": 1.2,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.5168870947905,
+            "tick": 12,
+            "time": 1.2,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 823.9122018126307
+          }
+        ]
+      },
+      {
+        "time": 1.3,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.5327867333217,
+            "tick": 13,
+            "time": 1.3,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 824.0412136998319
+          }
+        ]
+      },
+      {
+        "time": 1.4000000000000001,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.5486871246073,
+            "tick": 14,
+            "time": 1.4000000000000001,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 824.1702316949883
+          }
+        ]
+      },
+      {
+        "time": 1.5000000000000002,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.5645878843977,
+            "tick": 15,
+            "time": 1.5000000000000002,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 824.2992526802432
+          }
+        ]
+      },
+      {
+        "time": 1.6000000000000003,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.5804888245864,
+            "tick": 16,
+            "time": 1.6000000000000003,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 824.4282751292758
+          }
+        ]
+      },
+      {
+        "time": 1.7000000000000004,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.5963898530877,
+            "tick": 17,
+            "time": 1.7000000000000004,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 824.5572982948886
+          }
+        ]
+      },
+      {
+        "time": 1.8000000000000005,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.6122909248215,
+            "tick": 18,
+            "time": 1.8000000000000005,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 824.6863218112973
+          }
+        ]
+      },
+      {
+        "time": 1.9000000000000006,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.6281920177196,
+            "tick": 19,
+            "time": 1.9000000000000006,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 824.8153454994351
+          }
+        ]
+      },
+      {
+        "time": 2.0000000000000004,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.6440931209784,
+            "tick": 20,
+            "time": 2.0000000000000004,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 824.9443692716416
+          }
+        ]
+      },
+      {
+        "time": 2.1000000000000005,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.6599942293092,
+            "tick": 21,
+            "time": 2.1000000000000005,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 825.0733930850031
+          }
+        ]
+      },
+      {
+        "time": 2.2000000000000006,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.675895340123,
+            "tick": 22,
+            "time": 2.2000000000000006,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 825.2024169185117
+          }
+        ]
+      },
+      {
+        "time": 2.3000000000000007,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.6917964521522,
+            "tick": 23,
+            "time": 2.3000000000000007,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 825.3314407618833
+          }
+        ]
+      },
+      {
+        "time": 2.400000000000001,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.7076975647765,
+            "tick": 24,
+            "time": 2.400000000000001,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 825.4604646100831
+          }
+        ]
+      },
+      {
+        "time": 2.500000000000001,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.723598677692,
+            "tick": 25,
+            "time": 2.500000000000001,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 825.5894884606466
+          }
+        ]
+      },
+      {
+        "time": 2.600000000000001,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.7394997907504,
+            "tick": 26,
+            "time": 2.600000000000001,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 825.7185123123672
+          }
+        ]
+      },
+      {
+        "time": 2.700000000000001,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.7554009038786,
+            "tick": 27,
+            "time": 2.700000000000001,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 825.8475361646542
+          }
+        ]
+      },
+      {
+        "time": 2.800000000000001,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.7713020170409,
+            "tick": 28,
+            "time": 2.800000000000001,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 825.9765600172185
+          }
+        ]
+      },
+      {
+        "time": 2.9000000000000012,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.78720313022,
+            "tick": 29,
+            "time": 2.9000000000000012,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 826.1055838699185
+          }
+        ]
+      },
+      {
+        "time": 3.0000000000000013,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.8031042434072,
+            "tick": 30,
+            "time": 3.0000000000000013,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 826.234607722685
+          }
+        ]
+      },
+      {
+        "time": 3.1000000000000014,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.8190053565984,
+            "tick": 31,
+            "time": 3.1000000000000014,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 826.3636315754841
+          }
+        ]
+      },
+      {
+        "time": 3.2000000000000015,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.8349064697916,
+            "tick": 32,
+            "time": 3.2000000000000015,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 826.492655428299
+          }
+        ]
+      },
+      {
+        "time": 3.3000000000000016,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.8508075829857,
+            "tick": 33,
+            "time": 3.3000000000000016,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 826.6216792811218
+          }
+        ]
+      },
+      {
+        "time": 3.4000000000000017,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.8667086961802,
+            "tick": 34,
+            "time": 3.4000000000000017,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 826.7507031339484
+          }
+        ]
+      },
+      {
+        "time": 3.5000000000000018,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.882609809375,
+            "tick": 35,
+            "time": 3.5000000000000018,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 826.8797269867769
+          }
+        ]
+      },
+      {
+        "time": 3.600000000000002,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.89851092257,
+            "tick": 36,
+            "time": 3.600000000000002,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 827.0087508396063
+          }
+        ]
+      },
+      {
+        "time": 3.700000000000002,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.914412035765,
+            "tick": 37,
+            "time": 3.700000000000002,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 827.1377746924361
+          }
+        ]
+      },
+      {
+        "time": 3.800000000000002,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.93031314896,
+            "tick": 38,
+            "time": 3.800000000000002,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 827.2667985452662
+          }
+        ]
+      },
+      {
+        "time": 3.900000000000002,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.946214262155,
+            "tick": 39,
+            "time": 3.900000000000002,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 827.3958223980964
+          }
+        ]
+      },
+      {
+        "time": 4.000000000000002,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.96211537535,
+            "tick": 40,
+            "time": 4.000000000000002,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 827.5248462509265
+          }
+        ]
+      },
+      {
+        "time": 4.100000000000001,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.978016488545,
+            "tick": 41,
+            "time": 4.100000000000001,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 827.6538701037567
+          }
+        ]
+      },
+      {
+        "time": 4.200000000000001,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1732.9939176017401,
+            "tick": 42,
+            "time": 4.200000000000001,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 827.7828939565869
+          }
+        ]
+      },
+      {
+        "time": 4.300000000000001,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.0098187149351,
+            "tick": 43,
+            "time": 4.300000000000001,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 827.9119178094171
+          }
+        ]
+      },
+      {
+        "time": 4.4,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.0257198281301,
+            "tick": 44,
+            "time": 4.4,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 828.0409416622473
+          }
+        ]
+      },
+      {
+        "time": 4.5,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.0416209413252,
+            "tick": 45,
+            "time": 4.5,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 828.1699655150775
+          }
+        ]
+      },
+      {
+        "time": 4.6,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.0575220545202,
+            "tick": 46,
+            "time": 4.6,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 828.2989893679077
+          }
+        ]
+      },
+      {
+        "time": 4.699999999999999,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.0734231677152,
+            "tick": 47,
+            "time": 4.699999999999999,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 828.4280132207379
+          }
+        ]
+      },
+      {
+        "time": 4.799999999999999,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.0893242809102,
+            "tick": 48,
+            "time": 4.799999999999999,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 828.557037073568
+          }
+        ]
+      },
+      {
+        "time": 4.899999999999999,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.1052253941052,
+            "tick": 49,
+            "time": 4.899999999999999,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 828.6860609263982
+          }
+        ]
+      },
+      {
+        "time": 4.999999999999998,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.1211265073002,
+            "tick": 50,
+            "time": 4.999999999999998,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 828.8150847792284
+          }
+        ]
+      },
+      {
+        "time": 5.099999999999998,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.1370276204952,
+            "tick": 51,
+            "time": 5.099999999999998,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 828.9441086320586
+          }
+        ]
+      },
+      {
+        "time": 5.1999999999999975,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.1529287336903,
+            "tick": 52,
+            "time": 5.1999999999999975,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 829.0731324848888
+          }
+        ]
+      },
+      {
+        "time": 5.299999999999997,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.1688298468853,
+            "tick": 53,
+            "time": 5.299999999999997,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 829.202156337719
+          }
+        ]
+      },
+      {
+        "time": 5.399999999999997,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.1847309600803,
+            "tick": 54,
+            "time": 5.399999999999997,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 829.3311801905492
+          }
+        ]
+      },
+      {
+        "time": 5.4999999999999964,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.2006320732753,
+            "tick": 55,
+            "time": 5.4999999999999964,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 829.4602040433793
+          }
+        ]
+      },
+      {
+        "time": 5.599999999999996,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.2165331864703,
+            "tick": 56,
+            "time": 5.599999999999996,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 829.5892278962095
+          }
+        ]
+      },
+      {
+        "time": 5.699999999999996,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.2324342996653,
+            "tick": 57,
+            "time": 5.699999999999996,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 829.7182517490397
+          }
+        ]
+      },
+      {
+        "time": 5.799999999999995,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.2483354128603,
+            "tick": 58,
+            "time": 5.799999999999995,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 829.8472756018699
+          }
+        ]
+      },
+      {
+        "time": 5.899999999999995,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.2642365260554,
+            "tick": 59,
+            "time": 5.899999999999995,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 829.9762994547001
+          }
+        ]
+      },
+      {
+        "time": 5.999999999999995,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.2801376392504,
+            "tick": 60,
+            "time": 5.999999999999995,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 830.1053233075303
+          }
+        ]
+      },
+      {
+        "time": 6.099999999999994,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.2960387524454,
+            "tick": 61,
+            "time": 6.099999999999994,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 830.2343471603605
+          }
+        ]
+      },
+      {
+        "time": 6.199999999999994,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.3119398656404,
+            "tick": 62,
+            "time": 6.199999999999994,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 830.3633710131907
+          }
+        ]
+      },
+      {
+        "time": 6.299999999999994,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.3278409788354,
+            "tick": 63,
+            "time": 6.299999999999994,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 830.4923948660208
+          }
+        ]
+      },
+      {
+        "time": 6.399999999999993,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.3437420920304,
+            "tick": 64,
+            "time": 6.399999999999993,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 830.621418718851
+          }
+        ]
+      },
+      {
+        "time": 6.499999999999993,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.3596432052254,
+            "tick": 65,
+            "time": 6.499999999999993,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 830.7504425716812
+          }
+        ]
+      },
+      {
+        "time": 6.5999999999999925,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.3755443184205,
+            "tick": 66,
+            "time": 6.5999999999999925,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 830.8794664245114
+          }
+        ]
+      },
+      {
+        "time": 6.699999999999992,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.3914454316155,
+            "tick": 67,
+            "time": 6.699999999999992,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 831.0084902773416
+          }
+        ]
+      },
+      {
+        "time": 6.799999999999992,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.4073465448105,
+            "tick": 68,
+            "time": 6.799999999999992,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 831.1375141301718
+          }
+        ]
+      },
+      {
+        "time": 6.8999999999999915,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.4232476580055,
+            "tick": 69,
+            "time": 6.8999999999999915,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 831.266537983002
+          }
+        ]
+      },
+      {
+        "time": 6.999999999999991,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.4391487712005,
+            "tick": 70,
+            "time": 6.999999999999991,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 831.3955618358322
+          }
+        ]
+      },
+      {
+        "time": 7.099999999999991,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.4550498843955,
+            "tick": 71,
+            "time": 7.099999999999991,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 831.5245856886623
+          }
+        ]
+      },
+      {
+        "time": 7.19999999999999,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.4709509975905,
+            "tick": 72,
+            "time": 7.19999999999999,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 831.6536095414925
+          }
+        ]
+      },
+      {
+        "time": 7.29999999999999,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.4868521107855,
+            "tick": 73,
+            "time": 7.29999999999999,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 831.7826333943227
+          }
+        ]
+      },
+      {
+        "time": 7.39999999999999,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.5027532239806,
+            "tick": 74,
+            "time": 7.39999999999999,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 831.9116572471529
+          }
+        ]
+      },
+      {
+        "time": 7.499999999999989,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.5186543371756,
+            "tick": 75,
+            "time": 7.499999999999989,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 832.0406810999831
+          }
+        ]
+      },
+      {
+        "time": 7.599999999999989,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.5345554503706,
+            "tick": 76,
+            "time": 7.599999999999989,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 832.1697049528133
+          }
+        ]
+      },
+      {
+        "time": 7.699999999999989,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.5504565635656,
+            "tick": 77,
+            "time": 7.699999999999989,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 832.2987288056435
+          }
+        ]
+      },
+      {
+        "time": 7.799999999999988,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.5663576767606,
+            "tick": 78,
+            "time": 7.799999999999988,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 832.4277526584737
+          }
+        ]
+      },
+      {
+        "time": 7.899999999999988,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.5822587899556,
+            "tick": 79,
+            "time": 7.899999999999988,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 832.5567765113038
+          }
+        ]
+      },
+      {
+        "time": 7.999999999999988,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.5981599031506,
+            "tick": 80,
+            "time": 7.999999999999988,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 832.685800364134
+          }
+        ]
+      },
+      {
+        "time": 8.099999999999987,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.6140610163457,
+            "tick": 81,
+            "time": 8.099999999999987,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 832.8148242169642
+          }
+        ]
+      },
+      {
+        "time": 8.199999999999987,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.6299621295407,
+            "tick": 82,
+            "time": 8.199999999999987,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 832.9438480697944
+          }
+        ]
+      },
+      {
+        "time": 8.299999999999986,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.6458632427357,
+            "tick": 83,
+            "time": 8.299999999999986,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 833.0728719226246
+          }
+        ]
+      },
+      {
+        "time": 8.399999999999986,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.6617643559307,
+            "tick": 84,
+            "time": 8.399999999999986,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 833.2018957754548
+          }
+        ]
+      },
+      {
+        "time": 8.499999999999986,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.6776654691257,
+            "tick": 85,
+            "time": 8.499999999999986,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 833.330919628285
+          }
+        ]
+      },
+      {
+        "time": 8.599999999999985,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.6935665823207,
+            "tick": 86,
+            "time": 8.599999999999985,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 833.4599434811151
+          }
+        ]
+      },
+      {
+        "time": 8.699999999999985,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.7094676955157,
+            "tick": 87,
+            "time": 8.699999999999985,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 833.5889673339453
+          }
+        ]
+      },
+      {
+        "time": 8.799999999999985,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.7253688087108,
+            "tick": 88,
+            "time": 8.799999999999985,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 833.7179911867755
+          }
+        ]
+      },
+      {
+        "time": 8.899999999999984,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.7412699219058,
+            "tick": 89,
+            "time": 8.899999999999984,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 833.8470150396057
+          }
+        ]
+      },
+      {
+        "time": 8.999999999999984,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.7571710351008,
+            "tick": 90,
+            "time": 8.999999999999984,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 833.9760388924359
+          }
+        ]
+      },
+      {
+        "time": 9.099999999999984,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.7730721482958,
+            "tick": 91,
+            "time": 9.099999999999984,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 834.1050627452661
+          }
+        ]
+      },
+      {
+        "time": 9.199999999999983,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.7889732614908,
+            "tick": 92,
+            "time": 9.199999999999983,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 834.2340865980963
+          }
+        ]
+      },
+      {
+        "time": 9.299999999999983,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.8048743746858,
+            "tick": 93,
+            "time": 9.299999999999983,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 834.3631104509265
+          }
+        ]
+      },
+      {
+        "time": 9.399999999999983,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.8207754878808,
+            "tick": 94,
+            "time": 9.399999999999983,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 834.4921343037566
+          }
+        ]
+      },
+      {
+        "time": 9.499999999999982,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.8366766010759,
+            "tick": 95,
+            "time": 9.499999999999982,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 834.6211581565868
+          }
+        ]
+      },
+      {
+        "time": 9.599999999999982,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.8525777142709,
+            "tick": 96,
+            "time": 9.599999999999982,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 834.750182009417
+          }
+        ]
+      },
+      {
+        "time": 9.699999999999982,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.8684788274659,
+            "tick": 97,
+            "time": 9.699999999999982,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 834.8792058622472
+          }
+        ]
+      },
+      {
+        "time": 9.799999999999981,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.884379940661,
+            "tick": 98,
+            "time": 9.799999999999981,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 835.0082297150774
+          }
+        ]
+      },
+      {
+        "time": 9.89999999999998,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.900281053856,
+            "tick": 99,
+            "time": 9.89999999999998,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 835.1372535679076
+          }
+        ]
+      },
+      {
+        "time": 9.99999999999998,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.916182167051,
+            "tick": 100,
+            "time": 9.99999999999998,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 835.2662774207378
+          }
+        ]
+      },
+      {
+        "time": 10.09999999999998,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.932083280246,
+            "tick": 101,
+            "time": 10.09999999999998,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 835.395301273568
+          }
+        ]
+      },
+      {
+        "time": 10.19999999999998,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.947984393441,
+            "tick": 102,
+            "time": 10.19999999999998,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 835.5243251263981
+          }
+        ]
+      },
+      {
+        "time": 10.29999999999998,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.963885506636,
+            "tick": 103,
+            "time": 10.29999999999998,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 835.6533489792283
+          }
+        ]
+      },
+      {
+        "time": 10.399999999999979,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.979786619831,
+            "tick": 104,
+            "time": 10.399999999999979,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 835.7823728320585
+          }
+        ]
+      },
+      {
+        "time": 10.499999999999979,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1733.995687733026,
+            "tick": 105,
+            "time": 10.499999999999979,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 835.9113966848887
+          }
+        ]
+      },
+      {
+        "time": 10.599999999999978,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.011588846221,
+            "tick": 106,
+            "time": 10.599999999999978,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 836.0404205377189
+          }
+        ]
+      },
+      {
+        "time": 10.699999999999978,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.027489959416,
+            "tick": 107,
+            "time": 10.699999999999978,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 836.1694443905491
+          }
+        ]
+      },
+      {
+        "time": 10.799999999999978,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.043391072611,
+            "tick": 108,
+            "time": 10.799999999999978,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 836.2984682433793
+          }
+        ]
+      },
+      {
+        "time": 10.899999999999977,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.059292185806,
+            "tick": 109,
+            "time": 10.899999999999977,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 836.4274920962094
+          }
+        ]
+      },
+      {
+        "time": 10.999999999999977,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.075193299001,
+            "tick": 110,
+            "time": 10.999999999999977,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 836.5565159490396
+          }
+        ]
+      },
+      {
+        "time": 11.099999999999977,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.091094412196,
+            "tick": 111,
+            "time": 11.099999999999977,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 836.6855398018698
+          }
+        ]
+      },
+      {
+        "time": 11.199999999999976,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.106995525391,
+            "tick": 112,
+            "time": 11.199999999999976,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 836.8145636547
+          }
+        ]
+      },
+      {
+        "time": 11.299999999999976,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.122896638586,
+            "tick": 113,
+            "time": 11.299999999999976,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 836.9435875075302
+          }
+        ]
+      },
+      {
+        "time": 11.399999999999975,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.138797751781,
+            "tick": 114,
+            "time": 11.399999999999975,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 837.0726113603604
+          }
+        ]
+      },
+      {
+        "time": 11.499999999999975,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.1546988649761,
+            "tick": 115,
+            "time": 11.499999999999975,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 837.2016352131906
+          }
+        ]
+      },
+      {
+        "time": 11.599999999999975,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.1705999781711,
+            "tick": 116,
+            "time": 11.599999999999975,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 837.3306590660208
+          }
+        ]
+      },
+      {
+        "time": 11.699999999999974,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.1865010913662,
+            "tick": 117,
+            "time": 11.699999999999974,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 837.459682918851
+          }
+        ]
+      },
+      {
+        "time": 11.799999999999974,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.2024022045612,
+            "tick": 118,
+            "time": 11.799999999999974,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 837.5887067716811
+          }
+        ]
+      },
+      {
+        "time": 11.899999999999974,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.2183033177562,
+            "tick": 119,
+            "time": 11.899999999999974,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 837.7177306245113
+          }
+        ]
+      },
+      {
+        "time": 11.999999999999973,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.2342044309512,
+            "tick": 120,
+            "time": 11.999999999999973,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 837.8467544773415
+          }
+        ]
+      },
+      {
+        "time": 12.099999999999973,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.2501055441462,
+            "tick": 121,
+            "time": 12.099999999999973,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 837.9757783301717
+          }
+        ]
+      },
+      {
+        "time": 12.199999999999973,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.2660066573412,
+            "tick": 122,
+            "time": 12.199999999999973,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 838.1048021830019
+          }
+        ]
+      },
+      {
+        "time": 12.299999999999972,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.2819077705362,
+            "tick": 123,
+            "time": 12.299999999999972,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 838.2338260358321
+          }
+        ]
+      },
+      {
+        "time": 12.399999999999972,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.2978088837312,
+            "tick": 124,
+            "time": 12.399999999999972,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 838.3628498886623
+          }
+        ]
+      },
+      {
+        "time": 12.499999999999972,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.3137099969263,
+            "tick": 125,
+            "time": 12.499999999999972,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 838.4918737414924
+          }
+        ]
+      },
+      {
+        "time": 12.599999999999971,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.3296111101213,
+            "tick": 126,
+            "time": 12.599999999999971,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 838.6208975943226
+          }
+        ]
+      },
+      {
+        "time": 12.69999999999997,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.3455122233163,
+            "tick": 127,
+            "time": 12.69999999999997,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 838.7499214471528
+          }
+        ]
+      },
+      {
+        "time": 12.79999999999997,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.3614133365113,
+            "tick": 128,
+            "time": 12.79999999999997,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 838.878945299983
+          }
+        ]
+      },
+      {
+        "time": 12.89999999999997,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.3773144497063,
+            "tick": 129,
+            "time": 12.89999999999997,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 839.0079691528132
+          }
+        ]
+      },
+      {
+        "time": 12.99999999999997,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.3932155629013,
+            "tick": 130,
+            "time": 12.99999999999997,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 839.1369930056434
+          }
+        ]
+      },
+      {
+        "time": 13.09999999999997,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.4091166760963,
+            "tick": 131,
+            "time": 13.09999999999997,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 839.2660168584736
+          }
+        ]
+      },
+      {
+        "time": 13.199999999999969,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.4250177892914,
+            "tick": 132,
+            "time": 13.199999999999969,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 839.3950407113037
+          }
+        ]
+      },
+      {
+        "time": 13.299999999999969,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.4409189024864,
+            "tick": 133,
+            "time": 13.299999999999969,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 839.5240645641339
+          }
+        ]
+      },
+      {
+        "time": 13.399999999999968,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.4568200156814,
+            "tick": 134,
+            "time": 13.399999999999968,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 839.6530884169641
+          }
+        ]
+      },
+      {
+        "time": 13.499999999999968,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.4727211288764,
+            "tick": 135,
+            "time": 13.499999999999968,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 839.7821122697943
+          }
+        ]
+      },
+      {
+        "time": 13.599999999999968,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.4886222420714,
+            "tick": 136,
+            "time": 13.599999999999968,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 839.9111361226245
+          }
+        ]
+      },
+      {
+        "time": 13.699999999999967,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.5045233552664,
+            "tick": 137,
+            "time": 13.699999999999967,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 840.0401599754547
+          }
+        ]
+      },
+      {
+        "time": 13.799999999999967,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.5213984911638,
+            "tick": 138,
+            "time": 13.799999999999967,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 840.1770871845001
+          }
+        ]
+      },
+      {
+        "time": 13.899999999999967,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.5387504517514,
+            "tick": 139,
+            "time": 13.899999999999967,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 840.3178834156632
+          }
+        ]
+      },
+      {
+        "time": 13.999999999999966,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.556335837889,
+            "tick": 140,
+            "time": 13.999999999999966,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 840.4605736943347
+          }
+        ]
+      },
+      {
+        "time": 14.099999999999966,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.5740354955578,
+            "tick": 141,
+            "time": 14.099999999999966,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 840.6041911881666
+          }
+        ]
+      },
+      {
+        "time": 14.199999999999966,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.5917910939017,
+            "tick": 142,
+            "time": 14.199999999999966,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 840.748262592447
+          }
+        ]
+      },
+      {
+        "time": 14.299999999999965,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.6095740775365,
+            "tick": 143,
+            "time": 14.299999999999965,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 840.8925562048015
+          }
+        ]
+      },
+      {
+        "time": 14.399999999999965,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.627370467412,
+            "tick": 144,
+            "time": 14.399999999999965,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 841.0369585972655
+          }
+        ]
+      },
+      {
+        "time": 14.499999999999964,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.6451734202008,
+            "tick": 145,
+            "time": 14.499999999999964,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 841.1814142421249
+          }
+        ]
+      },
+      {
+        "time": 14.599999999999964,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.6629795858091,
+            "tick": 146,
+            "time": 14.599999999999964,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 841.3258959562502
+          }
+        ]
+      },
+      {
+        "time": 14.699999999999964,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.6807873242265,
+            "tick": 147,
+            "time": 14.699999999999964,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 841.4703904323671
+          }
+        ]
+      },
+      {
+        "time": 14.799999999999963,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.6985958325993,
+            "organId": "kidney_r",
+            "tick": 148,
+            "time": 14.799999999999963,
+            "id": 18,
+            "transit": {
+              "gateId": "kidney_r.candidate.1",
+              "fromLane": 0,
+              "toLane": 137
+            },
+            "x": 841.6148911560108
+          }
+        ]
+      },
+      {
+        "time": 14.899999999999963,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.7164047178974,
+            "organId": "kidney_r",
+            "tick": 149,
+            "time": 14.899999999999963,
+            "id": 18,
+            "transit": {
+              "gateId": "kidney_r.candidate.1",
+              "fromLane": 0,
+              "toLane": 137
+            },
+            "x": 841.7593949380789
+          }
+        ]
+      },
+      {
+        "time": 14.999999999999963,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.7342137877163,
+            "organId": "kidney_r",
+            "tick": 150,
+            "time": 14.999999999999963,
+            "id": 18,
+            "transit": {
+              "gateId": "kidney_r.candidate.1",
+              "fromLane": 0,
+              "toLane": 137
+            },
+            "x": 841.9039002173733
+          }
+        ]
+      },
+      {
+        "time": 15.099999999999962,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.7520229478657,
+            "organId": "kidney_r",
+            "tick": 151,
+            "time": 15.099999999999962,
+            "id": 18,
+            "transit": {
+              "gateId": "kidney_r.candidate.1",
+              "fromLane": 0,
+              "toLane": 137
+            },
+            "x": 842.0484062296223
+          }
+        ]
+      },
+      {
+        "time": 15.199999999999962,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.7698321522357,
+            "organId": "kidney_r",
+            "tick": 152,
+            "time": 15.199999999999962,
+            "id": 18,
+            "transit": {
+              "gateId": "kidney_r.candidate.1",
+              "fromLane": 0,
+              "toLane": 137
+            },
+            "x": 842.1929126006831
+          }
+        ]
+      },
+      {
+        "time": 15.299999999999962,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.7876413782535,
+            "organId": "kidney_r",
+            "tick": 153,
+            "time": 15.299999999999962,
+            "id": 18,
+            "transit": {
+              "gateId": "kidney_r.candidate.1",
+              "fromLane": 0,
+              "toLane": 137
+            },
+            "x": 842.3374191473973
+          }
+        ]
+      },
+      {
+        "time": 15.399999999999961,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.8054506148687,
+            "organId": "kidney_r",
+            "tick": 154,
+            "time": 15.399999999999961,
+            "id": 18,
+            "transit": {
+              "gateId": "kidney_r.candidate.1",
+              "fromLane": 0,
+              "toLane": 137
+            },
+            "x": 842.481925780101
+          }
+        ]
+      },
+      {
+        "time": 15.499999999999961,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.823259856672,
+            "organId": "kidney_r",
+            "tick": 155,
+            "time": 15.499999999999961,
+            "id": 18,
+            "transit": {
+              "gateId": "kidney_r.candidate.1",
+              "fromLane": 0,
+              "toLane": 137
+            },
+            "x": 842.6264324549003
+          }
+        ]
+      },
+      {
+        "time": 15.59999999999996,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.8410691010147,
+            "organId": "kidney_r",
+            "tick": 156,
+            "time": 15.59999999999996,
+            "id": 18,
+            "transit": {
+              "gateId": "kidney_r.candidate.1",
+              "fromLane": 0,
+              "toLane": 137
+            },
+            "x": 842.7709391503071
+          }
+        ]
+      },
+      {
+        "time": 15.69999999999996,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.858878346601,
+            "organId": "kidney_r",
+            "tick": 157,
+            "time": 15.69999999999996,
+            "id": 18,
+            "transit": {
+              "gateId": "kidney_r.candidate.1",
+              "fromLane": 0,
+              "toLane": 137
+            },
+            "x": 842.9154458558021
+          }
+        ]
+      },
+      {
+        "time": 15.79999999999996,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.8766875927956,
+            "organId": "kidney_r",
+            "tick": 158,
+            "time": 15.79999999999996,
+            "id": 18,
+            "transit": {
+              "gateId": "kidney_r.candidate.1",
+              "fromLane": 0,
+              "toLane": 137
+            },
+            "x": 843.0599525662357
+          }
+        ]
+      },
+      {
+        "time": 15.89999999999996,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.8944968392884,
+            "organId": "kidney_r",
+            "tick": 159,
+            "time": 15.89999999999996,
+            "id": 18,
+            "transit": {
+              "gateId": "kidney_r.candidate.1",
+              "fromLane": 0,
+              "toLane": 137
+            },
+            "x": 843.2044592790869
+          }
+        ]
+      },
+      {
+        "time": 15.99999999999996,
+        "points": [
+          {
+            "lane": 137,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.912306085927,
+            "tick": 160,
+            "time": 15.99999999999996,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 843.3489659931217
+          }
+        ]
+      },
+      {
+        "time": 16.09999999999996,
+        "points": [
+          {
+            "lane": 137,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.930115332637,
+            "tick": 161,
+            "time": 16.09999999999996,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 843.4934727077359
+          }
+        ]
+      },
+      {
+        "time": 16.19999999999996,
+        "points": [
+          {
+            "lane": 137,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.947060426386,
+            "tick": 162,
+            "time": 16.19999999999996,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 843.6309675645598
+          }
+        ]
+      },
+      {
+        "time": 16.29999999999996,
+        "points": [
+          {
+            "lane": 137,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.9617833302586,
+            "tick": 163,
+            "time": 16.29999999999996,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 843.7504312624262
+          }
+        ]
+      },
+      {
+        "time": 16.399999999999963,
+        "points": [
+          {
+            "lane": 137,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.9738551703629,
+            "tick": 164,
+            "time": 16.399999999999963,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 843.8483838586941
+          }
+        ]
+      },
+      {
+        "time": 16.499999999999964,
+        "points": [
+          {
+            "lane": 137,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.9833474726456,
+            "tick": 165,
+            "time": 16.499999999999964,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 843.925405724882
+          }
+        ]
+      },
+      {
+        "time": 16.599999999999966,
+        "points": [
+          {
+            "lane": 137,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.9905691353295,
+            "tick": 166,
+            "time": 16.599999999999966,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 843.9840033043005
+          }
+        ]
+      },
+      {
+        "time": 16.699999999999967,
+        "points": [
+          {
+            "lane": 137,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1734.9961044333465,
+            "tick": 167,
+            "time": 16.699999999999967,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 844.0289174853368
+          }
+        ]
+      },
+      {
+        "time": 16.79999999999997,
+        "points": [
+          {
+            "lane": 137,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1735.0005999006116,
+            "tick": 168,
+            "time": 16.79999999999997,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 844.0653943344536
+          }
+        ]
+      },
+      {
+        "time": 16.89999999999997,
+        "points": [
+          {
+            "lane": 137,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1735.0045863274047,
+            "tick": 169,
+            "time": 16.89999999999997,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 844.0977407581001
+          }
+        ]
+      },
+      {
+        "time": 16.99999999999997,
+        "points": [
+          {
+            "lane": 137,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1735.0083235576801,
+            "tick": 170,
+            "time": 16.99999999999997,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 844.1280651664073
+          }
+        ]
+      },
+      {
+        "time": 17.099999999999973,
+        "points": [
+          {
+            "lane": 137,
+            "phase": "frame",
+            "kind": "siege",
+            "y": 1735.0083235576801,
+            "tick": 171,
+            "time": 17.099999999999973,
+            "id": 18,
+            "organId": "kidney_r",
+            "x": 844.1280651664073
+          }
+        ]
+      }
+    ],
+    "commands": [
+      {
+        "requested": {
+          "y": 1735.010655693622,
+          "x": 844.1469884430907
+        },
+        "id": 18,
+        "order": {
+          "y": 1735.010655693622,
+          "lane": 137,
+          "x": 844.1469884430907
+        },
+        "accepted": true
+      }
+    ],
+    "spawnErrors": {}
+  },
+  "inputHashes": {
+    "scripts/war/FullBodyBattlefield.lua": "d28b30024e20d37e9df2679ccb387fd0c091ba2e7fc437edf1f94541106a6366",
+    "scripts/war/FullBodyMapArt.lua": "7271eca0160be00f2a80dbc0b9db7f9b181db13ae20d4e9d6f7c9974b4e5a293",
+    "scripts/war/FullBodyMapArtData.lua": "5039018400869a482945389d80deb7db48d224e0f2b61e9cc49cbedd677c8b7f",
+    "scripts/war/OrganBattlefield.lua": "cd0194aa8016f2a0487c9fbaabe689b0de73fcf9dc1294a25bce37ee9520756b",
+    "scripts/war/OrganBattlefieldCore.lua": "40c670d25c69281b0d5663c684dcb699b6871c806000fd2e8f013601218c6b8d",
+    "scripts/war/OrganBattlefieldData.lua": "047dce28da8aa19d893a9116258631cf71c039ecb44b7c63478d40043cd9c273",
+    "scripts/war/GastricBattlefield.lua": "789066936c29437cfcbc47490a7527288700e82c02b88b3e19458f69906b2b46",
+    "scripts/war/GastricBattlefieldData.lua": "81cbe1eedd29506a13fa19a7edd079d7f93b3eb58b4a9e4282e98277854b279d",
+    "scripts/war/OrganTrial.lua": "2448272435d422dc9c10f13c54382727b93da03b9bce177235f0d58d7eb803fd",
+    "scripts/war/OrganTraffic.lua": "901ece0eb1bb68d22089d99c2b669c42270f34d66539f6daa1d1bb02786dab0f",
+    "scripts/war/GastricTraffic.lua": "d04b89128fedb033d67b9eef01a72f5c2733b5942a0e87656e00d9b883ee3e6d",
+    "scripts/war/Commands.lua": "d03717fefdd1aeb43d7d21948a6af149b5ba3401466b78c14cba1200c0d4655a",
+    "scripts/war/Path.lua": "a41c95130db4c45a96956c09ad122432055bd3cc0588835ae9cae5a321283929",
+    "scripts/war/Simulation.lua": "2df8aa4f850caa950c2abc48477cf0bdc71c3a7418d64c95567eb326b460ff43",
+    "scripts/war/CellCollision.lua": "a11dc894c9cf91347ff89e290301c0bb0889c520593d60cbe4c1bf122201d30f",
+    "scripts/war/Motion.lua": "7fe39b4a715b5b0b5398e5ef7e6f0fe2bd8987e47359e6083d46a5db467829a5",
+    "scripts/war/Save.lua": "29655d752131e7993d943f3996a3fe4d07ab02cf52065216594c48a8f21df36d",
+    "scripts/war/World.lua": "020f77336ced2aa0a4f7907aa79385c438eda38d76e2bc639d49ca864b70166c",
+    "scripts/war/Vessels.lua": "5302854eda3d7b29a238394db9b50662835ad2a76f69d0e3b9c42431c53b8d6e",
+    "scripts/war/Data.lua": "6aa40613c149a254391e68d5ffca3ef5f6b7d4dbba8a4861b6b8adb7983d5f33",
+    "scripts/war/Util.lua": "bd35c4e904854a00b98825fe2cc422eaa74d4f87308c8a336f25f9cd76131c0d"
+  }
+}

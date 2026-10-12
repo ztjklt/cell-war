@@ -1,0 +1,4241 @@
+{
+  "config": {
+    "actors": [
+      {
+        "kind": "scout",
+        "lane": 0,
+        "targetLane": 0,
+        "targetOrgan": "bladder",
+        "tx": 977.363036256437,
+        "ty": 2016.3690677699517,
+        "x": 967.7709411764706,
+        "y": 2012.0052631578947
+      },
+      {
+        "kind": "siege",
+        "lane": 0,
+        "targetLane": 0,
+        "targetOrgan": "bladder",
+        "tx": 967.7709411764706,
+        "ty": 2012.0052631578947,
+        "x": 977.363036256437,
+        "y": 2016.3690677699517
+      }
+    ],
+    "caseOrgans": [
+      "brain",
+      "lung_r",
+      "lung_l",
+      "liver",
+      "stomach",
+      "pancreas",
+      "kidney_r",
+      "kidney_l",
+      "large_intestine",
+      "small_intestine",
+      "bladder",
+      "heart"
+    ],
+    "id": "bladder/bladder.visual-chamber.3/meeting/scout-siege",
+    "maxTime": 300,
+    "organs": [
+      "brain",
+      "lung_r",
+      "lung_l",
+      "liver",
+      "stomach",
+      "pancreas",
+      "kidney_r",
+      "kidney_l",
+      "large_intestine",
+      "small_intestine",
+      "bladder",
+      "heart"
+    ]
+  },
+  "nativeEvidence": false,
+  "navigationSubstituted": false,
+  "result": {
+    "activeOrgans": [
+      "bladder",
+      "brain",
+      "heart",
+      "kidney_l",
+      "kidney_r",
+      "large_intestine",
+      "liver",
+      "lung_l",
+      "lung_r",
+      "pancreas",
+      "small_intestine",
+      "stomach"
+    ],
+    "commands": [
+      {
+        "accepted": true,
+        "id": 18,
+        "order": {
+          "lane": 0,
+          "x": 980.363036256437,
+          "y": 2016.3690677699517
+        },
+        "requested": {
+          "x": 977.363036256437,
+          "y": 2016.3690677699517
+        }
+      },
+      {
+        "accepted": true,
+        "id": 19,
+        "order": {
+          "lane": 0,
+          "x": 971.7709411764706,
+          "y": 2012.0052631578947
+        },
+        "requested": {
+          "x": 967.7709411764706,
+          "y": 2012.0052631578947
+        }
+      }
+    ],
+    "completed": true,
+    "elapsed": 5.999999999999995,
+    "endpoints": [
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "ordersRemaining": 0,
+        "organId": "bladder",
+        "pathFailed": false,
+        "phase": "end",
+        "tick": 60,
+        "time": 5.999999999999995,
+        "x": 980.363036256437,
+        "y": 2016.3690677699517
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "ordersRemaining": 0,
+        "organId": "bladder",
+        "pathFailed": false,
+        "phase": "end",
+        "tick": 60,
+        "time": 5.999999999999995,
+        "x": 971.7820967678721,
+        "y": 2012.0155132597222
+      }
+    ],
+    "frames": [
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 1,
+            "time": 0.1,
+            "x": 967.7709411764706,
+            "y": 2012.0052631578947
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 1,
+            "time": 0.1,
+            "x": 977.363036256437,
+            "y": 2016.3690677699517
+          }
+        ],
+        "time": 0.1
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 2,
+            "time": 0.2,
+            "x": 968.0606125199341,
+            "y": 2012.1056490854594
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 2,
+            "time": 0.2,
+            "x": 977.2757585982783,
+            "y": 2016.300960443135
+          }
+        ],
+        "time": 0.2
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 3,
+            "time": 0.30000000000000004,
+            "x": 968.3968888289205,
+            "y": 2012.2221860158718
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 3,
+            "time": 0.30000000000000004,
+            "x": 977.1744389151104,
+            "y": 2016.221895388915
+          }
+        ],
+        "time": 0.30000000000000004
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 4,
+            "time": 0.4,
+            "x": 968.7559802100725,
+            "y": 2012.3466295350217
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 4,
+            "time": 0.4,
+            "x": 977.0662450757159,
+            "y": 2016.1374660706372
+          }
+        ],
+        "time": 0.4
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 5,
+            "time": 0.5,
+            "x": 969.1262405195154,
+            "y": 2012.4749436587435
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 5,
+            "time": 0.5,
+            "x": 976.954686050474,
+            "y": 2016.0504107216302
+          }
+        ],
+        "time": 0.5
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 6,
+            "time": 0.6,
+            "x": 969.5019684846492,
+            "y": 2012.605152604651
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 6,
+            "time": 0.6,
+            "x": 976.8414796265679,
+            "y": 2015.962069821182
+          }
+        ],
+        "time": 0.6
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 7,
+            "time": 0.7,
+            "x": 969.8803730950239,
+            "y": 2012.736289144956
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 7,
+            "time": 0.7,
+            "x": 976.7274667323857,
+            "y": 2015.8730995897479
+          }
+        ],
+        "time": 0.7
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 8,
+            "time": 0.7999999999999999,
+            "x": 970.2600880347518,
+            "y": 2012.8678797813614
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 8,
+            "time": 0.7999999999999999,
+            "x": 976.6130590374061,
+            "y": 2015.7838212745785
+          }
+        ],
+        "time": 0.7999999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 9,
+            "time": 0.8999999999999999,
+            "x": 970.6404444352859,
+            "y": 2012.9996927167256
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 9,
+            "time": 0.8999999999999999,
+            "x": 976.4984580709889,
+            "y": 2015.694392139586
+          }
+        ],
+        "time": 0.8999999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 10,
+            "time": 0.9999999999999999,
+            "x": 971.0211148576076,
+            "y": 2013.131614476691
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 10,
+            "time": 0.9999999999999999,
+            "x": 976.3837624901515,
+            "y": 2015.604889172007
+          }
+        ],
+        "time": 0.9999999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 11,
+            "time": 1.0999999999999999,
+            "x": 971.4019390066763,
+            "y": 2013.2635895108324
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 11,
+            "time": 1.0999999999999999,
+            "x": 976.2690205916138,
+            "y": 2015.5153500603012
+          }
+        ],
+        "time": 1.0999999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 12,
+            "time": 1.2,
+            "x": 971.7828384113919,
+            "y": 2013.395590624902
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 12,
+            "time": 1.2,
+            "x": 976.1542560186322,
+            "y": 2015.4257932545395
+          }
+        ],
+        "time": 1.2
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 13,
+            "time": 1.3,
+            "x": 972.1637746568819,
+            "y": 2013.5276045061833
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 13,
+            "time": 1.3,
+            "x": 976.0394803455657,
+            "y": 2015.3362277868002
+          }
+        ],
+        "time": 1.3
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 14,
+            "time": 1.4000000000000001,
+            "x": 972.5447289374655,
+            "y": 2013.6596246375464
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 14,
+            "time": 1.4000000000000001,
+            "x": 975.9246992385453,
+            "y": 2015.2466580786622
+          }
+        ],
+        "time": 1.4000000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 15,
+            "time": 1.5000000000000002,
+            "x": 972.9256920469788,
+            "y": 2013.791647828585
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 15,
+            "time": 1.5000000000000002,
+            "x": 975.809915471378,
+            "y": 2015.1570862946724
+          }
+        ],
+        "time": 1.5000000000000002
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 16,
+            "time": 1.6000000000000003,
+            "x": 973.3066594786211,
+            "y": 2013.9236725174621
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 16,
+            "time": 1.6000000000000003,
+            "x": 975.695130401958,
+            "y": 2015.0675134944663
+          }
+        ],
+        "time": 1.6000000000000003
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 17,
+            "time": 1.7000000000000004,
+            "x": 973.6876290261256,
+            "y": 2014.0556979395938
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 17,
+            "time": 1.7000000000000004,
+            "x": 975.5803446950309,
+            "y": 2014.9779401967803
+          }
+        ],
+        "time": 1.7000000000000004
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 18,
+            "time": 1.8000000000000005,
+            "x": 974.0685996094327,
+            "y": 2014.1877237206838
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 18,
+            "time": 1.8000000000000005,
+            "x": 975.4655586760177,
+            "y": 2014.888366655557
+          }
+        ],
+        "time": 1.8000000000000005
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 19,
+            "time": 1.9000000000000006,
+            "x": 974.2272498268602,
+            "y": 2014.0097330440917
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 19,
+            "time": 1.9000000000000006,
+            "x": 975.4040815099708,
+            "y": 2014.9468337902015
+          }
+        ],
+        "time": 1.9000000000000006
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 20,
+            "time": 2.0000000000000004,
+            "x": 974.3047649273859,
+            "y": 2013.916252430466
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 20,
+            "time": 2.0000000000000004,
+            "x": 975.3377246420933,
+            "y": 2015.0105092029492
+          }
+        ],
+        "time": 2.0000000000000004
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 21,
+            "time": 2.1000000000000005,
+            "x": 974.4290935612173,
+            "y": 2013.8029131617716
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 21,
+            "time": 2.1000000000000005,
+            "x": 975.3059650069519,
+            "y": 2015.0227771005439
+          }
+        ],
+        "time": 2.1000000000000005
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 22,
+            "time": 2.2000000000000006,
+            "x": 974.5974766191658,
+            "y": 2013.682292747069
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 22,
+            "time": 2.2000000000000006,
+            "x": 975.2513355405194,
+            "y": 2015.0353846386297
+          }
+        ],
+        "time": 2.2000000000000006
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 23,
+            "time": 2.3000000000000007,
+            "x": 974.8275469571529,
+            "y": 2013.572109016697
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 23,
+            "time": 2.3000000000000007,
+            "x": 975.1685396597401,
+            "y": 2015.0363855234034
+          }
+        ],
+        "time": 2.3000000000000007
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 24,
+            "time": 2.400000000000001,
+            "x": 975.1294374435208,
+            "y": 2013.5036614223407
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 24,
+            "time": 2.400000000000001,
+            "x": 975.0600984987832,
+            "y": 2015.00589059624
+          }
+        ],
+        "time": 2.400000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 25,
+            "time": 2.500000000000001,
+            "x": 975.4915749599704,
+            "y": 2013.5231022064418
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 25,
+            "time": 2.500000000000001,
+            "x": 974.9469103738152,
+            "y": 2014.9234417198736
+          }
+        ],
+        "time": 2.500000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 26,
+            "time": 2.600000000000001,
+            "x": 975.862296766477,
+            "y": 2013.6688231634018
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 26,
+            "time": 2.600000000000001,
+            "x": 974.8396963849815,
+            "y": 2014.8249301965186
+          }
+        ],
+        "time": 2.600000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 27,
+            "time": 2.700000000000001,
+            "x": 976.208044659814,
+            "y": 2013.87625660546
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 27,
+            "time": 2.700000000000001,
+            "x": 974.732482395677,
+            "y": 2014.7264186727311
+          }
+        ],
+        "time": 2.700000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 28,
+            "time": 2.800000000000001,
+            "x": 976.5537925538941,
+            "y": 2014.083690047964
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 28,
+            "time": 2.800000000000001,
+            "x": 974.6252684061423,
+            "y": 2014.627907148732
+          }
+        ],
+        "time": 2.800000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 29,
+            "time": 2.9000000000000012,
+            "x": 976.899540448338,
+            "y": 2014.291123490686
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 29,
+            "time": 2.9000000000000012,
+            "x": 974.5180544164946,
+            "y": 2014.5293956246292
+          }
+        ],
+        "time": 2.9000000000000012
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 30,
+            "time": 3.0000000000000013,
+            "x": 977.24528834296,
+            "y": 2014.498556933515
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 30,
+            "time": 3.0000000000000013,
+            "x": 974.4108404267918,
+            "y": 2014.4308841004756
+          }
+        ],
+        "time": 3.0000000000000013
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 31,
+            "time": 3.1000000000000014,
+            "x": 977.5910362376691,
+            "y": 2014.7059903763961
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 31,
+            "time": 3.1000000000000014,
+            "x": 974.3036264370619,
+            "y": 2014.3323725762973
+          }
+        ],
+        "time": 3.1000000000000014
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 32,
+            "time": 3.2000000000000015,
+            "x": 977.9367841324208,
+            "y": 2014.913423819303
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 32,
+            "time": 3.2000000000000015,
+            "x": 974.1964124473187,
+            "y": 2014.2338610521067
+          }
+        ],
+        "time": 3.2000000000000015
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 33,
+            "time": 3.3000000000000016,
+            "x": 978.2825320271935,
+            "y": 2015.1208572622224
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 33,
+            "time": 3.3000000000000016,
+            "x": 974.0891984575691,
+            "y": 2014.1353495279102
+          }
+        ],
+        "time": 3.3000000000000016
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 34,
+            "time": 3.4000000000000017,
+            "x": 978.6282799219764,
+            "y": 2015.328290705148
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 34,
+            "time": 3.4000000000000017,
+            "x": 973.9819844678163,
+            "y": 2014.0368380037107
+          }
+        ],
+        "time": 3.4000000000000017
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 35,
+            "time": 3.5000000000000018,
+            "x": 978.9740278167643,
+            "y": 2015.5357241480767
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 35,
+            "time": 3.5000000000000018,
+            "x": 973.874770478062,
+            "y": 2013.93832647951
+          }
+        ],
+        "time": 3.5000000000000018
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 36,
+            "time": 3.600000000000002,
+            "x": 979.3197757115547,
+            "y": 2015.7431575910068
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 36,
+            "time": 3.600000000000002,
+            "x": 973.7675564883069,
+            "y": 2013.8398149553084
+          }
+        ],
+        "time": 3.600000000000002
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 37,
+            "time": 3.700000000000002,
+            "x": 979.6655236063463,
+            "y": 2015.9505910339376
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 37,
+            "time": 3.700000000000002,
+            "x": 973.6603424985515,
+            "y": 2013.7413034311064
+          }
+        ],
+        "time": 3.700000000000002
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 38,
+            "time": 3.800000000000002,
+            "x": 980.0112715011384,
+            "y": 2016.1580244768688
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 38,
+            "time": 3.800000000000002,
+            "x": 973.5531285087958,
+            "y": 2013.6427919069044
+          }
+        ],
+        "time": 3.800000000000002
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 39,
+            "time": 3.900000000000002,
+            "x": 980.2672474201112,
+            "y": 2016.311598705316
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 39,
+            "time": 3.900000000000002,
+            "x": 973.4459145190401,
+            "y": 2013.5442803827023
+          }
+        ],
+        "time": 3.900000000000002
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 40,
+            "time": 4.000000000000002,
+            "x": 980.363036256437,
+            "y": 2016.3690677699517
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 40,
+            "time": 4.000000000000002,
+            "x": 973.3387005292843,
+            "y": 2013.4457688585
+          }
+        ],
+        "time": 4.000000000000002
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 41,
+            "time": 4.100000000000001,
+            "x": 980.363036256437,
+            "y": 2016.3690677699517
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 41,
+            "time": 4.100000000000001,
+            "x": 973.2314865395285,
+            "y": 2013.3472573342979
+          }
+        ],
+        "time": 4.100000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 42,
+            "time": 4.200000000000001,
+            "x": 980.363036256437,
+            "y": 2016.3690677699517
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 42,
+            "time": 4.200000000000001,
+            "x": 973.1242725497727,
+            "y": 2013.2487458100957
+          }
+        ],
+        "time": 4.200000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 43,
+            "time": 4.300000000000001,
+            "x": 980.363036256437,
+            "y": 2016.3690677699517
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 43,
+            "time": 4.300000000000001,
+            "x": 973.017058560017,
+            "y": 2013.1502342858935
+          }
+        ],
+        "time": 4.300000000000001
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 44,
+            "time": 4.4,
+            "x": 980.363036256437,
+            "y": 2016.3690677699517
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 44,
+            "time": 4.4,
+            "x": 972.9098445702612,
+            "y": 2013.0517227616913
+          }
+        ],
+        "time": 4.4
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 45,
+            "time": 4.5,
+            "x": 980.363036256437,
+            "y": 2016.3690677699517
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 45,
+            "time": 4.5,
+            "x": 972.8026305805054,
+            "y": 2012.953211237489
+          }
+        ],
+        "time": 4.5
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 46,
+            "time": 4.6,
+            "x": 980.363036256437,
+            "y": 2016.3690677699517
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 46,
+            "time": 4.6,
+            "x": 972.6954165907496,
+            "y": 2012.854699713287
+          }
+        ],
+        "time": 4.6
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 47,
+            "time": 4.699999999999999,
+            "x": 980.363036256437,
+            "y": 2016.3690677699517
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 47,
+            "time": 4.699999999999999,
+            "x": 972.5882026009938,
+            "y": 2012.7561881890847
+          }
+        ],
+        "time": 4.699999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 48,
+            "time": 4.799999999999999,
+            "x": 980.363036256437,
+            "y": 2016.3690677699517
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 48,
+            "time": 4.799999999999999,
+            "x": 972.480988611238,
+            "y": 2012.6576766648825
+          }
+        ],
+        "time": 4.799999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 49,
+            "time": 4.899999999999999,
+            "x": 980.363036256437,
+            "y": 2016.3690677699517
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 49,
+            "time": 4.899999999999999,
+            "x": 972.3737746214822,
+            "y": 2012.5591651406803
+          }
+        ],
+        "time": 4.899999999999999
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 50,
+            "time": 4.999999999999998,
+            "x": 980.363036256437,
+            "y": 2016.3690677699517
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 50,
+            "time": 4.999999999999998,
+            "x": 972.2665606317263,
+            "y": 2012.460653616478
+          }
+        ],
+        "time": 4.999999999999998
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 51,
+            "time": 5.099999999999998,
+            "x": 980.363036256437,
+            "y": 2016.3690677699517
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 51,
+            "time": 5.099999999999998,
+            "x": 972.1634069369125,
+            "y": 2012.3658728166372
+          }
+        ],
+        "time": 5.099999999999998
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 52,
+            "time": 5.1999999999999975,
+            "x": 980.363036256437,
+            "y": 2016.3690677699517
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 52,
+            "time": 5.1999999999999975,
+            "x": 972.0731933037067,
+            "y": 2012.2829817449483
+          }
+        ],
+        "time": 5.1999999999999975
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 53,
+            "time": 5.299999999999997,
+            "x": 980.363036256437,
+            "y": 2016.3690677699517
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 53,
+            "time": 5.299999999999997,
+            "x": 971.9988928324457,
+            "y": 2012.2147121778
+          }
+        ],
+        "time": 5.299999999999997
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 54,
+            "time": 5.399999999999997,
+            "x": 980.363036256437,
+            "y": 2016.3690677699517
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 54,
+            "time": 5.399999999999997,
+            "x": 971.9402713943047,
+            "y": 2012.1608489903992
+          }
+        ],
+        "time": 5.399999999999997
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 55,
+            "time": 5.4999999999999964,
+            "x": 980.363036256437,
+            "y": 2016.3690677699517
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 55,
+            "time": 5.4999999999999964,
+            "x": 971.8955496468792,
+            "y": 2012.1197572680046
+          }
+        ],
+        "time": 5.4999999999999964
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 56,
+            "time": 5.599999999999996,
+            "x": 980.363036256437,
+            "y": 2016.3690677699517
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 56,
+            "time": 5.599999999999996,
+            "x": 971.861616267864,
+            "y": 2012.0885782316145
+          }
+        ],
+        "time": 5.599999999999996
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 57,
+            "time": 5.699999999999996,
+            "x": 980.363036256437,
+            "y": 2016.3690677699517
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 57,
+            "time": 5.699999999999996,
+            "x": 971.8329642446242,
+            "y": 2012.0622518679818
+          }
+        ],
+        "time": 5.699999999999996
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 58,
+            "time": 5.799999999999995,
+            "x": 980.363036256437,
+            "y": 2016.3690677699517
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 58,
+            "time": 5.799999999999995,
+            "x": 971.8068976650554,
+            "y": 2012.038301089824
+          }
+        ],
+        "time": 5.799999999999995
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 59,
+            "time": 5.899999999999995,
+            "x": 980.363036256437,
+            "y": 2016.3690677699517
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 59,
+            "time": 5.899999999999995,
+            "x": 971.7820967678721,
+            "y": 2012.0155132597222
+          }
+        ],
+        "time": 5.899999999999995
+      },
+      {
+        "points": [
+          {
+            "id": 18,
+            "kind": "scout",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 60,
+            "time": 5.999999999999995,
+            "x": 980.363036256437,
+            "y": 2016.3690677699517
+          },
+          {
+            "id": 19,
+            "kind": "siege",
+            "lane": 0,
+            "organId": "bladder",
+            "phase": "frame",
+            "tick": 60,
+            "time": 5.999999999999995,
+            "x": 971.7820967678721,
+            "y": 2012.0155132597222
+          }
+        ],
+        "time": 5.999999999999995
+      }
+    ],
+    "goals": [
+      {
+        "id": 18,
+        "lane": 0,
+        "organId": "bladder",
+        "x": 980.363036256437,
+        "y": 2016.3690677699517
+      },
+      {
+        "id": 19,
+        "lane": 0,
+        "organId": "bladder",
+        "x": 971.7709411764706,
+        "y": 2012.0052631578947
+      }
+    ],
+    "id": "bladder/bladder.visual-chamber.3/meeting/scout-siege",
+    "minimumFrameDiskGapWorld": 0.0023220565050598996,
+    "networkEdges": 202,
+    "save": {
+      "flag": 1,
+      "ids": [
+        "bladder",
+        "brain",
+        "heart",
+        "kidney_l",
+        "kidney_r",
+        "large_intestine",
+        "liver",
+        "lung_l",
+        "lung_r",
+        "pancreas",
+        "small_intestine",
+        "stomach"
+      ],
+      "laneErrors": 0,
+      "positionErrors": 0.0,
+      "restored": true,
+      "restoredFlag": 1,
+      "restoredIds": [
+        "bladder",
+        "brain",
+        "heart",
+        "kidney_l",
+        "kidney_r",
+        "large_intestine",
+        "liver",
+        "lung_l",
+        "lung_r",
+        "pancreas",
+        "small_intestine",
+        "stomach"
+      ],
+      "restoredNetworkEdges": 202,
+      "version": 9
+    },
+    "setupCommands": {},
+    "setupElapsed": 0,
+    "spawnErrors": {},
+    "starts": [
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "spawn",
+        "tick": 0,
+        "time": 0,
+        "x": 967.7709411764706,
+        "y": 2012.0052631578947
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "spawn",
+        "tick": 0,
+        "time": 0,
+        "x": 977.363036256437,
+        "y": 2016.3690677699517
+      }
+    ],
+    "trace": [
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 1,
+        "time": 0.1,
+        "x": 967.7709411764706,
+        "y": 2012.0052631578947
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 1,
+        "time": 0.1,
+        "x": 977.363036256437,
+        "y": 2016.3690677699517
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 2,
+        "time": 0.2,
+        "x": 968.0606125199341,
+        "y": 2012.1056490854594
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 2,
+        "time": 0.2,
+        "x": 977.2757585982783,
+        "y": 2016.300960443135
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 2,
+        "time": 0.2,
+        "x": 968.0606125199341,
+        "y": 2012.1056490854594
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 2,
+        "time": 0.2,
+        "x": 977.2757585982783,
+        "y": 2016.300960443135
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 3,
+        "time": 0.30000000000000004,
+        "x": 968.3968888289205,
+        "y": 2012.2221860158718
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 3,
+        "time": 0.30000000000000004,
+        "x": 977.1744389151104,
+        "y": 2016.221895388915
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 3,
+        "time": 0.30000000000000004,
+        "x": 968.3968888289205,
+        "y": 2012.2221860158718
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 3,
+        "time": 0.30000000000000004,
+        "x": 977.1744389151104,
+        "y": 2016.221895388915
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 4,
+        "time": 0.4,
+        "x": 968.7559802100725,
+        "y": 2012.3466295350217
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 4,
+        "time": 0.4,
+        "x": 977.0662450757159,
+        "y": 2016.1374660706372
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 4,
+        "time": 0.4,
+        "x": 968.7559802100725,
+        "y": 2012.3466295350217
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 4,
+        "time": 0.4,
+        "x": 977.0662450757159,
+        "y": 2016.1374660706372
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 5,
+        "time": 0.5,
+        "x": 969.1262405195154,
+        "y": 2012.4749436587435
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 5,
+        "time": 0.5,
+        "x": 976.954686050474,
+        "y": 2016.0504107216302
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 5,
+        "time": 0.5,
+        "x": 969.1262405195154,
+        "y": 2012.4749436587435
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 5,
+        "time": 0.5,
+        "x": 976.954686050474,
+        "y": 2016.0504107216302
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 6,
+        "time": 0.6,
+        "x": 969.5019684846492,
+        "y": 2012.605152604651
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 6,
+        "time": 0.6,
+        "x": 976.8414796265679,
+        "y": 2015.962069821182
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 6,
+        "time": 0.6,
+        "x": 969.5019684846492,
+        "y": 2012.605152604651
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 6,
+        "time": 0.6,
+        "x": 976.8414796265679,
+        "y": 2015.962069821182
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 7,
+        "time": 0.7,
+        "x": 969.8803730950239,
+        "y": 2012.736289144956
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 7,
+        "time": 0.7,
+        "x": 976.7274667323857,
+        "y": 2015.8730995897479
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 7,
+        "time": 0.7,
+        "x": 969.8803730950239,
+        "y": 2012.736289144956
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 7,
+        "time": 0.7,
+        "x": 976.7274667323857,
+        "y": 2015.8730995897479
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 8,
+        "time": 0.7999999999999999,
+        "x": 970.2600880347518,
+        "y": 2012.8678797813614
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 8,
+        "time": 0.7999999999999999,
+        "x": 976.6130590374061,
+        "y": 2015.7838212745785
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 8,
+        "time": 0.7999999999999999,
+        "x": 970.2600880347518,
+        "y": 2012.8678797813614
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 8,
+        "time": 0.7999999999999999,
+        "x": 976.6130590374061,
+        "y": 2015.7838212745785
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 9,
+        "time": 0.8999999999999999,
+        "x": 970.6404444352859,
+        "y": 2012.9996927167256
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 9,
+        "time": 0.8999999999999999,
+        "x": 976.4984580709889,
+        "y": 2015.694392139586
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 9,
+        "time": 0.8999999999999999,
+        "x": 970.6404444352859,
+        "y": 2012.9996927167256
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 9,
+        "time": 0.8999999999999999,
+        "x": 976.4984580709889,
+        "y": 2015.694392139586
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 10,
+        "time": 0.9999999999999999,
+        "x": 971.0211148576076,
+        "y": 2013.131614476691
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 10,
+        "time": 0.9999999999999999,
+        "x": 976.3837624901515,
+        "y": 2015.604889172007
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 10,
+        "time": 0.9999999999999999,
+        "x": 971.0211148576076,
+        "y": 2013.131614476691
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 10,
+        "time": 0.9999999999999999,
+        "x": 976.3837624901515,
+        "y": 2015.604889172007
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 11,
+        "time": 1.0999999999999999,
+        "x": 971.4019390066763,
+        "y": 2013.2635895108324
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 11,
+        "time": 1.0999999999999999,
+        "x": 976.2690205916138,
+        "y": 2015.5153500603012
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 11,
+        "time": 1.0999999999999999,
+        "x": 971.4019390066763,
+        "y": 2013.2635895108324
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 11,
+        "time": 1.0999999999999999,
+        "x": 976.2690205916138,
+        "y": 2015.5153500603012
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 12,
+        "time": 1.2,
+        "x": 971.7828384113919,
+        "y": 2013.395590624902
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 12,
+        "time": 1.2,
+        "x": 976.1542560186322,
+        "y": 2015.4257932545395
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 12,
+        "time": 1.2,
+        "x": 971.7828384113919,
+        "y": 2013.395590624902
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 12,
+        "time": 1.2,
+        "x": 976.1542560186322,
+        "y": 2015.4257932545395
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 13,
+        "time": 1.3,
+        "x": 972.1637746568819,
+        "y": 2013.5276045061833
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 13,
+        "time": 1.3,
+        "x": 976.0394803455657,
+        "y": 2015.3362277868002
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 13,
+        "time": 1.3,
+        "x": 972.1637746568819,
+        "y": 2013.5276045061833
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 13,
+        "time": 1.3,
+        "x": 976.0394803455657,
+        "y": 2015.3362277868002
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 14,
+        "time": 1.4000000000000001,
+        "x": 972.5447289374655,
+        "y": 2013.6596246375464
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 14,
+        "time": 1.4000000000000001,
+        "x": 975.9246992385453,
+        "y": 2015.2466580786622
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 14,
+        "time": 1.4000000000000001,
+        "x": 972.5447289374655,
+        "y": 2013.6596246375464
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 14,
+        "time": 1.4000000000000001,
+        "x": 975.9246992385453,
+        "y": 2015.2466580786622
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 15,
+        "time": 1.5000000000000002,
+        "x": 972.9256920469788,
+        "y": 2013.791647828585
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 15,
+        "time": 1.5000000000000002,
+        "x": 975.809915471378,
+        "y": 2015.1570862946724
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 15,
+        "time": 1.5000000000000002,
+        "x": 972.9256920469788,
+        "y": 2013.791647828585
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 15,
+        "time": 1.5000000000000002,
+        "x": 975.809915471378,
+        "y": 2015.1570862946724
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 16,
+        "time": 1.6000000000000003,
+        "x": 973.3066594786211,
+        "y": 2013.9236725174621
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 16,
+        "time": 1.6000000000000003,
+        "x": 975.695130401958,
+        "y": 2015.0675134944663
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 16,
+        "time": 1.6000000000000003,
+        "x": 973.3066594786211,
+        "y": 2013.9236725174621
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 16,
+        "time": 1.6000000000000003,
+        "x": 975.695130401958,
+        "y": 2015.0675134944663
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 17,
+        "time": 1.7000000000000004,
+        "x": 973.6876290261256,
+        "y": 2014.0556979395938
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 17,
+        "time": 1.7000000000000004,
+        "x": 975.5803446950309,
+        "y": 2014.9779401967803
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 17,
+        "time": 1.7000000000000004,
+        "x": 973.6876290261256,
+        "y": 2014.0556979395938
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 17,
+        "time": 1.7000000000000004,
+        "x": 975.5803446950309,
+        "y": 2014.9779401967803
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 18,
+        "time": 1.8000000000000005,
+        "x": 974.0685996094327,
+        "y": 2014.1877237206838
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 18,
+        "time": 1.8000000000000005,
+        "x": 975.4655586760177,
+        "y": 2014.888366655557
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 18,
+        "time": 1.8000000000000005,
+        "x": 974.0685996094327,
+        "y": 2014.1877237206838
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 18,
+        "time": 1.8000000000000005,
+        "x": 975.4655586760177,
+        "y": 2014.888366655557
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 19,
+        "time": 1.9000000000000006,
+        "x": 974.2272498268602,
+        "y": 2014.0097330440917
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 19,
+        "time": 1.9000000000000006,
+        "x": 975.4040815099708,
+        "y": 2014.9468337902015
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 19,
+        "time": 1.9000000000000006,
+        "x": 974.2272498268602,
+        "y": 2014.0097330440917
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 19,
+        "time": 1.9000000000000006,
+        "x": 975.4040815099708,
+        "y": 2014.9468337902015
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 20,
+        "time": 2.0000000000000004,
+        "x": 974.3047649273859,
+        "y": 2013.916252430466
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 20,
+        "time": 2.0000000000000004,
+        "x": 975.3377246420933,
+        "y": 2015.0105092029492
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 20,
+        "time": 2.0000000000000004,
+        "x": 974.3047649273859,
+        "y": 2013.916252430466
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 20,
+        "time": 2.0000000000000004,
+        "x": 975.3377246420933,
+        "y": 2015.0105092029492
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 21,
+        "time": 2.1000000000000005,
+        "x": 974.4290935612173,
+        "y": 2013.8029131617716
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 21,
+        "time": 2.1000000000000005,
+        "x": 975.3059650069519,
+        "y": 2015.0227771005439
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 21,
+        "time": 2.1000000000000005,
+        "x": 974.4290935612173,
+        "y": 2013.8029131617716
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 21,
+        "time": 2.1000000000000005,
+        "x": 975.3059650069519,
+        "y": 2015.0227771005439
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 22,
+        "time": 2.2000000000000006,
+        "x": 974.5974766191658,
+        "y": 2013.682292747069
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 22,
+        "time": 2.2000000000000006,
+        "x": 975.2513355405194,
+        "y": 2015.0353846386297
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 22,
+        "time": 2.2000000000000006,
+        "x": 974.5974766191658,
+        "y": 2013.682292747069
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 22,
+        "time": 2.2000000000000006,
+        "x": 975.2513355405194,
+        "y": 2015.0353846386297
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 23,
+        "time": 2.3000000000000007,
+        "x": 974.8275469571529,
+        "y": 2013.572109016697
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 23,
+        "time": 2.3000000000000007,
+        "x": 975.1685396597401,
+        "y": 2015.0363855234034
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 23,
+        "time": 2.3000000000000007,
+        "x": 974.8275469571529,
+        "y": 2013.572109016697
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 23,
+        "time": 2.3000000000000007,
+        "x": 975.1685396597401,
+        "y": 2015.0363855234034
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 24,
+        "time": 2.400000000000001,
+        "x": 975.1294374435208,
+        "y": 2013.5036614223407
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 24,
+        "time": 2.400000000000001,
+        "x": 975.0600984987832,
+        "y": 2015.00589059624
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 24,
+        "time": 2.400000000000001,
+        "x": 975.1294374435208,
+        "y": 2013.5036614223407
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 24,
+        "time": 2.400000000000001,
+        "x": 975.0600984987832,
+        "y": 2015.00589059624
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 25,
+        "time": 2.500000000000001,
+        "x": 975.4915749599704,
+        "y": 2013.5231022064418
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 25,
+        "time": 2.500000000000001,
+        "x": 974.9469103738152,
+        "y": 2014.9234417198736
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 25,
+        "time": 2.500000000000001,
+        "x": 975.4915749599704,
+        "y": 2013.5231022064418
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 25,
+        "time": 2.500000000000001,
+        "x": 974.9469103738152,
+        "y": 2014.9234417198736
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 26,
+        "time": 2.600000000000001,
+        "x": 975.862296766477,
+        "y": 2013.6688231634018
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 26,
+        "time": 2.600000000000001,
+        "x": 974.8396963849815,
+        "y": 2014.8249301965186
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 26,
+        "time": 2.600000000000001,
+        "x": 975.862296766477,
+        "y": 2013.6688231634018
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 26,
+        "time": 2.600000000000001,
+        "x": 974.8396963849815,
+        "y": 2014.8249301965186
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 27,
+        "time": 2.700000000000001,
+        "x": 976.208044659814,
+        "y": 2013.87625660546
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 27,
+        "time": 2.700000000000001,
+        "x": 974.732482395677,
+        "y": 2014.7264186727311
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 27,
+        "time": 2.700000000000001,
+        "x": 976.208044659814,
+        "y": 2013.87625660546
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 27,
+        "time": 2.700000000000001,
+        "x": 974.732482395677,
+        "y": 2014.7264186727311
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 28,
+        "time": 2.800000000000001,
+        "x": 976.5537925538941,
+        "y": 2014.083690047964
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 28,
+        "time": 2.800000000000001,
+        "x": 974.6252684061423,
+        "y": 2014.627907148732
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 28,
+        "time": 2.800000000000001,
+        "x": 976.5537925538941,
+        "y": 2014.083690047964
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 28,
+        "time": 2.800000000000001,
+        "x": 974.6252684061423,
+        "y": 2014.627907148732
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 29,
+        "time": 2.9000000000000012,
+        "x": 976.899540448338,
+        "y": 2014.291123490686
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 29,
+        "time": 2.9000000000000012,
+        "x": 974.5180544164946,
+        "y": 2014.5293956246292
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 29,
+        "time": 2.9000000000000012,
+        "x": 976.899540448338,
+        "y": 2014.291123490686
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 29,
+        "time": 2.9000000000000012,
+        "x": 974.5180544164946,
+        "y": 2014.5293956246292
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 30,
+        "time": 3.0000000000000013,
+        "x": 977.24528834296,
+        "y": 2014.498556933515
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 30,
+        "time": 3.0000000000000013,
+        "x": 974.4108404267918,
+        "y": 2014.4308841004756
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 30,
+        "time": 3.0000000000000013,
+        "x": 977.24528834296,
+        "y": 2014.498556933515
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 30,
+        "time": 3.0000000000000013,
+        "x": 974.4108404267918,
+        "y": 2014.4308841004756
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 31,
+        "time": 3.1000000000000014,
+        "x": 977.5910362376691,
+        "y": 2014.7059903763961
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 31,
+        "time": 3.1000000000000014,
+        "x": 974.3036264370619,
+        "y": 2014.3323725762973
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 31,
+        "time": 3.1000000000000014,
+        "x": 977.5910362376691,
+        "y": 2014.7059903763961
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 31,
+        "time": 3.1000000000000014,
+        "x": 974.3036264370619,
+        "y": 2014.3323725762973
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 32,
+        "time": 3.2000000000000015,
+        "x": 977.9367841324208,
+        "y": 2014.913423819303
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 32,
+        "time": 3.2000000000000015,
+        "x": 974.1964124473187,
+        "y": 2014.2338610521067
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 32,
+        "time": 3.2000000000000015,
+        "x": 977.9367841324208,
+        "y": 2014.913423819303
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 32,
+        "time": 3.2000000000000015,
+        "x": 974.1964124473187,
+        "y": 2014.2338610521067
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 33,
+        "time": 3.3000000000000016,
+        "x": 978.2825320271935,
+        "y": 2015.1208572622224
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 33,
+        "time": 3.3000000000000016,
+        "x": 974.0891984575691,
+        "y": 2014.1353495279102
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 33,
+        "time": 3.3000000000000016,
+        "x": 978.2825320271935,
+        "y": 2015.1208572622224
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 33,
+        "time": 3.3000000000000016,
+        "x": 974.0891984575691,
+        "y": 2014.1353495279102
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 34,
+        "time": 3.4000000000000017,
+        "x": 978.6282799219764,
+        "y": 2015.328290705148
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 34,
+        "time": 3.4000000000000017,
+        "x": 973.9819844678163,
+        "y": 2014.0368380037107
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 34,
+        "time": 3.4000000000000017,
+        "x": 978.6282799219764,
+        "y": 2015.328290705148
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 34,
+        "time": 3.4000000000000017,
+        "x": 973.9819844678163,
+        "y": 2014.0368380037107
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 35,
+        "time": 3.5000000000000018,
+        "x": 978.9740278167643,
+        "y": 2015.5357241480767
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 35,
+        "time": 3.5000000000000018,
+        "x": 973.874770478062,
+        "y": 2013.93832647951
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 35,
+        "time": 3.5000000000000018,
+        "x": 978.9740278167643,
+        "y": 2015.5357241480767
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 35,
+        "time": 3.5000000000000018,
+        "x": 973.874770478062,
+        "y": 2013.93832647951
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 36,
+        "time": 3.600000000000002,
+        "x": 979.3197757115547,
+        "y": 2015.7431575910068
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 36,
+        "time": 3.600000000000002,
+        "x": 973.7675564883069,
+        "y": 2013.8398149553084
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 36,
+        "time": 3.600000000000002,
+        "x": 979.3197757115547,
+        "y": 2015.7431575910068
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 36,
+        "time": 3.600000000000002,
+        "x": 973.7675564883069,
+        "y": 2013.8398149553084
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 37,
+        "time": 3.700000000000002,
+        "x": 979.6655236063463,
+        "y": 2015.9505910339376
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 37,
+        "time": 3.700000000000002,
+        "x": 973.6603424985515,
+        "y": 2013.7413034311064
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 37,
+        "time": 3.700000000000002,
+        "x": 979.6655236063463,
+        "y": 2015.9505910339376
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 37,
+        "time": 3.700000000000002,
+        "x": 973.6603424985515,
+        "y": 2013.7413034311064
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 38,
+        "time": 3.800000000000002,
+        "x": 980.0112715011384,
+        "y": 2016.1580244768688
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 38,
+        "time": 3.800000000000002,
+        "x": 973.5531285087958,
+        "y": 2013.6427919069044
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 38,
+        "time": 3.800000000000002,
+        "x": 980.0112715011384,
+        "y": 2016.1580244768688
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 38,
+        "time": 3.800000000000002,
+        "x": 973.5531285087958,
+        "y": 2013.6427919069044
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 39,
+        "time": 3.900000000000002,
+        "x": 980.2672474201112,
+        "y": 2016.311598705316
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 39,
+        "time": 3.900000000000002,
+        "x": 973.4459145190401,
+        "y": 2013.5442803827023
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 39,
+        "time": 3.900000000000002,
+        "x": 980.2672474201112,
+        "y": 2016.311598705316
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 39,
+        "time": 3.900000000000002,
+        "x": 973.4459145190401,
+        "y": 2013.5442803827023
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 40,
+        "time": 4.000000000000002,
+        "x": 980.363036256437,
+        "y": 2016.3690677699517
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 40,
+        "time": 4.000000000000002,
+        "x": 973.3387005292843,
+        "y": 2013.4457688585
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 40,
+        "time": 4.000000000000002,
+        "x": 980.363036256437,
+        "y": 2016.3690677699517
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 40,
+        "time": 4.000000000000002,
+        "x": 973.3387005292843,
+        "y": 2013.4457688585
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 41,
+        "time": 4.100000000000001,
+        "x": 973.2314865395285,
+        "y": 2013.3472573342979
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 41,
+        "time": 4.100000000000001,
+        "x": 980.363036256437,
+        "y": 2016.3690677699517
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 41,
+        "time": 4.100000000000001,
+        "x": 973.2314865395285,
+        "y": 2013.3472573342979
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 42,
+        "time": 4.200000000000001,
+        "x": 973.1242725497727,
+        "y": 2013.2487458100957
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 42,
+        "time": 4.200000000000001,
+        "x": 980.363036256437,
+        "y": 2016.3690677699517
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 42,
+        "time": 4.200000000000001,
+        "x": 973.1242725497727,
+        "y": 2013.2487458100957
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 43,
+        "time": 4.300000000000001,
+        "x": 973.017058560017,
+        "y": 2013.1502342858935
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 43,
+        "time": 4.300000000000001,
+        "x": 980.363036256437,
+        "y": 2016.3690677699517
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 43,
+        "time": 4.300000000000001,
+        "x": 973.017058560017,
+        "y": 2013.1502342858935
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 44,
+        "time": 4.4,
+        "x": 972.9098445702612,
+        "y": 2013.0517227616913
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 44,
+        "time": 4.4,
+        "x": 980.363036256437,
+        "y": 2016.3690677699517
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 44,
+        "time": 4.4,
+        "x": 972.9098445702612,
+        "y": 2013.0517227616913
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 45,
+        "time": 4.5,
+        "x": 972.8026305805054,
+        "y": 2012.953211237489
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 45,
+        "time": 4.5,
+        "x": 980.363036256437,
+        "y": 2016.3690677699517
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 45,
+        "time": 4.5,
+        "x": 972.8026305805054,
+        "y": 2012.953211237489
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 46,
+        "time": 4.6,
+        "x": 972.6954165907496,
+        "y": 2012.854699713287
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 46,
+        "time": 4.6,
+        "x": 980.363036256437,
+        "y": 2016.3690677699517
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 46,
+        "time": 4.6,
+        "x": 972.6954165907496,
+        "y": 2012.854699713287
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 47,
+        "time": 4.699999999999999,
+        "x": 972.5882026009938,
+        "y": 2012.7561881890847
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 47,
+        "time": 4.699999999999999,
+        "x": 980.363036256437,
+        "y": 2016.3690677699517
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 47,
+        "time": 4.699999999999999,
+        "x": 972.5882026009938,
+        "y": 2012.7561881890847
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 48,
+        "time": 4.799999999999999,
+        "x": 972.480988611238,
+        "y": 2012.6576766648825
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 48,
+        "time": 4.799999999999999,
+        "x": 980.363036256437,
+        "y": 2016.3690677699517
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 48,
+        "time": 4.799999999999999,
+        "x": 972.480988611238,
+        "y": 2012.6576766648825
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 49,
+        "time": 4.899999999999999,
+        "x": 972.3737746214822,
+        "y": 2012.5591651406803
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 49,
+        "time": 4.899999999999999,
+        "x": 980.363036256437,
+        "y": 2016.3690677699517
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 49,
+        "time": 4.899999999999999,
+        "x": 972.3737746214822,
+        "y": 2012.5591651406803
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 50,
+        "time": 4.999999999999998,
+        "x": 972.2665606317263,
+        "y": 2012.460653616478
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 50,
+        "time": 4.999999999999998,
+        "x": 980.363036256437,
+        "y": 2016.3690677699517
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 50,
+        "time": 4.999999999999998,
+        "x": 972.2665606317263,
+        "y": 2012.460653616478
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 51,
+        "time": 5.099999999999998,
+        "x": 972.1634069369125,
+        "y": 2012.3658728166372
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 51,
+        "time": 5.099999999999998,
+        "x": 980.363036256437,
+        "y": 2016.3690677699517
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 51,
+        "time": 5.099999999999998,
+        "x": 972.1634069369125,
+        "y": 2012.3658728166372
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 52,
+        "time": 5.1999999999999975,
+        "x": 972.0731933037067,
+        "y": 2012.2829817449483
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 52,
+        "time": 5.1999999999999975,
+        "x": 980.363036256437,
+        "y": 2016.3690677699517
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 52,
+        "time": 5.1999999999999975,
+        "x": 972.0731933037067,
+        "y": 2012.2829817449483
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 53,
+        "time": 5.299999999999997,
+        "x": 971.9988928324457,
+        "y": 2012.2147121778
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 53,
+        "time": 5.299999999999997,
+        "x": 980.363036256437,
+        "y": 2016.3690677699517
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 53,
+        "time": 5.299999999999997,
+        "x": 971.9988928324457,
+        "y": 2012.2147121778
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 54,
+        "time": 5.399999999999997,
+        "x": 971.9402713943047,
+        "y": 2012.1608489903992
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 54,
+        "time": 5.399999999999997,
+        "x": 980.363036256437,
+        "y": 2016.3690677699517
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 54,
+        "time": 5.399999999999997,
+        "x": 971.9402713943047,
+        "y": 2012.1608489903992
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 55,
+        "time": 5.4999999999999964,
+        "x": 971.8955496468792,
+        "y": 2012.1197572680046
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 55,
+        "time": 5.4999999999999964,
+        "x": 980.363036256437,
+        "y": 2016.3690677699517
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 55,
+        "time": 5.4999999999999964,
+        "x": 971.8955496468792,
+        "y": 2012.1197572680046
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 56,
+        "time": 5.599999999999996,
+        "x": 971.861616267864,
+        "y": 2012.0885782316145
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 56,
+        "time": 5.599999999999996,
+        "x": 980.363036256437,
+        "y": 2016.3690677699517
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 56,
+        "time": 5.599999999999996,
+        "x": 971.861616267864,
+        "y": 2012.0885782316145
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 57,
+        "time": 5.699999999999996,
+        "x": 971.8329642446242,
+        "y": 2012.0622518679818
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 57,
+        "time": 5.699999999999996,
+        "x": 980.363036256437,
+        "y": 2016.3690677699517
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 57,
+        "time": 5.699999999999996,
+        "x": 971.8329642446242,
+        "y": 2012.0622518679818
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 58,
+        "time": 5.799999999999995,
+        "x": 971.8068976650554,
+        "y": 2012.038301089824
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 58,
+        "time": 5.799999999999995,
+        "x": 980.363036256437,
+        "y": 2016.3690677699517
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 58,
+        "time": 5.799999999999995,
+        "x": 971.8068976650554,
+        "y": 2012.038301089824
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 59,
+        "time": 5.899999999999995,
+        "x": 971.7820967678721,
+        "y": 2012.0155132597222
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 59,
+        "time": 5.899999999999995,
+        "x": 980.363036256437,
+        "y": 2016.3690677699517
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 59,
+        "time": 5.899999999999995,
+        "x": 971.7820967678721,
+        "y": 2012.0155132597222
+      },
+      {
+        "id": 18,
+        "kind": "scout",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 60,
+        "time": 5.999999999999995,
+        "x": 980.363036256437,
+        "y": 2016.3690677699517
+      },
+      {
+        "id": 19,
+        "kind": "siege",
+        "lane": 0,
+        "organId": "bladder",
+        "phase": "substep",
+        "tick": 60,
+        "time": 5.999999999999995,
+        "x": 971.7820967678721,
+        "y": 2012.0155132597222
+      }
+    ],
+    "trafficStats": {
+      "activePairs": 0,
+      "cancelled": 0,
+      "conflicts": 0,
+      "deadReleased": 0,
+      "expired": 0,
+      "maxPairs": 0,
+      "maxPlanningSlice": 2.0000000517939043e-06,
+      "noBay": 0,
+      "resumed": 0,
+      "routeRequests": 0,
+      "waits": 0,
+      "yields": 0
+    }
+  },
+  "schema": "organ-atlas-actual-lua-trace/v1"
+}

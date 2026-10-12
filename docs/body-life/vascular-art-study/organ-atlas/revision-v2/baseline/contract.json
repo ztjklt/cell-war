@@ -1,0 +1,477 @@
+{
+  "counts": {
+    "newBloodBranches": 0,
+    "organs": 12,
+    "originalBloodEdges": 202,
+    "protectedGlobalEdges": 116
+  },
+  "inputHashes": {
+    "assets/image/anatomy-reference/reference.png": "9a04e39961c07073cd9fdcfcdc2c98253ccc25d968e97dbea1f36669e06b5d9f",
+    "docs/body-life/vascular-art-study/final-reference-data.json": "3890744e2fcaf9e9907c85513e170e479f67b7fbb1fbf06385ac02bd80e8550c",
+    "docs/body-life/vascular-art-study/interface-contract.json": "86878d45e150353b439fb0ea8e12ad22649185ff143d5dff4a8465cea8fa8253",
+    "docs/body-life/vascular-art-study/organ-layers.json": "43c5adbd65f481e64642242f3bc57b9fcc3c981633b70f86b014606ac49edb3d",
+    "docs/body-life/vascular-art-study/passages-data.json": "37c4cfcaa565a15bccf8d23bd5ad26151f14c13562aeb375320a4e80f1998ae5",
+    "scripts/war/OrganBoundariesData.lua": "b4617ba302f4deab54ffdb9a7be0750b1ab63000a50a8395e151456ad2e34e24"
+  },
+  "limits": [
+    "Guides are stylized game projections, not clinical anatomical simulation.",
+    "No frozen named blood port, global blood edge, head or limb coordinate is moved.",
+    "Only named graph junctions permit blood lane changes; crossing drawings never imply connection.",
+    "Circle-eroded domains and access checks here are geometric authoring evidence, not actual Commands/Simulation movement acceptance.",
+    "Original external named ports outside fine organ outlines remain blood plane; local tissue transitions use explicit proposed membrane contracts.",
+    "New organ gates are candidates until production route/collision integration and independent motion QA pass."
+  ],
+  "organs": [
+    {
+      "candidateGateCount": 1,
+      "geometryPath": "docs/body-life/vascular-art-study/organ-atlas/geometry/liver.json",
+      "geometrySha256": "fa17c168076c1d94992c6a7da6d320ac7d547e00f036c3b300972a09d99a5ff5",
+      "guidePaths": {
+        "guide": "docs/body-life/vascular-art-study/organ-atlas/guides/liver-guide.png",
+        "technical": "docs/body-life/vascular-art-study/organ-atlas/guides/liver-technical.png"
+      },
+      "name": "肝脏",
+      "organId": "liver",
+      "originalPortCount": 4,
+      "profileSummary": {
+        "scout": {
+          "allCandidateGatesFullDiskAllowed": true,
+          "allComponentsConnected": true,
+          "allRalliesFullDiskAllowed": true,
+          "noRuntimeMovementCertificate": true,
+          "roomsTotal": 1,
+          "roomsWithAccess": 1
+        },
+        "siege": {
+          "allCandidateGatesFullDiskAllowed": true,
+          "allComponentsConnected": true,
+          "allRalliesFullDiskAllowed": true,
+          "noRuntimeMovementCertificate": true,
+          "roomsTotal": 1,
+          "roomsWithAccess": 1
+        }
+      },
+      "sourceBox": [
+        387,
+        463,
+        537,
+        576
+      ],
+      "status": "AUTHORING_CANDIDATE"
+    },
+    {
+      "candidateGateCount": 1,
+      "geometryPath": "docs/body-life/vascular-art-study/organ-atlas/geometry/kidney_r.json",
+      "geometrySha256": "d4c3393f644d03da0ab0b4ee40b450d40a86ef43bf99465fcdf6e7260efb5dc3",
+      "guidePaths": {
+        "guide": "docs/body-life/vascular-art-study/organ-atlas/guides/kidney_r-guide.png",
+        "technical": "docs/body-life/vascular-art-study/organ-atlas/guides/kidney_r-technical.png"
+      },
+      "name": "右肾",
+      "organId": "kidney_r",
+      "originalPortCount": 3,
+      "profileSummary": {
+        "scout": {
+          "allCandidateGatesFullDiskAllowed": true,
+          "allComponentsConnected": true,
+          "allRalliesFullDiskAllowed": true,
+          "noRuntimeMovementCertificate": true,
+          "roomsTotal": 1,
+          "roomsWithAccess": 1
+        },
+        "siege": {
+          "allCandidateGatesFullDiskAllowed": true,
+          "allComponentsConnected": true,
+          "allRalliesFullDiskAllowed": true,
+          "noRuntimeMovementCertificate": true,
+          "roomsTotal": 1,
+          "roomsWithAccess": 1
+        }
+      },
+      "sourceBox": [
+        390,
+        564,
+        449,
+        656
+      ],
+      "status": "AUTHORING_CANDIDATE"
+    },
+    {
+      "candidateGateCount": 1,
+      "geometryPath": "docs/body-life/vascular-art-study/organ-atlas/geometry/kidney_l.json",
+      "geometrySha256": "5c821d2f36d25f1c3124b244b9161445f60fb3078e87848f985e7d8e804c3db1",
+      "guidePaths": {
+        "guide": "docs/body-life/vascular-art-study/organ-atlas/guides/kidney_l-guide.png",
+        "technical": "docs/body-life/vascular-art-study/organ-atlas/guides/kidney_l-technical.png"
+      },
+      "name": "左肾",
+      "organId": "kidney_l",
+      "originalPortCount": 3,
+      "profileSummary": {
+        "scout": {
+          "allCandidateGatesFullDiskAllowed": true,
+          "allComponentsConnected": true,
+          "allRalliesFullDiskAllowed": true,
+          "noRuntimeMovementCertificate": true,
+          "roomsTotal": 1,
+          "roomsWithAccess": 1
+        },
+        "siege": {
+          "allCandidateGatesFullDiskAllowed": true,
+          "allComponentsConnected": true,
+          "allRalliesFullDiskAllowed": true,
+          "noRuntimeMovementCertificate": true,
+          "roomsTotal": 1,
+          "roomsWithAccess": 1
+        }
+      },
+      "sourceBox": [
+        571,
+        564,
+        628,
+        655
+      ],
+      "status": "AUTHORING_CANDIDATE"
+    },
+    {
+      "candidateGateCount": 1,
+      "geometryPath": "docs/body-life/vascular-art-study/organ-atlas/geometry/lung_r.json",
+      "geometrySha256": "dd4d2bf1900f7f3ebcd04b533c5cd76771b3356b7368195bd48bde4d6bcb8f7e",
+      "guidePaths": {
+        "guide": "docs/body-life/vascular-art-study/organ-atlas/guides/lung_r-guide.png",
+        "technical": "docs/body-life/vascular-art-study/organ-atlas/guides/lung_r-technical.png"
+      },
+      "name": "右肺",
+      "organId": "lung_r",
+      "originalPortCount": 3,
+      "profileSummary": {
+        "scout": {
+          "allCandidateGatesFullDiskAllowed": true,
+          "allComponentsConnected": true,
+          "allRalliesFullDiskAllowed": true,
+          "noRuntimeMovementCertificate": true,
+          "roomsTotal": 1,
+          "roomsWithAccess": 1
+        },
+        "siege": {
+          "allCandidateGatesFullDiskAllowed": true,
+          "allComponentsConnected": true,
+          "allRalliesFullDiskAllowed": true,
+          "noRuntimeMovementCertificate": true,
+          "roomsTotal": 1,
+          "roomsWithAccess": 1
+        }
+      },
+      "sourceBox": [
+        366,
+        285,
+        484,
+        489
+      ],
+      "status": "AUTHORING_CANDIDATE"
+    },
+    {
+      "candidateGateCount": 1,
+      "geometryPath": "docs/body-life/vascular-art-study/organ-atlas/geometry/lung_l.json",
+      "geometrySha256": "49aa585227dfdc2e6c4b39cde7e565a104973e74d4ac1f9b9b45f14249f95a79",
+      "guidePaths": {
+        "guide": "docs/body-life/vascular-art-study/organ-atlas/guides/lung_l-guide.png",
+        "technical": "docs/body-life/vascular-art-study/organ-atlas/guides/lung_l-technical.png"
+      },
+      "name": "左肺",
+      "organId": "lung_l",
+      "originalPortCount": 3,
+      "profileSummary": {
+        "scout": {
+          "allCandidateGatesFullDiskAllowed": true,
+          "allComponentsConnected": true,
+          "allRalliesFullDiskAllowed": true,
+          "noRuntimeMovementCertificate": true,
+          "roomsTotal": 1,
+          "roomsWithAccess": 1
+        },
+        "siege": {
+          "allCandidateGatesFullDiskAllowed": true,
+          "allComponentsConnected": true,
+          "allRalliesFullDiskAllowed": true,
+          "noRuntimeMovementCertificate": true,
+          "roomsTotal": 1,
+          "roomsWithAccess": 1
+        }
+      },
+      "sourceBox": [
+        533,
+        285,
+        650,
+        490
+      ],
+      "status": "AUTHORING_CANDIDATE"
+    },
+    {
+      "candidateGateCount": 1,
+      "geometryPath": "docs/body-life/vascular-art-study/organ-atlas/geometry/heart.json",
+      "geometrySha256": "0f124d062dc7e8e605b741f2c4f76ff85ff91b66720482f65c37b752840afd01",
+      "guidePaths": {
+        "guide": "docs/body-life/vascular-art-study/organ-atlas/guides/heart-guide.png",
+        "technical": "docs/body-life/vascular-art-study/organ-atlas/guides/heart-technical.png"
+      },
+      "name": "心脏",
+      "organId": "heart",
+      "originalPortCount": 3,
+      "profileSummary": {
+        "scout": {
+          "allCandidateGatesFullDiskAllowed": true,
+          "allComponentsConnected": true,
+          "allRalliesFullDiskAllowed": true,
+          "noRuntimeMovementCertificate": true,
+          "roomsTotal": 1,
+          "roomsWithAccess": 1
+        },
+        "siege": {
+          "allCandidateGatesFullDiskAllowed": true,
+          "allComponentsConnected": true,
+          "allRalliesFullDiskAllowed": true,
+          "noRuntimeMovementCertificate": true,
+          "roomsTotal": 1,
+          "roomsWithAccess": 1
+        }
+      },
+      "sourceBox": [
+        468,
+        326,
+        568,
+        467
+      ],
+      "status": "AUTHORING_CANDIDATE"
+    },
+    {
+      "candidateGateCount": 1,
+      "geometryPath": "docs/body-life/vascular-art-study/organ-atlas/geometry/brain.json",
+      "geometrySha256": "39709421787c42dbfbceb6ff20616abc5ebdbd558e869cd1e9a3ea24e10b4af5",
+      "guidePaths": {
+        "guide": "docs/body-life/vascular-art-study/organ-atlas/guides/brain-guide.png",
+        "technical": "docs/body-life/vascular-art-study/organ-atlas/guides/brain-technical.png"
+      },
+      "name": "脑",
+      "organId": "brain",
+      "originalPortCount": 6,
+      "profileSummary": {
+        "scout": {
+          "allCandidateGatesFullDiskAllowed": true,
+          "allComponentsConnected": true,
+          "allRalliesFullDiskAllowed": true,
+          "noRuntimeMovementCertificate": true,
+          "roomsTotal": 1,
+          "roomsWithAccess": 1
+        },
+        "siege": {
+          "allCandidateGatesFullDiskAllowed": true,
+          "allComponentsConnected": true,
+          "allRalliesFullDiskAllowed": true,
+          "noRuntimeMovementCertificate": true,
+          "roomsTotal": 1,
+          "roomsWithAccess": 1
+        }
+      },
+      "sourceBox": [
+        439,
+        21,
+        580,
+        124
+      ],
+      "status": "AUTHORING_CANDIDATE"
+    },
+    {
+      "candidateGateCount": 1,
+      "geometryPath": "docs/body-life/vascular-art-study/organ-atlas/geometry/pancreas.json",
+      "geometrySha256": "e7003cf97e41d542d8ead5db7525e790b449ae924e37eeca20aeb60968adf29c",
+      "guidePaths": {
+        "guide": "docs/body-life/vascular-art-study/organ-atlas/guides/pancreas-guide.png",
+        "technical": "docs/body-life/vascular-art-study/organ-atlas/guides/pancreas-technical.png"
+      },
+      "name": "胰腺",
+      "organId": "pancreas",
+      "originalPortCount": 3,
+      "profileSummary": {
+        "scout": {
+          "allCandidateGatesFullDiskAllowed": true,
+          "allComponentsConnected": true,
+          "allRalliesFullDiskAllowed": true,
+          "noRuntimeMovementCertificate": true,
+          "roomsTotal": 1,
+          "roomsWithAccess": 1
+        },
+        "siege": {
+          "allCandidateGatesFullDiskAllowed": true,
+          "allComponentsConnected": true,
+          "allRalliesFullDiskAllowed": true,
+          "noRuntimeMovementCertificate": true,
+          "roomsTotal": 1,
+          "roomsWithAccess": 1
+        }
+      },
+      "sourceBox": [
+        476,
+        558,
+        580,
+        611
+      ],
+      "status": "AUTHORING_CANDIDATE"
+    },
+    {
+      "candidateGateCount": 1,
+      "geometryPath": "docs/body-life/vascular-art-study/organ-atlas/geometry/bladder.json",
+      "geometrySha256": "b3f8203d58953eb45c42c1c6dd95838a6c712e7a4892c04aadeaa114c595e233",
+      "guidePaths": {
+        "guide": "docs/body-life/vascular-art-study/organ-atlas/guides/bladder-guide.png",
+        "technical": "docs/body-life/vascular-art-study/organ-atlas/guides/bladder-technical.png"
+      },
+      "name": "膀胱",
+      "organId": "bladder",
+      "originalPortCount": 3,
+      "profileSummary": {
+        "scout": {
+          "allCandidateGatesFullDiskAllowed": true,
+          "allComponentsConnected": true,
+          "allRalliesFullDiskAllowed": true,
+          "noRuntimeMovementCertificate": true,
+          "roomsTotal": 1,
+          "roomsWithAccess": 1
+        },
+        "siege": {
+          "allCandidateGatesFullDiskAllowed": true,
+          "allComponentsConnected": true,
+          "allRalliesFullDiskAllowed": true,
+          "noRuntimeMovementCertificate": true,
+          "roomsTotal": 1,
+          "roomsWithAccess": 1
+        }
+      },
+      "sourceBox": [
+        462,
+        725,
+        554,
+        822
+      ],
+      "status": "AUTHORING_CANDIDATE"
+    },
+    {
+      "candidateGateCount": 1,
+      "geometryPath": "docs/body-life/vascular-art-study/organ-atlas/geometry/small_intestine.json",
+      "geometrySha256": "c703bf72eb7cd452d283ca550310774893740dacf3bb40be895d6d496d1a8101",
+      "guidePaths": {
+        "guide": "docs/body-life/vascular-art-study/organ-atlas/guides/small_intestine-guide.png",
+        "technical": "docs/body-life/vascular-art-study/organ-atlas/guides/small_intestine-technical.png"
+      },
+      "name": "小肠",
+      "organId": "small_intestine",
+      "originalPortCount": 3,
+      "profileSummary": {
+        "scout": {
+          "allCandidateGatesFullDiskAllowed": true,
+          "allComponentsConnected": true,
+          "allRalliesFullDiskAllowed": true,
+          "noRuntimeMovementCertificate": true,
+          "roomsTotal": 1,
+          "roomsWithAccess": 1
+        },
+        "siege": {
+          "allCandidateGatesFullDiskAllowed": true,
+          "allComponentsConnected": true,
+          "allRalliesFullDiskAllowed": true,
+          "noRuntimeMovementCertificate": true,
+          "roomsTotal": 1,
+          "roomsWithAccess": 1
+        }
+      },
+      "sourceBox": [
+        452,
+        651,
+        563,
+        740
+      ],
+      "status": "AUTHORING_CANDIDATE"
+    },
+    {
+      "candidateGateCount": 3,
+      "geometryPath": "docs/body-life/vascular-art-study/organ-atlas/geometry/large_intestine.json",
+      "geometrySha256": "126f76746c3a396016f9a62a27154668468f580b7c1a81d04ab0c5fbca785acc",
+      "guidePaths": {
+        "guide": "docs/body-life/vascular-art-study/organ-atlas/guides/large_intestine-guide.png",
+        "technical": "docs/body-life/vascular-art-study/organ-atlas/guides/large_intestine-technical.png"
+      },
+      "name": "大肠",
+      "organId": "large_intestine",
+      "originalPortCount": 6,
+      "profileSummary": {
+        "scout": {
+          "allCandidateGatesFullDiskAllowed": true,
+          "allComponentsConnected": false,
+          "allRalliesFullDiskAllowed": true,
+          "noRuntimeMovementCertificate": true,
+          "roomsTotal": 2,
+          "roomsWithAccess": 2
+        },
+        "siege": {
+          "allCandidateGatesFullDiskAllowed": true,
+          "allComponentsConnected": false,
+          "allRalliesFullDiskAllowed": true,
+          "noRuntimeMovementCertificate": true,
+          "roomsTotal": 3,
+          "roomsWithAccess": 3
+        }
+      },
+      "sourceBox": [
+        425,
+        597,
+        594,
+        751
+      ],
+      "status": "AUTHORING_CANDIDATE"
+    },
+    {
+      "existingDataPath": "scripts/war/GastricBattlefieldData.lua",
+      "existingDataSha256": "81cbe1eedd29506a13fa19a7edd079d7f93b3eb58b4a9e4282e98277854b279d",
+      "geometryPath": "docs/body-life/vascular-art-study/organ-atlas/geometry/stomach.json",
+      "geometrySha256": "473a3974c8d05ce68f3935493956732cf21870041140958d3057219e0caff225",
+      "guidePaths": {},
+      "name": "胃",
+      "organId": "stomach",
+      "sourceBox": [
+        464,
+        461,
+        644,
+        641
+      ],
+      "status": "EXISTING_PLAYABLE_STOMACH_UNCHANGED"
+    }
+  ],
+  "productionInstalled": false,
+  "profiles": {
+    "scout": 0.21875,
+    "siege": 0.53125
+  },
+  "schema": "organ-battlefield-atlas/v1",
+  "scriptSha256": "5b721b4dffd38df8df57d837f35cee26e8328b55e34436979f7e109147014146",
+  "sourceSize": [
+    1024,
+    1536
+  ],
+  "sourceTransform": {
+    "inverse": "source=(worldX/2,(worldY-512)/2)",
+    "oy": 512,
+    "sx": 2,
+    "sy": 2
+  },
+  "status": "FIXED_GEOMETRY_AUTHORING_CANDIDATE",
+  "validation": {
+    "existingStomachDataReadOnly": true,
+    "finalReferenceSha256Unchanged": true,
+    "fineBoundarySourceSha256MatchesReference": true,
+    "newOrganPhysicalGatesSharedBetweenProfiles": true,
+    "referenceSha256Unchanged": true,
+    "runtimeMovementCertified": false,
+    "sourceReferencePixelsEdited": false,
+    "validationBasis": "Shapely full disk erosions; same connected polygon and explicit frozen blood approach, not graph topology inference"
+  }
+}

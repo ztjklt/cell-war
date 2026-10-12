@@ -1,0 +1,39 @@
+{
+  "schema": "fullbody-display-edge-alpha/v1",
+  "sourceBox": [
+    393,
+    129,
+    625,
+    814
+  ],
+  "pixelSize": [
+    3712,
+    10960
+  ],
+  "registrationScale": 16,
+  "maskEncoding": "gray-L",
+  "inputMaskPath": "assets/image/anatomy-reference/vascular-study/fullbody-015-candidate-v4b/masks/actual-art-foreground-v4.png",
+  "inputMaskSha256": "bacd94da36a6e8aa3a2f2407f6e68dce2b903f898b8123b9247c98c08c2bb729",
+  "geometrySvgPath": "docs/body-life/vascular-art-study/fullbody-015/bake/fourth-guides/shared-foreground-source-v8.svg",
+  "geometrySvgSha256": "0ac247cc5193b812f2961f53add4fcf5fed9af70480a24c2a35c6e985c7b7467",
+  "outputMaskPath": "assets/image/anatomy-reference/vascular-study/fullbody-015-candidate-v4b/masks/display-edge-alpha-v4b.png",
+  "outputMaskSha256": "4c5d5ab13c798b0227948fe18760980823a3e478c54f5ebd224bd1ed7078fdea",
+  "algorithm": "scipy Gaussian float32 \u2192 round uint8; geometric opaque-core/exterior clamps; shared bilinear registration",
+  "gaussianSigmaSource": 0.14,
+  "gaussianTruncate": 2,
+  "interiorBufferSource": 0.3,
+  "exteriorBufferSource": 0.3,
+  "maximumSourceBoundaryBand": 0.3625,
+  "rasterGuardSource": 0.0625,
+  "opaqueCorePath": "assets/image/anatomy-reference/vascular-study/fullbody-015-candidate-v4b/masks/display-opaque-core-v4b.png",
+  "opaqueCoreSha256": "227f280292ad23d58d6567dfe2b7f2efeb0374ebf4410fad3c3bc2ec54f5d48c",
+  "opaqueCorePredicate": "coreMask==255 implies outputAlpha==255",
+  "exteriorGuardPath": "assets/image/anatomy-reference/vascular-study/fullbody-015-candidate-v4b/masks/display-exterior-guard-v4b.png",
+  "exteriorGuardSha256": "27e9a0485f72113067b32cfbb40faf66598a6029f12a0feec6bbc0456bf0e9a7",
+  "exteriorPredicate": "exteriorMask==0 implies outputAlpha==0",
+  "bloodClip": "complement of this SAME gray field within fixed physical vessel footprint and original near-cut display domain",
+  "navigationChanged": false,
+  "geometryChangedByFiltering": false,
+  "legacy135Changed": false,
+  "visualIntervalsChangedByFiltering": false
+}

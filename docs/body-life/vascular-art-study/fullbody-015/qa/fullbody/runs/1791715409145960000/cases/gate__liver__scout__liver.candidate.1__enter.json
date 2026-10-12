@@ -1,0 +1,7279 @@
+{
+  "schema": "fullbody-015-production-motion-case/v1",
+  "nativeEvidence": false,
+  "productionNavigationSubstituted": false,
+  "config": {
+    "id": "gate/liver/scout/liver.candidate.1/enter",
+    "family": "gate",
+    "owner": "liver",
+    "gateId": "liver.candidate.1",
+    "direction": "enter",
+    "actors": [
+      {
+        "kind": "scout",
+        "x": 934.6651866056949,
+        "y": 1512.0762258904206,
+        "tx": 950.111395267514,
+        "ty": 1550.6880791181852,
+        "lane": 118,
+        "targetLane": 0,
+        "targetOrgan": "liver",
+        "setupSource": [
+          475.055697633757,
+          519.3440395590926
+        ]
+      }
+    ],
+    "maxTime": 600,
+    "caseOrgans": [
+      "liver"
+    ],
+    "organs": [
+      "brain",
+      "lung_r",
+      "lung_l",
+      "liver",
+      "stomach",
+      "pancreas",
+      "kidney_r",
+      "kidney_l",
+      "large_intestine",
+      "small_intestine",
+      "bladder",
+      "heart"
+    ]
+  },
+  "row": {
+    "id": "gate/liver/scout/liver.candidate.1/enter",
+    "family": "gate",
+    "status": "PASS",
+    "completed": true,
+    "commandsValid": true,
+    "spawnErrors": {},
+    "arrivals": [
+      {
+        "id": 18,
+        "distanceWorld": 0.01693345137415805,
+        "laneMatches": true,
+        "organMatches": true
+      }
+    ],
+    "savePassed": true,
+    "elapsedSimulationSeconds": 11.599999999999975,
+    "setupSimulationSeconds": 11.599999999999975,
+    "disksChecked": 576,
+    "capsulesChecked": 460,
+    "geometryFailures": 0,
+    "firstGeometryFailures": [],
+    "unverifiedDomainPoints": 0,
+    "trafficStats": {
+      "deadReleased": 0,
+      "maxPlanningSlice": 2.0000000020559128e-06,
+      "conflicts": 0,
+      "expired": 0,
+      "maxPairs": 0,
+      "resumed": 0,
+      "routeRequests": 0,
+      "yields": 0,
+      "cancelled": 0,
+      "waits": 0,
+      "noBay": 0,
+      "activePairs": 0
+    },
+    "visitedLanes": [
+      118
+    ],
+    "minimumFrameDiskGapWorld": null,
+    "endpointFailures": []
+  },
+  "actual": {
+    "activeOrgans": [
+      "bladder",
+      "brain",
+      "heart",
+      "kidney_l",
+      "kidney_r",
+      "large_intestine",
+      "liver",
+      "lung_l",
+      "lung_r",
+      "pancreas",
+      "small_intestine",
+      "stomach"
+    ],
+    "save": {
+      "version": 9,
+      "positionErrors": 0.0,
+      "restoredFlag": 1,
+      "restoredIds": [
+        "bladder",
+        "brain",
+        "heart",
+        "kidney_l",
+        "kidney_r",
+        "large_intestine",
+        "liver",
+        "lung_l",
+        "lung_r",
+        "pancreas",
+        "small_intestine",
+        "stomach"
+      ],
+      "restored": true,
+      "flag": 1,
+      "ids": [
+        "bladder",
+        "brain",
+        "heart",
+        "kidney_l",
+        "kidney_r",
+        "large_intestine",
+        "liver",
+        "lung_l",
+        "lung_r",
+        "pancreas",
+        "small_intestine",
+        "stomach"
+      ],
+      "restoredNetworkEdges": 202,
+      "laneErrors": 0
+    },
+    "setupCommands": [
+      {
+        "id": 18,
+        "lane": 118,
+        "accepted": true
+      }
+    ],
+    "setupElapsed": 11.599999999999975,
+    "starts": [
+      {
+        "lane": 0,
+        "phase": "spawn",
+        "kind": "scout",
+        "y": 1550.6880791181852,
+        "tick": 0,
+        "time": 0,
+        "id": 18,
+        "organId": "liver",
+        "x": 950.111395267514
+      }
+    ],
+    "networkEdges": 202,
+    "trace": [
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1550.6880791181852,
+        "tick": 1,
+        "time": 0.1,
+        "id": 18,
+        "organId": "liver",
+        "x": 950.111395267514
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1550.3958129044559,
+        "tick": 2,
+        "time": 0.2,
+        "id": 18,
+        "organId": "liver",
+        "x": 949.9944776749956
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1550.3958129044559,
+        "tick": 2,
+        "time": 0.2,
+        "id": 18,
+        "organId": "liver",
+        "x": 949.9944776749956
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1550.056524238828,
+        "tick": 3,
+        "time": 0.30000000000000004,
+        "id": 18,
+        "organId": "liver",
+        "x": 949.8587493147181
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1550.056524238828,
+        "tick": 3,
+        "time": 0.30000000000000004,
+        "id": 18,
+        "organId": "liver",
+        "x": 949.8587493147181
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1549.6942161240613,
+        "tick": 4,
+        "time": 0.4,
+        "id": 18,
+        "organId": "liver",
+        "x": 949.7138122999744
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1549.6942161240613,
+        "tick": 4,
+        "time": 0.4,
+        "id": 18,
+        "organId": "liver",
+        "x": 949.7138122999744
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1549.3206390299613,
+        "tick": 5,
+        "time": 0.5,
+        "id": 18,
+        "organId": "liver",
+        "x": 949.5643672652409
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1549.3206390299613,
+        "tick": 5,
+        "time": 0.5,
+        "id": 18,
+        "organId": "liver",
+        "x": 949.5643672652409
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1548.9415453010167,
+        "tick": 6,
+        "time": 0.6,
+        "id": 18,
+        "organId": "liver",
+        "x": 949.4127153669203
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1548.9415453010167,
+        "tick": 6,
+        "time": 0.6,
+        "id": 18,
+        "organId": "liver",
+        "x": 949.4127153669203
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1548.5597509494953,
+        "tick": 7,
+        "time": 0.7,
+        "id": 18,
+        "organId": "liver",
+        "x": 949.259983116937
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1548.5597509494953,
+        "tick": 7,
+        "time": 0.7,
+        "id": 18,
+        "organId": "liver",
+        "x": 949.259983116937
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1548.1766345307158,
+        "tick": 8,
+        "time": 0.7999999999999999,
+        "id": 18,
+        "organId": "liver",
+        "x": 949.1067219898076
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1548.1766345307158,
+        "tick": 8,
+        "time": 0.7999999999999999,
+        "id": 18,
+        "organId": "liver",
+        "x": 949.1067219898076
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1547.7928709049365,
+        "tick": 9,
+        "time": 0.8999999999999999,
+        "id": 18,
+        "organId": "liver",
+        "x": 948.9532019552826
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1547.7928709049365,
+        "tick": 9,
+        "time": 0.8999999999999999,
+        "id": 18,
+        "organId": "liver",
+        "x": 948.9532019552826
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1547.4087904443686,
+        "tick": 10,
+        "time": 0.9999999999999999,
+        "id": 18,
+        "organId": "liver",
+        "x": 948.7995551748014
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1547.4087904443686,
+        "tick": 10,
+        "time": 0.9999999999999999,
+        "id": 18,
+        "organId": "liver",
+        "x": 948.7995551748014
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1547.0245548799726,
+        "tick": 11,
+        "time": 1.0999999999999999,
+        "id": 18,
+        "organId": "liver",
+        "x": 948.6458463468945
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1547.0245548799726,
+        "tick": 11,
+        "time": 1.0999999999999999,
+        "id": 18,
+        "organId": "liver",
+        "x": 948.6458463468945
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1546.640243385791,
+        "tick": 12,
+        "time": 1.2,
+        "id": 18,
+        "organId": "liver",
+        "x": 948.4921071441878
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1546.640243385791,
+        "tick": 12,
+        "time": 1.2,
+        "id": 18,
+        "organId": "liver",
+        "x": 948.4921071441878
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1546.2814876136415,
+        "tick": 13,
+        "time": 1.3,
+        "id": 18,
+        "organId": "liver",
+        "x": 948.348591201491
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1546.2814876136415,
+        "tick": 13,
+        "time": 1.3,
+        "id": 18,
+        "organId": "liver",
+        "x": 948.348591201491
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1545.9352424320666,
+        "tick": 14,
+        "time": 1.4000000000000001,
+        "id": 18,
+        "organId": "liver",
+        "x": 948.2100799704655
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1545.9352424320666,
+        "tick": 14,
+        "time": 1.4000000000000001,
+        "id": 18,
+        "organId": "liver",
+        "x": 948.2100799704655
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1545.5951217057636,
+        "tick": 15,
+        "time": 1.5000000000000002,
+        "id": 18,
+        "organId": "liver",
+        "x": 948.0740187542971
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1545.5951217057636,
+        "tick": 15,
+        "time": 1.5000000000000002,
+        "id": 18,
+        "organId": "liver",
+        "x": 948.0740187542971
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1545.2579991554585,
+        "tick": 16,
+        "time": 1.6000000000000003,
+        "id": 18,
+        "organId": "liver",
+        "x": 947.9391569224679
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1545.2579991554585,
+        "tick": 16,
+        "time": 1.6000000000000003,
+        "id": 18,
+        "organId": "liver",
+        "x": 947.9391569224679
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1544.9223443372068,
+        "tick": 17,
+        "time": 1.7000000000000004,
+        "id": 18,
+        "organId": "liver",
+        "x": 947.8048822392385
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1544.9223443372068,
+        "tick": 17,
+        "time": 1.7000000000000004,
+        "id": 18,
+        "organId": "liver",
+        "x": 947.8048822392385
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1544.5874080349406,
+        "tick": 18,
+        "time": 1.8000000000000005,
+        "id": 18,
+        "organId": "liver",
+        "x": 947.670894989709
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1544.5874080349406,
+        "tick": 18,
+        "time": 1.8000000000000005,
+        "id": 18,
+        "organId": "liver",
+        "x": 947.670894989709
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1544.2528234761821,
+        "tick": 19,
+        "time": 1.9000000000000006,
+        "id": 18,
+        "organId": "liver",
+        "x": 947.5370484509501
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1544.2528234761821,
+        "tick": 19,
+        "time": 1.9000000000000006,
+        "id": 18,
+        "organId": "liver",
+        "x": 947.5370484509501
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1543.9184111105242,
+        "tick": 20,
+        "time": 2.0000000000000004,
+        "id": 18,
+        "organId": "liver",
+        "x": 947.4032707959752
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1543.9184111105242,
+        "tick": 20,
+        "time": 2.0000000000000004,
+        "id": 18,
+        "organId": "liver",
+        "x": 947.4032707959752
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1543.5840830405625,
+        "tick": 21,
+        "time": 2.1000000000000005,
+        "id": 18,
+        "organId": "liver",
+        "x": 947.2695268624824
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1543.5840830405625,
+        "tick": 21,
+        "time": 2.1000000000000005,
+        "id": 18,
+        "organId": "liver",
+        "x": 947.2695268624824
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1543.249796236856,
+        "tick": 22,
+        "time": 2.2000000000000006,
+        "id": 18,
+        "organId": "liver",
+        "x": 947.1357994370597
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1543.249796236856,
+        "tick": 22,
+        "time": 2.2000000000000006,
+        "id": 18,
+        "organId": "liver",
+        "x": 947.1357994370597
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1542.9155296347003,
+        "tick": 23,
+        "time": 2.3000000000000007,
+        "id": 18,
+        "organId": "liver",
+        "x": 947.0020800930253
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1542.9155296347003,
+        "tick": 23,
+        "time": 2.3000000000000007,
+        "id": 18,
+        "organId": "liver",
+        "x": 947.0020800930253
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1542.5812729220454,
+        "tick": 24,
+        "time": 2.400000000000001,
+        "id": 18,
+        "organId": "liver",
+        "x": 946.8683647051669
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1542.5812729220454,
+        "tick": 24,
+        "time": 2.400000000000001,
+        "id": 18,
+        "organId": "liver",
+        "x": 946.8683647051669
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1542.247021050713,
+        "tick": 25,
+        "time": 2.500000000000001,
+        "id": 18,
+        "organId": "liver",
+        "x": 946.7346512540215
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1542.247021050713,
+        "tick": 25,
+        "time": 2.500000000000001,
+        "id": 18,
+        "organId": "liver",
+        "x": 946.7346512540215
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1541.91277154941,
+        "tick": 26,
+        "time": 2.600000000000001,
+        "id": 18,
+        "organId": "liver",
+        "x": 946.6009387509779
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1541.91277154941,
+        "tick": 26,
+        "time": 2.600000000000001,
+        "id": 18,
+        "organId": "liver",
+        "x": 946.6009387509779
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1541.5580488940748,
+        "tick": 27,
+        "time": 2.700000000000001,
+        "id": 18,
+        "organId": "liver",
+        "x": 946.4590362082778
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1541.5580488940748,
+        "tick": 27,
+        "time": 2.700000000000001,
+        "id": 18,
+        "organId": "liver",
+        "x": 946.4590362082778
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1541.1933037769381,
+        "tick": 28,
+        "time": 2.800000000000001,
+        "id": 18,
+        "organId": "liver",
+        "x": 946.3131242999724
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1541.1933037769381,
+        "tick": 28,
+        "time": 2.800000000000001,
+        "id": 18,
+        "organId": "liver",
+        "x": 946.3131242999724
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1540.8236522472187,
+        "tick": 29,
+        "time": 2.9000000000000012,
+        "id": 18,
+        "organId": "liver",
+        "x": 946.1652496401748
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1540.8236522472187,
+        "tick": 29,
+        "time": 2.9000000000000012,
+        "id": 18,
+        "organId": "liver",
+        "x": 946.1652496401748
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1540.4515988241408,
+        "tick": 30,
+        "time": 3.0000000000000013,
+        "id": 18,
+        "organId": "liver",
+        "x": 946.0164141317545
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1540.4515988241408,
+        "tick": 30,
+        "time": 3.0000000000000013,
+        "id": 18,
+        "organId": "liver",
+        "x": 946.0164141317545
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1540.078369574202,
+        "tick": 31,
+        "time": 3.1000000000000014,
+        "id": 18,
+        "organId": "liver",
+        "x": 945.8671082479048
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1540.078369574202,
+        "tick": 31,
+        "time": 3.1000000000000014,
+        "id": 18,
+        "organId": "liver",
+        "x": 945.8671082479048
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1539.7045647080306,
+        "tick": 32,
+        "time": 3.2000000000000015,
+        "id": 18,
+        "organId": "liver",
+        "x": 945.7175720956867
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1539.7045647080306,
+        "tick": 32,
+        "time": 3.2000000000000015,
+        "id": 18,
+        "organId": "liver",
+        "x": 945.7175720956867
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1539.3304780537333,
+        "tick": 33,
+        "time": 3.3000000000000016,
+        "id": 18,
+        "organId": "liver",
+        "x": 945.5679232175095
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1539.3304780537333,
+        "tick": 33,
+        "time": 3.3000000000000016,
+        "id": 18,
+        "organId": "liver",
+        "x": 945.5679232175095
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1538.956253452409,
+        "tick": 34,
+        "time": 3.4000000000000017,
+        "id": 18,
+        "organId": "liver",
+        "x": 945.4182191552792
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1538.956253452409,
+        "tick": 34,
+        "time": 3.4000000000000017,
+        "id": 18,
+        "organId": "liver",
+        "x": 945.4182191552792
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1538.6024356345288,
+        "tick": 35,
+        "time": 3.5000000000000018,
+        "id": 18,
+        "organId": "liver",
+        "x": 945.2766785819476
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1538.6024356345288,
+        "tick": 35,
+        "time": 3.5000000000000018,
+        "id": 18,
+        "organId": "liver",
+        "x": 945.2766785819476
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1538.2586077872818,
+        "tick": 36,
+        "time": 3.600000000000002,
+        "id": 18,
+        "organId": "liver",
+        "x": 945.1391343765195
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1538.2586077872818,
+        "tick": 36,
+        "time": 3.600000000000002,
+        "id": 18,
+        "organId": "liver",
+        "x": 945.1391343765195
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1537.9196704468375,
+        "tick": 37,
+        "time": 3.700000000000002,
+        "id": 18,
+        "organId": "liver",
+        "x": 945.0035465596668
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1537.9196704468375,
+        "tick": 37,
+        "time": 3.700000000000002,
+        "id": 18,
+        "organId": "liver",
+        "x": 945.0035465596668
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1537.5831272132093,
+        "tick": 38,
+        "time": 3.800000000000002,
+        "id": 18,
+        "organId": "liver",
+        "x": 944.8689164765242
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1537.5831272132093,
+        "tick": 38,
+        "time": 3.800000000000002,
+        "id": 18,
+        "organId": "liver",
+        "x": 944.8689164765242
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1537.2477559946053,
+        "tick": 39,
+        "time": 3.900000000000002,
+        "id": 18,
+        "organId": "liver",
+        "x": 944.7347552439314
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1537.2477559946053,
+        "tick": 39,
+        "time": 3.900000000000002,
+        "id": 18,
+        "organId": "liver",
+        "x": 944.7347552439314
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1536.912958526181,
+        "tick": 40,
+        "time": 4.000000000000002,
+        "id": 18,
+        "organId": "liver",
+        "x": 944.6008235332149
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1536.912958526181,
+        "tick": 40,
+        "time": 4.000000000000002,
+        "id": 18,
+        "organId": "liver",
+        "x": 944.6008235332149
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1536.578441932372,
+        "tick": 41,
+        "time": 4.100000000000001,
+        "id": 18,
+        "organId": "liver",
+        "x": 944.4670041830186
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1536.578441932372,
+        "tick": 41,
+        "time": 4.100000000000001,
+        "id": 18,
+        "organId": "liver",
+        "x": 944.4670041830186
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1536.2440628383883,
+        "tick": 42,
+        "time": 4.200000000000001,
+        "id": 18,
+        "organId": "liver",
+        "x": 944.3332398379779
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1536.2440628383883,
+        "tick": 42,
+        "time": 4.200000000000001,
+        "id": 18,
+        "organId": "liver",
+        "x": 944.3332398379779
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1535.9097510562972,
+        "tick": 43,
+        "time": 4.300000000000001,
+        "id": 18,
+        "organId": "liver",
+        "x": 944.1995024202522
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1535.9097510562972,
+        "tick": 43,
+        "time": 4.300000000000001,
+        "id": 18,
+        "organId": "liver",
+        "x": 944.1995024202522
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1535.5754722261818,
+        "tick": 44,
+        "time": 4.4,
+        "id": 18,
+        "organId": "liver",
+        "x": 944.0657781845691
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1535.5754722261818,
+        "tick": 44,
+        "time": 4.4,
+        "id": 18,
+        "organId": "liver",
+        "x": 944.0657781845691
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1535.2412095274312,
+        "tick": 45,
+        "time": 4.5,
+        "id": 18,
+        "organId": "liver",
+        "x": 943.932060402045
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1535.2412095274312,
+        "tick": 45,
+        "time": 4.5,
+        "id": 18,
+        "organId": "liver",
+        "x": 943.932060402045
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1534.9069547256559,
+        "tick": 46,
+        "time": 4.6,
+        "id": 18,
+        "organId": "liver",
+        "x": 943.798345778611
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1534.9069547256559,
+        "tick": 46,
+        "time": 4.6,
+        "id": 18,
+        "organId": "liver",
+        "x": 943.798345778611
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1534.5727037897786,
+        "tick": 47,
+        "time": 4.699999999999999,
+        "id": 18,
+        "organId": "liver",
+        "x": 943.6646327016832
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1534.5727037897786,
+        "tick": 47,
+        "time": 4.699999999999999,
+        "id": 18,
+        "organId": "liver",
+        "x": 943.6646327016832
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1534.2384547464198,
+        "tick": 48,
+        "time": 4.799999999999999,
+        "id": 18,
+        "organId": "liver",
+        "x": 943.5309203818347
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1534.2384547464198,
+        "tick": 48,
+        "time": 4.799999999999999,
+        "id": 18,
+        "organId": "liver",
+        "x": 943.5309203818347
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1533.9042066295274,
+        "tick": 49,
+        "time": 4.899999999999999,
+        "id": 18,
+        "organId": "liver",
+        "x": 943.397208432608
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1533.9042066295274,
+        "tick": 49,
+        "time": 4.899999999999999,
+        "id": 18,
+        "organId": "liver",
+        "x": 943.397208432608
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1533.569958966179,
+        "tick": 50,
+        "time": 4.999999999999998,
+        "id": 18,
+        "organId": "liver",
+        "x": 943.2634966648161
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1533.569958966179,
+        "tick": 50,
+        "time": 4.999999999999998,
+        "id": 18,
+        "organId": "liver",
+        "x": 943.2634966648161
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1533.2357115248592,
+        "tick": 51,
+        "time": 5.099999999999998,
+        "id": 18,
+        "organId": "liver",
+        "x": 943.1297849858441
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1533.2357115248592,
+        "tick": 51,
+        "time": 5.099999999999998,
+        "id": 18,
+        "organId": "liver",
+        "x": 943.1297849858441
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1532.9014641922317,
+        "tick": 52,
+        "time": 5.1999999999999975,
+        "id": 18,
+        "organId": "liver",
+        "x": 942.9960733503532
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1532.9014641922317,
+        "tick": 52,
+        "time": 5.1999999999999975,
+        "id": 18,
+        "organId": "liver",
+        "x": 942.9960733503532
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1532.5672169128136,
+        "tick": 53,
+        "time": 5.299999999999997,
+        "id": 18,
+        "organId": "liver",
+        "x": 942.862361736148
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1532.5672169128136,
+        "tick": 53,
+        "time": 5.299999999999997,
+        "id": 18,
+        "organId": "liver",
+        "x": 942.862361736148
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1532.2329696594438,
+        "tick": 54,
+        "time": 5.399999999999997,
+        "id": 18,
+        "organId": "liver",
+        "x": 942.7286501323632
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1532.2329696594438,
+        "tick": 54,
+        "time": 5.399999999999997,
+        "id": 18,
+        "organId": "liver",
+        "x": 942.7286501323632
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1531.8987224188256,
+        "tick": 55,
+        "time": 5.4999999999999964,
+        "id": 18,
+        "organId": "liver",
+        "x": 942.5949385336795
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1531.8987224188256,
+        "tick": 55,
+        "time": 5.4999999999999964,
+        "id": 18,
+        "organId": "liver",
+        "x": 942.5949385336795
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1531.56447518445,
+        "tick": 56,
+        "time": 5.599999999999996,
+        "id": 18,
+        "organId": "liver",
+        "x": 942.461226937493
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1531.56447518445,
+        "tick": 56,
+        "time": 5.599999999999996,
+        "id": 18,
+        "organId": "liver",
+        "x": 942.461226937493
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1531.2302279531302,
+        "tick": 57,
+        "time": 5.699999999999996,
+        "id": 18,
+        "organId": "liver",
+        "x": 942.3275153425291
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1531.2302279531302,
+        "tick": 57,
+        "time": 5.699999999999996,
+        "id": 18,
+        "organId": "liver",
+        "x": 942.3275153425291
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1530.8959807233066,
+        "tick": 58,
+        "time": 5.799999999999995,
+        "id": 18,
+        "organId": "liver",
+        "x": 942.1938037481635
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1530.8959807233066,
+        "tick": 58,
+        "time": 5.799999999999995,
+        "id": 18,
+        "organId": "liver",
+        "x": 942.1938037481635
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1530.5617334942153,
+        "tick": 59,
+        "time": 5.899999999999995,
+        "id": 18,
+        "organId": "liver",
+        "x": 942.060092154091
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1530.5617334942153,
+        "tick": 59,
+        "time": 5.899999999999995,
+        "id": 18,
+        "organId": "liver",
+        "x": 942.060092154091
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1530.2274862654824,
+        "tick": 60,
+        "time": 5.999999999999995,
+        "id": 18,
+        "organId": "liver",
+        "x": 941.9263805601619
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1530.2274862654824,
+        "tick": 60,
+        "time": 5.999999999999995,
+        "id": 18,
+        "organId": "liver",
+        "x": 941.9263805601619
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1529.893239036925,
+        "tick": 61,
+        "time": 6.099999999999994,
+        "id": 18,
+        "organId": "liver",
+        "x": 941.7926689663029
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1529.893239036925,
+        "tick": 61,
+        "time": 6.099999999999994,
+        "id": 18,
+        "organId": "liver",
+        "x": 941.7926689663029
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1529.5589918084536,
+        "tick": 62,
+        "time": 6.199999999999994,
+        "id": 18,
+        "organId": "liver",
+        "x": 941.6589573724784
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1529.5589918084536,
+        "tick": 62,
+        "time": 6.199999999999994,
+        "id": 18,
+        "organId": "liver",
+        "x": 941.6589573724784
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1529.2247445800242,
+        "tick": 63,
+        "time": 6.299999999999994,
+        "id": 18,
+        "organId": "liver",
+        "x": 941.5252457786708
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1529.2247445800242,
+        "tick": 63,
+        "time": 6.299999999999994,
+        "id": 18,
+        "organId": "liver",
+        "x": 941.5252457786708
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1528.8904973516155,
+        "tick": 64,
+        "time": 6.399999999999993,
+        "id": 18,
+        "organId": "liver",
+        "x": 941.3915341848713
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1528.8904973516155,
+        "tick": 64,
+        "time": 6.399999999999993,
+        "id": 18,
+        "organId": "liver",
+        "x": 941.3915341848713
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1528.5562501232168,
+        "tick": 65,
+        "time": 6.499999999999993,
+        "id": 18,
+        "organId": "liver",
+        "x": 941.2578225910759
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1528.5562501232168,
+        "tick": 65,
+        "time": 6.499999999999993,
+        "id": 18,
+        "organId": "liver",
+        "x": 941.2578225910759
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1528.2220028948232,
+        "tick": 66,
+        "time": 6.5999999999999925,
+        "id": 18,
+        "organId": "liver",
+        "x": 941.1241109972824
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1528.2220028948232,
+        "tick": 66,
+        "time": 6.5999999999999925,
+        "id": 18,
+        "organId": "liver",
+        "x": 941.1241109972824
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1527.8877556664318,
+        "tick": 67,
+        "time": 6.699999999999992,
+        "id": 18,
+        "organId": "liver",
+        "x": 940.9903994034898
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1527.8877556664318,
+        "tick": 67,
+        "time": 6.699999999999992,
+        "id": 18,
+        "organId": "liver",
+        "x": 940.9903994034898
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1527.5535084380417,
+        "tick": 68,
+        "time": 6.799999999999992,
+        "id": 18,
+        "organId": "liver",
+        "x": 940.8566878096979
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1527.5535084380417,
+        "tick": 68,
+        "time": 6.799999999999992,
+        "id": 18,
+        "organId": "liver",
+        "x": 940.8566878096979
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1527.2192612096521,
+        "tick": 69,
+        "time": 6.8999999999999915,
+        "id": 18,
+        "organId": "liver",
+        "x": 940.7229762159061
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1527.2192612096521,
+        "tick": 69,
+        "time": 6.8999999999999915,
+        "id": 18,
+        "organId": "liver",
+        "x": 940.7229762159061
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1526.8850139812628,
+        "tick": 70,
+        "time": 6.999999999999991,
+        "id": 18,
+        "organId": "liver",
+        "x": 940.5892646221145
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1526.8850139812628,
+        "tick": 70,
+        "time": 6.999999999999991,
+        "id": 18,
+        "organId": "liver",
+        "x": 940.5892646221145
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1526.5507667528736,
+        "tick": 71,
+        "time": 7.099999999999991,
+        "id": 18,
+        "organId": "liver",
+        "x": 940.4555530283228
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1526.5507667528736,
+        "tick": 71,
+        "time": 7.099999999999991,
+        "id": 18,
+        "organId": "liver",
+        "x": 940.4555530283228
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1526.2165195244845,
+        "tick": 72,
+        "time": 7.19999999999999,
+        "id": 18,
+        "organId": "liver",
+        "x": 940.3218414345312
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1526.2165195244845,
+        "tick": 72,
+        "time": 7.19999999999999,
+        "id": 18,
+        "organId": "liver",
+        "x": 940.3218414345312
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1525.8822722960956,
+        "tick": 73,
+        "time": 7.29999999999999,
+        "id": 18,
+        "organId": "liver",
+        "x": 940.1881298407395
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1525.8822722960956,
+        "tick": 73,
+        "time": 7.29999999999999,
+        "id": 18,
+        "organId": "liver",
+        "x": 940.1881298407395
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1525.5480250677067,
+        "tick": 74,
+        "time": 7.39999999999999,
+        "id": 18,
+        "organId": "liver",
+        "x": 940.054418246948
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1525.5480250677067,
+        "tick": 74,
+        "time": 7.39999999999999,
+        "id": 18,
+        "organId": "liver",
+        "x": 940.054418246948
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1525.2137778393178,
+        "tick": 75,
+        "time": 7.499999999999989,
+        "id": 18,
+        "organId": "liver",
+        "x": 939.9207066531565
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1525.2137778393178,
+        "tick": 75,
+        "time": 7.499999999999989,
+        "id": 18,
+        "organId": "liver",
+        "x": 939.9207066531565
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1524.879530610929,
+        "tick": 76,
+        "time": 7.599999999999989,
+        "id": 18,
+        "organId": "liver",
+        "x": 939.7869950593649
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1524.879530610929,
+        "tick": 76,
+        "time": 7.599999999999989,
+        "id": 18,
+        "organId": "liver",
+        "x": 939.7869950593649
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1524.54528338254,
+        "tick": 77,
+        "time": 7.699999999999989,
+        "id": 18,
+        "organId": "liver",
+        "x": 939.6532834655734
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1524.54528338254,
+        "tick": 77,
+        "time": 7.699999999999989,
+        "id": 18,
+        "organId": "liver",
+        "x": 939.6532834655734
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1524.211036154151,
+        "tick": 78,
+        "time": 7.799999999999988,
+        "id": 18,
+        "organId": "liver",
+        "x": 939.5195718717819
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1524.211036154151,
+        "tick": 78,
+        "time": 7.799999999999988,
+        "id": 18,
+        "organId": "liver",
+        "x": 939.5195718717819
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1523.8767889257622,
+        "tick": 79,
+        "time": 7.899999999999988,
+        "id": 18,
+        "organId": "liver",
+        "x": 939.3858602779903
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1523.8767889257622,
+        "tick": 79,
+        "time": 7.899999999999988,
+        "id": 18,
+        "organId": "liver",
+        "x": 939.3858602779903
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1523.5425416973733,
+        "tick": 80,
+        "time": 7.999999999999988,
+        "id": 18,
+        "organId": "liver",
+        "x": 939.2521486841988
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1523.5425416973733,
+        "tick": 80,
+        "time": 7.999999999999988,
+        "id": 18,
+        "organId": "liver",
+        "x": 939.2521486841988
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1523.2082944689844,
+        "tick": 81,
+        "time": 8.099999999999987,
+        "id": 18,
+        "organId": "liver",
+        "x": 939.1184370904073
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1523.2082944689844,
+        "tick": 81,
+        "time": 8.099999999999987,
+        "id": 18,
+        "organId": "liver",
+        "x": 939.1184370904073
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1522.8740472405955,
+        "tick": 82,
+        "time": 8.199999999999987,
+        "id": 18,
+        "organId": "liver",
+        "x": 938.9847254966157
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1522.8740472405955,
+        "tick": 82,
+        "time": 8.199999999999987,
+        "id": 18,
+        "organId": "liver",
+        "x": 938.9847254966157
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1522.5398000122066,
+        "tick": 83,
+        "time": 8.299999999999986,
+        "id": 18,
+        "organId": "liver",
+        "x": 938.8510139028242
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1522.5398000122066,
+        "tick": 83,
+        "time": 8.299999999999986,
+        "id": 18,
+        "organId": "liver",
+        "x": 938.8510139028242
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1522.2055527838177,
+        "tick": 84,
+        "time": 8.399999999999986,
+        "id": 18,
+        "organId": "liver",
+        "x": 938.7173023090327
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1522.2055527838177,
+        "tick": 84,
+        "time": 8.399999999999986,
+        "id": 18,
+        "organId": "liver",
+        "x": 938.7173023090327
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1521.8713055554288,
+        "tick": 85,
+        "time": 8.499999999999986,
+        "id": 18,
+        "organId": "liver",
+        "x": 938.5835907152411
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1521.8713055554288,
+        "tick": 85,
+        "time": 8.499999999999986,
+        "id": 18,
+        "organId": "liver",
+        "x": 938.5835907152411
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1521.5370583270399,
+        "tick": 86,
+        "time": 8.599999999999985,
+        "id": 18,
+        "organId": "liver",
+        "x": 938.4498791214496
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1521.5370583270399,
+        "tick": 86,
+        "time": 8.599999999999985,
+        "id": 18,
+        "organId": "liver",
+        "x": 938.4498791214496
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1521.202811098651,
+        "tick": 87,
+        "time": 8.699999999999985,
+        "id": 18,
+        "organId": "liver",
+        "x": 938.316167527658
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1521.202811098651,
+        "tick": 87,
+        "time": 8.699999999999985,
+        "id": 18,
+        "organId": "liver",
+        "x": 938.316167527658
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1520.868563870262,
+        "tick": 88,
+        "time": 8.799999999999985,
+        "id": 18,
+        "organId": "liver",
+        "x": 938.1824559338664
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1520.868563870262,
+        "tick": 88,
+        "time": 8.799999999999985,
+        "id": 18,
+        "organId": "liver",
+        "x": 938.1824559338664
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1520.5343166418731,
+        "tick": 89,
+        "time": 8.899999999999984,
+        "id": 18,
+        "organId": "liver",
+        "x": 938.0487443400749
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1520.5343166418731,
+        "tick": 89,
+        "time": 8.899999999999984,
+        "id": 18,
+        "organId": "liver",
+        "x": 938.0487443400749
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1520.2000694134842,
+        "tick": 90,
+        "time": 8.999999999999984,
+        "id": 18,
+        "organId": "liver",
+        "x": 937.9150327462834
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1520.2000694134842,
+        "tick": 90,
+        "time": 8.999999999999984,
+        "id": 18,
+        "organId": "liver",
+        "x": 937.9150327462834
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1519.8658221850953,
+        "tick": 91,
+        "time": 9.099999999999984,
+        "id": 18,
+        "organId": "liver",
+        "x": 937.7813211524917
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1519.8658221850953,
+        "tick": 91,
+        "time": 9.099999999999984,
+        "id": 18,
+        "organId": "liver",
+        "x": 937.7813211524917
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1519.5315749567064,
+        "tick": 92,
+        "time": 9.199999999999983,
+        "id": 18,
+        "organId": "liver",
+        "x": 937.6476095587002
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1519.5315749567064,
+        "tick": 92,
+        "time": 9.199999999999983,
+        "id": 18,
+        "organId": "liver",
+        "x": 937.6476095587002
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1519.1973277283175,
+        "tick": 93,
+        "time": 9.299999999999983,
+        "id": 18,
+        "organId": "liver",
+        "x": 937.5138979649087
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1519.1973277283175,
+        "tick": 93,
+        "time": 9.299999999999983,
+        "id": 18,
+        "organId": "liver",
+        "x": 937.5138979649087
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1518.8630804999286,
+        "tick": 94,
+        "time": 9.399999999999983,
+        "id": 18,
+        "organId": "liver",
+        "x": 937.3801863711171
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1518.8630804999286,
+        "tick": 94,
+        "time": 9.399999999999983,
+        "id": 18,
+        "organId": "liver",
+        "x": 937.3801863711171
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1518.5288332715397,
+        "tick": 95,
+        "time": 9.499999999999982,
+        "id": 18,
+        "organId": "liver",
+        "x": 937.2464747773255
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1518.5288332715397,
+        "tick": 95,
+        "time": 9.499999999999982,
+        "id": 18,
+        "organId": "liver",
+        "x": 937.2464747773255
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1518.1945860431508,
+        "tick": 96,
+        "time": 9.599999999999982,
+        "id": 18,
+        "organId": "liver",
+        "x": 937.112763183534
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1518.1945860431508,
+        "tick": 96,
+        "time": 9.599999999999982,
+        "id": 18,
+        "organId": "liver",
+        "x": 937.112763183534
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1517.860338814762,
+        "tick": 97,
+        "time": 9.699999999999982,
+        "id": 18,
+        "organId": "liver",
+        "x": 936.9790515897424
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1517.860338814762,
+        "tick": 97,
+        "time": 9.699999999999982,
+        "id": 18,
+        "organId": "liver",
+        "x": 936.9790515897424
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1517.526091586373,
+        "tick": 98,
+        "time": 9.799999999999981,
+        "id": 18,
+        "organId": "liver",
+        "x": 936.8453399959509
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1517.526091586373,
+        "tick": 98,
+        "time": 9.799999999999981,
+        "id": 18,
+        "organId": "liver",
+        "x": 936.8453399959509
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1517.191844357984,
+        "tick": 99,
+        "time": 9.89999999999998,
+        "id": 18,
+        "organId": "liver",
+        "x": 936.7116284021592
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1517.191844357984,
+        "tick": 99,
+        "time": 9.89999999999998,
+        "id": 18,
+        "organId": "liver",
+        "x": 936.7116284021592
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1516.8575971295952,
+        "organId": "liver",
+        "tick": 100,
+        "time": 9.99999999999998,
+        "id": 18,
+        "transit": {
+          "gateId": "liver.candidate.1",
+          "fromLane": 0,
+          "toLane": 118
+        },
+        "x": 936.5779168083677
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1516.8575971295952,
+        "organId": "liver",
+        "tick": 100,
+        "time": 9.99999999999998,
+        "id": 18,
+        "transit": {
+          "gateId": "liver.candidate.1",
+          "fromLane": 0,
+          "toLane": 118
+        },
+        "x": 936.5779168083677
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1516.5233499012063,
+        "organId": "liver",
+        "tick": 101,
+        "time": 10.09999999999998,
+        "id": 18,
+        "transit": {
+          "gateId": "liver.candidate.1",
+          "fromLane": 0,
+          "toLane": 118
+        },
+        "x": 936.4442052145762
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1516.5233499012063,
+        "organId": "liver",
+        "tick": 101,
+        "time": 10.09999999999998,
+        "id": 18,
+        "transit": {
+          "gateId": "liver.candidate.1",
+          "fromLane": 0,
+          "toLane": 118
+        },
+        "x": 936.4442052145762
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1516.1891026728174,
+        "organId": "liver",
+        "tick": 102,
+        "time": 10.19999999999998,
+        "id": 18,
+        "transit": {
+          "gateId": "liver.candidate.1",
+          "fromLane": 0,
+          "toLane": 118
+        },
+        "x": 936.3104936207847
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1516.1891026728174,
+        "organId": "liver",
+        "tick": 102,
+        "time": 10.19999999999998,
+        "id": 18,
+        "transit": {
+          "gateId": "liver.candidate.1",
+          "fromLane": 0,
+          "toLane": 118
+        },
+        "x": 936.3104936207847
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1515.8548554444285,
+        "organId": "liver",
+        "tick": 103,
+        "time": 10.29999999999998,
+        "id": 18,
+        "transit": {
+          "gateId": "liver.candidate.1",
+          "fromLane": 0,
+          "toLane": 118
+        },
+        "x": 936.1767820269931
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1515.8548554444285,
+        "organId": "liver",
+        "tick": 103,
+        "time": 10.29999999999998,
+        "id": 18,
+        "transit": {
+          "gateId": "liver.candidate.1",
+          "fromLane": 0,
+          "toLane": 118
+        },
+        "x": 936.1767820269931
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1515.5206082160396,
+        "organId": "liver",
+        "tick": 104,
+        "time": 10.399999999999979,
+        "id": 18,
+        "transit": {
+          "gateId": "liver.candidate.1",
+          "fromLane": 0,
+          "toLane": 118
+        },
+        "x": 936.0430704332015
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1515.5206082160396,
+        "organId": "liver",
+        "tick": 104,
+        "time": 10.399999999999979,
+        "id": 18,
+        "transit": {
+          "gateId": "liver.candidate.1",
+          "fromLane": 0,
+          "toLane": 118
+        },
+        "x": 936.0430704332015
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1515.1863609876507,
+        "organId": "liver",
+        "tick": 105,
+        "time": 10.499999999999979,
+        "id": 18,
+        "transit": {
+          "gateId": "liver.candidate.1",
+          "fromLane": 0,
+          "toLane": 118
+        },
+        "x": 935.90935883941
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1515.1863609876507,
+        "organId": "liver",
+        "tick": 105,
+        "time": 10.499999999999979,
+        "id": 18,
+        "transit": {
+          "gateId": "liver.candidate.1",
+          "fromLane": 0,
+          "toLane": 118
+        },
+        "x": 935.90935883941
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1514.8521137592618,
+        "organId": "liver",
+        "tick": 106,
+        "time": 10.599999999999978,
+        "id": 18,
+        "transit": {
+          "gateId": "liver.candidate.1",
+          "fromLane": 0,
+          "toLane": 118
+        },
+        "x": 935.7756472456184
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1514.8521137592618,
+        "organId": "liver",
+        "tick": 106,
+        "time": 10.599999999999978,
+        "id": 18,
+        "transit": {
+          "gateId": "liver.candidate.1",
+          "fromLane": 0,
+          "toLane": 118
+        },
+        "x": 935.7756472456184
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1514.5178665308729,
+        "organId": "liver",
+        "tick": 107,
+        "time": 10.699999999999978,
+        "id": 18,
+        "transit": {
+          "gateId": "liver.candidate.1",
+          "fromLane": 0,
+          "toLane": 118
+        },
+        "x": 935.6419356518269
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1514.5178665308729,
+        "organId": "liver",
+        "tick": 107,
+        "time": 10.699999999999978,
+        "id": 18,
+        "transit": {
+          "gateId": "liver.candidate.1",
+          "fromLane": 0,
+          "toLane": 118
+        },
+        "x": 935.6419356518269
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1514.183619302484,
+        "organId": "liver",
+        "tick": 108,
+        "time": 10.799999999999978,
+        "id": 18,
+        "transit": {
+          "gateId": "liver.candidate.1",
+          "fromLane": 0,
+          "toLane": 118
+        },
+        "x": 935.5082240580352
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1514.183619302484,
+        "organId": "liver",
+        "tick": 108,
+        "time": 10.799999999999978,
+        "id": 18,
+        "transit": {
+          "gateId": "liver.candidate.1",
+          "fromLane": 0,
+          "toLane": 118
+        },
+        "x": 935.5082240580352
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1513.849372074095,
+        "organId": "liver",
+        "tick": 109,
+        "time": 10.899999999999977,
+        "id": 18,
+        "transit": {
+          "gateId": "liver.candidate.1",
+          "fromLane": 0,
+          "toLane": 118
+        },
+        "x": 935.3745124642437
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1513.849372074095,
+        "organId": "liver",
+        "tick": 109,
+        "time": 10.899999999999977,
+        "id": 18,
+        "transit": {
+          "gateId": "liver.candidate.1",
+          "fromLane": 0,
+          "toLane": 118
+        },
+        "x": 935.3745124642437
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1513.5151248457062,
+        "organId": "liver",
+        "tick": 110,
+        "time": 10.999999999999977,
+        "id": 18,
+        "transit": {
+          "gateId": "liver.candidate.1",
+          "fromLane": 0,
+          "toLane": 118
+        },
+        "x": 935.2408008704522
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1513.5151248457062,
+        "organId": "liver",
+        "tick": 110,
+        "time": 10.999999999999977,
+        "id": 18,
+        "transit": {
+          "gateId": "liver.candidate.1",
+          "fromLane": 0,
+          "toLane": 118
+        },
+        "x": 935.2408008704522
+      },
+      {
+        "lane": 118,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1513.1808776173173,
+        "tick": 111,
+        "time": 11.099999999999977,
+        "id": 18,
+        "organId": "liver",
+        "x": 935.1070892766606
+      },
+      {
+        "lane": 118,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1513.1808776173173,
+        "tick": 111,
+        "time": 11.099999999999977,
+        "id": 18,
+        "organId": "liver",
+        "x": 935.1070892766606
+      },
+      {
+        "lane": 118,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1512.8466303889284,
+        "tick": 112,
+        "time": 11.199999999999976,
+        "id": 18,
+        "organId": "liver",
+        "x": 934.973377682869
+      },
+      {
+        "lane": 118,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1512.8466303889284,
+        "tick": 112,
+        "time": 11.199999999999976,
+        "id": 18,
+        "organId": "liver",
+        "x": 934.973377682869
+      },
+      {
+        "lane": 118,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1512.5123831605395,
+        "tick": 113,
+        "time": 11.299999999999976,
+        "id": 18,
+        "organId": "liver",
+        "x": 934.8396660890775
+      },
+      {
+        "lane": 118,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1512.5123831605395,
+        "tick": 113,
+        "time": 11.299999999999976,
+        "id": 18,
+        "organId": "liver",
+        "x": 934.8396660890775
+      },
+      {
+        "lane": 118,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1512.2403481323342,
+        "tick": 114,
+        "time": 11.399999999999975,
+        "id": 18,
+        "organId": "liver",
+        "x": 934.7308417396168
+      },
+      {
+        "lane": 118,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1512.2403481323342,
+        "tick": 114,
+        "time": 11.399999999999975,
+        "id": 18,
+        "organId": "liver",
+        "x": 934.7308417396168
+      },
+      {
+        "lane": 118,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1512.0762258904206,
+        "tick": 115,
+        "time": 11.499999999999975,
+        "id": 18,
+        "organId": "liver",
+        "x": 934.6651866056949
+      },
+      {
+        "lane": 118,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1512.0762258904206,
+        "tick": 115,
+        "time": 11.499999999999975,
+        "id": 18,
+        "organId": "liver",
+        "x": 934.6651866056949
+      },
+      {
+        "lane": 118,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1512.0762258904206,
+        "tick": 116,
+        "time": 11.599999999999975,
+        "id": 18,
+        "organId": "liver",
+        "x": 934.6651866056949
+      },
+      {
+        "lane": 118,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1512.0762258904206,
+        "tick": 117,
+        "time": 11.699999999999974,
+        "id": 18,
+        "organId": "liver",
+        "x": 934.6651866056949
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1512.3303704240984,
+        "tick": 118,
+        "time": 11.799999999999974,
+        "id": 18,
+        "organId": "liver",
+        "x": 934.76685407745
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1512.3303704240984,
+        "tick": 118,
+        "time": 11.799999999999974,
+        "id": 18,
+        "organId": "liver",
+        "x": 934.76685407745
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1512.6254040463834,
+        "tick": 119,
+        "time": 11.899999999999974,
+        "id": 18,
+        "organId": "liver",
+        "x": 934.8848787385608
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1512.6254040463834,
+        "tick": 119,
+        "time": 11.899999999999974,
+        "id": 18,
+        "organId": "liver",
+        "x": 934.8848787385608
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1512.9404545809632,
+        "tick": 120,
+        "time": 11.999999999999973,
+        "id": 18,
+        "organId": "liver",
+        "x": 935.0109109252945
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1512.9404545809632,
+        "tick": 120,
+        "time": 11.999999999999973,
+        "id": 18,
+        "organId": "liver",
+        "x": 935.0109109252945
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1513.2653042280067,
+        "tick": 121,
+        "time": 12.099999999999973,
+        "id": 18,
+        "organId": "liver",
+        "x": 935.1408631294106
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1513.2653042280067,
+        "tick": 121,
+        "time": 12.099999999999973,
+        "id": 18,
+        "organId": "liver",
+        "x": 935.1408631294106
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1513.594950948828,
+        "tick": 122,
+        "time": 12.199999999999973,
+        "id": 18,
+        "organId": "liver",
+        "x": 935.2727343453415
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1513.594950948828,
+        "tick": 122,
+        "time": 12.199999999999973,
+        "id": 18,
+        "organId": "liver",
+        "x": 935.2727343453415
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1513.9269460371074,
+        "tick": 123,
+        "time": 12.299999999999972,
+        "id": 18,
+        "organId": "liver",
+        "x": 935.405544997501
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1513.9269460371074,
+        "tick": 123,
+        "time": 12.299999999999972,
+        "id": 18,
+        "organId": "liver",
+        "x": 935.405544997501
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1514.2600907490896,
+        "tick": 124,
+        "time": 12.399999999999972,
+        "id": 18,
+        "organId": "liver",
+        "x": 935.5388155428308
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1514.2600907490896,
+        "tick": 124,
+        "time": 12.399999999999972,
+        "id": 18,
+        "organId": "liver",
+        "x": 935.5388155428308
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1514.5937982497671,
+        "tick": 125,
+        "time": 12.499999999999972,
+        "id": 18,
+        "organId": "liver",
+        "x": 935.6723112250264
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1514.5937982497671,
+        "tick": 125,
+        "time": 12.499999999999972,
+        "id": 18,
+        "organId": "liver",
+        "x": 935.6723112250264
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1514.9277812589567,
+        "tick": 126,
+        "time": 12.599999999999971,
+        "id": 18,
+        "organId": "liver",
+        "x": 935.805917121097
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1514.9277812589567,
+        "tick": 126,
+        "time": 12.599999999999971,
+        "id": 18,
+        "organId": "liver",
+        "x": 935.805917121097
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1515.2618991410402,
+        "tick": 127,
+        "time": 12.69999999999997,
+        "id": 18,
+        "organId": "liver",
+        "x": 935.9395769714508
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1515.2618991410402,
+        "tick": 127,
+        "time": 12.69999999999997,
+        "id": 18,
+        "organId": "liver",
+        "x": 935.9395769714508
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1515.5960830490242,
+        "tick": 128,
+        "time": 12.79999999999997,
+        "id": 18,
+        "organId": "liver",
+        "x": 936.0732632346741
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1515.5960830490242,
+        "tick": 128,
+        "time": 12.79999999999997,
+        "id": 18,
+        "organId": "liver",
+        "x": 936.0732632346741
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1515.930299279437,
+        "tick": 129,
+        "time": 12.89999999999997,
+        "id": 18,
+        "organId": "liver",
+        "x": 936.2069624280972
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1515.930299279437,
+        "tick": 129,
+        "time": 12.89999999999997,
+        "id": 18,
+        "organId": "liver",
+        "x": 936.2069624280972
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1516.2645313330252,
+        "tick": 130,
+        "time": 12.99999999999997,
+        "id": 18,
+        "organId": "liver",
+        "x": 936.3406679513918
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1516.2645313330252,
+        "tick": 130,
+        "time": 12.99999999999997,
+        "id": 18,
+        "organId": "liver",
+        "x": 936.3406679513918
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1516.598771132717,
+        "tick": 131,
+        "time": 13.09999999999997,
+        "id": 18,
+        "organId": "liver",
+        "x": 936.4743765734222
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1516.598771132717,
+        "tick": 131,
+        "time": 13.09999999999997,
+        "id": 18,
+        "organId": "liver",
+        "x": 936.4743765734222
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1516.9330147244493,
+        "tick": 132,
+        "time": 13.199999999999969,
+        "id": 18,
+        "organId": "liver",
+        "x": 936.6080867124128
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1516.9330147244493,
+        "tick": 132,
+        "time": 13.199999999999969,
+        "id": 18,
+        "organId": "liver",
+        "x": 936.6080867124128
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1517.2672601725433,
+        "tick": 133,
+        "time": 13.299999999999969,
+        "id": 18,
+        "organId": "liver",
+        "x": 936.7417975940187
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1517.2672601725433,
+        "tick": 133,
+        "time": 13.299999999999969,
+        "id": 18,
+        "organId": "liver",
+        "x": 936.7417975940187
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1517.6015065294037,
+        "tick": 134,
+        "time": 13.399999999999968,
+        "id": 18,
+        "organId": "liver",
+        "x": 936.8755088391658
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1517.6015065294037,
+        "tick": 134,
+        "time": 13.399999999999968,
+        "id": 18,
+        "organId": "liver",
+        "x": 936.8755088391658
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1517.9357533311431,
+        "tick": 135,
+        "time": 13.499999999999968,
+        "id": 18,
+        "organId": "liver",
+        "x": 937.0092202622814
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1517.9357533311431,
+        "tick": 135,
+        "time": 13.499999999999968,
+        "id": 18,
+        "organId": "liver",
+        "x": 937.0092202622814
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1518.2700003506693,
+        "tick": 136,
+        "time": 13.599999999999968,
+        "id": 18,
+        "organId": "liver",
+        "x": 937.1429317725199
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1518.2700003506693,
+        "tick": 136,
+        "time": 13.599999999999968,
+        "id": 18,
+        "organId": "liver",
+        "x": 937.1429317725199
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1518.6042474768112,
+        "tick": 137,
+        "time": 13.699999999999967,
+        "id": 18,
+        "organId": "liver",
+        "x": 937.2766433254088
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1518.6042474768112,
+        "tick": 137,
+        "time": 13.699999999999967,
+        "id": 18,
+        "organId": "liver",
+        "x": 937.2766433254088
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1518.938494655146,
+        "tick": 138,
+        "time": 13.799999999999967,
+        "id": 18,
+        "organId": "liver",
+        "x": 937.4103548991768
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1518.938494655146,
+        "tick": 138,
+        "time": 13.799999999999967,
+        "id": 18,
+        "organId": "liver",
+        "x": 937.4103548991768
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1519.2727418590314,
+        "tick": 139,
+        "time": 13.899999999999967,
+        "id": 18,
+        "organId": "liver",
+        "x": 937.544066483166
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1519.2727418590314,
+        "tick": 139,
+        "time": 13.899999999999967,
+        "id": 18,
+        "organId": "liver",
+        "x": 937.544066483166
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1519.6069890754247,
+        "tick": 140,
+        "time": 13.999999999999966,
+        "id": 18,
+        "organId": "liver",
+        "x": 937.677778072159
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1519.6069890754247,
+        "tick": 140,
+        "time": 13.999999999999966,
+        "id": 18,
+        "organId": "liver",
+        "x": 937.677778072159
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1519.9412362979415,
+        "tick": 141,
+        "time": 14.099999999999966,
+        "id": 18,
+        "organId": "liver",
+        "x": 937.8114896636014
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1519.9412362979415,
+        "tick": 141,
+        "time": 14.099999999999966,
+        "id": 18,
+        "organId": "liver",
+        "x": 937.8114896636014
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1520.2754835234557,
+        "tick": 142,
+        "time": 14.199999999999966,
+        "id": 18,
+        "organId": "liver",
+        "x": 937.945201256243
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1520.2754835234557,
+        "tick": 142,
+        "time": 14.199999999999966,
+        "id": 18,
+        "organId": "liver",
+        "x": 937.945201256243
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1520.6097307504374,
+        "tick": 143,
+        "time": 14.299999999999965,
+        "id": 18,
+        "organId": "liver",
+        "x": 938.0789128494715
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1520.6097307504374,
+        "tick": 143,
+        "time": 14.299999999999965,
+        "id": 18,
+        "organId": "liver",
+        "x": 938.0789128494715
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1520.9439779781374,
+        "tick": 144,
+        "time": 14.399999999999965,
+        "id": 18,
+        "organId": "liver",
+        "x": 938.2126244429875
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1520.9439779781374,
+        "tick": 144,
+        "time": 14.399999999999965,
+        "id": 18,
+        "organId": "liver",
+        "x": 938.2126244429875
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1521.278225206189,
+        "tick": 145,
+        "time": 14.499999999999964,
+        "id": 18,
+        "organId": "liver",
+        "x": 938.3463360366442
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1521.278225206189,
+        "tick": 145,
+        "time": 14.499999999999964,
+        "id": 18,
+        "organId": "liver",
+        "x": 938.3463360366442
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1521.612472434413,
+        "tick": 146,
+        "time": 14.599999999999964,
+        "id": 18,
+        "organId": "liver",
+        "x": 938.4800476303697
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1521.612472434413,
+        "tick": 146,
+        "time": 14.599999999999964,
+        "id": 18,
+        "organId": "liver",
+        "x": 938.4800476303697
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1521.946719662721,
+        "tick": 147,
+        "time": 14.699999999999964,
+        "id": 18,
+        "organId": "liver",
+        "x": 938.6137592241289
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1521.946719662721,
+        "tick": 147,
+        "time": 14.699999999999964,
+        "id": 18,
+        "organId": "liver",
+        "x": 938.6137592241289
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1522.2809668910704,
+        "tick": 148,
+        "time": 14.799999999999963,
+        "id": 18,
+        "organId": "liver",
+        "x": 938.7474708179046
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1522.2809668910704,
+        "tick": 148,
+        "time": 14.799999999999963,
+        "id": 18,
+        "organId": "liver",
+        "x": 938.7474708179046
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1522.61521411944,
+        "tick": 149,
+        "time": 14.899999999999963,
+        "id": 18,
+        "organId": "liver",
+        "x": 938.8811824116884
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1522.61521411944,
+        "tick": 149,
+        "time": 14.899999999999963,
+        "id": 18,
+        "organId": "liver",
+        "x": 938.8811824116884
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1522.9494613478196,
+        "tick": 150,
+        "time": 14.999999999999963,
+        "id": 18,
+        "organId": "liver",
+        "x": 939.0148940054762
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1522.9494613478196,
+        "tick": 150,
+        "time": 14.999999999999963,
+        "id": 18,
+        "organId": "liver",
+        "x": 939.0148940054762
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1523.283708576204,
+        "tick": 151,
+        "time": 15.099999999999962,
+        "id": 18,
+        "organId": "liver",
+        "x": 939.1486055992659
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1523.283708576204,
+        "tick": 151,
+        "time": 15.099999999999962,
+        "id": 18,
+        "organId": "liver",
+        "x": 939.1486055992659
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1523.6179558045906,
+        "tick": 152,
+        "time": 15.199999999999962,
+        "id": 18,
+        "organId": "liver",
+        "x": 939.2823171930565
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1523.6179558045906,
+        "tick": 152,
+        "time": 15.199999999999962,
+        "id": 18,
+        "organId": "liver",
+        "x": 939.2823171930565
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1523.9522030329783,
+        "tick": 153,
+        "time": 15.299999999999962,
+        "id": 18,
+        "organId": "liver",
+        "x": 939.4160287868476
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1523.9522030329783,
+        "tick": 153,
+        "time": 15.299999999999962,
+        "id": 18,
+        "organId": "liver",
+        "x": 939.4160287868476
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1524.2864502613668,
+        "tick": 154,
+        "time": 15.399999999999961,
+        "id": 18,
+        "organId": "liver",
+        "x": 939.5497403806389
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1524.2864502613668,
+        "tick": 154,
+        "time": 15.399999999999961,
+        "id": 18,
+        "organId": "liver",
+        "x": 939.5497403806389
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1524.6206974897555,
+        "tick": 155,
+        "time": 15.499999999999961,
+        "id": 18,
+        "organId": "liver",
+        "x": 939.6834519744303
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1524.6206974897555,
+        "tick": 155,
+        "time": 15.499999999999961,
+        "id": 18,
+        "organId": "liver",
+        "x": 939.6834519744303
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1524.9549447181444,
+        "tick": 156,
+        "time": 15.59999999999996,
+        "id": 18,
+        "organId": "liver",
+        "x": 939.8171635682219
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1524.9549447181444,
+        "tick": 156,
+        "time": 15.59999999999996,
+        "id": 18,
+        "organId": "liver",
+        "x": 939.8171635682219
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1525.2891919465333,
+        "tick": 157,
+        "time": 15.69999999999996,
+        "id": 18,
+        "organId": "liver",
+        "x": 939.9508751620134
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1525.2891919465333,
+        "tick": 157,
+        "time": 15.69999999999996,
+        "id": 18,
+        "organId": "liver",
+        "x": 939.9508751620134
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1525.6234391749222,
+        "tick": 158,
+        "time": 15.79999999999996,
+        "id": 18,
+        "organId": "liver",
+        "x": 940.0845867558049
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1525.6234391749222,
+        "tick": 158,
+        "time": 15.79999999999996,
+        "id": 18,
+        "organId": "liver",
+        "x": 940.0845867558049
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1525.957686403311,
+        "tick": 159,
+        "time": 15.89999999999996,
+        "id": 18,
+        "organId": "liver",
+        "x": 940.2182983495965
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1525.957686403311,
+        "tick": 159,
+        "time": 15.89999999999996,
+        "id": 18,
+        "organId": "liver",
+        "x": 940.2182983495965
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1526.2919336317,
+        "tick": 160,
+        "time": 15.99999999999996,
+        "id": 18,
+        "organId": "liver",
+        "x": 940.352009943388
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1526.2919336317,
+        "tick": 160,
+        "time": 15.99999999999996,
+        "id": 18,
+        "organId": "liver",
+        "x": 940.352009943388
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1526.6261808600889,
+        "tick": 161,
+        "time": 16.09999999999996,
+        "id": 18,
+        "organId": "liver",
+        "x": 940.4857215371795
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1526.6261808600889,
+        "tick": 161,
+        "time": 16.09999999999996,
+        "id": 18,
+        "organId": "liver",
+        "x": 940.4857215371795
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1526.9604280884778,
+        "tick": 162,
+        "time": 16.19999999999996,
+        "id": 18,
+        "organId": "liver",
+        "x": 940.6194331309711
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1526.9604280884778,
+        "tick": 162,
+        "time": 16.19999999999996,
+        "id": 18,
+        "organId": "liver",
+        "x": 940.6194331309711
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1527.2946753168667,
+        "tick": 163,
+        "time": 16.29999999999996,
+        "id": 18,
+        "organId": "liver",
+        "x": 940.7531447247626
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1527.2946753168667,
+        "tick": 163,
+        "time": 16.29999999999996,
+        "id": 18,
+        "organId": "liver",
+        "x": 940.7531447247626
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1527.6289225452556,
+        "tick": 164,
+        "time": 16.399999999999963,
+        "id": 18,
+        "organId": "liver",
+        "x": 940.8868563185541
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1527.6289225452556,
+        "tick": 164,
+        "time": 16.399999999999963,
+        "id": 18,
+        "organId": "liver",
+        "x": 940.8868563185541
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1527.9631697736445,
+        "tick": 165,
+        "time": 16.499999999999964,
+        "id": 18,
+        "organId": "liver",
+        "x": 941.0205679123457
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1527.9631697736445,
+        "tick": 165,
+        "time": 16.499999999999964,
+        "id": 18,
+        "organId": "liver",
+        "x": 941.0205679123457
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1528.2974170020334,
+        "tick": 166,
+        "time": 16.599999999999966,
+        "id": 18,
+        "organId": "liver",
+        "x": 941.1542795061372
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1528.2974170020334,
+        "tick": 166,
+        "time": 16.599999999999966,
+        "id": 18,
+        "organId": "liver",
+        "x": 941.1542795061372
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1528.6316642304223,
+        "tick": 167,
+        "time": 16.699999999999967,
+        "id": 18,
+        "organId": "liver",
+        "x": 941.2879910999287
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1528.6316642304223,
+        "tick": 167,
+        "time": 16.699999999999967,
+        "id": 18,
+        "organId": "liver",
+        "x": 941.2879910999287
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1528.9659114588112,
+        "tick": 168,
+        "time": 16.79999999999997,
+        "id": 18,
+        "organId": "liver",
+        "x": 941.4217026937202
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1528.9659114588112,
+        "tick": 168,
+        "time": 16.79999999999997,
+        "id": 18,
+        "organId": "liver",
+        "x": 941.4217026937202
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1529.3001586872,
+        "tick": 169,
+        "time": 16.89999999999997,
+        "id": 18,
+        "organId": "liver",
+        "x": 941.5554142875118
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1529.3001586872,
+        "tick": 169,
+        "time": 16.89999999999997,
+        "id": 18,
+        "organId": "liver",
+        "x": 941.5554142875118
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1529.634405915589,
+        "tick": 170,
+        "time": 16.99999999999997,
+        "id": 18,
+        "organId": "liver",
+        "x": 941.6891258813033
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1529.634405915589,
+        "tick": 170,
+        "time": 16.99999999999997,
+        "id": 18,
+        "organId": "liver",
+        "x": 941.6891258813033
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1529.968653143978,
+        "tick": 171,
+        "time": 17.099999999999973,
+        "id": 18,
+        "organId": "liver",
+        "x": 941.8228374750948
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1529.968653143978,
+        "tick": 171,
+        "time": 17.099999999999973,
+        "id": 18,
+        "organId": "liver",
+        "x": 941.8228374750948
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1530.3029003723668,
+        "tick": 172,
+        "time": 17.199999999999974,
+        "id": 18,
+        "organId": "liver",
+        "x": 941.9565490688864
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1530.3029003723668,
+        "tick": 172,
+        "time": 17.199999999999974,
+        "id": 18,
+        "organId": "liver",
+        "x": 941.9565490688864
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1530.6371476007557,
+        "tick": 173,
+        "time": 17.299999999999976,
+        "id": 18,
+        "organId": "liver",
+        "x": 942.0902606626779
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1530.6371476007557,
+        "tick": 173,
+        "time": 17.299999999999976,
+        "id": 18,
+        "organId": "liver",
+        "x": 942.0902606626779
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1530.9713948291446,
+        "tick": 174,
+        "time": 17.399999999999977,
+        "id": 18,
+        "organId": "liver",
+        "x": 942.2239722564694
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1530.9713948291446,
+        "tick": 174,
+        "time": 17.399999999999977,
+        "id": 18,
+        "organId": "liver",
+        "x": 942.2239722564694
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1531.3056420575335,
+        "tick": 175,
+        "time": 17.49999999999998,
+        "id": 18,
+        "organId": "liver",
+        "x": 942.357683850261
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1531.3056420575335,
+        "tick": 175,
+        "time": 17.49999999999998,
+        "id": 18,
+        "organId": "liver",
+        "x": 942.357683850261
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1531.6398892859224,
+        "tick": 176,
+        "time": 17.59999999999998,
+        "id": 18,
+        "organId": "liver",
+        "x": 942.4913954440525
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1531.6398892859224,
+        "tick": 176,
+        "time": 17.59999999999998,
+        "id": 18,
+        "organId": "liver",
+        "x": 942.4913954440525
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1531.9741365143113,
+        "tick": 177,
+        "time": 17.69999999999998,
+        "id": 18,
+        "organId": "liver",
+        "x": 942.625107037844
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1531.9741365143113,
+        "tick": 177,
+        "time": 17.69999999999998,
+        "id": 18,
+        "organId": "liver",
+        "x": 942.625107037844
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1532.3083837427002,
+        "tick": 178,
+        "time": 17.799999999999983,
+        "id": 18,
+        "organId": "liver",
+        "x": 942.7588186316356
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1532.3083837427002,
+        "tick": 178,
+        "time": 17.799999999999983,
+        "id": 18,
+        "organId": "liver",
+        "x": 942.7588186316356
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1532.6426309710891,
+        "tick": 179,
+        "time": 17.899999999999984,
+        "id": 18,
+        "organId": "liver",
+        "x": 942.8925302254271
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1532.6426309710891,
+        "tick": 179,
+        "time": 17.899999999999984,
+        "id": 18,
+        "organId": "liver",
+        "x": 942.8925302254271
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1532.976878199478,
+        "tick": 180,
+        "time": 17.999999999999986,
+        "id": 18,
+        "organId": "liver",
+        "x": 943.0262418192186
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1532.976878199478,
+        "tick": 180,
+        "time": 17.999999999999986,
+        "id": 18,
+        "organId": "liver",
+        "x": 943.0262418192186
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1533.311125427867,
+        "tick": 181,
+        "time": 18.099999999999987,
+        "id": 18,
+        "organId": "liver",
+        "x": 943.1599534130102
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1533.311125427867,
+        "tick": 181,
+        "time": 18.099999999999987,
+        "id": 18,
+        "organId": "liver",
+        "x": 943.1599534130102
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1533.6453726562559,
+        "tick": 182,
+        "time": 18.19999999999999,
+        "id": 18,
+        "organId": "liver",
+        "x": 943.2936650068017
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1533.6453726562559,
+        "tick": 182,
+        "time": 18.19999999999999,
+        "id": 18,
+        "organId": "liver",
+        "x": 943.2936650068017
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1533.9796198846448,
+        "tick": 183,
+        "time": 18.29999999999999,
+        "id": 18,
+        "organId": "liver",
+        "x": 943.4273766005932
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1533.9796198846448,
+        "tick": 183,
+        "time": 18.29999999999999,
+        "id": 18,
+        "organId": "liver",
+        "x": 943.4273766005932
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1534.3138671130337,
+        "tick": 184,
+        "time": 18.39999999999999,
+        "id": 18,
+        "organId": "liver",
+        "x": 943.5610881943848
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1534.3138671130337,
+        "tick": 184,
+        "time": 18.39999999999999,
+        "id": 18,
+        "organId": "liver",
+        "x": 943.5610881943848
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1534.6481143414226,
+        "tick": 185,
+        "time": 18.499999999999993,
+        "id": 18,
+        "organId": "liver",
+        "x": 943.6947997881763
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1534.6481143414226,
+        "tick": 185,
+        "time": 18.499999999999993,
+        "id": 18,
+        "organId": "liver",
+        "x": 943.6947997881763
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1534.9823615698115,
+        "tick": 186,
+        "time": 18.599999999999994,
+        "id": 18,
+        "organId": "liver",
+        "x": 943.8285113819679
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1534.9823615698115,
+        "tick": 186,
+        "time": 18.599999999999994,
+        "id": 18,
+        "organId": "liver",
+        "x": 943.8285113819679
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1535.3166087982004,
+        "tick": 187,
+        "time": 18.699999999999996,
+        "id": 18,
+        "organId": "liver",
+        "x": 943.9622229757595
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1535.3166087982004,
+        "tick": 187,
+        "time": 18.699999999999996,
+        "id": 18,
+        "organId": "liver",
+        "x": 943.9622229757595
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1535.6508560265893,
+        "tick": 188,
+        "time": 18.799999999999997,
+        "id": 18,
+        "organId": "liver",
+        "x": 944.095934569551
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1535.6508560265893,
+        "tick": 188,
+        "time": 18.799999999999997,
+        "id": 18,
+        "organId": "liver",
+        "x": 944.095934569551
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1535.9851032549782,
+        "tick": 189,
+        "time": 18.9,
+        "id": 18,
+        "organId": "liver",
+        "x": 944.2296461633425
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1535.9851032549782,
+        "tick": 189,
+        "time": 18.9,
+        "id": 18,
+        "organId": "liver",
+        "x": 944.2296461633425
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1536.319350483367,
+        "tick": 190,
+        "time": 19.0,
+        "id": 18,
+        "organId": "liver",
+        "x": 944.3633577571342
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1536.319350483367,
+        "tick": 190,
+        "time": 19.0,
+        "id": 18,
+        "organId": "liver",
+        "x": 944.3633577571342
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1536.653597711756,
+        "tick": 191,
+        "time": 19.1,
+        "id": 18,
+        "organId": "liver",
+        "x": 944.4970693509257
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1536.653597711756,
+        "tick": 191,
+        "time": 19.1,
+        "id": 18,
+        "organId": "liver",
+        "x": 944.4970693509257
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1536.987844940145,
+        "tick": 192,
+        "time": 19.200000000000003,
+        "id": 18,
+        "organId": "liver",
+        "x": 944.6307809447172
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1536.987844940145,
+        "tick": 192,
+        "time": 19.200000000000003,
+        "id": 18,
+        "organId": "liver",
+        "x": 944.6307809447172
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1537.3220921685338,
+        "tick": 193,
+        "time": 19.300000000000004,
+        "id": 18,
+        "organId": "liver",
+        "x": 944.7644925385088
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1537.3220921685338,
+        "tick": 193,
+        "time": 19.300000000000004,
+        "id": 18,
+        "organId": "liver",
+        "x": 944.7644925385088
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1537.6563393969227,
+        "tick": 194,
+        "time": 19.400000000000006,
+        "id": 18,
+        "organId": "liver",
+        "x": 944.8982041323004
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1537.6563393969227,
+        "tick": 194,
+        "time": 19.400000000000006,
+        "id": 18,
+        "organId": "liver",
+        "x": 944.8982041323004
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1537.9905866253116,
+        "tick": 195,
+        "time": 19.500000000000007,
+        "id": 18,
+        "organId": "liver",
+        "x": 945.0319157260919
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1537.9905866253116,
+        "tick": 195,
+        "time": 19.500000000000007,
+        "id": 18,
+        "organId": "liver",
+        "x": 945.0319157260919
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1538.3248338537005,
+        "tick": 196,
+        "time": 19.60000000000001,
+        "id": 18,
+        "organId": "liver",
+        "x": 945.1656273198835
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1538.3248338537005,
+        "tick": 196,
+        "time": 19.60000000000001,
+        "id": 18,
+        "organId": "liver",
+        "x": 945.1656273198835
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1538.6590810820894,
+        "tick": 197,
+        "time": 19.70000000000001,
+        "id": 18,
+        "organId": "liver",
+        "x": 945.299338913675
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1538.6590810820894,
+        "tick": 197,
+        "time": 19.70000000000001,
+        "id": 18,
+        "organId": "liver",
+        "x": 945.299338913675
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1538.9933283104783,
+        "tick": 198,
+        "time": 19.80000000000001,
+        "id": 18,
+        "organId": "liver",
+        "x": 945.4330505074666
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1538.9933283104783,
+        "tick": 198,
+        "time": 19.80000000000001,
+        "id": 18,
+        "organId": "liver",
+        "x": 945.4330505074666
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1539.3275755388672,
+        "tick": 199,
+        "time": 19.900000000000013,
+        "id": 18,
+        "organId": "liver",
+        "x": 945.5667621012582
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1539.3275755388672,
+        "tick": 199,
+        "time": 19.900000000000013,
+        "id": 18,
+        "organId": "liver",
+        "x": 945.5667621012582
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1539.6822970815163,
+        "tick": 200,
+        "time": 20.000000000000014,
+        "id": 18,
+        "organId": "liver",
+        "x": 945.7086641988416
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1539.6822970815163,
+        "tick": 200,
+        "time": 20.000000000000014,
+        "id": 18,
+        "organId": "liver",
+        "x": 945.7086641988416
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1540.0470416539465,
+        "tick": 201,
+        "time": 20.100000000000016,
+        "id": 18,
+        "organId": "liver",
+        "x": 945.8545758892437
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1540.0470416539465,
+        "tick": 201,
+        "time": 20.100000000000016,
+        "id": 18,
+        "organId": "liver",
+        "x": 945.8545758892437
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1540.4166929170096,
+        "tick": 202,
+        "time": 20.200000000000017,
+        "id": 18,
+        "organId": "liver",
+        "x": 946.0024504423686
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1540.4166929170096,
+        "tick": 202,
+        "time": 20.200000000000017,
+        "id": 18,
+        "organId": "liver",
+        "x": 946.0024504423686
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1540.7887462095482,
+        "tick": 203,
+        "time": 20.30000000000002,
+        "id": 18,
+        "organId": "liver",
+        "x": 946.1512858985683
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1540.7887462095482,
+        "tick": 203,
+        "time": 20.30000000000002,
+        "id": 18,
+        "organId": "liver",
+        "x": 946.1512858985683
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1541.1619753955824,
+        "tick": 204,
+        "time": 20.40000000000002,
+        "id": 18,
+        "organId": "liver",
+        "x": 946.3005917568538
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1541.1619753955824,
+        "tick": 204,
+        "time": 20.40000000000002,
+        "id": 18,
+        "organId": "liver",
+        "x": 946.3005917568538
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1541.53578023047,
+        "tick": 205,
+        "time": 20.50000000000002,
+        "id": 18,
+        "organId": "liver",
+        "x": 946.4501278965571
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1541.53578023047,
+        "tick": 205,
+        "time": 20.50000000000002,
+        "id": 18,
+        "organId": "liver",
+        "x": 946.4501278965571
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1541.9098668694526,
+        "tick": 206,
+        "time": 20.600000000000023,
+        "id": 18,
+        "organId": "liver",
+        "x": 946.5997767686079
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1541.9098668694526,
+        "tick": 206,
+        "time": 20.600000000000023,
+        "id": 18,
+        "organId": "liver",
+        "x": 946.5997767686079
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1542.2840914632793,
+        "tick": 207,
+        "time": 20.700000000000024,
+        "id": 18,
+        "organId": "liver",
+        "x": 946.749480827839
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1542.2840914632793,
+        "tick": 207,
+        "time": 20.700000000000024,
+        "id": 18,
+        "organId": "liver",
+        "x": 946.749480827839
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1542.6379092774894,
+        "tick": 208,
+        "time": 20.800000000000026,
+        "id": 18,
+        "organId": "liver",
+        "x": 946.8910213997023
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1542.6379092774894,
+        "tick": 208,
+        "time": 20.800000000000026,
+        "id": 18,
+        "organId": "liver",
+        "x": 946.8910213997023
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1542.9817371229396,
+        "tick": 209,
+        "time": 20.900000000000027,
+        "id": 18,
+        "organId": "liver",
+        "x": 947.0285656044117
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1542.9817371229396,
+        "tick": 209,
+        "time": 20.900000000000027,
+        "id": 18,
+        "organId": "liver",
+        "x": 947.0285656044117
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1543.3206744625045,
+        "tick": 210,
+        "time": 21.00000000000003,
+        "id": 18,
+        "organId": "liver",
+        "x": 947.1641534209125
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1543.3206744625045,
+        "tick": 210,
+        "time": 21.00000000000003,
+        "id": 18,
+        "organId": "liver",
+        "x": 947.1641534209125
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1543.657217695702,
+        "tick": 211,
+        "time": 21.10000000000003,
+        "id": 18,
+        "organId": "liver",
+        "x": 947.2987835038829
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1543.657217695702,
+        "tick": 211,
+        "time": 21.10000000000003,
+        "id": 18,
+        "organId": "liver",
+        "x": 947.2987835038829
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1543.9925889140952,
+        "tick": 212,
+        "time": 21.20000000000003,
+        "id": 18,
+        "organId": "liver",
+        "x": 947.4329447363913
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1543.9925889140952,
+        "tick": 212,
+        "time": 21.20000000000003,
+        "id": 18,
+        "organId": "liver",
+        "x": 947.4329447363913
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1544.3273863824163,
+        "tick": 213,
+        "time": 21.300000000000033,
+        "id": 18,
+        "organId": "liver",
+        "x": 947.5668764470665
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1544.3273863824163,
+        "tick": 213,
+        "time": 21.300000000000033,
+        "id": 18,
+        "organId": "liver",
+        "x": 947.5668764470665
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1544.6619029761748,
+        "tick": 214,
+        "time": 21.400000000000034,
+        "id": 18,
+        "organId": "liver",
+        "x": 947.7006957972426
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1544.6619029761748,
+        "tick": 214,
+        "time": 21.400000000000034,
+        "id": 18,
+        "organId": "liver",
+        "x": 947.7006957972426
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1544.9962820701337,
+        "tick": 215,
+        "time": 21.500000000000036,
+        "id": 18,
+        "organId": "liver",
+        "x": 947.8344601422734
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1544.9962820701337,
+        "tick": 215,
+        "time": 21.500000000000036,
+        "id": 18,
+        "organId": "liver",
+        "x": 947.8344601422734
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1545.3305938522126,
+        "tick": 216,
+        "time": 21.600000000000037,
+        "id": 18,
+        "organId": "liver",
+        "x": 947.9681975599942
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1545.3305938522126,
+        "tick": 216,
+        "time": 21.600000000000037,
+        "id": 18,
+        "organId": "liver",
+        "x": 947.9681975599942
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1545.664872682322,
+        "tick": 217,
+        "time": 21.70000000000004,
+        "id": 18,
+        "organId": "liver",
+        "x": 948.101921795675
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1545.664872682322,
+        "tick": 217,
+        "time": 21.70000000000004,
+        "id": 18,
+        "organId": "liver",
+        "x": 948.101921795675
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1545.9991353810697,
+        "tick": 218,
+        "time": 21.80000000000004,
+        "id": 18,
+        "organId": "liver",
+        "x": 948.2356395781981
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1545.9991353810697,
+        "tick": 218,
+        "time": 21.80000000000004,
+        "id": 18,
+        "organId": "liver",
+        "x": 948.2356395781981
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1546.3333901828437,
+        "tick": 219,
+        "time": 21.90000000000004,
+        "id": 18,
+        "organId": "liver",
+        "x": 948.3693542016315
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1546.3333901828437,
+        "tick": 219,
+        "time": 21.90000000000004,
+        "id": 18,
+        "organId": "liver",
+        "x": 948.3693542016315
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1546.6676411187202,
+        "tick": 220,
+        "time": 22.000000000000043,
+        "id": 18,
+        "organId": "liver",
+        "x": 948.503067278559
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1546.6676411187202,
+        "tick": 220,
+        "time": 22.000000000000043,
+        "id": 18,
+        "organId": "liver",
+        "x": 948.503067278559
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1547.0018901620788,
+        "tick": 221,
+        "time": 22.100000000000044,
+        "id": 18,
+        "organId": "liver",
+        "x": 948.6367795984074
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1547.0018901620788,
+        "tick": 221,
+        "time": 22.100000000000044,
+        "id": 18,
+        "organId": "liver",
+        "x": 948.6367795984074
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1547.3617311717962,
+        "tick": 222,
+        "time": 22.200000000000045,
+        "id": 18,
+        "organId": "liver",
+        "x": 948.7807296773738
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1547.3617311717962,
+        "tick": 222,
+        "time": 22.200000000000045,
+        "id": 18,
+        "organId": "liver",
+        "x": 948.7807296773738
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1547.7341005151961,
+        "tick": 223,
+        "time": 22.300000000000047,
+        "id": 18,
+        "organId": "liver",
+        "x": 948.9296915659288
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1547.7341005151961,
+        "tick": 223,
+        "time": 22.300000000000047,
+        "id": 18,
+        "organId": "liver",
+        "x": 948.9296915659288
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1548.1126029998586,
+        "tick": 224,
+        "time": 22.40000000000005,
+        "id": 18,
+        "organId": "liver",
+        "x": 949.0811069440674
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1548.1126029998586,
+        "tick": 224,
+        "time": 22.40000000000005,
+        "id": 18,
+        "organId": "liver",
+        "x": 949.0811069440674
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1548.494107912673,
+        "tick": 225,
+        "time": 22.50000000000005,
+        "id": 18,
+        "organId": "liver",
+        "x": 949.2337234075684
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1548.494107912673,
+        "tick": 225,
+        "time": 22.50000000000005,
+        "id": 18,
+        "organId": "liver",
+        "x": 949.2337234075684
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1548.8770826391476,
+        "tick": 226,
+        "time": 22.60000000000005,
+        "id": 18,
+        "organId": "liver",
+        "x": 949.386927852391
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1548.8770826391476,
+        "tick": 226,
+        "time": 22.60000000000005,
+        "id": 18,
+        "organId": "liver",
+        "x": 949.386927852391
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1549.2607769006406,
+        "tick": 227,
+        "time": 22.700000000000053,
+        "id": 18,
+        "organId": "liver",
+        "x": 949.5404201385654
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1549.2607769006406,
+        "tick": 227,
+        "time": 22.700000000000053,
+        "id": 18,
+        "organId": "liver",
+        "x": 949.5404201385654
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1549.6448234045008,
+        "tick": 228,
+        "time": 22.800000000000054,
+        "id": 18,
+        "organId": "liver",
+        "x": 949.694053335073
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1549.6448234045008,
+        "tick": 228,
+        "time": 22.800000000000054,
+        "id": 18,
+        "organId": "liver",
+        "x": 949.694053335073
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1550.0290423456738,
+        "tick": 229,
+        "time": 22.900000000000055,
+        "id": 18,
+        "organId": "liver",
+        "x": 949.8477555130589
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1550.0290423456738,
+        "tick": 229,
+        "time": 22.900000000000055,
+        "id": 18,
+        "organId": "liver",
+        "x": 949.8477555130589
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1550.4090889149936,
+        "tick": 230,
+        "time": 23.000000000000057,
+        "id": 18,
+        "organId": "liver",
+        "x": 949.9997885837405
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1550.4090889149936,
+        "tick": 230,
+        "time": 23.000000000000057,
+        "id": 18,
+        "organId": "liver",
+        "x": 949.9997885837405
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1550.6723570093272,
+        "tick": 231,
+        "time": 23.10000000000006,
+        "id": 18,
+        "organId": "liver",
+        "x": 950.1051058264817
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1550.6723570093272,
+        "tick": 231,
+        "time": 23.10000000000006,
+        "id": 18,
+        "organId": "liver",
+        "x": 950.1051058264817
+      },
+      {
+        "lane": 0,
+        "phase": "substep",
+        "kind": "scout",
+        "y": 1550.6723570093272,
+        "tick": 232,
+        "time": 23.20000000000006,
+        "id": 18,
+        "organId": "liver",
+        "x": 950.1051058264817
+      }
+    ],
+    "goals": [
+      {
+        "y": 1550.6880791181852,
+        "lane": 0,
+        "id": 18,
+        "organId": "liver",
+        "x": 950.111395267514
+      }
+    ],
+    "trafficStats": {
+      "deadReleased": 0,
+      "maxPlanningSlice": 2.0000000020559128e-06,
+      "conflicts": 0,
+      "expired": 0,
+      "maxPairs": 0,
+      "resumed": 0,
+      "routeRequests": 0,
+      "yields": 0,
+      "cancelled": 0,
+      "waits": 0,
+      "noBay": 0,
+      "activePairs": 0
+    },
+    "elapsed": 11.599999999999975,
+    "completed": true,
+    "endpoints": [
+      {
+        "lane": 0,
+        "phase": "end",
+        "kind": "scout",
+        "y": 1550.6723570093272,
+        "pathFailed": false,
+        "ordersRemaining": 0,
+        "tick": 232,
+        "time": 23.20000000000006,
+        "id": 18,
+        "organId": "liver",
+        "x": 950.1051058264817
+      }
+    ],
+    "id": "gate/liver/scout/liver.candidate.1/enter",
+    "frames": [
+      {
+        "time": 11.699999999999974,
+        "points": [
+          {
+            "lane": 118,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1512.0762258904206,
+            "tick": 117,
+            "time": 11.699999999999974,
+            "id": 18,
+            "organId": "liver",
+            "x": 934.6651866056949
+          }
+        ]
+      },
+      {
+        "time": 11.799999999999974,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1512.3303704240984,
+            "tick": 118,
+            "time": 11.799999999999974,
+            "id": 18,
+            "organId": "liver",
+            "x": 934.76685407745
+          }
+        ]
+      },
+      {
+        "time": 11.899999999999974,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1512.6254040463834,
+            "tick": 119,
+            "time": 11.899999999999974,
+            "id": 18,
+            "organId": "liver",
+            "x": 934.8848787385608
+          }
+        ]
+      },
+      {
+        "time": 11.999999999999973,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1512.9404545809632,
+            "tick": 120,
+            "time": 11.999999999999973,
+            "id": 18,
+            "organId": "liver",
+            "x": 935.0109109252945
+          }
+        ]
+      },
+      {
+        "time": 12.099999999999973,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1513.2653042280067,
+            "tick": 121,
+            "time": 12.099999999999973,
+            "id": 18,
+            "organId": "liver",
+            "x": 935.1408631294106
+          }
+        ]
+      },
+      {
+        "time": 12.199999999999973,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1513.594950948828,
+            "tick": 122,
+            "time": 12.199999999999973,
+            "id": 18,
+            "organId": "liver",
+            "x": 935.2727343453415
+          }
+        ]
+      },
+      {
+        "time": 12.299999999999972,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1513.9269460371074,
+            "tick": 123,
+            "time": 12.299999999999972,
+            "id": 18,
+            "organId": "liver",
+            "x": 935.405544997501
+          }
+        ]
+      },
+      {
+        "time": 12.399999999999972,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1514.2600907490896,
+            "tick": 124,
+            "time": 12.399999999999972,
+            "id": 18,
+            "organId": "liver",
+            "x": 935.5388155428308
+          }
+        ]
+      },
+      {
+        "time": 12.499999999999972,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1514.5937982497671,
+            "tick": 125,
+            "time": 12.499999999999972,
+            "id": 18,
+            "organId": "liver",
+            "x": 935.6723112250264
+          }
+        ]
+      },
+      {
+        "time": 12.599999999999971,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1514.9277812589567,
+            "tick": 126,
+            "time": 12.599999999999971,
+            "id": 18,
+            "organId": "liver",
+            "x": 935.805917121097
+          }
+        ]
+      },
+      {
+        "time": 12.69999999999997,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1515.2618991410402,
+            "tick": 127,
+            "time": 12.69999999999997,
+            "id": 18,
+            "organId": "liver",
+            "x": 935.9395769714508
+          }
+        ]
+      },
+      {
+        "time": 12.79999999999997,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1515.5960830490242,
+            "tick": 128,
+            "time": 12.79999999999997,
+            "id": 18,
+            "organId": "liver",
+            "x": 936.0732632346741
+          }
+        ]
+      },
+      {
+        "time": 12.89999999999997,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1515.930299279437,
+            "tick": 129,
+            "time": 12.89999999999997,
+            "id": 18,
+            "organId": "liver",
+            "x": 936.2069624280972
+          }
+        ]
+      },
+      {
+        "time": 12.99999999999997,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1516.2645313330252,
+            "tick": 130,
+            "time": 12.99999999999997,
+            "id": 18,
+            "organId": "liver",
+            "x": 936.3406679513918
+          }
+        ]
+      },
+      {
+        "time": 13.09999999999997,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1516.598771132717,
+            "tick": 131,
+            "time": 13.09999999999997,
+            "id": 18,
+            "organId": "liver",
+            "x": 936.4743765734222
+          }
+        ]
+      },
+      {
+        "time": 13.199999999999969,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1516.9330147244493,
+            "tick": 132,
+            "time": 13.199999999999969,
+            "id": 18,
+            "organId": "liver",
+            "x": 936.6080867124128
+          }
+        ]
+      },
+      {
+        "time": 13.299999999999969,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1517.2672601725433,
+            "tick": 133,
+            "time": 13.299999999999969,
+            "id": 18,
+            "organId": "liver",
+            "x": 936.7417975940187
+          }
+        ]
+      },
+      {
+        "time": 13.399999999999968,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1517.6015065294037,
+            "tick": 134,
+            "time": 13.399999999999968,
+            "id": 18,
+            "organId": "liver",
+            "x": 936.8755088391658
+          }
+        ]
+      },
+      {
+        "time": 13.499999999999968,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1517.9357533311431,
+            "tick": 135,
+            "time": 13.499999999999968,
+            "id": 18,
+            "organId": "liver",
+            "x": 937.0092202622814
+          }
+        ]
+      },
+      {
+        "time": 13.599999999999968,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1518.2700003506693,
+            "tick": 136,
+            "time": 13.599999999999968,
+            "id": 18,
+            "organId": "liver",
+            "x": 937.1429317725199
+          }
+        ]
+      },
+      {
+        "time": 13.699999999999967,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1518.6042474768112,
+            "tick": 137,
+            "time": 13.699999999999967,
+            "id": 18,
+            "organId": "liver",
+            "x": 937.2766433254088
+          }
+        ]
+      },
+      {
+        "time": 13.799999999999967,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1518.938494655146,
+            "tick": 138,
+            "time": 13.799999999999967,
+            "id": 18,
+            "organId": "liver",
+            "x": 937.4103548991768
+          }
+        ]
+      },
+      {
+        "time": 13.899999999999967,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1519.2727418590314,
+            "tick": 139,
+            "time": 13.899999999999967,
+            "id": 18,
+            "organId": "liver",
+            "x": 937.544066483166
+          }
+        ]
+      },
+      {
+        "time": 13.999999999999966,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1519.6069890754247,
+            "tick": 140,
+            "time": 13.999999999999966,
+            "id": 18,
+            "organId": "liver",
+            "x": 937.677778072159
+          }
+        ]
+      },
+      {
+        "time": 14.099999999999966,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1519.9412362979415,
+            "tick": 141,
+            "time": 14.099999999999966,
+            "id": 18,
+            "organId": "liver",
+            "x": 937.8114896636014
+          }
+        ]
+      },
+      {
+        "time": 14.199999999999966,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1520.2754835234557,
+            "tick": 142,
+            "time": 14.199999999999966,
+            "id": 18,
+            "organId": "liver",
+            "x": 937.945201256243
+          }
+        ]
+      },
+      {
+        "time": 14.299999999999965,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1520.6097307504374,
+            "tick": 143,
+            "time": 14.299999999999965,
+            "id": 18,
+            "organId": "liver",
+            "x": 938.0789128494715
+          }
+        ]
+      },
+      {
+        "time": 14.399999999999965,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1520.9439779781374,
+            "tick": 144,
+            "time": 14.399999999999965,
+            "id": 18,
+            "organId": "liver",
+            "x": 938.2126244429875
+          }
+        ]
+      },
+      {
+        "time": 14.499999999999964,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1521.278225206189,
+            "tick": 145,
+            "time": 14.499999999999964,
+            "id": 18,
+            "organId": "liver",
+            "x": 938.3463360366442
+          }
+        ]
+      },
+      {
+        "time": 14.599999999999964,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1521.612472434413,
+            "tick": 146,
+            "time": 14.599999999999964,
+            "id": 18,
+            "organId": "liver",
+            "x": 938.4800476303697
+          }
+        ]
+      },
+      {
+        "time": 14.699999999999964,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1521.946719662721,
+            "tick": 147,
+            "time": 14.699999999999964,
+            "id": 18,
+            "organId": "liver",
+            "x": 938.6137592241289
+          }
+        ]
+      },
+      {
+        "time": 14.799999999999963,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1522.2809668910704,
+            "tick": 148,
+            "time": 14.799999999999963,
+            "id": 18,
+            "organId": "liver",
+            "x": 938.7474708179046
+          }
+        ]
+      },
+      {
+        "time": 14.899999999999963,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1522.61521411944,
+            "tick": 149,
+            "time": 14.899999999999963,
+            "id": 18,
+            "organId": "liver",
+            "x": 938.8811824116884
+          }
+        ]
+      },
+      {
+        "time": 14.999999999999963,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1522.9494613478196,
+            "tick": 150,
+            "time": 14.999999999999963,
+            "id": 18,
+            "organId": "liver",
+            "x": 939.0148940054762
+          }
+        ]
+      },
+      {
+        "time": 15.099999999999962,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1523.283708576204,
+            "tick": 151,
+            "time": 15.099999999999962,
+            "id": 18,
+            "organId": "liver",
+            "x": 939.1486055992659
+          }
+        ]
+      },
+      {
+        "time": 15.199999999999962,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1523.6179558045906,
+            "tick": 152,
+            "time": 15.199999999999962,
+            "id": 18,
+            "organId": "liver",
+            "x": 939.2823171930565
+          }
+        ]
+      },
+      {
+        "time": 15.299999999999962,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1523.9522030329783,
+            "tick": 153,
+            "time": 15.299999999999962,
+            "id": 18,
+            "organId": "liver",
+            "x": 939.4160287868476
+          }
+        ]
+      },
+      {
+        "time": 15.399999999999961,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1524.2864502613668,
+            "tick": 154,
+            "time": 15.399999999999961,
+            "id": 18,
+            "organId": "liver",
+            "x": 939.5497403806389
+          }
+        ]
+      },
+      {
+        "time": 15.499999999999961,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1524.6206974897555,
+            "tick": 155,
+            "time": 15.499999999999961,
+            "id": 18,
+            "organId": "liver",
+            "x": 939.6834519744303
+          }
+        ]
+      },
+      {
+        "time": 15.59999999999996,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1524.9549447181444,
+            "tick": 156,
+            "time": 15.59999999999996,
+            "id": 18,
+            "organId": "liver",
+            "x": 939.8171635682219
+          }
+        ]
+      },
+      {
+        "time": 15.69999999999996,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1525.2891919465333,
+            "tick": 157,
+            "time": 15.69999999999996,
+            "id": 18,
+            "organId": "liver",
+            "x": 939.9508751620134
+          }
+        ]
+      },
+      {
+        "time": 15.79999999999996,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1525.6234391749222,
+            "tick": 158,
+            "time": 15.79999999999996,
+            "id": 18,
+            "organId": "liver",
+            "x": 940.0845867558049
+          }
+        ]
+      },
+      {
+        "time": 15.89999999999996,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1525.957686403311,
+            "tick": 159,
+            "time": 15.89999999999996,
+            "id": 18,
+            "organId": "liver",
+            "x": 940.2182983495965
+          }
+        ]
+      },
+      {
+        "time": 15.99999999999996,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1526.2919336317,
+            "tick": 160,
+            "time": 15.99999999999996,
+            "id": 18,
+            "organId": "liver",
+            "x": 940.352009943388
+          }
+        ]
+      },
+      {
+        "time": 16.09999999999996,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1526.6261808600889,
+            "tick": 161,
+            "time": 16.09999999999996,
+            "id": 18,
+            "organId": "liver",
+            "x": 940.4857215371795
+          }
+        ]
+      },
+      {
+        "time": 16.19999999999996,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1526.9604280884778,
+            "tick": 162,
+            "time": 16.19999999999996,
+            "id": 18,
+            "organId": "liver",
+            "x": 940.6194331309711
+          }
+        ]
+      },
+      {
+        "time": 16.29999999999996,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1527.2946753168667,
+            "tick": 163,
+            "time": 16.29999999999996,
+            "id": 18,
+            "organId": "liver",
+            "x": 940.7531447247626
+          }
+        ]
+      },
+      {
+        "time": 16.399999999999963,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1527.6289225452556,
+            "tick": 164,
+            "time": 16.399999999999963,
+            "id": 18,
+            "organId": "liver",
+            "x": 940.8868563185541
+          }
+        ]
+      },
+      {
+        "time": 16.499999999999964,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1527.9631697736445,
+            "tick": 165,
+            "time": 16.499999999999964,
+            "id": 18,
+            "organId": "liver",
+            "x": 941.0205679123457
+          }
+        ]
+      },
+      {
+        "time": 16.599999999999966,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1528.2974170020334,
+            "tick": 166,
+            "time": 16.599999999999966,
+            "id": 18,
+            "organId": "liver",
+            "x": 941.1542795061372
+          }
+        ]
+      },
+      {
+        "time": 16.699999999999967,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1528.6316642304223,
+            "tick": 167,
+            "time": 16.699999999999967,
+            "id": 18,
+            "organId": "liver",
+            "x": 941.2879910999287
+          }
+        ]
+      },
+      {
+        "time": 16.79999999999997,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1528.9659114588112,
+            "tick": 168,
+            "time": 16.79999999999997,
+            "id": 18,
+            "organId": "liver",
+            "x": 941.4217026937202
+          }
+        ]
+      },
+      {
+        "time": 16.89999999999997,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1529.3001586872,
+            "tick": 169,
+            "time": 16.89999999999997,
+            "id": 18,
+            "organId": "liver",
+            "x": 941.5554142875118
+          }
+        ]
+      },
+      {
+        "time": 16.99999999999997,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1529.634405915589,
+            "tick": 170,
+            "time": 16.99999999999997,
+            "id": 18,
+            "organId": "liver",
+            "x": 941.6891258813033
+          }
+        ]
+      },
+      {
+        "time": 17.099999999999973,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1529.968653143978,
+            "tick": 171,
+            "time": 17.099999999999973,
+            "id": 18,
+            "organId": "liver",
+            "x": 941.8228374750948
+          }
+        ]
+      },
+      {
+        "time": 17.199999999999974,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1530.3029003723668,
+            "tick": 172,
+            "time": 17.199999999999974,
+            "id": 18,
+            "organId": "liver",
+            "x": 941.9565490688864
+          }
+        ]
+      },
+      {
+        "time": 17.299999999999976,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1530.6371476007557,
+            "tick": 173,
+            "time": 17.299999999999976,
+            "id": 18,
+            "organId": "liver",
+            "x": 942.0902606626779
+          }
+        ]
+      },
+      {
+        "time": 17.399999999999977,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1530.9713948291446,
+            "tick": 174,
+            "time": 17.399999999999977,
+            "id": 18,
+            "organId": "liver",
+            "x": 942.2239722564694
+          }
+        ]
+      },
+      {
+        "time": 17.49999999999998,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1531.3056420575335,
+            "tick": 175,
+            "time": 17.49999999999998,
+            "id": 18,
+            "organId": "liver",
+            "x": 942.357683850261
+          }
+        ]
+      },
+      {
+        "time": 17.59999999999998,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1531.6398892859224,
+            "tick": 176,
+            "time": 17.59999999999998,
+            "id": 18,
+            "organId": "liver",
+            "x": 942.4913954440525
+          }
+        ]
+      },
+      {
+        "time": 17.69999999999998,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1531.9741365143113,
+            "tick": 177,
+            "time": 17.69999999999998,
+            "id": 18,
+            "organId": "liver",
+            "x": 942.625107037844
+          }
+        ]
+      },
+      {
+        "time": 17.799999999999983,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1532.3083837427002,
+            "tick": 178,
+            "time": 17.799999999999983,
+            "id": 18,
+            "organId": "liver",
+            "x": 942.7588186316356
+          }
+        ]
+      },
+      {
+        "time": 17.899999999999984,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1532.6426309710891,
+            "tick": 179,
+            "time": 17.899999999999984,
+            "id": 18,
+            "organId": "liver",
+            "x": 942.8925302254271
+          }
+        ]
+      },
+      {
+        "time": 17.999999999999986,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1532.976878199478,
+            "tick": 180,
+            "time": 17.999999999999986,
+            "id": 18,
+            "organId": "liver",
+            "x": 943.0262418192186
+          }
+        ]
+      },
+      {
+        "time": 18.099999999999987,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1533.311125427867,
+            "tick": 181,
+            "time": 18.099999999999987,
+            "id": 18,
+            "organId": "liver",
+            "x": 943.1599534130102
+          }
+        ]
+      },
+      {
+        "time": 18.19999999999999,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1533.6453726562559,
+            "tick": 182,
+            "time": 18.19999999999999,
+            "id": 18,
+            "organId": "liver",
+            "x": 943.2936650068017
+          }
+        ]
+      },
+      {
+        "time": 18.29999999999999,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1533.9796198846448,
+            "tick": 183,
+            "time": 18.29999999999999,
+            "id": 18,
+            "organId": "liver",
+            "x": 943.4273766005932
+          }
+        ]
+      },
+      {
+        "time": 18.39999999999999,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1534.3138671130337,
+            "tick": 184,
+            "time": 18.39999999999999,
+            "id": 18,
+            "organId": "liver",
+            "x": 943.5610881943848
+          }
+        ]
+      },
+      {
+        "time": 18.499999999999993,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1534.6481143414226,
+            "tick": 185,
+            "time": 18.499999999999993,
+            "id": 18,
+            "organId": "liver",
+            "x": 943.6947997881763
+          }
+        ]
+      },
+      {
+        "time": 18.599999999999994,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1534.9823615698115,
+            "tick": 186,
+            "time": 18.599999999999994,
+            "id": 18,
+            "organId": "liver",
+            "x": 943.8285113819679
+          }
+        ]
+      },
+      {
+        "time": 18.699999999999996,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1535.3166087982004,
+            "tick": 187,
+            "time": 18.699999999999996,
+            "id": 18,
+            "organId": "liver",
+            "x": 943.9622229757595
+          }
+        ]
+      },
+      {
+        "time": 18.799999999999997,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1535.6508560265893,
+            "tick": 188,
+            "time": 18.799999999999997,
+            "id": 18,
+            "organId": "liver",
+            "x": 944.095934569551
+          }
+        ]
+      },
+      {
+        "time": 18.9,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1535.9851032549782,
+            "tick": 189,
+            "time": 18.9,
+            "id": 18,
+            "organId": "liver",
+            "x": 944.2296461633425
+          }
+        ]
+      },
+      {
+        "time": 19.0,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1536.319350483367,
+            "tick": 190,
+            "time": 19.0,
+            "id": 18,
+            "organId": "liver",
+            "x": 944.3633577571342
+          }
+        ]
+      },
+      {
+        "time": 19.1,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1536.653597711756,
+            "tick": 191,
+            "time": 19.1,
+            "id": 18,
+            "organId": "liver",
+            "x": 944.4970693509257
+          }
+        ]
+      },
+      {
+        "time": 19.200000000000003,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1536.987844940145,
+            "tick": 192,
+            "time": 19.200000000000003,
+            "id": 18,
+            "organId": "liver",
+            "x": 944.6307809447172
+          }
+        ]
+      },
+      {
+        "time": 19.300000000000004,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1537.3220921685338,
+            "tick": 193,
+            "time": 19.300000000000004,
+            "id": 18,
+            "organId": "liver",
+            "x": 944.7644925385088
+          }
+        ]
+      },
+      {
+        "time": 19.400000000000006,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1537.6563393969227,
+            "tick": 194,
+            "time": 19.400000000000006,
+            "id": 18,
+            "organId": "liver",
+            "x": 944.8982041323004
+          }
+        ]
+      },
+      {
+        "time": 19.500000000000007,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1537.9905866253116,
+            "tick": 195,
+            "time": 19.500000000000007,
+            "id": 18,
+            "organId": "liver",
+            "x": 945.0319157260919
+          }
+        ]
+      },
+      {
+        "time": 19.60000000000001,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1538.3248338537005,
+            "tick": 196,
+            "time": 19.60000000000001,
+            "id": 18,
+            "organId": "liver",
+            "x": 945.1656273198835
+          }
+        ]
+      },
+      {
+        "time": 19.70000000000001,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1538.6590810820894,
+            "tick": 197,
+            "time": 19.70000000000001,
+            "id": 18,
+            "organId": "liver",
+            "x": 945.299338913675
+          }
+        ]
+      },
+      {
+        "time": 19.80000000000001,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1538.9933283104783,
+            "tick": 198,
+            "time": 19.80000000000001,
+            "id": 18,
+            "organId": "liver",
+            "x": 945.4330505074666
+          }
+        ]
+      },
+      {
+        "time": 19.900000000000013,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1539.3275755388672,
+            "tick": 199,
+            "time": 19.900000000000013,
+            "id": 18,
+            "organId": "liver",
+            "x": 945.5667621012582
+          }
+        ]
+      },
+      {
+        "time": 20.000000000000014,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1539.6822970815163,
+            "tick": 200,
+            "time": 20.000000000000014,
+            "id": 18,
+            "organId": "liver",
+            "x": 945.7086641988416
+          }
+        ]
+      },
+      {
+        "time": 20.100000000000016,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1540.0470416539465,
+            "tick": 201,
+            "time": 20.100000000000016,
+            "id": 18,
+            "organId": "liver",
+            "x": 945.8545758892437
+          }
+        ]
+      },
+      {
+        "time": 20.200000000000017,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1540.4166929170096,
+            "tick": 202,
+            "time": 20.200000000000017,
+            "id": 18,
+            "organId": "liver",
+            "x": 946.0024504423686
+          }
+        ]
+      },
+      {
+        "time": 20.30000000000002,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1540.7887462095482,
+            "tick": 203,
+            "time": 20.30000000000002,
+            "id": 18,
+            "organId": "liver",
+            "x": 946.1512858985683
+          }
+        ]
+      },
+      {
+        "time": 20.40000000000002,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1541.1619753955824,
+            "tick": 204,
+            "time": 20.40000000000002,
+            "id": 18,
+            "organId": "liver",
+            "x": 946.3005917568538
+          }
+        ]
+      },
+      {
+        "time": 20.50000000000002,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1541.53578023047,
+            "tick": 205,
+            "time": 20.50000000000002,
+            "id": 18,
+            "organId": "liver",
+            "x": 946.4501278965571
+          }
+        ]
+      },
+      {
+        "time": 20.600000000000023,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1541.9098668694526,
+            "tick": 206,
+            "time": 20.600000000000023,
+            "id": 18,
+            "organId": "liver",
+            "x": 946.5997767686079
+          }
+        ]
+      },
+      {
+        "time": 20.700000000000024,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1542.2840914632793,
+            "tick": 207,
+            "time": 20.700000000000024,
+            "id": 18,
+            "organId": "liver",
+            "x": 946.749480827839
+          }
+        ]
+      },
+      {
+        "time": 20.800000000000026,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1542.6379092774894,
+            "tick": 208,
+            "time": 20.800000000000026,
+            "id": 18,
+            "organId": "liver",
+            "x": 946.8910213997023
+          }
+        ]
+      },
+      {
+        "time": 20.900000000000027,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1542.9817371229396,
+            "tick": 209,
+            "time": 20.900000000000027,
+            "id": 18,
+            "organId": "liver",
+            "x": 947.0285656044117
+          }
+        ]
+      },
+      {
+        "time": 21.00000000000003,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1543.3206744625045,
+            "tick": 210,
+            "time": 21.00000000000003,
+            "id": 18,
+            "organId": "liver",
+            "x": 947.1641534209125
+          }
+        ]
+      },
+      {
+        "time": 21.10000000000003,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1543.657217695702,
+            "tick": 211,
+            "time": 21.10000000000003,
+            "id": 18,
+            "organId": "liver",
+            "x": 947.2987835038829
+          }
+        ]
+      },
+      {
+        "time": 21.20000000000003,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1543.9925889140952,
+            "tick": 212,
+            "time": 21.20000000000003,
+            "id": 18,
+            "organId": "liver",
+            "x": 947.4329447363913
+          }
+        ]
+      },
+      {
+        "time": 21.300000000000033,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1544.3273863824163,
+            "tick": 213,
+            "time": 21.300000000000033,
+            "id": 18,
+            "organId": "liver",
+            "x": 947.5668764470665
+          }
+        ]
+      },
+      {
+        "time": 21.400000000000034,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1544.6619029761748,
+            "tick": 214,
+            "time": 21.400000000000034,
+            "id": 18,
+            "organId": "liver",
+            "x": 947.7006957972426
+          }
+        ]
+      },
+      {
+        "time": 21.500000000000036,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1544.9962820701337,
+            "tick": 215,
+            "time": 21.500000000000036,
+            "id": 18,
+            "organId": "liver",
+            "x": 947.8344601422734
+          }
+        ]
+      },
+      {
+        "time": 21.600000000000037,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1545.3305938522126,
+            "tick": 216,
+            "time": 21.600000000000037,
+            "id": 18,
+            "organId": "liver",
+            "x": 947.9681975599942
+          }
+        ]
+      },
+      {
+        "time": 21.70000000000004,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1545.664872682322,
+            "tick": 217,
+            "time": 21.70000000000004,
+            "id": 18,
+            "organId": "liver",
+            "x": 948.101921795675
+          }
+        ]
+      },
+      {
+        "time": 21.80000000000004,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1545.9991353810697,
+            "tick": 218,
+            "time": 21.80000000000004,
+            "id": 18,
+            "organId": "liver",
+            "x": 948.2356395781981
+          }
+        ]
+      },
+      {
+        "time": 21.90000000000004,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1546.3333901828437,
+            "tick": 219,
+            "time": 21.90000000000004,
+            "id": 18,
+            "organId": "liver",
+            "x": 948.3693542016315
+          }
+        ]
+      },
+      {
+        "time": 22.000000000000043,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1546.6676411187202,
+            "tick": 220,
+            "time": 22.000000000000043,
+            "id": 18,
+            "organId": "liver",
+            "x": 948.503067278559
+          }
+        ]
+      },
+      {
+        "time": 22.100000000000044,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1547.0018901620788,
+            "tick": 221,
+            "time": 22.100000000000044,
+            "id": 18,
+            "organId": "liver",
+            "x": 948.6367795984074
+          }
+        ]
+      },
+      {
+        "time": 22.200000000000045,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1547.3617311717962,
+            "tick": 222,
+            "time": 22.200000000000045,
+            "id": 18,
+            "organId": "liver",
+            "x": 948.7807296773738
+          }
+        ]
+      },
+      {
+        "time": 22.300000000000047,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1547.7341005151961,
+            "tick": 223,
+            "time": 22.300000000000047,
+            "id": 18,
+            "organId": "liver",
+            "x": 948.9296915659288
+          }
+        ]
+      },
+      {
+        "time": 22.40000000000005,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1548.1126029998586,
+            "tick": 224,
+            "time": 22.40000000000005,
+            "id": 18,
+            "organId": "liver",
+            "x": 949.0811069440674
+          }
+        ]
+      },
+      {
+        "time": 22.50000000000005,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1548.494107912673,
+            "tick": 225,
+            "time": 22.50000000000005,
+            "id": 18,
+            "organId": "liver",
+            "x": 949.2337234075684
+          }
+        ]
+      },
+      {
+        "time": 22.60000000000005,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1548.8770826391476,
+            "tick": 226,
+            "time": 22.60000000000005,
+            "id": 18,
+            "organId": "liver",
+            "x": 949.386927852391
+          }
+        ]
+      },
+      {
+        "time": 22.700000000000053,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1549.2607769006406,
+            "tick": 227,
+            "time": 22.700000000000053,
+            "id": 18,
+            "organId": "liver",
+            "x": 949.5404201385654
+          }
+        ]
+      },
+      {
+        "time": 22.800000000000054,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1549.6448234045008,
+            "tick": 228,
+            "time": 22.800000000000054,
+            "id": 18,
+            "organId": "liver",
+            "x": 949.694053335073
+          }
+        ]
+      },
+      {
+        "time": 22.900000000000055,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1550.0290423456738,
+            "tick": 229,
+            "time": 22.900000000000055,
+            "id": 18,
+            "organId": "liver",
+            "x": 949.8477555130589
+          }
+        ]
+      },
+      {
+        "time": 23.000000000000057,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1550.4090889149936,
+            "tick": 230,
+            "time": 23.000000000000057,
+            "id": 18,
+            "organId": "liver",
+            "x": 949.9997885837405
+          }
+        ]
+      },
+      {
+        "time": 23.10000000000006,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1550.6723570093272,
+            "tick": 231,
+            "time": 23.10000000000006,
+            "id": 18,
+            "organId": "liver",
+            "x": 950.1051058264817
+          }
+        ]
+      },
+      {
+        "time": 23.20000000000006,
+        "points": [
+          {
+            "lane": 0,
+            "phase": "frame",
+            "kind": "scout",
+            "y": 1550.6723570093272,
+            "tick": 232,
+            "time": 23.20000000000006,
+            "id": 18,
+            "organId": "liver",
+            "x": 950.1051058264817
+          }
+        ]
+      }
+    ],
+    "commands": [
+      {
+        "requested": {
+          "y": 1550.6880791181852,
+          "x": 950.111395267514
+        },
+        "id": 18,
+        "order": {
+          "y": 1550.6880791181852,
+          "lane": 0,
+          "x": 950.111395267514
+        },
+        "accepted": true
+      }
+    ],
+    "spawnErrors": {}
+  },
+  "inputHashes": {
+    "scripts/war/FullBodyBattlefield.lua": "d28b30024e20d37e9df2679ccb387fd0c091ba2e7fc437edf1f94541106a6366",
+    "scripts/war/FullBodyMapArt.lua": "7271eca0160be00f2a80dbc0b9db7f9b181db13ae20d4e9d6f7c9974b4e5a293",
+    "scripts/war/FullBodyMapArtData.lua": "5039018400869a482945389d80deb7db48d224e0f2b61e9cc49cbedd677c8b7f",
+    "scripts/war/OrganBattlefield.lua": "cd0194aa8016f2a0487c9fbaabe689b0de73fcf9dc1294a25bce37ee9520756b",
+    "scripts/war/OrganBattlefieldCore.lua": "40c670d25c69281b0d5663c684dcb699b6871c806000fd2e8f013601218c6b8d",
+    "scripts/war/OrganBattlefieldData.lua": "047dce28da8aa19d893a9116258631cf71c039ecb44b7c63478d40043cd9c273",
+    "scripts/war/GastricBattlefield.lua": "789066936c29437cfcbc47490a7527288700e82c02b88b3e19458f69906b2b46",
+    "scripts/war/GastricBattlefieldData.lua": "81cbe1eedd29506a13fa19a7edd079d7f93b3eb58b4a9e4282e98277854b279d",
+    "scripts/war/OrganTrial.lua": "2448272435d422dc9c10f13c54382727b93da03b9bce177235f0d58d7eb803fd",
+    "scripts/war/OrganTraffic.lua": "901ece0eb1bb68d22089d99c2b669c42270f34d66539f6daa1d1bb02786dab0f",
+    "scripts/war/GastricTraffic.lua": "d04b89128fedb033d67b9eef01a72f5c2733b5942a0e87656e00d9b883ee3e6d",
+    "scripts/war/Commands.lua": "d03717fefdd1aeb43d7d21948a6af149b5ba3401466b78c14cba1200c0d4655a",
+    "scripts/war/Path.lua": "a41c95130db4c45a96956c09ad122432055bd3cc0588835ae9cae5a321283929",
+    "scripts/war/Simulation.lua": "2df8aa4f850caa950c2abc48477cf0bdc71c3a7418d64c95567eb326b460ff43",
+    "scripts/war/CellCollision.lua": "a11dc894c9cf91347ff89e290301c0bb0889c520593d60cbe4c1bf122201d30f",
+    "scripts/war/Motion.lua": "7fe39b4a715b5b0b5398e5ef7e6f0fe2bd8987e47359e6083d46a5db467829a5",
+    "scripts/war/Save.lua": "29655d752131e7993d943f3996a3fe4d07ab02cf52065216594c48a8f21df36d",
+    "scripts/war/World.lua": "020f77336ced2aa0a4f7907aa79385c438eda38d76e2bc639d49ca864b70166c",
+    "scripts/war/Vessels.lua": "5302854eda3d7b29a238394db9b50662835ad2a76f69d0e3b9c42431c53b8d6e",
+    "scripts/war/Data.lua": "6aa40613c149a254391e68d5ffca3ef5f6b7d4dbba8a4861b6b8adb7983d5f33",
+    "scripts/war/Util.lua": "bd35c4e904854a00b98825fe2cc422eaa74d4f87308c8a336f25f9cd76131c0d"
+  },
+  "reusedCurrentNavigationObservation": {
+    "from": "fullbody/cases/gate__liver__scout__liver.candidate.1__enter.json",
+    "sha256": "619f5fd6e7242211151b2e0534190f0b448bb0f7b7889a1e64162f55c3c2375a",
+    "currentHashesMatch": true
+  }
+}

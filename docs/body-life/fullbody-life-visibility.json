@@ -1,0 +1,293 @@
+{
+  "sampleTimes": [
+    0.0,
+    0.63,
+    1.26,
+    1.5,
+    2.13,
+    2.76,
+    3.0,
+    3.63,
+    4.26,
+    4.5,
+    5.13,
+    5.76,
+    6.0,
+    6.63,
+    7.26,
+    7.5,
+    8.13,
+    8.76,
+    9.0,
+    9.63,
+    10.26,
+    10.5,
+    11.13,
+    11.76,
+    12.0
+  ],
+  "nativeEvidence": false,
+  "passed": 6,
+  "total": 6,
+  "results": [
+    {
+      "name": "GI effective vertices and useful whole-body displacement remain within 1px cap",
+      "pass": true
+    },
+    {
+      "name": "Each digestive organ has lossless visible local change across its cycle",
+      "pass": true
+    },
+    {
+      "name": "Digestive wave visits ordered tissue nodes with at most two concurrent segments",
+      "pass": true
+    },
+    {
+      "name": "Secondary near-view changes exist and limb phases differ (not a readability claim)",
+      "pass": true
+    },
+    {
+      "name": "Visible leg motion is led by circulating blood rather than tissue flashing",
+      "pass": true
+    },
+    {
+      "name": "Close-up muscle/marrow details move and intensity zero stays static",
+      "pass": true
+    }
+  ],
+  "evidence": {
+    "meshes": {
+      "stomach": {
+        "effectiveVertices": 4,
+        "totalVertices": 20,
+        "peakLogicalPixels": {
+          "0.006": 0.31561999027178306,
+          "0.0242": 1.0000000000000002
+        },
+        "wholeFloor": 0.2
+      },
+      "small_intestine": {
+        "effectiveVertices": 6,
+        "totalVertices": 20,
+        "peakLogicalPixels": {
+          "0.006": 0.10420558900087165,
+          "0.0242": 1.0000000000000002
+        },
+        "wholeFloor": 0.07
+      },
+      "large_intestine": {
+        "effectiveVertices": 15,
+        "totalVertices": 130,
+        "peakLogicalPixels": {
+          "0.006": 0.19883403852871112,
+          "0.0242": 0.8019639553991348
+        },
+        "wholeFloor": 0.18
+      }
+    },
+    "losslessGI": {
+      "whole/stomach": {
+        "meanPixelLumaRange": 9.544262886047363,
+        "p95PixelLumaRange": 14.846405029296875,
+        "fractionAtLeast2Luma": 0.894356005788712,
+        "samples": 25,
+        "seconds": 12
+      },
+      "whole/small_intestine": {
+        "meanPixelLumaRange": 6.77573299407959,
+        "p95PixelLumaRange": 10.063009262084961,
+        "fractionAtLeast2Luma": 0.9168173598553345,
+        "samples": 25,
+        "seconds": 12
+      },
+      "whole/large_intestine": {
+        "meanPixelLumaRange": 5.707202911376953,
+        "p95PixelLumaRange": 10.06298828125,
+        "fractionAtLeast2Luma": 0.8284923928077456,
+        "samples": 25,
+        "seconds": 12
+      },
+      "digestive/stomach": {
+        "meanPixelLumaRange": 11.052383422851562,
+        "p95PixelLumaRange": 15.2086181640625,
+        "fractionAtLeast2Luma": 0.9726877141005462,
+        "samples": 25,
+        "seconds": 12
+      },
+      "digestive/small_intestine": {
+        "meanPixelLumaRange": 12.507464408874512,
+        "p95PixelLumaRange": 18.203393936157227,
+        "fractionAtLeast2Luma": 0.9870242214532872,
+        "samples": 25,
+        "seconds": 12
+      },
+      "digestive/large_intestine": {
+        "meanPixelLumaRange": 6.829086780548096,
+        "p95PixelLumaRange": 10.063003540039062,
+        "fractionAtLeast2Luma": 0.9471502590673575,
+        "samples": 25,
+        "seconds": 12
+      }
+    },
+    "waveProgression": {
+      "stomach": {
+        "firstIndex": 1.0,
+        "lastIndex": 8.0,
+        "nodes": 8,
+        "maxConcurrentSegments": 2,
+        "minimumProgress": 0.0
+      },
+      "small_intestine": {
+        "firstIndex": 1.0,
+        "lastIndex": 14.0,
+        "nodes": 14,
+        "maxConcurrentSegments": 2,
+        "minimumProgress": -1.7763568394002505e-15
+      },
+      "large_intestine": {
+        "firstIndex": 1.0,
+        "lastIndex": 15.000000000000002,
+        "nodes": 15,
+        "maxConcurrentSegments": 2,
+        "minimumProgress": 0.0
+      }
+    },
+    "secondaryLumaRange": {
+      "brain": {
+        "meanPixelRange": 0.0,
+        "p95PixelRange": 0.0,
+        "wholeViewBelow8BitVisibility": true,
+        "nearMeanLumaChange": 0.16253969073295593,
+        "nearMaximumLumaChange": 0.7874000072479248,
+        "nearMaximumRgbChange": 1.0,
+        "nearReadability": "unconfirmed; presence only"
+      },
+      "liver": {
+        "meanPixelRange": 0.6781322360038757,
+        "p95PixelRange": 1.0000076293945312,
+        "wholeViewBelow8BitVisibility": false,
+        "nearMeanLumaChange": 3.2596418857574463,
+        "nearMaximumLumaChange": 6.0,
+        "nearMaximumRgbChange": 6.0,
+        "nearReadability": "unconfirmed; presence only"
+      },
+      "kidney_r": {
+        "meanPixelRange": 0.0,
+        "p95PixelRange": 0.0,
+        "wholeViewBelow8BitVisibility": true,
+        "nearMeanLumaChange": 2.9373342990875244,
+        "nearMaximumLumaChange": 6.0,
+        "nearMaximumRgbChange": 6.0,
+        "nearReadability": "unconfirmed; presence only"
+      },
+      "kidney_l": {
+        "meanPixelRange": 0.0,
+        "p95PixelRange": 0.0,
+        "wholeViewBelow8BitVisibility": true,
+        "nearMeanLumaChange": 3.1164772510528564,
+        "nearMaximumLumaChange": 6.0,
+        "nearMaximumRgbChange": 6.0,
+        "nearReadability": "unconfirmed; presence only"
+      },
+      "bladder": {
+        "meanPixelRange": 0.0,
+        "p95PixelRange": 0.0,
+        "wholeViewBelow8BitVisibility": true,
+        "nearMeanLumaChange": 0.7699806690216064,
+        "nearMaximumLumaChange": 2.0,
+        "nearMaximumRgbChange": 2.0,
+        "nearReadability": "unconfirmed; presence only"
+      },
+      "arm_r": {
+        "meanPixelRange": 0.329427570104599,
+        "p95PixelRange": 1.212615966796875,
+        "wholeViewBelow8BitVisibility": false
+      },
+      "arm_l": {
+        "meanPixelRange": 0.3640500009059906,
+        "p95PixelRange": 1.212615966796875,
+        "wholeViewBelow8BitVisibility": false
+      },
+      "forearm_r": {
+        "meanPixelRange": 0.09983594715595245,
+        "p95PixelRange": 0.2126007080078125,
+        "wholeViewBelow8BitVisibility": false
+      },
+      "forearm_l": {
+        "meanPixelRange": 0.14288216829299927,
+        "p95PixelRange": 0.92779541015625,
+        "wholeViewBelow8BitVisibility": false
+      },
+      "thigh_r": {
+        "meanPixelRange": 0.5754411816596985,
+        "p95PixelRange": 1.425201416015625,
+        "wholeViewBelow8BitVisibility": false
+      },
+      "thigh_l": {
+        "meanPixelRange": 0.558222234249115,
+        "p95PixelRange": 1.4251861572265625,
+        "wholeViewBelow8BitVisibility": false
+      },
+      "calf_r": {
+        "meanPixelRange": 0.623123049736023,
+        "p95PixelRange": 1.425201416015625,
+        "wholeViewBelow8BitVisibility": false
+      },
+      "calf_l": {
+        "meanPixelRange": 0.6609660983085632,
+        "p95PixelRange": 1.425201416015625,
+        "wholeViewBelow8BitVisibility": false
+      },
+      "pancreas": {
+        "nearMeanLumaChange": 2.740551471710205,
+        "nearMaximumLumaChange": 5.0,
+        "nearMaximumRgbChange": 5.0,
+        "nearReadability": "unconfirmed; presence only"
+      }
+    },
+    "limbCorrelationMaxOffDiagonal": 0.9019171796184425,
+    "limbCorrelationMin": -0.8273490220932685,
+    "legsTemporalChange": {
+      "sourceYMinimum": 840,
+      "tissueMeanTemporalStd": 0.003676557680591941,
+      "flowMeanTemporalStd": 0.006018594838678837,
+      "flowToTissue": 1.6370190165790677,
+      "tissuePeakTemporalStd": 2.384848117828369,
+      "flowPeakTemporalStd": 38.737701416015625,
+      "tissuePixelsStdAtLeast2": 29,
+      "flowPixelsStdAtLeast2": 215
+    },
+    "microscopy": {
+      "muscle": {
+        "meanRgbChangeOverTwoSeconds": 0.6796712875366211,
+        "intensityZeroMaxChange": 0.0
+      },
+      "marrow": {
+        "meanRgbChangeOverTwoSeconds": 0.16745910048484802,
+        "intensityZeroMaxChange": 0.0
+      }
+    }
+  },
+  "runtimeSha256": {
+    "scripts/war/BodyLifeFlowAcceptance.lua": "c13d0464162e9977a779a7adec7410de8ac747501b71301cdfa822c444e5a311",
+    "scripts/war/BodyLifeFlowData.lua": "d2633631896be97ca0faf108eab06430b3bfdb894dc0a63466e43c16298db0c2",
+    "scripts/war/BodyLifeAcceptance.lua": "f6815ce8227c4bf27e325ee4aa30e1f989a31b859a3252e5d52f3d6c4dc7cfff",
+    "scripts/war/BodyLifeMasks.lua": "5e2e46c586aaf1ee5ee3f33a7aac96e0374a16b2463192dc9f19076c8103ef88",
+    "scripts/war/BodyLifeShading.lua": "c94c779bb6a1e2db7b313ff184d2a28eba2bc68ee6ceefb3c2b038f550d59ed6",
+    "scripts/war/BodyLife.lua": "a21e5c99d8f24ba997b9c875bee3cc9dd7892fdcbd6fe5bba61e9395fa13358d",
+    "scripts/war/BodyLifeLightingRegions.lua": "65823f35d8fbe95db2a56d70954a73822829ceb52a5f705c0163587456ee8218",
+    "scripts/war/BodyLifeMotion.lua": "8a97783cf7f42770ae63ba4f6937342843bd4c2d44bc1f332c69a8367d93da51",
+    "scripts/war/BodyLifeRegions.lua": "4ff4a2ddd96af6030d60e0d43afc15f500542ceff614d61fd469022f6b86cfab",
+    "scripts/war/BodyLifeFlow.lua": "d6e50b9a7d348aff611b976a3dd46db6e1f913eba1009769ea31b257803a903a",
+    "scripts/war/BodyLifeAssets.lua": "20922466a90d0c0bd817aa3568aa596647a7b357bd309b5bbe24592035d154f5",
+    "scripts/war/BodyLifeMotionAcceptance.lua": "975b646a1e35d4bbf41f6fa3a5dca4b076e809d2cb0d45e22684ef245cc1f343",
+    "scripts/war/ReferenceArt.lua": "28cdbfe6c572bd7ace77db9307b5595d6b536f1cb192e710d38b2b3190dc83e6"
+  },
+  "limitations": [
+    "Engineering visibility floors are not a guarantee of human perception.",
+    "Lossless source renders use Cairo rather than native NanoVG; native seams/performance remain separate.",
+    "Secondary ranges exclude flow; leg flow comparison isolates source y>=840, excluding digestive tissue at the top of the requested view.",
+    "Small secondary organs may fall below 8-bit compositing visibility in whole view; this is reported per organ and their detail is checked in close view. They are not counted as whole-body motion cues.",
+    "Uniform 0.5s sampling aliases 1s perfusion; nonuniform fixed times cover cardiac phases. Canvas-average flow variation may be lower than broad tissue shading; local contrast is the relevant comparison."
+  ]
+}
