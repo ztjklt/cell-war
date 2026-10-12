@@ -1,0 +1,99 @@
+{
+  "schema": "candidate-m-author-direct-visual-review/v1",
+  "createdUTC": "2026-10-11T21:58:14.499243+00:00",
+  "status": "FAIL_PRIVATE_VISUAL_NOT_ACCEPTED",
+  "authorReviewer": true,
+  "independentReviewer": false,
+  "candidateManifestSha256": "641a40b5d7afa32e9c7bfa424dccac68e97323db30e4b4d71d40b41260b9ad15",
+  "contractSha256": "47f1cbfcfc1a33ce41df028c30280cda56fbd2476fa4e2681c7502b61f298dd6",
+  "privateRuntimeDataSha256": "7c5ac163a23b8b9c1e7032ebeb34f0c7c1fb6a920328988b1ea287de01a687b8",
+  "cases": [
+    {
+      "id": "entire-crop-true015",
+      "path": "docs/body-life/vascular-art-study/fullbody-015/bake/fifth-candidate-m/diagnostics/entire-crop-true015-compare.png",
+      "sha256": "b85ec63fe2ad0ed91e1e58696f494bd9dc4bf14b8a461b26cc6d16f272d084ae",
+      "observed": true,
+      "sourceBox": [
+        507,
+        545,
+        532,
+        561
+      ],
+      "status": "FAIL_ALL_FOUR_MOUTH_SET",
+      "conclusion": "At .15/DPR2 scale both red mouths acquire a readable pink lip, but blue lower remains a bare flat cut and blue upper has a dot/stripe seam. This is a model, not native evidence.",
+      "nativeEvidence": false
+    },
+    {
+      "id": "e010-sourceStart",
+      "path": "docs/body-life/vascular-art-study/fullbody-015/bake/fifth-candidate-m/diagnostics/e010-sourceStart-compare.png",
+      "sha256": "3500bfa6639473c4948bb4ac909934d8344fee7f94a4ea93b856181617ea1c06",
+      "observed": true,
+      "sourceBox": [
+        511.26629511558815,
+        545.0700227622928,
+        519.2662951155882,
+        549.0700227622928
+      ],
+      "status": "FAIL_SUPPORT_EDGE_SEAM",
+      "conclusion": "Upper red lip reads as foreground but the left/right physical selector boundaries create abrupt rectangular color patches. Approximate source affected border x511.7..518.8, y547.1..548.3.",
+      "nativeEvidence": false
+    },
+    {
+      "id": "e010-sourceEnd",
+      "path": "docs/body-life/vascular-art-study/fullbody-015/bake/fifth-candidate-m/diagnostics/e010-sourceEnd-compare.png",
+      "sha256": "3f61a609ad9dd82949b9d36c672be8d4d45affba8235e4f819283f81b9894e02",
+      "observed": true,
+      "sourceBox": [
+        511.08960118111736,
+        552.0699503410875,
+        519.0896011811174,
+        556.0699503410875
+      ],
+      "status": "FAIL_SUPPORT_EDGE_SEAM",
+      "conclusion": "Lower red lip is visible, but its left boundary abruptly starts within the existing continuous curved coral foreground edge; rectangular pasted color segment near x511.6,y553.5..554.1.",
+      "nativeEvidence": false
+    },
+    {
+      "id": "e119-sourceStart",
+      "path": "docs/body-life/vascular-art-study/fullbody-015/bake/fifth-candidate-m/diagnostics/e119-sourceStart-compare.png",
+      "sha256": "629f636647f6528f4eef8951903dd7c0147689167924dbc27d515b548f4f55f4",
+      "observed": true,
+      "sourceBox": [
+        518.9270558237497,
+        552.9914649183452,
+        526.9270558237497,
+        556.9914649183452
+      ],
+      "status": "FAIL_NO_READABLE_ROOF_LIP",
+      "conclusion": "Lower blue mouth remains visually almost the original flat cut. Accepted coral pixels modify roof color but the raw lip feature is not at the fixed boundary [522.927055824,554.991464918].",
+      "nativeEvidence": false
+    },
+    {
+      "id": "e119-sourceEnd",
+      "path": "docs/body-life/vascular-art-study/fullbody-015/bake/fifth-candidate-m/diagnostics/e119-sourceEnd-compare.png",
+      "sha256": "1e5aa70472515695f7843c38c613b70de78334bc6baa16ee27b71a1bdcadd93c",
+      "observed": true,
+      "sourceBox": [
+        519.4323163071163,
+        545.9281666847154,
+        527.4323163071163,
+        549.9281666847154
+      ],
+      "status": "FAIL_DOTTED_TRANSVERSE_COLOR_STRIP",
+      "conclusion": "Upper blue mouth has a new pink lip but a dot-like blue/magenta stripe remains at fixed [523.432316307,547.928166685]. Same-component coral fill does not make the source lip accurately aligned. Preserve the mask; do not claim it is a clean open underpass.",
+      "nativeEvidence": false
+    }
+  ],
+  "allFiveComparisonsActuallyObserved": true,
+  "wholeVisualAccepted": false,
+  "nativeEvidence": false,
+  "promoteAllowed": false,
+  "generationAssessment": "Raw v2 has the right cartoon material and obvious lips, but e119 upper registered raw sample is blue and lower blue lip is displaced outside the accepted fixed mask band. No source fit or geometry change was used to hide this.",
+  "technicalProof": "New 400x256 alpha equals accepted fixed mask; 247 invalid registered raw samples receive nearest same-component coral color at max0.279508497 source distance; original K 42 resource files unchanged; author seven virtual lifecycle checks passed. Technical pixel validity does not make the visual set pass.",
+  "minimalNextProposal": [
+    "Keep this M immutable as a failed author sample; do not promote.",
+    "If another private candidate is authorized, preserve original fixed mask and mapping. Blend generated lip RGB to K baseline over support side/interior edges to remove rectangular pasted boundaries; no alpha or route widening.",
+    "The lower blue lip needs a source-aligned generated feature inside the exact frozen mask band. A new tiny e119-only guide should show the four fixed lip bounds directly; keep generic food floor outside accepted support unchanged.",
+    "Upper blue dot-strip needs registered sampling and color interpolation examined at actual .15/DPR2, then fresh native evidence. Do not infer navigation blockage from this visual artifact."
+  ]
+}

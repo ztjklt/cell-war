@@ -1,0 +1,52 @@
+{
+  "schema": "candidate-j-source-archive/v1",
+  "kind": "READ_ONLY_EXACT_SOURCE_EVIDENCE",
+  "sourceCopies": [
+    {
+      "originalPath": ".tmp/fullbody-015/j-staging/build_j_candidate.py",
+      "archivedPath": "docs/body-life/vascular-art-study/fullbody-015/bake/fourth-candidate-j/source-archive/build_j_candidate.source.py",
+      "sha256": "b9374583567aca4815a9b7edab4d3581da23113b7023f7ebec4173f58b7cec14",
+      "copiedByteExact": true
+    },
+    {
+      "originalPath": ".tmp/fullbody-015/j-staging/render_j_diagnostics.py",
+      "archivedPath": "docs/body-life/vascular-art-study/fullbody-015/bake/fourth-candidate-j/source-archive/render_j_diagnostics.source.py",
+      "sha256": "d6e86dcaf1a522fe75637162ec1e9b4d08713d331ffaac25fbaa6e3055b09839",
+      "copiedByteExact": true
+    },
+    {
+      "originalPath": ".tmp/fullbody-015/j-staging/baseline-manifest.json",
+      "archivedPath": "docs/body-life/vascular-art-study/fullbody-015/bake/fourth-candidate-j/source-archive/baseline-h-manifest.json",
+      "sha256": "047244928344daae38b12073b68468d3fb111804a216a85ad26a8f19407066e4",
+      "copiedByteExact": true
+    },
+    {
+      "originalPath": ".tmp/fullbody-015/scoped-current-qa/audit_padding_candidate.py",
+      "archivedPath": "docs/body-life/vascular-art-study/fullbody-015/bake/fourth-candidate-j/source-archive/independent_byte_audit.source.py",
+      "sha256": "2ad727de99ba85240dd2d3e28bacbec7c4e027a995ba109a7e5f754efadd230c",
+      "copiedByteExact": true
+    },
+    {
+      "originalPath": ".tmp/fullbody-015/scoped-current-qa/candidate-j-independent-byte-report.json",
+      "archivedPath": "docs/body-life/vascular-art-study/fullbody-015/bake/fourth-candidate-j/source-archive/independent-byte-report.json",
+      "sha256": "546e14c34c9f624d6170a0cc41e616c22f110a3d06fdd49e4f42ad9139252ad4",
+      "copiedByteExact": true
+    }
+  ],
+  "frozenCandidateFiles": {
+    "docs/body-life/vascular-art-study/fullbody-015/bake/fourth-candidate-j/manifest.json": "4f7c350a5629ab4cb34acf0a2fc1257e661c80b28be1acd73b97a3566bb960b0",
+    "docs/body-life/vascular-art-study/fullbody-015/bake/fourth-candidate-j/rgb-padding-contract.json": "c8e96568791a63eff1c6e600a4689908bcd4488b3576af091835a5570cfb48a1",
+    "docs/body-life/vascular-art-study/fullbody-015/bake/fourth-candidate-j/promotion-data.json": "edc921c428d47b3fcd96279886c1a816fb28a1289aa8ce50e61d6b4236791096"
+  },
+  "baselineManifestSha256": "047244928344daae38b12073b68468d3fb111804a216a85ad26a8f19407066e4",
+  "nativeEvidence": false,
+  "directExecutionSupported": false,
+  "executionLimit": "Archived .source.py files are byte-exact evidence of the staging run. Their __file__ parent calculation points to the original staging layout, so do not execute them from this archive. Original build also intentionally refuses to overwrite an existing candidate.",
+  "reuseRecipe": [
+    "For a future fresh candidate, adapt the archived build source to an explicit project root and fresh output/asset/staging paths. Use a frozen baseline manifest with unchanged input asset hashes.",
+    "Retain exact target-texel-center heart sourceBox+1 exclusion and conservative actual lung alpha mask +1source + one whole 0.25source grid cell. Dedicated heart/lung/arch six asset records/files remain byte-exact.",
+    "Perform RGB extension only where alpha==0 from the nearest alpha>0 seed. Preserve every alpha byte and every positive-alpha RGB byte. Keep positive-alpha black donor exceptions in diagnostics.",
+    "Run independent whole-image alpha/positiveRGB/heart+1/lung-core+strict-guard audit before promotion. Compare actual native screenshots after activation; straight-channel composites are diagnostic evidence only."
+  ],
+  "futureBakeNote": "The current compiler initializes alpha0 RGB black. Rebuilding without the explicit padding recipe can reintroduce filtering fringes; padding remains a separate post-bake candidate stage until root adopts it in the maintained pipeline."
+}

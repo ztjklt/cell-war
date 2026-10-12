@@ -1,0 +1,241 @@
+{
+  "status": "BROWSER_SCALE_AND_TISSUE_BOUNDARY_DEMO_PASS",
+  "checks": [
+    {
+      "case": "scout-moving",
+      "cellImageScreenWidth": 19.199996948242188,
+      "dpr": 2,
+      "error": "",
+      "fill": "1",
+      "movement": "moving",
+      "radius": "0.21875",
+      "source": "562.3235992007482,520.5198637360766",
+      "viewport": [
+        408,
+        778
+      ],
+      "zoom": "0.15"
+    },
+    {
+      "case": "scout-arrival",
+      "movement": "arrived",
+      "result": "已到达。移动保持在同源组织边界内。",
+      "source": "563,523"
+    },
+    {
+      "allowed": "false",
+      "case": "scout-outer-wall",
+      "movement": "blocked",
+      "result": "目标不可通过：整个细胞圆盘必须留在胃轮廓内，并避开食物通道与血管壁。",
+      "source": "563,523"
+    },
+    {
+      "allowed": "false",
+      "case": "scout-food",
+      "movement": "blocked",
+      "source": "563,523"
+    },
+    {
+      "case": "siege-moving",
+      "cellImageScreenWidth": 19.199996948242188,
+      "movement": "moving",
+      "radius": "0.53125",
+      "source": "557.2499484755298,518.2082903962748"
+    },
+    {
+      "case": "siege-arrival",
+      "movement": "arrived",
+      "result": "已到达。移动保持在同源组织边界内。",
+      "source": "563,523"
+    },
+    {
+      "allowed": "false",
+      "case": "siege-outer-wall",
+      "movement": "blocked",
+      "source": "563,523"
+    },
+    {
+      "allowed": "false",
+      "case": "siege-food",
+      "movement": "blocked",
+      "source": "563,523"
+    },
+    {
+      "case": "responsive-015",
+      "cellImageScreenWidth": 19.20001220703125,
+      "documentWidth": 1440,
+      "dpr": 1,
+      "error": "",
+      "fill": "1",
+      "size": [
+        1440,
+        900
+      ],
+      "viewport": [
+        1440,
+        900
+      ],
+      "zoom": "0.15"
+    },
+    {
+      "case": "responsive-015",
+      "cellImageScreenWidth": 19.20001220703125,
+      "documentWidth": 1024,
+      "dpr": 1,
+      "error": "",
+      "fill": "1",
+      "size": [
+        1024,
+        768
+      ],
+      "viewport": [
+        1024,
+        768
+      ],
+      "zoom": "0.15"
+    },
+    {
+      "case": "responsive-015",
+      "cellImageScreenWidth": 19.20001220703125,
+      "documentWidth": 844,
+      "dpr": 1,
+      "error": "",
+      "fill": "1",
+      "size": [
+        844,
+        390
+      ],
+      "viewport": [
+        844,
+        390
+      ],
+      "zoom": "0.15"
+    },
+    {
+      "case": "responsive-015",
+      "cellImageScreenWidth": 19.199996948242188,
+      "documentWidth": 430,
+      "dpr": 1,
+      "error": "",
+      "fill": "1",
+      "size": [
+        430,
+        932
+      ],
+      "viewport": [
+        430,
+        932
+      ],
+      "zoom": "0.15"
+    },
+    {
+      "case": "responsive-015",
+      "cellImageScreenWidth": 19.199996948242188,
+      "documentWidth": 360,
+      "dpr": 1,
+      "error": "",
+      "fill": "1",
+      "size": [
+        360,
+        780
+      ],
+      "viewport": [
+        360,
+        780
+      ],
+      "zoom": "0.15"
+    },
+    {
+      "case": "boundary-overlay",
+      "debugPaths": 2,
+      "kind": "siege",
+      "mode": "game",
+      "source": "557,518"
+    },
+    {
+      "case": "old-fill-compare",
+      "newArt": "false",
+      "source": "557,518",
+      "terrainOpacity": "0"
+    },
+    {
+      "case": "handover-mid",
+      "fill": "0.45098039215686275",
+      "source": "557,518",
+      "zoom": "0.11538461538461538"
+    },
+    {
+      "case": "final-overview",
+      "documentWidth": 408,
+      "dpr": 2,
+      "error": "",
+      "mode": "overview",
+      "viewport": [
+        408,
+        778
+      ]
+    }
+  ],
+  "console": [],
+  "viewportOverrideReset": true,
+  "productionInstalled": false,
+  "nativeEvidence": false,
+  "inputHashes": {
+    "docs/body-life/vascular-art-study/stomach-terrain.html": "536f37496c07ea1c869fcbc1188ed9475dad583e85b3bb9e98b6ba3e5c38dff9",
+    "docs/body-life/vascular-art-study/stomach-terrain.js": "3f18cd6ac91ee4044793391d5c21b826f9ee49f408916ced25eb3cddbe9e49d3",
+    "docs/body-life/vascular-art-study/stomach-terrain-v1/data.json": "51f8eef53701a92527e94da40d453454e441943c17bbfcf34f252b8757b61472",
+    "docs/body-life/vascular-art-study/stomach-terrain-v1/terrain-layer.png": "7ab78f70146b2521e2fbfdacb77ca9e7a3cbb48003d102bd58d368fe7ca7c932",
+    "docs/body-life/vascular-art-study/final-reference-data.json": "3890744e2fcaf9e9907c85513e170e479f67b7fbb1fbf06385ac02bd80e8550c",
+    "assets/image/anatomy-reference/reference.png": "9a04e39961c07073cd9fdcfcdc2c98253ccc25d968e97dbea1f36669e06b5d9f"
+  },
+  "screenshots": [
+    {
+      "file": "browser-overview.png",
+      "sha256": "9517e4cf04fe8aecbed54d7b8577ccac69f1b95fde369d00634c082d7bfd478d",
+      "visuallyInspected": true,
+      "historicalBeforeFinalBorderFix": true
+    },
+    {
+      "file": "browser-1440x900.png",
+      "sha256": "4d7da9cb71f97e4307d6b10b7cf9c7119e84e108e24431d33c64daa835488333",
+      "visuallyInspected": true,
+      "historicalBeforeFinalBorderFix": false
+    },
+    {
+      "file": "browser-1024x768.png",
+      "sha256": "629a7c9228944da9b19914a457564e01b1d977a2133817db086afad80cc52654",
+      "visuallyInspected": true,
+      "historicalBeforeFinalBorderFix": false
+    },
+    {
+      "file": "browser-844x390.png",
+      "sha256": "0077af9a5e4495faab26e9a5650947a404b7da6fa8a51c30451eb75763a71d9a",
+      "visuallyInspected": true,
+      "historicalBeforeFinalBorderFix": false
+    },
+    {
+      "file": "browser-430x932.png",
+      "sha256": "30a11780599b1a0fc13975eb2e059cb675078d0a231c5d8a3c4020d490390c8a",
+      "visuallyInspected": true,
+      "historicalBeforeFinalBorderFix": false
+    },
+    {
+      "file": "browser-360x780.png",
+      "sha256": "46ba9a041346351a2369c3e662ea45e770b5fa459190a24c7402b1f928f5c77e",
+      "visuallyInspected": true,
+      "historicalBeforeFinalBorderFix": false
+    },
+    {
+      "file": "browser-final.png",
+      "sha256": "1ae530971a3bbe4af48aa181319ba36199975592442819410be02ee1785f41ee",
+      "visuallyInspected": true,
+      "historicalBeforeFinalBorderFix": false
+    }
+  ],
+  "independentDeliveryAuditSha256": "7a8c5d1236e46b7ff84afdc07c2b2dc5505f8cf0680a98e91d578f2e769e6bd8",
+  "limits": [
+    "Browser tissue-plane demonstration, not production Lua pathfinding.",
+    "Default browser DPR 2 and explicit responsive viewport DPR 1 checked; DPR 3 native rendering remains unconfirmed.",
+    "Production outer wall not installed; native session remains stopped."
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "cases": [
+    {
+      "id": "edge/e160/siege",
+      "family": "edge",
+      "edgeId": "e160",
+      "laneIndex": 160,
+      "system": "capillary",
+      "sourceFractions": [
+        0.15,
+        0.85
+      ],
+      "actors": [
+        {
+          "kind": "siege",
+          "x": 987.9448061254471,
+          "y": 701.5399195846361,
+          "tx": 972.9488889655488,
+          "ty": 713.9422142139754,
+          "lane": 160,
+          "targetLane": 160,
+          "targetOrgan": "brain",
+          "setupSource": [
+            509.3171557335909,
+            72.66884082224061
+          ]
+        }
+      ],
+      "maxTime": 1800,
+      "caseOrgans": [],
+      "organs": [
+        "brain",
+        "lung_r",
+        "lung_l",
+        "liver",
+        "stomach",
+        "pancreas",
+        "kidney_r",
+        "kidney_l",
+        "large_intestine",
+        "small_intestine",
+        "bladder",
+        "heart"
+      ]
+    }
+  ],
+  "cpuLimitSeconds": 300.0,
+  "caseDirectory": "fullbody/runs/1791719235250328000/cases",
+  "observationMaxTime": 6000.0,
+  "setupMaxTime": 6000.0
+}

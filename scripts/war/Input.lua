@@ -2,10 +2,11 @@ local UI=require("urhox-libs/UI")
 local D,U,R,C,W=require("war.Data"),require("war.Util"),require("war.Render"),require("war.Commands"),require("war.World")
 local I={}
 local Motion=require("war.Motion")
+local HeartDisplay=require('war.HeartDisplayTransform')
 local Cells,BodyArt=require("war.Cells"),require("war.BodyArt")
 -- Temporary map inspection; never changes faction vision or saved exploration.
 function I.toggleFog(g)
- if g.state.anatomyVersion==3 then U.message(g.state,"全身地图始终可查看 · 敌人和未发现资源仍遵守迷雾");return end
+ if (g.state.anatomyVersion==3 or g.state.anatomyVersion==4) then U.message(g.state,"全身地图始终可查看 · 敌人和未发现资源仍遵守迷雾");return end
  g.fogDisabled=not g.fogDisabled
  U.message(g.state,g.fogDisabled and "迷雾已关闭 · 全图查看 · F恢复" or "迷雾已恢复")
 end
@@ -19,7 +20,7 @@ function I.coords(e) local factor=UI.GetScale()/graphics:GetDPR();return e.x*fac
 function I.pick(g,x,y)
  local best,dd=false,math.huge
  for _,e in pairs(g.state.entities) do if U.alive(e) and (e.faction==1 or W.visible(g.state,1,e)) then
-  local wx,wy=Motion.position(g,e);local px,py=R.project(g,wx,wy);local size=(e.category=="building" and BodyArt.radius(e.kind) or Cells.radius(e.kind)+5)*g.zoom
+  local wx,wy=HeartDisplay.displayPosition(g,e);local px,py=R.project(g,wx,wy);local size=(e.category=="building" and BodyArt.radius(e.kind) or Cells.radius(e.kind)+5)*g.zoom
   if g.zoom<.14 then size=6 end
   local d=((px-x)^2+(py-y)^2)^.5
   if d<size and d<dd then best,dd=e,d end
@@ -36,7 +37,7 @@ function I.issue(g,kind,x,y,target)
  return true
 end
 function I.tap(g,x,y,secondary)
- local wx,wy=R.unproject(g,x,y);g.pointer={wx=wx,wy=wy};local s=g.state
+ local wx,wy=HeartDisplay.commandPoint(R,g,x,y);g.pointer={wx=wx,wy=wy};local s=g.state
  if g.placement then
   local bx=math.floor(wx)+(D.buildings[g.placement].size%2==0 and 0 or .5)
   local by=math.floor(wy)+(D.buildings[g.placement].size%2==0 and 0 or .5)
@@ -75,11 +76,11 @@ function I.down(g,e)
  local x,y=I.coords(e)
  if not e.isPrimary then g.drag=false;return end
  g.drag={x=x,y=y,tx=x,ty=y,pointer=e.pointerId,secondary=e.button==MOUSEB_RIGHT,moved=false,box=g.box or (e.pointerType=="mouse" and e.button==MOUSEB_LEFT and not g.placement and not g.mode)}
- g.pointer.wx,g.pointer.wy=R.unproject(g,x,y)
+ g.pointer.wx,g.pointer.wy=HeartDisplay.commandPoint(R,g,x,y)
 end
 function I.move(g,e)
  g.pointerKind=e.pointerType or g.pointerKind
- local x,y=I.coords(e);g.pointer.wx,g.pointer.wy=R.unproject(g,x,y)
+ local x,y=I.coords(e);g.pointer.wx,g.pointer.wy=HeartDisplay.commandPoint(R,g,x,y)
  local a=g.drag;if not a or a.pointer~=e.pointerId then return end
  if math.abs(x-a.x)+math.abs(y-a.y)>7 then a.moved=true end
  if not a.box and a.moved then R.pan(g,x-a.tx,y-a.ty) end
@@ -95,7 +96,7 @@ function I.up(g,e)
  if a.box and a.moved then
   if not g.append and not input:GetKeyDown(KEY_LSHIFT) then g.selection={} end
   for id,u in pairs(g.state.entities) do if U.alive(u) and u.faction==1 and u.category=="unit" then
-   local wx,wy=Motion.position(g,u);local px,py=R.project(g,wx,wy)
+   local wx,wy=HeartDisplay.displayPosition(g,u);local px,py=R.project(g,wx,wy)
    if px>=math.min(a.x,x) and px<=math.max(a.x,x) and py>=math.min(a.y,y) and py<=math.max(a.y,y) then g.selection[id]=true end
   end end;g.state.selectedOnce=true
  elseif not a.moved then I.tap(g,x,y,a.secondary) end

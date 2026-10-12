@@ -1,0 +1,61 @@
+{
+  "status": "INTERFACE_PROPOSAL_NOT_IMPLEMENTED",
+  "moduleProposal": "war.OrganGateTrafficStudy",
+  "optInOnly": true,
+  "saveFields": [],
+  "interfaces": [
+    {
+      "name": "prepare(gates, checkedHoldingPoints)",
+      "meaning": "Build an isolated reservation table from original gate IDs and prevalidated holding points; do not modify geometry."
+    },
+    {
+      "name": "request(unitId, gateId, fromLane, toLane, now)",
+      "meaning": "Create monotonically ordered FIFO ticket; same request is idempotent."
+    },
+    {
+      "name": "tick(now, observedUnits)",
+      "meaning": "Return movement intents and status transitions. All intents are executed using real Commands/Path/Workers."
+    },
+    {
+      "name": "cancel(ticket, reason)",
+      "meaning": "Withdraw waiting ticket immediately; an active disk inside the aperture retains exclusion until safe egress or a declared blocked result."
+    },
+    {
+      "name": "release()",
+      "meaning": "Detach all wrappers, clear reservations; no persistence or old-save migration."
+    }
+  ],
+  "states": [
+    "approach_holding",
+    "queued",
+    "admitted",
+    "crossing",
+    "clear",
+    "cancelled",
+    "timed_out",
+    "blocked"
+  ],
+  "invariants": [
+    "No waiting center or cell disk intersects the gate exclusion disk (gate.radius plus actual unit radius plus sweep reserve).",
+    "One crossing reservation at a time for the initial prototype; no direction change before the current disk clears the exclusion zone.",
+    "Only the next eligible FIFO ticket is admitted; discarded, dead or timed-out tickets remain in the log with a reason.",
+    "A blocked active unit cannot be made invisible or released while physically obstructing the aperture.",
+    "Waiting has an explicit deadline and returns timed_out if it cannot be serviced; timeout is a failed traversal, not success.",
+    "No teleport, geometry widening, collision-radius reduction, food/air/urine aperture or arbitrary graph edge.",
+    "Pre-existing cells inside the gate protection zone require a separate evacuation protocol before ordinary queue admission."
+  ],
+  "requiredTests": [
+    "Same frozen six-cell starts and goals, comparing unreserved and reserved traces.",
+    "Every arrival crosses both directions and returns, all three real radii retained.",
+    "No overlapping disks, wall penetration or undeclared lane transition.",
+    "FIFO admission ordering and measured maximum wait, with non-completion retained.",
+    "Cancellation, death, active blocker timeout and reservation cleanup.",
+    "No gate-front waiting point occupies another unit or lies on forbidden anatomy.",
+    "No production import or save-state changes."
+  ],
+  "currentLimitations": [
+    "Interface design only; no traffic adapter or traffic acceptance claimed.",
+    "Crowd baseline report must finish before selecting a specific intervention.",
+    "Safe holding positions for frozen starts have not been measured; several starts may lie inside aperture protection zones."
+  ]
+}

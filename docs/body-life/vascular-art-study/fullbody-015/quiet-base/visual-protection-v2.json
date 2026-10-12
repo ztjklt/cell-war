@@ -1,0 +1,294 @@
+{
+  "schema": "quietbase-v2-visual-protection/v1",
+  "sourceBox": [
+    0,
+    0,
+    1024,
+    1536
+  ],
+  "sourcePixelSize": [
+    1024,
+    1536
+  ],
+  "artifactUsesSourceCoordinates": true,
+  "actualOrganAlpha": {
+    "path": "docs/body-life/vascular-art-study/fullbody-015/quiet-base/actual-organ-alpha.png",
+    "sha256": "262e1514310e685f09853308a496fc7916a04e8e646613fd1edf4c12552b1ef7",
+    "method": "Maximum of accepted organ alpha transformed from each fixed sourceBox, opaque >=254"
+  },
+  "actualVisibleForeground": {
+    "path": "docs/body-life/vascular-art-study/fullbody-015/quiet-base/actual-visible-foreground.png",
+    "sha256": "8c8d27271f268332bb0c0c9c937cc1f23a6e384433af4b1860cef10e3a9e2b65",
+    "method": "Abstract reserved pixels only if original-vs-GPT max RGB channel difference <=24 and source is not vascular red or blue; cream bones independently protected"
+  },
+  "appliedMask": {
+    "path": "docs/body-life/vascular-art-study/fullbody-015/quiet-base/applied-mask.png",
+    "sha256": "b6c86dd6ef1818eaae701e01bba6b370ada0df6385fc2439930621b75ccda274"
+  },
+  "appliedAlpha": {
+    "path": "docs/body-life/vascular-art-study/fullbody-015/quiet-base/applied-alpha.png",
+    "sha256": "d1aecf6f0a343054271106e28fb3faffe7e8417916bf8c26f2525aaf39c81eb3"
+  },
+  "originalBoneTest": "R>180 G>170 R>=G>=B R-G<30 G-B<75",
+  "outerGuardInputPath": "assets/image/anatomy-reference/vascular-study/fullbody-015/masks/body-interior-with-2px-guard.png",
+  "abstractReservedUsedFor": [
+    "unchanged frozen route domain",
+    "blood texture clipping",
+    "unit underpass depth"
+  ],
+  "abstractReservedNotUsedFor": "Blanket retention of arbitrary previous artwork colors",
+  "organMasks": [
+    {
+      "id": "liver",
+      "acceptedBasePath": "assets/image/anatomy-reference/vascular-study/organ-atlas/liver/battlefield.png",
+      "acceptedBaseSha256": "64fececa82a2e97d12801f9e25130c8835602d1e741cd615b26ab3c4839a66f7",
+      "sourceBox": [
+        387,
+        463,
+        537,
+        576
+      ],
+      "sourcePixelSize": [
+        1800,
+        1356
+      ],
+      "alphaMaskPath": "docs/body-life/vascular-art-study/fullbody-015/quiet-base/organ-alpha/liver.png",
+      "alphaMaskSha256": "0dff0127bb0f43613a0ec790fb4f5bf6bbc53c66c8607cb45d929e6cced0cf74",
+      "opaqueProtectionThreshold": 254,
+      "opaqueSourcePixels": 7680
+    },
+    {
+      "id": "kidney_r",
+      "acceptedBasePath": "assets/image/anatomy-reference/vascular-study/organ-atlas/kidney_r/battlefield.png",
+      "acceptedBaseSha256": "2bb9565bf764b2850ebc89921681812da0dcfd432c4c27403654883cab8c7905",
+      "sourceBox": [
+        390,
+        564,
+        449,
+        656
+      ],
+      "sourcePixelSize": [
+        708,
+        1104
+      ],
+      "alphaMaskPath": "docs/body-life/vascular-art-study/fullbody-015/quiet-base/organ-alpha/kidney_r.png",
+      "alphaMaskSha256": "1458d8f1da7c62dcf5ec07e8e5c449c0e071aa94c03609c2cc668fe35458f7d8",
+      "opaqueProtectionThreshold": 254,
+      "opaqueSourcePixels": 2382
+    },
+    {
+      "id": "kidney_l",
+      "acceptedBasePath": "assets/image/anatomy-reference/vascular-study/organ-atlas/kidney_l/battlefield.png",
+      "acceptedBaseSha256": "4b64bd08494b8e8c612237ced8de5c4f2b22d3f5e5d80d1e43bb1ab777675357",
+      "sourceBox": [
+        571,
+        564,
+        628,
+        655
+      ],
+      "sourcePixelSize": [
+        684,
+        1092
+      ],
+      "alphaMaskPath": "docs/body-life/vascular-art-study/fullbody-015/quiet-base/organ-alpha/kidney_l.png",
+      "alphaMaskSha256": "fe7f2b629ab7321e28c9b3c10824c6b34ff4854b09999cb230179a2d50938065",
+      "opaqueProtectionThreshold": 254,
+      "opaqueSourcePixels": 2278
+    },
+    {
+      "id": "lung_r",
+      "acceptedBasePath": "assets/image/anatomy-reference/vascular-study/organ-atlas/lung_r/battlefield.png",
+      "acceptedBaseSha256": "830c4126c5e15ec14499951d10309ad532388fcf578b0cfba5faf1d1907bf30f",
+      "sourceBox": [
+        366,
+        285,
+        484,
+        489
+      ],
+      "sourcePixelSize": [
+        1416,
+        2448
+      ],
+      "alphaMaskPath": "docs/body-life/vascular-art-study/fullbody-015/quiet-base/organ-alpha/lung_r.png",
+      "alphaMaskSha256": "ebe1382c01b6cbb3c3df9daf3d2ff08948ad516e78783124860d62b8e0a5ea98",
+      "opaqueProtectionThreshold": 254,
+      "opaqueSourcePixels": 14316
+    },
+    {
+      "id": "lung_l",
+      "acceptedBasePath": "assets/image/anatomy-reference/vascular-study/organ-atlas/lung_l/battlefield.png",
+      "acceptedBaseSha256": "9b62c9157cf0e87a3c468b77834d5bf2915563936a58c5291dcea350a670e3d4",
+      "sourceBox": [
+        533,
+        285,
+        650,
+        490
+      ],
+      "sourcePixelSize": [
+        1404,
+        2460
+      ],
+      "alphaMaskPath": "docs/body-life/vascular-art-study/fullbody-015/quiet-base/organ-alpha/lung_l.png",
+      "alphaMaskSha256": "e50d8ca2afe539e587e80111cbd6f81bbcecbf7b787540c71520eca9b43cae57",
+      "opaqueProtectionThreshold": 254,
+      "opaqueSourcePixels": 13361
+    },
+    {
+      "id": "heart",
+      "acceptedBasePath": "assets/image/anatomy-reference/vascular-study/organ-atlas/heart/battlefield.png",
+      "acceptedBaseSha256": "d0580777347de263cff83d8f3d179db06823b47159a05a2db2503ae07f84ebc7",
+      "sourceBox": [
+        468,
+        326,
+        568,
+        467
+      ],
+      "sourcePixelSize": [
+        1200,
+        1692
+      ],
+      "alphaMaskPath": "docs/body-life/vascular-art-study/fullbody-015/quiet-base/organ-alpha/heart.png",
+      "alphaMaskSha256": "f2448a07146763242241f189dcfc22925e9f86e5219ccc91b83b14967c27d0da",
+      "opaqueProtectionThreshold": 254,
+      "opaqueSourcePixels": 7084
+    },
+    {
+      "id": "brain",
+      "acceptedBasePath": "assets/image/anatomy-reference/vascular-study/organ-atlas/brain/battlefield.png",
+      "acceptedBaseSha256": "79774e751a3b3c2810681f1ac094c05a971150a478a43ed7b2be06cf777b29ba",
+      "sourceBox": [
+        439,
+        21,
+        580,
+        124
+      ],
+      "sourcePixelSize": [
+        1692,
+        1236
+      ],
+      "alphaMaskPath": "docs/body-life/vascular-art-study/fullbody-015/quiet-base/organ-alpha/brain.png",
+      "alphaMaskSha256": "3506194c4433fba0b4330202216267839a7282f1b79bca0c7bc46b1497a1ff47",
+      "opaqueProtectionThreshold": 254,
+      "opaqueSourcePixels": 8356
+    },
+    {
+      "id": "pancreas",
+      "acceptedBasePath": "assets/image/anatomy-reference/vascular-study/organ-atlas/pancreas/battlefield.png",
+      "acceptedBaseSha256": "73f3a3e52741379b26c9b57c51a56682b14dbe9c8ed2621f12b60db37dcc9ab5",
+      "sourceBox": [
+        476,
+        558,
+        580,
+        611
+      ],
+      "sourcePixelSize": [
+        1248,
+        636
+      ],
+      "alphaMaskPath": "docs/body-life/vascular-art-study/fullbody-015/quiet-base/organ-alpha/pancreas.png",
+      "alphaMaskSha256": "ec92f1b4010d43abf6bb1b013e2e48cbe0ba6baa389cfe32bcf8b60514646ad5",
+      "opaqueProtectionThreshold": 254,
+      "opaqueSourcePixels": 2112
+    },
+    {
+      "id": "bladder",
+      "acceptedBasePath": "assets/image/anatomy-reference/vascular-study/organ-atlas/bladder/battlefield.png",
+      "acceptedBaseSha256": "3559a76671df7c90c54102376c29365668d621978402a3270f587d519d7374e9",
+      "sourceBox": [
+        462,
+        725,
+        554,
+        822
+      ],
+      "sourcePixelSize": [
+        1104,
+        1164
+      ],
+      "alphaMaskPath": "docs/body-life/vascular-art-study/fullbody-015/quiet-base/organ-alpha/bladder.png",
+      "alphaMaskSha256": "51e92a44fe8c713a933bc60af407f19f450b79fd955f518786215ea57923276d",
+      "opaqueProtectionThreshold": 254,
+      "opaqueSourcePixels": 3642
+    },
+    {
+      "id": "small_intestine",
+      "acceptedBasePath": "assets/image/anatomy-reference/vascular-study/organ-atlas/small_intestine/battlefield.png",
+      "acceptedBaseSha256": "2bfa9dd46b3c12e859803d5cdbaf73166050cfe0d288d218bd84f81154de19c8",
+      "sourceBox": [
+        452,
+        651,
+        563,
+        740
+      ],
+      "sourcePixelSize": [
+        1332,
+        1068
+      ],
+      "alphaMaskPath": "docs/body-life/vascular-art-study/fullbody-015/quiet-base/organ-alpha/small_intestine.png",
+      "alphaMaskSha256": "df9c15cfe0828755c635ce728debd216fecfb8e0efed47a6912495ba2ff818c8",
+      "opaqueProtectionThreshold": 254,
+      "opaqueSourcePixels": 5521
+    },
+    {
+      "id": "large_intestine",
+      "acceptedBasePath": "assets/image/anatomy-reference/vascular-study/organ-atlas/large_intestine/battlefield.png",
+      "acceptedBaseSha256": "9cb7fc3f9961fa7a82e6a7d994a9054591802a951abb5f537f8a4f1463794b66",
+      "sourceBox": [
+        425,
+        597,
+        594,
+        751
+      ],
+      "sourcePixelSize": [
+        2028,
+        1848
+      ],
+      "alphaMaskPath": "docs/body-life/vascular-art-study/fullbody-015/quiet-base/organ-alpha/large_intestine.png",
+      "alphaMaskSha256": "a69e9af7e1e158b6246db478e911c4f08ec750882a8771b64e25a597aaa32c7c",
+      "opaqueProtectionThreshold": 254,
+      "opaqueSourcePixels": 9063
+    },
+    {
+      "id": "stomach",
+      "acceptedBasePath": "assets/image/anatomy-reference/vascular-study/stomach-playable/battlefield.png",
+      "acceptedBaseSha256": "9464d5f62338e1dc9644cedd4fc9ce1ba803d4afe5a172395249a679b47cb918",
+      "sourceBox": [
+        464,
+        448,
+        644,
+        628
+      ],
+      "sourcePixelSize": [
+        2160,
+        2160
+      ],
+      "alphaMaskPath": "docs/body-life/vascular-art-study/fullbody-015/quiet-base/organ-alpha/stomach.png",
+      "alphaMaskSha256": "5dd5a18018adcaed8c9a979e89c50d58170f892f7a39449c35da3b479090a3f5",
+      "opaqueProtectionThreshold": 254,
+      "opaqueSourcePixels": 7393
+    }
+  ],
+  "registeredPNG": "assets/image/anatomy-reference/vascular-study/fullbody-gpt-source/quiet-body-registered-v2.png",
+  "registeredPNGSha256": "ef4cb61f0a4013a5f23ddbc8a23a3de54f43a333d664c5397349e6d45c8c3a47",
+  "inputs": {
+    "assets/image/anatomy-reference/reference.png": "9a04e39961c07073cd9fdcfcdc2c98253ccc25d968e97dbea1f36669e06b5d9f",
+    "assets/image/anatomy-reference/vascular-study/fullbody-gpt-source/gpt-quiet-body-underlay-v2.png": "ee3ca459240297fdd9640bdcd542a1b8b5228a6951ae5a361afcd5822591add3",
+    "docs/body-life/vascular-art-study/fullbody-015/bake/quietbase-mask-candidates.json": "8014912566c8c60d6de9ec75a555e4b03b76939c1d906e10acd82227da3940c0",
+    "docs/body-life/vascular-art-study/organ-atlas/art.json": "ddbfed8fe3d814b8041b50d4f39640f1b8af6013b5feb5bf3b927d2a67286fce",
+    "assets/image/anatomy-reference/vascular-study/fullbody-015/masks/old-blood-candidate.png": "7295171145a7cc5e81464d5b4e007115e9d8e88522acb3f3ed47b086d521bbdb",
+    "assets/image/anatomy-reference/vascular-study/fullbody-015/masks/organ-foreground.png": "70aca35b0f4c68c800a0f154012ea8d35c73e87b62bd7714fd1e369dfe99a50b",
+    "assets/image/anatomy-reference/vascular-study/fullbody-015/masks/protected-foreground.png": "84dcd3c5f761ab1f2e9ab682d423537565c9dfb275a328aa71a8d5736a30d364",
+    "assets/image/anatomy-reference/vascular-study/fullbody-015/masks/body-interior-with-2px-guard.png": "c1653e54def74aed7e58a2ff3a525889c6e27153d5db08d8f0bb7c32dc5e5a84",
+    "assets/image/anatomy-reference/vascular-study/organ-atlas/liver/battlefield.png": "64fececa82a2e97d12801f9e25130c8835602d1e741cd615b26ab3c4839a66f7",
+    "assets/image/anatomy-reference/vascular-study/organ-atlas/kidney_r/battlefield.png": "2bb9565bf764b2850ebc89921681812da0dcfd432c4c27403654883cab8c7905",
+    "assets/image/anatomy-reference/vascular-study/organ-atlas/kidney_l/battlefield.png": "4b64bd08494b8e8c612237ced8de5c4f2b22d3f5e5d80d1e43bb1ab777675357",
+    "assets/image/anatomy-reference/vascular-study/organ-atlas/lung_r/battlefield.png": "830c4126c5e15ec14499951d10309ad532388fcf578b0cfba5faf1d1907bf30f",
+    "assets/image/anatomy-reference/vascular-study/organ-atlas/lung_l/battlefield.png": "9b62c9157cf0e87a3c468b77834d5bf2915563936a58c5291dcea350a670e3d4",
+    "assets/image/anatomy-reference/vascular-study/organ-atlas/heart/battlefield.png": "d0580777347de263cff83d8f3d179db06823b47159a05a2db2503ae07f84ebc7",
+    "assets/image/anatomy-reference/vascular-study/organ-atlas/brain/battlefield.png": "79774e751a3b3c2810681f1ac094c05a971150a478a43ed7b2be06cf777b29ba",
+    "assets/image/anatomy-reference/vascular-study/organ-atlas/pancreas/battlefield.png": "73f3a3e52741379b26c9b57c51a56682b14dbe9c8ed2621f12b60db37dcc9ab5",
+    "assets/image/anatomy-reference/vascular-study/organ-atlas/bladder/battlefield.png": "3559a76671df7c90c54102376c29365668d621978402a3270f587d519d7374e9",
+    "assets/image/anatomy-reference/vascular-study/organ-atlas/small_intestine/battlefield.png": "2bfa9dd46b3c12e859803d5cdbaf73166050cfe0d288d218bd84f81154de19c8",
+    "assets/image/anatomy-reference/vascular-study/organ-atlas/large_intestine/battlefield.png": "9cb7fc3f9961fa7a82e6a7d994a9054591802a951abb5f537f8a4f1463794b66",
+    "assets/image/anatomy-reference/vascular-study/stomach-playable/battlefield.png": "9464d5f62338e1dc9644cedd4fc9ce1ba803d4afe5a172395249a679b47cb918"
+  }
+}

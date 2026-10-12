@@ -3,6 +3,8 @@ local D,U,V,W=require("war.Data"),require("war.Util"),require("war.Survival"),re
 local Cells,Art=require("war.Cells"),require("war.TerrainArt")
 local BodyArt=require("war.BodyArt")
 local Motion,Bloodstream=require("war.Motion"),require("war.Bloodstream")
+local HeartDisplay=require('war.HeartDisplayTransform')
+local CellMapDisplay=require('war.CellMapDisplay')
 local View=require("war.View")
 local VesselArt=require("war.VesselArt")
 local Smooth=require("war.SmoothTerrain")
@@ -11,7 +13,10 @@ local Palette=require("war.MapPalette")
 local R={
  ---@type NVGContextWrapper
  vg=nil,font=-1,w=1280,h=720}
-local function rgba(c,a) return nvgRGBA(math.floor(c[1]),math.floor(c[2]),math.floor(c[3]),a or 255) end
+---@return NVGcolor
+local function nativeColor(r,g,b,a) return nvgRGBA(r,g,b,a) --[[@as NVGcolor]] end
+---@return NVGcolor
+local function rgba(c,a) return nativeColor(math.floor(c[1]),math.floor(c[2]),math.floor(c[3]),a or 255) --[[@as NVGcolor]] end
 function R.rect(x,y,w,h,c,a) nvgBeginPath(R.vg);nvgRect(R.vg,x,y,w,h);nvgFillColor(R.vg,rgba(c,a));nvgFill(R.vg) end
 function R.line(x,y,tx,ty,c,w,a) nvgBeginPath(R.vg);nvgMoveTo(R.vg,x,y);nvgLineTo(R.vg,tx,ty);nvgStrokeWidth(R.vg,w or 1);nvgStrokeColor(R.vg,rgba(c,a));nvgStroke(R.vg) end
 function R.ellipse(x,y,rx,ry,c,a) nvgBeginPath(R.vg);nvgEllipse(R.vg,x,y,rx,ry);nvgFillColor(R.vg,rgba(c,a));nvgFill(R.vg) end
@@ -23,8 +28,15 @@ function R.init()
  Generated.init(R.vg)
  print("[Render] graphics ready")
 end
-function R.prepare(s) Smooth.prepare(s) end
-function R.close() if R.vg then require("war.ReferenceArt").release(R.vg); Cells.release(R.vg);Generated.release(R.vg);require('war.OrganArt').release(R.vg);nvgDelete(R.vg);R.vg=nil end end
+function R.prepare(s)
+ Smooth.prepare(s)
+ local atlas=require('war.OrganAtlasArt');local gastric=require('war.GastricArt')
+ local full=require('war.FullBodyMapArt')
+ if full.enabled(s)then full.prepare(R.vg) else full.release(R.vg) end
+ if s.organBattlefieldVersion==1 then atlas.prepare(R.vg) else atlas.release(R.vg) end
+ if not full.enabled(s)and require('war.OrganBattlefield').enabled(s) then gastric.prepare(R.vg) else gastric.release(R.vg) end
+end
+function R.close() if R.vg then require('war.FullBodyMapArt').release(R.vg);require('war.OrganAtlasArt').release(R.vg);require('war.GastricArt').release(R.vg);require("war.BodyLife").release(R.vg);require("war.ReferenceArt").release(R.vg);require("war.LegacyReferenceArtV3").release(R.vg); Cells.release(R.vg);Generated.release(R.vg);require('war.OrganArt').release(R.vg);nvgDelete(R.vg);R.vg=nil end end
 function R.project(g,x,y) return View.project(g,R.w,R.h,x,y) end
 function R.unproject(g,x,y) return View.unproject(g,R.w,R.h,x,y) end
 function R.pan(g,dx,dy) View.pan(g,dx,dy) end
@@ -35,20 +47,59 @@ local function building(g,e,x,y)
  BodyArt.structure(R,g,e,x,y)
  if g.selection[e.id] then
   nvgBeginPath(R.vg);nvgCircle(R.vg,x,y,BodyArt.radius(e.kind)*g.zoom+4*g.zoom)
-  nvgStrokeWidth(R.vg,2);nvgStrokeColor(R.vg,nvgRGBA(105,235,203,240));nvgStroke(R.vg)
+  nvgStrokeWidth(R.vg,2);nvgStrokeColor(R.vg,nativeColor(105,235,203,240));nvgStroke(R.vg)
  end
 end
+local function hiddenUnitMarker(g,e,x,y,radius)
+  local r=math.max(3.2,radius)
+  nvgBeginPath(R.vg)
+  for i=0,5 do
+   local a=i*math.pi/3;local b=a+math.pi/6
+   nvgMoveTo(R.vg,x+math.cos(a)*r,y+math.sin(a)*r)
+   nvgLineTo(R.vg,x+math.cos(b)*r,y+math.sin(b)*r)
+  end
+  nvgStrokeWidth(R.vg,1)
+  nvgStrokeColor(R.vg,g.selection[e.id]and nativeColor(105,235,203,210)or nativeColor(83,102,116,140));nvgStroke(R.vg)
+end
 local function unit(g,e,x,y)
- local z=g.zoom;local radius=Cells.radius(e.kind)*z
+ local z=g.zoom;local wx,wy=Motion.position(g,e)
+ local displayZoom=CellMapDisplay.scale(g.state,z,e.kind,wx,wy)
+ local radius=Cells.radius(e.kind)*displayZoom
+ local physicalRadius=Cells.radius(e.kind)*z
+ local trial=g.state.organBattlefieldVersion==1 or g.state.fullbodyBattlefieldVersion==1
  if g.selection[e.id] then
-  nvgBeginPath(R.vg);nvgCircle(R.vg,x,y,radius+5*z);nvgStrokeWidth(R.vg,1.7*z)
-  nvgStrokeColor(R.vg,nvgRGBA(105,235,203,240));nvgStroke(R.vg)
+  local gap=trial and math.max(2.4,5*z) or 5*z
+  local stroke=trial and math.max(1.2,1.7*z) or 1.7*z
+  if trial then
+   -- This is a screen-space command marker, not the cell or its collider.
+   nvgBeginPath(R.vg);nvgCircle(R.vg,x,y,radius+gap)
+   nvgStrokeWidth(R.vg,stroke+1.2);nvgStrokeColor(R.vg,nativeColor(55,69,71,210));nvgStroke(R.vg)
+  end
+  nvgBeginPath(R.vg);nvgCircle(R.vg,x,y,radius+gap);nvgStrokeWidth(R.vg,stroke)
+  nvgStrokeColor(R.vg,nativeColor(105,235,203,240));nvgStroke(R.vg)
  end
- local activity,angle=Motion.activity(g,e)
- Cells.draw(R.vg,e.kind,e.faction,x,y,z,g.flowTime or e.age,e.id,activity,angle)
+ if require('war.FullBodyMapArt').unitDepth(g.state,e,wx,wy)=='under-foreground'then
+  -- A dashed command indicator remains readable through the foreground;
+  -- the cell itself stays beneath the food, airway or urine passage.
+  hiddenUnitMarker(g,e,x,y,physicalRadius)
+ else
+  local activity,angle=Motion.activity(g,e)
+  -- A quiet edge keeps small unselected cells legible on warm organ floors.
+  -- Use the same view/protection fade as the minimum sprite size.
+  local extra=math.max(0,CellMapDisplay.minimumRadiusLogical/Cells.radius(e.kind)-z)
+  if extra>0 and displayZoom>z and not g.selection[e.id]then
+   local opacity=math.min(1,(displayZoom-z)/extra,(displayZoom-z)*Cells.radius(e.kind)/.5)
+   nvgBeginPath(R.vg);nvgCircle(R.vg,x,y,radius+.25)
+   nvgStrokeWidth(R.vg,1);nvgStrokeColor(R.vg,nativeColor(48,42,49,190*opacity));nvgStroke(R.vg)
+  end
+  Cells.draw(R.vg,e.kind,e.faction,x,y,displayZoom,g.flowTime or e.age,e.id,activity,angle)
+ end
  if e.hp<e.maxHp or g.selection[e.id] then
-  local by=y-radius-9*z
-  R.rect(x-15*z,by,30*z,3*z,{28,30,33});R.rect(x-15*z,by,30*z*math.max(0,e.hp/e.maxHp),3*z,{133,207,168})
+  local bw=trial and math.max(12,30*z) or 30*z
+  local bh=trial and math.max(1.8,3*z) or 3*z
+  local offset=trial and math.max(6.2,9*z) or 9*z
+  local by=y-radius-offset
+  R.rect(x-bw*.5,by,bw,bh,{28,30,33});R.rect(x-bw*.5,by,bw*math.max(0,e.hp/e.maxHp),bh,{133,207,168})
  end
  if e.satiety<20 then R.text(x,y-radius-20*z,"饥",10*z,{229,183,100}) elseif e.sanity<25 then R.text(x,y-radius-20*z,"惧",10*z,{199,155,211}) end
  if next(e.cargo) then R.ellipse(x+radius*.65,y+radius*.6,3*z,3*z,{221,188,114}) end
@@ -57,10 +108,11 @@ function R.draw(g)
  if not R.vg then return end
  local dpr=graphics:GetDPR();R.w,R.h=graphics:GetWidth()/dpr,graphics:GetHeight()/dpr
  nvgBeginFrame(R.vg,R.w,R.h,dpr)
- R.rect(0,0,R.w,R.h,g.state.anatomyVersion==3 and {255,255,255} or Palette.background)
+ R.rect(0,0,R.w,R.h,(g.state.anatomyVersion==3 or g.state.anatomyVersion==4) and {255,255,255} or Palette.background)
  -- The opaque menu artwork covers the world; do not tessellate a hidden map.
  if g.started==false then nvgEndFrame(R.vg);return end
- local s=g.state;local fa=s.factions[1];local reveal=g.fogDisabled and s.anatomyVersion~=3
+ local s=g.state;local fa=s.factions[1];local reveal=g.fogDisabled and (s.anatomyVersion~=3 and s.anatomyVersion~=4)
+ HeartDisplay.beginFrame(g)
  local xmin,xmax,ymin,ymax=View.bounds(g,R.w,R.h,4)
  local winter=select(3,V.clock(s))==2
  Art.beginFrame()
@@ -77,11 +129,11 @@ function R.draw(g)
   if g.zoom>=.8 then for k,res in pairs(s.resources) do if res.amount>0 and (reveal or fa.seen[k]) and res.x>=xmin and res.x<=xmax and res.y>=ymin and res.y<=ymax then
    local px,py=R.project(g,res.x+.5,res.y+.5);sorted[#sorted+1]={resource=res,x=px,y=py,layer=1,order=k}
   end end end
-  if s.anatomyVersion~=3 and g.zoom<.035 and (g.fogDisabled or g.vesselSurvey) then local px,py=R.project(g,0,0);BodyArt.atlas(R,s,px,py,D.width(s)*32*g.zoom,D.height(s)*32*g.zoom) end
+  if (s.anatomyVersion~=3 and s.anatomyVersion~=4) and g.zoom<.035 and (g.fogDisabled or g.vesselSurvey) then local px,py=R.project(g,0,0);BodyArt.atlas(R,s,px,py,D.width(s)*32*g.zoom,D.height(s)*32*g.zoom) end
  elseif stride>1 then
   Art.coarse(R,g,s,xmin,xmax,ymin,ymax,stride)
   VesselArt.coarse(R,g,s,xmin,xmax,ymin,ymax)
-  if s.anatomyVersion~=3 and g.zoom<.035 and (g.fogDisabled or g.vesselSurvey) then
+  if (s.anatomyVersion~=3 and s.anatomyVersion~=4) and g.zoom<.035 and (g.fogDisabled or g.vesselSurvey) then
    local px,py=R.project(g,0,0);BodyArt.atlas(R,s,px,py,D.width(s)*32*g.zoom,D.height(s)*32*g.zoom)
   end
  else
@@ -100,7 +152,7 @@ function R.draw(g)
  end
  require("war.NasalArt").draw(R,g)
  for _,e in pairs(s.entities) do if U.alive(e) and (reveal or e.faction==1 or fa.visible[U.key(e.x,e.y)]) then
-  local wx,wy=Motion.position(g,e);local x,y=R.project(g,wx,wy);if x>-150 and y>-150 and x<R.w+150 and y<R.h+150 then sorted[#sorted+1]={entity=e,x=x,y=y,layer=e.category=="building" and 2 or 3,order=e.id} end
+  local wx,wy=HeartDisplay.displayPosition(g,e);local x,y=R.project(g,wx,wy);if x>-150 and y>-150 and x<R.w+150 and y<R.h+150 then sorted[#sorted+1]={entity=e,x=x,y=y,layer=e.category=="building" and 2 or 3,order=e.id} end
  end end
  table.sort(sorted,function(a,b) if a.layer~=b.layer then return a.layer<b.layer end return a.order<b.order end)
  for _,item in ipairs(sorted) do local x,y=item.x,item.y
@@ -109,7 +161,10 @@ function R.draw(g)
     local c=e.faction>0 and D.factions[e.faction].color or {202,124,88}
     local radius=e.category=="building" and 3 or 2
     if g.selection[e.id] then R.ellipse(x,y,radius+2,radius+2,{234,235,184}) end
-    R.ellipse(x,y,radius,radius,c)
+    local wx,wy=Motion.position(g,e)
+    if e.category~="building" and require('war.FullBodyMapArt').unitDepth(g.state,e,wx,wy)=='under-foreground' then
+     hiddenUnitMarker(g,e,x,y,radius)
+    else R.ellipse(x,y,radius,radius,c) end
    elseif e.category=="building" then building(g,e,x,y) else unit(g,e,x,y) end
   else local r=item.resource;local z=g.zoom;local visible=reveal or fa.visible[U.key(r.x,r.y)];local tint=visible and {255,255,255} or {100,108,99}
    BodyArt.resource(R,g,s,r,x,y,visible)
@@ -119,22 +174,22 @@ function R.draw(g)
  local darkness=not s.campaign and (fraction>=.75 and 105 or fraction>.6 and math.floor((fraction-.6)/.15*45) or 0) or 0
  if darkness>0 then R.rect(0,0,R.w,R.h,{20,28,43},darkness) end
  -- Revival is expressed by tissue perfusion, rather than outdoor rainfall.
- for _,ef in ipairs(s.effects) do if reveal or fa.visible[U.key(ef.tx,ef.ty)] then local x,y=R.project(g,ef.x,ef.y);local tx,ty=R.project(g,ef.tx,ef.ty);R.line(x,y,tx,ty,{231,215,150},ef.kind=="hit" and 3 or 1.5,200) end end
+ for _,ef in ipairs(s.effects) do if reveal or fa.visible[U.key(ef.tx,ef.ty)] then local ax,ay=HeartDisplay.forwardWorld(g,ef.x,ef.y);local bx,by=HeartDisplay.forwardWorld(g,ef.tx,ef.ty);local x,y=R.project(g,ax,ay);local tx,ty=R.project(g,bx,by);R.line(x,y,tx,ty,{231,215,150},ef.kind=="hit" and 3 or 1.5,200) end end
  if g.placement then
-  local offset=D.buildings[g.placement].size%2==0 and 0 or .5;local bx,by=math.floor(g.pointer.wx)+offset,math.floor(g.pointer.wy)+offset;local x,y=R.project(g,bx,by);local valid=W.canBuild(s,g.placement,bx,by,1);local size=D.buildings[g.placement].size*32*g.zoom
+  local offset=D.buildings[g.placement].size%2==0 and 0 or .5;local bx,by=math.floor(g.pointer.wx)+offset,math.floor(g.pointer.wy)+offset;local dx,dy=HeartDisplay.forwardWorld(g,bx,by);local x,y=R.project(g,dx,dy);local valid=W.canBuild(s,g.placement,bx,by,1);local size=D.buildings[g.placement].size*32*g.zoom
   R.rect(x-size*.5,y-size*.5,size,size,valid and {113,181,157} or {204,93,72},100)
   R.text(x,y-size*.5-14*g.zoom,D.buildings[g.placement].name,13,{237,224,185})
  end
  if g.drag and g.drag.box then local a=g.drag;local x,y=math.min(a.x,a.tx),math.min(a.y,a.ty);local w,h=math.abs(a.tx-a.x),math.abs(a.ty-a.y);R.rect(x,y,w,h,{123,179,157},35);R.line(x,y,x+w,y,{176,212,167},1);R.line(x+w,y,x+w,y+h,{176,212,167},1);R.line(x+w,y+h,x,y+h,{176,212,167},1);R.line(x,y+h,x,y,{176,212,167},1) end
  if g.marker then
   local elapsed=g.realTime-(g.marker.born or g.realTime);local alpha=math.floor(240*math.max(0,1-elapsed/.9))
-  local x,y=R.project(g,g.marker.x,g.marker.y);local radius=10+elapsed*24
+  local mx,my=HeartDisplay.forwardWorld(g,g.marker.x,g.marker.y);local x,y=R.project(g,mx,my);local radius=10+elapsed*24
   local c=g.marker.kind=="attackmove" and {255,141,151} or {105,235,203}
-  nvgBeginPath(R.vg);nvgCircle(R.vg,x,y,radius);nvgStrokeWidth(R.vg,2);nvgStrokeColor(R.vg,nvgRGBA(c[1],c[2],c[3],alpha));nvgStroke(R.vg)
+  nvgBeginPath(R.vg);nvgCircle(R.vg,x,y,radius);nvgStrokeWidth(R.vg,2);nvgStrokeColor(R.vg,nativeColor(c[1],c[2],c[3],alpha));nvgStroke(R.vg)
   R.line(x-4,y,x+4,y,c,1.5,alpha);R.line(x,y-4,x,y+4,c,1.5,alpha)
  end
  -- A faint cool edge wash keeps the map airy without obscuring the tissue.
- nvgBeginPath(R.vg);nvgRect(R.vg,0,0,R.w,R.h);nvgFillPaint(R.vg,nvgRadialGradient(R.vg,R.w*.5,R.h*.45,R.h*.25,R.w*.7,nvgRGBA(231,235,255,0),nvgRGBA(161,180,220,g.state.anatomyVersion==3 and 0 or 30)));nvgFill(R.vg)
+ nvgBeginPath(R.vg);nvgRect(R.vg,0,0,R.w,R.h);nvgFillPaint(R.vg,nvgRadialGradient(R.vg,R.w*.5,R.h*.45,R.h*.25,R.w*.7,nativeColor(231,235,255,0),nativeColor(161,180,220,(g.state.anatomyVersion==3 or g.state.anatomyVersion==4) and 0 or 30)));nvgFill(R.vg)
  nvgEndFrame(R.vg)
 end
 -- The battle HUD stores its free battlefield rect in world pixels (g.stage);
@@ -165,8 +220,8 @@ function R.home(g)
  if g.state.campaign then
   if g.state.campaign.event.id=="trachea" then
    -- Fit the airway width between the thumb pads; the barrier sits low in the free column.
-   local home=require("war.TracheaTerrain").home;local stage=R.stage(g,true)
-   g.zoom=math.min(.4,math.max(.14,(stage.w-16)/(36*32)))
+   local home=require("war.CampaignData").forState(g.state).home;local stage=R.stage(g,true)
+   g.zoom=math.min(.4,math.max(.14,(stage.w-16)/(require("war.CampaignData").forState(g.state).bounds.w*32)))
    aim(g,home.x,home.y,stage.x+stage.w*.5,stage.y+stage.h*.68);return
   end
   local N=require("war.CampaignData").forState(g.state);g.camera.x,g.camera.y=N.home.x-17,N.home.y
@@ -187,12 +242,15 @@ function R.mapPoint(l,x,y,s)
  local px,py,width,height,scale=R.mapArea(l,s)
  return U.clamp((x-px)/scale,3,D.width(s)-3),U.clamp((y-py)/scale,3,D.height(s)-3)
 end
-function R.minimap(vg,g,l,overview)
- local old=R.vg;R.vg=vg;local s=g.state;local reveal=g.fogDisabled and s.anatomyVersion~=3;local px,py,width,height,scale=R.mapArea(l,s)
- R.rect(l.x,l.y,l.w,l.h,s.anatomyVersion==3 and {255,255,255} or Palette.background)
+function R.minimap(vg,g,l,overview,mini)
+ -- Visibility mode and drawing detail are independent: a sandbox full map can
+ -- hide undiscovered units while still drawing every anatomical system.
+ if mini==nil then mini=overview==nil end
+ local old=R.vg;R.vg=vg;local s=g.state;local reveal=g.fogDisabled and (s.anatomyVersion~=3 and s.anatomyVersion~=4);local px,py,width,height,scale=R.mapArea(l,s)
+ R.rect(l.x,l.y,l.w,l.h,(s.anatomyVersion==3 or s.anatomyVersion==4) and {255,255,255} or Palette.background)
  if W.hasVessels(s) then
-  Smooth.overview(R,s,px,py,width,height,overview or g.fogDisabled)
-  if s.anatomyVersion~=3 and (overview or g.fogDisabled) then BodyArt.atlas(R,s,px,py,width,height) end
+  Smooth.overview(R,s,px,py,width,height,overview or g.fogDisabled,g.realTime,mini)
+  if (s.anatomyVersion~=3 and s.anatomyVersion~=4) and (overview or g.fogDisabled) then BodyArt.atlas(R,s,px,py,width,height) end
  elseif overview or g.fogDisabled then Art.overview(R,s,px,py,width,height);BodyArt.atlas(R,s,px,py,width,height)
  else for _,bin in pairs(s.factions[1].mapSeen) do
   local c=D.biomes[bin.terrain].color

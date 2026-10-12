@@ -1,9 +1,9 @@
 local N,U,T,R=require("war.CampaignData"),require("war.Util"),require("war.Territory"),require("war.Reinforcements")
 local C={}
 function C.create(version)
- local trachea=version==3
- return {stage=1,terrainVersion=trachea and 3 or 2,completed={},unlocked={[trachea and "trachea" or "nasal"]=true},randomEnabled=false,rewards={},reinforcements=R.new(version),
-  event={id=trachea and "trachea" or "nasal",status="active",phase="defend",elapsed=0,wave=0,pendingViruses=0,spawnTimer=0,secure=0,zones=T.new(trachea and {campaign={event={id="trachea"}}} or {campaign={terrainVersion=2,event={id="nasal"}}})}}
+ local trachea=version==3 or version==4
+ return {stage=1,terrainVersion=trachea and version or 2,completed={},unlocked={[trachea and "trachea" or "nasal"]=true},randomEnabled=false,rewards={},reinforcements=R.new(version),
+  event={id=trachea and "trachea" or "nasal",status="active",phase="defend",elapsed=0,wave=0,pendingViruses=0,spawnTimer=0,secure=0,zones=T.new(trachea and {campaign={terrainVersion=version,event={id="trachea"}}} or {campaign={terrainVersion=2,event={id="nasal"}}})}}
 end
 function C.allowed(s,x,y)
  return not s.campaign or s.campaign.unlocked.body or (s.campaign.unlocked.nasal or s.campaign.unlocked.trachea) and T.zone(x,y,s)~=nil

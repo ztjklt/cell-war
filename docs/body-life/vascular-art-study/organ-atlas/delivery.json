@@ -1,0 +1,486 @@
+{
+  "schema": "organ-atlas-delivery/v1",
+  "updated": "2026-10-11T15:45:43.626959+08:00",
+  "status": "PLAYABLE_ART_CANDIDATE_CURRENT_NATIVE_STILLS_VISUAL_LIMITS_REMAIN",
+  "organs": [
+    {
+      "organId": "liver",
+      "name": "肝脏",
+      "sourceBox": [
+        387,
+        463,
+        537,
+        576
+      ],
+      "art": "organ-atlas/art/liver/battlefield.png",
+      "continuousPreview": "render/liver/production-movement-15s.webp"
+    },
+    {
+      "organId": "kidney_r",
+      "name": "右肾",
+      "sourceBox": [
+        390,
+        564,
+        449,
+        656
+      ],
+      "art": "organ-atlas/art/kidney_r/battlefield.png",
+      "continuousPreview": "render/kidney_r/production-movement-15s.webp"
+    },
+    {
+      "organId": "kidney_l",
+      "name": "左肾",
+      "sourceBox": [
+        571,
+        564,
+        628,
+        655
+      ],
+      "art": "organ-atlas/art/kidney_l/battlefield.png",
+      "continuousPreview": "render/kidney_l/production-movement-15s.webp"
+    },
+    {
+      "organId": "lung_r",
+      "name": "右肺",
+      "sourceBox": [
+        366,
+        285,
+        484,
+        489
+      ],
+      "art": "organ-atlas/art/lung_r/battlefield.png",
+      "continuousPreview": "render/lung_r/production-movement-15s.webp"
+    },
+    {
+      "organId": "lung_l",
+      "name": "左肺",
+      "sourceBox": [
+        533,
+        285,
+        650,
+        490
+      ],
+      "art": "organ-atlas/art/lung_l/battlefield.png",
+      "continuousPreview": "render/lung_l/production-movement-15s.webp"
+    },
+    {
+      "organId": "heart",
+      "name": "心脏",
+      "sourceBox": [
+        468,
+        326,
+        568,
+        467
+      ],
+      "art": "organ-atlas/art/heart/battlefield.png",
+      "continuousPreview": "render/heart/production-movement-15s.webp"
+    },
+    {
+      "organId": "brain",
+      "name": "脑",
+      "sourceBox": [
+        439,
+        21,
+        580,
+        124
+      ],
+      "art": "organ-atlas/art/brain/battlefield.png",
+      "continuousPreview": "render/brain/production-movement-15s.webp"
+    },
+    {
+      "organId": "pancreas",
+      "name": "胰腺",
+      "sourceBox": [
+        476,
+        558,
+        580,
+        611
+      ],
+      "art": "organ-atlas/art/pancreas/battlefield.png",
+      "continuousPreview": "render/pancreas/production-movement-15s.webp"
+    },
+    {
+      "organId": "bladder",
+      "name": "膀胱",
+      "sourceBox": [
+        462,
+        725,
+        554,
+        822
+      ],
+      "art": "organ-atlas/art/bladder/battlefield.png",
+      "continuousPreview": "render/bladder/production-movement-15s.webp"
+    },
+    {
+      "organId": "small_intestine",
+      "name": "小肠",
+      "sourceBox": [
+        452,
+        651,
+        563,
+        740
+      ],
+      "art": "organ-atlas/art/small_intestine/battlefield.png",
+      "continuousPreview": "render/small_intestine/production-movement-15s.webp"
+    },
+    {
+      "organId": "large_intestine",
+      "name": "大肠",
+      "sourceBox": [
+        425,
+        597,
+        594,
+        751
+      ],
+      "art": "organ-atlas/art/large_intestine/battlefield.png",
+      "continuousPreview": "render/large_intestine/production-movement-15s.webp"
+    },
+    {
+      "organId": "stomach",
+      "name": "胃",
+      "sourceBox": [
+        464,
+        448,
+        644,
+        628
+      ],
+      "art": "stomach-playable/battlefield.png",
+      "continuousPreview": "render/stomach/production-movement-15s.webp"
+    }
+  ],
+  "scope": {
+    "newGptOrgans": 11,
+    "acceptedStomachRetained": true,
+    "total": 12,
+    "frozenVascularEdges": 202,
+    "frozenInterfaces": 40,
+    "newMembranes": 13,
+    "stomachMembranes": 5,
+    "mainEntry": "器官战场试验",
+    "anatomyVersion": 4,
+    "organBattlefieldVersion": 1,
+    "saveVersion": 9,
+    "defaultGameplayChanged": false,
+    "remoteBuildOrSubmit": false
+  },
+  "acceptance": {
+    "movement": {
+      "fullCapsulesChecked": 131906,
+      "fullDisksChecked": 191226,
+      "geometryFailures": 0,
+      "passed": 140,
+      "total": 140,
+      "unverifiedDomainPoints": 0
+    },
+    "navigationSubstituted": false,
+    "collisionContracts": [
+      36,
+      36
+    ],
+    "urinaryNegatives": [
+      28,
+      28
+    ],
+    "invalidCommandPreservation": [
+      2,
+      2
+    ],
+    "oldGastricDelegate": [
+      4,
+      4
+    ],
+    "projectionSamples": 75,
+    "renderedFrames": 60,
+    "continuousPreviews": 12,
+    "durationSecondsEach": 15,
+    "offlinePreviewFps": 4,
+    "resources": {
+      "reopenCycles": 25,
+      "dedicatedHandlesPeak": 24,
+      "handlesAfterRelease": 0
+    },
+    "httpAdapter": [
+      12,
+      12
+    ],
+    "responsiveViewports": 5,
+    "lsp": "PASS",
+    "artRegistration": [
+      11,
+      11
+    ],
+    "finalAestheticAccepted": false,
+    "commandMarkerSamples": [
+      45,
+      45
+    ],
+    "legacyDrawComparisons": [
+      60,
+      60
+    ],
+    "readOnlyDrawSamples": 75
+  },
+  "evidenceVersionScope": {
+    "currentDisplayRenderSha256": "0e84abb91789500f226b2a0f429432827e26da9c154d57974a774e38607b95bd",
+    "currentDisplayReports": [
+      "render-read-only-report.json",
+      "render-compatibility-report.json",
+      "resource-contract-report.json"
+    ],
+    "currentReadOnlyRenderFrames": 75,
+    "drawOnlyDifferencesFromMovementCapture": [
+      {
+        "currentSha256": "4460ab0fd73343eb089ac5a5eb70a9cf53243e979912dee835a039c98cd9df3f",
+        "module": "GastricArt.lua",
+        "movementCaptureSha256": "31643fcfc727c436bc38cc3ae2c261abf24bd801201d8925c20dbe71b60987be"
+      },
+      {
+        "currentSha256": "17ed3df534e311eb717c65a6c81ba273d16c0f2dec406401fd80ddc276b4bb16",
+        "module": "OrganAtlasArt.lua",
+        "movementCaptureSha256": "4f4b45e924f2c1a5f6e87a20d563a4e0360e83279ac4d3c9dbc1e6081e1b84db"
+      },
+      {
+        "currentSha256": "0158ab97daa71c1ae7f55dc067133602f19195c9c90fba69f5a73e783063eb77",
+        "module": "OrganAtlasArtData.lua",
+        "movementCaptureSha256": "23f7c07b7e62546b719cb7e032bd2f5b113a879ed6d80a0496735b7b4a28ee3a"
+      },
+      {
+        "currentSha256": "0e84abb91789500f226b2a0f429432827e26da9c154d57974a774e38607b95bd",
+        "module": "Render.lua",
+        "movementCaptureSha256": "d89d60fd435aa0092d49a0b5aa92730beb37607352e43673405b51d32a7747e8"
+      }
+    ],
+    "interpretation": "The 140 movement captures keep their original module hashes. Display-only command markers and decoded-texture readiness/size metadata are checked by fresh actual Render readonly/DPR, exact legacy draw-call comparison, loading guards and mode/resource checks. Navigation dependency hashes remain unchanged; old captures are not relabeled.",
+    "legacyDrawComparisonsPassed": 60,
+    "legacyDrawComparisonsTotal": 60,
+    "movementDependencyHashesUnchanged": true,
+    "productionMovementEvidencePreserved": true,
+    "productionMovementRenderSha256": "d89d60fd435aa0092d49a0b5aa92730beb37607352e43673405b51d32a7747e8",
+    "productionMovementReportSha256": "77d4de8e336c37b5c1e3d23a28df1da2af65bbc8c4f598cea4b5b3cadbb6f073"
+  },
+  "native": {
+    "status": "PARTIAL_NATIVE_MEASUREMENTS_VISUAL_GPU_UNCONFIRMED",
+    "evidence": true,
+    "userAuthorizedStart": true,
+    "measurements": "native/summary.json",
+    "assetDimensionsVerified": true,
+    "visual": "PARTIAL_REVIEW_ISSUES_FOUND",
+    "gpuMemory": "UNDETERMINED",
+    "fullFrameTimingTarget": "UNDETERMINED",
+    "samples": 8160,
+    "cpuSubmissionMaxPairedP95DeltaMs": 0.5399999999866623,
+    "rawUpdateMaxPairedP95DeltaMs": 0.02899765968322754,
+    "pending": [
+      "Zoom handover ghosting and vessel/terrain styling",
+      "Final unit readability",
+      "Continuous native visual checks",
+      "Actual GPU memory and independent full-frame P95 timing"
+    ],
+    "systemWindowScreenshotCount": 19,
+    "screenshotGallery": "organ-atlas-screenshots.html",
+    "screenshotEvidence": "native/system-capture-001/system-views.json",
+    "historicalEvidenceScope": "Earlier atlas run-004 and capture-001; not the current 11-organ v2 refinement. See currentRevision.report."
+  },
+  "knownVisualLimits": [
+    "两肺强台阶已明显弱化，仍有少量多边形转角及原色素小块。",
+    "平面血管与GPT组织材质融合仍待原生单位叠加检查。",
+    "深层短显露段不能凭美术圆帽推断断路。"
+  ],
+  "evidence": [
+    {
+      "file": "qa/summary.json",
+      "sha256": "0223b3014f9c4ff2fc3584f00bb9b48f670a0a2e4af640d984ea49beb641e649"
+    },
+    {
+      "file": "render/report.json",
+      "sha256": "8019f66ae0d4e806366778e2b3355d371f6c15aa08f9f4b0028d1ee6602692f2"
+    },
+    {
+      "file": "art-independent-audit.json",
+      "sha256": "6969b1ab67caf730d0e7dfaa2ee1f5b51651a52d2a9de0de96dcb5de520ed5a9"
+    },
+    {
+      "file": "browser-api-final.json",
+      "sha256": "91f5aeae83477e99dced4b6ac2b3ce9e37d1f9f39e91e603941ff029ee9aaea3"
+    },
+    {
+      "file": "browser-responsive-final.json",
+      "sha256": "59d33fde75f4f8f3384d58d6fe0187534313597a3088886a0b2c2ecedf92fe53"
+    },
+    {
+      "file": "browser-gallery-check.json",
+      "sha256": "b5df760729dfab0c5ff6afde972684faa9759ba8bb202a969bc228492a3e50af"
+    },
+    {
+      "file": "browser-gallery-final.png",
+      "sha256": "0eb14a0beba0399ebb09fd0ed2de7d064e5d753a066ad119a6722c6924cb6566"
+    },
+    {
+      "file": "browser-bladder-final.png",
+      "sha256": "6a320d69a17a6799499eea006be0de3962c5b4d264cf79c105dc235f5529f3af"
+    },
+    {
+      "file": "lsp.json",
+      "sha256": "681e9600055f8725717a3a160985fc7d4cb67293be9b5aadd4913cb0223a12ac"
+    },
+    {
+      "file": "art.json",
+      "sha256": "911c7501d7042bd46be65c9bed50f29ee579cf238296db3ba592b66dbc911408"
+    },
+    {
+      "file": "contract.json",
+      "sha256": "cb6141214c5cf4af3198aa8445ddb438db71c21f1c7e453240e5470feda6f340"
+    },
+    {
+      "file": "runtime-data.json",
+      "sha256": "1336443e4fb3e4ab0ba7bea70d177c0dcc4c1b8182d8ae726a49809f9fe8ce3e"
+    },
+    {
+      "file": "command-readability/report.json",
+      "sha256": "47c480f81ca9f4b8ade3bfec7d56f3e4db30334511df549cba35ea68143d13a7"
+    },
+    {
+      "file": "browser-stomach-final.json",
+      "sha256": "cc10fa2f8063f235b690bb8f6aa2c6ccc35ea0108c460aa746456a5b89c7190c"
+    },
+    {
+      "file": "browser-stomach-command-final.png",
+      "sha256": "546a6d0890f54e0a37891e85224b6beede6d2197486720e26bcd5b4e7fa14ba6"
+    },
+    {
+      "file": "native/summary.json",
+      "sha256": "318155aa51ebd5b1aaafe14cda91af418a75fc5077da027cac7d263a72f4d939"
+    },
+    {
+      "file": "native/run-004/report.json",
+      "sha256": "e3c8211794913f6e4820ec0c261f68f3ba547f8f4e67ae2cbc299da2f18ccb0b"
+    },
+    {
+      "file": "native/run-004/harness.json",
+      "sha256": "9ecdb94eef0d91203a1b9b3c3be4eed1e7158681803b2eff55b4d541d42c7ef0"
+    },
+    {
+      "file": "native/run-004/inputs.json",
+      "sha256": "d2fc31f3c4b05a8b5f91b208a765e08ee0782fb2cb9a5f544962043ef3406986"
+    },
+    {
+      "file": "art-loading-metadata-scope.json",
+      "sha256": "386590578cfab1a3ac53b4589a89528dc31a32b437f5fe14cb450d5042abd8a2"
+    },
+    {
+      "file": "qa/loading-guard-report.json",
+      "sha256": "72e444e80d15201a59da9366d1bd2b08c9625bde9544c5685e0897077c27a56f"
+    },
+    {
+      "file": "qa/native-run004-independent-audit.json",
+      "sha256": "93e54011fa2858707f44676cd034cce356fa1bb5d5de15ac9f627b1e8650cbcc"
+    },
+    {
+      "file": "qa/native-ready-final-independent-review.json",
+      "sha256": "7c7dc94cfb299cea5e7a3571ff0c1e257d2cefd75d9ed346f0edf2afcfc5efe6"
+    }
+  ],
+  "sourceReferenceSha256": "9a04e39961c07073cd9fdcfcdc2c98253ccc25d968e97dbea1f36669e06b5d9f",
+  "sourceGraphSha256": "3890744e2fcaf9e9907c85513e170e479f67b7fbb1fbf06385ac02bd80e8550c",
+  "testedModuleHashes": {
+    "CellCollision.lua": "a11dc894c9cf91347ff89e290301c0bb0889c520593d60cbe4c1bf122201d30f",
+    "Commands.lua": "19573e908c5c09ff9572d686d497962949ea962dd5c4c67a7e700efd46b0996e",
+    "Data.lua": "6aa40613c149a254391e68d5ffca3ef5f6b7d4dbba8a4861b6b8adb7983d5f33",
+    "FinalVascularStudyData.lua": "ccc7eeef4f3df0e669854b7776e62b6672831318b107697b6f319669dadb328e",
+    "GastricArt.lua": "4460ab0fd73343eb089ac5a5eb70a9cf53243e979912dee835a039c98cd9df3f",
+    "GastricBattlefield.lua": "789066936c29437cfcbc47490a7527288700e82c02b88b3e19458f69906b2b46",
+    "GastricBattlefieldData.lua": "81cbe1eedd29506a13fa19a7edd079d7f93b3eb58b4a9e4282e98277854b279d",
+    "GastricTraffic.lua": "d04b89128fedb033d67b9eef01a72f5c2733b5942a0e87656e00d9b883ee3e6d",
+    "GastricTrial.lua": "39c69939146aa815cb98b86c936f02169ac682f4c2cd9511e83c4f739d75ece4",
+    "HUD.lua": "00d937dd8c08e96d288c217f84e853e5097ca62292cbe5c8590a6631c20394ee",
+    "Motion.lua": "7fe39b4a715b5b0b5398e5ef7e6f0fe2bd8987e47359e6083d46a5db467829a5",
+    "OrganArt.lua": "554d08cb3411cb5bdbf42f3714e989b0b80a93e9e70a120571cd77978adb75e3",
+    "OrganAtlasArt.lua": "17ed3df534e311eb717c65a6c81ba273d16c0f2dec406401fd80ddc276b4bb16",
+    "OrganAtlasArtData.lua": "0158ab97daa71c1ae7f55dc067133602f19195c9c90fba69f5a73e783063eb77",
+    "OrganBattlefield.lua": "ba529bfa35a85833e1dc15f5a36bf2437b6a926e5299e36856593ec3b86d111c",
+    "OrganBattlefieldCore.lua": "40c670d25c69281b0d5663c684dcb699b6871c806000fd2e8f013601218c6b8d",
+    "OrganBattlefieldData.lua": "1c47073f1f465fb79bbe64b5868e78b07bac4d745342717c9ee87439ff436e7d",
+    "OrganBoundariesData.lua": "b4617ba302f4deab54ffdb9a7be0750b1ab63000a50a8395e151456ad2e34e24",
+    "OrganTraffic.lua": "901ece0eb1bb68d22089d99c2b669c42270f34d66539f6daa1d1bb02786dab0f",
+    "OrganTrial.lua": "2448272435d422dc9c10f13c54382727b93da03b9bce177235f0d58d7eb803fd",
+    "Path.lua": "a41c95130db4c45a96956c09ad122432055bd3cc0588835ae9cae5a321283929",
+    "ReferenceArt.lua": "248e17719d17bda9d99f0136807c3c5c846c8b2f35663e0323213798e388dba3",
+    "ReferenceMap.lua": "f4de806b2f5f2f75299561478945ddc0ca8289b0088bcaa571219cb126ba3007",
+    "ReferenceVessels.lua": "e015d6f00f2d723d5d14561190e3b21998aab42188e6571590c17956cb0f43d6",
+    "Render.lua": "0e84abb91789500f226b2a0f429432827e26da9c154d57974a774e38607b95bd",
+    "Save.lua": "d55c19716b457cb3be7a0839e8179367194200c7bf01a3368a49724f64a72e05",
+    "Simulation.lua": "fab3667006f1d45ff13aaaf408f559eba33614f120a23d1d8806efb3aa3d082a",
+    "Util.lua": "bd35c4e904854a00b98825fe2cc422eaa74d4f87308c8a336f25f9cd76131c0d",
+    "Vessels.lua": "1a09c89674c7308dd711c07fe1cbe7955f157d3148589e7b40b7173d0b2cc179",
+    "View.lua": "deafbe8bf8ebaa17b582d90c460cf9c21b0a6950d16fd925b1ac9708b8dcd7e0",
+    "Workers.lua": "77181ac098a5e5aacb2f652fba604aac69bf4a5b7d8dfedbcd90270cfe67a287",
+    "World.lua": "020f77336ced2aa0a4f7907aa79385c438eda38d76e2bc639d49ca864b70166c",
+    "main.lua": "58214fb923a00ac5e5f1980a0cd68c5dac57e46de9db4d0d13395dfadcd5e583"
+  },
+  "renderInputHashes": {
+    "scripts/war/OrganAtlasArt.lua": "17ed3df534e311eb717c65a6c81ba273d16c0f2dec406401fd80ddc276b4bb16",
+    "scripts/war/OrganAtlasArtData.lua": "0158ab97daa71c1ae7f55dc067133602f19195c9c90fba69f5a73e783063eb77",
+    "scripts/war/OrganBattlefield.lua": "ba529bfa35a85833e1dc15f5a36bf2437b6a926e5299e36856593ec3b86d111c",
+    "scripts/war/OrganBattlefieldCore.lua": "40c670d25c69281b0d5663c684dcb699b6871c806000fd2e8f013601218c6b8d",
+    "scripts/war/OrganBattlefieldData.lua": "1c47073f1f465fb79bbe64b5868e78b07bac4d745342717c9ee87439ff436e7d",
+    "scripts/war/OrganTrial.lua": "2448272435d422dc9c10f13c54382727b93da03b9bce177235f0d58d7eb803fd",
+    "scripts/war/OrganTraffic.lua": "901ece0eb1bb68d22089d99c2b669c42270f34d66539f6daa1d1bb02786dab0f",
+    "scripts/war/ReferenceArt.lua": "248e17719d17bda9d99f0136807c3c5c846c8b2f35663e0323213798e388dba3",
+    "scripts/war/Render.lua": "0e84abb91789500f226b2a0f429432827e26da9c154d57974a774e38607b95bd",
+    "scripts/war/Save.lua": "d55c19716b457cb3be7a0839e8179367194200c7bf01a3368a49724f64a72e05",
+    "scripts/war/Commands.lua": "19573e908c5c09ff9572d686d497962949ea962dd5c4c67a7e700efd46b0996e",
+    "scripts/war/Simulation.lua": "fab3667006f1d45ff13aaaf408f559eba33614f120a23d1d8806efb3aa3d082a",
+    "scripts/war/Path.lua": "a41c95130db4c45a96956c09ad122432055bd3cc0588835ae9cae5a321283929",
+    "scripts/war/CellCollision.lua": "a11dc894c9cf91347ff89e290301c0bb0889c520593d60cbe4c1bf122201d30f",
+    "scripts/war/World.lua": "020f77336ced2aa0a4f7907aa79385c438eda38d76e2bc639d49ca864b70166c",
+    "docs/body-life/vascular-art-study/organ-atlas/contract.json": "cb6141214c5cf4af3198aa8445ddb438db71c21f1c7e453240e5470feda6f340",
+    "docs/body-life/vascular-art-study/organ-atlas/art.json": "911c7501d7042bd46be65c9bed50f29ee579cf238296db3ba592b66dbc911408",
+    "scripts/qa/check_organ_atlas_render.py": "e7477c83b90465ca3f563fc912e20a146338fe87cd16e7c88c4ea86d5132f9ba",
+    "organ-atlas/art/liver/battlefield.png": "217c5b77cd259b1249d0d5a87f18f9335c8588015e31fc69fd5bb1391e40278e",
+    "organ-atlas/art/kidney_r/battlefield.png": "388567f67e0db198a62079393a7c5e3389f8a6428b6ff870fc47f47e5f69938c",
+    "organ-atlas/art/kidney_l/battlefield.png": "e9be113c7e3130608d3e71fba14c2c8bc504ea3c640b525dbef72a35eb9bf69c",
+    "organ-atlas/art/lung_r/battlefield.png": "df6f6c923fd928dfea73fde0aae259acdb3a914384a7314b3ac94189d8e2b564",
+    "organ-atlas/art/lung_l/battlefield.png": "e5996db6e237307e45a1d211be040a6a411a5d733e95fe86eb33c8933b6999e8",
+    "organ-atlas/art/heart/battlefield.png": "d383b5dd9b59191b84f2d384cf4cda56a430503a6142944ccbc9573d688f6774",
+    "organ-atlas/art/brain/battlefield.png": "c37b6f7998eef675c3cea2261878a053fe86808484d1f26ed7682aea6029bca8",
+    "organ-atlas/art/pancreas/battlefield.png": "2c0a29f6f06e3085f829bd4d735df201863c6f6d1fdb61165ef93c0ee3fdbd56",
+    "organ-atlas/art/bladder/battlefield.png": "bee18938428afa8194af8df2350689c942625c557e62abef6b5372917418ae4f",
+    "organ-atlas/art/small_intestine/battlefield.png": "12cd51b6dd9115a810f35aedfb9d390d2061ace01a3ece7df40307658a8ce428",
+    "organ-atlas/art/large_intestine/battlefield.png": "9a5ac5756ac1c3849764e12d5c081972fed6c828fe4e6f523a374c8ba77c8325",
+    "stomach-playable/battlefield.png": "cf41c1602a2dd61a5fa1381bbbffc26ca577ba2f522642e6f2fdf469809d5d60"
+  },
+  "browserUrl": "http://127.0.0.1:57918/vascular-art-study/organ-atlas.html",
+  "galleryUrl": "http://127.0.0.1:57918/vascular-art-study/organ-atlas-review.html",
+  "visualRevisions": [
+    {
+      "id": "gastric-yellow-cover-removal",
+      "scope": "stomach asset only",
+      "report": "native/system-capture-002-yellow-removed/revision.json",
+      "nativeCaptures": 3,
+      "previousVisualEvidenceHistorical": true,
+      "finalAestheticAccepted": false
+    },
+    {
+      "id": "organ-ground-refinement-v2",
+      "scope": "11 organ floors, organ-specific palettes/textures and 32 open bays; original stomach retained",
+      "report": "revision-v2/delivery.json",
+      "nativeCaptures": 16,
+      "nativeCaptureEvidence": "native/system-capture-003-refinement/system-views.json",
+      "previousVisualEvidenceHistorical": true,
+      "finalAestheticAccepted": false
+    }
+  ],
+  "currentRevision": {
+    "id": "organ-ground-refinement-v2-palette-correction",
+    "status": "PLAYABLE_ART_CANDIDATE_CURRENT_NATIVE_STILLS_VISUAL_LIMITS_REMAIN",
+    "report": "revision-v2/delivery.json",
+    "reviewPage": "organ-atlas-refinement.html",
+    "artManifestSha256": "ddbfed8fe3d814b8041b50d4f39640f1b8af6013b5feb5bf3b927d2a67286fce",
+    "currentNativeScreenshotCount": 16,
+    "historicalNativeMeasurementsAreForCurrentArt": false,
+    "reportSha256": "92a4eb24669bbb65c5a78e79a7f01e418b559b8c47f1d625085d08f3a23ecd7f",
+    "paletteCorrection": "revision-v2/palette-correction/delivery.json",
+    "nativeReview": "native/system-capture-004-palette/independent-native-visual-review.md",
+    "true015ReviewPage": "organ-atlas-015-review.html"
+  }
+}

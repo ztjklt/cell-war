@@ -1,0 +1,38 @@
+{
+  "status": "STRUCTURE_CANDIDATE_DELIVERED",
+  "productionInstalled": false,
+  "originalBaselineUnchanged": true,
+  "graphChecks": 16,
+  "newPassageEdges": 16,
+  "candidateOrganZones": 12,
+  "bloodCenterlineCrossings": 84,
+  "samePlanePortConflicts": 0,
+  "remainingDepthReviewPoints": 6,
+  "browser": {
+    "passageSelections": 16,
+    "organSelections": 12,
+    "portReviewSelections": 6,
+    "crossingTableRows": 84,
+    "consoleErrors": [],
+    "viewportWidth": 319,
+    "documentWidth": 319,
+    "screenshot": "passages-browser.png"
+  },
+  "evidenceHashes": {
+    "passages-data.json": "37c4cfcaa565a15bccf8d23bd5ad26151f14c13562aeb375320a4e80f1998ae5",
+    "passages-checks.json": "6bdc031a683d8077680bed67372a136cff2898e497ed1f424f5b0d3683f7ab6d",
+    "passages.js": "44d03623aad00e0693bc47f43f2a139686509572f6f8af88741c786e2522af23",
+    "passages.html": "73be6ca370c51ca39979d0854f21d39ab177b24212f608a5a639efcfd52b4a26"
+  },
+  "acceptanceLimits": [
+    "No real cell movement tested for new passages",
+    "Projection depth remains a proposal; six close port projections not approved",
+    "Candidate tissue masks do not include complete bones or unit clearance",
+    "No native frame/seam evidence; native preview remains stopped"
+  ],
+  "nextWork": [
+    "Implement explicit ownership and collision separation for the six depth cases in an isolated trial",
+    "Check organ-wall corridor width against real unit sizes before accepting candidate tissue",
+    "Continue all-body remaining boundary items and multi-region routes from whole-body-progress.json"
+  ]
+}

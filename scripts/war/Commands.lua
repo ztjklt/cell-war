@@ -18,6 +18,7 @@ end
 function C.submit(s,c) s.commands[#s.commands+1]=U.copy(c) end
 function C.order(s,e,o,append)
  if s.campaign and o.x and o.y and not require("war.Campaign").allowed(s,o.x,o.y) then return false end
+ if not append and require('war.OrganBattlefield').enabled(s) then require((s.organBattlefieldVersion==1 or s.fullbodyBattlefieldVersion==1) and 'war.OrganTraffic' or 'war.GastricTraffic').cancel(s,e) end
  if not append then e.cellDetour=nil;e.contactStall=0;e.orders={};e.path={};e.longRoute=nil;e.pathPending=false;e.pathFailed=false;e.orderToken=e.orderToken+1 end
  e.orders[#e.orders+1]=U.copy(o)
 end
@@ -69,6 +70,17 @@ function C.execute(s,c)
   local b=s.entities[c.target];if U.alive(b) and b.faction==f and b.category=="building" then b.rally={x=U.clamp(c.x,2,D.width(s)-1),y=U.clamp(c.y,2,D.height(s)-1)};return true end return false
  end
  local n=0;local spacing=1.4
+ local G=require('war.OrganBattlefield');local destinations
+ if G.enabled(s) and (kind=='move' or kind=='attackmove') and c.x and c.y then
+  local units={};for _,id in ipairs(c.ids or {}) do local e=s.entities[id];if U.alive(e) and e.faction==f and e.category=='unit' then units[#units+1]=e end end
+  if #units==0 then return false end
+  local profile=units[1]
+  for _,u in ipairs(units) do if Collision.radius(u)>Collision.radius(profile) then profile=u end end
+  local lane=c.lane or G.lane(s,profile,c.x,c.y)
+  if lane==nil or not G.pointAllowed(s,profile,c.x,c.y,lane) then U.message(s,'专用通路和组织墙不能进入，请选择有足够净空的地面',f);return false end
+  local places=assert(G.formation(s,units,c.x,c.y,lane)) --[[@as table[] ]]
+  destinations={};for _,p in ipairs(places) do destinations[p.id]=p end
+ end
  for _,id in ipairs(c.ids or {}) do local u=s.entities[id];if u and u.category=="unit" then spacing=math.max(spacing,Collision.radius(u)*2+.15) end end
  for i,id in ipairs(c.ids or {}) do
   local e=s.entities[id]
@@ -78,9 +90,14 @@ function C.execute(s,c)
    if kind=="gather" then local r=s.resources[c.target];if not r or r.amount<=0 or not fa.seen[c.target] then o.kind="move" else o.x,o.y=r.x,r.y end end
    if kind=="retreat" then local b=U.nearest(s,e.x,e.y,function(v) return v.faction==f and v.category=="building" and v.complete and D.buildings[v.kind].supply end);if b then o.kind="move";o.x,o.y=b.rally.x,b.rally.y end end
    if kind=="retreat" and s.campaign then local home=require("war.CampaignData").forState(s).home;o.kind="move";o.x,o.y=home.x,home.y end
-   if kind=="move" or o.kind=="attackmove" then o.x=U.clamp((o.x or e.x)+((i-1)%5)*spacing,2,D.width(s)-1);o.y=U.clamp((o.y or e.y)+math.floor((i-1)/5)*spacing,2,D.height(s)-1) end
+   if destinations then
+    local p=destinations[e.id]
+    if not p or p.failed then o.kind='stop' else o.x,o.y,o.lane=p.x,p.y,p.lane end
+   elseif kind=="move" or o.kind=="attackmove" then o.x=U.clamp((o.x or e.x)+((i-1)%5)*spacing,2,D.width(s)-1);o.y=U.clamp((o.y or e.y)+math.floor((i-1)/5)*spacing,2,D.height(s)-1) end
    if s.campaign and o.x and o.y and not require("war.Campaign").allowed(s,o.x,o.y) then o.x,o.y=c.x or e.x,c.y or e.y end
-   if kind=="stop" then e.orders={};e.path={};e.longRoute=nil;e.pathPending=false;e.orderToken=e.orderToken+1
+   if o.kind=="stop" then
+    if require('war.OrganBattlefield').enabled(s) then require((s.organBattlefieldVersion==1 or s.fullbodyBattlefieldVersion==1) and 'war.OrganTraffic' or 'war.GastricTraffic').cancel(s,e) end
+    e.orders={};e.path={};e.longRoute=nil;e.pathPending=false;e.orderToken=e.orderToken+1
    elseif (kind=="gather" or kind=="build" or kind=="repair" or kind=="farm" or kind=="extinguish") and e.kind~="worker" then
    else C.order(s,e,o,c.append);n=n+1 end
   end
@@ -91,10 +108,25 @@ function C.process(s)
  for _,c in ipairs(pending) do C.execute(s,c) end
 end
 function C.completeOrder(e) table.remove(e.orders,1);e.path={};e.pathPending=false;e.pathFailed=false;e.pathIndex=1;e.orderToken=e.orderToken+1;e.work=0 end
-function C.go(s,e,x,y,dt,stopRange)
+function C.go(s,e,x,y,dt,stopRange,destinationLane)
+ if require('war.OrganBattlefield').enabled(s) and require((s.organBattlefieldVersion==1 or s.fullbodyBattlefieldVersion==1) and 'war.OrganTraffic' or 'war.GastricTraffic').beforeMove(s,e,x,y,dt) then return false end
+ if require('war.OrganBattlefield').enabled(s) then
+  -- Exact trial formation slots and membrane anchors must remain clear.
+  stopRange=math.min(stopRange or .7,.025)
+ end
  local d=math.sqrt((x-e.x)^2+(y-e.y)^2)
- if d<=(stopRange or .7) then return true end
- if (stopRange or .7)<=1 and e.pathResolved and e.pathResolved.adjusted and e.pathGoal and (x-e.pathGoal.x)^2+(y-e.pathGoal.y)^2<1 and U.dist(e,e.pathResolved)<.9 then return true end
+ local goalLane=destinationLane
+ if require('war.OrganBattlefield').enabled(s) and goalLane==nil then
+  local o=e.orders and e.orders[1]
+  if o and o.x and o.y and (o.x-x)^2+(o.y-y)^2<.00000001 then goalLane=o.lane end
+  local last=e.path and e.path[#e.path]
+  if goalLane==nil and last and (last.x-x)^2+(last.y-y)^2<.00000001 then goalLane=last.lane end
+ end
+ -- Blood and tissue may share a screen position. Complete only on the
+ -- commanded plane, after ordinary path movement crosses its named membrane.
+ local arrivedOnPlane=goalLane==nil or e.vesselLane==goalLane
+ if d<=(stopRange or .7) and arrivedOnPlane then return true end
+ if arrivedOnPlane and (stopRange or .7)<=1 and e.pathResolved and e.pathResolved.adjusted and e.pathGoal and (x-e.pathGoal.x)^2+(y-e.pathGoal.y)^2<1 and U.dist(e,e.pathResolved)<.9 then return true end
  -- Supply returns and combat chases may interrupt the current work destination.
  if e.pathGoal and (x-e.pathGoal.x)^2+(y-e.pathGoal.y)^2>1 then
   e.path={};e.longRoute=nil;e.pathIndex=1;e.pathPending=false;e.pathFailed=false;e.orderToken=e.orderToken+1
@@ -113,21 +145,22 @@ function C.go(s,e,x,y,dt,stopRange)
   local p=e.path[e.pathIndex or 1];if not p then break end
   local dx,dy=p.x-e.x,p.y-e.y;local pd=math.sqrt(dx*dx+dy*dy)
   if pd<.0001 then
-   if p.lane~=nil then local ok,preferred=P.clear(s,e.x,e.y,e.x,e.y,e.faction,e.vesselLane,p.lane);if ok then e.vesselLane=preferred end end
+   if p.lane~=nil then local ok,preferred=P.clear(s,e.x,e.y,e.x,e.y,e.faction,e.vesselLane,p.lane,e);if ok then e.vesselLane=preferred end end
    e.pathIndex=(e.pathIndex or 1)+1
   else
    local step=math.min(pd,budget);local nx,ny=e.x+dx/pd*step,e.y+dy/pd*step
    if e.cellDetour then nx,ny=e.x+e.cellDetour.x*step,e.y+e.cellDetour.y*step end
-   local clear,lane=P.clear(s,e.x,e.y,nx,ny,e.faction,e.vesselLane,step>=pd-.0001 and p.lane or nil)
+   local clear,lane=P.clear(s,e.x,e.y,nx,ny,e.faction,e.vesselLane,p.lane,e)
    if not clear then
     if e.cellDetour then e.cellDetour=nil;e.contactStall=0 end
     e.stuck=(e.stuck or 0)+dt
     if e.stuck>1 then e.path={};e.pathPending=false;e.pathIndex=1;e.orderToken=e.orderToken+1;e.stuck=0 end
     break
    end
-   nx,ny,lane=Collision.move(s,e,nx,ny)
+   local transit
+   nx,ny,lane,transit=Collision.move(s,e,nx,ny,p.lane)
    if p.lane~=nil and (p.x-nx)^2+(p.y-ny)^2<.00000001 then
-    local ok,preferred=P.clear(s,e.x,e.y,nx,ny,e.faction,e.vesselLane,p.lane);if ok then lane=preferred end
+    local ok,preferred=P.clear(s,e.x,e.y,nx,ny,e.faction,e.vesselLane,p.lane,e);if ok then lane=preferred end
    end
    local moved=math.sqrt((nx-e.x)^2+(ny-e.y)^2)
    if e.cellDetour then
@@ -137,11 +170,32 @@ function C.go(s,e,x,y,dt,stopRange)
     local remaining=math.sqrt((p.x-nx)^2+(p.y-ny)^2)
     e.contactStall=remaining>pd-step*.15 and (e.contactStall or 0)+1 or 0
     if e.contactStall>=6 then
-     local side=e.id%2==0 and 1 or -1
-     e.cellDetour={x=-dy/pd*side,y=dx/pd*side,remaining=2.5};e.contactStall=0
+     
+     local targetIndex=e.pathIndex or 1
+     local target=p;local units=Collision.units(s)
+     -- A static idle membrane may cover an intermediate grid waypoint.
+     -- Skip only those blocked points on this exact plane, never a gate,
+     -- plane transition, or final player goal. The accepted bypass edge is
+     -- still required to pass full real wall and unit sweeps.
+     while targetIndex<#e.path and target.lane==e.vesselLane and
+      not Collision.namedGatePoint(s,e,target) and
+      not Collision.free(units,e,target.x,target.y,s)do
+      local nextPoint=e.path[targetIndex+1]
+      if nextPoint.lane~=e.vesselLane then break end
+      targetIndex=targetIndex+1;target=nextPoint
+     end
+     local detour=Collision.idleDetour(s,e,target,targetIndex~=(e.pathIndex or 1))
+     if detour then
+      local path={};for _,point in ipairs(detour)do path[#path+1]=point end
+      for i=targetIndex,#e.path do path[#path+1]=e.path[i]end
+      e.path=path;e.pathIndex=1;e.cellDetour=nil;e.contactStall=0
+     else
+      local side=e.id%2==0 and 1 or -1
+      e.cellDetour={x=-dy/pd*side,y=dx/pd*side,remaining=2.5};e.contactStall=0
+     end
     end
    end
-   e.x,e.y=nx,ny;e.vesselLane=lane;Motion.record(e);e.stuck=0;budget=budget-step
+   e.x,e.y=nx,ny;e.vesselLane=lane;e.gastricTransit=transit;Motion.record(e);e.stuck=0;budget=budget-step
    if (p.x-e.x)^2+(p.y-e.y)^2<.00000001 then e.pathIndex=(e.pathIndex or 1)+1 end
    if budget<.0001 or U.dist(e,{x=x,y=y})<=(stopRange or .7) then break end
   end

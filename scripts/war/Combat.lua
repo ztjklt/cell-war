@@ -23,13 +23,15 @@ end
 function F.fight(s,e,t,dt,chase)
  if s.campaign and (not require("war.Campaign").allowed(s,e.x,e.y) or not require("war.Campaign").allowed(s,t.x,t.y)) then return false end
  local d=D.units[e.kind] or D.buildings[e.kind];local radius=(t.category=="building" and (D.buildings[t.kind].size or 1)*.5 or 0)
- local clear=not (s.campaign and (s.campaign.terrainVersion==2 or s.campaign.terrainVersion==3)) or require("war.Path").clear(s,e.x,e.y,t.x,t.y,e.faction,e.vesselLane)
+ local clear=not (s.campaign and (s.campaign.terrainVersion==2 or s.campaign.terrainVersion==3 or s.campaign.terrainVersion==4)) or require("war.Path").clear(s,e.x,e.y,t.x,t.y,e.faction,e.vesselLane)
+ local heartClear=require('war.HeartBattlefield').combatClear(s,e,t)
+ if heartClear~=nil then clear=heartClear end
  if U.dist(e,t)<=d.range+radius and clear then
   if e.cooldown<=0 then F.hit(s,e,t,d.damage);e.cooldown=d.cool end
   return true
  elseif chase and e.category=="unit" then C.go(s,e,t.x,t.y,dt,clear and d.range+radius-.1 or .5);return true end return false
 end
 function F.updateTower(s,b,dt)
- b.cooldown=math.max(0,b.cooldown-dt);if b.complete and b.kind=="tower" then local t=F.enemy(s,b,10,true);if t and b.cooldown<=0 then F.hit(s,b,t,19);b.cooldown=1.5 end end
+ b.cooldown=math.max(0,b.cooldown-dt);if b.complete and b.kind=="tower" then local t=F.enemy(s,b,10,true);if t and b.cooldown<=0 and require('war.HeartBattlefield').combatClear(s,b,t)~=false then F.hit(s,b,t,19);b.cooldown=1.5 end end
 end
 return F

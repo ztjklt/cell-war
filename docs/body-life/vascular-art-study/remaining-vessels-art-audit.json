@@ -1,0 +1,382 @@
+{
+  "schema": "remaining-vessels-independent-art-audit/v1",
+  "date": "2026-10-10",
+  "status": "V2_ART_CANDIDATES_NOT_PASSED_FOR_REGISTERED_MAP",
+  "inputHashes": {
+    "assets/image/anatomy-reference/reference.png": "9a04e39961c07073cd9fdcfcdc2c98253ccc25d968e97dbea1f36669e06b5d9f",
+    "docs/body-life/vascular-art-study/final-reference-data.json": "3890744e2fcaf9e9907c85513e170e479f67b7fbb1fbf06385ac02bd80e8550c",
+    "assets/image/anatomy-reference/vascular-study/remaining-vessels/gpt-chest-v2.png": "fb2c1941836a1bd77c03dfd61f00df4d56b0a3389691666b648101f5cab97a49",
+    "assets/image/anatomy-reference/vascular-study/remaining-vessels/gpt-lower-abdomen-v2.png": "1d2f62fa9beda028d69185ae268ecb267232e2f479f0efa719b1d2b8a2a6a91c",
+    "docs/body-life/vascular-art-study/remaining-vessels-inputs/chest-prompt-v2.txt": "daa485fa4424c0fe18b235eae58d04e2fa348ad2ee2c9faabddda242ebd072d2",
+    "docs/body-life/vascular-art-study/remaining-vessels-inputs/chest-visible-guide.svg": "80f862af85aeaecc29fcce4a34eadf023d2ad00fae106fe1fd9a969ca4013eac",
+    "docs/body-life/vascular-art-study/remaining-vessels-inputs/chest-original.svg": "04fa7aebba19a622ed79895f90b008526e92946e5c6401dbdd871149e83dc54a",
+    "docs/body-life/vascular-art-study/remaining-vessels-inputs/lower-abdomen-depth-guide.svg": "d9a91c187e6ec70369050c1e636d4f19124bdf6fc9b74a380a80503c9fbb50a4",
+    "docs/body-life/vascular-art-study/remaining-vessels-inputs/lower-abdomen-depth-guide.png": "0796dab35574665a0a5ed611fdb47eda6d88d3e0d5437ff35baa025cf76434fe",
+    "docs/body-life/vascular-art-study/remaining-vessels-inputs/chest-original.png": "c0d3e035096b26502d4b6fcfcd79bc234dc2116a75aba3023a95fc9b22dcc5cd",
+    "docs/body-life/vascular-art-study/remaining-vessels-inputs/chest-visible-guide.png": "5fa10ee55cd38ae4b760e3720e91f383c04e5fb4e02f2d7d63c846f7f04611f5",
+    "docs/body-life/vascular-art-study/remaining-vessels-inputs/registration.json": "501c60d42175a16fe1b9fa8d8c2fa7965baeaea2b0b1cb65837b055126ec2851",
+    "docs/body-life/vascular-art-study/remaining-vessels-inputs/lower-abdomen-original.svg": "711ad7949cf27262d2b849b254b31240fc93c6cffab0245cf315781294415652",
+    "docs/body-life/vascular-art-study/remaining-vessels-inputs/lower-abdomen-prompt-v2.txt": "2f6aa158688c5104bd0a3904353f812c5bd12b13b7bbdf5b07bbb0a7ffaf787c",
+    "docs/body-life/vascular-art-study/remaining-vessels-inputs/lower-abdomen-visible-guide.png": "51e1f276361823310708d57a9b702509e7e6552c22ab759c329d1c0786c7b487",
+    "docs/body-life/vascular-art-study/remaining-vessels-inputs/chest-depth-guide.png": "7a9f745a741f62e96d25cfb1ab362b91324eafa58ae4778e4c88d2b3739a66d7",
+    "docs/body-life/vascular-art-study/remaining-vessels-inputs/chest-depth-guide.svg": "b3ebcaff238985ba46b3052b41fafd099c312045209a44bc4030d20dabd84329",
+    "docs/body-life/vascular-art-study/remaining-vessels-inputs/lower-abdomen-visible-guide.svg": "b5809b76392e348ae254d87e8e0442cc51094cebc9b672ebe28fd450a417e921",
+    "docs/body-life/vascular-art-study/remaining-vessels-inputs/lower-abdomen-original.png": "f30df9427c6a3b3ddf628750e3bd6f8eb54102909bc56e59a46e4bf2621562d0"
+  },
+  "scope": "Only chest and lower-abdomen GPT v2 candidates reviewed. No stomach 0.15 repaint, gameplay, geometry, images or entry files edited. This JSON is the only write.",
+  "actualImagesViewed": [
+    "gpt-chest-v2.png",
+    "gpt-lower-abdomen-v2.png",
+    "chest-original.png",
+    "chest-visible-guide.png",
+    "chest-depth-guide.png",
+    "lower-abdomen-original.png",
+    "lower-abdomen-visible-guide.png",
+    "lower-abdomen-depth-guide.png"
+  ],
+  "referenceChecks": {
+    "finalReferenceUnchanged": true,
+    "sourceOriginalHashMatched": true,
+    "guideRegistrationHashMatched": true,
+    "sourceBoxes": {
+      "chest": [
+        333,
+        250,
+        693,
+        490
+      ],
+      "lower-abdomen": [
+        350,
+        628,
+        674,
+        844
+      ]
+    },
+    "protectedHeadAndLimbEdgesExcludedFromEditableLists": true,
+    "candidateAspectRatios3To2": true,
+    "candidatePixelOrGeometryRegistrationCertified": false
+  },
+  "regionObservations": {
+    "chest": {
+      "asset": "assets/image/anatomy-reference/vascular-study/remaining-vessels/gpt-chest-v2.png",
+      "sourceBox": [
+        333,
+        250,
+        693,
+        490
+      ],
+      "candidateRasterSize": [
+        1536,
+        1024
+      ],
+      "macroPlacement": "Both lungs, central heart, shoulders, airway tree, upper liver and esophagus remain broadly recognizable in the intended crop. Direct regeneration has not proved identical outlines or organ positions.",
+      "bloodVsBronchi": "Darker glossy veins/mauve loops versus matte lighter blue bronchial tree helps visual separation, but not all projected contacts receive an unambiguous underpass. Do not call strict blood-air separation passed from the colors alone. Airway branch tips must never become vascular junctions.",
+      "missingRouteRisk": "Coronary/internal heart named chains are not all independently traceable in the beauty image; retained original yellow cardiac marks are not evidence that the guide blood paths are implemented.",
+      "fixedOrganPortSourceCoordinates": {
+        "lung_r.entry": [
+          475.1613941018767,
+          374.0150134048257
+        ],
+        "lung_r.exit": [
+          471.6707317073171,
+          410.9634146341463
+        ],
+        "lung_l.entry": [
+          541.4487996080353,
+          374.0489955903969
+        ],
+        "lung_l.exit": [
+          545.0,
+          414.0
+        ]
+      }
+    },
+    "lower-abdomen": {
+      "asset": "assets/image/anatomy-reference/vascular-study/remaining-vessels/gpt-lower-abdomen-v2.png",
+      "sourceBox": [
+        350,
+        628,
+        674,
+        844
+      ],
+      "candidateRasterSize": [
+        1536,
+        1024
+      ],
+      "macroPlacement": "Pink bowel rows, orange bladder/outlet, cropped kidney ends and pelvic bones remain in a broadly similar shallow 3:2 composition. No whole-body/pelvis zoom-out is apparent in v2. This is a visual framing observation, not exact landmark or silhouette certification.",
+      "foodUrineSeparation": "Bowel and urinary outlet retain recognizable colors. Some exposed blood paint now crosses bowel foreground where the guide requires hiding; preserving bowel colors alone does not preserve the flow-domain exclusion.",
+      "fixedOrganPortSourceCoordinates": {
+        "small_intestine.entry": [
+          483.0954128440367,
+          655.451376146789
+        ],
+        "small_intestine.exit": [
+          549.22,
+          665.54
+        ],
+        "bladder.entry": [
+          536.3294117647059,
+          750.7176470588236
+        ],
+        "bladder.exit": [
+          476.6928327645051,
+          754.6109215017065
+        ]
+      }
+    }
+  },
+  "blockingFindings": [
+    {
+      "id": "chest-left-red-bridge",
+      "region": "chest",
+      "severity": "blocking-for-map-install",
+      "edges": [
+        "e172",
+        "e003"
+      ],
+      "observed": "The generated red supply segment forms a long continuous pipe from the screen-left lung mauve loop into the central blue trunk. The guide intentionally splits this route at the lung-hilar projection and central foreground; smooth paint has turned the hidden spans into exposed connections.",
+      "affectedHiddenSpans": {
+        "e172": [
+          {
+            "arcStartSource": 4.971341352830758,
+            "arcEndSource": 16.170117954847782,
+            "fromSource": [
+              470.42818109128,
+              372.7109633235039
+            ],
+            "toSource": [
+              461.6976745256856,
+              365.74858308532856
+            ]
+          }
+        ],
+        "e003": [
+          {
+            "arcStartSource": 10.638520131016517,
+            "arcEndSource": 27.25869023349582,
+            "fromSource": [
+              499.51852261759535,
+              356.7113272111618
+            ],
+            "toSource": [
+              485.96391649230037,
+              365.61970436657987
+            ]
+          }
+        ]
+      },
+      "repair": "Restore original light-blue bronchial/hilar foreground on e172 hidden span and central heart/vessel foreground on e003 hidden span. Keep visible segments and named lung_r.entry untouched; do not manufacture a red-to-systemic-blue T-junction."
+    },
+    {
+      "id": "chest-right-red-bridge",
+      "region": "chest",
+      "severity": "blocking-for-map-install",
+      "edges": [
+        "e174",
+        "e006"
+      ],
+      "observed": "The screen-right red access curve is painted as a continuous branch linking lung loop to the large red structure in front of the heart, whereas the fixed guide has several distinct cover gaps.",
+      "affectedHiddenSpans": {
+        "e174": [
+          {
+            "arcStartSource": 0.0,
+            "arcEndSource": 2.692576360372499,
+            "fromSource": [
+              541.4487996080353,
+              374.0489955903969
+            ],
+            "toSource": [
+              544.1216354759845,
+              373.99810757549875
+            ]
+          },
+          {
+            "arcStartSource": 9.188820464495778,
+            "arcEndSource": 19.85966644425402,
+            "fromSource": [
+              549.9153328085356,
+              371.1536589468962
+            ],
+            "toSource": [
+              558.0182332812865,
+              364.22442112618495
+            ]
+          }
+        ],
+        "e006": [
+          {
+            "arcStartSource": 11.221144956139518,
+            "arcEndSource": 40.25069197238155,
+            "fromSource": [
+              521.1595860612448,
+              356.02715721755226
+            ],
+            "toSource": [
+              541.4487996080353,
+              374.0489955903969
+            ]
+          }
+        ]
+      },
+      "repair": "Restore lung-hilar/bronchial and heart-front cover locally within the fixed hidden tube footprints. Keep the simple mauve loop, red visible fragments and named lung_l.entry; do not force complete exposed continuity."
+    },
+    {
+      "id": "lower-intestinal-purple-bridge",
+      "region": "lower-abdomen",
+      "severity": "blocking-for-map-install",
+      "edges": [
+        "e131"
+      ],
+      "observed": "The purple small-intestinal exchange route is rendered as one long slanted tube across the pink bowel row. In the visible guide only two short exchange exposures remain; the intervening tissue coverage is part of the frozen design.",
+      "affectedHiddenSpans": {
+        "e131": [
+          {
+            "arcStartSource": 5.1445741151678455,
+            "arcEndSource": 19.253657755730135,
+            "fromSource": [
+              495.5099925319021,
+              676.7608224203346
+            ],
+            "toSource": [
+              505.71023842882335,
+              686.502963560676
+            ]
+          },
+          {
+            "arcStartSource": 32.461908290632465,
+            "arcEndSource": 53.00620881858581,
+            "fromSource": [
+              516.0860056953198,
+              694.663767150668
+            ],
+            "toSource": [
+              535.0,
+              701.0
+            ]
+          }
+        ]
+      },
+      "repair": "Repaint the corresponding existing pink bowel foreground over the e131 hidden spans, preserving the two actual visible pieces. The second large hidden span must stay hidden even if the model already omitted part of it."
+    },
+    {
+      "id": "lower-right-blue-new-junction",
+      "region": "lower-abdomen",
+      "severity": "blocking-for-map-install",
+      "edges": [
+        "e168"
+      ],
+      "observed": "The lower right intestinal blue fragments have been fused into a continuous blue branch meeting the broad original outer venous arc. The guide has hidden separations between these small exposures; the original broad AI arc is not authorization to create a new graph junction.",
+      "affectedHiddenSpans": {
+        "e168": [
+          {
+            "arcStartSource": 12.049760507758505,
+            "arcEndSource": 22.37681158606215,
+            "fromSource": [
+              563.6651811338745,
+              713.6728255859884
+            ],
+            "toSource": [
+              573.2577445467457,
+              717.4883298090782
+            ]
+          },
+          {
+            "arcStartSource": 23.533753255618453,
+            "arcEndSource": 33.85015578263527,
+            "fromSource": [
+              574.3593432491804,
+              717.8417999829614
+            ],
+            "toSource": [
+              584.4850402506121,
+              718.7615841175788
+            ]
+          }
+        ]
+      },
+      "repair": "Restore the right/lower pink bowel occluder on spans [563.66518,713.67283]→[573.25774,717.48833] and [574.35934,717.84180]→[584.48504,718.76158]. Keep e168 separate from incidental original blue pigment; no added branch or shifted path."
+    },
+    {
+      "id": "lower-bladder-red-blue-contact",
+      "region": "lower-abdomen",
+      "severity": "blocking-for-port-certification",
+      "edges": [
+        "e142",
+        "e197",
+        "e144",
+        "e198"
+      ],
+      "observed": "The generated bladder red access appears to emerge directly from the broad blue perimeter vessel near approximate source point [542,746]. That visible color contact is not a named supply/return junction in the frozen graph; a red segment needs a cover treatment rather than an implied direct red-to-blue connection.",
+      "approximateImageMappedSourcePoint": [
+        542,
+        746
+      ],
+      "approximateCoordinateNotice": "This location is mapped from the candidate crop assuming uniform framing, not pixel-accurate image registration.",
+      "affectedHiddenSpans": {
+        "e142": [
+          {
+            "arcStartSource": 3.909542392648573,
+            "arcEndSource": 33.576687983232354,
+            "fromSource": [
+              512.8702032105869,
+              746.4471291371694
+            ],
+            "toSource": [
+              541.8653471844085,
+              745.9491278088789
+            ]
+          },
+          {
+            "arcStartSource": 41.19525064129119,
+            "arcEndSource": 50.290886112141216,
+            "fromSource": [
+              540.4717673154929,
+              753.3238263069993
+            ],
+            "toSource": [
+              536.3294117647059,
+              750.7176470588236
+            ]
+          }
+        ]
+      },
+      "fixedPorts": {
+        "bladder.entry": [
+          536.3294117647059,
+          750.7176470588236
+        ],
+        "bladder.exit": [
+          476.6928327645051,
+          754.6109215017065
+        ]
+      },
+      "repair": "Use existing orange bladder/pelvic foreground to tuck the supply exposure, retaining fixed named entry/exit coordinates and independent blood/urine semantics. Do not rewire to the broad original blue ring."
+    }
+  ],
+  "overallVerdict": {
+    "materialStyleCandidate": true,
+    "safeForDirectFullBodyReplacement": false,
+    "fixedCoordinatesPassed": false,
+    "portsPassed": false,
+    "occlusionPassed": false,
+    "bloodAirSeparationPassed": false,
+    "geometryUnchangedByReview": true
+  },
+  "minimalRepairPolicy": [
+    "Edit the current v2 beauty crops locally using the frozen guide hidden-span masks. Restore only foreground cover; do not add a branch to avoid a gap.",
+    "Use blood widths plus a restrained shadow fringe for the repair selection. Keep the original named ports, curve centerlines, colors, organ silhouettes and crop framing.",
+    "Any incidental contact between new blood and preserved AI vessel pigment must remain an over/under projection unless the final graph explicitly shares the named endpoint.",
+    "For bronchial crossings preserve the original lighter matte-blue branch shape and make the vascular underpass unambiguous; never attach blood to an airway tip.",
+    "After correcting the candidates, independently inspect the new images and compare original crop boundaries/ports again before a controlled registered composite."
+  ],
+  "limits": [
+    "This is a game-art projection review, not a clinical anatomy certification.",
+    "Source coordinates of hidden spans and named ports come exactly from the final graph. Observed beauty-image locations are approximate until a controlled source-coordinate composite exists.",
+    "The generated crops recolor/re-render pixels throughout their frames, so untouched original head/limb/body boundary pixel identity cannot be claimed for direct replacement.",
+    "Appearance of a continuous colored pipe does not prove graph connectivity, supply/return direction, simulation passability or collision clearance.",
+    "All reported findings refer to v2 candidate hashes. Later corrected versions require a separate review."
+  ],
+  "productionInstalled": false,
+  "newMovementCertified": false,
+  "nativeEvidence": false
+}

@@ -1,5 +1,5 @@
 -- Bounded vector artwork: shared zone geometry, no simulation RNG or image handles.
-local N,T=require("war.CampaignData").legacy,require("war.Territory")
+local N,T=require("war.LegacyCampaignData").legacy,require("war.Territory")
 local A={colors={{30,132,133},{189,64,91},{157,105,36}}}
 local function path(R,g,p)
  nvgBeginPath(R.vg)

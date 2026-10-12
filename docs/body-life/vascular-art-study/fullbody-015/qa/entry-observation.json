@@ -1,0 +1,73 @@
+{
+  "schema": "fullbody-015-main-entry-observation/v2",
+  "observedAt": "2026-10-11T13:20:03.705257+00:00",
+  "path": "scripts/main.lua",
+  "sha256": "091adca6a72ebf428d7a63cf51752668bf2d7edb51e9506f889a606521ce1595",
+  "qaHooks": [],
+  "formalNativeRestoration": "RESTORED_NORMAL_BYTES_AND_CURRENT_MENU_CONFIRMED",
+  "executedByOfflineRenderer": false,
+  "offlineEntry": "war.FullBodyBattlefield.new + war.Render.draw",
+  "previousTemporaryObservation": {
+    "schema": "fullbody-015-main-entry-observation/v1",
+    "observedAt": "2026-10-11T13:06:37.497563+00:00",
+    "path": "scripts/main.lua",
+    "sha256": "93a3045a98d9d6b7df961b2ddf1c2bcf2ba35a8a1a5d77b2644da6ff47f5ce2f",
+    "executedByOfflineRenderer": false,
+    "offlineEntry": "war.FullBodyBattlefield.new + war.Render.draw",
+    "qaHooks": [
+      "require('qa.FullBodyMapNativePerformance').start(game,R,{outputDir='qa/organ-atlas-native/fullbody-performance-004'})"
+    ],
+    "expectedNormalSha256": "091adca6a72ebf428d7a63cf51752668bf2d7edb51e9506f889a606521ce1595",
+    "formalNativeRestoration": "AWAIT_PARENT_OBSERVATION",
+    "limits": [
+      "This is a post-render source observation, not an asserted capture-time main hash.",
+      "Only the literal observed native004 hook is removed for a read-only comparison; no arbitrary main normalization is permitted."
+    ],
+    "businessBytesMatchExpectedNormal": "UNDETERMINED_DIFFERENT_HOOK"
+  },
+  "menuEvidence": {
+    "file": "docs/body-life/vascular-art-study/fullbody-015/native-menu-002/record.json",
+    "sha256": "353025293101804f14313499b3acffcb2a2585cb22f451d739bf465b1141cb38"
+  },
+  "menuImage": {
+    "path": "docs/body-life/vascular-art-study/fullbody-015/native-menu-002/normal-entry.png",
+    "sha256": "614ce918f023375572558a139f98f5c4a6c44d11a6f7c99df01bef0135153a8d"
+  },
+  "menuCaptureTimestamp": "2026-10-11T21:13:43.001086+08:00",
+  "menuScope": "Current reload21 exact game window was independently viewed: fullbody map .15 button present, normal main has no QA hook. Menu PNG is an entry proof, not an organ-material screenshot.",
+  "previewEvidence": [
+    {
+      "file": "docs/body-life/vascular-art-study/fullbody-015/native-preview/reload-21-refresh.json",
+      "sha256": "e76290d61e26241428286449770825185d933137a653bf139d7c1b1f42d0f8a0"
+    },
+    {
+      "file": "docs/body-life/vascular-art-study/fullbody-015/native-preview/reload-21-logs.json",
+      "sha256": "1da0ce325f58b8b21e8b9a76e7ae7b6c3e80ef32c5755caca805f707342ff95f"
+    },
+    {
+      "file": "docs/body-life/vascular-art-study/fullbody-015/native-preview/reload-21-check.json",
+      "sha256": "beedab6299f78741414f0629119ed31ba04f790afe7869655eb5d696ed9d867b"
+    }
+  ],
+  "limits": [
+    "Capture-time main SHA in native inputs remains distinct from current restored main; no source changes are silently ignored.",
+    "Offline Renderer does not execute main; actual normal-menu capture and preview evidence separately establish entry restoration."
+  ],
+  "menuIndependentlyViewed": true,
+  "reloadId": 21,
+  "ownerPid": 52789,
+  "previewReadiness": {
+    "processAlive": true,
+    "checkResult": "FAIL_PREEXISTING_CUBE_RESOURCE",
+    "checkExitCode": 1,
+    "errors": [
+      "[2026-10-11 21_11_18_207][0] ERROR: Could not find resource Cube/Day/DaySpecularHDR_QualityLow.dds"
+    ],
+    "scope": "Only existing Cube DaySpecular DDS missing; readiness check is not reported clean."
+  },
+  "targetedLspEvidence": {
+    "file": "docs/body-life/vascular-art-study/fullbody-015/qa/targeted-lsp-evidence.json",
+    "sha256": "bfc7a8d53e114fef37b6e8eba73d88a676a9de41429ad0b901ca0ad181aa5e63"
+  },
+  "targetedLspScope": "Current targeted changed-runtime files inspected with EmmyLua severity1; unrelated global baseline diagnostics are not claimed zero. Confirmed generated resource data and restored normal main in fresh targeted requests."
+}

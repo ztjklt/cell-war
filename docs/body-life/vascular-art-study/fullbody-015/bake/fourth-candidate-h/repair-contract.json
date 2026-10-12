@@ -1,0 +1,138 @@
+{
+  "schema": "private-h-calibrated-gpt-guide-removal/v1",
+  "status": "PRIVATE_STAGED_CANDIDATE",
+  "nativeEvidence": false,
+  "baselineFManifestPath": "docs/body-life/vascular-art-study/fullbody-015/bake/fourth-candidate-f/manifest.json",
+  "baselineFManifestSha256": "fef142047dac5854f389719ff85aaa3c11651f658fef8b9497472f8d0ee344b6",
+  "baselineCManifestSha256": "fb0bb1a3fd70a7d69cdf53d534a715a519ea48822bd6a9665fa1e639d0e8f693",
+  "rawPath": "assets/image/anatomy-reference/vascular-study/fullbody-gpt-source/fourth/root/celiac-stomach-complete-junction-raw-v3.png",
+  "rawSha256": "689feb95e41d08a1605cbf98974ac133db49062cfb963b8c4a9b921df6ddf3e4",
+  "existingGPTCleanupPath": "assets/image/anatomy-reference/vascular-study/fullbody-gpt-source/fourth/root/celiac-helper-clean-gpt-v1.png",
+  "existingGPTCleanupSha256": "12459e6ff39f6525c049749c4ec1ac836a60c079a248a57f4db66a3ce385486c",
+  "scriptPath": ".tmp/fullbody-015/h-staging/build_h_candidate.py",
+  "scriptSha256": "3c161836b8ac20c903d0140833b9d84f9e1504b9842e1b74b9f4a717133620bf",
+  "sourceBox": [
+    507,
+    472,
+    579,
+    540
+  ],
+  "pixelSize": [
+    1254,
+    1184
+  ],
+  "generatedContentBox": [
+    0.0,
+    34.8333333333334,
+    1254.0,
+    1219.1666666666667
+  ],
+  "calibratedRawCenterline": [
+    [
+      900,
+      246
+    ],
+    [
+      940,
+      246
+    ],
+    [
+      970,
+      245
+    ],
+    [
+      1000,
+      244
+    ],
+    [
+      1040,
+      246
+    ],
+    [
+      1080,
+      249
+    ],
+    [
+      1110,
+      252
+    ],
+    [
+      1150,
+      256
+    ],
+    [
+      1190,
+      264
+    ],
+    [
+      1220,
+      271
+    ],
+    [
+      1254,
+      284
+    ]
+  ],
+  "sourceCenterline": [
+    [
+      558.6746411483253,
+      484.1244019138756
+    ],
+    [
+      560.9712918660287,
+      484.1244019138756
+    ],
+    [
+      562.6937799043062,
+      484.066985645933
+    ],
+    [
+      564.4162679425838,
+      484.00956937799043
+    ],
+    [
+      566.7129186602871,
+      484.1244019138756
+    ],
+    [
+      569.0095693779904,
+      484.29665071770336
+    ],
+    [
+      570.7320574162679,
+      484.4688995215311
+    ],
+    [
+      573.0287081339713,
+      484.69856459330146
+    ],
+    [
+      575.3253588516747,
+      485.1578947368421
+    ],
+    [
+      577.0478468899521,
+      485.5598086124402
+    ],
+    [
+      579.0,
+      486.3062200956938
+    ]
+  ],
+  "fullWeightCoreHalfWidthSource": 0.4,
+  "maximumStripHalfWidthSource": 0.7,
+  "blend": "full GPT RGB in calibrated core; continuous smoothstep to zero at outer boundary; original2.5source crop RGB blend retained",
+  "fRecipeReproductionChangedSelectedPixels": 0,
+  "changedRgbPixels": 5766,
+  "alphaChangedPixels": 0,
+  "changedOutsideStrip": 0,
+  "candidatePath": ".tmp/fullbody-015/h-staging/assets/celiac-stomach-complete-junction.png",
+  "candidateSha256": "10d4489e44ab7db7b01749e58dea4373dabd87a9e9f52789732a119383d83302",
+  "weightPath": ".tmp/fullbody-015/h-staging/strip-weight.png",
+  "weightSha256": "bcd8bb48389fb89cc72d0e205f569ce72a0a587749ab96a21360a2e9951be6d2",
+  "changedMaskPath": ".tmp/fullbody-015/h-staging/changed-rgb-mask.png",
+  "changedMaskSha256": "d4ba1cdfdee7f7a9b360bc3299b38d042a54a614005c409aaa102761ace5210e",
+  "authoringOnly": true,
+  "requiresResourceRemapBeforeNative": true,
+  "reason": "Remove the inherited thin food-floor guide, keeping true walls, food entry, vessel banks and original foreground alpha."
+}

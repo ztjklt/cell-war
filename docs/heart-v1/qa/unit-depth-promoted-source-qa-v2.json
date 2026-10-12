@@ -1,0 +1,13 @@
+{
+  "schema": "heart-unit-depth-promoted-source-qa/v1",
+  "nativeEvidence": false,
+  "moduleMatchesStagingExceptResource": true,
+  "stagingResource": "/tmp/heart-v1-staging/assets/gpt-heart-atlas-v2.png",
+  "productionResource": "image/anatomy-reference/vascular-study/heart-four-chamber-v1/gpt-heart-atlas-v2.png",
+  "productionHeartVisualSha256": "b1489dc18b19b8e39fc0cbeb660dfa82fdc79cc97193dc65b8d932ac5991a961",
+  "stagedHeartVisualSha256": "a3aeccc1dff68b8491d1d6423be04b1e9027d85a2ae2a93a8479e1b65db91322",
+  "productionLowLODCallsUnitDepth": true,
+  "productionLowLODCallsHiddenMarker": true,
+  "lowLODBranch": "\n    local c=e.faction>0 and D.factions[e.faction].color or {202,124,88}\n    local radius=e.category==\"building\" and 3 or 2\n    if g.selection[e.id] then R.ellipse(x,y,radius+2,radius+2,{234,235,184}) end\n    local wx,wy=Motion.position(g,e)\n    if e.category~=\"building\" and require('war.FullBodyMapArt').unitDepth(g.state,e,wx,wy)=='under-foreground' then\n     hiddenUnitMarker(g,e,x,y,radius)\n    else R.ellipse(x,y,radius,radius,c) end\n   ",
+  "productionFilesEditedByThisQA": false
+}

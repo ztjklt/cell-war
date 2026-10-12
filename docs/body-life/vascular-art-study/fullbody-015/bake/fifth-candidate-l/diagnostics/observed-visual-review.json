@@ -1,0 +1,85 @@
+{
+  "schema": "private-l-actual-preview-observation/v1",
+  "createdUTC": "2026-10-11T21:25:33.731747+00:00",
+  "status": "PRIVATE_VISUAL_NOT_ACCEPTED",
+  "candidateManifestSha256": "a9948c997fb5d20ca02b462181e73220e55d8409f50365b9d59c70e3f196d6bd",
+  "contractSha256": "8a3c245c345f1825e7635031da88edde0c9ec352163fb083f52d0d94d1aa39c1",
+  "actualModelsObserved": true,
+  "nativeEvidenceForL": false,
+  "wholeVisualAccepted": false,
+  "productionPromoted": false,
+  "rows": [
+    {
+      "id": "pancreas-upper-mouths",
+      "observed": true,
+      "comparisonPath": "docs/body-life/vascular-art-study/fullbody-015/bake/fifth-candidate-l/diagnostics/pancreas-upper-mouths-actual-K-L-compare.png",
+      "comparisonSha256": "9759290bd6ae057c195a3c420044bae7c55c9c99221ca9a58b4b7d7f4334dc18",
+      "status": "FAIL_RETAINED_UNDERPASS_CUT",
+      "note": "下穿口材质稍柔化，但冻结的口沿仍显平切；只改RGB不能靠吃进food/移动管口解决。"
+    },
+    {
+      "id": "celiac-shared-junctions",
+      "observed": true,
+      "comparisonPath": "docs/body-life/vascular-art-study/fullbody-015/bake/fifth-candidate-l/diagnostics/celiac-shared-junctions-actual-K-L-compare.png",
+      "comparisonSha256": "c29833f3c9d45846e51f2ae78c04d7eeac430c38df9d43ff83e6bc9841cb0202",
+      "status": "WARN_RETAINED_INTERNAL_BANK",
+      "note": "部分材质接合较平滑，横跨交会腔内的旧内壁仍可辨。合法三角组织间隙应保留，不属于应填平的血管。"
+    },
+    {
+      "id": "leg-right-exchange",
+      "observed": true,
+      "comparisonPath": "docs/body-life/vascular-art-study/fullbody-015/bake/fifth-candidate-l/diagnostics/leg-right-exchange-actual-K-L-compare.png",
+      "comparisonSha256": "04c634df84bedf576622dccf108be6a748ea3dcfe493d271b94b09d02064492b",
+      "status": "FAIL_RETAINED_MOUTH_CLOSURE",
+      "note": "生成图仍有深紫圆封头；套回固定轮廓后尾端也未打开，支持域边缘产生色弧。"
+    },
+    {
+      "id": "leg-left-exchange",
+      "observed": true,
+      "comparisonPath": "docs/body-life/vascular-art-study/fullbody-015/bake/fifth-candidate-l/diagnostics/leg-left-exchange-actual-K-L-compare.png",
+      "comparisonSha256": "31ceaa2c5de6c5900e242f36155df0c4849904b309e574e64badb05bb5b3e59e",
+      "status": "FAIL_RETAINED_MOUTH_CLOSURE",
+      "note": "生成图仍有深紫圆封头；套回固定轮廓后尾端也未打开，支持域边缘产生色弧。"
+    }
+  ],
+  "limitations": [
+    "Actual native012 images in comparison belong to K; L is an offline mip model only.",
+    "Current compositor organ gate checks membership of some target edge before using the target-union footprint. A stricter per-organ owned-edge mask is required before technical promotion.",
+    "Do not equate a graph degree2 shared-node exchange rounded silhouette with a disconnected route.",
+    "Do not infer that a legal tissue triangle is a vascular barrier."
+  ],
+  "legalTriangleCheck": {
+    "sourcePoint": [
+      526.4,
+      486.4
+    ],
+    "nearArterialRoutes": [
+      {
+        "id": "e009",
+        "centerlineDistance": 5.909314681077633,
+        "radius": 3.5,
+        "contains": false
+      },
+      {
+        "id": "e010",
+        "centerlineDistance": 4.194194551749944,
+        "radius": 3.5,
+        "contains": false
+      },
+      {
+        "id": "e116",
+        "centerlineDistance": 1.8692713236418388,
+        "radius": 1.5,
+        "contains": false
+      },
+      {
+        "id": "e117",
+        "centerlineDistance": 2.534916145656483,
+        "radius": 1.5,
+        "contains": false
+      }
+    ],
+    "outsideFixedArteryFootprints": true
+  },
+  "native012ObservationAddendum": "Native012 small dark triangle was an observed shape. Independent fixed geometry confirms [526.4,486.4] lies outside arterial footprints and is a legal tissue gap; preserve it. Overall native012 visual failure remains because of retained internal wall/mouth artifacts, not this gap alone."
+}

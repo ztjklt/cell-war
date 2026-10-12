@@ -1,0 +1,523 @@
+{
+  "schema": "gastric-traffic-contract/v3",
+  "status": "SELF_CHECKED_AWAITING_INDEPENDENT_LOCKED_FULL_SUITE",
+  "moduleSha256": "d04b89128fedb033d67b9eef01a72f5c2733b5942a0e87656e00d9b883ee3e6d",
+  "hooks": [
+    "Commands.go calls beforeMove before arrival checks",
+    "GastricTrial.step calls update once after ordinary unit movement"
+  ],
+  "semantics": {
+    "originalOrders": "Never deleted or substituted. Temporary path only; normal real C.go and CellCollision execute every displacement.",
+    "stages": [
+      "Both wait during bounded route planning",
+      "Later/higher ID retreats along actual routes to legal tissue bay (swap priority only if necessary for legal retreat)",
+      "Priority executes original order",
+      "If its final disk blocks return, move completed priority to a separate legal bay",
+      "Yielder completes original target",
+      "Priority returns to its captured exact original target"
+    ],
+    "completion": "Both original orders complete AND activePairs=0; order completion alone is insufficient.",
+    "geometry": "No width/radius/target changes; all retreat route segments clear current complete unit disks. Actual motion remains collidable.",
+    "limits": "16 pairs; at most 2 candidates per gate; 5 gates; weak-key state; dead/completed admission records removed.",
+    "planning": "Single shared 0.0015 CPU second target per T.update, G.beginRoute/resumeRoute in max 0.0005 second requested slices. Geometry primitives are not preemptible. No synchronous G.route call in traffic.",
+    "cancellation": "T.cancel from new non-append command and stop; changed order/death/stall cancels incremental jobs. Inactivity >120 simulation seconds or whole protocol >600 seconds releases pair; motion progress is measured from both real positions.",
+    "clock": "Movement/wait timeout use simulation dt/time; dt=0 performs no work; os.clock is only CPU scheduling budget.",
+    "save": "T.snapshot stores only primitive finite intent tables; T.restore rebinds orders to actual restored entities and replans temporary routes incrementally. Parent Save invokes these only for enabled gastric trial without increasing save version.",
+    "reservedPassingSpace": "A bay must clear the other actor’s original target and complete future route by both actual disk radii plus 0.12world. First retreat reserves the priority route; secondary clearing reserves the yielder’s restored route. All plans remain incremental."
+  },
+  "diagnosticVerification": {
+    "nativeEvidence": false,
+    "lua54Load": true,
+    "lspSeverity1": 0,
+    "fourBloodLanes": [
+      {
+        "id": "blood-meeting/e124/siege-siege",
+        "elapsedSimulationSeconds": 167.89999999999475,
+        "completed": true,
+        "geometryFailures": 0,
+        "disksChecked": 8401,
+        "capsulesChecked": 5043,
+        "exteriorDomainUnverified": 0,
+        "minimumFrameDiskGapWorld": 0.9180126031007201,
+        "assignedTargetArrivals": [
+          {
+            "id": 7,
+            "distanceToAssignedTargetWorld": 0.04962045399677301,
+            "laneMatchesTarget": true
+          },
+          {
+            "id": 8,
+            "distanceToAssignedTargetWorld": 0.012790014285580272,
+            "laneMatchesTarget": true
+          }
+        ],
+        "savePassed": true,
+        "traffic": {
+          "cancelled": 0,
+          "maxPlanningSlice": 0.0028400000000001757,
+          "resumed": 1,
+          "noBay": 0,
+          "waits": 894,
+          "routeRequests": 2,
+          "expired": 0,
+          "deadReleased": 0,
+          "maxPairs": 1,
+          "conflicts": 1,
+          "secondaryYields": 1,
+          "yields": 1,
+          "activePairs": 0
+        }
+      },
+      {
+        "id": "blood-meeting/e183/siege-siege",
+        "elapsedSimulationSeconds": 61.0000000000006,
+        "completed": true,
+        "geometryFailures": 0,
+        "disksChecked": 3020,
+        "capsulesChecked": 1800,
+        "exteriorDomainUnverified": 0,
+        "minimumFrameDiskGapWorld": 2.734369875157605,
+        "assignedTargetArrivals": [
+          {
+            "id": 7,
+            "distanceToAssignedTargetWorld": 0.008276583018951308,
+            "laneMatchesTarget": true
+          },
+          {
+            "id": 8,
+            "distanceToAssignedTargetWorld": 0.01658891881976539,
+            "laneMatchesTarget": true
+          }
+        ],
+        "savePassed": true,
+        "traffic": {
+          "deadReleased": 0,
+          "cancelled": 0,
+          "resumed": 1,
+          "conflicts": 1,
+          "maxPairs": 1,
+          "routeRequests": 1,
+          "maxPlanningSlice": 0.0017239999999998368,
+          "activePairs": 0,
+          "expired": 0,
+          "noBay": 0,
+          "yields": 1,
+          "waits": 460
+        }
+      },
+      {
+        "id": "blood-meeting/e184/siege-siege",
+        "elapsedSimulationSeconds": 222.59999999999164,
+        "completed": true,
+        "geometryFailures": 0,
+        "disksChecked": 10954,
+        "capsulesChecked": 6502,
+        "exteriorDomainUnverified": 0,
+        "minimumFrameDiskGapWorld": 4.8391217670625295,
+        "assignedTargetArrivals": [
+          {
+            "id": 7,
+            "distanceToAssignedTargetWorld": 0.0,
+            "laneMatchesTarget": true
+          },
+          {
+            "id": 8,
+            "distanceToAssignedTargetWorld": 0.0317575667865379,
+            "laneMatchesTarget": true
+          }
+        ],
+        "savePassed": true,
+        "traffic": {
+          "routeRequests": 12,
+          "waits": 1681,
+          "conflicts": 1,
+          "cancelled": 0,
+          "deadReleased": 0,
+          "yields": 1,
+          "maxPairs": 1,
+          "resumed": 1,
+          "expired": 0,
+          "noBay": 0,
+          "activePairs": 0,
+          "secondaryYields": 1,
+          "maxPlanningSlice": 0.0036470000000004
+        }
+      },
+      {
+        "id": "blood-meeting/study.stomach.wall_service/siege-siege",
+        "elapsedSimulationSeconds": 209.2999999999924,
+        "completed": true,
+        "geometryFailures": 0,
+        "disksChecked": 11530,
+        "capsulesChecked": 7344,
+        "exteriorDomainUnverified": 0,
+        "minimumFrameDiskGapWorld": 3.7437318506389152,
+        "assignedTargetArrivals": [
+          {
+            "id": 7,
+            "distanceToAssignedTargetWorld": 0.019370377096994868,
+            "laneMatchesTarget": true
+          },
+          {
+            "id": 8,
+            "distanceToAssignedTargetWorld": 0.0,
+            "laneMatchesTarget": true
+          }
+        ],
+        "savePassed": true,
+        "traffic": {
+          "conflicts": 1,
+          "maxPairs": 1,
+          "yields": 1,
+          "noBay": 0,
+          "deadReleased": 0,
+          "resumed": 1,
+          "waits": 1070,
+          "activePairs": 0,
+          "cancelled": 0,
+          "expired": 0,
+          "routeRequests": 1,
+          "maxPlanningSlice": 0.0019059999999999633
+        }
+      }
+    ],
+    "lifecycle": {
+      "pausedUnchanged": true,
+      "changedOrderReleasesPair": true,
+      "deathReleasesPair": true,
+      "resetReleasesPair": true,
+      "testedStage": "initial incremental planning",
+      "stopReleasesPair": true,
+      "cancelUsesProductionCommandHook": true
+    },
+    "diagnosticScope": "Real production runner + independent Shapely disk/capsule oracle. These per-case development diagnostics do not replace the final full-suite report with start/end input hashes.",
+    "maxPlanningSliceSeconds": 0.0040800000000000836,
+    "realSaveRestoreByStage": [
+      {
+        "phase": "planning",
+        "roundtripDriftWorld": 0.0,
+        "elapsedSimulationSeconds": 167.59999999999476,
+        "completed": true,
+        "geometryFailures": 0,
+        "disksChecked": 8388,
+        "capsulesChecked": 5036,
+        "exteriorDomainUnverified": 0,
+        "minimumFrameDiskGapWorld": 0.918013591174804,
+        "assignedTargetArrivals": [
+          {
+            "id": 7,
+            "distanceToAssignedTargetWorld": 0.049617731415353736,
+            "laneMatchesTarget": true
+          },
+          {
+            "id": 8,
+            "distanceToAssignedTargetWorld": 0.012790014285580272,
+            "laneMatchesTarget": true
+          }
+        ],
+        "savePassed": true,
+        "activePairs": 0
+      },
+      {
+        "phase": "retreat",
+        "roundtripDriftWorld": 0.0,
+        "elapsedSimulationSeconds": 168.09999999999474,
+        "completed": true,
+        "geometryFailures": 0,
+        "disksChecked": 8408,
+        "capsulesChecked": 5046,
+        "exteriorDomainUnverified": 0,
+        "minimumFrameDiskGapWorld": 0.918013591174804,
+        "assignedTargetArrivals": [
+          {
+            "id": 7,
+            "distanceToAssignedTargetWorld": 0.049617731415353736,
+            "laneMatchesTarget": true
+          },
+          {
+            "id": 8,
+            "distanceToAssignedTargetWorld": 0.012790014285580272,
+            "laneMatchesTarget": true
+          }
+        ],
+        "savePassed": true,
+        "activePairs": 0
+      },
+      {
+        "phase": "transit",
+        "roundtripDriftWorld": 0.0,
+        "elapsedSimulationSeconds": 168.09999999999474,
+        "completed": true,
+        "geometryFailures": 0,
+        "disksChecked": 8409,
+        "capsulesChecked": 5047,
+        "exteriorDomainUnverified": 0,
+        "minimumFrameDiskGapWorld": 0.9199742882084698,
+        "assignedTargetArrivals": [
+          {
+            "id": 7,
+            "distanceToAssignedTargetWorld": 0.049617731415353736,
+            "laneMatchesTarget": true
+          },
+          {
+            "id": 8,
+            "distanceToAssignedTargetWorld": 0.014179346368441176,
+            "laneMatchesTarget": true
+          }
+        ],
+        "savePassed": true,
+        "activePairs": 0
+      },
+      {
+        "phase": "passing",
+        "roundtripDriftWorld": 0.0,
+        "elapsedSimulationSeconds": 167.99999999999474,
+        "completed": true,
+        "geometryFailures": 0,
+        "disksChecked": 8404,
+        "capsulesChecked": 5044,
+        "exteriorDomainUnverified": 0,
+        "minimumFrameDiskGapWorld": 0.918013591174804,
+        "assignedTargetArrivals": [
+          {
+            "id": 7,
+            "distanceToAssignedTargetWorld": 0.049617731415353736,
+            "laneMatchesTarget": true
+          },
+          {
+            "id": 8,
+            "distanceToAssignedTargetWorld": 0.012790014285580272,
+            "laneMatchesTarget": true
+          }
+        ],
+        "savePassed": true,
+        "activePairs": 0
+      },
+      {
+        "phase": "clearPriority",
+        "roundtripDriftWorld": 0.0,
+        "elapsedSimulationSeconds": 171.39999999999455,
+        "completed": true,
+        "geometryFailures": 0,
+        "disksChecked": 8541,
+        "capsulesChecked": 5113,
+        "exteriorDomainUnverified": 0,
+        "minimumFrameDiskGapWorld": 0.9165084653240592,
+        "assignedTargetArrivals": [
+          {
+            "id": 7,
+            "distanceToAssignedTargetWorld": 0.04272204364993086,
+            "laneMatchesTarget": true
+          },
+          {
+            "id": 8,
+            "distanceToAssignedTargetWorld": 0.012790014285580272,
+            "laneMatchesTarget": true
+          }
+        ],
+        "savePassed": true,
+        "activePairs": 0
+      },
+      {
+        "phase": "resumeYielder",
+        "roundtripDriftWorld": 0.0,
+        "elapsedSimulationSeconds": 168.19999999999473,
+        "completed": true,
+        "geometryFailures": 0,
+        "disksChecked": 8412,
+        "capsulesChecked": 5048,
+        "exteriorDomainUnverified": 0,
+        "minimumFrameDiskGapWorld": 0.9180126031007201,
+        "assignedTargetArrivals": [
+          {
+            "id": 7,
+            "distanceToAssignedTargetWorld": 0.04962045399677301,
+            "laneMatchesTarget": true
+          },
+          {
+            "id": 8,
+            "distanceToAssignedTargetWorld": 0.017432515046615714,
+            "laneMatchesTarget": true
+          }
+        ],
+        "savePassed": true,
+        "activePairs": 0
+      },
+      {
+        "phase": "restorePriority",
+        "roundtripDriftWorld": 0.0,
+        "elapsedSimulationSeconds": 168.99999999999469,
+        "completed": true,
+        "geometryFailures": 0,
+        "disksChecked": 8446,
+        "capsulesChecked": 5066,
+        "exteriorDomainUnverified": 0,
+        "minimumFrameDiskGapWorld": 0.9180126031007201,
+        "assignedTargetArrivals": [
+          {
+            "id": 7,
+            "distanceToAssignedTargetWorld": 0.030816889379456067,
+            "laneMatchesTarget": true
+          },
+          {
+            "id": 8,
+            "distanceToAssignedTargetWorld": 0.012790014285580272,
+            "laneMatchesTarget": true
+          }
+        ],
+        "savePassed": true,
+        "activePairs": 0
+      }
+    ],
+    "mixedLanes": [
+      {
+        "id": "blood-meeting/e124/scout-siege",
+        "elapsedSimulationSeconds": 29.700000000000152,
+        "completed": true,
+        "geometryFailures": 0,
+        "exteriorDomainUnverified": 0,
+        "minimumFrameDiskGapWorld": 0.0029740448486426097,
+        "assignedTargetArrivals": [
+          {
+            "id": 7,
+            "distanceToAssignedTargetWorld": 0.0,
+            "laneMatchesTarget": true
+          },
+          {
+            "id": 8,
+            "distanceToAssignedTargetWorld": 0.004901346736947288,
+            "laneMatchesTarget": true
+          }
+        ],
+        "savePassed": true,
+        "activePairs": 0
+      },
+      {
+        "id": "blood-meeting/e183/scout-siege",
+        "elapsedSimulationSeconds": 16.599999999999966,
+        "completed": true,
+        "geometryFailures": 0,
+        "exteriorDomainUnverified": 0,
+        "minimumFrameDiskGapWorld": 0.0023685816652889713,
+        "assignedTargetArrivals": [
+          {
+            "id": 7,
+            "distanceToAssignedTargetWorld": 0.0,
+            "laneMatchesTarget": true
+          },
+          {
+            "id": 8,
+            "distanceToAssignedTargetWorld": 0.001845308675865614,
+            "laneMatchesTarget": true
+          }
+        ],
+        "savePassed": true,
+        "activePairs": 0
+      },
+      {
+        "id": "blood-meeting/e184/scout-siege",
+        "elapsedSimulationSeconds": 35.00000000000023,
+        "completed": true,
+        "geometryFailures": 0,
+        "exteriorDomainUnverified": 0,
+        "minimumFrameDiskGapWorld": 0.0020311154469692116,
+        "assignedTargetArrivals": [
+          {
+            "id": 7,
+            "distanceToAssignedTargetWorld": 0.024657134658535997,
+            "laneMatchesTarget": true
+          },
+          {
+            "id": 8,
+            "distanceToAssignedTargetWorld": 0.01824831187674003,
+            "laneMatchesTarget": true
+          }
+        ],
+        "savePassed": true,
+        "activePairs": 0
+      },
+      {
+        "id": "blood-meeting/study.stomach.wall_service/scout-siege",
+        "elapsedSimulationSeconds": 297.2999999999991,
+        "completed": true,
+        "geometryFailures": 0,
+        "exteriorDomainUnverified": 0,
+        "minimumFrameDiskGapWorld": 2.9233364787730984,
+        "assignedTargetArrivals": [
+          {
+            "id": 7,
+            "distanceToAssignedTargetWorld": 0.0,
+            "laneMatchesTarget": true
+          },
+          {
+            "id": 8,
+            "distanceToAssignedTargetWorld": 0.009479976765496655,
+            "laneMatchesTarget": true
+          }
+        ],
+        "savePassed": true,
+        "activePairs": 0
+      }
+    ],
+    "outerGateRegression": {
+      "id": "membrane-meeting/study.stomach.wall_service.outer/siege-siege",
+      "elapsedSimulationSeconds": 24.300000000000075,
+      "oldFailure": {
+        "completedAt300Seconds": false,
+        "bayToPriorityTargetWorld": 2.024,
+        "requiredDisksSumWorld": 2.125,
+        "reason": "Bay occupied the original future target. No geometry violation or teleport."
+      },
+      "repair": "Reject bays that block future original goal or route; unchanged geometry and timeout.",
+      "completed": true,
+      "geometryFailures": 0,
+      "disksChecked": 1196,
+      "capsulesChecked": 710,
+      "exteriorDomainUnverified": 0,
+      "minimumFrameDiskGapWorld": 2.363331486824018,
+      "assignedTargetArrivals": [
+        {
+          "id": 7,
+          "distanceToAssignedTargetWorld": 0.02479133680454651,
+          "laneMatchesTarget": true
+        },
+        {
+          "id": 8,
+          "distanceToAssignedTargetWorld": 0.015820727629943455,
+          "laneMatchesTarget": true
+        }
+      ],
+      "savePassed": true,
+      "traffic": {
+        "resumed": 1,
+        "maxPlanningSlice": 0.001647000000000065,
+        "deadReleased": 0,
+        "conflicts": 1,
+        "yields": 1,
+        "activePairs": 0,
+        "noBay": 0,
+        "routeRequests": 1,
+        "cancelled": 0,
+        "maxPairs": 1,
+        "waits": 126,
+        "expired": 0
+      }
+    },
+    "finalTargetedBatchRuntimeSha256": "d04b89128fedb033d67b9eef01a72f5c2733b5942a0e87656e00d9b883ee3e6d"
+  },
+  "limits": [
+    "Old 150s blood timeout did not cover complete endpoint restoration; old 240s control also failed the moving service202 mixed pair. Actual complete mixed service protocol measured 296.8 simulation seconds. Current bounded protocol uses 120s without >.25world movement progress or 600s overall.",
+    "Shared planning target is not a hard wall-time bound: observed primitive overshoot is recorded; native P95 not verified.",
+    "Full mixed groups and membrane reciprocal swaps require the independent locked full suite.",
+    "Native preview remains stopped; no native performance or visual runtime proof.",
+    "A genuinely stalled/expired protocol is released instead of holding units forever; automatic return of already completed parked actors after a genuine expiry is not guaranteed. No expiry occurred in the successful eight-lane diagnostics.",
+    "A genuinely stalled/expired protocol is released instead of holding units forever; automatic return of already completed parked actors after a genuine expiry is not guaranteed. No expiry occurred in the successful eight-lane diagnostics."
+  ],
+  "integrationSha256": {
+    "Commands": "3117b67c41edc5d935fd410d79d4be6dd17a052dd060bc21cf43c92ba3b299c7",
+    "Save": "f08314db1554acfaa587a32ff5d1126c308be822778f95318fd886c1d284d07a",
+    "GastricBattlefield": "789066936c29437cfcbc47490a7527288700e82c02b88b3e19458f69906b2b46",
+    "GastricBattlefieldData": "81cbe1eedd29506a13fa19a7edd079d7f93b3eb58b4a9e4282e98277854b279d",
+    "GastricTrial": "39c69939146aa815cb98b86c936f02169ac682f4c2cd9511e83c4f739d75ece4"
+  }
+}

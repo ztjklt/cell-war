@@ -1,11 +1,13 @@
--- Select data by the saved event, never reinterpret an old nasal checkpoint.
+-- Choose terrain by saved geometry, never reinterpret an old checkpoint.
 local N=require('war.TracheaTerrain')
+local V3=require('war.LegacyTracheaTerrainV3')
 local Legacy=require('war.LegacyCampaignData')
----@return table
+N.legacy=Legacy.legacy
 function N.forState(s)
- if not s or not s.campaign or s.campaign.event.id=='trachea' then return N end
+ if not s or not s.campaign then return N end
+ if s.campaign.terrainVersion==4 then return N end
+ if s.campaign.terrainVersion==3 then return V3 end
  return Legacy.forState(s)
 end
----@return table
-function N.forVersion(version) return version==3 and N or Legacy end
+function N.forVersion(version) return version==4 and N or version==3 and V3 or Legacy end
 return N

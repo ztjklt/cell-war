@@ -1,0 +1,93 @@
+"""Export the complete immutable compositor manifest into a NanoVG resource list."""
+from pathlib import Path
+import hashlib
+import json
+from PIL import Image
+
+ROOT = Path(__file__).resolve().parents[2]
+MANIFEST = ROOT / 'docs/body-life/vascular-art-study/fullbody-015/bake/manifest.json'
+DEST = ROOT / 'scripts/war/FullBodyMapArtData.lua'
+QUIET_REPORT = ROOT / 'docs/body-life/vascular-art-study/fullbody-015/quiet-base/report.json'
+LAYERS = ['surfaceTiles', 'organs', 'deepTiles', 'junctions', 'foregroundPatches']
+MAX_RESOURCE_SPECS = 43
+MAX_DECODED_RGBA_BYTES = 288 * 1024 * 1024
+
+
+def lua(value):
+    if isinstance(value, dict):
+        return '{' + ','.join('[' + lua(k) + ']=' + lua(v) for k, v in value.items()) + '}'
+    if isinstance(value, list):
+        return '{' + ','.join(lua(v) for v in value) + '}'
+    if isinstance(value, bool):
+        return 'true' if value else 'false'
+    if value is None:
+        return 'nil'
+    return json.dumps(value, ensure_ascii=False, allow_nan=False)
+
+
+def main():
+    data = json.loads(MANIFEST.read_text())
+    assert data['schema'] == 'fullbody-015-vascular-material/v1'
+    assert data['completeFrozenEdgeCount'] == 202 and data['completedOrganCount'] == 12
+    # A frozen route beneath the urinary foreground is deliberately invisible.
+    # This is explicit occlusion, never permission to omit arbitrary routes.
+    hidden = data['uncoveredEdges']
+    assert data['coveredEdgeCount'] + len(hidden) == 202
+    assert not (set(hidden) - {'e126', 'e143'}), hidden
+    assert set(hidden) == {row['id'] for row in data.get('fullyOccludedEdges', [])}
+    spec = data['runtimeSpec']
+    assert len(spec['organs']) == 12
+    quiet_report = json.loads(QUIET_REPORT.read_text())
+    quiet_path = 'assets/image/anatomy-reference/vascular-study/fullbody-gpt-source/quiet-body-registered-v2.png'
+    quiet_sha = hashlib.sha256((ROOT / quiet_path).read_bytes()).hexdigest()
+    assert quiet_report['outputs'][quiet_path] == quiet_sha
+    quiet = {'id': 'quiet-base', 'resource': quiet_path.removeprefix('assets/'),
+             'sourceBox': [0, 0, 1024, 1536], 'pixelSize': [1024, 1536], 'sha256': quiet_sha}
+    ids, bytes_decoded = set(), 0
+    for layer in ['quietBase', *LAYERS]:
+        for row in [quiet] if layer == 'quietBase' else spec.get(layer, []):
+            assert row['id'] not in ids, 'duplicate image key: ' + row['id']
+            ids.add(row['id'])
+            assert row['resource'].startswith('image/')
+            image = ROOT / 'assets' / row['resource']
+            assert list(Image.open(image).size) == row['pixelSize'], str(image)
+            box = row['sourceBox']
+            assert len(box) == 4 and box[2] > box[0] and box[3] > box[1]
+            if row.get('coreBox'):
+                core = row['coreBox']
+                assert max(box[0], core[0]) < min(box[2], core[2])
+                assert max(box[1], core[1]) < min(box[3], core[3])
+            bytes_decoded += row['pixelSize'][0] * row['pixelSize'][1] * 4
+    assert len(ids) <= MAX_RESOURCE_SPECS, 'Full-body map resource count exceeds its per-context budget'
+    assert bytes_decoded <= MAX_DECODED_RGBA_BYTES, 'Full-body map decoded RGBA exceeds its per-context budget'
+    # Keep the conservative original 135 underpass records for comparison.
+    # Display visibility follows the actual opaque foreground when the new
+    # art contract is present; lane geometry and collision never read either.
+    logical_visibility = {row['id']: row['protectedForegroundIntervals']
+                          for row in data['edges'] if row.get('protectedForegroundIntervals')}
+    has_visual = any('visualForegroundIntervals' in row for row in data['edges'])
+    if has_visual:
+        assert len(data['edges']) == 202 and all('visualForegroundIntervals' in row for row in data['edges']), 'Incomplete visual foreground contract'
+        visibility = {row['id']: row['visualForegroundIntervals']
+                      for row in data['edges'] if row['visualForegroundIntervals']}
+    else:
+        visibility = logical_visibility
+    exported = {'version': 1, 'manifestSha256': hashlib.sha256(MANIFEST.read_bytes()).hexdigest(),
+                'quietBase': quiet, 'quietBaseReportSha256': hashlib.sha256(QUIET_REPORT.read_bytes()).hexdigest(),
+                'visibleEdgeCount': data['coveredEdgeCount'], 'fullyOccludedEdges': hidden,
+                'resourceBudget': {'maxResourceSpecsPerContext': MAX_RESOURCE_SPECS,
+                                   'maxDecodedRGBABytesPerContext': MAX_DECODED_RGBA_BYTES,
+                                   'resourceSpecsPerContext': len(ids),
+                                   'decodedRGBABytesPerContext': bytes_decoded},
+                'visualVisibilityVersion': 1 if has_visual else 0,
+                'visibility': visibility, 'logicalVisibility': logical_visibility,
+                **{layer: spec.get(layer, []) for layer in LAYERS}}
+    DEST.write_text('-- Generated by scripts/qa/prepare_fullbody_map_art.py; fixed source coordinates.\n'
+                    'return ' + lua(exported) + '\n')
+    print(json.dumps({'images': len(ids), 'organs': len(spec['organs']), 'routes': 202,
+                      'decodedBytesPerContext': bytes_decoded,
+                      'manifestSha256': exported['manifestSha256']}))
+
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,209 @@
+{
+  "acceptanceScope": "Independent raw geometry + actual offline production Lua APIs; no native acceptance.",
+  "contractSha256": "cb6141214c5cf4af3198aa8445ddb438db71c21f1c7e453240e5470feda6f340",
+  "evidenceVersionScope": {
+    "currentDisplayRenderSha256": "0e84abb91789500f226b2a0f429432827e26da9c154d57974a774e38607b95bd",
+    "currentDisplayReports": [
+      "render-read-only-report.json",
+      "render-compatibility-report.json",
+      "resource-contract-report.json"
+    ],
+    "currentReadOnlyRenderFrames": 75,
+    "drawOnlyDifferencesFromMovementCapture": [
+      {
+        "currentSha256": "4460ab0fd73343eb089ac5a5eb70a9cf53243e979912dee835a039c98cd9df3f",
+        "module": "GastricArt.lua",
+        "movementCaptureSha256": "31643fcfc727c436bc38cc3ae2c261abf24bd801201d8925c20dbe71b60987be"
+      },
+      {
+        "currentSha256": "17ed3df534e311eb717c65a6c81ba273d16c0f2dec406401fd80ddc276b4bb16",
+        "module": "OrganAtlasArt.lua",
+        "movementCaptureSha256": "4f4b45e924f2c1a5f6e87a20d563a4e0360e83279ac4d3c9dbc1e6081e1b84db"
+      },
+      {
+        "currentSha256": "0158ab97daa71c1ae7f55dc067133602f19195c9c90fba69f5a73e783063eb77",
+        "module": "OrganAtlasArtData.lua",
+        "movementCaptureSha256": "23f7c07b7e62546b719cb7e032bd2f5b113a879ed6d80a0496735b7b4a28ee3a"
+      },
+      {
+        "currentSha256": "0e84abb91789500f226b2a0f429432827e26da9c154d57974a774e38607b95bd",
+        "module": "Render.lua",
+        "movementCaptureSha256": "d89d60fd435aa0092d49a0b5aa92730beb37607352e43673405b51d32a7747e8"
+      }
+    ],
+    "interpretation": "The 140 movement captures keep their original module hashes. Display-only command markers and decoded-texture readiness/size metadata are checked by fresh actual Render readonly/DPR, exact legacy draw-call comparison, loading guards and mode/resource checks. Navigation dependency hashes remain unchanged; old captures are not relabeled.",
+    "legacyDrawComparisonsPassed": 60,
+    "legacyDrawComparisonsTotal": 60,
+    "movementDependencyHashesUnchanged": true,
+    "productionMovementEvidencePreserved": true,
+    "productionMovementRenderSha256": "d89d60fd435aa0092d49a0b5aa92730beb37607352e43673405b51d32a7747e8",
+    "productionMovementReportSha256": "77d4de8e336c37b5c1e3d23a28df1da2af65bbc8c4f598cea4b5b3cadbb6f073"
+  },
+  "limitations": [
+    "This offline suite does not verify native edge seams, image decoding by NanoVG, real GPU allocation or P95 full-frame timing; native asset dimensions have separate run-004 evidence.",
+    "Pillow image decoding and bounded mock handle ownership certify file/logic contracts only.",
+    "Authoring 72 checks do not independently replace the stomach delegate or actual movement evidence.",
+    "The opt-in atlas never migrates existing positions or changes Save version 9."
+  ],
+  "movement": {
+    "fullCapsulesChecked": 131906,
+    "fullDisksChecked": 191226,
+    "geometryFailures": 0,
+    "passed": 140,
+    "total": 140,
+    "unverifiedDomainPoints": 0
+  },
+  "nativeEvidence": false,
+  "nativeStatus": "UNDETERMINED",
+  "navigationSubstituted": false,
+  "previewPolicyEvidence": {
+    "nativeRunEvidence": "../native/summary.json",
+    "scope": "This suite neither starts nor controls preview; separately authorized native measurements keep their own input hashes.",
+    "statusCommand": "python3 /tmp/body-life-preview.py"
+  },
+  "qaScriptSha256": "f901d4559f5323f309bcbe20398d2278202634a2138e6503ce95602df99df08e",
+  "reports": [
+    {
+      "file": "production-report.json",
+      "nativeEvidence": false,
+      "passed": 140,
+      "sha256": "77d4de8e336c37b5c1e3d23a28df1da2af65bbc8c4f598cea4b5b3cadbb6f073",
+      "staleDependencyHashes": [],
+      "status": "PASS",
+      "total": 140
+    },
+    {
+      "file": "collision-contract-report.json",
+      "nativeEvidence": false,
+      "passed": 36,
+      "sha256": "675e1821612c160f10dc37e217d42723fbd30ab8f6a45cdaffaa8ebb466d793d",
+      "staleDependencyHashes": [],
+      "status": "PASS",
+      "total": 36
+    },
+    {
+      "file": "urethra-contract-report.json",
+      "nativeEvidence": false,
+      "passed": 28,
+      "sha256": "b73b9e365640dacc2478604043f3e4b6f9c661b8ed21c71bdaed300acf4e6d60",
+      "staleDependencyHashes": [],
+      "status": "PASS",
+      "total": 28
+    },
+    {
+      "file": "gastric-delegate-report.json",
+      "nativeEvidence": false,
+      "passed": 4,
+      "sha256": "07776b43fedef3144335c02429820367e4c82f8803b16e925c221ff7c3ace2de",
+      "staleDependencyHashes": [],
+      "status": "PASS",
+      "total": 4
+    },
+    {
+      "file": "factory-report.json",
+      "nativeEvidence": false,
+      "passed": null,
+      "sha256": "13d39703972ba7287b1c3e36d531aa7639744ebb7498222ad24a07af0ad617ee",
+      "staleDependencyHashes": [],
+      "status": "PASS",
+      "total": null
+    },
+    {
+      "file": "traffic-save-report.json",
+      "nativeEvidence": false,
+      "passed": null,
+      "sha256": "d8ff3e22c82ec8642b8e0d7f749651e05ba1a4fbe3b7b69c49d4ac01c854741c",
+      "staleDependencyHashes": [],
+      "status": "PASS",
+      "total": null
+    },
+    {
+      "file": "command-preservation-report.json",
+      "nativeEvidence": false,
+      "passed": 2,
+      "sha256": "b3692b19d596f86a9667e4821b4df37d80ab9ffac86d5bbc7f98316447dd1fb2",
+      "staleDependencyHashes": [],
+      "status": "PASS",
+      "total": 2
+    },
+    {
+      "file": "render-read-only-report.json",
+      "nativeEvidence": false,
+      "passed": null,
+      "sha256": "c98ffc9e4cbe6d0d27eb90ae27cbfb08b968ecdb3730b4701b4a67958d5deb76",
+      "staleDependencyHashes": [],
+      "status": "PASS",
+      "total": null
+    },
+    {
+      "file": "render-compatibility-report.json",
+      "nativeEvidence": false,
+      "passed": 60,
+      "sha256": "942d0b8d82aa87c0f9d582171892344101d7c799333f8525ac6ed9f8431119f0",
+      "staleDependencyHashes": [],
+      "status": "PASS",
+      "total": 60
+    },
+    {
+      "file": "resource-contract-report.json",
+      "nativeEvidence": false,
+      "passed": null,
+      "sha256": "7387999afb3e1fe30d8ce1d529d66f02987d15aec75a170d81a94b83833c3481",
+      "staleDependencyHashes": [],
+      "status": "PASS",
+      "total": null
+    }
+  ],
+  "resolvedObservedDefects": [
+    {
+      "control": "liver-blood-meeting-control-failure.json",
+      "issue": "Liver siege/siege reciprocal yield ended at the correct XY in tissue instead of its commanded blood lane.",
+      "verification": "production-report.json + traffic-save-report.json"
+    },
+    {
+      "issue": "Bladder lower neck urethra must be excluded even if the cell center is outside but its radius overlaps the lumen.",
+      "verification": "urethra-contract-report.json + actual urine.urethra negative commands"
+    }
+  ],
+  "runtimeDataSha256": "1336443e4fb3e4ab0ba7bea70d177c0dcc4c1b8182d8ae726a49809f9fe8ce3e",
+  "schema": "organ-atlas-independent-qa-summary/v1",
+  "sourceGraphSha256": "3890744e2fcaf9e9907c85513e170e479f67b7fbb1fbf06385ac02bd80e8550c",
+  "sourceGraphUnchanged": true,
+  "sourceReferenceSha256": "9a04e39961c07073cd9fdcfcdc2c98253ccc25d968e97dbea1f36669e06b5d9f",
+  "status": "PASS",
+  "testedModuleHashes": {
+    "CellCollision.lua": "a11dc894c9cf91347ff89e290301c0bb0889c520593d60cbe4c1bf122201d30f",
+    "Commands.lua": "19573e908c5c09ff9572d686d497962949ea962dd5c4c67a7e700efd46b0996e",
+    "Data.lua": "6aa40613c149a254391e68d5ffca3ef5f6b7d4dbba8a4861b6b8adb7983d5f33",
+    "FinalVascularStudyData.lua": "ccc7eeef4f3df0e669854b7776e62b6672831318b107697b6f319669dadb328e",
+    "GastricArt.lua": "4460ab0fd73343eb089ac5a5eb70a9cf53243e979912dee835a039c98cd9df3f",
+    "GastricBattlefield.lua": "789066936c29437cfcbc47490a7527288700e82c02b88b3e19458f69906b2b46",
+    "GastricBattlefieldData.lua": "81cbe1eedd29506a13fa19a7edd079d7f93b3eb58b4a9e4282e98277854b279d",
+    "GastricTraffic.lua": "d04b89128fedb033d67b9eef01a72f5c2733b5942a0e87656e00d9b883ee3e6d",
+    "GastricTrial.lua": "39c69939146aa815cb98b86c936f02169ac682f4c2cd9511e83c4f739d75ece4",
+    "HUD.lua": "00d937dd8c08e96d288c217f84e853e5097ca62292cbe5c8590a6631c20394ee",
+    "Motion.lua": "7fe39b4a715b5b0b5398e5ef7e6f0fe2bd8987e47359e6083d46a5db467829a5",
+    "OrganArt.lua": "554d08cb3411cb5bdbf42f3714e989b0b80a93e9e70a120571cd77978adb75e3",
+    "OrganAtlasArt.lua": "17ed3df534e311eb717c65a6c81ba273d16c0f2dec406401fd80ddc276b4bb16",
+    "OrganAtlasArtData.lua": "0158ab97daa71c1ae7f55dc067133602f19195c9c90fba69f5a73e783063eb77",
+    "OrganBattlefield.lua": "ba529bfa35a85833e1dc15f5a36bf2437b6a926e5299e36856593ec3b86d111c",
+    "OrganBattlefieldCore.lua": "40c670d25c69281b0d5663c684dcb699b6871c806000fd2e8f013601218c6b8d",
+    "OrganBattlefieldData.lua": "1c47073f1f465fb79bbe64b5868e78b07bac4d745342717c9ee87439ff436e7d",
+    "OrganBoundariesData.lua": "b4617ba302f4deab54ffdb9a7be0750b1ab63000a50a8395e151456ad2e34e24",
+    "OrganTraffic.lua": "901ece0eb1bb68d22089d99c2b669c42270f34d66539f6daa1d1bb02786dab0f",
+    "OrganTrial.lua": "2448272435d422dc9c10f13c54382727b93da03b9bce177235f0d58d7eb803fd",
+    "Path.lua": "a41c95130db4c45a96956c09ad122432055bd3cc0588835ae9cae5a321283929",
+    "ReferenceArt.lua": "248e17719d17bda9d99f0136807c3c5c846c8b2f35663e0323213798e388dba3",
+    "ReferenceMap.lua": "f4de806b2f5f2f75299561478945ddc0ca8289b0088bcaa571219cb126ba3007",
+    "ReferenceVessels.lua": "e015d6f00f2d723d5d14561190e3b21998aab42188e6571590c17956cb0f43d6",
+    "Render.lua": "0e84abb91789500f226b2a0f429432827e26da9c154d57974a774e38607b95bd",
+    "Save.lua": "d55c19716b457cb3be7a0839e8179367194200c7bf01a3368a49724f64a72e05",
+    "Simulation.lua": "fab3667006f1d45ff13aaaf408f559eba33614f120a23d1d8806efb3aa3d082a",
+    "Util.lua": "bd35c4e904854a00b98825fe2cc422eaa74d4f87308c8a336f25f9cd76131c0d",
+    "Vessels.lua": "1a09c89674c7308dd711c07fe1cbe7955f157d3148589e7b40b7173d0b2cc179",
+    "View.lua": "deafbe8bf8ebaa17b582d90c460cf9c21b0a6950d16fd925b1ac9708b8dcd7e0",
+    "Workers.lua": "77181ac098a5e5aacb2f652fba604aac69bf4a5b7d8dfedbcd90270cfe67a287",
+    "World.lua": "020f77336ced2aa0a4f7907aa79385c438eda38d76e2bc639d49ca864b70166c",
+    "main.lua": "58214fb923a00ac5e5f1980a0cd68c5dac57e46de9db4d0d13395dfadcd5e583"
+  }
+}

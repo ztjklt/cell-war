@@ -1,0 +1,133 @@
+{
+  "nativeEvidence": false,
+  "passed": 3,
+  "total": 3,
+  "results": [
+    {
+      "name": "Heart and each lung have multiple spatially distributed effective vertices",
+      "pass": true
+    },
+    {
+      "name": "Whole-body heart and lungs exceed brightness and changed-area floors",
+      "pass": true
+    },
+    {
+      "name": "Three-second lossless sequence has sustained organ-scale contrast variation",
+      "pass": true
+    }
+  ],
+  "evidence": {
+    "mesh": {
+      "heart": {
+        "verticesWithWeightAtLeast025": 10,
+        "vertexFloor": 6,
+        "sourceSpanFraction": [
+          0.6000000000000004,
+          0.5
+        ],
+        "peakDisplacementLogicalPixelsAtZoom006": 0.22878414569472014,
+        "peakFloor": 0.15
+      },
+      "lung_r": {
+        "verticesWithWeightAtLeast025": 9,
+        "vertexFloor": 4,
+        "sourceSpanFraction": [
+          0.5825000000000002,
+          0.644
+        ],
+        "peakDisplacementLogicalPixelsAtZoom006": 1.08288,
+        "peakFloor": 0.3
+      },
+      "lung_l": {
+        "verticesWithWeightAtLeast025": 6,
+        "vertexFloor": 4,
+        "sourceSpanFraction": [
+          0.610000000000001,
+          0.622
+        ],
+        "peakDisplacementLogicalPixelsAtZoom006": 1.0713600000000003,
+        "peakFloor": 0.3
+      }
+    },
+    "losslessPeakContrast": {
+      "heart": {
+        "time": 0.13,
+        "screenSize": [
+          30,
+          29
+        ],
+        "meanLumaDifference": 8.705985069274902,
+        "meanFloor": 4,
+        "fractionPixelsChangingByAtLeast4Luma": 0.5183908045977011,
+        "fractionFloor": 0.25,
+        "p90LumaDifference": 20.880599975585938
+      },
+      "lung_r": {
+        "time": 1.92,
+        "screenSize": [
+          38,
+          70
+        ],
+        "meanLumaDifference": 4.413280487060547,
+        "meanFloor": 2,
+        "fractionPixelsChangingByAtLeast4Luma": 0.36353383458646615,
+        "fractionFloor": 0.25,
+        "p90LumaDifference": 14.710000038146973
+      },
+      "lung_l": {
+        "time": 1.92,
+        "screenSize": [
+          37,
+          70
+        ],
+        "meanLumaDifference": 3.9399685859680176,
+        "meanFloor": 2,
+        "fractionPixelsChangingByAtLeast4Luma": 0.327027027027027,
+        "fractionFloor": 0.25,
+        "p90LumaDifference": 13.710000038146973
+      }
+    },
+    "firstThreeSeconds": {
+      "heart": {
+        "frames": 37,
+        "durationSeconds": 3,
+        "meanOrganLumaRange": 9.399681091308594,
+        "rangeFloor": 3,
+        "meanConsecutiveFrameLumaChange": 1.6161575317382812
+      },
+      "lung_r": {
+        "frames": 37,
+        "durationSeconds": 3,
+        "meanOrganLumaRange": 4.3997039794921875,
+        "rangeFloor": 1.5,
+        "meanConsecutiveFrameLumaChange": 0.17076919972896576
+      },
+      "lung_l": {
+        "frames": 37,
+        "durationSeconds": 3,
+        "meanOrganLumaRange": 4.225860595703125,
+        "rangeFloor": 1.5,
+        "meanConsecutiveFrameLumaChange": 0.2115379273891449
+      }
+    }
+  },
+  "runtimeSha256": {
+    "scripts/war/BodyLifeFlowAcceptance.lua": "5525ef8ca493ce537587f6bec0b1421f6187bc125b6b60ace92f6accfc60aa5b",
+    "scripts/war/BodyLifeFlowData.lua": "d2633631896be97ca0faf108eab06430b3bfdb894dc0a63466e43c16298db0c2",
+    "scripts/war/BodyLifeAcceptance.lua": "f6815ce8227c4bf27e325ee4aa30e1f989a31b859a3252e5d52f3d6c4dc7cfff",
+    "scripts/war/BodyLifeMasks.lua": "5e2e46c586aaf1ee5ee3f33a7aac96e0374a16b2463192dc9f19076c8103ef88",
+    "scripts/war/BodyLifeShading.lua": "0b3c0daba1849f26aa1ec32a764b5edf321f04a879aecd6a3963589911ba8542",
+    "scripts/war/BodyLife.lua": "782bdac46e1b067f5e365cc39a6efc3b1cc40e53deb9da14152f9f686328e2a6",
+    "scripts/war/BodyLifeLightingRegions.lua": "65823f35d8fbe95db2a56d70954a73822829ceb52a5f705c0163587456ee8218",
+    "scripts/war/BodyLifeMotion.lua": "85a816cf77eb4d8fd53cecc30a53fbc8b538f834286127a5d737c98001f85fc0",
+    "scripts/war/BodyLifeRegions.lua": "4ff4a2ddd96af6030d60e0d43afc15f500542ceff614d61fd469022f6b86cfab",
+    "scripts/war/BodyLifeFlow.lua": "dd035bdd19b12c3cb6756cd939962124cf57d28d0cb0b476cdfc0045c1cccac3",
+    "scripts/war/BodyLifeAssets.lua": "20922466a90d0c0bd817aa3568aa596647a7b357bd309b5bbe24592035d154f5",
+    "scripts/war/BodyLifeMotionAcceptance.lua": "975b646a1e35d4bbf41f6fa3a5dca4b076e809d2cb0d45e22684ef245cc1f343"
+  },
+  "limitations": [
+    "Visibility floors reject numerically nonzero but imperceptibly weak regressions; user/native visual review is still required.",
+    "Luma is measured in 8-bit sRGB code values, not physical display luminance.",
+    "Axis-aligned organ crops include small amounts of neighboring tissue and flow."
+  ]
+}

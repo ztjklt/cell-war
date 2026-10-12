@@ -1,0 +1,76 @@
+{
+  "organId": "lung_r",
+  "tool": "GPT built-in image_gen",
+  "prompt": "Use case: sketch-to-render. Asset type: production candidate for Cell War 2D organic RTS terrain bitmap. Input image 1 is an EXACT registered anatomy-and-gameplay geometry guide; input image 2 is the user's approved stomach map used ONLY for its polished hand-painted indie cartoon style and richness. Make a flat true vertical top-down organ micro-world, to match the quality of image 2, with clean rounded biological tissue partitions, softly varied pastel tissue floors and broad quiet open movement areas. Image 1's exact entire silhouette, orientation, canvas margins, airway tree and open curved tissue rooms are immutable: do NOT center, independently fit, rotate, crop, mirror or move them. Keep the original canvas aspect ratio. Convert each guide open curved tissue room partition into a beautifully painted low flat tissue fold along that exact line; keep each opening visibly wide and completely open in its original direction. Across each opening there must be absolutely no outline or line, including hairline contour, just uninterrupted same-level floor softly merging room color into outside floor. There are no new walls, no extra closed loops or barriers, no extra room count. The gap between walls is traversable level ground, all room centers are accessible and flat, with a light pale-pink or sage tonal wash. Do not use texture instead of spatial design: the broad organic folds, clearly marked room openings and floor-color changes must be distinguishable. Enrich the biological material with a few faint painted patches and shallow contour accents, keeping most floor calm so cell units remain visible. Gently painted outlines of rose-brown, warm coral pink, peach and muted sage, restrained cream; no uniformly bright yellow base. Minimal shading, no directional cast shadows. No 3D, extruded walls, raised blobs, pebbles, bumps, dense little cells or honeycomb, deep holes, glossy highlights, isometric/perspective, realistic meat, gore, horror, photographs, mechanical roads/bridges/buildings. No characters/units/text/labels/UI/arrows. Actual transparent background outside exactly the organ silhouette; fully opaque inside the organ. The beige canvas outside image 1 is background to remove, not tissue. One organ only. No blood vessels: these will be added as a separately registered fixed layer later. The provided airway regions must remain nonblood and distinct from walking tissue. Specific subject: the RIGHT lung on screen LEFT, this tall rounded wedge lung_r. Exactly THREE broad open tissue rooms shown in image 1: upper-right with a wide opening toward lower-left; lower-right with opening toward upper-left; bottom-left with a wide top opening. Preserve all three centers and the low slightly asymmetrical natural fold outlines exactly. Paint the partitions as softly irregular ORGANIC arcs, not manufactured standard circles. Leave gaps open and unmarked, no fine line across room openings. Cream central BRONCHIAL AIR TREE in image 1 branches from inner RIGHT lung hilum: preserve its entire branching footprint including tiny islands, paint it as muted cream-sage nonblood air reserve, no red or blue vessel material. Do not turn airways into walking tissue. Surround it with broad lung-lobule peach/blush floor fields and some calm muted sage floor patches, delicate painted grain. Keep the small crescent protected island at lower-middle as a flat coral region, not a pit. Friendly warm soft lung tissue without tiny alveoli grid or raised bubbles. Match image 2's hand-painted finish and broad color variation, not its stomach shape. All clear tissue between air tree and walls remains level open RTS movement ground, no extra accent lines that look like sealed walls.",
+  "outputSource": "/Users/jitian/.codex/generated_images/01a129a9-daaa-77e0-ace7-d02ac66f50aa/exec-2464c24e-1a45-4c98-8008-f6a65244f36e.png",
+  "referenceGuide": "docs/body-life/vascular-art-study/organ-atlas/revision-v2/guides/lung_r-terrain-guide.png",
+  "referenceGuideRevision": "Natural smooth asymmetric wall arcs, no floor closing stroke",
+  "styleReference": "assets/image/anatomy-reference/vascular-study/stomach-terrain-v2/gpt-rich-rooms-style-approved-v2.png",
+  "imageDoesNotDefineCollision": true,
+  "status": "ART_CANDIDATE_NEEDS_REGISTERED_COMPOSITE_REVIEW",
+  "inspection": {
+    "actualGeneratedImageViewed": true,
+    "floorOnly": true,
+    "noGeneratedInternalCWalls": true,
+    "transparentExterior": true,
+    "noGreenFloorPatch": true,
+    "greenDominantPixelCheck": {
+      "rule": "opaque alpha>100 and G>R+8 and G>B+8",
+      "count": 0
+    },
+    "noNewBloodVessels": true,
+    "noRaisedFloorBumps": true,
+    "notes": [
+      "Exact outline, wall and protected-passage coordinates remain governed by project geometry and the fixed compositor sourceBox, not generated alpha.",
+      "Brain gyri/lung lobule tonal bands are traversable floor material, not additional collision lines.",
+      "Generative local edit preserves overall appearance visually but does not certify unchanged pixels outside edits."
+    ]
+  },
+  "targetedEdits": [
+    {
+      "reason": "User palette correction: no arbitrary green outside stomach; retain organ-specific flat tissue",
+      "tool": "GPT built-in image_gen",
+      "prompt": "Use case: precise-object-edit. Asset type: Cell War true top-down flat cute hand-painted RIGHT LUNG RTS terrain, existing image is edit target. Make only a PALETTE AND SUBTLE SURFACE MATERIAL correction, not a spatial redesign. Replace ALL green/sage/olive/gray-green areas in the supplied image, including the scattered tissue-floor patches and greenish mottling within the central airway tree, with warm pale blush pink, soft coral pink or restrained warm cream-yellow. No green anywhere. Preserve the exact entire registered organ outer silhouette, its orientation/canvas margins, every existing thick curved wall, every open room gap, the small protected coral crescent and all cream airway branch positions, widths and endpoints. Existing room openings remain clearly open uninterrupted ground, no new thin boundary line across any opening. Keep the central reserved bronchial AIR TREE pale warm cream-yellow distinct from pink tissue; it is not red/blue blood and is not to be moved or replanned. For organ identity, soften the scattered green patch shapes into very low-contrast pink flattened alveolar soft-network impressions on portions of the floor margins: tiny amounts of faint rounded lung-lobule outlines immersed in the flat painted surface, not hard circles, not bubbles, not raised beads and not dense honeycomb across the entire floor. Preserve broad quiet open pink and peach movement areas around them. Floor remains almost flat with warm tissue paint grain, no bumps or extra walls. Keep all other colors/materials and existing main partitions unchanged apart from the needed removal of green. Friendly pastel red/pink/warm yellow palette; no moss, foliage, swamp, food, scary anatomy, realistic lungs, 3D or perspective, no new rooms, walls, obstacles, blood vessels, characters, text or UI. Preserve actual transparent exterior exactly. Same image composition and proportions.",
+      "editTarget": "assets/image/anatomy-reference/vascular-study/organ-atlas/lung_r/gpt-terrain-v2-before-palette-fix.png",
+      "outputSource": "/Users/jitian/.codex/generated_images/01a129a9-daaa-77e0-ace7-d02ac66f50aa/exec-b626ebc2-6dfe-474b-9d03-15fd117ef1f9.png",
+      "palette": "Warm blush/coral pink lung tissue with warm cream-yellow reserved airway. All green floor patches and greenish airway mottling removed.",
+      "organIdentity": "Existing branching bronchial air tree and low-contrast flat lobular/alveolar sponge impressions along selected floor patches; no new walls or raised tissue."
+    }
+  ],
+  "currentPalette": "Warm blush/coral pink lung tissue with warm cream-yellow reserved airway. All green floor patches and greenish airway mottling removed.",
+  "organIdentity": "Existing branching bronchial air tree and low-contrast flat lobular/alveolar sponge impressions along selected floor patches; no new walls or raised tissue.",
+  "pixelSize": [
+    954,
+    1649
+  ],
+  "sha256": "320926bd6a2015a1d733eb031c7474d7231acce041c60772db52b89de56d2ff1",
+  "inspectionBeforeFloorOnlyRevision": {
+    "transparentExterior": true,
+    "visibleThreeRoomOpenings": true,
+    "noThinOpeningClosure": true,
+    "airTreeStillPaleCream": true,
+    "newBloodVessels": false,
+    "raisedFloorBumps": false,
+    "notes": [
+      "Generated room arcs still visually near-circular but match guide broad room positions and open directions.",
+      "Diffuse blotchy tissue grain is flat; cell readability requires native review.",
+      "Exact sourceBox and collision stay project geometry, not generated alpha.",
+      "User palette revision applied with GPT local image edit; fixed sourceBox/collision still governs exact anatomy registration."
+    ],
+    "noGreenFloorPatch": true,
+    "greenDominantPixelCheck": {
+      "rule": "opaque alpha>100 and G>R+8 and G>B+8",
+      "count": 0,
+      "scope": "nonclinical color sanity check plus actual visual inspection"
+    }
+  },
+  "floorOnlyRevision": {
+    "tool": "GPT built-in image_gen",
+    "prompt": "Use case: precise-object-edit. This exact supplied Cell War right-lung map is the edit target. It must become a FLOOR-ONLY material bitmap because precise walls and all protected edges will be rendered later from fixed game geometry. Make only the following local removals: erase ALL three thick dark coral C-shaped or U-shaped circular internal room walls (upper-right, lower-right, bottom-left), including their darker outlines, specular/light rims and tiny drop shading. Also erase the small dark coral crescent/ridge near the lower center. At every erased internal arc, continue the neighboring existing flat pink/peach floor and gentle tissue paint grain seamlessly, with no trace of ring, ghost wall, border, shadow or outline. Retain softly varied room-floor tones as indistinct flat surface, not a circle boundary. Keep the central branching pale warm-yellow BRONCHIAL AIR TREE and every small yellow branch/island in the exact same position and shape, but REMOVE its thin hard coral border/outline and any edge shadow so its contour is a soft flat color transition only. Do not erase or recolor the airway body: cream-yellow area remains visible, not red/blue blood. Preserve exactly the outer lung silhouette, orientation, margins/aspect, transparent exterior and original outer organ edge. Preserve the new warm red/pink/yellow palette (NO green), flat quiet lobular/alveolar tissue texture and existing broad low-contrast floor color bands. No new internal walls, rooms, ring shapes, raised ridges, blood vessels, routes, pathways, UI, labels, characters or shadows. All walking tissue is flat; this is a polished hand-painted floor layer, not a geometry map. Keep all unaffected material pixels/appearance as close to existing as possible, no recentering or redesign.",
+    "editTarget": "assets/image/anatomy-reference/vascular-study/organ-atlas/lung_r/gpt-terrain-v2-before-floor-only.png",
+    "outputSource": "/Users/jitian/.codex/generated_images/01a129a9-daaa-77e0-ace7-d02ac66f50aa/exec-2464c24e-1a45-4c98-8008-f6a65244f36e.png",
+    "inspection": "All three internal C/U room-wall bands and the small lower crescent ridge removed; former arcs blend into warm pink tissue. Pale-yellow bronchial tree remains without hard coral outline. Outer organ rim and transparent exterior retained visually.",
+    "why": "Generated internal wall lines did not register exactly to fixed geometry. Only authoritative geometry renders collision walls/protected edges; material bitmap supplies floor color and organ texture.",
+    "exactPixelRegistrationCertified": false
+  }
+}

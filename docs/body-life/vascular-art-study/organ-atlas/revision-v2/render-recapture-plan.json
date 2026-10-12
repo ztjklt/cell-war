@@ -1,0 +1,45 @@
+{
+  "schema": "organ-render-recapture-plan/v2",
+  "status": "WAITING_FOR_ALL_11_CORRECTED_ARTS_COMPOSED",
+  "runAuthorizedByParentAfterReadyMessage": true,
+  "runner": "scripts/qa/check_organ_atlas_render.py",
+  "command": [
+    "python3",
+    "scripts/qa/check_organ_atlas_render.py",
+    "--animate"
+  ],
+  "oldReportBackup": "docs/body-life/vascular-art-study/organ-atlas/revision-v2/baseline/render/report.json",
+  "oldReportSha256": "8019f66ae0d4e806366778e2b3355d371f6c15aa08f9f4b0028d1ee6602692f2",
+  "expected": {
+    "logicDprZoomSamples": 75,
+    "stills": 60,
+    "organAnimations": 12,
+    "durationPerAnimationMs": 15000,
+    "animationFramesEach": 60,
+    "fps": 4,
+    "reopenCycles": 25,
+    "dedicatedLayerContextHandlesPeak": 24,
+    "dedicatedLayerHandlesAfterRelease": 0
+  },
+  "checks": [
+    "Actual Lua war.Render.draw and actual PNG decode",
+    "Save.snapshot including RNG and visibility unchanged by draw",
+    "DPR 1/2/3 logical projection matches",
+    "Atomic missing-asset fallback",
+    "Near .15 RGB continuity sample",
+    "Production Commands/Simulation/Path/CellCollision offline movement preview"
+  ],
+  "preconditions": [
+    "All 11 revised GPT assets composed into both runtime assets and docs preview locations",
+    "art.json and OrganAtlasArtData.lua reflect final fixed sourceBox and current resource sizes",
+    "No mutation to watched Lua/contract/art assets during capture",
+    "Supplemental exact hashes of runtime PNGs, runtime-data.json, all geometry, GastricArt and GastricBattlefieldData captured before/after"
+  ],
+  "hashWarning": "Existing runner freezes docs previews and listed Lua/contracts; it does not explicitly list runtime PNGs, runtime-data.json or all geometry/Gastric source files. Supplemented hash evidence is required; do not change runner or runtime entry just for capture.",
+  "limits": [
+    "This is SVG/Cairo offline replay of real Lua draw calls, not native GPU evidence.",
+    "15-second preview records actual unit movement, not proof of arbitrary destination completion.",
+    "Near-.15 mean RGB difference threshold does not visually certify .12 ghosting or organ boundaries.",
+    "Native visual/readability/seam/GPU/P95 checks remain separate."
+  ]
+}

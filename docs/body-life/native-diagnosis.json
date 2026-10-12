@@ -1,0 +1,85 @@
+{
+  "recordedAt": "2026-10-08T19:46:35.746897+08:00",
+  "reloadId": 15,
+  "luaLog": "lua-2026-10-08 19_44_40_636.log",
+  "engineLog": "urhox_runtime-2026-10-08 19_44_40_131.log",
+  "luaEvidence": [
+    {
+      "t": "2026-10-08 19_44_42_699",
+      "f": 135,
+      "l": "RAW",
+      "m": "[2026-10-08 19_44_42_699][135][Script] [细胞战争] READY | view=topdown2d | world=body | map=2048x4096 | anatomy=4 | walls=sealed | mode=campaign | event=trachea | terrain=3 | zones=3 | controllable=cells | fixedStep=0.1\n"
+    },
+    {
+      "t": "2026-10-08 19_44_45_630",
+      "f": 194,
+      "l": "RAW",
+      "m": "[2026-10-08 19_44_45_630][194][Script] [BodyLifeNativeProbe] EndRendering captured=false saved=false\n"
+    },
+    {
+      "t": "2026-10-08 19_44_45_631",
+      "f": 194,
+      "l": "RAW",
+      "m": "[2026-10-08 19_44_45_631][194][Script] [BodyLifeNativeProbe] anatomy=4 started=false zoom=0.38828125 transform=function antiAlias=function worldImage=7.0 uiImage=32.0\n"
+    },
+    {
+      "t": "2026-10-08 19_44_46_633",
+      "f": 194,
+      "l": "RAW",
+      "m": "[2026-10-08 19_44_46_633][194][Script] [BodyLifeNativeProbe] EndFrame captured=false saved=false\n"
+    },
+    {
+      "t": "2026-10-08 19_44_47_645",
+      "f": 195,
+      "l": "RAW",
+      "m": "[2026-10-08 19_44_47_645][195][Script] [BodyLifeNativeProbe] Update captured=false saved=false\n"
+    },
+    {
+      "t": "2026-10-08 19_44_47_951",
+      "f": 205,
+      "l": "RAW",
+      "m": "[2026-10-08 19_44_47_951][205][Script] [BodyLifeNativeProbe] native draw zoom=0.013 organs=3 triangles=188\n"
+    },
+    {
+      "t": "2026-10-08 19_44_48_962",
+      "f": 235,
+      "l": "RAW",
+      "m": "[2026-10-08 19_44_48_962][235][Script] [BodyLifeNativeProbe] native draw zoom=0.04 organs=3 triangles=188\n"
+    },
+    {
+      "t": "2026-10-08 19_44_49_975",
+      "f": 265,
+      "l": "RAW",
+      "m": "[2026-10-08 19_44_49_975][265][Script] [BodyLifeNativeProbe] native draw zoom=0.1 organs=3 triangles=188\n"
+    }
+  ],
+  "engineEvidence": [
+    {
+      "t": "2026-10-08 19_44_40_385",
+      "f": 0,
+      "l": "INFO",
+      "m": "Renderer Type: Metal"
+    },
+    {
+      "t": "2026-10-08 19_44_40_387",
+      "f": 0,
+      "l": "ERROR",
+      "m": "Could not find resource Cube/Day/DaySpecularHDR_QualityLow.dds"
+    },
+    {
+      "t": "2026-10-08 19_44_42_699",
+      "f": 135,
+      "l": "INFO",
+      "m": "UrhoXRuntime: Game started successfully"
+    }
+  ],
+  "interpretation": {
+    "startup": "confirmed successful; anatomyVersion=4",
+    "nativeDraw": "smoke tested at zoom 0.013, 0.04, 0.1; 3 organs, 188 triangles",
+    "screenshots": "TakeScreenShot returned false at Update, EndRendering, EndFrame; no screenshot exists",
+    "visualAcceptance": "UNDETERMINED",
+    "performanceAcceptance": "UNDETERMINED",
+    "CLI": "isReady getter returns false unconditionally; any captured error makes check FAIL; Lua log tail requires stdout initialization announcement"
+  },
+  "simulationChangedByProbe": false
+}

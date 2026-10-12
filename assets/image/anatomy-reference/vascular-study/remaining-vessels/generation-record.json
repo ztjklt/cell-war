@@ -1,0 +1,188 @@
+{
+  "schema": "remaining-vessels-gpt-art/v1",
+  "mode": "GPT builtin imagegen",
+  "purpose": "continue remaining main-map blood-vessel illustrations; no stomach battlefield",
+  "productionInstalled": false,
+  "pixelRegistrationCertified": false,
+  "regions": [
+    {
+      "region": "chest",
+      "sourceBox": [
+        333,
+        250,
+        693,
+        490
+      ],
+      "rasterSize": [
+        1536,
+        1024
+      ],
+      "editableEdgeIds": [
+        "e001",
+        "e002",
+        "e003",
+        "e004",
+        "e005",
+        "e006",
+        "e007",
+        "e008",
+        "e009",
+        "e010",
+        "e015",
+        "e116",
+        "e117",
+        "e122",
+        "e123",
+        "e125",
+        "e145",
+        "e146",
+        "e150",
+        "e151",
+        "e152",
+        "e172",
+        "e173",
+        "e174",
+        "e175",
+        "e181",
+        "e199",
+        "e200"
+      ],
+      "sourceSha256": "9a04e39961c07073cd9fdcfcdc2c98253ccc25d968e97dbea1f36669e06b5d9f",
+      "finalReferenceSha256": "3890744e2fcaf9e9907c85513e170e479f67b7fbb1fbf06385ac02bd80e8550c",
+      "protectedHeadAndLimbEdgesExcluded": true,
+      "imageGenerated": true,
+      "previewAsset": "remaining-vessels-output/gpt-chest-v4.png",
+      "originalPreview": "remaining-vessels-inputs/chest-original.png",
+      "status": "ILLUSTRATION_REVIEW_NOT_MAP_REGISTRATION_CERTIFICATION",
+      "generations": [
+        {
+          "version": 1,
+          "asset": "assets/image/anatomy-reference/vascular-study/remaining-vessels/gpt-chest-v1.png",
+          "sha256": "259f64f7271cddbf960e63a098987ee46eaee3720f526d81aeccba65f976ea28",
+          "toolOutput": "/Users/jitian/.codex/generated_images/01a11af8-adbc-7d11-8076-e0c0198d0b3e/exec-6c553995-19b5-400a-a84a-0e13e101e274.png",
+          "prompt": "Use case: precise-object-edit / sketch-to-render.\nAsset: polished cartoon vascular artwork for the EXISTING human-body RTS main map, NOT a new organ battlefield.\nInput 1 is the EDIT TARGET: an exact original map crop. Input 2 is the authoritative visible vascular drawing at the same crop coordinates. Input 3 is only the depth/connectivity drawing: dashed gray sections are hidden behind foreground and pale green circles are fixed named interface markers. Input 4 is the original full-body map for style reference only.\nReturn ONE finished 3:2 landscape illustration of the identical crop. Retain the original organ silhouettes, position, proportions, original colors, bones, muscles, body contour and framing from Input 1. Modify only the central blood-vessel artwork to follow Input 2. Draw these as actual smooth round illustrated vessels with a restrained soft shadow edge and a narrow soft reflection, in the same friendly peach/coral cartoon paint as Input 1. Red supply, blue return, muted mauve local exchange; rounded seamless junctions only at existing joined endpoints. Keep the guide's locations, tube widths and curved routes. Do not invent decorative capillaries, extra forks, extra loops or new junctions. Do not redesign or recolor the organs. The image must look like finished coherent original map art, not a wire diagram or flat tinted region.\nHidden spans from Input 3 stay hidden. Render visible ends as tucked under the foreground or softly occluded by the existing tissue, never as exposed cut pipe ends, isolated dash marks, disconnected floating sticks or green annotation dots. Do NOT draw gray dashed lines, arrows, circles, grids, captions, labels or UI. No realism, gore, tentacles, dense texture, bright bloom, lens flare, broad white vessel highlights or map recoloring.\nDo not make a generic anatomically complete different map: use this exact finalized gameplay route diagram and this exact original artwork.\nRegion-specific: chest and cardiac/pulmonary circulation, registered source box [333,250,693,490] of the 1024x1536 original. Keep both pink lungs and the central heart with their exact existing outline and placement. The original blue tree inside each lung is the AIRWAY/BRONCHIAL design and must remain recognizable, exactly in place; never connect the new vascular loop into those bronchial branch tips. The new simple mauve loops and red/blue access segments are separate blood routes. Preserve the head/limb vessels and shoulder/clavicle edges as in Input 1; only central chest guide strokes are to be revised. Preserve cardiac surface colors and existing yellow details. At upper/lower crop edge, continuous major vessels must meet the same positions as the source; no repositioning of the heart or lungs.\n",
+          "selected": false
+        },
+        {
+          "version": 2,
+          "asset": "assets/image/anatomy-reference/vascular-study/remaining-vessels/gpt-chest-v2.png",
+          "sha256": "fb2c1941836a1bd77c03dfd61f00df4d56b0a3389691666b648101f5cab97a49",
+          "toolOutput": "/Users/jitian/.codex/generated_images/01a11af8-adbc-7d11-8076-e0c0198d0b3e/exec-b34bf682-2e6f-4629-97e1-b02143f75139.png",
+          "prompt": "Use case: precise-object-edit / sketch-to-render.\nAsset: polished cartoon vascular artwork for the EXISTING human-body RTS main map, NOT a new organ battlefield.\nInput 1 is the EDIT TARGET: an exact original map crop. Input 2 is the authoritative visible vascular drawing at the same crop coordinates. Input 3 is only the depth/connectivity drawing: dashed gray sections are hidden behind foreground and pale green circles are fixed named interface markers. No other framing reference: use only the exact crop in Input 1.\nReturn ONE finished 3:2 landscape illustration of the identical crop. Retain the original organ silhouettes, position, proportions, original colors, bones, muscles, body contour and framing from Input 1. Modify only the central blood-vessel artwork to follow Input 2. Draw these as actual smooth round illustrated vessels with a restrained soft shadow edge and a narrow soft reflection, in the same friendly peach/coral cartoon paint as Input 1. Red supply, blue return, muted mauve local exchange; rounded seamless junctions only at existing joined endpoints. Keep the guide's locations, tube widths and curved routes. Do not invent decorative capillaries, extra forks, extra loops or new junctions. Do not redesign or recolor the organs. The image must look like finished coherent original map art, not a wire diagram or flat tinted region.\nHidden spans from Input 3 stay hidden. Render visible ends as tucked under the foreground or softly occluded by the existing tissue, never as exposed cut pipe ends, isolated dash marks, disconnected floating sticks or green annotation dots. Do NOT draw gray dashed lines, arrows, circles, grids, captions, labels or UI. No realism, gore, tentacles, dense texture, bright bloom, lens flare, broad white vessel highlights or map recoloring.\nDo not make a generic anatomically complete different map: use this exact finalized gameplay route diagram and this exact original artwork.\nRegion-specific: chest and cardiac/pulmonary circulation, registered source box [333,250,693,490] of the 1024x1536 original. Keep both pink lungs and the central heart with their exact existing outline and placement. The original blue tree inside each lung is the AIRWAY/BRONCHIAL design and must remain recognizable, exactly in place; never connect the new vascular loop into those bronchial branch tips. The new simple mauve loops and red/blue access segments are separate blood routes. Preserve the head/limb vessels and shoulder/clavicle edges as in Input 1; only central chest guide strokes are to be revised. Preserve cardiac surface colors and existing yellow details. At upper/lower crop edge, continuous major vessels must meet the same positions as the source; no repositioning of the heart or lungs.\nCorrection requirements: there must be NO connection between a dark glossy blood vessel and the old lighter matte-blue bronchial tree. At every projected crossing show one tube passing underneath with a small clean occlusion shadow, not a shared T-junction. Blood veins should be a slightly darker cobalt blue than the original flat lighter-blue air branches. Leave the air branches in their original shapes and positions. Keep the exact 3:2 crop framing. Preserve the existing heart, lung edges and clavicle locations from Image 1 rather than enlarging them. Green markers/dashed gray lines from Image 3 are geometry guides only; do not paint those guides in the result.\n",
+          "selected": false
+        },
+        {
+          "version": 3,
+          "asset": "assets/image/anatomy-reference/vascular-study/remaining-vessels/gpt-chest-v3.png",
+          "sha256": "df17df1a900afd75ec856cbc7a1f7a99dc4cd24f5dbede9169f4f368098beae1",
+          "toolOutput": "/Users/jitian/.codex/generated_images/01a11af8-adbc-7d11-8076-e0c0198d0b3e/exec-d48f553d-ed92-490c-abaf-3b1124f0a2dd.png",
+          "prompt": "Use case: precise-object-edit.\nEdit Image 1 in place with ONLY small localized blood-vessel occlusion repairs. Preserve its canvas size, exact framing, organ outlines, relative placements, existing friendly cartoon style, colors, background, tubes and shading everywhere else.\nImage 2 is the SAME image with cyan annotation brush marks that locate the erroneous visible spans. Cyan is a repair-location annotation ONLY; absolutely no cyan marks in the finished art.\nImage 3 is the original unchanged crop, the reference for tissue foreground, original blue vessels, airway shapes and organ positions.\nImage 4 is the finalized depth/connectivity reference. Its gray dashed segments MUST be hidden behind the organ foreground. Solid red/blue/mauve segments are visible blood routes. Green dots are annotations and must not appear.\nErase ONLY the erroneously exposed NEW vessel bridges within the cyan areas and restore the matching organ/airway foreground over them, in the existing finished illustrated style. The hidden blood tube continues underneath and may reappear at the prescribed visible endpoints, never exposed cut ends. Do not add or remove branches, alter topology, redraw the entire scene, add capillaries, move organs, extend the crop, or repaint the existing large background vessels. Preserve the nice smooth rounded tube artwork outside the small corrections. No labels, circles, dashes, arrows or UI. Return one finished 3:2 landscape crop.\nChest repair:\n1. In the cyan area near the left lung hilum (around 37-45% canvas x, 48-54% y), the red pulmonary segment must tuck behind the ORIGINAL light matte-blue airway/hilum foreground instead of a red-to-blue shared junction. Keep the blue central vessel and the bronchial tree intact. The new blood loop is separate from the airway.\n2. Around the upper heart arch and right hilum (50-62% x, 43-54% y), do not expose the red bridge that crosses the required hidden route. Restore the original heart/hilum/airway foreground in those cyan zones so one path passes under it. Do not erase the original red heart/aorta itself.\n3. The original light-blue bronchial trees across both lungs remain their original separate airway system, not connected at their tips or crossings to the glossy mauve blood loops. At projected crossings distinguish layering using a small tidy occlusion, not a shared T-junction.\nKeep both lung outlines, heart silhouette and yellow heart markings, clavicles and border positions unchanged. Remove the little stray pale green triangles at the bottom of both lungs; those are guide artifacts, not tissue.\n",
+          "selected": false
+        },
+        {
+          "version": 4,
+          "asset": "assets/image/anatomy-reference/vascular-study/remaining-vessels/gpt-chest-v4.png",
+          "sha256": "1249bfa92bbc8f945d3a0fcfe73a8cc4e290ed316f87a4c3accbe2bee6b9ec9c",
+          "toolOutput": "/Users/jitian/.codex/generated_images/01a11af8-adbc-7d11-8076-e0c0198d0b3e/exec-09588298-b234-4b97-b4f2-c447a520fa1b.png",
+          "prompt": "Use case: precise-object-edit.\nRestore ONLY two missing short red pulmonary supply arcs in Image 1. Preserve the entire 3:2 composition, organ position, existing glossy cartoon paint, all other tubes, lung contours, heart shape and airway trees.\nImage 1 is the chest illustration to edit.\nImage 2 is exactly the SAME illustration with TWO thin red locator curves that show where the missing red arcs belong. Convert ONLY those two locator curves into delicate finished round red vessels, same width and soft paint/shadow as the existing mauve lung blood loop. Do not follow the airway as a new blood route.\nImage 3 is the original cartoon anatomy for original foreground and style.\n\nSpecific small edit:\n- Left arc: join seamlessly to the upper tip of the left mauve blood loop at canvas x=29.44%, y=41.67%, then follow the short red locator towards x=35.75%, y=48.23%. At that latter tip tuck underneath the existing pink lung-hilum foreground, not an exposed cut and NOT a shared connection to the light-blue airway or central glossy blue vein.\n- Right arc: join seamlessly to the upper tip of the right mauve loop at x=68.61%, y=41.67%, then follow the short red locator to x=62.50%, y=47.59%, where it tucks under existing pink hilum foreground. No exposed long bridge towards the red heart/aorta.\nAt the mauve-to-red top turning points the light-blue airway branch underneath is an OVERPASS crossing: use a tiny occlusion shadow/separation, so the thin blood arc is continuous red-to-mauve and the lighter blue airway is visibly an independent underlying branch. Do not make a shared three-way junction.\nBoth red arcs STOP their visibility at the specified hiding point. The hidden span continues behind the tissue. Do not fill the old hidden gap, connect red into any blue tube, draw an exposed cut end, add a new capillary, invent a trunk or change any original anatomy.\nEverything outside these two short arcs stays exactly like Image 1. No guide artifacts, labels, arrows, dashes, dots, cyan, bright bloom or UI. Return a finished illustrated crop.\n",
+          "selected": true,
+          "selectionPurpose": "candidate review only, not installed game art"
+        }
+      ]
+    },
+    {
+      "region": "lower-abdomen",
+      "sourceBox": [
+        350,
+        628,
+        674,
+        844
+      ],
+      "rasterSize": [
+        1536,
+        1024
+      ],
+      "editableEdgeIds": [
+        "e011",
+        "e012",
+        "e013",
+        "e128",
+        "e130",
+        "e131",
+        "e132",
+        "e133",
+        "e134",
+        "e135",
+        "e141",
+        "e142",
+        "e143",
+        "e144",
+        "e148",
+        "e149",
+        "e166",
+        "e167",
+        "e168",
+        "e170",
+        "e187",
+        "e188",
+        "e189",
+        "e190",
+        "e191",
+        "e192",
+        "e197",
+        "e198"
+      ],
+      "sourceSha256": "9a04e39961c07073cd9fdcfcdc2c98253ccc25d968e97dbea1f36669e06b5d9f",
+      "finalReferenceSha256": "3890744e2fcaf9e9907c85513e170e479f67b7fbb1fbf06385ac02bd80e8550c",
+      "protectedHeadAndLimbEdgesExcluded": true,
+      "imageGenerated": true,
+      "previewAsset": "remaining-vessels-output/gpt-lower-abdomen-v5.png",
+      "originalPreview": "remaining-vessels-inputs/lower-abdomen-original.png",
+      "status": "ILLUSTRATION_REVIEW_NOT_MAP_REGISTRATION_CERTIFICATION",
+      "generations": [
+        {
+          "version": 1,
+          "asset": "assets/image/anatomy-reference/vascular-study/remaining-vessels/gpt-lower-abdomen-v1.png",
+          "sha256": "d77ea40e40e5d5a5516b4ba14123cae02e14c235434d09dd119d8873b7092434",
+          "toolOutput": "/Users/jitian/.codex/generated_images/01a11af8-adbc-7d11-8076-e0c0198d0b3e/exec-032bb1aa-f9e7-4d2a-9163-e413d7bfc9cf.png",
+          "prompt": "Use case: precise-object-edit / sketch-to-render.\nAsset: polished cartoon vascular artwork for the EXISTING human-body RTS main map, NOT a new organ battlefield.\nInput 1 is the EDIT TARGET: an exact original map crop. Input 2 is the authoritative visible vascular drawing at the same crop coordinates. Input 3 is only the depth/connectivity drawing: dashed gray sections are hidden behind foreground and pale green circles are fixed named interface markers. Input 4 is the original full-body map for style reference only.\nReturn ONE finished 3:2 landscape illustration of the identical crop. Retain the original organ silhouettes, position, proportions, original colors, bones, muscles, body contour and framing from Input 1. Modify only the central blood-vessel artwork to follow Input 2. Draw these as actual smooth round illustrated vessels with a restrained soft shadow edge and a narrow soft reflection, in the same friendly peach/coral cartoon paint as Input 1. Red supply, blue return, muted mauve local exchange; rounded seamless junctions only at existing joined endpoints. Keep the guide's locations, tube widths and curved routes. Do not invent decorative capillaries, extra forks, extra loops or new junctions. Do not redesign or recolor the organs. The image must look like finished coherent original map art, not a wire diagram or flat tinted region.\nHidden spans from Input 3 stay hidden. Render visible ends as tucked under the foreground or softly occluded by the existing tissue, never as exposed cut pipe ends, isolated dash marks, disconnected floating sticks or green annotation dots. Do NOT draw gray dashed lines, arrows, circles, grids, captions, labels or UI. No realism, gore, tentacles, dense texture, bright bloom, lens flare, broad white vessel highlights or map recoloring.\nDo not make a generic anatomically complete different map: use this exact finalized gameplay route diagram and this exact original artwork.\nRegion-specific: lower abdomen, intestinal and bladder supply/return, source box [350,628,674,844] of the 1024x1536 original. Keep every existing pink bowel loop, bowel boundaries, bladder and outlet, pelvic bones and both upper-thigh/limb vessels at their exact original positions and shapes. Red/blue/mauve blood routes follow the colored guide, including the existing pair of simple bladder-wall curved routes; do not fill the bladder with a new battlefield or repaint bowel interiors. The intestinal food tube and orange bladder/urinary outlet remain their original colors and anatomy, separate from blood. Tuck each intentionally hidden route behind the existing intestinal/pelvic foreground and retain clear, naturally rounded supply/return entrances at the green points without drawing the markers. Preserve the original large lower-pelvis veins and thigh routes, which are outside the editable central guide. No new networks, no extra vascular lattice, no changed bowel layout.\n",
+          "selected": false
+        },
+        {
+          "version": 2,
+          "asset": "assets/image/anatomy-reference/vascular-study/remaining-vessels/gpt-lower-abdomen-v2.png",
+          "sha256": "1d2f62fa9beda028d69185ae268ecb267232e2f479f0efa719b1d2b8a2a6a91c",
+          "toolOutput": "/Users/jitian/.codex/generated_images/01a11af8-adbc-7d11-8076-e0c0198d0b3e/exec-1b18a30c-66ee-42a0-b29b-2c107e0a01ad.png",
+          "prompt": "Use case: precise-object-edit / sketch-to-render.\nAsset: polished cartoon vascular artwork for the EXISTING human-body RTS main map, NOT a new organ battlefield.\nInput 1 is the EDIT TARGET: an exact original map crop. Input 2 is the authoritative visible vascular drawing at the same crop coordinates. Input 3 is only the depth/connectivity drawing: dashed gray sections are hidden behind foreground and pale green circles are fixed named interface markers. No full-body framing reference: this is ONLY the shallow crop shown in Input 1.\nReturn ONE finished 3:2 landscape illustration of the identical crop. Retain the original organ silhouettes, position, proportions, original colors, bones, muscles, body contour and framing from Input 1. Modify only the central blood-vessel artwork to follow Input 2. Draw these as actual smooth round illustrated vessels with a restrained soft shadow edge and a narrow soft reflection, in the same friendly peach/coral cartoon paint as Input 1. Red supply, blue return, muted mauve local exchange; rounded seamless junctions only at existing joined endpoints. Keep the guide's locations, tube widths and curved routes. Do not invent decorative capillaries, extra forks, extra loops or new junctions. Do not redesign or recolor the organs. The image must look like finished coherent original map art, not a wire diagram or flat tinted region.\nHidden spans from Input 3 stay hidden. Render visible ends as tucked under the foreground or softly occluded by the existing tissue, never as exposed cut pipe ends, isolated dash marks, disconnected floating sticks or green annotation dots. Do NOT draw gray dashed lines, arrows, circles, grids, captions, labels or UI. No realism, gore, tentacles, dense texture, bright bloom, lens flare, broad white vessel highlights or map recoloring.\nDo not make a generic anatomically complete different map: use this exact finalized gameplay route diagram and this exact original artwork.\nRegion-specific: lower abdomen, intestinal and bladder supply/return, source box [350,628,674,844] of the 1024x1536 original. Keep every existing pink bowel loop, bowel boundaries, bladder and outlet, pelvic bones and both upper-thigh/limb vessels at their exact original positions and shapes. Red/blue/mauve blood routes follow the colored guide, including the existing pair of simple bladder-wall curved routes; do not fill the bladder with a new battlefield or repaint bowel interiors. The intestinal food tube and orange bladder/urinary outlet remain their original colors and anatomy, separate from blood. Tuck each intentionally hidden route behind the existing intestinal/pelvic foreground and retain clear, naturally rounded supply/return entrances at the green points without drawing the markers. Preserve the original large lower-pelvis veins and thigh routes, which are outside the editable central guide. No new networks, no extra vascular lattice, no changed bowel layout.\nCRITICAL FRAME LOCK: the entire finished canvas is EXACTLY the original shallow [350,628,674,844] crop, NOT a new view of the whole pelvis and thighs. Original landmarks in final canvas: bladder outer silhouette from x=38.58% to 58.95%, y=49.54% to 86.57%; bladder outlet bottom is near y=86.6%, not near the middle. At the top edge both kidney lower ends are cut off by the frame. At the bottom edge there are only the short starts of the upper thighs and the white gap, cut at the same level as Image 1; never extend to show long thigh muscles, knees or additional anatomy. The original three central bowel rows occupy the same upper half as Image 1. Preserve the original bladder, bowel loops, pelvic bones, body outline and all boundary pixels in place. Use Image 1 as the base drawing and change only the specified vessels. Do not zoom out, scale down, shift the organ group upward, center a new composition, or add extra space below.\n",
+          "selected": false
+        },
+        {
+          "version": 3,
+          "asset": "assets/image/anatomy-reference/vascular-study/remaining-vessels/gpt-lower-abdomen-v3.png",
+          "sha256": "056987fd2ba7cf91736ee38cd1bf8a33f19036fba6efca81db5c01cc8924cea9",
+          "toolOutput": "/Users/jitian/.codex/generated_images/01a11af8-adbc-7d11-8076-e0c0198d0b3e/exec-171a9539-559d-462a-a5d1-44a6aa87ed8c.png",
+          "prompt": "Use case: precise-object-edit.\nEdit Image 1 in place with ONLY small localized blood-vessel occlusion repairs. Preserve its canvas size, exact framing, organ outlines, relative placements, existing friendly cartoon style, colors, background, tubes and shading everywhere else.\nImage 2 is the SAME image with cyan annotation brush marks that locate the erroneous visible spans. Cyan is a repair-location annotation ONLY; absolutely no cyan marks in the finished art.\nImage 3 is the original unchanged crop, the reference for tissue foreground, original blue vessels, airway shapes and organ positions.\nImage 4 is the finalized depth/connectivity reference. Its gray dashed segments MUST be hidden behind the organ foreground. Solid red/blue/mauve segments are visible blood routes. Green dots are annotations and must not appear.\nErase ONLY the erroneously exposed NEW vessel bridges within the cyan areas and restore the matching organ/airway foreground over them, in the existing finished illustrated style. The hidden blood tube continues underneath and may reappear at the prescribed visible endpoints, never exposed cut ends. Do not add or remove branches, alter topology, redraw the entire scene, add capillaries, move organs, extend the crop, or repaint the existing large background vessels. Preserve the nice smooth rounded tube artwork outside the small corrections. No labels, circles, dashes, arrows or UI. Return one finished 3:2 landscape crop.\nLower-abdomen repair:\n1. The cyan patches on the central diagonal mauve tube (around 45-63% x, 24-36% y) locate TWO hidden intervals. Restore the existing pink intestinal folds across those intervals. It must not be a continuous mauve diagonal painted across the bowel surface; preserve only the tiny existing prescribed visible pieces tucked between folds.\n2. On the lower right bowel (around 65-76% x, 39-45% y), the new tiny blue return segment must tuck under the pink bowel wall instead of being extended into a shared junction with the original large outer blue pelvic vein. Keep that old outer blue vein in its original location. Remove only the new erroneous bridge/join.\n3. On the bladder's upper-right perimeter (around 49-62% x, 53-64% y), the new red supply must pass BEHIND the orange bladder foreground and the old blue pelvic vein. It must not join the blue vein. Restore the orange bladder face across the cyan upper arc; retain the red supply only where it legitimately reappears at the bladder right wall around normalized x=57.51%, y=56.81%. Retain the blue return at the left wall around x=39.1%, y=58.62%. Existing mauve bladder wall route remains.\n4. Other cyan patches on the upper-right bowel mark intentionally hidden new return segments: restore the bowel foreground, not a new continuous extra branch.\nKeep all intestine, kidney cropped ends, orange bladder and outlet, pelvis and upper thighs exactly in their Image 1 positions. The bladder must not move upward and no extra thigh anatomy should be added. Restore the original smooth pink intestine/orange bladder paint, not scars or hole marks.\n",
+          "selected": false
+        },
+        {
+          "version": 4,
+          "asset": "assets/image/anatomy-reference/vascular-study/remaining-vessels/gpt-lower-abdomen-v4.png",
+          "sha256": "9d2ec9a5331edac019149a32d940187b2234e3c1bca8636a1d9b7cf461065616",
+          "toolOutput": "/Users/jitian/.codex/generated_images/01a11af8-adbc-7d11-8076-e0c0198d0b3e/exec-bcf4bd54-94f1-413b-98a5-4d73dc209b17.png",
+          "prompt": "Use case: precise-object-edit.\nMake one SMALL LOCAL CORRECTION to Image 1, only at the bladder. Keep its exact 3:2 framing and all other painted anatomy and blood vessels unchanged.\nImage 1 is the finished lower-abdomen illustration to edit.\nImage 2 is the same target with cyan repair annotations over the WRONG intrabladder vessel shapes. Cyan is only an annotation and must completely disappear.\nImage 3 is the ORIGINAL bladder and organ foreground. Restore its clean orange bladder face and unchanged orange rim and outlet in the edited region.\n\nProblem: the red-to-mauve U-shaped tube has been incorrectly drawn inside the orange bladder cavity, with dark inset shadows. This makes it look as if a vessel dips into the urine space. COMPLETELY REMOVE the red and mauve tubing from the orange bladder face and ALL associated grooves, dark inset shadows and highlights. Restore continuous smooth orange cavity/foreground and its original gentle lower yellow-orange shape, exactly like Image 3. The entire orange cavity should be clear. NO vessel arc, indent, groove, hole, incision, loop or colored U inside it.\n\nRepresent bladder supply and return as only TWO SHORT external approaches which end by tucking under the OUTER orange rim, not by curving into the face:\n- red arterial approach at the upper-right outer wall near canvas x=57.5%, y=56.8%; hide behind the rim immediately, cannot cross onto orange face;\n- blue venous approach at the upper-left outer wall near x=39.1%, y=58.6%; hide behind the rim immediately, cannot cross onto orange face.\nUse delicate restrained short tubes, same illustrated style, and never join a red tube directly into the preexisting large blue pelvic arc.\nThe organ's wall perfusion is HIDDEN BEHIND the orange foreground in this flat view. Do NOT paint any ring or replacement loop around the inside or invent a new extensive outer loop.\nPreserve the original large blue vessel arc behind the bladder and all existing pelvic/thigh vessels, pink intestines, kidneys, white bones and body silhouette. Do not erase other blood routes.\nPreserve bladder position, size, smooth rim, central orange-yellow dot and outlet. No organ movement, no extra anatomy. Return exactly the same full crop with only this bladder correction. No annotation marks, labels, realistic gore, bright bloom or UI.\n",
+          "selected": false,
+          "selectionPurpose": "candidate review only, not installed game art"
+        },
+        {
+          "version": 5,
+          "asset": "assets/image/anatomy-reference/vascular-study/remaining-vessels/gpt-lower-abdomen-v5.png",
+          "sha256": "550e9039bbf0d4f640f0dc2c8ad31b2e2ce7799183fe004f317d9b4ddb4e4b7a",
+          "toolOutput": "/Users/jitian/.codex/generated_images/01a11af8-adbc-7d11-8076-e0c0198d0b3e/exec-43e2234b-adc5-45ce-b191-c078f9956b48.png",
+          "prompt": "Use case: precise-object-edit.\nEdit ONLY the tiny floating blue capped stub at the upper-left side of the bladder in Image 1.\nImage 1 is the finished lower-abdomen candidate to preserve.\nImage 2 is the same image with a small cyan annotation marking the WRONG added blue stub: around canvas x=36-39%, y=51-56%, immediately below the left lower pink bowel, above the large blue transverse pelvic arc.\nImage 3 is the original unchanged cartoon map to reference the purple background tissue and existing blue pelvic vessels.\n\nRemove this short NEW floating capped blue stub COMPLETELY and restore the underlying dark-purple tissue between the bowel and bladder in exactly the existing painterly style. Do not extend the stub into a new junction. Do not invent a new short pipe or extra fork.\nPreserve the OLD large blue transverse pelvic arc running behind the bladder and its left descending blue return vessel, all original branches and the red external bladder supply on the right. The large old blue vessels must NOT be erased or rerouted.\nThe orange bladder face must remain smooth and clean, with NO interior blood tube, indentation, groove or loop. Keep bladder rim, dot, yellow lower shape, outlet, all bowel, bones, thighs and framing EXACTLY as Image 1.\nThe repair is restricted to the small cyan-marked blue stub and its local shadow. Remove all cyan annotation. No other image changes, no resizing/shift/extra anatomy, labels, UI or guide marks. Return the exact same 3:2 illustration with this one small defect repaired.\n",
+          "selected": true,
+          "selectionPurpose": "candidate review only, not installed game art"
+        }
+      ]
+    }
+  ]
+}

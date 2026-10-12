@@ -1,0 +1,1237 @@
+{
+  "schema": "heart-v1-interface-contract/v1",
+  "status": "BASELINE_CAPTURED_CANDIDATE_NOT_ACCEPTED",
+  "authorization": "Four playable cardiac chambers with GPT art and pinned existing external vessel positions.",
+  "coordinates": {
+    "sourceSize": [
+      1024,
+      1536
+    ],
+    "sourceBox": [
+      468,
+      326,
+      568,
+      467
+    ],
+    "contextSourceBox": [
+      430,
+      280,
+      615,
+      495
+    ],
+    "worldFromSource": {
+      "scale": [
+        2,
+        2
+      ],
+      "offset": [
+        0,
+        512
+      ]
+    },
+    "nanoVGResolutionMode": "B",
+    "logicalPixelsPerSourceAt015": 9.6,
+    "frozenSourceBox": true
+  },
+  "baseline": {
+    "path": "docs/heart-v1/baseline.json",
+    "sha256": "0b2c2a5f725c5f9fc24687dc676307dbc3197778337af5c438c3b6f4cd67c14e",
+    "manifestPath": "docs/heart-v1/baseline-manifest.json",
+    "manifestSha256": "fb0bb1a3fd70a7d69cdf53d534a715a519ea48822bd6a9665fa1e639d0e8f693",
+    "referenceDataPath": "docs/body-life/vascular-art-study/final-reference-data.json",
+    "referenceDataSha256": "3890744e2fcaf9e9907c85513e170e479f67b7fbb1fbf06385ac02bd80e8550c"
+  },
+  "visualFourCoarseTrunks": {
+    "status": "NOT_UNIQUELY_IDENTIFIED_AS_FOUR_EDGE_IDS",
+    "policy": "Preserve every actual cross-box route and every global frozen edge; all four visible trunks are included without guessing a screen-stroke to anatomy mapping.",
+    "confirmedWideLocalRoutes": [
+      {
+        "edgeId": "e009",
+        "name": "descending aorta",
+        "lumenWidthSource": 7
+      },
+      {
+        "edgeId": "e015",
+        "name": "caval return",
+        "lumenWidthSource": 7
+      }
+    ],
+    "physiologicalSystemsAreNotFourScreenStrokes": true
+  },
+  "physiologicalSystems": [
+    {
+      "id": "systemic-venous-return",
+      "anatomicalName": "体静脉回流",
+      "chamberId": "RA",
+      "direction": "into-heart",
+      "edgeIds": [
+        "e015",
+        "e017",
+        "e022",
+        "e067",
+        "e072"
+      ],
+      "namedAnchor": "heart.v",
+      "anchorSource": [
+        483,
+        379
+      ],
+      "explanation": "Lower-body return and all existing upper-body return edges converge on the fixed venous anchor; feed the right atrium locally.",
+      "frozenEdges": [
+        {
+          "id": "e015",
+          "a": "cava_upper",
+          "b": "heart.v",
+          "lumenWidthSource": 7,
+          "oxygen": "low",
+          "sha256": "d14bbc339561f298911da102ca75c4a9aaf13b7e36b336ab6ec09376208b377f"
+        },
+        {
+          "id": "e017",
+          "a": "head_r.v",
+          "b": "heart.v",
+          "lumenWidthSource": 3,
+          "oxygen": "low",
+          "sha256": "cabf6ad807b9414fbbf5ae84c8018d35d10511c8b80277923bda0838dd3e9f56"
+        },
+        {
+          "id": "e022",
+          "a": "shoulder_r.v",
+          "b": "heart.v",
+          "lumenWidthSource": 3,
+          "oxygen": "low",
+          "sha256": "ac64f7d1e5c924eb5ecaee6bff24f942b43c6122aebc1cde8f4750ca76c171f0"
+        },
+        {
+          "id": "e067",
+          "a": "head_l.v",
+          "b": "heart.v",
+          "lumenWidthSource": 3,
+          "oxygen": "low",
+          "sha256": "e8e12f13183f0f0b0144f2a48df2bf50afb36dc33c03fdf7cf86566129ea0396"
+        },
+        {
+          "id": "e072",
+          "a": "shoulder_l.v",
+          "b": "heart.v",
+          "lumenWidthSource": 3,
+          "oxygen": "low",
+          "sha256": "7d9fa605d462a635b1a6a2bdc9d1882bb035037a37419edd49f50507e2508499"
+        }
+      ],
+      "boxPortIds": [
+        "e015.heart-box.1",
+        "e017.heart-box.1",
+        "e022.heart-box.1",
+        "e067.heart-box.1",
+        "e072.heart-box.1"
+      ]
+    },
+    {
+      "id": "pulmonary-arterial-output",
+      "anatomicalName": "肺动脉输出",
+      "chamberId": "RV",
+      "direction": "out-of-heart",
+      "edgeIds": [
+        "e002",
+        "e003",
+        "e006"
+      ],
+      "namedAnchor": "pulmonary_trunk",
+      "anchorSource": [
+        510,
+        355
+      ],
+      "explanation": "Right ventricle output connects to the existing pulmonary trunk and its two lung branches.",
+      "frozenEdges": [
+        {
+          "id": "e002",
+          "a": "right_heart",
+          "b": "pulmonary_trunk",
+          "lumenWidthSource": 4,
+          "oxygen": "low",
+          "sha256": "732a930a9ccbd54279698cb2d6ce6324e4cdd5e5b73cc9e1b120294c2bdf94dc"
+        },
+        {
+          "id": "e003",
+          "a": "pulmonary_trunk",
+          "b": "lung_r.entry",
+          "lumenWidthSource": 4,
+          "oxygen": "low",
+          "sha256": "c254a10f75eaf391a58a5858261c96b5d0c86182aa139128b6614bafd17a9f7e"
+        },
+        {
+          "id": "e006",
+          "a": "pulmonary_trunk",
+          "b": "lung_l.entry",
+          "lumenWidthSource": 4,
+          "oxygen": "low",
+          "sha256": "88bd7cb836469e02ab624131be1a144220aa9acda1c3caaf6414d0cc93b0c8ca"
+        }
+      ],
+      "boxPortIds": []
+    },
+    {
+      "id": "pulmonary-venous-return",
+      "anatomicalName": "肺静脉回流",
+      "chamberId": "LA",
+      "direction": "into-heart",
+      "edgeIds": [
+        "e005",
+        "e008"
+      ],
+      "namedAnchor": "left_heart",
+      "anchorSource": [
+        538,
+        422
+      ],
+      "explanation": "The two accepted lung-return routes keep their external placement; local adapters terminate in the left atrium.",
+      "frozenEdges": [
+        {
+          "id": "e005",
+          "a": "lung_r.exit",
+          "b": "left_heart",
+          "lumenWidthSource": 4,
+          "oxygen": "high",
+          "sha256": "ab643240bf16129ce1acef1231af1aa97e075f9c60390366114cbf7e6a87221b"
+        },
+        {
+          "id": "e008",
+          "a": "lung_l.exit",
+          "b": "left_heart",
+          "lumenWidthSource": 4,
+          "oxygen": "high",
+          "sha256": "be83bf6d211376ebefb7f86054484d487e08cff6ac4a57bd78c3a9862821b4e8"
+        }
+      ],
+      "boxPortIds": []
+    },
+    {
+      "id": "systemic-aortic-output",
+      "anatomicalName": "主动脉输出",
+      "chamberId": "LV",
+      "direction": "out-of-heart",
+      "edgeIds": [
+        "e150",
+        "e151",
+        "e009"
+      ],
+      "namedAnchor": "aortic_root",
+      "anchorSource": [
+        533,
+        375
+      ],
+      "explanation": "Left ventricle output joins the unchanged aortic root, arch and descending trunk; the descending trunk is not an atrial connection.",
+      "frozenEdges": [
+        {
+          "id": "e150",
+          "a": "left_heart",
+          "b": "aortic_root",
+          "lumenWidthSource": 3,
+          "oxygen": "high",
+          "sha256": "a9ddbc4c13c84eccceca7f89fa641c04903e05f056415cbbeac7426914a1067f"
+        },
+        {
+          "id": "e151",
+          "a": "aortic_root",
+          "b": "arch",
+          "lumenWidthSource": 3,
+          "oxygen": "high",
+          "sha256": "f489193b5bfb7654edd768f311791224063b3617ac1c4c4e2a6fbaff01ad2939"
+        },
+        {
+          "id": "e009",
+          "a": "arch",
+          "b": "aorta_upper",
+          "lumenWidthSource": 7,
+          "oxygen": "high",
+          "sha256": "b99510f384f8bb5d3b5a758b7c2d10b89f2bb305828312d71185d0c57cdacd81"
+        }
+      ],
+      "boxPortIds": [
+        "e009.heart-box.1"
+      ]
+    }
+  ],
+  "externalInterfaces": {
+    "crossBoxEdgeCount": 13,
+    "crossBoxPortCount": 13,
+    "preserveAll202GlobalEdges": true,
+    "allCrossBoxPorts": [
+      {
+        "id": "e009.heart-box.1",
+        "edgeId": "e009",
+        "alongSource": 142.31841482411807,
+        "source": [
+          536.9512255289299,
+          467.0
+        ],
+        "world": [
+          1073.9024510578597,
+          1446.0
+        ],
+        "tangentAB": [
+          -0.728635435257715,
+          0.6849017465934805
+        ],
+        "crossSectionSource": [
+          [
+            534.5540694158527,
+            464.449775976598
+          ],
+          [
+            539.348381642007,
+            469.550224023402
+          ]
+        ],
+        "lumenWidthSource": 7,
+        "crossing": "exit",
+        "pinDisplacementSource": 0,
+        "edgeGeometrySha256": "b99510f384f8bb5d3b5a758b7c2d10b89f2bb305828312d71185d0c57cdacd81"
+      },
+      {
+        "id": "e015.heart-box.1",
+        "edgeId": "e015",
+        "alongSource": 54.10627361865101,
+        "source": [
+          480.1092856098769,
+          467.0
+        ],
+        "world": [
+          960.2185712197538,
+          1446.0
+        ],
+        "tangentAB": [
+          -0.0016226175888440064,
+          -0.9999986835552137
+        ],
+        "crossSectionSource": [
+          [
+            483.60928100232013,
+            466.994320838439
+          ],
+          [
+            476.6092902174337,
+            467.005679161561
+          ]
+        ],
+        "lumenWidthSource": 7,
+        "crossing": "enter",
+        "pinDisplacementSource": 0,
+        "edgeGeometrySha256": "d14bbc339561f298911da102ca75c4a9aaf13b7e36b336ab6ec09376208b377f"
+      },
+      {
+        "id": "e017.heart-box.1",
+        "edgeId": "e017",
+        "alongSource": 186.7600361028348,
+        "source": [
+          483.68800569879284,
+          326.0
+        ],
+        "world": [
+          967.3760113975857,
+          1164.0
+        ],
+        "tangentAB": [
+          0.16205480706960734,
+          0.9867817588026403
+        ],
+        "crossSectionSource": [
+          [
+            482.2078330605889,
+            326.2430822106044
+          ],
+          [
+            485.1681783369968,
+            325.7569177893956
+          ]
+        ],
+        "lumenWidthSource": 3,
+        "crossing": "enter",
+        "pinDisplacementSource": 0,
+        "edgeGeometrySha256": "cabf6ad807b9414fbbf5ae84c8018d35d10511c8b80277923bda0838dd3e9f56"
+      },
+      {
+        "id": "e022.heart-box.1",
+        "edgeId": "e022",
+        "alongSource": 74.22129611307047,
+        "source": [
+          470.7804650718809,
+          326.0
+        ],
+        "world": [
+          941.5609301437618,
+          1164.0
+        ],
+        "tangentAB": [
+          0.2752024154206164,
+          0.9613863066149103
+        ],
+        "crossSectionSource": [
+          [
+            469.33838561195853,
+            326.4128036231309
+          ],
+          [
+            472.22254453180324,
+            325.5871963768691
+          ]
+        ],
+        "lumenWidthSource": 3,
+        "crossing": "enter",
+        "pinDisplacementSource": 0,
+        "edgeGeometrySha256": "ac64f7d1e5c924eb5ecaee6bff24f942b43c6122aebc1cde8f4750ca76c171f0"
+      },
+      {
+        "id": "e067.heart-box.1",
+        "edgeId": "e067",
+        "alongSource": 185.1351712553391,
+        "source": [
+          534.4422054000022,
+          326.0
+        ],
+        "world": [
+          1068.8844108000044,
+          1164.0
+        ],
+        "tangentAB": [
+          -0.1790010775597293,
+          0.9838488777411172
+        ],
+        "crossSectionSource": [
+          [
+            532.9664320833905,
+            325.7314983836604
+          ],
+          [
+            535.9179787166139,
+            326.2685016163396
+          ]
+        ],
+        "lumenWidthSource": 3,
+        "crossing": "enter",
+        "pinDisplacementSource": 0,
+        "edgeGeometrySha256": "e8e12f13183f0f0b0144f2a48df2bf50afb36dc33c03fdf7cf86566129ea0396"
+      },
+      {
+        "id": "e072.heart-box.1",
+        "edgeId": "e072",
+        "alongSource": 86.58688587143318,
+        "source": [
+          525.0765118558901,
+          326.0
+        ],
+        "world": [
+          1050.1530237117802,
+          1164.0
+        ],
+        "tangentAB": [
+          -0.6641352467991836,
+          0.7476124490395994
+        ],
+        "crossSectionSource": [
+          [
+            523.9550931823306,
+            325.0037971298012
+          ],
+          [
+            526.1979305294495,
+            326.9962028701988
+          ]
+        ],
+        "lumenWidthSource": 3,
+        "crossing": "enter",
+        "pinDisplacementSource": 0,
+        "edgeGeometrySha256": "7d9fa605d462a635b1a6a2bdc9d1882bb035037a37419edd49f50507e2508499"
+      },
+      {
+        "id": "e153.heart-box.1",
+        "edgeId": "e153",
+        "alongSource": 18.325287748839813,
+        "source": [
+          503.50201508131795,
+          326.0
+        ],
+        "world": [
+          1007.0040301626359,
+          1164.0
+        ],
+        "tangentAB": [
+          -0.47183055228221177,
+          -0.8816892479400341
+        ],
+        "crossSectionSource": [
+          [
+            504.824548953228,
+            325.2922541715767
+          ],
+          [
+            502.1794812094079,
+            326.7077458284233
+          ]
+        ],
+        "lumenWidthSource": 3,
+        "crossing": "exit",
+        "pinDisplacementSource": 0,
+        "edgeGeometrySha256": "479439565bc287a41368f2c3dd34ec44a7cdba33de089485e730aeeb771d755b"
+      },
+      {
+        "id": "e156.heart-box.1",
+        "edgeId": "e156",
+        "alongSource": 15.285238601188192,
+        "source": [
+          516.1004370861144,
+          326.0
+        ],
+        "world": [
+          1032.2008741722289,
+          1164.0
+        ],
+        "tangentAB": [
+          0.2690818195207448,
+          -0.9631173212041227
+        ],
+        "crossSectionSource": [
+          [
+            517.5451130679206,
+            326.4036227292811
+          ],
+          [
+            514.6557611043082,
+            325.5963772707189
+          ]
+        ],
+        "lumenWidthSource": 3,
+        "crossing": "exit",
+        "pinDisplacementSource": 0,
+        "edgeGeometrySha256": "ca1fecb9536d2b5e2c48327f79572747f012ec94b925646638eea55e88a85a0d"
+      },
+      {
+        "id": "e158.heart-box.1",
+        "edgeId": "e158",
+        "alongSource": 21.457968956733744,
+        "source": [
+          528.6449894601467,
+          326.0
+        ],
+        "world": [
+          1057.2899789202934,
+          1164.0
+        ],
+        "tangentAB": [
+          0.7912202110103159,
+          -0.6115313382720391
+        ],
+        "crossSectionSource": [
+          [
+            529.5622864675547,
+            327.18683031651545
+          ],
+          [
+            527.7276924527387,
+            324.81316968348455
+          ]
+        ],
+        "lumenWidthSource": 3,
+        "crossing": "exit",
+        "pinDisplacementSource": 0,
+        "edgeGeometrySha256": "34891882d3d5db52736ea08497bdef3a29e9abdfc44e58efc9a0f97b077405e4"
+      },
+      {
+        "id": "e172.heart-box.1",
+        "edgeId": "e172",
+        "alongSource": 7.846154483677955,
+        "source": [
+          468.0,
+          371.1756472374242
+        ],
+        "world": [
+          936.0,
+          1254.3512944748484
+        ],
+        "tangentAB": [
+          -0.8129867653559261,
+          -0.5822821647243787
+        ],
+        "crossSectionSource": [
+          [
+            468.5822821647244,
+            370.3626604720683
+          ],
+          [
+            467.4177178352756,
+            371.9886340027801
+          ]
+        ],
+        "lumenWidthSource": 2,
+        "crossing": "exit",
+        "pinDisplacementSource": 0,
+        "edgeGeometrySha256": "9d3dd0b63df08e114168432645e1fb7cc0fdca569d1bf3939c9cc6b72ceea3aa"
+      },
+      {
+        "id": "e173.heart-box.1",
+        "edgeId": "e173",
+        "alongSource": 40.85071350326807,
+        "source": [
+          468.0,
+          411.0750621881301
+        ],
+        "world": [
+          936.0,
+          1334.1501243762602
+        ],
+        "tangentAB": [
+          0.9682275127262439,
+          -0.250070957130074
+        ],
+        "crossSectionSource": [
+          [
+            468.25007095713005,
+            412.04328970085635
+          ],
+          [
+            467.74992904286995,
+            410.1068346754039
+          ]
+        ],
+        "lumenWidthSource": 2,
+        "crossing": "enter",
+        "pinDisplacementSource": 0,
+        "edgeGeometrySha256": "366abf024734c74b4df1674ebe6da3a7fae872019758e6fc62e25f8906691fee"
+      },
+      {
+        "id": "e174.heart-box.1",
+        "edgeId": "e174",
+        "alongSource": 33.48517558252121,
+        "source": [
+          568.0,
+          354.9536307407912
+        ],
+        "world": [
+          1136.0,
+          1221.9072614815823
+        ],
+        "tangentAB": [
+          0.7676496755086879,
+          -0.6408697025850155
+        ],
+        "crossSectionSource": [
+          [
+            568.6408697025851,
+            355.72128041629986
+          ],
+          [
+            567.3591302974149,
+            354.18598106528253
+          ]
+        ],
+        "lumenWidthSource": 2,
+        "crossing": "exit",
+        "pinDisplacementSource": 0,
+        "edgeGeometrySha256": "5b0b6ab88bcf682319a55a10a8dfed76fa5c58a18184fe2e1fd2a46dfc670345"
+      },
+      {
+        "id": "e175.heart-box.1",
+        "edgeId": "e175",
+        "alongSource": 26.521098565393274,
+        "source": [
+          568.0,
+          421.40463867441747
+        ],
+        "world": [
+          1136.0,
+          1354.809277348835
+        ],
+        "tangentAB": [
+          -0.8494571015381223,
+          -0.52765768510129
+        ],
+        "crossSectionSource": [
+          [
+            568.5276576851013,
+            420.55518157287935
+          ],
+          [
+            567.4723423148987,
+            422.2540957759556
+          ]
+        ],
+        "lumenWidthSource": 2,
+        "crossing": "enter",
+        "pinDisplacementSource": 0,
+        "edgeGeometrySha256": "40f6889a778dff6ce39f733920d52d532c176db880cb47d2f302078cf0ab8488"
+      }
+    ],
+    "localIntersectingEdgeIds": [
+      "e001",
+      "e002",
+      "e003",
+      "e005",
+      "e006",
+      "e008",
+      "e009",
+      "e015",
+      "e017",
+      "e022",
+      "e067",
+      "e072",
+      "e145",
+      "e146",
+      "e150",
+      "e151",
+      "e152",
+      "e153",
+      "e156",
+      "e158",
+      "e172",
+      "e173",
+      "e174",
+      "e175",
+      "e199",
+      "e200"
+    ],
+    "coronarySeparateFromFourChamberFlow": [
+      "e145",
+      "e146",
+      "e152",
+      "e199",
+      "e200"
+    ],
+    "forbidNewRouteFromProjectionCrossing": true
+  },
+  "replacementScope": {
+    "maximumSourceBox": [
+      468,
+      326,
+      568,
+      467
+    ],
+    "authoritativeMask": "new geometry heart-owned outer mask clipped to fixed sourceBox",
+    "oldOrganSpec": {
+      "id": "heart",
+      "resource": "image/anatomy-reference/vascular-study/fullbody-015-candidate-v4b/organs/heart.png",
+      "sourceBox": [
+        468,
+        326,
+        568,
+        467
+      ],
+      "pixelSize": [
+        1200,
+        1692
+      ]
+    },
+    "oldOverlappingSpecs": [
+      {
+        "layer": "surfaceTiles",
+        "spec": {
+          "id": "external-0256-0256",
+          "resource": "image/anatomy-reference/vascular-study/fullbody-015-candidate-v4b/external/external-0256-0256.png",
+          "sourceBox": [
+            296,
+            255,
+            507,
+            513
+          ],
+          "pixelSize": [
+            1688,
+            2064
+          ],
+          "coreBox": [
+            256,
+            256,
+            512,
+            512
+          ]
+        },
+        "path": "assets/image/anatomy-reference/vascular-study/fullbody-015-candidate-v4b/external/external-0256-0256.png",
+        "sha256": "81c81e586dbe8e32b032ac50be64cd1632c198a5ea7e8748c2f632f202cb635b",
+        "overlapsHeartBox": true,
+        "overlapsContextBox": true,
+        "replacementPolicy": "keep-entire-resource"
+      },
+      {
+        "layer": "surfaceTiles",
+        "spec": {
+          "id": "external-0512-0256",
+          "resource": "image/anatomy-reference/vascular-study/fullbody-015-candidate-v4b/external/external-0512-0256.png",
+          "sourceBox": [
+            511,
+            255,
+            723,
+            513
+          ],
+          "pixelSize": [
+            1696,
+            2064
+          ],
+          "coreBox": [
+            512,
+            256,
+            768,
+            512
+          ]
+        },
+        "path": "assets/image/anatomy-reference/vascular-study/fullbody-015-candidate-v4b/external/external-0512-0256.png",
+        "sha256": "56b54fa8f4aa042dc0433ea1feb84bdb785bce09f834d1613b8e32d674a6cbb1",
+        "overlapsHeartBox": true,
+        "overlapsContextBox": true,
+        "replacementPolicy": "keep-entire-resource"
+      },
+      {
+        "layer": "organs",
+        "spec": {
+          "id": "liver",
+          "resource": "image/anatomy-reference/vascular-study/fullbody-015-candidate-v4b/organs/liver.png",
+          "sourceBox": [
+            387,
+            463,
+            537,
+            576
+          ],
+          "pixelSize": [
+            1800,
+            1356
+          ]
+        },
+        "path": "assets/image/anatomy-reference/vascular-study/fullbody-015-candidate-v4b/organs/liver.png",
+        "sha256": "23edf61195c01a5fbda167da3b359f19018868bb1265a15cb77ae272e8052245",
+        "overlapsHeartBox": true,
+        "overlapsContextBox": true,
+        "replacementPolicy": "keep-entire-resource"
+      },
+      {
+        "layer": "organs",
+        "spec": {
+          "id": "lung_r",
+          "resource": "image/anatomy-reference/vascular-study/fullbody-015-candidate-v4b/organs/lung_r.png",
+          "sourceBox": [
+            366,
+            285,
+            484,
+            489
+          ],
+          "pixelSize": [
+            1416,
+            2448
+          ]
+        },
+        "path": "assets/image/anatomy-reference/vascular-study/fullbody-015-candidate-v4b/organs/lung_r.png",
+        "sha256": "5447fa62cb1fa6f20153f1fea1be71be3969cf0e92f26169706e121213d17792",
+        "overlapsHeartBox": true,
+        "overlapsContextBox": true,
+        "replacementPolicy": "keep-entire-resource"
+      },
+      {
+        "layer": "organs",
+        "spec": {
+          "id": "lung_l",
+          "resource": "image/anatomy-reference/vascular-study/fullbody-015-candidate-v4b/organs/lung_l.png",
+          "sourceBox": [
+            533,
+            285,
+            650,
+            490
+          ],
+          "pixelSize": [
+            1404,
+            2460
+          ]
+        },
+        "path": "assets/image/anatomy-reference/vascular-study/fullbody-015-candidate-v4b/organs/lung_l.png",
+        "sha256": "4e5998353b3e6acd86f90ca7ad170ae94a6bed037a5b71f611c4429d548fe493",
+        "overlapsHeartBox": true,
+        "overlapsContextBox": true,
+        "replacementPolicy": "keep-entire-resource"
+      },
+      {
+        "layer": "organs",
+        "spec": {
+          "id": "heart",
+          "resource": "image/anatomy-reference/vascular-study/fullbody-015-candidate-v4b/organs/heart.png",
+          "sourceBox": [
+            468,
+            326,
+            568,
+            467
+          ],
+          "pixelSize": [
+            1200,
+            1692
+          ]
+        },
+        "path": "assets/image/anatomy-reference/vascular-study/fullbody-015-candidate-v4b/organs/heart.png",
+        "sha256": "db0133e4146cb052cc58f4ad4c850b9fe1a1668a5e2526b5506df54097879e2d",
+        "overlapsHeartBox": true,
+        "overlapsContextBox": true,
+        "replacementPolicy": "replace-whole-heart-organ"
+      },
+      {
+        "layer": "organs",
+        "spec": {
+          "id": "stomach",
+          "resource": "image/anatomy-reference/vascular-study/fullbody-015-candidate-v4b/organs/stomach.png",
+          "sourceBox": [
+            464,
+            448,
+            644,
+            628
+          ],
+          "pixelSize": [
+            2160,
+            2160
+          ]
+        },
+        "path": "assets/image/anatomy-reference/vascular-study/fullbody-015-candidate-v4b/organs/stomach.png",
+        "sha256": "07e3c4b82538b5c892ea31e1a5f698fc7e941a9ebe18b39b46ce61b6b92269f0",
+        "overlapsHeartBox": true,
+        "overlapsContextBox": true,
+        "replacementPolicy": "keep-entire-resource"
+      },
+      {
+        "layer": "deepTiles",
+        "spec": {
+          "id": "deep-0256-0256",
+          "resource": "image/anatomy-reference/vascular-study/fullbody-015-candidate-v4b/deep/deep-0256-0256.png",
+          "sourceBox": [
+            456,
+            293,
+            513,
+            513
+          ],
+          "pixelSize": [
+            456,
+            1760
+          ],
+          "coreBox": [
+            256,
+            256,
+            512,
+            512
+          ]
+        },
+        "path": "assets/image/anatomy-reference/vascular-study/fullbody-015-candidate-v4b/deep/deep-0256-0256.png",
+        "sha256": "66c671f3c726e3a06c591e0c1d26515abaf167935c7c6a61726e704b4d5e5993",
+        "overlapsHeartBox": true,
+        "overlapsContextBox": true,
+        "replacementPolicy": "replace-heart-owned-pixels-only-preserve-all-outside-mask"
+      },
+      {
+        "layer": "deepTiles",
+        "spec": {
+          "id": "deep-0512-0256",
+          "resource": "image/anatomy-reference/vascular-study/fullbody-015-candidate-v4b/deep/deep-0512-0256.png",
+          "sourceBox": [
+            511,
+            341,
+            562,
+            513
+          ],
+          "pixelSize": [
+            408,
+            1376
+          ],
+          "coreBox": [
+            512,
+            256,
+            768,
+            512
+          ]
+        },
+        "path": "assets/image/anatomy-reference/vascular-study/fullbody-015-candidate-v4b/deep/deep-0512-0256.png",
+        "sha256": "a0a5479d200e7cfd9a9806f47a18ab60820a4c0419c0ee0c55116ee548777b54",
+        "overlapsHeartBox": true,
+        "overlapsContextBox": true,
+        "replacementPolicy": "replace-heart-owned-pixels-only-preserve-all-outside-mask"
+      },
+      {
+        "layer": "foregroundPatches",
+        "spec": {
+          "id": "arch-roof-and-junction",
+          "resource": "image/anatomy-reference/vascular-study/fullbody-015-candidate-v4b/foreground/arch-roof-and-junction.png",
+          "sourceBox": [
+            489,
+            319,
+            564,
+            374
+          ],
+          "pixelSize": [
+            1254,
+            920
+          ],
+          "coreBox": [
+            489,
+            319,
+            564,
+            374
+          ]
+        },
+        "path": "assets/image/anatomy-reference/vascular-study/fullbody-015-candidate-v4b/foreground/arch-roof-and-junction.png",
+        "sha256": "2e388b540cc7e4bf05bdbf03015745ca82af7e184c3ddb5b006ab5f33cce0711",
+        "overlapsHeartBox": true,
+        "overlapsContextBox": true,
+        "replacementPolicy": "replace-heart-owned-pixels-only-preserve-all-outside-mask"
+      },
+      {
+        "layer": "foregroundPatches",
+        "spec": {
+          "id": "heart-venous-junction",
+          "resource": "image/anatomy-reference/vascular-study/fullbody-015-candidate-v4b/foreground/heart-venous-junction.png",
+          "sourceBox": [
+            473,
+            370,
+            500,
+            410
+          ],
+          "pixelSize": [
+            1024,
+            1536
+          ],
+          "coreBox": [
+            473,
+            370,
+            500,
+            410
+          ]
+        },
+        "path": "assets/image/anatomy-reference/vascular-study/fullbody-015-candidate-v4b/foreground/heart-venous-junction.png",
+        "sha256": "bae9ac347c395b4bb4f81a8d33edc4b5a8c60f2598e3e3afdcbc55d33c2893b4",
+        "overlapsHeartBox": true,
+        "overlapsContextBox": true,
+        "replacementPolicy": "replace-heart-owned-pixels-only-preserve-all-outside-mask"
+      }
+    ],
+    "knownOldHeartForegroundIds": [
+      "arch-roof-and-junction",
+      "heart-venous-junction"
+    ],
+    "preserveOtherOrgansAndFoodAirUrine": true,
+    "preserveExteriorRoutePlacement": true,
+    "oldHeartAndNewHeartNeverDrawSimultaneously": true,
+    "integrationOwner": "root; shared map agent must finish or hand off before shared manifest publication"
+  },
+  "imageGenerationContext": {
+    "context": {
+      "path": "docs/heart-v1/baseline-current-composite-context.png",
+      "sha256": "da528607a2d479ae00d0b46195c2c0fefaf2058968136001a3c12073fa5ccb50",
+      "sourceBox": [
+        430,
+        280,
+        615,
+        495
+      ],
+      "pixelSize": [
+        1110,
+        1290
+      ]
+    },
+    "heart": {
+      "path": "docs/heart-v1/baseline-current-composite-heart.png",
+      "sha256": "b76f13d559478f3c988ad82f24e7c418b42e4442c87d3a10ad4fb68a76cebd2d",
+      "sourceBox": [
+        468,
+        326,
+        568,
+        467
+      ],
+      "pixelSize": [
+        1200,
+        1692
+      ]
+    },
+    "evidence": "Current ordered manifest composite without gameplay/HUD; offline evidence only.",
+    "instructions": [
+      "Use the broader image for vessel colors, material scale and light direction.",
+      "Use the fixed heart sourceBox and structural guide for chamber layout; preserve alpha registration.",
+      "Generate one coherent heart cutaway with four connected physiological chambers before deriving display layers.",
+      "Visible chamber walls, septum, valves and junction art must come from GPT imagery; guide vectors are geometry references only."
+    ]
+  },
+  "presentationContract": {
+    "chambers": [
+      "RA",
+      "RV",
+      "LA",
+      "LV"
+    ],
+    "playableEach": true,
+    "flowConnections": [
+      [
+        "RA",
+        "RV"
+      ],
+      [
+        "RV",
+        "pulmonary-arterial-output"
+      ],
+      [
+        "pulmonary-venous-return",
+        "LA"
+      ],
+      [
+        "LA",
+        "LV"
+      ],
+      [
+        "LV",
+        "systemic-aortic-output"
+      ]
+    ],
+    "forbiddenDirectConnections": [
+      [
+        "RA",
+        "LA"
+      ],
+      [
+        "RV",
+        "LV"
+      ]
+    ],
+    "cardiacWallCollision": "stable gameplay geometry; visual displacement never closes a certified doorway",
+    "pinRegions": [
+      "allCrossBoxPorts",
+      "blood-vessel collar band",
+      "septum collision safety band",
+      "playable chamber floors"
+    ],
+    "animation": "atrial phase followed by ventricular contraction and relaxation; no global image translation",
+    "zoomHandoff": [
+      0.085,
+      0.15
+    ],
+    "requireCurrentNativeEvidence": true
+  },
+  "resourceBudget": {
+    "baselineSpecsPerContext": 42,
+    "maxSpecsPerContext": 42,
+    "baselineDecodedRGBABytesPerContext": 265055880,
+    "maxDecodedRGBABytesPerContext": 301989888,
+    "mipmapsIncluded": false,
+    "gpuMeasured": false,
+    "preferredPolicy": "replace old heart image with one atlas, reuse a context-owned handle for subregions",
+    "noPerFrameImageCreation": true,
+    "noUnboundedSpriteFrameSequence": true
+  },
+  "acceptance": {
+    "interfaceStatus": "CAPTURED",
+    "anatomyStatus": "NOT_YET_ACCEPTED",
+    "gptArtStatus": "NOT_YET_ACCEPTED",
+    "traversalStatus": "NOT_YET_ACCEPTED",
+    "nativeStatus": "NOT_YET_ACCEPTED",
+    "old970TraversalReportDoesNotCertifyNewHeart": true,
+    "required": [
+      "four anatomically recognizable playable chambers",
+      "all cross-box ports pinned",
+      "no new unintended septum/crossing junctions",
+      "no legacy heart textures mixed over new chambers",
+      "two-way gameplay movement where permitted and combat inside every chamber",
+      "heartbeat without broken vessel collars",
+      "resource and original mode regression",
+      "fresh native screenshots at normal combat zoom and representative device DPR"
+    ]
+  },
+  "structureCandidate": {
+    "path": "docs/heart-v1/geometry/heart-four-chamber.json",
+    "sha256": "d76e7cc093f4f126f92cbef6a9499ccda0b9c0c888ad12d9c90f528363199c6d",
+    "schema": "heart-four-chamber-geometry/v1",
+    "coverageBox": [
+      468,
+      345,
+      568,
+      467
+    ],
+    "chamberAliases": {
+      "RA": "right_atrium",
+      "RV": "right_ventricle",
+      "LA": "left_atrium",
+      "LV": "left_ventricle"
+    },
+    "physiologicalExternalSections": [
+      {
+        "id": "systemic_return",
+        "source": [
+          483,
+          379
+        ],
+        "tangent": [
+          0,
+          -1
+        ],
+        "widthSource": 7,
+        "nodeId": "heart.v"
+      },
+      {
+        "id": "pulmonary_outflow",
+        "source": [
+          510,
+          355
+        ],
+        "tangent": [
+          0,
+          -1
+        ],
+        "widthSource": 4,
+        "nodeId": "pulmonary_trunk"
+      },
+      {
+        "id": "pulmonary_return_r",
+        "source": [
+          471.6707317073171,
+          410.9634146341464
+        ],
+        "tangent": [
+          -1,
+          0
+        ],
+        "widthSource": 4,
+        "nodeId": "lung_r.exit"
+      },
+      {
+        "id": "pulmonary_return_l",
+        "source": [
+          545,
+          414
+        ],
+        "tangent": [
+          1,
+          0
+        ],
+        "widthSource": 4,
+        "nodeId": "lung_l.exit"
+      },
+      {
+        "id": "aortic_outflow",
+        "source": [
+          533,
+          375
+        ],
+        "tangent": [
+          0,
+          -1
+        ],
+        "widthSource": 3,
+        "nodeId": "aortic_root"
+      }
+    ],
+    "localEdgeUpdateIndices": [
+      "1",
+      "2",
+      "5",
+      "8",
+      "146",
+      "150"
+    ],
+    "newLocalLaneIndices": [
+      203,
+      204,
+      205,
+      206,
+      207,
+      208,
+      209,
+      210
+    ],
+    "globalReferenceRoutesUntouched": true,
+    "runtimeLocalRoutesMayChangeOnlyInsideAuthorizedBox": true
+  }
+}

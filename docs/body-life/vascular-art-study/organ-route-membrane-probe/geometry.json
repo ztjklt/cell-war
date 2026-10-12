@@ -1,0 +1,755 @@
+{
+  "debug": [
+    {
+      "orig": [
+        7,
+        0
+      ],
+      "blood": true,
+      "gate": {
+        "px": 1160,
+        "y": 1212.0,
+        "x": 1155.2,
+        "py": 1212,
+        "ny": 1.2246467991473532e-16,
+        "radius": 3.8,
+        "nx": -1.0,
+        "name": "lung_l.tissue_access",
+        "edge": 7
+      },
+      "tissue": false,
+      "opts": [
+        7
+      ],
+      "x": 1152.5,
+      "lanes": {}
+    },
+    {
+      "orig": [
+        7,
+        0
+      ],
+      "blood": true,
+      "gate": {
+        "px": 1160,
+        "y": 1212.0,
+        "x": 1155.2,
+        "py": 1212,
+        "ny": 1.2246467991473532e-16,
+        "radius": 3.8,
+        "nx": -1.0,
+        "name": "lung_l.tissue_access",
+        "edge": 7
+      },
+      "tissue": true,
+      "opts": [
+        7
+      ],
+      "x": 1152.3,
+      "lanes": {}
+    },
+    {
+      "orig": [
+        7,
+        0
+      ],
+      "blood": true,
+      "gate": {
+        "px": 1160,
+        "y": 1212.0,
+        "x": 1155.2,
+        "py": 1212,
+        "ny": 1.2246467991473532e-16,
+        "radius": 3.8,
+        "nx": -1.0,
+        "name": "lung_l.tissue_access",
+        "edge": 7
+      },
+      "tissue": true,
+      "opts": [
+        7
+      ],
+      "x": 1152.27,
+      "lanes": {}
+    },
+    {
+      "orig": [
+        7,
+        0
+      ],
+      "blood": true,
+      "gate": {
+        "px": 1160,
+        "y": 1212.0,
+        "x": 1155.2,
+        "py": 1212,
+        "ny": 1.2246467991473532e-16,
+        "radius": 3.8,
+        "nx": -1.0,
+        "name": "lung_l.tissue_access",
+        "edge": 7
+      },
+      "tissue": true,
+      "opts": [
+        7
+      ],
+      "x": 1152.2,
+      "lanes": {}
+    },
+    {
+      "orig": [
+        7,
+        0
+      ],
+      "blood": true,
+      "gate": {
+        "px": 1160,
+        "y": 1212.0,
+        "x": 1155.2,
+        "py": 1212,
+        "ny": 1.2246467991473532e-16,
+        "radius": 3.8,
+        "nx": -1.0,
+        "name": "lung_l.tissue_access",
+        "edge": 7
+      },
+      "tissue": true,
+      "opts": {},
+      "x": 1152.1,
+      "lanes": {}
+    },
+    {
+      "orig": [
+        7,
+        0
+      ],
+      "blood": false,
+      "gate": {
+        "px": 1160,
+        "y": 1212.0,
+        "x": 1155.2,
+        "py": 1212,
+        "ny": 1.2246467991473532e-16,
+        "radius": 3.8,
+        "nx": -1.0,
+        "name": "lung_l.tissue_access",
+        "edge": 7
+      },
+      "tissue": true,
+      "opts": [
+        0
+      ],
+      "x": 1152,
+      "lanes": {}
+    },
+    {
+      "orig": [
+        7,
+        0
+      ],
+      "blood": false,
+      "gate": {
+        "px": 1160,
+        "y": 1212.0,
+        "x": 1155.2,
+        "py": 1212,
+        "ny": 1.2246467991473532e-16,
+        "radius": 3.8,
+        "nx": -1.0,
+        "name": "lung_l.tissue_access",
+        "edge": 7
+      },
+      "tissue": true,
+      "opts": [
+        0
+      ],
+      "x": 1151.9,
+      "lanes": {}
+    }
+  ],
+  "gates": [
+    {
+      "clear": true,
+      "kind": "scout",
+      "id": "lung_r"
+    },
+    {
+      "clear": true,
+      "kind": "worker",
+      "id": "lung_r"
+    },
+    {
+      "clear": true,
+      "kind": "siege",
+      "id": "lung_r"
+    },
+    {
+      "clear": true,
+      "kind": "scout",
+      "id": "lung_l"
+    },
+    {
+      "clear": true,
+      "kind": "worker",
+      "id": "lung_l",
+      "firstBlocked": {
+        "y": 1212.0,
+        "t": 0.79,
+        "tissueLegal": true,
+        "x": 1152.1,
+        "bloodLegal": true
+      }
+    },
+    {
+      "clear": false,
+      "kind": "siege",
+      "id": "lung_l",
+      "firstBlocked": {
+        "y": 1212.0,
+        "t": 0.74,
+        "tissueLegal": false,
+        "x": 1152.6,
+        "bloodLegal": true
+      }
+    },
+    {
+      "clear": true,
+      "kind": "scout",
+      "id": "brain_r"
+    },
+    {
+      "clear": true,
+      "kind": "worker",
+      "id": "brain_r"
+    },
+    {
+      "clear": true,
+      "kind": "siege",
+      "id": "brain_r"
+    },
+    {
+      "clear": true,
+      "kind": "scout",
+      "id": "brain_l"
+    },
+    {
+      "clear": true,
+      "kind": "worker",
+      "id": "brain_l"
+    },
+    {
+      "clear": true,
+      "kind": "siege",
+      "id": "brain_l",
+      "firstBlocked": {
+        "y": 706.9519942942605,
+        "t": 0.67,
+        "tissueLegal": true,
+        "x": 1039.948816802523,
+        "bloodLegal": true
+      }
+    },
+    {
+      "clear": false,
+      "kind": "scout",
+      "id": "liver",
+      "firstBlocked": {
+        "y": 1499.7573593128807,
+        "t": 0.75,
+        "tissueLegal": false,
+        "x": 966.2426406871193,
+        "bloodLegal": true
+      }
+    },
+    {
+      "clear": false,
+      "kind": "worker",
+      "id": "liver",
+      "firstBlocked": {
+        "y": 1499.8704963978705,
+        "t": 0.73,
+        "tissueLegal": false,
+        "x": 966.1295036021295,
+        "bloodLegal": true
+      }
+    },
+    {
+      "clear": false,
+      "kind": "siege",
+      "id": "liver",
+      "firstBlocked": {
+        "y": 1500.20990765284,
+        "t": 0.67,
+        "tissueLegal": false,
+        "x": 965.7900923471599,
+        "bloodLegal": true
+      }
+    },
+    {
+      "clear": true,
+      "kind": "scout",
+      "id": "stomach"
+    },
+    {
+      "clear": true,
+      "kind": "worker",
+      "id": "stomach"
+    },
+    {
+      "clear": false,
+      "kind": "siege",
+      "id": "stomach",
+      "firstBlocked": {
+        "y": 1521.79009234716,
+        "t": 0.67,
+        "tissueLegal": false,
+        "x": 1128.20990765284,
+        "bloodLegal": true
+      }
+    },
+    {
+      "clear": true,
+      "kind": "scout",
+      "id": "pancreas"
+    },
+    {
+      "clear": true,
+      "kind": "worker",
+      "id": "pancreas"
+    },
+    {
+      "clear": false,
+      "kind": "siege",
+      "id": "pancreas",
+      "firstBlocked": {
+        "y": 1671.0480057057396,
+        "t": 0.67,
+        "tissueLegal": false,
+        "x": 1091.948816802523,
+        "bloodLegal": true
+      }
+    },
+    {
+      "clear": true,
+      "kind": "scout",
+      "id": "small_intestine"
+    },
+    {
+      "clear": true,
+      "kind": "worker",
+      "id": "small_intestine"
+    },
+    {
+      "clear": true,
+      "kind": "siege",
+      "id": "small_intestine"
+    },
+    {
+      "clear": true,
+      "kind": "scout",
+      "id": "colon_proximal"
+    },
+    {
+      "clear": true,
+      "kind": "worker",
+      "id": "colon_proximal"
+    },
+    {
+      "clear": true,
+      "kind": "siege",
+      "id": "colon_proximal"
+    },
+    {
+      "clear": false,
+      "kind": "scout",
+      "id": "colon_distal",
+      "firstBlocked": {
+        "y": 1839.7573593128807,
+        "t": 0.75,
+        "tissueLegal": false,
+        "x": 1129.7573593128807,
+        "bloodLegal": true
+      }
+    },
+    {
+      "clear": false,
+      "kind": "worker",
+      "id": "colon_distal",
+      "firstBlocked": {
+        "y": 1839.8704963978705,
+        "t": 0.73,
+        "tissueLegal": false,
+        "x": 1129.8704963978705,
+        "bloodLegal": true
+      }
+    },
+    {
+      "clear": false,
+      "kind": "siege",
+      "id": "colon_distal",
+      "firstBlocked": {
+        "y": 1840.20990765284,
+        "t": 0.67,
+        "tissueLegal": false,
+        "x": 1130.20990765284,
+        "bloodLegal": true
+      }
+    },
+    {
+      "clear": true,
+      "kind": "scout",
+      "id": "kidney_r"
+    },
+    {
+      "clear": true,
+      "kind": "worker",
+      "id": "kidney_r"
+    },
+    {
+      "clear": true,
+      "kind": "siege",
+      "id": "kidney_r"
+    },
+    {
+      "clear": true,
+      "kind": "scout",
+      "id": "kidney_l"
+    },
+    {
+      "clear": true,
+      "kind": "worker",
+      "id": "kidney_l"
+    },
+    {
+      "clear": true,
+      "kind": "siege",
+      "id": "kidney_l"
+    },
+    {
+      "clear": true,
+      "kind": "scout",
+      "id": "bladder"
+    },
+    {
+      "clear": true,
+      "kind": "worker",
+      "id": "bladder"
+    },
+    {
+      "clear": true,
+      "kind": "siege",
+      "id": "bladder"
+    },
+    {
+      "clear": true,
+      "kind": "scout",
+      "id": "coronary"
+    },
+    {
+      "clear": true,
+      "kind": "worker",
+      "id": "coronary"
+    },
+    {
+      "clear": true,
+      "kind": "siege",
+      "id": "coronary"
+    }
+  ],
+  "sealed": [
+    {
+      "kind": "scout",
+      "id": "lung_r",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "worker",
+      "id": "lung_r",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "siege",
+      "id": "lung_r",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "scout",
+      "id": "lung_l",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "worker",
+      "id": "lung_l",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "siege",
+      "id": "lung_l",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "scout",
+      "id": "brain_r",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "worker",
+      "id": "brain_r",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "siege",
+      "id": "brain_r",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "scout",
+      "id": "brain_l",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "worker",
+      "id": "brain_l",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "siege",
+      "id": "brain_l",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "scout",
+      "id": "liver",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "worker",
+      "id": "liver",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "siege",
+      "id": "liver",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "scout",
+      "id": "stomach",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "worker",
+      "id": "stomach",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "siege",
+      "id": "stomach",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "scout",
+      "id": "pancreas",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "worker",
+      "id": "pancreas",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "siege",
+      "id": "pancreas",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "scout",
+      "id": "small_intestine",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "worker",
+      "id": "small_intestine",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "siege",
+      "id": "small_intestine",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "scout",
+      "id": "colon_proximal",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "worker",
+      "id": "colon_proximal",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "siege",
+      "id": "colon_proximal",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "scout",
+      "id": "colon_distal",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "worker",
+      "id": "colon_distal",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "siege",
+      "id": "colon_distal",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "scout",
+      "id": "kidney_r",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "worker",
+      "id": "kidney_r",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "siege",
+      "id": "kidney_r",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "scout",
+      "id": "kidney_l",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "worker",
+      "id": "kidney_l",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "siege",
+      "id": "kidney_l",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "scout",
+      "id": "bladder",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "worker",
+      "id": "bladder",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "siege",
+      "id": "bladder",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "scout",
+      "id": "coronary",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "worker",
+      "id": "coronary",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    },
+    {
+      "kind": "siege",
+      "id": "coronary",
+      "originalExit": false,
+      "wallRejected": true,
+      "rejected": true
+    }
+  ]
+}
