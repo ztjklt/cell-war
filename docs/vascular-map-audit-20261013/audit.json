@@ -1,0 +1,222 @@
+{
+  "schema": "current-vascular-map-audit/v1",
+  "date": "2026-10-13",
+  "runtimeModified": false,
+  "nativeVisualEvidence": false,
+  "basis": "Current production Lua rendered through offline NanoVG/Cairo adapter; actual production movement in isolated test state.",
+  "runtimeGraphEdges": 211,
+  "frameCoverage": [
+    "whole body",
+    "head/neck",
+    "heart/lungs",
+    "upper abdomen",
+    "large/small intestines",
+    "bladder/pelvis",
+    "both arms",
+    "legs",
+    "both hands",
+    "both feet"
+  ],
+  "findings": [
+    {
+      "id": "A1",
+      "priority": 1,
+      "region": "small_intestine",
+      "kind": "visual_false_junction",
+      "sourcePoint": [
+        549.22,
+        665.54
+      ],
+      "lanes": [
+        134,
+        166,
+        188
+      ],
+      "evidence": "The venous endpoint is 0.0537 source units from unrelated artery 134. The named graph has no arterial/venous junction there, but the picture looks joined.",
+      "requiredWork": "Separate the projected vein endpoint from that artery, updating route geometry, safe blood domains and display from the same data; preserve named circulation relationships."
+    },
+    {
+      "id": "A2",
+      "priority": 1,
+      "region": "small_intestine/large_intestine",
+      "kind": "gate_art_navigation_mismatch",
+      "evidence": "All 16 actual production movement cases through 4 intestinal gates pass, while gate closeups show no legible membrane opening at the certified anchor.",
+      "requiredWork": "Derive the painted membrane lip/opening and physical throat from the same gate contract."
+    },
+    {
+      "id": "A3",
+      "priority": 1,
+      "region": "large_intestine",
+      "kind": "route_and_bank_quality",
+      "evidence": "Large external venous loop, sharp supply turn on the left, thin connector handoffs and gut-roof cuts obscure supply, exchange and return.",
+      "requiredWork": "Simplify regional approaches and joint geometry before repainting material; assign a clear bridge/underpass at independent crossings."
+    },
+    {
+      "id": "A4",
+      "priority": 2,
+      "region": "liver/stomach/pancreas/kidneys",
+      "kind": "approach_and_depth_quality",
+      "evidence": "Dense projected artery/vein crossings, abrupt short shafts and poorly explained hiding around the pancreas and renal approaches remain visible.",
+      "requiredWork": "Resolve regional approach ownership and crossings together with organ gates."
+    },
+    {
+      "id": "A5",
+      "priority": 2,
+      "region": "heart/lungs",
+      "kind": "remaining_peripheral_art_quality",
+      "evidence": "Small notch at the superior left red arch, texture phase changes on the descending cava and confusing pulmonary approaches remain in the current render.",
+      "requiredWork": "Keep accepted chamber art; review external approaches as complete registered routes and eliminate legacy conflicting pixels."
+    },
+    {
+      "id": "A6",
+      "priority": 3,
+      "region": "brain/neck/bladder/pelvis",
+      "kind": "interface_legibility",
+      "evidence": "Brain-base loops are crowded; pelvic artery has a conspicuous return bend around the bladder roof.",
+      "requiredWork": "Clarify entrances, returned branches and foreground passage ownership."
+    },
+    {
+      "id": "A7",
+      "priority": 3,
+      "region": "hands/feet",
+      "kind": "terminal_layout_quality",
+      "evidence": "Finger loops end in the palm rather than follow finger locations; foot branches bunch at the mid-foot and contain angular bends. Arm and leg main conduits are comparatively continuous.",
+      "requiredWork": "Align terminal route positions with the body landmarks, then regenerate pipe art from those routes."
+    }
+  ],
+  "intestinalGateMotion": {
+    "passed": 16,
+    "total": 16,
+    "gateCount": 4,
+    "kinds": [
+      "scout",
+      "siege"
+    ],
+    "bidirectional": true
+  },
+  "allSelectedOrganGateMotion": {
+    "passed": 36,
+    "total": 36
+  },
+  "typedIntestinalCirculation": [
+    {
+      "organ": "small_intestine",
+      "arterialSupply": [
+        151,
+        9,
+        10,
+        127,
+        130,
+        187
+      ],
+      "localExchange": [
+        131
+      ],
+      "venousReturn": [
+        188,
+        166,
+        169,
+        119,
+        182,
+        120,
+        121,
+        181,
+        122,
+        15
+      ],
+      "connected": true
+    },
+    {
+      "organ": "colon_proximal",
+      "arterialSupply": [
+        151,
+        9,
+        10,
+        127,
+        132,
+        189
+      ],
+      "localExchange": [
+        133
+      ],
+      "venousReturn": [
+        190,
+        167,
+        169,
+        119,
+        182,
+        120,
+        121,
+        181,
+        122,
+        15
+      ],
+      "connected": true
+    },
+    {
+      "organ": "colon_distal",
+      "arterialSupply": [
+        151,
+        9,
+        10,
+        11,
+        128,
+        134,
+        191
+      ],
+      "localExchange": [
+        135
+      ],
+      "venousReturn": [
+        192,
+        168,
+        170,
+        171,
+        119,
+        182,
+        120,
+        121,
+        181,
+        122,
+        15
+      ],
+      "connected": true
+    }
+  ],
+  "methodAudit": {
+    "priorAbdominalPolish": "Active abdominalMixedNodeRefinement explicitly freezes all 202 routes and alpha; it is material repair, not a route/width/port redesign.",
+    "realHeartStructureChange": "Layout 4 adds superior cava lane 211 and moves 4 upper veins to a true common named junction; it also changes the left pulmonary arterial approach.",
+    "renderingSources": [
+      "external vessel tiles",
+      "organ textures with embedded blood",
+      "old v4j intestinal mouth foreground patches"
+    ],
+    "recommendedSequence": [
+      "regional graph and widths",
+      "real joint and membrane gates",
+      "safe blood domains/commands",
+      "one shared display/occlusion contract",
+      "registered material regeneration",
+      "cell traversal and visual acceptance"
+    ]
+  },
+  "hashesMatchAuditStart": true,
+  "falseJunctionDirectSweep": [
+    {
+      "kind": "scout",
+      "startLane": 166,
+      "targetLane": 134,
+      "startLegal": true,
+      "directCrossLaneAllowed": false,
+      "returnedLane": 134
+    },
+    {
+      "kind": "siege",
+      "startLane": 166,
+      "targetLane": 134,
+      "startLegal": true,
+      "directCrossLaneAllowed": false,
+      "returnedLane": 134
+    }
+  ]
+}

@@ -28,6 +28,12 @@ local function preparePins(mesh,contract)
   sections[#sections+1]={id=c.id,kind='proximal',points={
    {a[1]-n[2]*w,a[2]+n[1]*w},{a[1]+n[2]*w,a[2]-n[1]*w}}}
  end
+ for _,ring in ipairs(contract.fixedBloodContours or{})do
+  local last=ring.outer[#ring.outer]
+  for _,point in ipairs(ring.outer)do
+   sections[#sections+1]={id='fixed-blood',kind='external',points={last,point}};last=point
+  end
+ end
  local b,registered=contract.sourceBox,Motion.crossBoxSourceBox
  local same=true;for i=1,4 do if b[i]~=registered[i]then same=false end end
  local distant=contract.crossBoxSections or (same and Motion.crossBoxSections or {})
