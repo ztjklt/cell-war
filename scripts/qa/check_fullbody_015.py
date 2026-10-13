@@ -784,14 +784,18 @@ def narrow_mouth_lip_contract(spec,asset,manifest,rgba):
 
 
 def effective_asset_specs():
-    """Current HeartVisualData replaces one existing slot; count stays fixed."""
+    """Match the registered heart and bowel substitutions without adding slots."""
     lua=gastric.runtime();data,_=asset_specs()
     effective=gastric.convert(lua.execute("""
-      local D,H=require('war.FullBodyMapArtData'),require('war.HeartVisualData');local out={}
-      if D.quietBase then local q={};for k,v in pairs(D.quietBase)do q[k]=v end;q.layer='quietBase';out[#out+1]=q end
+      local D,H=require('war.FullBodyMapArtData'),require('war.HeartVisualData')
+      local B=require('war.BowelVisual');local out={}
+      if D.quietBase then local q={};for k,v in pairs(H.replaceQuiet(D.quietBase))do q[k]=v end;q.layer='quietBase';out[#out+1]=q end
       for _,layer in ipairs({'surfaceTiles','organs','deepTiles','junctions','foregroundPatches'})do
        for _,spec in ipairs(D[layer]or{})do
-        local q={};for k,v in pairs(layer=='organs'and H.replace(spec)or spec)do q[k]=v end
+        local current=layer=='organs'and H.replace(spec)or spec
+        if layer=='foregroundPatches'and H.replacePatch then current=H.replacePatch(current)end
+        current=B.replace(current)
+        local q={};for k,v in pairs(current)do q[k]=v end
         q.layer=layer;out[#out+1]=q
        end
       end
@@ -1581,7 +1585,7 @@ def resource_case(specs,action):
 
 
 def resources():
-    data,declared_specs=asset_specs();data,specs=effective_asset_specs();before=hashes(['FullBodyMapArt','FullBodyMapArtData','HeartVisualData','HeartArt','HeartDisplayTransform','HeartBattlefieldData'])
+    data,declared_specs=asset_specs();data,specs=effective_asset_specs();before=hashes(['FullBodyMapArt','FullBodyMapArtData','HeartVisualData','HeartArt','HeartDisplayTransform','HeartBattlefieldData','BowelVisual','BowelVisualData','BowelBattlefieldData'])
     manifest_path=DOC/'bake/manifest.json';manifest_hash=sha(manifest_path)
     before[str(manifest_path.relative_to(ROOT))]=manifest_hash
     files=[];bytes_rgba=0

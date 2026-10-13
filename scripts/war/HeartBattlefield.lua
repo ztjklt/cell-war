@@ -1,7 +1,9 @@
 -- Four blood cavities and four open valve passages in the registered heart.
 -- The frozen 202-edge source remains unchanged; this adapter owns local joins.
+---@class CardiacVesselEdge: VesselEdge
+---@field stableId string?
 local D=require('war.HeartBattlefieldData')
-local H={data=D,firstChamberLane=203,lastLocalLane=210}
+local H={data=D,firstChamberLane=203,lastLocalLane=211}
 local cached=setmetatable({},{__mode='k'})
 local function distance(x,y,a,b)
  local dx,dy=b[1]-a[1],b[2]-a[2];local length=dx*dx+dy*dy
@@ -32,7 +34,7 @@ function H.net(base)
  end
  for i,e in ipairs(base.edges)do local q={};for k,v in pairs(e)do q[k]=v end;net.edges[i]=q end
  local function install(lane,spec)
-  local e=net.edges[lane]or{};net.edges[lane]=e
+  local e=(net.edges[lane]or{}) --[[@as CardiacVesselEdge]];net.edges[lane]=e;e.id=e.id or lane
   e.a,e.b=assert(ids[spec.a]),assert(ids[spec.b]);e.width=spec.widthSource*2
   e.name=e.name or spec.id;e.stableId=e.stableId or spec.id;e.system=spec.system or e.system
   e.oxygen=spec.oxygen or e.oxygen;e.points={};e.arc={0};e.length=0;e.curved=false;e.cubics=nil
@@ -49,7 +51,7 @@ function H.net(base)
  end
  function net.distance(lane,x,y,near)
   if not H.isLocalLane(lane)then return base.distance(lane,x,y,near)end
-  local e=net.edges[lane];local best,px,py,index,t=math.huge,0,0,1,0
+  local e=net.edges[lane] --[[@as CardiacVesselEdge]];local best,px,py,index,t=math.huge,0,0,1,0
   for i=2,#e.points do local dd,ax,ay,at=distance(x,y,e.points[i-1],e.points[i])
    if dd<best then best,px,py,index,t=dd,ax,ay,i-1,at end
   end
@@ -120,12 +122,52 @@ function H.migrateEntity(s,e)
  if not H.enabled(s)or e.category~='unit'then return false end
  local O=require('war.OrganBattlefield');local lane=e.vesselLane or 0
  if not(H.insideOuter(e.x,e.y)or H.isLocalLane(lane))then return false end
+ local trunk=D.legacySharedTrunkMigration
+ if trunk and (e.y-512)*.5>=trunk.sourceY[1]and (e.y-512)*.5<=trunk.sourceY[2]then
+  for _,oldLane in ipairs(trunk.lanes)do
+   if lane==oldLane then
+    local dd,px,py=O.net(s).distance(trunk.lane,e.x,e.y)
+    if dd<=trunk.maxDistanceSource*2 and O.pointAllowed(s,e,px,py,trunk.lane)then
+     local Collision=require('war.CellCollision')
+     local function free(x,y)
+      if not O.pointAllowed(s,e,x,y,trunk.lane)then return false end
+      for _,other in pairs(s.entities)do
+       if other.id~=e.id and other.category=='unit'and other.vesselLane==trunk.lane and other.hp>0 then
+        local radius=Collision.radius(e)+Collision.radius(other)+.08
+        if (x-other.x)^2+(y-other.y)^2<radius*radius then return false end
+       end
+      end
+      return true
+     end
+     if free(e.x,e.y)then px,py=e.x,e.y
+     elseif not free(px,py)then
+      local found=false
+      for ring=1,24 do
+       for _,dy in ipairs({-ring*2.6,ring*2.6,0})do
+        for _,dx in ipairs({0,-2.6,2.6,-5.2,5.2})do
+         if free(px+dx,py+dy)then px,py=px+dx,py+dy;found=true;break end
+        end
+        if found then break end
+       end
+       if found then break end
+      end
+     end
+     e.x,e.y,e.vesselLane=px,py,trunk.lane;e.orders={};e.path={};e.longRoute=nil
+     e.pathPending=false;e.pathFailed=false;e.pathIndex=1;e.orderToken=(e.orderToken or 0)+1
+     return true
+    end
+   end
+  end
+ end
  if O.pointAllowed(s,e,e.x,e.y,lane)then return false end
- local x,y,wanted=e.x,e.y,O.lane(s,e,e.x,e.y)
- if wanted==nil and H.isLocalLane(lane)then
+ ---@type number, number, number?
+ local x,y,wanted=e.x,e.y,nil
+ -- A relocated blood unit keeps its compartment before tissue/chamber fallback.
+ if lane>0 and H.isLocalLane(lane)then
   local _,px,py=O.net(s).distance(lane,e.x,e.y)
   if O.pointAllowed(s,e,px,py,lane)then x,y,wanted=px,py,lane end
  end
+ if wanted==nil then wanted=O.lane(s,e,e.x,e.y)end
  if wanted==nil then
   x,y,wanted=O.projectTarget(s,e,e.x,e.y,nil,32)
  end

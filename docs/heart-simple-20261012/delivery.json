@@ -1,61 +1,126 @@
 {
-  "status": "HEART_ART_AND_FOUR_CONNECTION_GROUPS_ACTIVE_OFFLINE_VERIFIED",
-  "nativeEvidence": false,
-  "minZoom": 0.15,
-  "atlasResource": "image/anatomy-reference/vascular-study/heart-simple-20261012/ports-v4/heart-connected-atlas-v1.png",
-  "atlasSha256": "3fba8bc9f6fdbe7d4292ec43a19d60dbccfb725f04579c45c4af70e88abd5326",
-  "activeHeartVisualSha256": "fc24b87ddee2cb4facc726a30bb39774c688e3384dfe903fe0c520d31df7c9a7",
-  "activeRendererSha256": "4ad4a6d432567ac2016f7bc2aedcb56a7b7578c364d1051115406b48eda40f1d",
-  "registrationReport": "docs/heart-simple-20261012/ports-v4/registration.json",
-  "connectionGroups": [
-    {
-      "id": "systemic-return",
-      "target": "right_atrium",
-      "lanes": [
-        1,
-        15,
-        17
-      ]
-    },
-    {
-      "id": "pulmonary-return",
-      "target": "left_atrium",
-      "lanes": [
-        5,
-        8
-      ]
-    },
-    {
-      "id": "pulmonary-outflow",
-      "target": "right_ventricle",
-      "lanes": [
-        2,
-        3,
-        6,
-        208
-      ]
-    },
-    {
-      "id": "aortic-outflow",
-      "target": "left_ventricle",
-      "lanes": [
-        150,
-        210,
-        151
-      ]
-    }
+  "status": "CAVA_TRANSITION_POLISHED_NATIVE_ASSET_LOADED",
+  "nativeVisualEvidence": false,
+  "detailsMinZoom": null,
+  "sameVascularRouteAcrossZooms": true,
+  "cardiacPanels": 1,
+  "simultaneouslySelectedCardiacPanels": 1,
+  "cardiacBackgroundIsTransparent": false,
+  "legacyTotalMapNotPaintedWhileReady": true,
+  "sourceBox": [
+    432,
+    306,
+    580,
+    480
   ],
-  "renderSamples": 63,
-  "unitDepthSamples": 829,
-  "navigationPassed": 46,
-  "saveRuntimePassed": 33,
-  "navigationGeometryUnchanged": true,
-  "reusedNavigationReport": "docs/heart-simple-20261012/candidate-v1/navigation/production-report.json",
-  "reusedSaveReport": "docs/heart-simple-20261012/candidate-v1/save-runtime-report.json",
-  "lifecycleSpecsPerContext": 43,
-  "decodedBytesPerContext": 289830280,
-  "crossBoxRegistrationByteExact": true,
-  "previewIntent": "Remain stopped until the user requests a preview.",
-  "previewState": "stopped",
-  "deliveryFrame": "docs/heart-simple-20261012/ports-v4/full-heart-015.png"
+  "atlasResource": "image/anatomy-reference/vascular-study/heart-simple-20261012/cava-transition-v13/heart-continuous-cava-v1.png",
+  "atlasSha256": "026bd0a1a6a0606adee9adcf0bbee14327cc73159decf1e42067c74818e20919",
+  "quietResource": "image/anatomy-reference/vascular-study/heart-simple-20261012/unified-v5/quiet-body-cardiac-clean-v1.png",
+  "quietSha256": "9cab58d85731501074dc849fc9804b9468bb1d9f36ffeefd0c23d980e6a31f43",
+  "activeModules": {
+    "main": "26ea0cf0072f322c339240716e59829a3b935362d8c8af21e2cd538a3b57ec61",
+    "HUD": "4e1ec1e375db96ee735ea4e8cb40ec4a9a8cb2564486eb20a801e6f4332bd8ea",
+    "Input": "1ca9c5ff3692593d48a5524a336d762bc2849ad9745839ffa1db05803d255b5f",
+    "Render": "f9c36891b46ceb48a726217b8e1b3714e7ab6c836563672f737a9853f78fd26b",
+    "ReferenceArt": "c9c0da7f3ea6e95dfee7b37fad5c47fd205c3c2006fb197cd09c0a0e314ac941",
+    "HeartVisualData": "7a47802609c04c7f1019fb5a40a5f502c4c345cb1c837d96b97a1a8109b2dcbd",
+    "AnatomyPerspective": "a91496937c26961855e4f30b57f00a6ecbde6346cf159ea6cc8eb26fcda1824c",
+    "FullBodyMapArt": "e2ebd8857a2e1d8324a01964a1a95f773243fa7b4ec34b41b1eb66309351f55a",
+    "HeartBattlefieldData": "fa4b5ffadda24f9569808bbe821ee678e295acc24a2994cf344e50385baf2c47",
+    "HeartBattlefield": "8b04aa033c2ec5552917c335de53f2cabd2f839bc31a45d433da48ac74000a0d",
+    "BodyLifeFlow": "d6d93e33c8e5209e183807666e5a1cd5a7b47ed32f02d7aea88d03b8519efffe",
+    "HeartDisplayTransform": "56010c358ecc5e9d613b599b0a351ba9d8b0b67454bf85957fda150863673c95"
+  },
+  "cardiacNavigationChecks": 46,
+  "mainTrunkChecks": 24,
+  "organInterfaceSweeps": 36,
+  "saveCompatibilityChecks": 55,
+  "oldLayout2MigrationChecks": 2,
+  "renderSamples": 24,
+  "flowSamples": 6684,
+  "flowLumenFailures": 0,
+  "decodedBytesPerContext": 272166664,
+  "resourceSpecsPerContext": 43,
+  "nativePreview": {
+    "sessionId": "a760af3b-9cef-4fce-a7b5-ba5e74a3fa01",
+    "reloadId": 2,
+    "runtimePid": 13597,
+    "processAlive": true,
+    "runtimeGameReady": true,
+    "heartDownloaded": true,
+    "preparedPayloadsMatchActive": true,
+    "payloadHashes": {
+      "scripts/war/HeartVisualData.lua": "7a47802609c04c7f1019fb5a40a5f502c4c345cb1c837d96b97a1a8109b2dcbd",
+      "assets/image/anatomy-reference/vascular-study/heart-simple-20261012/cava-transition-v13/heart-continuous-cava-v1.png": "026bd0a1a6a0606adee9adcf0bbee14327cc73159decf1e42067c74818e20919",
+      "scripts/war/HeartBattlefieldData.lua": "fa4b5ffadda24f9569808bbe821ee678e295acc24a2994cf344e50385baf2c47",
+      "scripts/war/HeartBattlefield.lua": "8b04aa033c2ec5552917c335de53f2cabd2f839bc31a45d433da48ac74000a0d",
+      "scripts/war/HeartDisplayTransform.lua": "56010c358ecc5e9d613b599b0a351ba9d8b0b67454bf85957fda150863673c95",
+      "scripts/war/FullBodyMapArt.lua": "e2ebd8857a2e1d8324a01964a1a95f773243fa7b4ec34b41b1eb66309351f55a",
+      "scripts/war/BodyLifeFlow.lua": "d6d93e33c8e5209e183807666e5a1cd5a7b47ed32f02d7aea88d03b8519efffe",
+      "scripts/war/Input.lua": "1ca9c5ff3692593d48a5524a336d762bc2849ad9745839ffa1db05803d255b5f"
+    },
+    "ownedLogs": [
+      "/Users/jitian/.taptap-maker/runtime/runtime-a3589e34-437d-4631-9dbc-17b5df962b05/logs/game/urhox_runtime-2026-10-13 13_58_39_233.log",
+      "/Users/jitian/.taptap-maker/runtime/runtime-a3589e34-437d-4631-9dbc-17b5df962b05/logs/lua/lua-2026-10-13 13_58_40_163.log"
+    ],
+    "nativeVisualEvidence": false,
+    "luaErrors": false,
+    "knownEnvironmentError": "Cube/Day/DaySpecularHDR_QualityLow.dds missing"
+  },
+  "registrationReport": "docs/heart-simple-20261012/cava-transition-v13/registration.json",
+  "deliveryFrame": "docs/heart-simple-20261012/cava-transition-v13/map-after.png",
+  "previewEvidence": "docs/heart-simple-20261012/cava-transition-v13/preview-evidence.json",
+  "knownEnvironmentError": "Cube/Day/DaySpecularHDR_QualityLow.dds missing",
+  "lspDiagnostics": [
+    "docs/heart-simple-20261012/left-vessels-v11/lsp-HeartBattlefieldData.json",
+    "docs/heart-simple-20261012/left-vessels-v11/lsp-HeartBattlefield.json",
+    "docs/heart-simple-20261012/left-vessels-v11/lsp-HeartDisplayTransform.json",
+    "docs/heart-simple-20261012/left-vessels-v11/lsp-FullBodyMapArt.json",
+    "docs/heart-simple-20261012/left-vessels-v11/lsp-BodyLifeFlow.json",
+    "docs/heart-simple-20261012/left-vessels-v11/lsp-Input.json",
+    "docs/heart-simple-20261012/cava-transition-v13/lsp-HeartVisualData.json"
+  ],
+  "imagegenPromptRecord": "docs/heart-simple-20261012/left-vessels-v11/imagegen-prompts.txt",
+  "overviewSource": "assets/image/anatomy-reference/reference.png",
+  "overviewRestorationReport": null,
+  "overviewFrame": "docs/heart-simple-20261012/perspective-v7/original-body.png",
+  "automaticArtSwitchByZoom": false,
+  "perspectiveButton": "切换透视",
+  "defaultPerspective": "map",
+  "originalImageAdditionalBytesPerContext": 6291456,
+  "cardiacPerimeterResource": "image/anatomy-reference/vascular-study/heart-simple-20261012/left-vessels-v11/heart-perimeter-banks-v11.png",
+  "cardiacPerimeterSha256": "f6d0057a0aab385b203bad2a406f8490d89285c23cb7ba8c34270925faabbed4",
+  "fullbodyCellChains": 4,
+  "ordinaryClickChains": 4,
+  "pulmonaryVeinContinuousSamples": 737,
+  "pulmonaryFlowSamples": 452,
+  "targetedFlowLumenSamples": 1440,
+  "currentAcceptanceReports": [
+    "docs/heart-simple-20261012/cava-transition-v13/art-check.json",
+    "docs/heart-simple-20261012/left-vessels-v11/navigation-check.json",
+    "docs/heart-simple-20261012/cava-transition-v13/preview-evidence.json"
+  ],
+  "junctionMovementChecks": 20,
+  "junctionPaintFloorSamples": {
+    "vein": 1673,
+    "artery": 469
+  },
+  "pixelSize": [
+    1480,
+    1692
+  ],
+  "heartLayoutRevision": 4,
+  "global202EdgesUnchanged": true,
+  "optedVesselCount": 211,
+  "singleUpperCavaLane": 211,
+  "leftVesselNavigationChecks": 20,
+  "leftVesselNormalClickChains": 2,
+  "oldLayout3MigrationFixtures": 14,
+  "newCavaSaveRoundtrips": 2,
+  "flattenedMapMarginRemoved": true,
+  "cardiacArtRevision": 16,
+  "cardiacCoreBackgroundMayContainScopedCleanup": true,
+  "addedLowerLungMarginIsTransparent": true,
+  "seamComparisonFrame": "docs/heart-simple-20261012/cava-transition-v13/transition-before-after.png",
+  "premultipliedAlphaCompositing": true
 }

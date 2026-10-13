@@ -16,6 +16,7 @@ import check_gastric_battlefield as support
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / 'docs/heart-v1/qa/save-runtime-report.json'
+CANDIDATE = None
 MODULES = ['HeartBattlefield', 'HeartBattlefieldData', 'OrganBattlefield',
            'OrganBattlefieldCore', 'FullBodyBattlefield', 'OrganTrial', 'Save',
            'World', 'Vessels', 'Commands', 'CellCollision', 'Path', 'Data']
@@ -23,10 +24,19 @@ MODULES = ['HeartBattlefield', 'HeartBattlefieldData', 'OrganBattlefield',
 
 def main():
     os.chdir(ROOT)
-    before = {name: hashlib.sha256((ROOT / f'scripts/war/{name}.lua').read_bytes()).hexdigest()
+    def source(name):
+        staged=CANDIDATE/(name+'.lua') if CANDIDATE else None
+        return staged if staged and staged.exists() else ROOT/f'scripts/war/{name}.lua'
+    before = {name: hashlib.sha256(source(name).read_bytes()).hexdigest()
               for name in MODULES}
     started = time.perf_counter()
     lua = support.runtime()
+    if CANDIDATE:
+        for name in ['HeartBattlefieldData','HeartBattlefield','HeartVisualData','Save']:
+            p=CANDIDATE/(name+'.lua')
+            if p.exists():
+                lua.globals().qaModule=p.read_text();lua.globals().qaName='war.'+name
+                lua.execute('package.loaded[qaName]=assert(load(qaModule))()')
     result = support.convert(lua.execute(r'''
       local F,O,W,C,Save,H,U=require('war.FullBodyBattlefield'),require('war.OrganBattlefield'),
         require('war.World'),require('war.Commands'),require('war.Save'),require('war.HeartBattlefield'),require('war.Util')
@@ -51,6 +61,7 @@ def main():
       end
       local snap=Save.snapshot(s)
       check('new heart version serialized',snap.heartBattlefieldVersion==1 and snap.fullbodyBattlefieldVersion==1)
+      check('current cardiac layout revision serialized',snap.heartLayoutRevision==(H.data.layoutRevision or 1))
       local ok,restored=pcall(Save.restore,snap)
       check('all four chambers and four valves survive production restore',ok,not ok and tostring(restored)or nil)
       if ok then
@@ -85,6 +96,21 @@ def main():
         local e=migrated.entities[c.id]
         check('unaffected lung entity position and lane retained',e and e.x==unaffected.x and e.y==unaffected.y and e.vesselLane==unaffected.lane)
       end
+      if (H.data.layoutRevision or 1)>=2 then
+        local previous=F.new(91);previous.entities={};W.rebuild(previous)
+        local records={}
+        for _,fixture in ipairs({{9,551.66,409.78},{15,480.02,429.45},{8,545,414},{150,533,375},{2,510,355}})do
+          local e=assert(C.spawn(previous,'unit','siege',1,994,1276))
+          e.x,e.y,e.vesselLane=fixture[2]*2,fixture[3]*2+512,fixture[1]
+          records[e.id]=fixture[1]
+        end
+        local oldLayout=Save.snapshot(previous);oldLayout.heartLayoutRevision=1
+        local ok,restored=pcall(Save.restore,oldLayout)
+        check('earlier cardiac layout restores',ok,not ok and tostring(restored)or nil)
+        if ok then for id,lane in pairs(records)do local e=restored.entities[id]
+          check('earlier layout preserves blood lane '..lane,e and e.vesselLane==lane and O.pointAllowed(restored,e,e.x,e.y,lane))
+        end end
+      end
       for _,version in ipairs({1,2,3,4})do
         local legacy=W.generate(73,nil,nil,'sandbox',version)
         local legacySnap=Save.snapshot(legacy)
@@ -106,7 +132,7 @@ def main():
       end
       return out
     '''))
-    after = {name: hashlib.sha256((ROOT / f'scripts/war/{name}.lua').read_bytes()).hexdigest()
+    after = {name: hashlib.sha256(source(name).read_bytes()).hexdigest()
              for name in MODULES}
     stable = before == after
     result.update(schema='heart-v1-independent-save-runtime-qa/v1', nativeEvidence=False,

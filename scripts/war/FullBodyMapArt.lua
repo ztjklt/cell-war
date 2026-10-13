@@ -6,12 +6,14 @@
 ---@field sourceBox number[]
 ---@field pixelSize number[]
 ---@field coreBox number[]|nil
+---@field perimeter boolean|nil
 ---@type table<NVGContextWrapper,table<string,number>>
 local handles=setmetatable({},{__mode='k'})
 local loaded=setmetatable({},{__mode='k'})
 local A={handles=handles,loaded=loaded,last={draws=0}}
 local HeartVisual=require('war.HeartVisualData')
 local HeartArt=require('war.HeartArt')
+local BowelVisual=require('war.BowelVisual')
 -- Foreground mouth patches share the registered visibility contract and must
 -- cover every vessel layer. Old manifests omit this optional final layer.
 local layers={'surfaceTiles','organs','deepTiles','junctions','foregroundPatches'}
@@ -20,8 +22,18 @@ local function data()
  if registered then return registered end
  local original=require('war.FullBodyMapArtData');registered={}
  for k,v in pairs(original)do registered[k]=v end
+ registered.quietBase=HeartVisual.replaceQuiet(original.quietBase)
  registered.organs={}
  for _,spec in ipairs(original.organs or{})do registered.organs[#registered.organs+1]=HeartVisual.replace(spec)end
+ if HeartVisual.replacePatch then
+  registered.foregroundPatches={}
+  for _,spec in ipairs(original.foregroundPatches or{})do registered.foregroundPatches[#registered.foregroundPatches+1]=HeartVisual.replacePatch(spec)end
+ end
+ for _,layer in ipairs(layers)do
+  local out={}
+  for _,spec in ipairs(registered[layer]or{})do out[#out+1]=BowelVisual.replace(spec)end
+  registered[layer]=out
+ end
  return registered
 end
 function A.enabled(s)return require('war.FullBodyBattlefield').enabled(s)end
@@ -71,10 +83,12 @@ end
 function A.alpha(z)
  local t=math.max(0,math.min(1,(z-.085)/.065));return t*t*(3-2*t)
 end
--- Visibility follows the frozen gameplay centerline; it never changes a lane.
+-- Visibility follows the current physical network; it never changes a lane.
 function A.unitDepth(s,e,x,y)
  if not A.enabled(s)or not e.vesselLane or e.vesselLane<=0 then return nil end
- local net=require('war.World').vessels(s);local edge=net.edges[e.vesselLane]
+ local depth,owned=BowelVisual.unitDepth(e.vesselLane,x,y)
+ if owned then return depth end
+ local net=require('war.OrganBattlefield').net(s);local edge=net.edges[e.vesselLane]
  if HeartVisual.unitBehindHeart(edge,x,y)then return 'under-foreground'end
  if HeartVisual.replacesVisibility(edge,x,y)then return nil end
  local intervals=edge and data().visibility[edge.name]
@@ -92,17 +106,18 @@ end
 function A.draw(R,g,s,x1,x2,y1,y2)
  A.last={draws=0}
  if A.disabled then return false end -- Diagnostic visual comparison only; no state mutation.
- local alpha=A.alpha(g.zoom)
- local heartVisible=g.zoom>=.15
+ local alpha=1 -- Full-body mode uses one registered map across all zoom levels.
+ local heartVisible=true -- Same cardiac approaches at every LOD; detail selection is in HeartArt.
  if not A.ready(R.vg,s)then return false end
- local d=data();local h=handles[R.vg];local heart
+ local d=data();local h=handles[R.vg];local heart,perimeter
  for _,layer in ipairs(layers)do
   for _,spec in ipairs(d[layer]or{})do
    local b=spec.sourceBox
    if not x1 or not(x1>b[3]*2 or x2<b[1]*2 or y1>b[4]*2+512 or y2<b[2]*2+512)then
-    if layer=='organs'and spec.id=='heart'then heart=spec
-    elseif heartVisible and (layer=='deepTiles'or layer=='junctions'or layer=='foregroundPatches')and HeartVisual.overlaps(spec)
-     and HeartArt.drawOutsideSpec(R,g,s,spec,h[spec.id],alpha,require('war.HeartBattlefieldData').outerRings)then
+    if spec.perimeter then perimeter=spec
+    elseif layer=='organs'and spec.id=='heart'then heart=spec
+    elseif heartVisible and (layer=='surfaceTiles'or layer=='deepTiles'or layer=='junctions'or layer=='foregroundPatches')and HeartVisual.overlaps(spec)
+     and HeartArt.drawOutsideSpec(R,g,s,spec,h[spec.id],alpha,HeartVisual.replacementRings)then
      A.last.draws=A.last.draws+1
     else
     local x,y=R.project(g,b[1]*2,b[2]*2+512);local scale=64*g.zoom
@@ -120,6 +135,13 @@ function A.draw(R,g,s,x1,x2,y1,y2)
   end
  end
  if heartVisible and heart and HeartArt.drawSpec(R,g,s,heart,h[heart.id],1,alpha)then A.last.draws=A.last.draws+1 end
+ if perimeter then
+  local b=perimeter.sourceBox;local x,y=R.project(g,b[1]*2,b[2]*2+512);local scale=64*g.zoom
+  local w,height=(b[3]-b[1])*scale,(b[4]-b[2])*scale
+  nvgSave(R.vg);nvgBeginPath(R.vg);nvgRect(R.vg,x,y,w,height)
+  nvgFillPaint(R.vg,nvgImagePattern(R.vg,x,y,w,height,0,h[perimeter.id],1));nvgFill(R.vg);nvgRestore(R.vg)
+  A.last.draws=A.last.draws+1
+ end
  return true
 end
 function A.stats()
