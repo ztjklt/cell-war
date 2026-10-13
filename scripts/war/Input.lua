@@ -3,6 +3,7 @@ local D,U,R,C,W=require("war.Data"),require("war.Util"),require("war.Render"),re
 local I={}
 local Motion=require("war.Motion")
 local HeartDisplay=require('war.HeartDisplayTransform')
+local Perspective=require('war.AnatomyPerspective')
 local Cells,BodyArt=require("war.Cells"),require("war.BodyArt")
 local DOUBLE_TAP_SECONDS=.34
 local DOUBLE_TAP_PIXELS=24
@@ -40,6 +41,7 @@ function I.doubleSelect(g,x,y)
 end
 function I.coords(e) local factor=UI.GetScale()/graphics:GetDPR();return e.x*factor,e.y*factor end
 function I.pick(g,x,y)
+ if Perspective.original(g)then return false end
  local best,dd=false,math.huge
  for _,e in pairs(g.state.entities) do if U.alive(e) and (e.faction==1 or W.visible(g.state,1,e)) then
   local wx,wy=HeartDisplay.displayPosition(g,e);local px,py=R.project(g,wx,wy);local size=(e.category=="building" and BodyArt.radius(e.kind) or Cells.radius(e.kind)+5)*g.zoom
@@ -48,17 +50,50 @@ function I.pick(g,x,y)
   if d<size and d<dd then best,dd=e,d end
  end end return best
 end
+-- A visible cardiac blood floor can lie over lung/heart tissue in projection.
+-- Use the existing display-depth contract for clicking that visible floor;
+-- Commands still validates the chosen lane with the real collision geometry.
+function I.visibleCardiacLane(g,x,y)
+ local Art=require('war.FullBodyMapArt');if not Art.enabled(g.state)then return nil end
+ local b=require('war.HeartVisualData').sourceBox;local sx,sy=x*.5,(y-512)*.5
+ if sx<b[1]or sx>b[3]or sy<b[2]or sy>b[4]then return nil end
+ ---@type table|nil
+ local profile
+ for _,id in ipairs(I.ids(g))do
+  local e=g.state.entities[id]
+  if e.category=='unit'and(not profile or require('war.CellCollision').radius(e)>require('war.CellCollision').radius(profile))then profile=e end
+ end
+ if not profile then return nil end
+ local O=require('war.OrganBattlefield');local current=O.lane(g.state,profile,x,y)
+ if current and current~=0 then return nil end -- Existing cavity/valve selection wins.
+ local net=O.net(g.state)
+ ---@type integer|nil
+ local best
+ local nearest=math.huge
+ for lane=1,#net.edges do
+  local distance=net.distance(lane,x,y,true)
+  if distance<nearest and distance<=net.edges[lane].width*.5
+   and O.pointAllowed(g.state,profile,x,y,lane)
+   and Art.unitDepth(g.state,{vesselLane=lane},x,y)~='under-foreground'then
+   best,nearest=lane,distance
+  end
+ end
+ return best
+end
 function I.issue(g,kind,x,y,target)
+ if Perspective.original(g)then return false end
  if g.state.campaign and x and y and not require("war.Campaign").allowed(g.state,x,y) then U.message(g.state,"这片组织尚未开放");return false end
  local ids=I.ids(g)
  if #ids==0 then U.message(g.state,"先选择单位再下达命令");return false end
- C.submit(g.state,{kind=kind,faction=1,ids=ids,x=x,y=y,target=target,append=g.append or input:GetKeyDown(KEY_LSHIFT)})
+ local lane=(kind=='move'or kind=='attackmove')and x and y and I.visibleCardiacLane(g,x,y)or nil
+ C.submit(g.state,{kind=kind,faction=1,ids=ids,x=x,y=y,target=target,lane=lane,append=g.append or input:GetKeyDown(KEY_LSHIFT)})
  if x and y then g.marker={x=x,y=y,born=g.realTime,kind=kind} end
  if g.audio then g.audio("command") end
  if g.paused then U.message(g.state,"命令已排队，恢复时间后执行") end
  return true
 end
 function I.tap(g,x,y,secondary)
+ if Perspective.original(g)then return end
  local wx,wy=HeartDisplay.commandPoint(R,g,x,y);g.pointer={wx=wx,wy=wy};local s=g.state
  if g.placement then
   local bx=math.floor(wx)+(D.buildings[g.placement].size%2==0 and 0 or .5)
@@ -89,14 +124,14 @@ function I.tap(g,x,y,secondary)
    for dy=-1,1 do for dx=-1,1 do local k=U.key(math.floor(wx)+dx,math.floor(wy)+dy);local v=s.resources[k];if not r and v and v.amount>0 and s.factions[1].seen[k] then r=v;key=k end end end
   end
   if r and r.amount>0 and not g.mode then
-   kind="gather";target=key
    local resourceName=D.names[r.kind] or r.kind
    local resourceForm=({wood="蛋白束",stone="钙晶",flint="盐晶",fiber="胶原束",metal="铁质矿",food="葡萄糖团",fuel="脂滴",relic="基因片段"})[r.kind] or "资源"
    local hasWorker=false
    for _,id in ipairs(I.ids(g)) do if s.entities[id].kind=="worker" then hasWorker=true;break end end
    if hasWorker then
+    kind="gather";target=key
     U.message(s,resourceName.."（"..resourceForm.."） · 储量 "..math.floor(r.amount).." · 已下达采集，运回胞巢后入库")
-   else
+   elseif #I.ids(g)==0 then
     U.message(s,resourceName.."（"..resourceForm.."） · 储量 "..math.floor(r.amount).." · 先选择"..D.units.worker.name.."再采集")
    end
   end
@@ -109,7 +144,7 @@ function I.down(g,e)
  if not g.started or g.modal then return end
  local x,y=I.coords(e)
  if not e.isPrimary then g.drag=false;return end
- g.drag={x=x,y=y,tx=x,ty=y,pointer=e.pointerId,secondary=e.button==MOUSEB_RIGHT,moved=false,box=g.box or (e.pointerType=="mouse" and e.button==MOUSEB_LEFT and not g.placement and not g.mode)}
+ g.drag={x=x,y=y,tx=x,ty=y,pointer=e.pointerId,secondary=e.button==MOUSEB_RIGHT,moved=false,box=not Perspective.original(g)and(g.box or (e.pointerType=="mouse" and e.button==MOUSEB_LEFT and not g.placement and not g.mode))}
  g.pointer.wx,g.pointer.wy=HeartDisplay.commandPoint(R,g,x,y)
 end
 function I.move(g,e)
@@ -150,6 +185,7 @@ function I.key(g,key)
  if key==KEY_ESCAPE then if g.modal then g.closeModal() elseif g.closeBattlePopups and g.closeBattlePopups() then elseif g.tab then g.tab=false;g.placement=false;g.refreshSidebar() elseif (g.brainChatOpen or g.brainBubble) and g.closeBrain then g.closeBrain() else g.placement=false;g.mode=false;g.selection={} end;return end
  if g.started and not g.modal and key==KEY_F then I.toggleFog(g);return end
  if not g.started or g.modal then return end
+ if Perspective.original(g)and key~=KEY_SPACE and key~=KEY_F3 and key~=KEY_BACKQUOTE and key~=KEY_H and key~=KEY_M then return end
  if key==KEY_SPACE then g.paused=not g.paused
  elseif key==KEY_F3 or key==KEY_BACKQUOTE then g.debugFps=not g.debugFps
  elseif key==KEY_1 then I.group(g,1,input:GetKeyDown(KEY_LCTRL))

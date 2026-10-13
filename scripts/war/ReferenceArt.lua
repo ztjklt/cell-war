@@ -1,6 +1,7 @@
 -- Original overview and quiet source-derived curved fills; only heart/flow animate.
 -- No camera operation alters the simulation RNG or authored geometry.
 local M,C,U=require('war.ReferenceMap'),require('war.Contour'),require('war.Util')
+local Perspective=require('war.AnatomyPerspective')
 local A={prepared=false,buckets={},last={regions=0,details=0},images=setmetatable({},{__mode='k'})}
 ---@type {regions:table[],outline:number[][]}
 local Trace=require('war.ReferenceTrace')
@@ -24,10 +25,34 @@ local function image(vg)
  if A.images[vg]==nil then A.images[vg]=nvgCreateImage(vg,M.reference,NVG_IMAGE_GENERATE_MIPMAPS) end
  return A.images[vg]
 end
+function A.prepareOriginal(vg)if vg then image(vg)end end
+local function originalRect(R,x,y,w,h)
+ local id=image(R.vg);if not id or id<=0 then return false end
+ nvgBeginPath(R.vg);nvgRect(R.vg,x,y,w,h)
+ nvgFillPaint(R.vg,nvgImagePattern(R.vg,x,y,w,h,0,id,1));nvgFill(R.vg)
+ return true
+end
+function A.drawOriginal(R,g)
+ local x,y=R.project(g,0,512);local scale=64*g.zoom
+ A.last={regions=0,details=0,original=true}
+ return originalRect(R,x,y,1024*scale,1536*scale)
+end
+function A.originalAtlas(R,x,y,w,h)
+ return originalRect(R,x,y+h*.125,w,h*.75)
+end
 local function blend(z) local t=U.clamp((z-.085)/.065,0,1);return t*t*(3-2*t) end
 local function drawBase(R,g,s,x1,x2,y1,y2)
  A.prepare();A.last={regions=0,details=0}
  local ox,oy=R.project(g,0,512);local scale=64*g.zoom
+ local full=require('war.FullBodyMapArt')
+ if full.enabled(s)and full.ready(R.vg,s)then
+  local quiet=full.background(R.vg,s)
+  if quiet then
+   nvgBeginPath(R.vg);nvgRect(R.vg,ox,oy,1024*scale,1536*scale)
+   nvgFillPaint(R.vg,nvgImagePattern(R.vg,ox,oy,1024*scale,1536*scale,0,quiet,1));nvgFill(R.vg)
+   return
+  end
+ end
  local b=blend(g.zoom);local id=image(R.vg)
  if id>0 and b<1 then
   nvgBeginPath(R.vg);nvgRect(R.vg,ox,oy,1024*scale,1536*scale)
@@ -70,6 +95,7 @@ local function drawBase(R,g,s,x1,x2,y1,y2)
 end
 -- Both world and overview use the same ordered anatomy layers.
 function A.draw(R,g,s,x1,x2,y1,y2)
+ if Perspective.original(g)then return A.drawOriginal(R,g)end
  drawBase(R,g,s,x1,x2,y1,y2)
  local full=require('war.FullBodyMapArt')
  if full.enabled(s)then
@@ -79,7 +105,7 @@ function A.draw(R,g,s,x1,x2,y1,y2)
   require('war.GastricArt').draw(R,g,s,x1,x2,y1,y2)
   require('war.OrganAtlasArt').draw(R,g,s,x1,x2,y1,y2)
  end
- require('war.BodyLife').perfusion(R,g,s,x1,x2,y1,y2)
+ if not full.enabled(s)then require('war.BodyLife').perfusion(R,g,s,x1,x2,y1,y2)end
 end
 -- Retained public counters for renderer diagnostics; no invented cellular decoration.
 A.detailCache={};A.detailKeys={};A.detailCursor=1;A.detailBudget=256
@@ -98,6 +124,7 @@ function A.airwayDetails(R,g,x1,x2,y1,y2)
  end
 end
 function A.details(R,g,s,x1,x2,y1,y2)
+ if Perspective.original(g)then return end
  -- The source folds, cartilage, lobes and highlights already carry anatomical
  -- information. Repeated nuclei/bubbles compete with actual tactical units.
  A.last.details=0
@@ -110,8 +137,10 @@ function A.vessels(R,g,s,x1,x2,y1,y2)
 end
 
 function A.flow(R,g,s,x1,x2,y1,y2)
+ if Perspective.original(g)then A.last.flow=0;return end
  local body=require('war.BodyLife')
- if not body.ready(R.vg,g,s) then A.last.flow=0;return end
+ if g.bodyLifeEnabled==false or body.enabled==false then A.last.flow=0;return end
+ if not require('war.FullBodyMapArt').enabled(s)and not body.ready(R.vg,g,s)then A.last.flow=0;return end
  local stats=require('war.BodyLifeFlow').draw(R,g,s,x1,x2,y1,y2,{mini=g.bodyLifeMini,intensity=body.intensity})
  A.last.flow=stats and (stats.streaks+stats.cells) or 0
 end

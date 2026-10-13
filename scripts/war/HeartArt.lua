@@ -73,10 +73,14 @@ function H.drawSpec(R,g,s,spec,image,alpha,vascularAlpha)
   nvgIntersectScissor(vg,c[1],c[2],c[3]-c[1],c[4]-c[2])
  end
  local paints={}
+ local selected=spec.animatedPanel
+ if spec.coarsePanel~=nil and g.zoom<(spec.detailMinZoom or 0)then selected=spec.coarsePanel end
+ H.last.atlasPanel=selected
+ H.last.detailVisible=spec.coarsePanel==nil or selected~=spec.coarsePanel
  if spec.innerPanel and vascularAlpha and vascularAlpha<1-1e-8 then
   paints[1]=imagePaint(vg,spec,image,alpha,spec.innerPanel)
   if vascularAlpha>0 then paints[2]=imagePaint(vg,spec,image,(alpha or 1)*vascularAlpha,spec.outerPanel)end
- else paints[1]=imagePaint(vg,spec,image,alpha,spec.animatedPanel)end
+ else paints[1]=imagePaint(vg,spec,image,alpha,selected)end
  if g.heartStaticDiagnostic then
   nvgBeginPath(vg);nvgRect(vg,b[1],b[2],b[3]-b[1],b[4]-b[2])
   for _,paint in ipairs(paints)do nvgFillPaint(vg,paint);nvgFill(vg)end

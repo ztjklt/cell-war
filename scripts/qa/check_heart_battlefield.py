@@ -11,6 +11,8 @@ from shapely.geometry import Polygon,Point,LineString
 from shapely.ops import unary_union
 ROOT=Path(__file__).resolve().parents[2]
 OUT=ROOT/'docs/heart-v1/qa'
+CANDIDATE=None
+GEOMETRY_ROOT=ROOT/'docs/heart-v1/geometry'
 
 def convert(v):
  if hasattr(v,'items'):
@@ -22,14 +24,20 @@ def convert(v):
 def runtime():
  l=LuaRuntime(unpack_returned_tuples=True)
  l.execute("package.path='scripts/?.lua;'..package.path;package.loaded['urhox-libs/UI']={};print=function()end")
+ if CANDIDATE:
+  for name in ['HeartBattlefieldData','HeartBattlefield','HeartVisualData','Save']:
+   p=CANDIDATE/(name+'.lua')
+   if p.exists():
+    l.globals().qaModule=p.read_text();l.globals().qaName='war.'+name
+    l.execute('package.loaded[qaName]=assert(load(qaModule))()')
  return l
 
 def rings(rs):return unary_union([Polygon(r['outer'],r.get('holes',[])) for r in rs])
 
 class Oracle:
  def __init__(self):
-  self.g=json.loads((ROOT/'docs/heart-v1/geometry/heart-four-chamber.json').read_text())
-  self.d=json.loads((ROOT/'docs/heart-v1/geometry/runtime-data.json').read_text())
+  self.g=json.loads((GEOMETRY_ROOT/'heart-four-chamber.json').read_text())
+  self.d=json.loads((GEOMETRY_ROOT/'runtime-data.json').read_text())
   frozen=json.loads((ROOT/'docs/body-life/vascular-art-study/final-reference-data.json').read_text())
   self.domains={0:rings(self.g['tissueRings'])}
   for i,e in enumerate(frozen['edges'],1):self.domains[i]=LineString(e['samples']).buffer(e['lumenWidthSource']/2,quad_segs=32)
@@ -43,7 +51,14 @@ class Oracle:
   return domain.covers(LineString([self.point(a),self.point(b)]).buffer(radius,quad_segs=16))
 
 def main():
- OUT.mkdir(parents=True,exist_ok=True);oracle=Oracle();l=runtime()
+ OUT.mkdir(parents=True,exist_ok=True)
+ bound=[]
+ for name in ['HeartBattlefieldData','HeartBattlefield','OrganBattlefield','OrganBattlefieldCore','Save']:
+  p=CANDIDATE/(name+'.lua')if CANDIDATE else None
+  bound.append(p if p and p.exists()else ROOT/'scripts/war'/(name+'.lua'))
+ bound+=[GEOMETRY_ROOT/'runtime-data.json',GEOMETRY_ROOT/'heart-four-chamber.json']
+ binding={str(p):hashlib.sha256(p.read_bytes()).hexdigest()for p in bound}
+ oracle=Oracle();l=runtime()
  l.execute("""
  local T,O,C,W,H=require('war.OrganTrial'),require('war.OrganBattlefield'),require('war.Commands'),require('war.World'),require('war.HeartBattlefield')
  qaState=T.new(73,{'heart'})
@@ -117,6 +132,9 @@ def main():
  report['passed']=sum(r['pass']for r in report['navigation'])+sum(r['pass']for r in report['checks'])
  report['total']=len(report['navigation'])+len(report['checks'])
  report['sourceGraphSha256']=hashlib.sha256((ROOT/'docs/body-life/vascular-art-study/final-reference-data.json').read_bytes()).hexdigest()
+ report['inputHashes']=binding
+ report['inputsStable']=all(hashlib.sha256(Path(p).read_bytes()).hexdigest()==h for p,h in binding.items())
+ assert report['inputsStable'],'Heart navigation inputs changed during checks'
  (OUT/'production-report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
  print('PASS',report['passed'],'/',report['total'],flush=True)
  if report['passed']!=report['total']:raise SystemExit(1)

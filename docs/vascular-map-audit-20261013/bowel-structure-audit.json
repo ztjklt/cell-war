@@ -1,0 +1,120 @@
+{
+  "typedCirculationChecks": [
+    {
+      "organ": "small_intestine",
+      "arterialSupply": [
+        151,
+        9,
+        10,
+        127,
+        130,
+        187
+      ],
+      "localExchange": [
+        131
+      ],
+      "venousReturn": [
+        188,
+        166,
+        169,
+        119,
+        182,
+        120,
+        121,
+        181,
+        122,
+        15
+      ],
+      "connected": true
+    },
+    {
+      "organ": "colon_proximal",
+      "arterialSupply": [
+        151,
+        9,
+        10,
+        127,
+        132,
+        189
+      ],
+      "localExchange": [
+        133
+      ],
+      "venousReturn": [
+        190,
+        167,
+        169,
+        119,
+        182,
+        120,
+        121,
+        181,
+        122,
+        15
+      ],
+      "connected": true
+    },
+    {
+      "organ": "colon_distal",
+      "arterialSupply": [
+        151,
+        9,
+        10,
+        11,
+        128,
+        134,
+        191
+      ],
+      "localExchange": [
+        135
+      ],
+      "venousReturn": [
+        192,
+        168,
+        170,
+        171,
+        119,
+        182,
+        120,
+        121,
+        181,
+        122,
+        15
+      ],
+      "connected": true
+    }
+  ],
+  "independentCrossingEndpoints": [
+    {
+      "venousLane": 166,
+      "veinNode": "small_intestine.exit",
+      "arterialLane": 134,
+      "arterialEndpoints": [
+        "mesenteric_lower",
+        "colon_distal.entry"
+      ],
+      "sourcePoint": [
+        549.22,
+        665.54
+      ],
+      "centerlineDistanceSource": 0.0537,
+      "hasNamedGraphJunction": false
+    },
+    {
+      "venousLane": 188,
+      "veinNode": "small_intestine.exit",
+      "arterialLane": 134,
+      "arterialEndpoints": [
+        "mesenteric_lower",
+        "colon_distal.entry"
+      ],
+      "sourcePoint": [
+        549.22,
+        665.54
+      ],
+      "centerlineDistanceSource": 0.0537,
+      "hasNamedGraphJunction": false
+    }
+  ],
+  "nativeEvidence": false
+}
