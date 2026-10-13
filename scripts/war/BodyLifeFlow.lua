@@ -4,7 +4,7 @@ local Curves=require('war.VesselCurves')
 local Data=require('war.BodyLifeFlowData')
 local F={enabled=true,last={streaks=0,cells=0},streakBudget=24,cellBudget=48}
 ---@type table|nil
-local prepared=nil
+local caches=setmetatable({},{__mode='k'})
 local function clamp(v,a,b) return math.max(a,math.min(b,v)) end
 local function smooth(v) v=clamp(v,0,1);return v*v*(3-2*v) end
 local function region(x,y)
@@ -15,11 +15,65 @@ local function region(x,y)
  if sy>800 then return sx<510 and 5 or 6 end
  return 2
 end
+local function addBucket(buckets,id,x1,y1,x2,y2)
+ for by=math.floor(y1/128),math.floor(y2/128)do
+  for bx=math.floor(x1/128),math.floor(x2/128)do
+   local key=bx..':'..by;buckets[key]=buckets[key]or{};buckets[key][id]=true
+  end
+ end
+end
+local function actualSpans(state,net)
+ local edges,buckets={},{}
+ local Art=require('war.FullBodyMapArt')
+ for id,e in ipairs(net.edges)do
+  -- Chamber floors are gameplay spaces, not decorative tube-shaped streaks.
+  if (id<=202 or e.system=='vein'or e.system=='artery')and not e.hidden then
+   local spans={}
+   ---@type number?
+   local first
+   local function visible(d)
+    local x,y=Curves.at(e,d)
+    return Art.unitDepth(state,{vesselLane=id},x,y)~='under-foreground'
+   end
+   local function append(a,b)
+    if b-a<.1 then return end
+    local x1,y1,x2,y2=math.huge,math.huge,-math.huge,-math.huge
+    for d=a,b+2,2 do
+     local x,y=Curves.at(e,math.min(d,b))
+     x1,y1,x2,y2=math.min(x1,x),math.min(y1,y),math.max(x2,x),math.max(y2,y)
+    end
+    local x,y=Curves.at(e,(a+b)*.5)
+    spans[#spans+1]={a=a,b=b,width=e.width*.75,system=e.system=='vein'and'vein'or'artery',
+     flowSign=1,id=#spans+1,region=region(x,y),x1=x1,y1=y1,x2=x2,y2=y2}
+    addBucket(buckets,id,x1,y1,x2,y2)
+   end
+   local step=2;local previous=visible(0);if previous then first=0 end
+   local count=math.max(1,math.ceil(e.length/step))
+   for index=1,count do
+    local at=math.min(e.length,index*step);local current=visible(at)
+    if current~=previous then
+     local lo,hi=math.max(0,at-step),at
+     for _=1,7 do local mid=(lo+hi)*.5;if visible(mid)==previous then lo=mid else hi=mid end end
+     if current then first=hi else append(first or 0,lo);first=nil end
+    end
+    if index==count and current then append(first or 0,at)end
+    previous=current
+   end
+   if #spans>0 then edges[id]={curve=e,spans=spans,flowSign=1}end
+  end
+ end
+ return edges,buckets
+end
 function F.prepare(state)
  if not state or state.anatomyVersion~=4 then return nil end
- if prepared then return prepared end
- local net=require('war.Vessels').forDisplay(state)
- local edges={}
+ local actual=state.fullbodyBattlefieldVersion==1
+ local net=actual and require('war.OrganBattlefield').net(state)or require('war.Vessels').forDisplay(state)
+ if caches[net]then return caches[net]end
+ ---@type table, table
+ local edges,buckets
+ if actual then edges,buckets=actualSpans(state,net)
+ else
+  edges={}
  for id,e in ipairs(net.edges) do
   local source=Data.edges[id]
   -- A renamed/reordered graph cannot accidentally use another curve's visibility.
@@ -38,7 +92,10 @@ function F.prepare(state)
    edges[id]={curve=e,spans=spans,flowSign=source.flowSign}
   end
  end
- prepared={net=net,edges=edges,laneCache={},laneKeys={},laneCursor=1,laneBuilds=0};return prepared
+  buckets=net.buckets
+ end
+ local prepared={net=net,edges=edges,buckets=buckets,laneCache={},laneKeys={},laneCursor=1,laneBuilds=0,actualRoutes=actual}
+ caches[net]=prepared;return prepared
 end
 -- Fixed spacing and phase live in world coordinates, independent of zoom/panning.
 function F.phase(time,edgeId,sign,cells)
@@ -56,11 +113,13 @@ local function visibleLanes(cache,x1,x2,y1,y2,cells,budget)
  local ids={}
  for by=math.floor(y1/128),math.floor(y2/128) do
   for bx=math.floor(x1/128),math.floor(x2/128) do
-   for id in pairs(cache.net.buckets[bx..':'..by] or {}) do ids[id]=true end
+   for id in pairs(cache.buckets[bx..':'..by] or {}) do ids[id]=true end
   end
  end
  local ordered={};for id in pairs(ids) do ordered[#ordered+1]=id end;table.sort(ordered)
- local lanes={};local choices={{},{},{},{},{},{}}
+ local lanes={}
+ ---@type table[][]
+ local choices={{},{},{},{},{},{}}
  for _,id in ipairs(ordered) do local entry=cache.edges[id]
   if entry then for _,span in ipairs(entry.spans) do
    if intersect(span,x1,x2,y1,y2) then
@@ -92,7 +151,9 @@ local function visibleLanes(cache,x1,x2,y1,y2,cells,budget)
  return lanes
 end
 local function samplePass(cache,time,x1,x2,y1,y2,cells,budget)
- local selected={};local groups={{},{},{},{},{},{}}
+ local selected={}
+ ---@type table[][]
+ local groups={{},{},{},{},{},{}}
  for _,lane in ipairs(visibleLanes(cache,x1,x2,y1,y2,cells,budget)) do
     local id,span=lane.edge,lane.span
     local sign=span.flowSign;local phase,spacing=F.phase(time,id,sign,cells)
@@ -165,10 +226,18 @@ function F.sample(state,time,zoom,x1,x2,y1,y2,options)
  return result
 end
 function F.draw(R,g,s,x1,x2,y1,y2,options)
+ if s.fullbodyBattlefieldVersion==1 and not require('war.FullBodyMapArt').ready(R.vg,s)then
+  F.last={streaks=0,cells=0};return F.last
+ end
  local samples=F.sample(s,g.realTime or 0,g.zoom,x1,x2,y1,y2,options)
  F.last={streaks=#samples.streaks,cells=#samples.cells}
  if #samples.streaks+#samples.cells==0 then return F.last end
  local cache=F.prepare(s);local z=32*g.zoom;local vg=R.vg
+ local display=require('war.HeartDisplayTransform')
+ local function project(x,y)
+  if cache.actualRoutes then x,y=display.forwardWorld(g,x,y)end
+  return R.project(g,x,y)
+ end
  nvgSave(vg);nvgLineCap(vg,0) -- NanoVG butt cap; do not extend a streak beyond a visible interval.
  nvgLineJoin(vg,NVG_ROUND)
  for _,p in ipairs(samples.streaks) do
@@ -178,11 +247,11 @@ function F.draw(R,g,s,x1,x2,y1,y2,options)
   -- pigment interval; the gradient replaces per-segment alpha draw calls.
   local sections=math.max(1,math.ceil((p.b-p.a)/3))
   local ax,ay=Curves.at(e,p.a);local bx,by=Curves.at(e,p.b)
-  local px,py=R.project(g,ax,ay);local qx,qy=R.project(g,bx,by)
+  local px,py=project(ax,ay);local qx,qy=project(bx,by)
   nvgBeginPath(vg);nvgMoveTo(vg,px,py)
   for i=1,sections do
    local x,y=Curves.at(e,p.a+(p.b-p.a)*i/sections)
-   local sx,sy=R.project(g,x,y);nvgLineTo(vg,sx,sy)
+   local sx,sy=project(x,y);nvgLineTo(vg,sx,sy)
   end
   local c=p.system=='artery' and {255,242,203} or {219,251,255}
   local from=math.floor(245*p.alpha*(.12+.88*clamp(1-math.abs(p.head-p.a)/p.tail,0,1)))
@@ -194,7 +263,7 @@ function F.draw(R,g,s,x1,x2,y1,y2,options)
  end
  for _,p in ipairs(samples.cells) do
   local e=cache.edges[p.edge].curve;local d=clamp(p.head,p.a,p.b)
-  local x,y,vx,vy=Curves.at(e,d);local px,py=R.project(g,x,y)
+  local x,y,vx,vy=Curves.at(e,d);local px,py=project(x,y)
   -- The entire cell fits inside the source-derived pigment clearance.
   local r=math.min(p.radius*z,8)
   local alpha=math.floor(205*p.alpha)

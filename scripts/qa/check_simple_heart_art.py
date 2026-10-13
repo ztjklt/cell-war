@@ -6,6 +6,13 @@ import body_life_backend as b
 
 def main():
     out=Path(sys.argv[1]).resolve()
+    guarded=[p for p in out.glob('*.lua')if not p.name.startswith('baseline-')]
+    binding={str(p):hashlib.sha256(p.read_bytes()).hexdigest()for p in guarded}
+    for name in ['HeartBattlefieldData','HeartBattlefield','HeartVisualData','HeartArt','FullBodyMapArt','BodyLifeFlow','ReferenceArt','Render','Save']:
+        if (out/(name+'.lua')).exists():
+            b.G.moduleSource=(out/(name+'.lua')).read_text()
+            b.G.moduleName='war.'+name
+            b.l.execute('package.loaded[moduleName]=assert(load(moduleSource))()')
     b.G.candidateSource=(out/'HeartVisualData.lua').read_text()
     if (out/'FullBodyMapArt.lua').exists():
         b.G.candidateRenderer=(out/'FullBodyMapArt.lua').read_text()
@@ -31,6 +38,12 @@ def main():
       math.random=function()error('Render consumed RNG')end
       math.randomseed=function()error('Render reseeded RNG')end
     ''')
+    resource=b.ROOT/'assets'/b.l.eval("require('war.HeartVisualData').resource")
+    binding[str(resource)]=hashlib.sha256(resource.read_bytes()).hexdigest()
+    quiet=b.l.eval("require('war.HeartVisualData').quietResource")
+    if quiet:
+      quiet=b.ROOT/'assets'/quiet
+      binding[str(quiet)]=hashlib.sha256(quiet.read_bytes()).hexdigest()
     samples=[];frames=[]
     heart_draw=b.G.__heart_draw_original=b.l.eval("require('war.HeartArt').drawSpec")
     b.l.execute("heartDrawCount=0;require('war.HeartArt').drawSpec=function(...)heartDrawCount=heartDrawCount+1;return __heart_draw_original(...)end")
@@ -39,9 +52,19 @@ def main():
        for time in [0,.3,.59]:
         b.G.dpr=dpr;b.G.game.zoom=zoom;b.G.game.realTime=time
         b.G.heartDrawCount=0;b.reset();b.G.R.draw(b.G.game)
-        assert b.G.heartDrawCount==(1 if zoom>=.15 else 0),'Heart texture gate at '+str(zoom)
+        if b.l.eval("require('war.HeartVisualData').quietResource~=nil"):
+          old_key=str((b.ROOT/'assets/image/anatomy-reference/reference.png').resolve())
+          old=b.decoded_images.get(old_key)
+          assert not old or old.key not in b.frame_images,'Legacy total-map raster painted at '+str(zoom)
+          assert b.decoded_images[str(quiet.resolve())].key in b.frame_images,'Clean whole-body base not painted'
+        unified=b.G.A and b.l.eval("require('war.HeartVisualData').coarsePanel~=nil")
+        assert b.G.heartDrawCount==(1 if unified or zoom>=.15 else 0),'Heart route draw at '+str(zoom)
+        if unified:
+          detail=b.l.eval("require('war.HeartArt').last.detailVisible")
+          panel=b.l.eval("require('war.HeartArt').last.atlasPanel")
+          assert detail==(zoom>=.15) and panel==(1 if zoom>=.15 else 0),'Cardiac detail gate '+str(zoom)
         assert b.l.eval('same(baseline,Save.snapshot(S))')
-        samples.append({'zoom':zoom,'dpr':dpr,'time':time,'heartTextureDrawn':bool(b.G.heartDrawCount)})
+        samples.append({'zoom':zoom,'dpr':dpr,'time':time,'cardiacRouteDrawn':bool(b.G.heartDrawCount),'detailedHeartTextureDrawn':bool(b.G.heartDrawCount)and zoom>=.15})
         if dpr==1 and time==0 and zoom in [.06,.085,.12,.149,.15,.151]:
           name={.06:'context',.085:'whole-heart',.12:'chambers',.149:'zoom-0149',.15:'close',.151:'zoom-0151'}[zoom]
           p=out/(name+'.png');p.write_bytes(b.png(1024,768))
@@ -59,6 +82,10 @@ def main():
       'limits':['SVG/Cairo approximation; native filtering/performance not measured.']}
     report['candidateVisualSha256']=hashlib.sha256((out/'HeartVisualData.lua').read_bytes()).hexdigest()
     report['activeRendererSha256']=hashlib.sha256((b.ROOT/'scripts/war/FullBodyMapArt.lua').read_bytes()).hexdigest()
+    report['inputHashes']=binding
+    report['inputsStable']=all(hashlib.sha256(Path(p).read_bytes()).hexdigest()==h for p,h in binding.items())
+    report['legacyTotalMapNotPaintedWhileReady']=bool(b.l.eval("require('war.HeartVisualData').quietResource~=nil"))
+    assert report['inputsStable'],'Cardiac rendering inputs changed during checks'
     (out/'production-render-report.json').write_text(json.dumps(report,indent=2)+'\n')
     print(json.dumps({'renderSamples':len(samples),'releaseLeaks':0}))
 

@@ -33,7 +33,7 @@ function R.prepare(s)
  Smooth.prepare(s)
  local atlas=require('war.OrganAtlasArt');local gastric=require('war.GastricArt')
  local full=require('war.FullBodyMapArt')
- if full.enabled(s)then full.prepare(R.vg) else full.release(R.vg) end
+ if full.enabled(s)then full.prepare(R.vg);require('war.BodyLifeFlow').prepare(s);require('war.ReferenceArt').prepareOriginal(R.vg) else full.release(R.vg) end
  if s.organBattlefieldVersion==1 then atlas.prepare(R.vg) else atlas.release(R.vg) end
  if not full.enabled(s)and require('war.OrganBattlefield').enabled(s) then gastric.prepare(R.vg) else gastric.release(R.vg) end
 end
@@ -42,7 +42,9 @@ function R.project(g,x,y) return View.project(g,R.w,R.h,x,y) end
 function R.unproject(g,x,y) return View.unproject(g,R.w,R.h,x,y) end
 function R.pan(g,dx,dy) View.pan(g,dx,dy) end
 function R.zoom(g,factor,x,y)
- local wx,wy=R.unproject(g,x or R.w/2,y or R.h/2);g.zoom=U.clamp(g.zoom*factor,View.minZoom(g.state,R.w,R.h),2.8);local ax,ay=R.unproject(g,x or R.w/2,y or R.h/2);g.camera.x=U.clamp(g.camera.x+wx-ax,3,D.width(g.state)-3);g.camera.y=U.clamp(g.camera.y+wy-ay,3,D.height(g.state)-3)
+ local minimum=View.minZoom(g.state,R.w,R.h)
+ if require('war.AnatomyPerspective').original(g)then minimum=math.min(minimum,g.anatomyOverviewZoom or minimum)end
+ local wx,wy=R.unproject(g,x or R.w/2,y or R.h/2);g.zoom=U.clamp(g.zoom*factor,minimum,2.8);local ax,ay=R.unproject(g,x or R.w/2,y or R.h/2);g.camera.x=U.clamp(g.camera.x+wx-ax,3,D.width(g.state)-3);g.camera.y=U.clamp(g.camera.y+wy-ay,3,D.height(g.state)-3)
 end
 local function destination(g,e)
  local path=e.path and e.path[e.pathIndex or 1]
@@ -212,6 +214,9 @@ function R.draw(g)
  R.rect(0,0,R.w,R.h,(g.state.anatomyVersion==3 or g.state.anatomyVersion==4) and {255,255,255} or Palette.background)
  -- The opaque menu artwork covers the world; do not tessellate a hidden map.
  if g.started==false then nvgEndFrame(R.vg);return end
+ if require('war.AnatomyPerspective').original(g)then
+  require('war.ReferenceArt').drawOriginal(R,g);nvgEndFrame(R.vg);return
+ end
  local s=g.state;local fa=s.factions[1];local reveal=g.fogDisabled and (s.anatomyVersion~=3 and s.anatomyVersion~=4)
  HeartDisplay.beginFrame(g)
  local xmin,xmax,ymin,ymax=View.bounds(g,R.w,R.h,4)
@@ -354,7 +359,9 @@ function R.minimap(vg,g,l,overview,mini)
  if mini==nil then mini=overview==nil end
  local old=R.vg;R.vg=vg;local s=g.state;local reveal=g.fogDisabled and (s.anatomyVersion~=3 and s.anatomyVersion~=4);local px,py,width,height,scale=R.mapArea(l,s)
  R.rect(l.x,l.y,l.w,l.h,(s.anatomyVersion==3 or s.anatomyVersion==4) and {255,255,255} or Palette.background)
- if W.hasVessels(s) then
+ local original=require('war.AnatomyPerspective').original(g)
+ if original then require('war.ReferenceArt').originalAtlas(R,px,py,width,height)
+ elseif W.hasVessels(s) then
   Smooth.overview(R,s,px,py,width,height,overview or g.fogDisabled,g.realTime,mini)
   if (s.anatomyVersion~=3 and s.anatomyVersion~=4) and (overview or g.fogDisabled) then BodyArt.atlas(R,s,px,py,width,height) end
  elseif overview or g.fogDisabled then Art.overview(R,s,px,py,width,height);BodyArt.atlas(R,s,px,py,width,height)
@@ -362,7 +369,7 @@ function R.minimap(vg,g,l,overview,mini)
   local c=D.biomes[bin.terrain].color
   R.rect(px+(bin.x-1)*scale,py+(bin.y-1)*scale,D.MAP_BIN*scale+.4,D.MAP_BIN*scale+.4,c,s.factions[1].visible[bin.sample] and 220 or 125)
  end end
- VesselArt.atlas(R,s,px,py,scale,overview or g.fogDisabled)
+ if not original then VesselArt.atlas(R,s,px,py,scale,overview or g.fogDisabled)end
  if s.campaign and require("war.MapRegistry").isTrachea(s) then
   require("war.TracheaArt").atlas(R,g,px,py,scale)
   local home=require("war.CampaignData").forState(s).home
@@ -375,7 +382,7 @@ function R.minimap(vg,g,l,overview,mini)
   R.text(px+nx*scale,py+ny*scale-12,"鼻腔 · 已开放",11,{30,132,133})
   if height>180 then R.text(px+width*.5,py+height*.5,"其余组织尚未开放",11,{101,109,137}) end
  end
- for _,e in pairs(s.entities) do if U.alive(e) and (reveal or e.faction==1 or s.factions[1].visible[U.key(e.x,e.y)]) then
+ for _,e in pairs(s.entities) do if not original and U.alive(e) and (reveal or e.faction==1 or s.factions[1].visible[U.key(e.x,e.y)]) then
   local c=e.faction>0 and D.factions[e.faction].color or {202,124,88}
   local radius=e.category=="building" and (height>200 and 3 or 2) or 1.2
   R.ellipse(px+e.x*scale,py+e.y*scale,radius,radius,c)

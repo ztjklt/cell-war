@@ -4,6 +4,7 @@ local UI=require("urhox-libs/UI")
 local Sim=require("war.Simulation")
 local D=require("war.Data")
 local Motion=require("war.Motion")
+local Perspective=require("war.AnatomyPerspective")
 local R,H,I,Save,Audio,ChangeLevel=require("war.Render"),require("war.HUD"),require("war.Input"),require("war.Save"),require("war.Audio"),require("war.ChangeLevel")
 local game={state={},selection={},groups={{},{},{}},inspectTarget=false,camera={x=D.factions[1].x,y=D.factions[1].y},zoom=1,started=false,paused=false,fogDisabled=false,speed=1,accumulator=0,realTime=0,lastTap=false,pointer={wx=D.factions[1].x,wy=D.factions[1].y},box=false,append=false,placement=false,mode=false,tab=false,modal=false,fps=0,frameCount=0,frameTime=0}
 function Start()
@@ -13,11 +14,12 @@ function Start()
  game.state=Sim.new(math.floor(os.time()%2000000000))
  Motion.reset(game)
  game.returnHome=function()
+  Perspective.reset(game)
   if game.closeModal then game.closeModal() end
   game.transition=nil;game.modal=false;game.paused=true;game.started=false;game.selection={};game.inspectTarget=false;game.mode=false;game.placement=false;game.tab=false;game.lastTap=false
  end
- game.newGame=function(mode) mode=mode or (game.state.campaign and "campaign" or "sandbox");assert(mode=="campaign" or mode=="sandbox","未知游戏模式");game.vesselSurvey=false;game.lastTap=false;game.inspectTarget=false;game.state=Sim.new(math.floor(os.time()%2000000000),mode);R.prepare(game.state);H.prepareBattlefield(game.state);game.selection={};game.groups={{},{},{}};game.camera={x=D.factions[1].x,y=D.factions[1].y};game.zoom=1;game.started=true;game.paused=false;game.defeatShown=false;game.victoryShown=false;game.accumulator=0;game.mode=false;game.placement=false;game.tab=false;H.lastLayout="";H.sidebar(game);R.home(game);H.startGuide(game) end
- game.replaceState=function(state) game.vesselSurvey=false;game.lastTap=false;game.inspectTarget=false;game.state=state;R.prepare(game.state);H.prepareBattlefield(game.state);game.selection={};game.groups={{},{},{}};game.accumulator=0;game.started=true;game.paused=false;game.defeatShown=false;game.victoryShown=false;game.mode=false;game.placement=false;game.tab=false;H.lastLayout="";H.sidebar(game);R.home(game);H.refs.menu:SetVisible(false) end
+ game.newGame=function(mode) Perspective.reset(game);mode=mode or (game.state.campaign and "campaign" or "sandbox");assert(mode=="campaign" or mode=="sandbox","未知游戏模式");game.vesselSurvey=false;game.lastTap=false;game.inspectTarget=false;game.state=Sim.new(math.floor(os.time()%2000000000),mode);R.prepare(game.state);H.prepareBattlefield(game.state);game.selection={};game.groups={{},{},{}};game.camera={x=D.factions[1].x,y=D.factions[1].y};game.zoom=1;game.started=true;game.paused=false;game.defeatShown=false;game.victoryShown=false;game.accumulator=0;game.mode=false;game.placement=false;game.tab=false;H.lastLayout="";H.sidebar(game);R.home(game);H.startGuide(game) end
+ game.replaceState=function(state) Perspective.reset(game);game.vesselSurvey=false;game.lastTap=false;game.inspectTarget=false;game.state=state;R.prepare(game.state);H.prepareBattlefield(game.state);game.selection={};game.groups={{},{},{}};game.accumulator=0;game.started=true;game.paused=false;game.defeatShown=false;game.victoryShown=false;game.mode=false;game.placement=false;game.tab=false;H.lastLayout="";H.sidebar(game);R.home(game);H.refs.menu:SetVisible(false) end
  game.startGastricTrial=function()
   game.replaceState(require('war.GastricTrial').new(math.floor(os.time()%2000000000)))
   game.camera={x=1120,y=1552};game.zoom=.15;game.fogDisabled=true
@@ -43,6 +45,8 @@ function Start()
  SubscribeToEvent("MouseWheel","HandleWheel")
  -- Enter the integrated full-body battlefield with its normal interactive camera.
  game.startFullBodyMap()
+ -- Begin this review at the repaired intestine; normal map controls stay free.
+ game.camera={x=1018,y=1859};game.zoom=.07
  print("[细胞战争] READY | view=topdown2d | world=body | map=2048x4096 | anatomy="..tostring(game.state.anatomyVersion).." | walls=sealed | mode=fullbody | camera=free | zoom="..tostring(game.zoom).." | controllable=cells | fixedStep=0.1")
 end
 function Stop() Audio.stop();require('war.FullBodyMapArt').release(UI.GetNVGContext());require('war.OrganAtlasArt').release(UI.GetNVGContext());require('war.GastricArt').release(UI.GetNVGContext());require("war.BodyLife").release(UI.GetNVGContext());require("war.ReferenceArt").release(UI.GetNVGContext());require("war.LegacyReferenceArtV3").release(UI.GetNVGContext());require("war.Cells").release(UI.GetNVGContext());require("war.UIArt").release(UI.GetNVGContext());require("war.OrganArt").release(UI.GetNVGContext());require("war.BrainRig").release(UI.GetNVGContext());R.close();UI.Shutdown() end

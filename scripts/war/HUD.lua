@@ -5,6 +5,7 @@ local T,Art,M=require("war.UITheme"),require("war.UIArt"),require("war.UIModel")
 local Brain=require("war.BrainUI")
 local FX=require("war.UIMotion")
 local Battle=require("war.BattleHUD")
+local Perspective=require('war.AnatomyPerspective')
 ---@class WarHUD
 ---@field refs table<string, any>
 ---@field cards table[]
@@ -361,7 +362,7 @@ function H.layout(g)
  refs.selectionText:SetStyle{gap=l.short and 2 or 4}
  refs.selected:SetStyle{fontSize=(l.short or l.narrow) and 14 or 16}
  refs.mapShell:SetVisible(not l.compact);refs.mapShell:SetStyle{width=l.mapWidth}
- refs.noticeBox:SetStyle{bottom=l.dock+26,left=l.narrow and 12 or 230,right=12}
+ refs.noticeBox:SetStyle{bottom=l.dock+26,left=l.narrow and 12 or Perspective.enabled(g)and 380 or 230,right=12}
  refs.sidebar:SetStyle{left=12,top=l.sidebarTop,bottom=l.sidebarBottom,width=math.min(l.narrow and w-24 or 390,w-24)}
  refs.menuTitle:SetStyle{fontSize=l.narrow and 42 or l.short and 48 or 64}
  refs.menuContent:SetStyle{width=l.narrow and "92%" or "56%",paddingLeft=l.narrow and 20 or 48,paddingTop=l.short and 22 or 56,paddingBottom=l.short and 16 or 30,gap=l.short and 10 or 18}
@@ -398,9 +399,19 @@ function H.prepareBattlefield(s)
  local vg=UI.GetNVGContext()
  local atlas=require('war.OrganAtlasArt');local gastric=require('war.GastricArt')
  local full=require('war.FullBodyMapArt')
- if full.enabled(s)then full.prepare(vg) else full.release(vg) end
+ if full.enabled(s)then full.prepare(vg);require('war.ReferenceArt').prepareOriginal(vg) else full.release(vg) end
  if s.organBattlefieldVersion==1 then atlas.prepare(vg) else atlas.release(vg) end
  if not full.enabled(s)and require('war.OrganBattlefield').enabled(s) then gastric.prepare(vg) else gastric.release(vg) end
+end
+function H.togglePerspective(g)
+ local factor=UI.GetScale()/graphics:GetDPR()
+ local top=H.refs.toolbar:GetAbsoluteLayout();local dock=H.refs.dock:GetAbsoluteLayout()
+ local y=(top.y+top.h)*factor+12;local bottom=dock.y*factor-12
+ local viewport={x=12,y=y,w=R.w-24,h=math.max(32,bottom-y)}
+ if Perspective.toggle(g,R.w,R.h,viewport)then
+  T.active(H.refs.perspective,Perspective.original(g))
+  H.perspectiveMode=Perspective.original(g)
+ end
 end
 function H.create(g)
  T.init();Cells.init(UI.GetNVGContext());Art.init(UI.GetNVGContext())
@@ -451,7 +462,9 @@ function H.create(g)
   UI.ProgressBar{value=1,max=6,height=3,fillColor=T.teal},
  }};H.refs.goalBox=goal;H.refs.tutorialProgress=goal:GetChildAt(3);play:AddChild(goal)
  FX.spotlight(goal)
- local zoom=row({btn("＋",function() R.zoom(g,1.2) end,44),btn("－",function() R.zoom(g,1/1.2) end,44),btn("返回首页",function() if g.returnHome then g.returnHome() end end,78),btn("通路",function() H.survey(g) end,60)},{position="absolute",left=12,bottom=194,gap=5});H.refs.zoomTools=zoom;H.refs.surveyButton=zoom:GetChildAt(4);play:AddChild(zoom)
+ local perspective=btn("切换透视",function() H.togglePerspective(g)end,102,false,{id='perspectiveToggle',visible=Perspective.enabled(g)})
+ H.refs.perspective=perspective
+ local zoom=row({btn("＋",function() R.zoom(g,1.2) end,44),btn("－",function() R.zoom(g,1/1.2) end,44),btn("返回首页",function() if g.returnHome then g.returnHome() end end,78),btn("通路",function() H.survey(g) end,60),perspective},{position="absolute",left=12,bottom=194,gap=5});H.refs.zoomTools=zoom;H.refs.surveyButton=zoom:GetChildAt(4);play:AddChild(zoom)
  local sidebar=panel{position="absolute",left=12,top=188,bottom=196,width=390,padding=14,gap=10,zIndex=5,visible=false};H.refs.sidebar=sidebar;play:AddChild(sidebar)
  local portrait=UI.Panel{width=66,height=66,pointerEvents="none"}
  ---@param vg NVGContextWrapper
@@ -491,7 +504,7 @@ function H.create(g)
   label("调动免疫细胞，守住防线，再反攻夺回气管。",13,T.muted,{whiteSpace="normal",maxLines=3}),
   row({label("守卫",11,T.gold),label("/",11,T.quiet),label("调援",11,T.gold),label("/",11,T.quiet),label("夺回",11,T.gold)},{marginTop=8}),
   btn("守卫气管  →",function() g.newGame("campaign");menu:SetVisible(false);H.refs.play:SetVisible(true) end,230,true,{height=56,fontSize=16}),
-  btn("全身地图 · 0.15",function() g.startFullBodyMap() end,230,false,{height=42,fontSize=14}),
+  btn("全身地图",function() g.startFullBodyMap() end,230,false,{height=42,fontSize=14}),
   btn("胃部战场试验",function() g.startGastricTrial() end,230,false,{height=42,fontSize=14}),
   row({btn("全身沙盒",function() g.newGame("sandbox");menu:SetVisible(false);H.refs.play:SetVisible(true) end,126),btn("继续记录",function() H.saveMenu(g) end,126),btn("指挥手册",function() H.help(g) end,126)},{flexWrap="wrap"}),
   label("三块组织区域 · 自动争夺 · 战术暂停 · 失败重试",10,T.muted,{whiteSpace="normal",maxLines=3}),
@@ -510,6 +523,11 @@ function H.create(g)
 end
 function H.update(g,dt)
  H.layout(g)
+ local enabled,original=Perspective.enabled(g),Perspective.original(g)
+ if H.perspectiveEnabled~=enabled or H.perspectiveMode~=original then
+  H.refs.perspective:SetVisible(enabled);T.active(H.refs.perspective,original)
+  H.perspectiveEnabled,H.perspectiveMode=enabled,original
+ end
  if H.uiState~=g.state then H.uiCounters={};H.uiState=g.state;H.wasStarted=false end
  FX.update(H,dt)
  if g.started and not H.wasStarted then

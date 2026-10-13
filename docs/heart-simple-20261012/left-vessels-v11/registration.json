@@ -1,0 +1,111 @@
+{
+  "status": "ACTIVE",
+  "revision": 14,
+  "layoutRevision": 4,
+  "resource": "image/anatomy-reference/vascular-study/heart-simple-20261012/left-vessels-v11/heart-smooth-left-vessels-v1.png",
+  "sha256": "e8c955d4e4ca93714f14b6dd1a4f9ec70aac5866924422597bb231f0e8a3b9ab",
+  "sourceBox": [
+    432,
+    306,
+    580,
+    480
+  ],
+  "pixelSize": [
+    1480,
+    1692
+  ],
+  "editBox": [
+    432,
+    314,
+    514,
+    420
+  ],
+  "atlasPanels": 1,
+  "scopeSource": "one expanded heart image; old left blood removed before whole-path painting",
+  "newSuperiorCavaLane": 211,
+  "redPathLanes": [
+    3,
+    172
+  ],
+  "bloodPixelsOwnedOnce": true,
+  "perimeterResource": "image/anatomy-reference/vascular-study/heart-simple-20261012/left-vessels-v11/heart-perimeter-banks-v11.png",
+  "perimeterSha256": "f6d0057a0aab385b203bad2a406f8490d89285c23cb7ba8c34270925faabbed4",
+  "generatedCleanupAsset": "assets/image/anatomy-reference/vascular-study/heart-simple-20261012/left-vessels-v11/left-vessel-clean-bed-raw-v1.png",
+  "imagegenPromptRecord": "docs/heart-simple-20261012/left-vessels-v11/imagegen-prompts.txt",
+  "nativeVisualEvidence": false,
+  "approvedMaterials": {
+    "artery": {
+      "path": "assets/image/anatomy-reference/vascular-study/fullbody-gpt-source/fourth/root/artery-strip-raw-v1.png",
+      "sha256": "0580ccfdd548b3d3da3bf5b11dd0257bb31001c6568cf0cd0e3634fc3167ffe6",
+      "pixelSize": [
+        1536,
+        1024
+      ],
+      "repeatSourceLength": 18,
+      "normaliseTextureColumnsByAlpha": true,
+      "alphaIsOnlyTextureBoundary": true,
+      "crop": [
+        0,
+        242,
+        1536,
+        778
+      ],
+      "floorRangeNormalized": [
+        0.14,
+        0.86
+      ]
+    },
+    "vein": {
+      "path": "assets/image/anatomy-reference/vascular-study/fullbody-gpt-source/fourth/root/vein-strip-raw-v1.png",
+      "sha256": "b0258f91a111173322731e24893efde73e2c186033e4c070748934180b96b736",
+      "pixelSize": [
+        1536,
+        1024
+      ],
+      "repeatSourceLength": 18,
+      "normaliseTextureColumnsByAlpha": true,
+      "alphaIsOnlyTextureBoundary": true,
+      "crop": [
+        0,
+        325,
+        1536,
+        699
+      ],
+      "floorRangeNormalized": [
+        0.18,
+        0.82
+      ]
+    },
+    "capillary": {
+      "path": "assets/image/anatomy-reference/vascular-study/fullbody-gpt-source/fourth/root/capillary-strip-raw-v1.png",
+      "sha256": "d38d698044cb992af2ee4eb698c7a79897ee9cd61644153a9dbae67b939e1e7d",
+      "pixelSize": [
+        1536,
+        1024
+      ],
+      "repeatSourceLength": 18,
+      "normaliseTextureColumnsByAlpha": true,
+      "alphaIsOnlyTextureBoundary": true,
+      "crop": [
+        0,
+        288,
+        1536,
+        734
+      ],
+      "floorRangeNormalized": [
+        0.14,
+        0.86
+      ]
+    }
+  },
+  "builderSha256": "5075097e001d87b437f6848fe7436f98e17894eaae4c685e48a6f69bc9c398f1",
+  "activeModules": {
+    "HeartBattlefieldData": "fa4b5ffadda24f9569808bbe821ee678e295acc24a2994cf344e50385baf2c47",
+    "HeartBattlefield": "8b04aa033c2ec5552917c335de53f2cabd2f839bc31a45d433da48ac74000a0d",
+    "HeartVisualData": "201066a902c4aca236a6a3e68a547b40a63eca4fba6f10737760b5c1adca81f8",
+    "HeartDisplayTransform": "56010c358ecc5e9d613b599b0a351ba9d8b0b67454bf85957fda150863673c95",
+    "FullBodyMapArt": "e2ebd8857a2e1d8324a01964a1a95f773243fa7b4ec34b41b1eb66309351f55a",
+    "BodyLifeFlow": "d6d93e33c8e5209e183807666e5a1cd5a7b47ed32f02d7aea88d03b8519efffe",
+    "Input": "1ca9c5ff3692593d48a5524a336d762bc2849ad9745839ffa1db05803d255b5f"
+  }
+}

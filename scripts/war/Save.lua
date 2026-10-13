@@ -66,9 +66,10 @@ local function convertOrders(orders,stride)
 end
 function Save.snapshot(s,withoutCheckpoint)
  local snap={version=D.VERSION,mapSize=D.width(s),mapWidth=D.width(s),mapHeight=D.height(s),indexStride=D.INDEX_STRIDE,legacyTerrain=s.legacyTerrain,terrainStyle=s.terrainStyle,seed=s.seed,rng=s.rng,time=s.time,tick=s.tick,nextId=s.nextId,entities={},resources={},factions={},generatedChunks={},spawnedChunks=U.copy(s.spawnedChunks),commands=U.copy(s.commands),tutorial=s.tutorial,outcome=s.outcome,lastDay=s.lastDay,delivered=s.delivered,farmed=s.farmed,trained=s.trained,selectedOnce=s.selectedOnce}
+ if s.organBattlefieldVersion==1 or s.fullbodyBattlefieldVersion==1 then snap.bowelLayoutRevision=require("war.BowelBattlefield").data.layoutRevision end
  snap.mode=s.campaign and "campaign" or "sandbox"
  snap.anatomyVersion=s.anatomyVersion or 1
- if s.heartBattlefieldVersion==1 then snap.heartBattlefieldVersion=1;snap.heartEncounterVersion=s.heartEncounterVersion end
+ if s.heartBattlefieldVersion==1 then snap.heartBattlefieldVersion=1;snap.heartEncounterVersion=s.heartEncounterVersion;snap.heartLayoutRevision=require("war.HeartBattlefield").data.layoutRevision or 1 end
  if s.fullbodyBattlefieldVersion==1 then
   snap.fullbodyBattlefieldVersion=1;snap.organBattlefieldIds=U.copy(s.organBattlefieldIds)
   snap.organTraffic=require('war.OrganTraffic').snapshot(s)
@@ -213,8 +214,12 @@ function Save.restore(snap,isCheckpoint,validateOnly)
   end
   e=U.copy(e);e.path={};e.longRoute=nil;e.pathGoal=nil;e.pathResolved=nil;e.routeEnd=nil;e.pathPending=false;e.pathIndex=1;e.pathFailed=false;convertOrders(e.orders,stride);if previous then e.vesselLane=0 else assert(finite(e.vesselLane) and e.vesselLane%1==0 and e.vesselLane>=0 and e.vesselLane<=vesselCount,"血管通路状态损坏") end;s.entities[id]=e
  end
- if snap.heartBattlefieldVersion==nil and (s.organBattlefieldVersion==1 or s.fullbodyBattlefieldVersion==1)then
+ if (s.organBattlefieldVersion==1 or s.fullbodyBattlefieldVersion==1)and (snap.heartBattlefieldVersion==nil or (snap.heartLayoutRevision or 1)<(require("war.HeartBattlefield").data.layoutRevision or 1))then
   for _,e in pairs(s.entities)do require('war.HeartBattlefield').migrateEntity(s,e)end
+ end
+ if (s.organBattlefieldVersion==1 or s.fullbodyBattlefieldVersion==1)and (snap.bowelLayoutRevision or 0)<require("war.BowelBattlefield").data.layoutRevision then
+  local ids={};for id in pairs(s.entities)do ids[#ids+1]=id end;table.sort(ids)
+  for _,id in ipairs(ids)do require("war.BowelBattlefield").migrateEntity(s,s.entities[id])end
  end
  for k,r in pairs(snap.resources) do
   local key=tonumber(k);assert(key and key%1==0 and key>=1 and key<=stride*(old and 192 or height) and type(r)=="table" and D.names[r.kind],"资源数据损坏")
@@ -276,7 +281,8 @@ function Save.read(slot,callback)
   local valid,result=pcall(Save.restore,snapshot)
   Save.busy=false
   if valid then
-   Save.status="本地存档已恢复";Save.slots[slot]={day=math.floor(result.time/360)+1};callback(result)
+   local restored=result --[[@as table]]
+   Save.status="本地存档已恢复";Save.slots[slot]={day=math.floor(restored.time/360)+1};callback(result)
   else Save.status="存档损坏 · 当前游戏保留";callback(false,tostring(result)) end
   return
  end

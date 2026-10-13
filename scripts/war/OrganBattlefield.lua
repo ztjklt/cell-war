@@ -2,6 +2,17 @@
 local Gastric=require('war.GastricBattlefield')
 local Factory=require('war.OrganBattlefieldCore')
 local Heart=require('war.HeartBattlefield')
+local Bowel=require('war.BowelBattlefield')
+local localBlood={scout={},siege={}}
+local localJunctions={scout={},siege={}}
+local replacedLanes={}
+for _,data in ipairs({Heart.data,Bowel.data})do
+ for lane,rings in pairs(data.rawBloodDomains)do replacedLanes[lane]=rings end
+ for _,kind in ipairs({'scout','siege'})do
+  for lane,blood in pairs(data.bloodLanes[kind])do localBlood[kind][lane]=blood end
+  for _,joint in ipairs(data.junctionContracts[kind])do localJunctions[kind][#localJunctions[kind]+1]=joint end
+ end
+end
 ---@type table|nil
 local Data=nil
 local O={data=Gastric.data,maxRadiusSource=.53125}
@@ -20,13 +31,14 @@ function O.enabled(s)return opted(s)or Gastric.enabled(s)end
 function O.radius(e)return Gastric.radius(e)end
 function O.net(s)
  if not opted(s)then return Gastric.net(s)end
- return Heart.net(require('war.Vessels').forState(frozenState))
+ return Bowel.net(Heart.net(require('war.Vessels').forState(frozenState)))
 end
 function O.organ(id)
- if id=='stomach'then return Gastric.data end
+ if id=='stomach'then return Bowel.replaceOrgan(Gastric.data)end
  if id=='heart'then return Heart.data end
  if not Data then Data=require('war.OrganBattlefieldData')end
- return Data.organs and Data.organs[id]
+ local d=Data.organs and Data.organs[id]
+ return d and Bowel.replaceOrgan(d)
 end
 function O.activeOrgans(s)
  if not opted(s)then return Gastric.enabled(s)and{'stomach'}or{}end
@@ -40,11 +52,10 @@ function O.activeOrgans(s)
  table.sort(out);contexts[s]={ids=s.organBattlefieldIds,active=out};return out
 end
 local function engine(id)
- if id=='stomach'then return Gastric end
  if not engines[id]then
   local d=O.organ(id);if not d or d.available==false then return nil end
   engines[id]=Factory.create(d,{enabled=opted,net=O.net,
-   localBlood=Heart.data.bloodLanes,localJunctions=Heart.data.junctionContracts,replacedLanes=Heart.data.rawBloodDomains})
+   localBlood=localBlood,localJunctions=localJunctions,replacedLanes=replacedLanes})
  end
  return engines[id]
 end
