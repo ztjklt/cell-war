@@ -48,3 +48,28 @@ __pycache__/
 *.py[cod]
 /saves/
 /qa/
+
+# Dependencies and disposable local tooling
+node_modules/
+.venv/
+.pytest_cache/
+
+# Local evidence: keep source manifests and geometry, archive bulk captures.
+/docs/**/preview-*.json
+/docs/**/preview_*.json
+/docs/**/preview-*.log
+/docs/**/lsp-*.json
+/docs/**/lsp_*.json
+/docs/**/native*/**
+/docs/previews/**
+/docs/body-life/previews/**
+/docs/**/archive/**
+/docs/**/keyframes/**
+/docs/**/fullbody-checkframes/**
+/docs/**/compatibility/**
+/docs/**/render/**
+/docs/**/frames/**
+/docs/**/zoom-evidence/**
+/docs/body-life/vascular-art-study/fullbody-015/bake/fourth-candidate*/**
+/docs/body-life/vascular-art-study/fullbody-015/bake/fifth-candidate-[lm]/**
+/docs/body-life/vascular-art-study/fullbody-015/bake/upper-abdomen-refine-20261012/**
