@@ -69,6 +69,7 @@ end
 function W.tile(x,y,seed) return Anatomy.tile(x,y,seed) end
 function W.terrain(s,x,y) if x<1 or y<1 or x>D.width(s) or y>D.height(s) then return 14 end return s.tiles[U.key(x,y)] end
 local function seedResource(s,x,y,kind,amount,legacy)
+ if not D.resourceEnabled(kind) then return end
  if kind=="food" and not legacy then
   local organ=require("war.OrganRegions").at(s,x+.5,y+.5)
   if organ=="small_intestine" or organ=="large_intestine" then amount=amount*require("war.CombatConfig").intestine.glucoseMultiplier end
@@ -85,12 +86,12 @@ function W.ensureChunk(s,cx,cy)
   if not (s.legacyTerrain and x<=192 and y<=192) then
    local kind=false;local h=U.hash(x,y,s.seed+19);local total=0
    for _,entry in ipairs(D.biomes[W.terrain(s,x,y)].resources) do total=total+entry[2];if h<total then kind=entry[1];break end end
-   if kind and not (W.hasVessels(s) and W.terrain(s,x,y)==13) then seedResource(s,x,y,kind,kind=="relic" and 8 or kind=="wood" and 140 or 85) end
+   if kind and not (W.hasVessels(s) and W.terrain(s,x,y)==13) then seedResource(s,x,y,kind,kind=="wood" and 140 or 85) end
   end
  end end
  for _,base in ipairs(W.starts(s)) do
   for y=math.max(c.y1,base.y-14),math.min(c.y2,base.y+14) do for x=math.max(c.x1,base.x-14),math.min(c.x2,base.x+14) do s.resources[U.key(x,y)]=nil end end
-  for _,rr in ipairs({{6,-1,"wood"},{-8,2,"food"},{6,7,"stone"},{-7,-6,"fiber"},{8,-7,"flint"},{-10,8,"fuel"},{12,5,"metal"}}) do
+  for _,rr in ipairs({{6,-1,"wood"},{-8,2,"food"},{6,7,"oxygen"}}) do
    local x,y=base.x+rr[1],base.y+rr[2]
    if x>=c.x1 and x<=c.x2 and y>=c.y1 and y<=c.y2 then seedResource(s,x,y,rr[3],300) end
   end
@@ -129,7 +130,7 @@ function W.generate(seed,legacy,style,mode,anatomyVersion,mapId)
  end})
  W.indexChunks(s)
  for i,b in ipairs(W.starts(s)) do
-  s.factions[i]={name=b.name,tier=1,tech={},stock={wood=160,stone=85,flint=35,fiber=75,metal=20,food=0,fuel=60,relic=0},food={{amount=125,born=0}},seen={},visible={},mapSeen={},ai={timer=i*1.4,target=0,stage=1},lost=false}
+  s.factions[i]={name=b.name,tier=1,tech={},stock={wood=160,oxygen=0,food=0},food={{amount=125,born=0}},seen={},visible={},mapSeen={},ai={timer=i*1.4,target=0,stage=1},lost=false}
   W.ensureArea(s,b.x,b.y,20)
  end
  return s
@@ -157,7 +158,7 @@ function W.fog(s)
   f.visible={}
   if not f.mapSeen then f.mapSeen={};for key in pairs(f.seen) do local x,y=U.xy(key);W.mapMark(s,f,x,y) end end
  end
- for _,e in pairs(s.entities) do if e.hp>0 and e.faction>0 then W.reveal(s,e.faction,e.x,e.y,e.category=="unit" and D.units[e.kind].vision or 10,true) end end
+ for _,e in pairs(s.entities) do if e.hp>0 and e.faction>0 then W.reveal(s,e.faction,e.x,e.y,e.category=="unit" and D.units[e.kind].vision or D.buildings[e.kind].vision or 10,true) end end
  local changed=false
  for i,f in ipairs(s.factions) do
   local old=previous[i] or {};local different=false
@@ -173,7 +174,7 @@ function W.rebuild(s)
  s.occupancy={};s.spatial={}
  for id,e in pairs(s.entities) do if e.hp>0 then
   local bucket=math.floor(e.x/8)..":"..math.floor(e.y/8);s.spatial[bucket]=s.spatial[bucket] or {};table.insert(s.spatial[bucket],id)
-  if e.category=="building" and e.kind~="fire" and e.kind~="farm" then
+  if e.category=="building" and e.kind~="fire" and e.kind~="farm" and not e.checkpointId then
    local size=D.buildings[e.kind].size or 1
    for y=math.floor(e.y-size/2),math.floor(e.y-size/2)+size-1 do for x=math.floor(e.x-size/2),math.floor(e.x-size/2)+size-1 do s.occupancy[U.key(x,y)]=id end end
   end
@@ -206,7 +207,8 @@ function W.canBuild(s,kind,x,y,f)
  local size=d.size or 1
  for yy=math.floor(y-size/2),math.floor(y-size/2)+size-1 do for xx=math.floor(x-size/2),math.floor(x-size/2)+size-1 do
   if W.hasVessels(s) and ({[13]=true,[17]=true,[18]=true,[19]=true})[W.terrain(s,xx,yy)] then return false,"血管内、管壁与通行口不能建造" end
-  if not W.walkable(s,xx,yy,f) or s.resources[U.key(xx,yy)] and s.resources[U.key(xx,yy)].amount>0 then return false,"这里被水域、建筑或资源占用" end
+  local resource=s.resources[U.key(xx,yy)]
+  if not W.walkable(s,xx,yy,f) or resource and D.resourceEnabled(resource.kind) and resource.amount>0 then return false,"这里被水域、建筑或资源占用" end
  end end
  for _,b in pairs(s.entities) do if b.category=="building" and U.alive(b) and U.dist(b,{x=x,y=y})<(size+(D.buildings[b.kind].size or 1))*.5 then return false,"建筑间距不足" end end
  return true

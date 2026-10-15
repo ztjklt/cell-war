@@ -4,13 +4,13 @@ local M={}
 function M.layout(w,h)
  local narrow=w<720;local short=h<570;local compact=w<1100
  local flatResources=short and not narrow
- local top=flatResources and 72 or compact and 118 or 82
+ local top=flatResources and 72 or compact and 94 or 82
  local dock=narrow and 260 or short and 148 or 168
  return {narrow=narrow,compact=compact,short=short,flatResources=flatResources,resourceCompact=compact and not flatResources,top=top,dock=dock,
   toolbarY=top+18,goalY=top+(narrow and 72 or 18),
   sidebarTop=short and 12 or top+(narrow and 72 or 18),sidebarBottom=short and 12 or dock+28,
   selectionWidth=compact and 194 or 244,mapWidth=short and 126 or 150,
-  resourceColumns=compact and 4 or 8}
+  resourceColumns=#D.resources}
 end
 -- Battle HUD: thumb-reach corners, the battlefield keeps the middle. Sizes are CSS px
 -- (pt) converted to UI units, because UI.Scale.DEFAULT enlarges the UI space on small screens.

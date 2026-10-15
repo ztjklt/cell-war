@@ -23,7 +23,14 @@ end
 function F.new(seed)
  local s=require('war.OrganTrial').new(seed)
  assert(F.enable(s,s.organBattlefieldIds))
- s.message='全身地图 · 选择细胞，沿血管进入器官组织';s.messageTime=12
+ local O,W,C=require('war.OrganBattlefield'),require('war.World'),require('war.Commands')
+ local p=O.organ('small_intestine').rooms[1].centerSource
+ local cell=assert(C.spawn(s,'unit','worker',1,p[1]*2,p[2]*2+512),'无法放置开局红细胞')
+ assert(O.pointAllowed(s,cell,cell.x,cell.y,cell.vesselLane),'开局红细胞缺少通行净空')
+ require('war.VascularCheckpoints').initialize(s)
+ s.styledObstacleVersion=require('war.StyledOrganObstacles').version
+ W.rebuild(s);W.fog(s)
+ s.message='血管关口已部署 · 每段紫色血管两个入口 · 守住关口，阻止病原体跨器官扩散';s.messageTime=18
  return s
 end
 function F.step(s,dt)

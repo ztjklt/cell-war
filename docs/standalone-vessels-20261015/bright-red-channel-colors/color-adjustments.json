@@ -1,0 +1,38 @@
+{
+  "colorRecipe": {
+    "version": 1,
+    "systems": {
+      "artery": [
+        255,
+        148,
+        166
+      ],
+      "vein": [
+        190,
+        164,
+        224
+      ],
+      "capillary": [
+        190,
+        164,
+        224
+      ]
+    },
+    "purpose": "Bright red arteries with the previously approved deep blue veins. Applied by native geometry renderer before compositing; no route changes."
+  },
+  "geometryCheck": "PASS;203 original paths unchanged;18 organ interfaces retained;all three seam regions RGB max diff 0",
+  "runtimeLifecycleCheck": "PASS",
+  "luaDiagnostics": "PASS",
+  "nativeVisualEvidence": false,
+  "offlineVisualEvidence": "chest.png",
+  "preview": {
+    "processAlive": true,
+    "sessionId": "ab9ea3a3-f765-4997-9029-afa81557be94",
+    "reloadId": 4,
+    "logs": [
+      "[2026-10-15 02_51_32_800][155][Script] [细胞战争] READY | view=topdown2d | world=body | map=2048x4096 | anatomy=4 | walls=sealed | mode=fullbody | camera=free | zoom=0.00485595703125 | controllable=red-cell | fixedStep=0.1",
+      "[lua] [2026-10-15 02_51_33_431][174][Script] [VesselChannels] READY | blood=203 | baseTiles=101 | levels=4,8,16,32\n",
+      "[lua] [2026-10-15 02_51_33_446][174][Script] [VesselChannels] READY | blood=203 | baseTiles=101 | levels=4,8,16,32\n"
+    ]
+  }
+}

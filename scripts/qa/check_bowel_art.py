@@ -53,12 +53,12 @@ def main():
        for k in pairs(b)do if a[k]==nil then return false end end;return true
       end
       beforeDraw=Save.snapshot(S);require('war.ReferenceArt').prepareOriginal(R.vg)
-      assert(P.toggle(g,vw,vh));assert(P.original(g))
+      assert(P.set(g,'original',vw,vh));g.realTime=(g.realTime or 0)+P.duration;assert(P.original(g))
     ''')
     b.reset();b.G.R.draw(b.G.g)
     key=str((ROOT/'assets/image/anatomy-reference/reference.png').resolve())
     assert b.frame_images=={b.decoded_images[key].key}
-    b.l.execute("assert(same(beforeDraw,require('war.Save').snapshot(S)));assert(require('war.AnatomyPerspective').toggle(g,vw,vh))")
+    b.l.execute("assert(same(beforeDraw,require('war.Save').snapshot(S)));local P=require('war.AnatomyPerspective');assert(P.set(g,'map',vw,vh));g.realTime=g.realTime+P.duration")
     for z in [.06,.149,.15,.151,.3]:
         b.G.g.zoom=z;b.reset();b.G.R.draw(b.G.g)
         assert b.l.eval("require('war.HeartArt').last.atlasPanel==0 and require('war.HeartArt').last.detailVisible")

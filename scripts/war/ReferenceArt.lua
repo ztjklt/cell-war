@@ -26,16 +26,17 @@ local function image(vg)
  return A.images[vg]
 end
 function A.prepareOriginal(vg)if vg then image(vg)end end
-local function originalRect(R,x,y,w,h)
+local function originalRect(R,x,y,w,h,opacity)
+ if opacity and opacity<=0 then return false end
  local id=image(R.vg);if not id or id<=0 then return false end
  nvgBeginPath(R.vg);nvgRect(R.vg,x,y,w,h)
- nvgFillPaint(R.vg,nvgImagePattern(R.vg,x,y,w,h,0,id,1));nvgFill(R.vg)
+ nvgFillPaint(R.vg,nvgImagePattern(R.vg,x,y,w,h,0,id,opacity or 1));nvgFill(R.vg)
  return true
 end
-function A.drawOriginal(R,g)
- local x,y=R.project(g,0,512);local scale=64*g.zoom
+function A.drawOriginal(R,g,opacity)
+ local wx,wy=M.world(0,0);local x,y=R.project(g,wx,wy);local scale=32*M.scale*g.zoom
  A.last={regions=0,details=0,original=true}
- return originalRect(R,x,y,1024*scale,1536*scale)
+ return originalRect(R,x,y,M.width*scale,M.height*scale,opacity)
 end
 function A.originalAtlas(R,x,y,w,h)
  return originalRect(R,x,y+h*.125,w,h*.75)
@@ -46,6 +47,8 @@ local function drawBase(R,g,s,x1,x2,y1,y2)
  local ox,oy=R.project(g,0,512);local scale=64*g.zoom
  local full=require('war.FullBodyMapArt')
  if full.enabled(s)and full.ready(R.vg,s)then
+  local foundation=require('war.AnatomyFoundationArt')
+  if foundation.enabled(s)then foundation.drawBase(R,g,s,x1,x2,y1,y2,Perspective.layers(g).body);return end
   local quiet=full.background(R.vg,s)
   if quiet then
    nvgBeginPath(R.vg);nvgRect(R.vg,ox,oy,1024*scale,1536*scale)
@@ -95,7 +98,8 @@ local function drawBase(R,g,s,x1,x2,y1,y2)
 end
 -- Both world and overview use the same ordered anatomy layers.
 function A.draw(R,g,s,x1,x2,y1,y2)
- if Perspective.original(g)then return A.drawOriginal(R,g)end
+ local photo=Perspective.layers(g).original
+ if photo>=1 then return A.drawOriginal(R,g)end
  drawBase(R,g,s,x1,x2,y1,y2)
  local full=require('war.FullBodyMapArt')
  if full.enabled(s)then
@@ -106,6 +110,7 @@ function A.draw(R,g,s,x1,x2,y1,y2)
   require('war.OrganAtlasArt').draw(R,g,s,x1,x2,y1,y2)
  end
  if not full.enabled(s)then require('war.BodyLife').perfusion(R,g,s,x1,x2,y1,y2)end
+ if photo>0 then A.drawOriginal(R,g,photo)end
 end
 -- Retained public counters for renderer diagnostics; no invented cellular decoration.
 A.detailCache={};A.detailKeys={};A.detailCursor=1;A.detailBudget=256
@@ -124,11 +129,13 @@ function A.airwayDetails(R,g,x1,x2,y1,y2)
  end
 end
 function A.details(R,g,s,x1,x2,y1,y2)
- if Perspective.original(g)then return end
+ local alpha=1-Perspective.layers(g).original
+ if alpha<=0 then return end
  -- The source folds, cartilage, lobes and highlights already carry anatomical
  -- information. Repeated nuclei/bubbles compete with actual tactical units.
  A.last.details=0
- A.airwayDetails(R,g,x1,x2,y1,y2)
+ nvgSave(R.vg);nvgGlobalAlpha(R.vg,alpha)
+ A.airwayDetails(R,g,x1,x2,y1,y2);nvgRestore(R.vg)
 end
 function A.vessels(R,g,s,x1,x2,y1,y2)
  -- The source-derived vector layer retains exact red/blue width and foreground occlusion.
@@ -137,11 +144,16 @@ function A.vessels(R,g,s,x1,x2,y1,y2)
 end
 
 function A.flow(R,g,s,x1,x2,y1,y2)
- if Perspective.original(g)then A.last.flow=0;return end
+ local weights=Perspective.layers(g)
+ if weights.original>=1 then A.last.flow=0;return end
  local body=require('war.BodyLife')
  if g.bodyLifeEnabled==false or body.enabled==false then A.last.flow=0;return end
  if not require('war.FullBodyMapArt').enabled(s)and not body.ready(R.vg,g,s)then A.last.flow=0;return end
+ local opacity=weights.blood*(1-weights.original)
+ if opacity<=0 then A.last.flow=0;return end
+ nvgSave(R.vg);nvgGlobalAlpha(R.vg,opacity)
  local stats=require('war.BodyLifeFlow').draw(R,g,s,x1,x2,y1,y2,{mini=g.bodyLifeMini,intensity=body.intensity})
+ nvgRestore(R.vg)
  A.last.flow=stats and (stats.streaks+stats.cells) or 0
 end
 return A

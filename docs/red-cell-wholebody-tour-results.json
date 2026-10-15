@@ -1,0 +1,1006 @@
+{
+  "legs": [
+    {
+      "to": "liver",
+      "transitions": 2,
+      "accepted": true,
+      "errorWorld": 0.0,
+      "pathFailed": false,
+      "layerTransitions": 2,
+      "cellId": 25,
+      "chosenLane": 0,
+      "pass": true,
+      "finalLane": 0,
+      "invalidSweeps": 0,
+      "queuedLane": 0,
+      "from": "stomach",
+      "elapsed": 180.59999999999403,
+      "frames": 1806,
+      "targetLane": 0
+    },
+    {
+      "to": "pancreas",
+      "transitions": 4,
+      "accepted": true,
+      "errorWorld": 0.0,
+      "pathFailed": false,
+      "layerTransitions": 2,
+      "cellId": 25,
+      "chosenLane": 0,
+      "pass": true,
+      "finalLane": 0,
+      "invalidSweeps": 0,
+      "queuedLane": 0,
+      "from": "liver",
+      "elapsed": 234.10000000003177,
+      "frames": 2341,
+      "targetLane": 0
+    },
+    {
+      "to": "kidney_l",
+      "transitions": 6,
+      "accepted": true,
+      "errorWorld": 0.0,
+      "pathFailed": false,
+      "layerTransitions": 2,
+      "cellId": 25,
+      "chosenLane": 0,
+      "pass": true,
+      "finalLane": 0,
+      "invalidSweeps": 0,
+      "queuedLane": 0,
+      "from": "pancreas",
+      "elapsed": 241.60000000005488,
+      "frames": 2416,
+      "targetLane": 0
+    },
+    {
+      "to": "lung_l",
+      "transitions": 8,
+      "accepted": true,
+      "errorWorld": 0.0,
+      "pathFailed": false,
+      "layerTransitions": 2,
+      "cellId": 25,
+      "chosenLane": 0,
+      "pass": true,
+      "finalLane": 0,
+      "invalidSweeps": 0,
+      "queuedLane": 0,
+      "from": "kidney_l",
+      "elapsed": 571.9999999998977,
+      "frames": 5720,
+      "targetLane": 0
+    },
+    {
+      "to": "brain",
+      "transitions": 10,
+      "accepted": true,
+      "errorWorld": 0.013288691409312707,
+      "pathFailed": false,
+      "layerTransitions": 2,
+      "cellId": 25,
+      "chosenLane": 0,
+      "pass": true,
+      "finalLane": 0,
+      "invalidSweeps": 0,
+      "queuedLane": 0,
+      "from": "lung_l",
+      "elapsed": 475.49999999956754,
+      "frames": 4755,
+      "targetLane": 0
+    },
+    {
+      "to": "lung_r",
+      "transitions": 12,
+      "accepted": true,
+      "errorWorld": 0.013136887635153758,
+      "pathFailed": false,
+      "layerTransitions": 2,
+      "cellId": 25,
+      "chosenLane": 0,
+      "pass": true,
+      "finalLane": 0,
+      "invalidSweeps": 0,
+      "queuedLane": 0,
+      "from": "brain",
+      "elapsed": 504.699999999541,
+      "frames": 5047,
+      "targetLane": 0
+    },
+    {
+      "to": "heart",
+      "transitions": 13,
+      "accepted": true,
+      "errorWorld": 0.0,
+      "pathFailed": false,
+      "layerTransitions": 1,
+      "cellId": 25,
+      "chosenLane": 203,
+      "pass": true,
+      "finalLane": 203,
+      "invalidSweeps": 0,
+      "queuedLane": 203,
+      "from": "lung_r",
+      "elapsed": 202.69999999981565,
+      "frames": 2027,
+      "targetLane": 203
+    },
+    {
+      "to": "kidney_r",
+      "transitions": 14,
+      "accepted": true,
+      "errorWorld": 0.0,
+      "pathFailed": false,
+      "layerTransitions": 1,
+      "cellId": 25,
+      "chosenLane": 0,
+      "pass": true,
+      "finalLane": 0,
+      "invalidSweeps": 0,
+      "queuedLane": 0,
+      "from": "heart",
+      "elapsed": 273.69999999975107,
+      "frames": 2737,
+      "targetLane": 0
+    },
+    {
+      "to": "large_intestine",
+      "transitions": 16,
+      "accepted": true,
+      "errorWorld": 0.009476788373144692,
+      "pathFailed": false,
+      "layerTransitions": 2,
+      "cellId": 25,
+      "chosenLane": 0,
+      "pass": true,
+      "finalLane": 0,
+      "invalidSweeps": 0,
+      "queuedLane": 0,
+      "from": "kidney_r",
+      "elapsed": 333.4999999996967,
+      "frames": 3335,
+      "targetLane": 0
+    },
+    {
+      "to": "small_intestine",
+      "transitions": 18,
+      "accepted": true,
+      "errorWorld": 0.005493346007169257,
+      "pathFailed": false,
+      "layerTransitions": 2,
+      "cellId": 25,
+      "chosenLane": 0,
+      "pass": true,
+      "finalLane": 0,
+      "invalidSweeps": 0,
+      "queuedLane": 0,
+      "from": "large_intestine",
+      "elapsed": 321.5999999997075,
+      "frames": 3216,
+      "targetLane": 0
+    },
+    {
+      "to": "bladder",
+      "transitions": 20,
+      "accepted": true,
+      "errorWorld": 0.0,
+      "pathFailed": false,
+      "layerTransitions": 2,
+      "cellId": 25,
+      "chosenLane": 0,
+      "pass": true,
+      "finalLane": 0,
+      "invalidSweeps": 0,
+      "queuedLane": 0,
+      "from": "small_intestine",
+      "elapsed": 444.89999999959537,
+      "frames": 4449,
+      "targetLane": 0
+    },
+    {
+      "to": "stomach",
+      "transitions": 22,
+      "accepted": true,
+      "errorWorld": 0.0,
+      "pathFailed": false,
+      "layerTransitions": 2,
+      "cellId": 25,
+      "chosenLane": 0,
+      "pass": true,
+      "finalLane": 0,
+      "invalidSweeps": 0,
+      "queuedLane": 0,
+      "from": "bladder",
+      "elapsed": 520.1000000004769,
+      "frames": 5201,
+      "targetLane": 0
+    }
+  ],
+  "cellId": 25,
+  "zeroWaypoints": [
+    {
+      "x": 1096.352,
+      "y": 1516.0639999999999,
+      "from": 183,
+      "time": 50.90000000000045,
+      "to": 123
+    },
+    {
+      "x": 1074.0,
+      "y": 1490.0,
+      "from": 123,
+      "time": 74.60000000000004,
+      "to": 117
+    },
+    {
+      "x": 1040.7586206896551,
+      "y": 1530.896551724138,
+      "from": 117,
+      "time": 116.49999999999766,
+      "to": 180
+    },
+    {
+      "x": 962.0,
+      "y": 1504.0,
+      "from": 180,
+      "time": 151.79999999999566,
+      "to": 118
+    },
+    {
+      "x": 894.0,
+      "y": 1544.0,
+      "from": 118,
+      "time": 227.09999999999138,
+      "to": 120
+    },
+    {
+      "x": 978.0,
+      "y": 1550.0,
+      "from": 120,
+      "time": 261.89999999999105,
+      "to": 182
+    },
+    {
+      "x": 1019.590597453477,
+      "y": 1552.8834476003917,
+      "from": 182,
+      "time": 279.39999999999503,
+      "to": 119
+    },
+    {
+      "x": 1046.0,
+      "y": 1634.0,
+      "from": 119,
+      "time": 315.90000000000333,
+      "to": 171
+    },
+    {
+      "x": 1056.0,
+      "y": 1654.0,
+      "from": 171,
+      "time": 325.30000000000547,
+      "to": 165
+    },
+    {
+      "x": 1009.9890410958905,
+      "y": 1714.1041095890412,
+      "from": 165,
+      "time": 364.1000000000143,
+      "to": 186
+    },
+    {
+      "x": 1030.0,
+      "y": 1686.0,
+      "from": 186,
+      "time": 378.90000000001766,
+      "to": 126
+    },
+    {
+      "x": 1094.0,
+      "y": 1676.0,
+      "from": 126,
+      "time": 486.4000000000421,
+      "to": 185
+    },
+    {
+      "x": 1100.0994475138123,
+      "y": 1663.889502762431,
+      "from": 185,
+      "time": 492.30000000004344,
+      "to": 129
+    },
+    {
+      "x": 1048.0,
+      "y": 1724.0,
+      "from": 129,
+      "time": 526.4000000000511,
+      "to": 127
+    },
+    {
+      "x": 1030.0,
+      "y": 1676.0,
+      "from": 127,
+      "time": 547.2000000000559,
+      "to": 139
+    },
+    {
+      "x": 1171.7621621621622,
+      "y": 1732.172972972973,
+      "from": 139,
+      "time": 607.4000000000696,
+      "to": 195
+    },
+    {
+      "x": 1182.0,
+      "y": 1692.0,
+      "from": 195,
+      "time": 625.0000000000736,
+      "to": 140
+    },
+    {
+      "x": 1180.0,
+      "y": 1762.0,
+      "from": 140,
+      "time": 697.8000000000901,
+      "to": 196
+    },
+    {
+      "x": 1168.0,
+      "y": 1750.0,
+      "from": 196,
+      "time": 705.1000000000918,
+      "to": 141
+    },
+    {
+      "x": 954.0,
+      "y": 1718.0,
+      "from": 141,
+      "time": 825.100000000119,
+      "to": 14
+    },
+    {
+      "x": 954.0,
+      "y": 1554.0,
+      "from": 14,
+      "time": 892.7000000001344,
+      "to": 15
+    },
+    {
+      "x": 948.0,
+      "y": 1292.0,
+      "from": 15,
+      "time": 997.1000000001582,
+      "to": 1
+    },
+    {
+      "x": 974.0,
+      "y": 1270.0,
+      "from": 1,
+      "time": 1010.6000000001612,
+      "to": 203
+    },
+    {
+      "x": 998.0,
+      "y": 1304.0,
+      "from": 203,
+      "time": 1027.8000000001607,
+      "to": 207
+    },
+    {
+      "x": 998.0,
+      "y": 1328.0,
+      "from": 207,
+      "time": 1037.8000000001516,
+      "to": 204
+    },
+    {
+      "x": 1012.0,
+      "y": 1336.0,
+      "from": 204,
+      "time": 1044.5000000001455,
+      "to": 208
+    },
+    {
+      "x": 1012.0,
+      "y": 1312.0,
+      "from": 208,
+      "time": 1054.5000000001364,
+      "to": 2
+    },
+    {
+      "x": 1014.0,
+      "y": 1204.0,
+      "from": 2,
+      "time": 1099.3000000000957,
+      "to": 6
+    },
+    {
+      "x": 1124.0,
+      "y": 1248.0,
+      "from": 6,
+      "time": 1154.000000000046,
+      "to": 174
+    },
+    {
+      "x": 1160.0,
+      "y": 1212.0,
+      "from": 174,
+      "time": 1176.5000000000255,
+      "to": 7
+    },
+    {
+      "x": 1184.0,
+      "y": 1372.0,
+      "from": 7,
+      "time": 1281.7999999999297,
+      "to": 175
+    },
+    {
+      "x": 1124.0,
+      "y": 1312.0,
+      "from": 175,
+      "time": 1320.5999999998944,
+      "to": 8
+    },
+    {
+      "x": 1084.0,
+      "y": 1260.0,
+      "from": 8,
+      "time": 1369.1999999998502,
+      "to": 205
+    },
+    {
+      "x": 1074.0,
+      "y": 1304.0,
+      "from": 205,
+      "time": 1387.7999999998333,
+      "to": 209
+    },
+    {
+      "x": 1074.0,
+      "y": 1328.0,
+      "from": 209,
+      "time": 1396.6999999998252,
+      "to": 206
+    },
+    {
+      "x": 1052.0,
+      "y": 1346.0,
+      "from": 206,
+      "time": 1407.999999999815,
+      "to": 210
+    },
+    {
+      "x": 1052.0,
+      "y": 1318.0,
+      "from": 210,
+      "time": 1419.6999999998043,
+      "to": 150
+    },
+    {
+      "x": 1048.0,
+      "y": 1212.0,
+      "from": 150,
+      "time": 1462.2999999997655,
+      "to": 151
+    },
+    {
+      "x": 1070.0,
+      "y": 1186.0,
+      "from": 151,
+      "time": 1477.3999999997518,
+      "to": 156
+    },
+    {
+      "x": 1050.0,
+      "y": 1094.0,
+      "from": 156,
+      "time": 1517.1999999997156,
+      "to": 157
+    },
+    {
+      "x": 1078.0,
+      "y": 804.0,
+      "from": 157,
+      "time": 1631.099999999612,
+      "to": 66
+    },
+    {
+      "x": 1067.988679245283,
+      "y": 738.2603773584906,
+      "from": 66,
+      "time": 1663.2999999995827,
+      "to": 178
+    },
+    {
+      "x": 1042.0,
+      "y": 702.0,
+      "from": 178,
+      "time": 1682.699999999565,
+      "to": 162
+    },
+    {
+      "x": 1042.0,
+      "y": 702.0,
+      "from": 162,
+      "time": 1729.1999999995228,
+      "to": 178
+    },
+    {
+      "x": 1067.988679245283,
+      "y": 738.2603773584906,
+      "from": 178,
+      "time": 1748.5999999995051,
+      "to": 66
+    },
+    {
+      "x": 1078.0,
+      "y": 804.0,
+      "from": 66,
+      "time": 1780.4999999994761,
+      "to": 157
+    },
+    {
+      "x": 1050.0,
+      "y": 1094.0,
+      "from": 157,
+      "time": 1894.3999999993725,
+      "to": 156
+    },
+    {
+      "x": 1070.0,
+      "y": 1186.0,
+      "from": 156,
+      "time": 1934.2999999993363,
+      "to": 151
+    },
+    {
+      "x": 1048.0,
+      "y": 1212.0,
+      "from": 151,
+      "time": 1949.2999999993226,
+      "to": 150
+    },
+    {
+      "x": 1052.0,
+      "y": 1318.0,
+      "from": 150,
+      "time": 1991.8999999992839,
+      "to": 210
+    },
+    {
+      "x": 1052.0,
+      "y": 1346.0,
+      "from": 210,
+      "time": 2003.5999999992732,
+      "to": 206
+    },
+    {
+      "x": 1074.0,
+      "y": 1328.0,
+      "from": 206,
+      "time": 2014.899999999263,
+      "to": 209
+    },
+    {
+      "x": 1074.0,
+      "y": 1304.0,
+      "from": 209,
+      "time": 2023.8999999992548,
+      "to": 205
+    },
+    {
+      "x": 1084.0,
+      "y": 1260.0,
+      "from": 205,
+      "time": 2042.4999999992378,
+      "to": 5
+    },
+    {
+      "x": 943.3414634146342,
+      "y": 1333.9268292682927,
+      "from": 5,
+      "time": 2118.7999999991684,
+      "to": 173
+    },
+    {
+      "x": 866.0,
+      "y": 1372.0,
+      "from": 173,
+      "time": 2155.8999999991347,
+      "to": 4
+    },
+    {
+      "x": 878.0,
+      "y": 1212.0,
+      "from": 4,
+      "time": 2261.999999999038,
+      "to": 172
+    },
+    {
+      "x": 928.0,
+      "y": 1246.0,
+      "from": 172,
+      "time": 2287.7999999990147,
+      "to": 3
+    },
+    {
+      "x": 1014.0,
+      "y": 1204.0,
+      "from": 3,
+      "time": 2327.6999999989785,
+      "to": 2
+    },
+    {
+      "x": 1012.0,
+      "y": 1312.0,
+      "from": 2,
+      "time": 2372.399999998938,
+      "to": 208
+    },
+    {
+      "x": 1012.0,
+      "y": 1336.0,
+      "from": 208,
+      "time": 2382.3999999989287,
+      "to": 204
+    },
+    {
+      "x": 998.0,
+      "y": 1328.0,
+      "from": 204,
+      "time": 2389.0999999989226,
+      "to": 207
+    },
+    {
+      "x": 998.0,
+      "y": 1304.0,
+      "from": 207,
+      "time": 2399.0999999989135,
+      "to": 203
+    },
+    {
+      "x": 974.0,
+      "y": 1270.0,
+      "from": 203,
+      "time": 2421.2999999988933,
+      "to": 1
+    },
+    {
+      "x": 948.0,
+      "y": 1292.0,
+      "from": 1,
+      "time": 2434.699999998881,
+      "to": 15
+    },
+    {
+      "x": 954.0,
+      "y": 1554.0,
+      "from": 15,
+      "time": 2539.199999998786,
+      "to": 14
+    },
+    {
+      "x": 954.0,
+      "y": 1718.0,
+      "from": 14,
+      "time": 2606.7999999987246,
+      "to": 138
+    },
+    {
+      "x": 870.1891891891892,
+      "y": 1747.8648648648648,
+      "from": 138,
+      "time": 2653.2999999986823,
+      "to": 194
+    },
+    {
+      "x": 858.0,
+      "y": 1762.0,
+      "from": 194,
+      "time": 2660.8999999986754,
+      "to": 137
+    },
+    {
+      "x": 852.0,
+      "y": 1692.0,
+      "from": 137,
+      "time": 2758.4999999985866,
+      "to": 193
+    },
+    {
+      "x": 879.7768240343347,
+      "y": 1721.862660944206,
+      "from": 193,
+      "time": 2776.0999999985706,
+      "to": 136
+    },
+    {
+      "x": 1030.0,
+      "y": 1676.0,
+      "from": 136,
+      "time": 2862.399999998492,
+      "to": 11
+    },
+    {
+      "x": 1036.0,
+      "y": 1782.0,
+      "from": 11,
+      "time": 2906.9999999984516,
+      "to": 128
+    },
+    {
+      "x": 1050.0,
+      "y": 1840.0,
+      "from": 128,
+      "time": 2946.299999998416,
+      "to": 134
+    },
+    {
+      "x": 1118.1479452054793,
+      "y": 1841.9945205479453,
+      "from": 134,
+      "time": 2988.899999998377,
+      "to": 191
+    },
+    {
+      "x": 1134.0,
+      "y": 1844.0,
+      "from": 191,
+      "time": 3000.099999998367,
+      "to": 135
+    },
+    {
+      "x": 1134.0,
+      "y": 1844.0,
+      "from": 135,
+      "time": 3045.8999999983253,
+      "to": 191
+    },
+    {
+      "x": 1118.1479452054793,
+      "y": 1841.9945205479453,
+      "from": 191,
+      "time": 3057.199999998315,
+      "to": 134
+    },
+    {
+      "x": 1050.0,
+      "y": 1840.0,
+      "from": 134,
+      "time": 3099.6999999982763,
+      "to": 128
+    },
+    {
+      "x": 1036.0,
+      "y": 1782.0,
+      "from": 128,
+      "time": 3138.9999999982406,
+      "to": 11
+    },
+    {
+      "x": 1030.0,
+      "y": 1676.0,
+      "from": 11,
+      "time": 3183.7999999982,
+      "to": 127
+    },
+    {
+      "x": 1048.0,
+      "y": 1724.0,
+      "from": 127,
+      "time": 3204.599999998181,
+      "to": 130
+    },
+    {
+      "x": 966.1908256880733,
+      "y": 1822.902752293578,
+      "from": 130,
+      "time": 3270.299999998121,
+      "to": 187
+    },
+    {
+      "x": 984.0,
+      "y": 1858.0,
+      "from": 187,
+      "time": 3298.099999998096,
+      "to": 131
+    },
+    {
+      "x": 984.0,
+      "y": 1858.0,
+      "from": 131,
+      "time": 3409.2999999979947,
+      "to": 187
+    },
+    {
+      "x": 966.1908256880733,
+      "y": 1822.902752293578,
+      "from": 187,
+      "time": 3437.0999999979695,
+      "to": 130
+    },
+    {
+      "x": 1048.0,
+      "y": 1724.0,
+      "from": 130,
+      "time": 3502.9999999979095,
+      "to": 127
+    },
+    {
+      "x": 1030.0,
+      "y": 1676.0,
+      "from": 127,
+      "time": 3523.7999999978906,
+      "to": 11
+    },
+    {
+      "x": 1036.0,
+      "y": 1782.0,
+      "from": 11,
+      "time": 3568.39999999785,
+      "to": 12
+    },
+    {
+      "x": 1018.0,
+      "y": 2006.0,
+      "from": 12,
+      "time": 3715.4999999977163,
+      "to": 142
+    },
+    {
+      "x": 1072.6588235294118,
+      "y": 2013.4352941176471,
+      "from": 142,
+      "time": 3759.999999997676,
+      "to": 197
+    },
+    {
+      "x": 1072.6588235294118,
+      "y": 2013.4352941176471,
+      "from": 197,
+      "time": 3941.8999999975103,
+      "to": 142
+    },
+    {
+      "x": 1018.0,
+      "y": 2006.0,
+      "from": 142,
+      "time": 3985.8999999974703,
+      "to": 12
+    },
+    {
+      "x": 1036.0,
+      "y": 1782.0,
+      "from": 12,
+      "time": 4132.699999997503,
+      "to": 11
+    },
+    {
+      "x": 1030.0,
+      "y": 1676.0,
+      "from": 11,
+      "time": 4177.499999997666,
+      "to": 10
+    },
+    {
+      "x": 1048.0,
+      "y": 1474.0,
+      "from": 10,
+      "time": 4253.299999997942,
+      "to": 116
+    },
+    {
+      "x": 1074.0,
+      "y": 1490.0,
+      "from": 116,
+      "time": 4265.699999997987,
+      "to": 123
+    },
+    {
+      "x": 1096.352,
+      "y": 1516.0639999999999,
+      "from": 123,
+      "time": 4289.499999998074,
+      "to": 183
+    }
+  ],
+  "targets": {
+    "lung_l": {
+      "x": 1219.7357457285038,
+      "lane": 0,
+      "y": 1286.6395794292855
+    },
+    "kidney_r": {
+      "x": 822.5534903755783,
+      "lane": 0,
+      "y": 1732.349437248223
+    },
+    "large_intestine": {
+      "x": 1129.0957588737895,
+      "lane": 0,
+      "y": 1859.8319011858528
+    },
+    "heart": {
+      "x": 994,
+      "lane": 203,
+      "y": 1276
+    },
+    "stomach": {
+      "x": 1110.7878787878788,
+      "lane": 0,
+      "y": 1499.3939393939395
+    },
+    "kidney_l": {
+      "x": 1215.15185181795,
+      "lane": 0,
+      "y": 1731.379110398568
+    },
+    "bladder": {
+      "x": 1069.3536621669086,
+      "lane": 0,
+      "y": 2058.219061360249
+    },
+    "small_intestine": {
+      "x": 1001.6763066149477,
+      "lane": 0,
+      "y": 1902.8086737325598
+    },
+    "lung_r": {
+      "x": 815.8651693446275,
+      "lane": 0,
+      "y": 1285.9209425148558
+    },
+    "brain": {
+      "x": 1018.6343114671818,
+      "lane": 0,
+      "y": 657.3376816444812
+    },
+    "pancreas": {
+      "x": 1116.1502880969042,
+      "lane": 0,
+      "y": 1681.0316593925281
+    },
+    "liver": {
+      "x": 947.9808389126509,
+      "lane": 0,
+      "y": 1551.5556314231058
+    }
+  },
+  "kind": "worker",
+  "status": "PASS_PRODUCTION_LUA_OFFLINE",
+  "nativeEvidence": false,
+  "destinationLanesForced": false,
+  "invalidSweeps": 0,
+  "visited": [
+    "stomach",
+    "liver",
+    "pancreas",
+    "kidney_l",
+    "lung_l",
+    "brain",
+    "lung_r",
+    "heart",
+    "kidney_r",
+    "large_intestine",
+    "small_intestine",
+    "bladder",
+    "stomach"
+  ],
+  "actualInputTap": true,
+  "testedModuleHashes": {
+    "Commands.lua": "1f0887a9275267e77f8263152c9af4e2a6b38dd28e9e7de05abb7e5c9bb81901",
+    "Input.lua": "912ef3a7f8e59678e05da77e186ace56c619a8963509cc41f360eef2f1db09e9",
+    "OrganBattlefield.lua": "aba32b750d328823fc4406ddecb54f789dc74ce2ff5630e09ff4830a020773ff",
+    "Path.lua": "c8eb23b1f625faa494dfefeae9928efb055f51ae7637480b7e58ac1afd3d9cf3",
+    "CellCollision.lua": "60ca9d78278db42fb6043926547ff17eed33eacd03f3d5075935fc076cba6cd8",
+    "Workers.lua": "daa0611d6dba8a6f79f21e82f82d97429ceee8e1699e83fa9c800d394092dcc0"
+  },
+  "fixture": {
+    "initialWorkerAddedForTest": true,
+    "otherUnitsRemoved": true,
+    "resourcesCleared": true
+  },
+  "observation": "Records Motion.record movements and accepted zero-distance lane waypoints in Commands.go; the Path.clear observer forwards every original return value unchanged."
+}

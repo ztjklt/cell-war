@@ -22,6 +22,20 @@ function A.release(vg)
  A.contexts[vg]=nil
 end
 function A.draw(vg,group,kind,x,y,side,tint,alpha)
+ if group=="resources" and kind=="oxygen" then
+  local c=tint or {127,212,237};local a=alpha or 255
+  local stroke=nvgRGBA(c[1],c[2],c[3],a) --[[@as NVGcolor]]
+  local fill=nvgRGBA(c[1],c[2],c[3],math.floor(a*.3)) --[[@as NVGcolor]]
+  -- Two linked circles identify oxygen in both HUD and world resource views.
+  nvgBeginPath(vg);nvgMoveTo(vg,x-side*.16,y);nvgLineTo(vg,x+side*.16,y)
+  nvgStrokeWidth(vg,side*.07);nvgStrokeColor(vg,stroke);nvgStroke(vg)
+  for _,offset in ipairs({-.18,.18}) do
+   nvgBeginPath(vg);nvgCircle(vg,x+offset*side,y,side*.18)
+   nvgFillColor(vg,fill);nvgFill(vg)
+   nvgStrokeWidth(vg,math.max(1,side*.045));nvgStrokeColor(vg,stroke);nvgStroke(vg)
+  end
+  return true
+ end
  local ctx=A.contexts[vg];local index=(group=="buildings" and A.buildings or A.resources)[kind]
  local id=ctx and ctx[group]
  if not index or not id or id<=0 then return false end
