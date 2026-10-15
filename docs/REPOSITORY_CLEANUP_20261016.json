@@ -1,0 +1,78 @@
+{
+  "schema": "cell-war-old-versions-cleanup/v1",
+  "date": "2026-10-16",
+  "sourceCommit": "ac82e19e5826ce5b19059df5b29ff3c751f32344",
+  "historyRewritten": false,
+  "removedFromCurrentTree": {
+    "files": 702,
+    "bytes": 883473911,
+    "categories": {
+      "assets": {
+        "files": 560,
+        "bytes": 528960598
+      },
+      "docs": {
+        "files": 142,
+        "bytes": 354513313
+      }
+    }
+  },
+  "gameplayCodeUnchanged": true,
+  "localOriginalsPreserved": true,
+  "protectedInputs": {
+    "files": 70,
+    "scope": "Runtime references across existing Lua modules, current authoring manifests, material/config inputs and v10 source for v15 authoring retained."
+  },
+  "archive": {
+    "filename": "old-version-files.tar.gz",
+    "compressedBytes": 620635960,
+    "sha256": "4cf55c1ee7cb36d3bbc2d3e0b13bf46edc4d71be083bd5163b8db5e7efcae7f7",
+    "allFilesSha256Verified": true,
+    "location": "Owner retains the archive and complete manifest outside Git; sourceCommit is the pre-cleanup version."
+  },
+  "validation": {
+    "status": "PASS_CURRENT_CHECKS",
+    "cleanCopyContainsOnlyRetainedTrackedFiles": true,
+    "passedScripts": [
+      "run_integration.py",
+      "check_anatomy_foundation_runtime.py",
+      "check_vessel_channels_runtime.py",
+      "check_styled_organs_runtime.py",
+      "check_anatomy_perspective.py",
+      "check_organ_blood_ports.py",
+      "check_styled_organ_obstacles.py",
+      "check_vascular_checkpoint_boundaries.py"
+    ],
+    "integrationChecks": 165,
+    "luaSyntaxFiles": 209,
+    "staticAssetAudit": {
+      "runtimeLiteralAssetFilesVerified": 1544,
+      "dynamicDirectoryPrefixesPreserved": [
+        "image/anatomy-reference/body-life/"
+      ],
+      "selectedAssetsReferencedByRuntime": 0,
+      "allExistingScriptsUnchanged": true
+    },
+    "nativePreview": {
+      "liveSessionRefreshed": true,
+      "reloadId": 2,
+      "visualsVerified": false,
+      "preexistingError": "Could not find resource Cube/Day/DaySpecularHDR_QualityLow.dds"
+    },
+    "legacyChecker": "The previously documented FullBodyMapArt virtual-size harness limitation is unchanged; original test retained."
+  },
+  "fullHistoryBackup": {
+    "file": "github-before-cleanup.bundle",
+    "bytes": 2077494031,
+    "sha256": "afaa22842989691a6b79aa63a8c656db80b03c5660e89136f6153207b02d7073",
+    "refCount": 7,
+    "verified": true,
+    "restoreAndFullFsckPassed": true
+  },
+  "currentTreeComparison": {
+    "beforeBytes": 4140445046,
+    "removedBytes": 883473911,
+    "grossReductionPercent": 21.34,
+    "note": "Current checkout bytes; historical objects are separate."
+  }
+}
