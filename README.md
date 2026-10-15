@@ -59,7 +59,34 @@ taptap-maker preview start --target-dir "$PWD" --json
 ```sh
 python3 -m pip install -r scripts/qa/requirements.txt
 python3 scripts/qa/run_integration.py
-python3 scripts/qa/check_fullbody_015.py --phase resources
+python3 scripts/qa/check_anatomy_foundation_runtime.py
+python3 scripts/qa/check_vessel_channels_runtime.py
+python3 scripts/qa/check_styled_organs_runtime.py
+python3 scripts/qa/check_anatomy_perspective.py
 ```
 
 本次整合验收与资源报告保存在 docs。旧版回归 `scripts/qa/run_reference.py` 保留原测试，仍有整合前就存在的历史地图寻路失败，详见交接说明。离线检查不替代合并版本的原生窗口、手机手感、云存档和长期性能验收。本次未提交或构建 Maker 云端游戏。
+
+## 仓库体积与提交规则
+
+`main` 保留最新代码、完整运行资源、正式清单、几何输入及必要说明。预览原始日志、连续截图、原生测试现场和历史候选导出保存在仓库外归档；新一轮本地 QA 优先输出到 `.maker/qa/`，避免把整批过程文件加入 Git。
+
+2026-10-15 首轮整理移出跟踪 3,849 个过程文件，约 801 MB。所有 `assets/` 和现有 `scripts/` 文件原样保留，移出跟踪的文件也保留在作者本机。来源提交与归档校验见 [REPOSITORY_CLEANUP_20261015.json](docs/REPOSITORY_CLEANUP_20261015.json)。本轮减少的是当前版本文件体积；历史大文件仍在 Git 历史中，完整克隆体积尚未同步减少。
+
+本轮已在仅含保留文件的独立副本运行上面的检查及器官血口、障碍物和关口边界检查。旧 `check_fullbody_015.py --phase resources` 的虚拟纹理尺寸表未覆盖当前血管渲染器，整理前后均出现相同的 `local 'size'` 错误，暂不作为当前资源验收入口；原测试保留，未放宽断言。
+
+部分旧版视觉复查、实验候选修复或历史 HTML 页面会引用已归档的过程材料。需要复现这些历史实验时，先从来源提交导出所需目录到临时目录，再执行对应工具；不要把历史输出重新加入当前提交。例如在项目根目录运行：
+
+```sh
+git archive 72647cd42398ed66f83bf04d874209e2de81713d docs/body-life/vascular-art-study/fullbody-015/native-movement-012 > /tmp/cell-war-historical-evidence.tar
+```
+
+暂存完毕后执行仓库检查：
+
+```sh
+python3 scripts/qa/check_repository_hygiene.py
+```
+
+GitHub PR 会自动检查新增和修改文件：默认每个文件不超过 10 MiB，并拒绝本地缓存与批量预览输出。确需较大的正式素材，在 `.repo-policy.json` 中按完整路径记录 `max_bytes` 上限及 `reason`，随 PR 评审；已有大文件未修改时不受此限制。
+
+提交前核对 `git diff --cached --stat`，使用明确路径暂存。协作继续通过功能分支与 PR 合入 `main`；GitHub 仓库维护与 Maker 云端构建分别进行。重写共享历史、强制推送及旧分支清理另行协调，先确认备份与队友同步方式。
