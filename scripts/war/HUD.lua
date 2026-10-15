@@ -5,7 +5,7 @@ local T,Art,M=require("war.UITheme"),require("war.UIArt"),require("war.UIModel")
 local Brain=require("war.BrainUI")
 local FX=require("war.UIMotion")
 local Battle=require("war.BattleHUD")
-local Perspective=require('war.AnatomyPerspective')
+local Perspective=require('war.AnatomyPerspective') --[[@as AnatomyPerspective]]
 ---@class WarHUD
 ---@field refs table<string, any>
 ---@field cards table[]
@@ -100,7 +100,7 @@ end
 function H.help(g)
  local body=UI.Panel{gap=12}
  local sections={
-  {"01  建立稳态","选择红细胞，点击蛋白束或钙晶采集。建造培养床并安排红细胞生产葡萄糖；荧光腺与补给维持休息期安全。"},
+  {"01  建立稳态","当前资源为蛋白质、氧气和葡萄糖。选择红细胞采集并运回补给建筑；培养床可生产葡萄糖，肺泡组织可采集氧气。"},
   {"02  触屏指挥","单击选兵，双击细胞选择附近同类，拖动空地移动镜头，双指缩放。开启框选后拖动选择部队；选中部队后点击目的地，或先选择移动 / 进攻。"},
   {"03  鼠标与键盘","左键拖动框选，双击细胞选择附近同类，右键下令；Shift 追加命令。方向键移动镜头，滚轮缩放。空格暂停，A 进攻，S 停止，R 撤退，B 建造，H 返回首页，M 地图。"},
   {"04  编队与生产","Ctrl+1/2/3 保存编队，1/2/3 召回；触屏长按编队按钮保存。核心胞巢培育红细胞，其他生产建筑训练对应兵种；选中建筑查看队列。"},
@@ -342,8 +342,8 @@ function H.layout(g)
  refs.brand:SetStyle{width=l.compact and "100%" or 172,height=l.compact and 24 or "100%",flexDirection=l.compact and "row" or "column"}
  refs.brandSub:SetVisible(not l.compact)
  refs.clockBox:SetVisible(not l.compact and not l.flatResources)
- refs.resourceGrid:SetStyle{width=l.compact and "100%" or "auto",flexGrow=l.resourceCompact and 0 or 1,flexBasis=l.resourceCompact and "auto" or 0,flexWrap=l.resourceCompact and "wrap" or "no-wrap",height=l.resourceCompact and 66 or l.flatResources and 48 or 58,gap=4}
- for _,metric in ipairs(refs.resourceMetrics) do metric:SetStyle{flexGrow=1,flexShrink=1,flexBasis=l.resourceCompact and "23%" or 0,height=l.resourceCompact and 31 or l.flatResources and 48 or 58} end
+ refs.resourceGrid:SetStyle{width=l.compact and "100%" or "auto",flexGrow=l.resourceCompact and 0 or 1,flexBasis=l.resourceCompact and "auto" or 0,flexWrap="no-wrap",height=l.resourceCompact and 42 or l.flatResources and 48 or 58,gap=4}
+ for _,metric in ipairs(refs.resourceMetrics) do metric:SetStyle{flexGrow=1,flexShrink=1,flexBasis=0,height=l.resourceCompact and 42 or l.flatResources and 48 or 58} end
  for _,k in ipairs(D.resources) do refs[k]:SetStyle{fontSize=l.resourceCompact and 12 or 15} end
  for _,picture in ipairs(refs.resourceIcons) do picture:SetStyle{width=l.compact and 22 or 30,height=l.compact and 22 or 30} end
  refs.toolbar:SetStyle{top=l.toolbarY,justifyContent="flex-end"}
@@ -396,6 +396,8 @@ function H.layout(g)
  Brain.layout(H,l,w,h,battle)
 end
 function H.prepareBattlefield(s)
+ local gateArt=require('war.VascularCheckpointArt')
+ if s.fullbodyBattlefieldVersion==1 then gateArt.prepare(UI.GetNVGContext())else gateArt.release(UI.GetNVGContext())end
  local vg=UI.GetNVGContext()
  local atlas=require('war.OrganAtlasArt');local gastric=require('war.GastricArt')
  local full=require('war.FullBodyMapArt')
@@ -404,13 +406,11 @@ function H.prepareBattlefield(s)
  if not full.enabled(s)and require('war.OrganBattlefield').enabled(s) then gastric.prepare(vg) else gastric.release(vg) end
 end
 function H.togglePerspective(g)
- local factor=UI.GetScale()/graphics:GetDPR()
- local top=H.refs.toolbar:GetAbsoluteLayout();local dock=H.refs.dock:GetAbsoluteLayout()
- local y=(top.y+top.h)*factor+12;local bottom=dock.y*factor-12
- local viewport={x=12,y=y,w=R.w-24,h=math.max(32,bottom-y)}
- if Perspective.toggle(g,R.w,R.h,viewport)then
-  T.active(H.refs.perspective,Perspective.original(g))
-  H.perspectiveMode=Perspective.original(g)
+ if Perspective.toggle(g,R.w,R.h)then
+  T.active(H.refs.perspective,Perspective.mode(g)~='map')
+  H.refs.perspective:SetText(Perspective.buttonLabel(g))
+  H.perspectiveMode=Perspective.mode(g)
+  U.message(g.state,Perspective.mode(g)=='faded'and'血管虚化 · 细胞与器官保持清晰，血管通行正常' or'透视：'..Perspective.layers(g).name)
  end
 end
 function H.create(g)
@@ -462,7 +462,7 @@ function H.create(g)
   UI.ProgressBar{value=1,max=6,height=3,fillColor=T.teal},
  }};H.refs.goalBox=goal;H.refs.tutorialProgress=goal:GetChildAt(3);play:AddChild(goal)
  FX.spotlight(goal)
- local perspective=btn("切换透视",function() H.togglePerspective(g)end,102,false,{id='perspectiveToggle',visible=Perspective.enabled(g)})
+ local perspective=btn(Perspective.buttonLabel(g),function() H.togglePerspective(g)end,102,false,{id='perspectiveToggle',visible=Perspective.enabled(g)})
  H.refs.perspective=perspective
  local zoom=row({btn("＋",function() R.zoom(g,1.2) end,44),btn("－",function() R.zoom(g,1/1.2) end,44),btn("返回首页",function() if g.returnHome then g.returnHome() end end,78),btn("通路",function() H.survey(g) end,60),perspective},{position="absolute",left=12,bottom=194,gap=5});H.refs.zoomTools=zoom;H.refs.surveyButton=zoom:GetChildAt(4);play:AddChild(zoom)
  local sidebar=panel{position="absolute",left=12,top=188,bottom=196,width=390,padding=14,gap=10,zIndex=5,visible=false};H.refs.sidebar=sidebar;play:AddChild(sidebar)
@@ -523,10 +523,11 @@ function H.create(g)
 end
 function H.update(g,dt)
  H.layout(g)
- local enabled,original=Perspective.enabled(g),Perspective.original(g)
- if H.perspectiveEnabled~=enabled or H.perspectiveMode~=original then
-  H.refs.perspective:SetVisible(enabled);T.active(H.refs.perspective,original)
-  H.perspectiveEnabled,H.perspectiveMode=enabled,original
+ local enabled,mode=Perspective.enabled(g),Perspective.mode(g)
+ if H.perspectiveEnabled~=enabled or H.perspectiveMode~=mode then
+  H.refs.perspective:SetVisible(enabled);T.active(H.refs.perspective,mode~='map')
+  H.refs.perspective:SetText(Perspective.buttonLabel(g))
+  H.perspectiveEnabled,H.perspectiveMode=enabled,mode
  end
  if H.uiState~=g.state then H.uiCounters={};H.uiState=g.state;H.wasStarted=false end
  FX.update(H,dt)
@@ -580,7 +581,11 @@ function H.update(g,dt)
   local enemy=e.faction~=1
   refs.selected:SetText(enemy and "敌方 · "..d.name or #ids>1 and (#ids.."个单位已选中") or e.salvaged and "残存储运囊" or d.name)
   refs.hp:SetValue(e.hp/e.maxHp);refs.hp:SetStyle{fillColor=e.hp/e.maxHp<.3 and T.danger or T.teal}
-  if enemy then
+  if e.checkpointId then
+   refs.selectedDetail:SetText('关口耐久 '..math.floor(e.hp)..'/'..e.maxHp..(e.breached and' · 已失守'or' · 防守中'))
+   refs.selectedStats:SetText(e.breached and'病原体可穿过 · 血管扩散速度 ×2 · 可攻击夺回'or'友军自由通过 · 病原体通路封锁 · 红细胞可维修')
+   refs.queue:SetText('每段紫色血管两个关口 · 守住入口，保护其他器官')
+  elseif enemy then
    refs.selectedDetail:SetText("生命 "..math.floor(e.hp).."/"..e.maxHp..((d.damage and d.range) and (" · 攻击 "..string.format("%.1f",d.range).." 格 · 伤害 "..math.floor(d.damage)) or " · 不具备攻击能力"))
    refs.selectedStats:SetText("红圈=攻击范围 · 点击己方部队后可下令攻击")
    refs.queue:SetText("敌方单位 · 当前可见")

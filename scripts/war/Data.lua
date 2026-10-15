@@ -1,7 +1,16 @@
 -- All tuning lives here; simulation uses seconds and map cells.
-local D = { VERSION=9, MAP=2048, MAP_HEIGHT=4096, INDEX_STRIDE=4096, WORLD_SCALE=.5, CHUNK=32, MAP_BIN=16, STEP=0.1, DAY=360, SEASON_DAYS=8, MAX_POP=40 }
-D.resources={"wood","stone","flint","fiber","metal","food","fuel","relic"}
-D.names={wood="蛋白质",stone="钙质",flint="盐晶",fiber="胶原",metal="铁质",food="葡萄糖",fuel="脂质",relic="基因片段"}
+local D = { VERSION=10, MAP=2048, MAP_HEIGHT=4096, INDEX_STRIDE=4096, WORLD_SCALE=.5, CHUNK=32, MAP_BIN=16, STEP=0.1, DAY=360, SEASON_DAYS=8, MAX_POP=40 }
+-- Keep wood/food ids for save compatibility. Suspended materials remain readable
+-- in old saves, but cannot be generated, collected, spent or awarded.
+D.resources={"wood","oxygen","food"}
+D.activeResources={wood=true,oxygen=true,food=true}
+D.legacyResources={"wood","stone","flint","fiber","metal","food","fuel","relic"}
+D.names={wood="蛋白质",oxygen="氧气",food="葡萄糖",stone="钙质",flint="盐晶",fiber="胶原",metal="铁质",fuel="脂质",relic="基因片段"}
+function D.resourceEnabled(kind) return D.activeResources[kind]==true end
+function D.activeCost(cost)
+ local out={};for _,kind in ipairs(D.resources) do if cost[kind] then out[kind]=cost[kind] end end
+ return out
+end
 D.seasons={"平衡","低代谢","复苏","高代谢"}
 D.climate={{temperature=19,farmRate=1},{temperature=-7,farmRate=.22},{temperature=12,farmRate=1.3,rain=true},{temperature=38,farmRate=.65,fireRisk=.000018}}
 ---@type {name:string,color:number[],x:number,y:number}[]
@@ -44,6 +53,12 @@ D.biomes[24]={name="肾皮质与髓质",color={208,177,211},resources={{"flint",
 D.biomes[25]={name="结肠组织",color={225,194,216},resources={{"food",.075},{"wood",.075},{"relic",.008}},detail="colon"}
 D.biomes[26]={name="膀胱壁",color={241,208,222},resources={{"fiber",.09},{"flint",.03}},detail="bladder"}
 D.biomes[27]={name="气管黏膜",color={135,191,206},resources={},detail="trachea"}
+for _,biome in ipairs(D.biomes) do
+ local active={};for _,entry in ipairs(biome.resources) do if D.resourceEnabled(entry[1]) then active[#active+1]=entry end end
+ biome.resources=active
+end
+-- Oxygen is a separate collectible in alveolar tissue, not renamed lipid stock.
+D.biomes[7].resources[#D.biomes[7].resources+1]={"oxygen",.08}
 D.cellRadii={virus=18/32,worker=19/32,scout=14/32,spear=22/32,archer=22/32,heavy=27/32,siege=34/32,wolf=19/32,shadow=17/32}
 ---@type table<string,table>
 D.units={
@@ -76,6 +91,7 @@ D.buildings={
  clinic={name="修复腺",hp=450,size=2,time=30,cost={wood=30,fiber=25,metal=5},tier=2,sprite="store",desc="附近友军持续恢复生命"},
  wall={name="膜壁",hp=750,size=1,time=12,cost={stone=12,wood=5},tier=1,desc="阻断道路 · 红细胞可维修"},
  gate={name="膜门",hp=650,size=1,time=16,cost={wood=15,stone=10},tier=1,desc="友军通过 · 阻挡敌军"},
+ vascular_gate={name="血管进入关口",hp=360,size=1.6,vision=4,desc="友军通行 · 阻挡病原体 · 失守后血管扩散速度翻倍"},
  tower={name="防御触须塔",hp=600,size=2,time=35,cost={wood=35,stone=25,flint=10},tier=2,damage=19,range=10,cool=1.5,desc="自动攻击可见敌军"},
  nest={name="感染巢",hp=500,size=2,desc="守卫遗物 · 夜间出没"},
 }
@@ -92,6 +108,12 @@ D.tech={
  insulation={name="稳态膜",tier=2,cost={fiber=50,metal=10},time=45,desc="降低寒冷、潮湿和过热影响"},
  weapons={name="攻击酶",tier=3,cost={metal=40,flint=20,relic=2},time=60,desc="军队伤害 +25%"},
 }
+-- Temporarily waive suspended material requirements without redistributing
+-- their costs into protein/glucose or inventing oxygen consumption rules.
+for _,group in ipairs({D.units,D.buildings,D.tech}) do
+ for _,entry in pairs(group) do if entry.cost then entry.cost=D.activeCost(entry.cost) end end
+end
+D.buildings.fire.desc="照明与取暖"
 
 function D.width(s) return s and s.mapWidth or D.MAP end
 function D.height(s) return s and s.mapHeight or D.MAP_HEIGHT end

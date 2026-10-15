@@ -1,0 +1,64 @@
+{
+  "status": "IMPLEMENTED_AND_WEB_REVIEWED",
+  "nativeWindowChecked": false,
+  "nativePreviewState": "stopped",
+  "totalVisiblePorts": 28,
+  "newLocalMembranes": 10,
+  "counts": {
+    "lung_l": 2,
+    "pancreas": 2,
+    "brain": 2,
+    "large_intestine": 3,
+    "liver": 2,
+    "lung_r": 2,
+    "bladder": 2,
+    "kidney_r": 2,
+    "small_intestine": 2,
+    "kidney_l": 2,
+    "stomach": 5,
+    "heart": 2
+  },
+  "movement": {
+    "rejectedSweeps": 0,
+    "passed": 84,
+    "total": 84,
+    "substeps": 20106
+  },
+  "shapeAndScope": {
+    "status": "PASS",
+    "addedApertures": 10,
+    "visiblePorts": 28,
+    "allAddedCapsulesInsideOriginalOrganOutlines": true,
+    "bothRadiusProfilesMatchFrozenFloorAndBloodDomains": true,
+    "mainBloodCenterlinesUnchanged": true,
+    "nativePreviewState": "stopped",
+    "nativeWindowVerified": false,
+    "protectedInputsUnchanged": [
+      "scripts/war/FinalVascularStudyData.lua",
+      "scripts/war/OrganBattlefieldData.lua",
+      "scripts/war/HeartBattlefieldData.lua",
+      "scripts/war/BowelBattlefieldData.lua",
+      "scripts/war/VesselChannelsData.lua",
+      "scripts/war/StyledOrgansData.lua",
+      "scripts/war/Vessels.lua",
+      "scripts/war/Save.lua"
+    ],
+    "intentionalFacadeChange": [
+      "scripts/war/OrganBattlefield.lua"
+    ]
+  },
+  "vectorRenderer": {
+    "ports": 28,
+    "strokes": 112,
+    "noImageIO": true,
+    "colors": 112,
+    "hiddenPancreasMouthVisible": true
+  },
+  "preview": "http://127.0.0.1:52483/anatomy-v1/viewer.html",
+  "notes": [
+    "All original gates retained, including five gastric interfaces.",
+    "Only local membrane capsules added; no original tissue outline, blood centerline, obstacle or non-blood connection edited.",
+    "Port pigment follows the actual adjoining channel, including exchange gradients.",
+    "Game preview was stopped; it was not restarted. Visual evidence comes from web composition and registered asset previews."
+  ]
+}

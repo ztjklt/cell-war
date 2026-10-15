@@ -66,11 +66,16 @@ local function convertOrders(orders,stride)
 end
 function Save.snapshot(s,withoutCheckpoint)
  local snap={version=D.VERSION,mapSize=D.width(s),mapWidth=D.width(s),mapHeight=D.height(s),indexStride=D.INDEX_STRIDE,legacyTerrain=s.legacyTerrain,terrainStyle=s.terrainStyle,seed=s.seed,rng=s.rng,time=s.time,tick=s.tick,nextId=s.nextId,entities={},resources={},factions={},generatedChunks={},spawnedChunks=U.copy(s.spawnedChunks),commands=U.copy(s.commands),tutorial=s.tutorial,outcome=s.outcome,lastDay=s.lastDay,delivered=s.delivered,farmed=s.farmed,trained=s.trained,selectedOnce=s.selectedOnce}
- if s.organBattlefieldVersion==1 or s.fullbodyBattlefieldVersion==1 then snap.bowelLayoutRevision=require("war.BowelBattlefield").data.layoutRevision end
+ if s.organBattlefieldVersion==1 or s.fullbodyBattlefieldVersion==1 then
+  snap.bowelLayoutRevision=require("war.BowelBattlefield").data.layoutRevision
+  snap.vascularRouteRevision=require("war.VascularRouteRepair").data.layoutRevision
+ end
  snap.mode=s.campaign and "campaign" or "sandbox"
  snap.anatomyVersion=s.anatomyVersion or 1
  if s.heartBattlefieldVersion==1 then snap.heartBattlefieldVersion=1;snap.heartEncounterVersion=s.heartEncounterVersion;snap.heartLayoutRevision=require("war.HeartBattlefield").data.layoutRevision or 1 end
  if s.fullbodyBattlefieldVersion==1 then
+  snap.vascularCheckpointVersion=s.vascularCheckpointVersion
+  snap.styledObstacleVersion=s.styledObstacleVersion
   snap.fullbodyBattlefieldVersion=1;snap.organBattlefieldIds=U.copy(s.organBattlefieldIds)
   snap.organTraffic=require('war.OrganTraffic').snapshot(s)
  end
@@ -173,6 +178,12 @@ function Save.restore(snap,isCheckpoint,validateOnly)
   assert(snap.heartBattlefieldVersion==1 and (s.organBattlefieldVersion==1 or s.fullbodyBattlefieldVersion==1),'心脏战场版本不支持')
   s.heartEncounterVersion=snap.heartEncounterVersion==1 and 1 or nil
  end
+ if snap.vascularRouteRevision~=nil then
+  local revision=snap.vascularRouteRevision
+  assert((s.organBattlefieldVersion==1 or s.fullbodyBattlefieldVersion==1)
+   and finite(revision)and revision%1==0 and revision>=0
+   and revision<=require('war.VascularRouteRepair').data.layoutRevision,'血管路线版本不支持')
+ end
  local vesselCount=W.hasVessels(s)and #((s.organBattlefieldVersion==1 or s.fullbodyBattlefieldVersion==1)and require('war.OrganBattlefield').net(s)or W.vessels(s)).edges or 0
   if campaign then
    s.campaign=U.copy(snap.campaign)
@@ -213,6 +224,10 @@ function Save.restore(snap,isCheckpoint,validateOnly)
    if s.campaign.terrainVersion==2 or s.campaign.terrainVersion==3 or s.campaign.terrainVersion==4 then assert(W.land(s,math.floor(e.x),math.floor(e.y)) and e.vesselLane<=#W.vessels(s).edges,"单位位于战场障碍或未知血管") end
   end
   e=U.copy(e);e.path={};e.longRoute=nil;e.pathGoal=nil;e.pathResolved=nil;e.routeEnd=nil;e.pathPending=false;e.pathIndex=1;e.pathFailed=false;convertOrders(e.orders,stride);if previous then e.vesselLane=0 else assert(finite(e.vesselLane) and e.vesselLane%1==0 and e.vesselLane>=0 and e.vesselLane<=vesselCount,"血管通路状态损坏") end;s.entities[id]=e
+  -- Preserve old carried materials separately so they cannot block deliveries.
+  for kind,amount in pairs(e.cargo) do if not D.resourceEnabled(kind) then
+   e.suspendedCargo=e.suspendedCargo or {};e.suspendedCargo[kind]=(e.suspendedCargo[kind] or 0)+amount;e.cargo[kind]=nil
+  end end
  end
  if (s.organBattlefieldVersion==1 or s.fullbodyBattlefieldVersion==1)and (snap.heartBattlefieldVersion==nil or (snap.heartLayoutRevision or 1)<(require("war.HeartBattlefield").data.layoutRevision or 1))then
   for _,e in pairs(s.entities)do require('war.HeartBattlefield').migrateEntity(s,e)end
@@ -221,14 +236,20 @@ function Save.restore(snap,isCheckpoint,validateOnly)
   local ids={};for id in pairs(s.entities)do ids[#ids+1]=id end;table.sort(ids)
   for _,id in ipairs(ids)do require("war.BowelBattlefield").migrateEntity(s,s.entities[id])end
  end
+ if (s.organBattlefieldVersion==1 or s.fullbodyBattlefieldVersion==1)
+  and (snap.vascularRouteRevision or 0)<require("war.VascularRouteRepair").data.layoutRevision then
+  require('war.VascularRouteRepair').migrate(s)
+ end
  for k,r in pairs(snap.resources) do
   local key=tonumber(k);assert(key and key%1==0 and key>=1 and key<=stride*(old and 192 or height) and type(r)=="table" and D.names[r.kind],"资源数据损坏")
   numbers(r,{"x","y","amount","max","regen"},"资源状态损坏")
-  local rx,ry=((key-1)%stride)+1,math.floor((key-1)/stride)+1;assert(rx<=width and ry<=height,"资源超出地图");local copy=U.copy(r);if old then copy.legacy=true;copy.initialAmount=copy.max end;s.resources[rekey(key,stride)]=copy
+  local rx,ry=((key-1)%stride)+1,math.floor((key-1)/stride)+1;assert(rx<=width and ry<=height,"资源超出地图");local copy=U.copy(r);if old then copy.legacy=true;copy.initialAmount=copy.max end;if not D.resourceEnabled(copy.kind) then copy.legacy=true end;s.resources[rekey(key,stride)]=copy
  end
  for i,fa in ipairs(snap.factions) do
   local f=U.copy(fa);assert(type(f.seen)=="string" and type(f.stock)=="table" and type(f.food)=="table" and type(f.tech)=="table" and type(f.ai)=="table" and finite(f.ai.timer) and finite(f.tier) and f.tier>=1 and f.tier<=3,"阵营数据损坏")
+  if snap.version<10 and f.stock.oxygen==nil then f.stock.oxygen=0 end
   numbers(f.stock,D.resources,"库存数据损坏")
+  for _,kind in ipairs(D.legacyResources) do if f.stock[kind]~=nil then assert(finite(f.stock[kind]) and f.stock[kind]>=0,"库存数据损坏") end end
   for _,batch in ipairs(f.food) do
    assert(type(batch)=="table" and finite(batch.amount) and batch.amount>=0 and finite(batch.born),"食物批次损坏")
    if batch.stomachGlucose~=nil then assert(finite(batch.stomachGlucose) and batch.stomachGlucose>=0 and batch.stomachGlucose<=batch.amount,"葡萄糖来源损坏") end
@@ -245,6 +266,27 @@ function Save.restore(snap,isCheckpoint,validateOnly)
   projectileIds[p.id]=true
  end
  s.combatProjectiles=U.copy(projectiles);s.nextProjectileId=nextProjectileId
+ if s.fullbodyBattlefieldVersion==1 then
+  local gates=require('war.VascularCheckpoints')
+  assert(snap.vascularCheckpointVersion==nil or snap.vascularCheckpointVersion==gates.version,'血管关口版本不支持')
+  local checkpointIds={}
+  for _,e in pairs(s.entities)do
+   if e.checkpointId then
+    assert(e.kind=='vascular_gate'and gates.port(e.checkpointId)and type(e.breached)=='boolean','血管关口数据损坏')
+    assert(e.faction==(e.breached and 0 or 1),'血管关口控制状态损坏')
+    assert(not checkpointIds[e.checkpointId],'血管关口重复');checkpointIds[e.checkpointId]=true
+   end
+   if e.gastricTransit and not gates.port(e.gastricTransit.gateId)then
+    e.gastricTransit=nil
+    if not require('war.OrganBattlefield').pointAllowed(s,e,e.x,e.y,e.vesselLane)then
+     local x,y=require('war.CellCollision').find(s,e,e.x,e.y,nil,24)
+     assert(x and y,'旧血管关口位置无法迁移');e.x,e.y=x,y
+    end
+   end
+  end
+  gates.initialize(s)
+  require('war.StyledOrganObstacles').restore(s,snap.styledObstacleVersion)
+ end
  s.effects={};s.message=old and "旧版胞群已恢复原地图，单位已成为细胞" or "存档已恢复";s.messageTime=8;if not validateOnly then P.reset() end;W.rebuild(s);require("war.CellCollision").resolve(s);W.rebuild(s);W.fog(s)
  if s.gastricBattlefieldVersion==1 and snap.gastricTraffic~=nil then require('war.GastricTraffic').restore(s,snap.gastricTraffic) end
  if (s.organBattlefieldVersion==1 or s.fullbodyBattlefieldVersion==1) and snap.organTraffic~=nil then require('war.OrganTraffic').restore(s,snap.organTraffic) end

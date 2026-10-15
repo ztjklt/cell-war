@@ -48,7 +48,7 @@ function A.think(s,f)
  -- twelve wood to train a replacement. This still gathers and hauls real wood.
  local recovery=false
  if core and #workers>0 and #workers<6 and E.stock(s,f,"wood")<12 then recovery="wood"
- elseif not core and E.count(s,f,"core")==0 then for _,k in ipairs({"wood","stone","fiber"}) do if E.stock(s,f,k)<D.buildings.core.cost[k] then recovery=k;break end end end
+ elseif not core and E.count(s,f,"core")==0 then for _,k in ipairs(D.resources) do if E.stock(s,f,k)<(D.buildings.core.cost[k] or 0) then recovery=k;break end end end
  if recovery and #workers>0 then
   local nearest,dd=false,math.huge
   for k,r in pairs(s.resources) do if r.kind==recovery and r.amount>0 and fa.seen[k] then local distance=U.dist(base,r);if distance<dd then nearest,dd=k,distance end end end
@@ -81,8 +81,7 @@ function A.think(s,f)
    if need then C.order(s,u,{kind=not need.complete and "build" or (need.fire>0 and "extinguish" or (need.kind=="farm" and "farm" or "repair")),target=need.id})
    else
     local choices={};for _,k in ipairs(D.resources) do if k~="food" or E.food(s,f)<80 then
-     local priority=E.stock(s,f,k)/(k=="metal" and .4 or 1)
-     if k=="relic" then priority=fa.tier>=2 and E.stock(s,f,k)<5 and 90 or 10000 end
+     local priority=E.stock(s,f,k)
      choices[#choices+1]={k=k,n=priority}
     end end
     table.sort(choices,function(a,b) return a.n<b.n end)

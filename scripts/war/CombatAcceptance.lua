@@ -102,7 +102,7 @@ function QA.run()
  end)
  test("死亡目标不能重复伤害或领取奖励",function()
   local s=fixture();local a=unit(s,"spear",1);local b=C.spawn(s,"building","nest",0,105,100,true);b.hp=1
-  F.hit(s,a,b,10);local stock=E.stock(s,1,"relic");expect(stock==4,"kill reward")
+  F.hit(s,a,b,10);local stock=E.stock(s,1,"relic");expect(stock==0 and not s.factions[1].stock.relic,"suspended kill reward")
   expect(not F.hit(s,a,b,10) and E.stock(s,1,"relic")==stock,"duplicate kill")
  end)
  test("事件多消费者与有界缓存",function()

@@ -1,0 +1,82 @@
+{
+  "schema": "registered-open-vessel-channels/v2",
+  "sourceSize": [
+    1024,
+    1536
+  ],
+  "tileSourceSize": 64,
+  "levels": [
+    4,
+    8,
+    16,
+    32
+  ],
+  "maxVirtualPixelSize": [
+    32768,
+    49152
+  ],
+  "geometrySource": "assets/image/anatomy-reference/vascular-study/standalone-vessels-20261015/vessels-geometry.svg",
+  "geometrySourceSha256": "0f57827bfab93928401f899cdb709171d341e567e9380e5ebb442546e9f856fc",
+  "originalManifestSha256": "635268ef00a0f9ab6df84546ca9ba14e297b732e8a9b4eaca1be0d946bfab637",
+  "vesselCount": 203,
+  "originalRoutesRetained": true,
+  "terminalNodes": [
+    {
+      "node": "ra.in",
+      "source": [
+        487.0,
+        379.0
+      ],
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "node": "pv.stem",
+      "source": [
+        506.0,
+        400.0
+      ],
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "node": "av.stem",
+      "source": [
+        526.0,
+        403.0
+      ],
+      "lanes": [
+        150
+      ]
+    },
+    {
+      "node": "arm_r.tissue_access.tip",
+      "source": [
+        335.0,
+        465.0
+      ],
+      "lanes": [
+        201
+      ]
+    }
+  ],
+  "crossingRule": "Original layer order; crossing without shared node stays separate.",
+  "junctionRule": "Union-owned walls and common open floor only at original named nodes.",
+  "checks": {
+    "all203PathHashesIdentical": true,
+    "outlineMaskIoUAt4x": 0.9994819648939496,
+    "mismatchesOutsideAntialiasBand": 0,
+    "antialiasBandSourcePixels": 0.75,
+    "generatedPixelsDefineGeometry": false
+  },
+  "runtimeInstalled": false,
+  "detailSourceBox": [
+    470,
+    520,
+    550,
+    630
+  ],
+  "detailIsCropOfSameTiles": true
+}

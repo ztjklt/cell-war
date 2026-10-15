@@ -1,0 +1,232 @@
+{
+  "schema": "current-production-vessel-review/v1",
+  "date": "2026-10-14",
+  "status": "AUDIT_COMPLETE_WITH_VISUAL_FINDINGS",
+  "nativeEvidence": false,
+  "previewState": "stopped",
+  "scope": [
+    "head-neck",
+    "heart-lungs",
+    "upper-abdomen",
+    "bladder-pelvis",
+    "right-arm",
+    "left-arm",
+    "legs",
+    "right-shoulder",
+    "left-shoulder",
+    "right-hand",
+    "left-hand",
+    "right-foot",
+    "left-foot"
+  ],
+  "fixed": [
+    {
+      "id": "R1",
+      "priority": 1,
+      "title": "心脏区域血管误选",
+      "status": "FIXED",
+      "description": "心脏区域的通用血管候选曾抢占当前血管；优先规则现仅用于心腔和瓣膜。下腔静脉测试从误入 e005、绕行396.3模拟秒，恢复为保留 e015、约75.5模拟秒。",
+      "files": [
+        "scripts/war/OrganBattlefield.lua"
+      ]
+    },
+    {
+      "id": "R2",
+      "priority": 1,
+      "title": "四肢长血管寻路等待过久",
+      "status": "FIXED",
+      "description": "外部血管净空探测原先反复扫描整条曲线，四条长动脉测试超过20 CPU秒预算。现使用已初始化的32单位局部索引，保持合法范围内的精确距离；四条路线均完成，并通过0.1秒步进复核。",
+      "files": [
+        "scripts/war/OrganBattlefieldCore.lua"
+      ]
+    }
+  ],
+  "remaining": [
+    {
+      "id": "V1",
+      "priority": 2,
+      "title": "手指分支停在手掌",
+      "status": "OPEN_LAYOUT",
+      "image": "right-hand.png",
+      "relatedImages": [
+        "left-hand.png"
+      ],
+      "lanes": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87
+      ],
+      "description": "两手各五条供血—交换—回流分支的实际端点位于手掌，尚未延伸到对应手指末端。路线能走通，但位置与底图的手指不符。需要同步调整真实路线、末端接口和显示素材。"
+    },
+    {
+      "id": "V2",
+      "priority": 2,
+      "title": "脚趾分支集中在脚背",
+      "status": "OPEN_LAYOUT",
+      "image": "right-foot.png",
+      "relatedImages": [
+        "left-foot.png"
+      ],
+      "lanes": [
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109
+      ],
+      "description": "两足各五条分支集中在足背，未对应脚趾末端；支路回折较硬，彼此拥挤。现有回路通行通过，仍需同时整理路线与底图。"
+    },
+    {
+      "id": "V3",
+      "priority": 2,
+      "title": "上腹部回折和交叉难辨认",
+      "status": "OPEN_READABILITY",
+      "image": "upper-abdomen.png",
+      "lanes": [
+        125,
+        129,
+        165,
+        136,
+        139
+      ],
+      "description": "胰腺上方及肾脏入口周围多条血管投影重叠，局部回折较大、层级提示不足，容易把交叉看成分叉。连接处移动测试通过；本次未删除真实管线或更改接口。"
+    },
+    {
+      "id": "V4",
+      "priority": 2,
+      "title": "膀胱上方回折过于显眼",
+      "status": "OPEN_READABILITY",
+      "image": "bladder-pelvis.png",
+      "lanes": [
+        142,
+        144
+      ],
+      "description": "膀胱上方右侧红色供血支路形成明显回折，与骨盆主干挤在一起，入口方向不清楚。供血及回流连接测试通过，需整理局部弯曲和显示层次。"
+    },
+    {
+      "id": "V5",
+      "priority": 3,
+      "title": "心脏上方管壁小缺口",
+      "status": "OPEN_DISPLAY",
+      "image": "heart-lungs.png",
+      "sourceLocationApprox": [
+        504,
+        348
+      ],
+      "description": "心脏上方横向红色血管的下沿仍有一个小缺口；部分蓝色管线的贴图过渡也比较突兀。属于画面接缝，当前连接与移动检查没有发现对应的物理断路。"
+    },
+    {
+      "id": "V6",
+      "priority": 3,
+      "title": "脑底入口回折拥挤",
+      "status": "OPEN_READABILITY",
+      "image": "head-neck.png",
+      "lanes": [
+        16,
+        66,
+        176,
+        178
+      ],
+      "description": "左右脑底血管入口处有较集中的回折，投影交叉的前后关系不够直观。连接及通行检查通过，可在后续整理入口曲线时改善。"
+    }
+  ],
+  "topology": {
+    "bloodEdges": 211,
+    "namedNodes": 172,
+    "endpointMismatches": [],
+    "connectedComponents": 1,
+    "componentSizes": [
+      172
+    ],
+    "intentionalDeadEnds": [
+      "arm_r.tissue_access.tip"
+    ]
+  },
+  "movement": {
+    "laneCommands": 422,
+    "laneFailures": 0,
+    "junctionCommands": 94,
+    "junctionFailures": 0,
+    "digitCircuits": 20,
+    "digitCircuitFailures": 0
+  },
+  "indexedClearanceComparisons": 265860,
+  "unrelatedCrossingControls": 114,
+  "foregroundControls": 2,
+  "timeSteps": [
+    0.5,
+    0.1
+  ],
+  "collisionGeometryChanged": false,
+  "additionalTextureSlots": 0,
+  "limitations": [
+    "使用当前生产Lua模块的离线绘制与模拟；未重开已关闭的原生游戏窗口。",
+    "移动用例清空其他单位和资源，以隔离血管通行；未验证拥堵时的全部单位交互。",
+    "心腔与瓣膜优先拾取按现有规则保留；被上层血管遮住的211、174测试点改用可见段，另有两个前景拾取对照。"
+  ],
+  "evidenceFiles": [
+    "movement.json",
+    "index-clearance.json",
+    "crossings.json",
+    "long-limbs-default-step.json",
+    "topology.json",
+    "frames.json"
+  ],
+  "currentSourceHashes": {
+    "scripts/war/OrganBattlefield.lua": "d5f951617840fe6a5b26d972ff9295ba4ebf6c435325b5e0bb5dfc8bb4eb50f7",
+    "scripts/war/OrganBattlefieldCore.lua": "7aad6940976fcd0bd75be52d5d74c596c8320900c504e6b7286de216fd81aac4",
+    "scripts/war/AbdominalVesselDisplayData.lua": "6a79cc0541e443bd2290e61b1be5d95e43caa95d1429e241664ab67ef1e6dd37"
+  }
+}

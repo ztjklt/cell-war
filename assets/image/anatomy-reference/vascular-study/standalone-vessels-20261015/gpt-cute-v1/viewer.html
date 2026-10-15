@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>血管画风 · 放大查看</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font:14px system-ui,-apple-system,sans-serif;color:#493b53;background:#f8f4ef}header{height:132px;padding:17px 24px;background:#fffaf5;border-bottom:1px solid #e7dce4}h1{font-size:20px;margin:0 0 9px;font-weight:650}nav{display:flex;gap:8px;flex-wrap:wrap;align-items:center}button,select,a{font:inherit}button,select{padding:7px 12px;border:1px solid #ded2df;border-radius:8px;background:#fff;color:inherit;cursor:pointer}button[aria-pressed=true]{background:#f4dce7;border-color:#ce9eb6}button:hover{border-color:#a487ad}a{color:#876290;padding:5px}#percent{font-variant-numeric:tabular-nums;min-width:55px;text-align:center}p{font-size:12px;color:#897b8d;margin:9px 0 0}#stage{position:relative;height:calc(100vh - 132px);overflow:hidden;touch-action:none;cursor:grab;background:#faf6f0}#stage.dragging{cursor:grabbing}#art{position:absolute;left:0;top:0;transform-origin:0 0;max-width:none;pointer-events:none;user-select:none}#stage.checker{background:repeating-conic-gradient(#e8e2e7 0% 25%,#faf7fa 0% 50%) 0/24px 24px}#stage.dark{background:#282633}.tag{position:absolute;bottom:18px;right:20px;pointer-events:none;font-size:12px;color:#816d88;padding:8px 12px;border-radius:9px;background:#fffaf5dd;z-index:1}@media(max-width:800px){header{height:172px;padding:12px}#stage{height:calc(100vh - 172px)}h1{font-size:17px}button,select{padding:6px 8px}p{line-height:1.5}}
+</style>
+<header><h1>血管独立图层 <span style="font-size:13px;font-weight:400;color:#a389a2">可爱动漫 × 几何色块</span></h1>
+<nav><button id="full" aria-pressed="false">全身预览</button><button id="detail" aria-pressed="true">胸腹细节样张</button><button id="fit">适合窗口</button><button id="native">原始大小</button><button id="minus" aria-label="缩小">−</button><span id="percent">100%</span><button id="plus" aria-label="放大">＋</button><select id="bg" aria-label="背景"><option value="">米白背景</option><option value="checker">透明棋盘格</option><option value="dark">深色背景</option></select><a id="download" href="torso-detail.png" download>下载 PNG</a></nav>
+<p>滚轮缩放 · 按住拖动 · 双击放大。局部为独立生成的画风样张；当前仅用于看美术效果，未替换游戏地图。</p></header>
+<div id="stage"><img id="art" alt="血管动漫几何画风预览" draggable="false"><span id="tag" class="tag"></span></div>
+<script>
+const stage=document.querySelector('#stage'),art=document.querySelector('#art'),percent=document.querySelector('#percent');
+const entries={full:{file:'fullbody.png',name:'全身预览 · 1024 × 1536'},detail:{file:'torso-detail.png',name:'独立细节样张 · 984 × 1599'}};
+let scale=1,x=0,y=0,active='detail',drag=null;
+function paint(){art.style.transform=`translate(${x}px,${y}px) scale(${scale})`;percent.textContent=Math.round(scale*100)+'%'}
+function fit(){if(!art.naturalWidth)return;scale=Math.min((stage.clientWidth-70)/art.naturalWidth,(stage.clientHeight-40)/art.naturalHeight);x=(stage.clientWidth-art.naturalWidth*scale)/2;y=(stage.clientHeight-art.naturalHeight*scale)/2;paint()}
+function zoom(next,cx=stage.clientWidth/2,cy=stage.clientHeight/2){next=Math.max(.07,Math.min(12,next));x=cx-(cx-x)*next/scale;y=cy-(cy-y)*next/scale;scale=next;paint()}
+function show(key){active=key;art.onload=fit;art.src=entries[key].file;document.querySelector('#tag').textContent=entries[key].name;document.querySelector('#download').href=entries[key].file;for(const id of ['full','detail'])document.querySelector('#'+id).setAttribute('aria-pressed',String(id===key))}
+document.querySelector('#full').onclick=()=>show('full');document.querySelector('#detail').onclick=()=>show('detail');document.querySelector('#fit').onclick=fit;document.querySelector('#native').onclick=()=>zoom(1);document.querySelector('#plus').onclick=()=>zoom(scale*1.35);document.querySelector('#minus').onclick=()=>zoom(scale/1.35);document.querySelector('#bg').onchange=e=>stage.className=e.target.value;
+stage.addEventListener('wheel',e=>{e.preventDefault();const r=stage.getBoundingClientRect();zoom(scale*Math.exp(-e.deltaY*.002),e.clientX-r.left,e.clientY-r.top)},{passive:false});
+stage.addEventListener('dblclick',e=>{const r=stage.getBoundingClientRect();zoom(scale*1.6,e.clientX-r.left,e.clientY-r.top)});
+stage.addEventListener('pointerdown',e=>{if(e.button!==0)return;drag={id:e.pointerId,x:e.clientX,y:e.clientY,ox:x,oy:y};stage.setPointerCapture(e.pointerId);stage.classList.add('dragging')});
+stage.addEventListener('pointermove',e=>{if(!drag||drag.id!==e.pointerId)return;x=drag.ox+e.clientX-drag.x;y=drag.oy+e.clientY-drag.y;paint()});
+function release(){drag=null;stage.classList.remove('dragging')}stage.addEventListener('pointerup',release);stage.addEventListener('pointercancel',release);window.addEventListener('resize',fit);show(active);
+</script></html>

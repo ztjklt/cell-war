@@ -20,6 +20,7 @@ function J.update(s,e,dt)
  if e.life then e.life=e.life-dt;if e.life<=0 then F.damage(s,nil,e,e.hp,{cause="expired",raw=true});return end end
  local o=e.orders[1]
  if s.campaign and e.kind=="virus" then require("war.Campaign").virus(s,e,dt);return end
+ if require('war.VascularCheckpoints').pathogen(s,e,dt)then return end
  if not s.campaign and e.faction>0 and (e.returning or e.satiety<30) then
   local home=U.nearest(s,e.x,e.y,function(b) return b.faction==e.faction and b.category=="building" and b.complete and D.buildings[b.kind].supply end)
   if home and U.dist(e,home)>7 then
@@ -69,11 +70,12 @@ function J.update(s,e,dt)
  elseif o.kind=="gather" then
   if e.delivering then delivery(s,e,dt);return end
   local r=s.resources[o.target]
+  if r and not D.resourceEnabled(r.kind) then C.completeOrder(e);return end
   if not r or r.amount<=0 then
    if next(e.cargo) then e.delivering=true;delivery(s,e,dt)
    else
     local nearest,dd=false,math.huge
-    for k,v in pairs(s.resources) do if v.kind==(r and r.kind or "wood") and v.amount>0 and s.factions[e.faction].seen[k] then local d=U.dist(e,v);if d<dd and d<25 then nearest,dd=k,d end end end
+    for k,v in pairs(s.resources) do if D.resourceEnabled(v.kind) and v.kind==(r and r.kind or "wood") and v.amount>0 and s.factions[e.faction].seen[k] then local d=U.dist(e,v);if d<dd and d<25 then nearest,dd=k,d end end end
     if nearest then o.target=nearest;e.pathFailed=false else C.completeOrder(e) end
    end return
   end
@@ -88,7 +90,12 @@ function J.update(s,e,dt)
   if o.kind=="farm" and e.delivering then delivery(s,e,dt);return end
   local b=s.entities[o.target]
   if not U.alive(b) or b.faction~=e.faction then C.completeOrder(e);return end
-  if C.go(s,e,b.x,b.y,dt,(D.buildings[b.kind].size or 1)*.5+1) then
+  local bx,by,lane=b.x,b.y,nil
+  if b.checkpointId then
+   local aim=require('war.VascularCheckpoints').attackAnchor(s,e,b)
+   if not aim then return end;bx,by,lane=aim.x,aim.y,aim.vesselLane
+  end
+  if C.go(s,e,bx,by,dt,(D.buildings[b.kind].size or 1)*.5+1,lane) then
    if o.kind=="build" then
     if b.complete then
      C.completeOrder(e)
