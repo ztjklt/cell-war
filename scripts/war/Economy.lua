@@ -19,8 +19,8 @@ function E.population(s,f,queues)
  if s.campaign and f==1 then if queues then for _,q in ipairs(s.campaign.reinforcements.queue) do n=n+q.remaining end end;cap=D.MAX_POP end
  return n,math.min(40,cap)
 end
-function E.stock(s,f,k) if k=="food" then return E.food(s,f) end return s.factions[f].stock[k] or 0 end
-function E.afford(s,f,c) for k,n in pairs(c) do if E.stock(s,f,k)<n then return false,"缺少"..D.names[k] end end return true end
+function E.stock(s,f,k) if not D.resourceEnabled(k) then return 0 end;if k=="food" then return E.food(s,f) end return s.factions[f].stock[k] or 0 end
+function E.afford(s,f,c) for k,n in pairs(c) do if D.resourceEnabled(k) and E.stock(s,f,k)<n then return false,"缺少"..D.names[k] end end return true end
 function E.consumeFood(s,f,n)
  local fa=s.factions[f];local remaining=n
  for _,b in ipairs(fa.food) do local take=math.min(remaining,b.amount);b.stomachGlucose=math.max(0,(b.stomachGlucose or 0)-take);b.amount=b.amount-take;remaining=remaining-take;if remaining<=0 then break end end
@@ -29,12 +29,14 @@ function E.consumeFood(s,f,n)
 end
 function E.pay(s,f,c,stomachFood) local ok,why=E.afford(s,f,c);if not ok then return false,why end
  if stomachFood and E.stomachGlucose(s,f)<(c.food or 0) then return false,"缺少胃部葡萄糖" end
- for k,n in pairs(c) do if k=="food" then if stomachFood then E.consumeStomachGlucose(s,f,n) else E.consumeFood(s,f,n) end else s.factions[f].stock[k]=s.factions[f].stock[k]-n end end return true
+ for k,n in pairs(c) do if D.resourceEnabled(k) then if k=="food" then if stomachFood then E.consumeStomachGlucose(s,f,n) else E.consumeFood(s,f,n) end else s.factions[f].stock[k]=(s.factions[f].stock[k] or 0)-n end end end return true
 end
 function E.add(s,f,k,n,source)
+ if not D.resourceEnabled(k) then return false end
  local fa=s.factions[f]
  if k=="food" then local last=fa.food[#fa.food];if last and math.abs(last.born-s.time)<60 and (last.source or "")==(source or "") then last.amount=last.amount+n;last.stomachGlucose=(last.stomachGlucose or 0)+(source=="stomach" and n or 0) else fa.food[#fa.food+1]={amount=n,born=s.time,source=source,stomachGlucose=source=="stomach" and n or 0} end
  else fa.stock[k]=(fa.stock[k] or 0)+n end
+ return true
 end
 function E.refund(s,f,c,ratio,foodSource) for k,n in pairs(c) do E.add(s,f,k,math.floor(n*ratio),k=="food" and foodSource or nil) end end
 function E.spoil(s)

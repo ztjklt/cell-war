@@ -23,7 +23,7 @@ def runtime():
 
 def main():
     report = {}
-    suites = ['CombatAcceptance', 'GameplayUpdateAcceptance',
+    suites = ['ResourceAcceptance', 'CombatAcceptance', 'GameplayUpdateAcceptance',
               'BattleHUDAcceptance', 'ReferenceAcceptance',
               'ReferenceRenderAcceptance', 'BodyLifeAcceptance',
               'BodyLifeFlowAcceptance', 'BodyLifeMotionAcceptance',

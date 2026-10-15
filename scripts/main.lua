@@ -28,8 +28,10 @@ function Start()
  end
  game.startFullBodyMap=function()
   game.replaceState(require('war.FullBodyBattlefield').new(math.floor(os.time()%2000000000)))
-  game.camera={x=1016,y=1512};game.zoom=.15;game.fogDisabled=true
-  game.selection={};H.refs.play:SetVisible(true)
+  I.selectKind(game,'worker')
+  local cell=assert(game.state.entities[I.ids(game)[1]],'开局红细胞不存在') --[[@as {x:number,y:number}]]
+  game.camera={x=cell.x,y=cell.y};game.zoom=.25;game.fogDisabled=true
+  H.refs.play:SetVisible(true)
  end
  game.startOrganTrial=function()
   game.replaceState(require('war.OrganTrial').new(math.floor(os.time()%2000000000)))
@@ -45,11 +47,13 @@ function Start()
  SubscribeToEvent("MouseWheel","HandleWheel")
  -- Enter the integrated full-body battlefield with its normal interactive camera.
  game.startFullBodyMap()
- -- Begin this review at the repaired intestine; normal map controls stay free.
- game.camera={x=1018,y=1859};game.zoom=.07
- print("[细胞战争] READY | view=topdown2d | world=body | map=2048x4096 | anatomy="..tostring(game.state.anatomyVersion).." | walls=sealed | mode=fullbody | camera=free | zoom="..tostring(game.zoom).." | controllable=cells | fixedStep=0.1")
+ -- Show the integrated map first; ordinary zoom/pan and cell selection remain free.
+ game.camera={x=1024,y=2048}
+ game.zoom=math.min((graphics:GetWidth()/graphics:GetDPR())/(1024*64),(graphics:GetHeight()/graphics:GetDPR())*.68/(1536*64))
+ require('qa.RedCellNativeObservation').start(game,R)
+ print("[细胞战争] READY | view=topdown2d | world=body | map=2048x4096 | anatomy="..tostring(game.state.anatomyVersion).." | walls=sealed | mode=fullbody | camera=free | zoom="..tostring(game.zoom).." | controllable=red-cell | fixedStep=0.1")
 end
-function Stop() Audio.stop();require('war.FullBodyMapArt').release(UI.GetNVGContext());require('war.OrganAtlasArt').release(UI.GetNVGContext());require('war.GastricArt').release(UI.GetNVGContext());require("war.BodyLife").release(UI.GetNVGContext());require("war.ReferenceArt").release(UI.GetNVGContext());require("war.LegacyReferenceArtV3").release(UI.GetNVGContext());require("war.Cells").release(UI.GetNVGContext());require("war.UIArt").release(UI.GetNVGContext());require("war.OrganArt").release(UI.GetNVGContext());require("war.BrainRig").release(UI.GetNVGContext());R.close();UI.Shutdown() end
+function Stop() Audio.stop();require('war.VascularCheckpointArt').release(UI.GetNVGContext());require('war.FullBodyMapArt').release(UI.GetNVGContext());require('war.OrganAtlasArt').release(UI.GetNVGContext());require('war.GastricArt').release(UI.GetNVGContext());require("war.BodyLife").release(UI.GetNVGContext());require("war.ReferenceArt").release(UI.GetNVGContext());require("war.LegacyReferenceArtV3").release(UI.GetNVGContext());require("war.Cells").release(UI.GetNVGContext());require("war.UIArt").release(UI.GetNVGContext());require("war.OrganArt").release(UI.GetNVGContext());require("war.BrainRig").release(UI.GetNVGContext());R.close();UI.Shutdown() end
 ---@param eventType string
 ---@param eventData UpdateEventData
 function HandleUpdate(eventType,eventData)
@@ -57,6 +61,9 @@ function HandleUpdate(eventType,eventData)
  game.frameCount=game.frameCount+1;game.frameTime=game.frameTime+dt
  if game.frameTime>=1 then game.fps=math.floor(game.frameCount/game.frameTime);game.frameTime=0;game.frameCount=0 end
  I.update(game,dt);Save.update(dt)
+ require('war.VesselChannelsArt').update(R,game)
+ require('war.StyledOrgansArt').update(R,game)
+ require('war.AnatomyFoundationArt').update(R,game)
  ChangeLevel.update(game,dt)
  if game.started and not game.transition and not game.paused and not game.modal then
   game.accumulator=math.min(game.accumulator+dt*game.speed,1)

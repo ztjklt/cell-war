@@ -2,10 +2,14 @@
 -- FullBodyMapArt owns image creation/release and its resource budget.
 local T=require('war.HeartDisplayTransform')
 local H={last={triangles=0},clips={},contours=setmetatable({},{__mode='k'})}
-local function imagePaint(vg,spec,image,alpha,panel)
+local function imagePaint(vg,spec,image,alpha,panel,tint)
  local b=spec.sourceBox;local width,height=b[3]-b[1],b[4]-b[2]
  local columns=spec.atlasColumns or 1;local rows=spec.atlasRows or(spec.atlasPanels or 1)
  local index=panel or 0
+ if tint then
+  return nvgImagePatternTinted(vg,b[1]-(index%columns)*width,b[2]-(index//columns)*height,
+   width*columns,height*rows,0,image,nvgRGBA(tint[1],tint[2],tint[3],math.floor(255*(alpha or 1)*(spec.opacity or 1)+.5)) --[[@as NVGcolor]])
+ end
  return nvgImagePattern(vg,b[1]-(index%columns)*width,b[2]-(index//columns)*height,
   width*columns,height*rows,0,image,(alpha or 1)*(spec.opacity or 1))
 end
@@ -53,7 +57,7 @@ local function affine(source,target,tr)
  local cc,dd=(yx*ux-xx*vx)/det,(yy*ux-xy*vx)/det
  return aa,bb,cc,dd,p.x-aa*ax-cc*ay,p.y-bb*ax-dd*ay
 end
-function H.drawSpec(R,g,s,spec,image,alpha,vascularAlpha)
+function H.drawSpec(R,g,s,spec,image,alpha,vascularAlpha,tint)
  if not T.enabled(s)or not image or image<=0 or (alpha or 1)<=0 then return false end
  local f=T.frame(g);local mesh=f.mesh;local b=spec.sourceBox
  local ox,oy=R.project(g,0,512);local scale=64*g.zoom
@@ -64,7 +68,7 @@ function H.drawSpec(R,g,s,spec,image,alpha,vascularAlpha)
  nvgShapeAntiAlias(vg,0)
  if spec.staticPanel then
   nvgBeginPath(vg);nvgRect(vg,b[1],b[2],b[3]-b[1],b[4]-b[2])
-  nvgFillPaint(vg,imagePaint(vg,spec,image,alpha,spec.staticPanel));nvgFill(vg)
+  nvgFillPaint(vg,imagePaint(vg,spec,image,alpha,spec.staticPanel,tint));nvgFill(vg)
   H.last.actualFills=H.last.actualFills+1
  end
  -- Optional coreBox is a static distant boundary, never an internal cardiac seam.
@@ -78,9 +82,9 @@ function H.drawSpec(R,g,s,spec,image,alpha,vascularAlpha)
  H.last.atlasPanel=selected
  H.last.detailVisible=spec.coarsePanel==nil or selected~=spec.coarsePanel
  if spec.innerPanel and vascularAlpha and vascularAlpha<1-1e-8 then
-  paints[1]=imagePaint(vg,spec,image,alpha,spec.innerPanel)
-  if vascularAlpha>0 then paints[2]=imagePaint(vg,spec,image,(alpha or 1)*vascularAlpha,spec.outerPanel)end
- else paints[1]=imagePaint(vg,spec,image,alpha,selected)end
+  paints[1]=imagePaint(vg,spec,image,alpha,spec.innerPanel,tint)
+  if vascularAlpha>0 then paints[2]=imagePaint(vg,spec,image,(alpha or 1)*vascularAlpha,spec.outerPanel,tint)end
+ else paints[1]=imagePaint(vg,spec,image,alpha,selected,tint)end
  if g.heartStaticDiagnostic then
   nvgBeginPath(vg);nvgRect(vg,b[1],b[2],b[3]-b[1],b[4]-b[2])
   for _,paint in ipairs(paints)do nvgFillPaint(vg,paint);nvgFill(vg)end

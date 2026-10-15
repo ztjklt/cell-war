@@ -104,7 +104,7 @@ function Q.run()
   for _,z in ipairs(ev.zones) do z.control=100;z.owner=1 end
   for _=1,199 do Camp.afterStep(s,.1) end;expect(ev.status=="active","early victory")
   Camp.afterStep(s,.1);expect(ev.status=="completed" and s.campaign.stage==2 and s.campaign.awaitingContent,"completion")
-  local reward=s.factions[1].stock.relic;Camp.succeed(s);expect(s.factions[1].stock.relic==reward and reward==1,"double reward")
+  local reward=s.factions[1].stock.relic;Camp.succeed(s);expect(s.factions[1].stock.relic==reward and reward==nil and s.campaign.rewards.nasal_01,"suspended reward or completion lost")
   expect(not Camp.start(s,"throat") and #Camp.randomCandidates(s)==0 and not s.campaign.unlocked.throat,"empty encounter")
   local q=Save.restore(Save.snapshot(s));expect(q.campaign.completed.nasal and q.campaign.stage==2,"completion persistence")
  end)

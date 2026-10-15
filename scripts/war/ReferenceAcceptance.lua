@@ -12,7 +12,7 @@ function Q.run()
   for _,p in ipairs({{509,60},{173,873},{229,864},{840,873},{334,1473},{393,1483},{678,1473},{615,1483}}) do local wx,wy=M.world(p[1],p[2]);assert(M.contains(M.outline,wx,wy),'lost finger/toe '..p[1]) end
  end)
  test('新开局为气管守卫，八名守卫都在合法气管格内',function()
-  for _,seed in ipairs({1,73,2026}) do local s=S.new(seed);assert(s.version==9 and s.anatomyVersion==4 and s.campaign.event.id=='trachea' and s.campaign.terrainVersion==4)
+  for _,seed in ipairs({1,73,2026}) do local s=S.new(seed);assert(s.version==require('war.Data').VERSION and s.anatomyVersion==4 and s.campaign.event.id=='trachea' and s.campaign.terrainVersion==4)
    local count=0;for _,e in pairs(s.entities) do count=count+1;assert(e.faction==1 and W.land(s,math.floor(e.x),math.floor(e.y)) and e.vesselLane==0) end
    assert(count==8 and next(s.resources)==nil and #W.vessels(s).edges==0 and #G.airways==15)
    for _,z in ipairs(G.zones) do assert(T.zone(z.x,z.y,s) and W.land(s,z.x,z.y)) end
@@ -69,7 +69,7 @@ function Q.run()
   for _,z in ipairs(ev.zones) do z.control=100;z.owner=1 end
   for _=1,199 do Camp.afterStep(s,.1) end;assert(ev.status=='active');Camp.afterStep(s,.1)
   assert(ev.status=='completed' and s.campaign.completed.trachea and s.campaign.completed.trachea_01 and s.campaign.stage==4 and not s.campaign.awaitingContent)
-  local reward=s.factions[1].stock.relic;Camp.succeed(s);assert(reward==1 and s.factions[1].stock.relic==reward)
+  local reward=s.factions[1].stock.relic;Camp.succeed(s);assert(reward==nil and s.factions[1].stock.relic==reward and s.campaign.rewards.trachea_01)
   assert(not Camp.start(s,'lungs') and #Camp.randomCandidates(s)==0)
  end)
  test('移动中v9读档、失败重试及旧v7鼻腔检查点保持各自几何',function()

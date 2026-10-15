@@ -1,0 +1,85 @@
+{
+  "status": "REPAIR_COMPLETE_OFFLINE_VERIFIED",
+  "nativeEvidence": false,
+  "issuesAddressed": 6,
+  "changedBloodLanes": 70,
+  "digitCircuits": 20,
+  "bloodEdges": 211,
+  "movement": {
+    "laneCommands": 422,
+    "laneFailures": 0,
+    "junctionCommands": 94,
+    "junctionFailures": 0,
+    "digitCircuits": 20,
+    "digitCircuitFailures": 0
+  },
+  "interfaceRoundtrips": 36,
+  "savedCellsChecked": 70,
+  "unrelatedCrossingsChecked": 97,
+  "textureSlotsPerContext": 43,
+  "textureSlotsAdded": 0,
+  "gateIdsAndAnchorsPreserved": true,
+  "tissueGridsUnchanged": true,
+  "numericBloodIdsPreserved": true,
+  "previewState": "stopped",
+  "limitations": [
+    "当前生产Lua模块的离线绘制和模拟验收；原生GPU显示、过滤和帧率未重新验收。",
+    "游戏窗口已关闭，本次没有自动重开。",
+    "移动测试隔离其他单位和资源，不能代表所有拥堵情形。"
+  ],
+  "changes": [
+    {
+      "region": "手指末端",
+      "frame": "right-hand.png",
+      "description": "10条手指回路延伸到对应末端，供血、交换和回流仍通过原有编号连接。"
+    },
+    {
+      "region": "脚趾末端",
+      "frame": "right-foot.png",
+      "description": "10条脚趾回路从脚背移向对应脚趾，保留原脚部主干节点。修后视图向下扩展到完整脚趾。"
+    },
+    {
+      "region": "上腹部",
+      "frame": "upper-abdomen.png",
+      "description": "缩短胰腺供血的绕行，整理胰腺回流与肾脏供血接近路线；器官内接口和末端4个源坐标单位的接近段保留。"
+    },
+    {
+      "region": "膀胱周围",
+      "frame": "bladder-pelvis.png",
+      "description": "缩短上方红色回折，蓝色回流沿上壁平滑接近，留出可点击的可见段。"
+    },
+    {
+      "region": "脑底入口",
+      "frame": "head-neck.png",
+      "description": "供血入口改为平滑接近，减少掉头；组织地面和既有交换区保持原有规则。"
+    },
+    {
+      "region": "心脏接缝",
+      "frame": "heart-lungs.png",
+      "description": "在真实血管域内补齐上方肺动脉缺口，统一下腔静脉的局部显示，并同步修补区域的细胞可见层级。"
+    }
+  ],
+  "sourceHashes": {
+    "FullBodyMapArt.lua": "dcd718e2762132436e150552ca3d2bcfbf3b9bf60b7c24c3fbc00ceb710de685",
+    "VascularRouteRepair.lua": "0cf3a93980bcf997bf82d87e854a5fd016fcab369054b01229cc8b2e618a9eae",
+    "VascularRouteRepairData.lua": "91da844c2914fd0affccaf7620e00383065e27db939c0f17d1eab76d8becfe34",
+    "VascularRouteRepairArt.lua": "434c9c49cb57f9d0b386efbee297196c261b39488053ee909fcc46bc2ffdcb72",
+    "VascularRouteRepairVisualData.lua": "dc2ede5028870f88f509a9cf410c577925a44f96badbddc2710f93da4c9681bd",
+    "Save.lua": "7d1d74e4a291378b6999d3bf48e8e85e4c8c16bfc723a8ef9d2348121f10f17e"
+  },
+  "evidenceHashes": {
+    "movement.json": "b27361143ad4a46618185d7979a6a043e7b97547630451a7af73baccc5f82a24",
+    "acceptance.json": "e79bbed6ee27496a9370f7db3c7cc6b413ad25b8125915b155a966cffbdd81ef",
+    "render-lifecycle.json": "f5a81cae896bd05f1171b5cdfcac4b5026543774492b8037aea16f76e9681385",
+    "crossings.json": "5002a10db190383d474db6fd2d3e634b6683fcd508dcec964e7c67001a2d3b76",
+    "organ-layer-regression.json": "e2f029296e99ed5e97316fd38337c84210191fb18eeeb6979cc14e78e69047fc"
+  },
+  "renderHashes": {
+    "right-hand": "17b589dbd07cc55341e6959288077191d5d26ae095572bcf51b295c956a29b8b",
+    "right-foot": "e7b5c9539623d9a39644df3bddaeb251e3403b1e8e8bf29da875e09b2713b792",
+    "upper-abdomen": "9f8b65dd08bbacdb7b864454e289cc3153ff28899c84e5687831344205e828b2",
+    "bladder-pelvis": "23021c6854c3f8d896b9ba083272d06aef0af949bf431c47506350c97474877b",
+    "head-neck": "2e32aba231f6e2129083b67ed958c4aac1fd50033e484e28a9835cebd29cbc77",
+    "heart-lungs": "f11111600b96d3df9b510a06304f6fc76947fe0d5690225ece42cd5b2cf55e4f"
+  }
+}

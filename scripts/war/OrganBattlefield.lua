@@ -3,10 +3,12 @@ local Gastric=require('war.GastricBattlefield')
 local Factory=require('war.OrganBattlefieldCore')
 local Heart=require('war.HeartBattlefield')
 local Bowel=require('war.BowelBattlefield')
+local RouteRepair=require('war.VascularRouteRepair')
+local BloodPorts=require('war.OrganBloodPorts')
 local localBlood={scout={},siege={}}
 local localJunctions={scout={},siege={}}
 local replacedLanes={}
-for _,data in ipairs({Heart.data,Bowel.data})do
+for _,data in ipairs({Heart.data,Bowel.data,RouteRepair.data})do
  for lane,rings in pairs(data.rawBloodDomains)do replacedLanes[lane]=rings end
  for _,kind in ipairs({'scout','siege'})do
   for lane,blood in pairs(data.bloodLanes[kind])do localBlood[kind][lane]=blood end
@@ -31,14 +33,14 @@ function O.enabled(s)return opted(s)or Gastric.enabled(s)end
 function O.radius(e)return Gastric.radius(e)end
 function O.net(s)
  if not opted(s)then return Gastric.net(s)end
- return Bowel.net(Heart.net(require('war.Vessels').forState(frozenState)))
+ return RouteRepair.net(Bowel.net(Heart.net(require('war.Vessels').forState(frozenState))))
 end
 function O.organ(id)
- if id=='stomach'then return Bowel.replaceOrgan(Gastric.data)end
- if id=='heart'then return Heart.data end
+ if id=='stomach'then return BloodPorts.apply(Bowel.replaceOrgan(Gastric.data))end
+ if id=='heart'then return BloodPorts.apply(Heart.data)end
  if not Data then Data=require('war.OrganBattlefieldData')end
  local d=Data.organs and Data.organs[id]
- return d and Bowel.replaceOrgan(d)
+ return d and BloodPorts.apply(Bowel.replaceOrgan(d))
 end
 function O.activeOrgans(s)
  if not opted(s)then return Gastric.enabled(s)and{'stomach'}or{}end
@@ -55,6 +57,7 @@ local function engine(id)
  if not engines[id]then
   local d=O.organ(id);if not d or d.available==false then return nil end
   engines[id]=Factory.create(d,{enabled=opted,net=O.net,
+   gateAllowed=function(s,e,gateId)return require('war.VascularCheckpoints').mayTraverse(s,e,gateId)end,
    localBlood=localBlood,localJunctions=localJunctions,replacedLanes=replacedLanes})
  end
  return engines[id]
@@ -152,6 +155,45 @@ function O.lane(s,e,x,y,preferred)
  local net=O.net(s)
  for lane=1,#net.edges do if O.pointAllowed(s,e,x,y,lane)then return lane end end
 end
+-- Resolve a command's destination plane without changing the cell's plane.
+-- Interface endpoints are explicit layer choices, even when their projections
+-- overlap. All actual transitions still go through the named membrane sweeps.
+function O.commandLane(s,e,x,y,preferred)
+ if not opted(s)then return O.lane(s,e,x,y,preferred)end
+ local profile=O.radius(e)<=.21875 and'scout'or'siege'
+ for _,id in ipairs(O.activeOrgans(s))do
+  for _,g in ipairs(O.organ(id).gateContracts[profile])do
+   local a,b=g.pipeAnchorSource,g.tissueAnchorSource
+   local ax,ay,bx,by=a[1]*2,a[2]*2+512,b[1]*2,b[2]*2+512
+   local gap=math.sqrt((ax-bx)^2+(ay-by)^2)
+   local reach=math.min(O.radius(e)*2,gap*.45)
+   if (x-bx)^2+(y-by)^2<=reach*reach and O.pointAllowed(s,e,x,y,0)then return 0 end
+   if (x-ax)^2+(y-ay)^2<=reach*reach and O.pointAllowed(s,e,x,y,g.laneIndex)then return g.laneIndex end
+  end
+ end
+ local Art=require('war.FullBodyMapArt')
+ if not Art.enabled(s)then return O.lane(s,e,x,y,preferred)end
+ local current=O.lane(s,e,x,y)
+ local b=require('war.HeartVisualData').sourceBox;local sx,sy=x*.5,(y-512)*.5
+ -- Keep the existing cardiac cavity/valve selection above projected vessels.
+ if sx>=b[1]and sx<=b[3]and sy>=b[2]and sy<=b[4]
+  and current and current>=203 and current<=210 then return current end
+ -- A blood cell keeps its lane through overlapping tissue and crossings.
+ if preferred and preferred>0 and O.pointAllowed(s,e,x,y,preferred)then return preferred end
+ local net=O.net(s)
+ ---@type integer|nil
+ local best
+ local nearest=math.huge
+ for lane=1,#net.edges do
+  local distance=net.distance(lane,x,y,true)
+  if distance<nearest and distance<=net.edges[lane].width*.5
+   and O.pointAllowed(s,e,x,y,lane)
+   and Art.unitDepth(s,{vesselLane=lane},x,y)~='under-foreground'then
+   best,nearest=lane,distance
+  end
+ end
+ return best or current
+end
 function O.handles(s,x,y,tx,ty)
  if not opted(s)then return Gastric.handles(s,x,y,tx,ty)end
  for _,id in ipairs(O.activeOrgans(s))do
@@ -171,7 +213,10 @@ function O.trafficData(s)
  traffic[key]=d;return d
 end
 local function targetEngine(s,e,x,y,lane)
- return lane==0 and O.organAt(s,e,x,y)or bloodOwner(s,lane)
+ -- A blocked tissue point has no organAt result. Lua's and/or expression
+ -- would then fall through to bloodOwner(0), incorrectly selecting bladder.
+ if lane==0 then return O.organAt(s,e,x,y)end
+ return bloodOwner(s,lane)
 end
 local function selectedNear(s,e,x,y,lane)
  local id=targetEngine(s,e,x,y,lane)

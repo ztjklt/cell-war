@@ -60,7 +60,7 @@ function Q.run()
   local old={};for id,e in pairs(s.entities) do e.hp=e.maxHp-7;e.longRoute={points={{x=e.x,y=e.y}},index=1};e.pathGoal={x=e.x,y=e.y};e.returning=true;e.delivering=true;old[id]=U.copy(e) end
   local q,err=S.changeMap(s,'lungs_01');assert(q,err)
   assert(q.time==35 and q.tick==350 and q.campaign.completed.trachea_01 and q.campaign.visited_maps.lungs_01)
-  assert(q.factions[1].stock.relic==1)
+  assert(not q.factions[1].stock.relic and q.campaign.rewards.trachea_01)
   local units=require('war.CellCollision').units(q)
   for id,e in pairs(q.entities) do
    assert(old[id] and old[id].hp==e.hp and old[id].kind==e.kind)

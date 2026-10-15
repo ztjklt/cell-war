@@ -126,7 +126,7 @@ function S.step(s,dt)
   elseif s.outcome=="playing" and s.factions[2].conquered and s.factions[3].conquered then s.outcome="victory";U.message(s,"内域属于你。已战胜两个阵营，可继续生存。") end
   local day=math.floor(s.time/D.DAY)+1
   if day>(s.lastDay or 1) then s.lastDay=day;s.needsAutosave=true
-   for _,r in pairs(s.resources) do if r.kind=="wood" or r.kind=="fiber" or r.kind=="fuel" or r.kind=="food" then r.amount=math.min(r.max,r.amount+r.max*.025) end end
+   for _,r in pairs(s.resources) do if D.resourceEnabled(r.kind) then r.amount=math.min(r.max,r.amount+r.max*.025) end end
    U.message(s,"第"..day.."天 · "..D.seasons[math.floor((day-1)/8)%4+1].."期")
   end
   if s.tutorial==1 and (s.selectedOnce or false) then s.tutorial=2 end

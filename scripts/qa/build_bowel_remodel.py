@@ -130,7 +130,7 @@ def main():
     original=next(s for s in a['foregroundPatches']if s['id']=='large-gut-open-mouths')
     replacements[original['id']]=original|{'resource':str(empty.relative_to(ROOT/'assets')),'pixelSize':[1,1],'opacity':0}
     visual={'schema':'bowel-registered-route-art/v1','layoutRevision':1,'sourceBox':BOX,'replacements':replacements,
-            'ownedLanes':d['ownedLanes'],'frontPipeRings':front,'mouthGateIds':[g['id']for g in gates]}
+            'ownedLanes':{int(i):v for i,v in d['ownedLanes'].items()},'frontPipeRings':front,'mouthGateIds':[g['id']for g in gates]}
     (OUT/'BowelVisualData.lua').write_text('-- Registered tube-only art and matching cell visibility.\nreturn '+lua(visual)+'\n')
     write(OUT/'visual-data.json',visual)
     allspec=[a['quietBase']]+[s for layer in ['surfaceTiles','organs','deepTiles','junctions','foregroundPatches']for s in a[layer]]
