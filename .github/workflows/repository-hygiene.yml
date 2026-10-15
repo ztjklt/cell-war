@@ -1,0 +1,29 @@
+name: Repository hygiene
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /.repo-policy.json
+            /scripts/qa/check_repository_hygiene.py
+      - name: Fetch base tree without downloading historical assets
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: git fetch --no-tags --depth=1 --filter=blob:none origin "$BASE_SHA"
+      - name: Check changed files
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: python3 scripts/qa/check_repository_hygiene.py --base "$BASE_SHA"
