@@ -1,0 +1,100 @@
+{
+  "schema": "cell-war-repository-cleanup/v1",
+  "date": "2026-10-15",
+  "sourceCommit": "72647cd42398ed66f83bf04d874209e2de81713d",
+  "historyRewritten": false,
+  "removedFromCurrentTree": {
+    "files": 3849,
+    "bytes": 801138941,
+    "categories": {
+      "preview_exports": {
+        "files": 638,
+        "bytes": 106373863
+      },
+      "native_evidence": {
+        "files": 3092,
+        "bytes": 489292541
+      },
+      "superseded_bake": {
+        "files": 119,
+        "bytes": 205472537
+      }
+    }
+  },
+  "localFilesPreserved": true,
+  "existingScriptsAndAllAssetsUnchanged": true,
+  "backup": {
+    "filename": "archived-process-files.tar.gz",
+    "sha256": "58ffe140b3a8530e4d88d3a2d025e900994933650b9e966f1c5dfaa2ab8f390d",
+    "compressedBytes": 482195918,
+    "verifiedFiles": 4007,
+    "note": "Owner retains the archive and per-file manifest outside the repository. Historical files are also recoverable from sourceCommit."
+  },
+  "validation": {
+    "status": "CURRENT_CHECKS_PASS_WITH_KNOWN_BASELINE_LIMITATIONS",
+    "cleanCopyContainsOnlyRetainedTrackedFiles": true,
+    "tests": [
+      {
+        "script": "scripts/qa/run_integration.py",
+        "result": "PASS"
+      },
+      {
+        "script": "scripts/qa/check_anatomy_foundation_runtime.py",
+        "result": "PASS"
+      },
+      {
+        "script": "scripts/qa/check_vessel_channels_runtime.py",
+        "result": "PASS"
+      },
+      {
+        "script": "scripts/qa/check_styled_organs_runtime.py",
+        "result": "PASS"
+      },
+      {
+        "script": "scripts/qa/check_anatomy_perspective.py",
+        "result": "PASS"
+      },
+      {
+        "script": "scripts/qa/check_fullbody_015.py",
+        "result": "KNOWN_BASELINE_FAILURE"
+      },
+      {
+        "script": "scripts/qa/check_organ_blood_ports.py",
+        "result": "PASS"
+      },
+      {
+        "script": "scripts/qa/check_styled_organ_obstacles.py",
+        "result": "PASS"
+      },
+      {
+        "script": "scripts/qa/check_vascular_checkpoint_boundaries.py",
+        "result": "PASS"
+      }
+    ],
+    "integrationChecks": 165,
+    "luaSyntaxFiles": 209,
+    "hygienePolicyCasesPassed": 6,
+    "legacyFailure": {
+      "test": "check_fullbody_015.py --phase resources",
+      "baselineExitCode": 1,
+      "trimmedExitCode": 1,
+      "sameHarnessFailure": true,
+      "reason": "Legacy virtual resource harness does not supply current VesselChannelsArt texture dimensions."
+    },
+    "nativePreview": {
+      "refreshedLiveSession": true,
+      "reloadId": 1,
+      "visualsVerified": false,
+      "preexistingError": "Could not find resource Cube/Day/DaySpecularHDR_QualityLow.dds",
+      "sameErrorBeforeAndAfter": true
+    }
+  },
+  "currentTreeComparison": {
+    "beforeFiles": 10882,
+    "beforeBytes": 4941572961,
+    "archivedBytes": 801138941,
+    "grossReductionPercent": 16.21,
+    "note": "Current checkout bytes, not compressed Git object storage. Small policy/documentation additions are separate."
+  },
+  "delivery": "Normal GitHub pull request; source history retained."
+}
