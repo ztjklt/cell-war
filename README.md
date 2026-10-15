@@ -75,11 +75,15 @@ python3 scripts/qa/check_anatomy_perspective.py
 
 本轮已在仅含保留文件的独立副本运行上面的检查及器官血口、障碍物和关口边界检查。旧 `check_fullbody_015.py --phase resources` 的虚拟纹理尺寸表未覆盖当前血管渲染器，整理前后均出现相同的 `local 'size'` 错误，暂不作为当前资源验收入口；原测试保留，未放宽断言。
 
+2026-10-16 继续归档 702 个旧素材与导出文件，约 883 MB，包括被 v3 替代的血管 v2 贴图、人体与器官图层复制导出、早期心脏候选及多轮 SVG 预览。当前 Lua 模块引用的素材、正式生成清单引用的输入、材质条带和 v15 制图需要的 v10 源稿继续保留。详情见 [REPOSITORY_CLEANUP_20261016.json](docs/REPOSITORY_CLEANUP_20261016.json)。本次仍保留所有本地原件与逐文件校验归档；复现已归档的旧制图实验时，需要对应归档材料。
+
 部分旧版视觉复查、实验候选修复或历史 HTML 页面会引用已归档的过程材料。需要复现这些历史实验时，先从来源提交导出所需目录到临时目录，再执行对应工具；不要把历史输出重新加入当前提交。例如在项目根目录运行：
 
 ```sh
 git archive 72647cd42398ed66f83bf04d874209e2de81713d docs/body-life/vascular-art-study/fullbody-015/native-movement-012 > /tmp/cell-war-historical-evidence.tar
 ```
+
+历史精简会改变提交号。如果上述原始提交已不在当前历史中，从项目负责人保留的 `github-before-cleanup.bundle` 在独立临时仓库中恢复，再导出材料；不要把旧历史合回正在协作的仓库。两轮素材压缩归档及逐文件 SHA-256 清单也由负责人在仓库外保留。
 
 暂存完毕后执行仓库检查：
 
