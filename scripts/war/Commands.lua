@@ -99,8 +99,12 @@ function C.execute(s,c)
   local units={};for _,id in ipairs(c.ids or {}) do local e=s.entities[id];if U.alive(e) and e.faction==f and e.category=='unit' then units[#units+1]=e end end
   if #units==0 then return false end
   local profile=units[1]
-  for _,u in ipairs(units) do if Collision.radius(u)>Collision.radius(profile) then profile=u end end
-  local lane=c.lane or G.lane(s,profile,c.x,c.y)
+  local preferred=profile.vesselLane
+  for _,u in ipairs(units) do
+   if Collision.radius(u)>Collision.radius(profile) then profile=u end
+   if u.vesselLane~=preferred then preferred=nil end
+  end
+  local lane=c.lane or G.commandLane(s,profile,c.x,c.y,preferred)
   if lane==nil or not G.pointAllowed(s,profile,c.x,c.y,lane) then U.message(s,'专用通路和组织墙不能进入，请选择有足够净空的地面',f);return false end
   local places=assert(G.formation(s,units,c.x,c.y,lane)) --[[@as table[] ]]
   destinations={};for _,p in ipairs(places) do destinations[p.id]=p end
@@ -110,7 +114,7 @@ function C.execute(s,c)
   if U.alive(e) and e.faction==f and e.category=="unit" then
    local o={kind=kind,target=c.target,x=c.x,y=c.y}
    if kind=="attack" then local t=s.entities[c.target];if not U.alive(t) or t.faction==f or not W.visible(s,f,t) then o.kind="attackmove" end end
-   if kind=="gather" then local r=s.resources[c.target];if not r or r.amount<=0 or not fa.seen[c.target] then o.kind="move" else o.x,o.y=r.x,r.y end end
+   if kind=="gather" then local r=s.resources[c.target];if not r or not D.resourceEnabled(r.kind) or r.amount<=0 or not fa.seen[c.target] then o.kind="move" else o.x,o.y=r.x,r.y end end
    if kind=="retreat" then local b=U.nearest(s,e.x,e.y,function(v) return v.faction==f and v.category=="building" and v.complete and D.buildings[v.kind].supply end);if b then o.kind="move";o.x,o.y=b.rally.x,b.rally.y end end
    if kind=="retreat" and s.campaign then local home=require("war.CampaignData").forState(s).home;o.kind="move";o.x,o.y=home.x,home.y end
    if destinations then
@@ -165,6 +169,7 @@ function C.go(s,e,x,y,dt,stopRange,destinationLane)
  local terrain=D.biomes[W.terrain(s,math.floor(e.x),math.floor(e.y))]
  local organFactor=Organs.moveMultiplier(s,e)
  local speed=D.units[e.kind].speed*factor*(organFactor~=1 and organFactor or terrain.move or 1)*Status.multiplier(e,"moveMultiplier")
+ speed=speed*require('war.VascularCheckpoints').speedMultiplier(s,e)
  Status.setState(s,e,"moving")
  if s.time-(e.lastTravel or -10)>dt*1.5 then e.travelSpeed=0 end
  -- Short acceleration and arrival easing, expressed in seconds.

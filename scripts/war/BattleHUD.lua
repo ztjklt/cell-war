@@ -359,7 +359,12 @@ function B.update(H,g)
  refs.queueEdit:SetVisible(#orders>1)
  local enemyInspect=inspect and inspect.faction~=1 and inspect
  refs.chip:SetVisible(picked>0 or enemyInspect~=false and enemyInspect~=nil)
- if enemyInspect then
+ local checkpoint=enemyInspect and enemyInspect.checkpointId and enemyInspect or first and first.checkpointId and first
+ if checkpoint then
+  setText(refs,'chip',refs.chipText,'血管关口 · '..(checkpoint.breached and'失守 · 扩散 ×2 · 可夺回'or'防守中 · 阻挡病原体')..' · 耐久 '..math.floor(checkpoint.hp)..'/'..checkpoint.maxHp)
+  refs.chipHp:SetValue(checkpoint.hp/checkpoint.maxHp)
+  refs.chipHp:SetStyle{fillColor=checkpoint.breached and T.hud.hostile or T.hud.friendly}
+ elseif enemyInspect then
   local d=enemyInspect.category=="unit" and D.units[enemyInspect.kind] or D.buildings[enemyInspect.kind]
   local attack=d.damage and d.range and ("攻击 "..string.format("%.1f",d.range).." 格 · 伤害 "..math.floor(d.damage)) or "不具备攻击能力"
   setText(refs,"chip",refs.chipText,"敌方 · "..d.name.." · 生命 "..math.floor(enemyInspect.hp).."/"..enemyInspect.maxHp.." · "..attack)

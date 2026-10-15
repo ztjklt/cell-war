@@ -132,8 +132,10 @@ function S.detail(R,g,s,x1,x2,y1,y2)
   end
  end end
 end
-function S.overview(R,s,px,py,width,height,all,visualTime,mini)
+function S.overview(R,s,px,py,width,height,all,visualTime,mini,perspective,layerView)
  local g={state=s,camera={x=D.width(s)*.5,y=D.height(s)*.5},zoom=height/(D.height(s)*32),fogDisabled=all,vesselSurvey=all,realTime=visualTime or 0,bodyLifeMini=mini==true}
+ g.anatomyPerspective=perspective
+ g.anatomyLayerView=layerView
  local oldW,oldH=R.w,R.h;R.w,R.h=width,height
  nvgSave(R.vg);nvgIntersectScissor(R.vg,px,py,width,height);nvgTranslate(R.vg,px,py+height*.03)
  S.draw(R,g,s,1,D.width(s),1,D.height(s))

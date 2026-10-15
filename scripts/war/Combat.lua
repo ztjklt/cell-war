@@ -19,9 +19,12 @@ function F.damage(s,e,t,damage,options)
  end
  local amount=math.min(t.hp,damage);t.hp=math.max(0,t.hp-damage);t.lastAttacker=e and e.id;t.hitTime=s.time
  Events.emit(s,"damage",{source=e and e.id,target=t.id,amount=amount,hp=t.hp,maxHp=t.maxHp,x=e and e.x or t.x,y=e and e.y or t.y,tx=t.x,ty=t.y,cause=options.cause or "attack",attackStyle=options.attackStyle or (e and U.dist(e,t)>3 and "arrow" or "hit")})
+ if t.hp<=0 and t.checkpointId and require('war.VascularCheckpoints').defeated(s,e,t)then
+  Events.emit(s,'checkpoint_control',{source=e and e.id,target=t.id,breached=t.breached});W.rebuild(s);return true,amount
+ end
  if t.hp<=0 then
   Status.setState(s,t,"dead");Events.emit(s,"death",{source=e and e.id,target=t.id})
-  if t.kind=="nest" and e and e.faction>0 then E.add(s,e.faction,"relic",4);U.message(s,"巢穴已清除，获得4件遗物",e.faction) end
+  if t.kind=="nest" and e and e.faction>0 then U.message(s,"感染巢已清除",e.faction) end
   if t.category=="building" and t.faction>0 then for _,q in ipairs(t.queue) do if q.tech then s.factions[t.faction].researching=nil end end end
   if t.faction==1 then U.message(s,(D.units[t.kind] or D.buildings[t.kind]).name.."已倒下") end
   W.rebuild(s)
@@ -104,18 +107,25 @@ function F.fight(s,e,t,dt,chase)
  if not U.alive(e) or not U.alive(t) or e.faction==t.faction then return false end
  if s.campaign and (not require("war.Campaign").allowed(s,e.x,e.y) or not require("war.Campaign").allowed(s,t.x,t.y)) then return false end
  local d=D.units[e.kind] or D.buildings[e.kind];local radius=(t.category=="building" and (D.buildings[t.kind].size or 1)*.5 or 0)
+ local aim=t
+ if t.checkpointId then
+  local anchor,reach=require('war.VascularCheckpoints').attackAnchor(s,e,t)
+  if anchor==false then return false end
+  if anchor then aim=anchor;radius=reach end
+ end
  local clear=not (s.campaign and (s.campaign.terrainVersion==2 or s.campaign.terrainVersion==3 or s.campaign.terrainVersion==4)) or require("war.Path").clear(s,e.x,e.y,t.x,t.y,e.faction,e.vesselLane)
- local heartClear=require('war.HeartBattlefield').combatClear(s,e,t)
+ if t.checkpointId then clear=require('war.OrganBattlefield').sweep(s,e,e.x,e.y,aim.x,aim.y,e.vesselLane,aim.vesselLane)==true end
+ local heartClear=require('war.HeartBattlefield').combatClear(s,e,aim)
  if heartClear~=nil then clear=heartClear end
- if d.projectile and d.projectile.targetKinds and not d.projectile.targetKinds[t.kind] then return false end
- if U.dist(e,t)<=d.range+radius and clear then
+ if not t.checkpointId and d.projectile and d.projectile.targetKinds and not d.projectile.targetKinds[t.kind] then return false end
+ if U.dist(e,aim)<=d.range+radius and clear then
   Status.setState(s,e,"attack")
   if e.cooldown<=0 then
-   if d.projectile then if F.launch(s,e,t,d.damage,d.projectile) then e.cooldown=d.cool end
+   if d.projectile and not t.checkpointId then if F.launch(s,e,t,d.damage,d.projectile) then e.cooldown=d.cool end
    else F.damage(s,e,t,d.damage,{attackStyle=d.attackStyle});e.cooldown=d.cool end
   end
   return true
- elseif chase and e.category=="unit" then C.go(s,e,t.x,t.y,dt,clear and d.range+radius-.1 or .5);return true end return false
+ elseif chase and e.category=="unit" then C.go(s,e,aim.x,aim.y,dt,clear and d.range+radius-.1 or .5,aim.vesselLane);return true end return false
 end
 function F.updateTower(s,b,dt)
  b.cooldown=math.max(0,b.cooldown-dt);if b.complete and b.kind=="tower" then local d=D.buildings.tower;local t=F.enemy(s,b,d.range,true);if t and require('war.HeartBattlefield').combatClear(s,b,t)~=false then F.fight(s,b,t,dt,false) end end

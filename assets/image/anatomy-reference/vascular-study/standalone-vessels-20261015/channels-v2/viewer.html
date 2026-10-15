@@ -1,0 +1,37 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>血管内部通道 · 原图对齐高清版</title>
+<style>
+*{box-sizing:border-box}html,body{height:100%;margin:0}body{display:flex;flex-direction:column;font:13px system-ui,-apple-system,sans-serif;color:#51485b;background:#faf6f1}header{flex:none;padding:14px 18px;border-bottom:1px solid #e5dce4;background:#fffaf6}h1{margin:0 0 9px;font-size:18px;font-weight:650}nav{display:flex;gap:6px;flex-wrap:wrap;align-items:center}button,select{font:inherit;border:1px solid #ded5e1;border-radius:7px;padding:6px 10px;background:#fff;color:inherit;cursor:pointer}button:hover{border-color:#ae8ca5}button[aria-pressed=true]{background:#eadce9;border-color:#bd9abb}#pct{min-width:52px;text-align:center;font-variant-numeric:tabular-nums}a{color:#8d668f;padding:5px}p{margin:8px 0 0;font-size:11px;line-height:1.55;color:#918194}.swatch{display:inline-block;width:9px;height:9px;border-radius:50%;margin:0 3px 0 6px}.s1{background:#df998e}.s2{background:#a4b1d9}.s3{background:#c6a0b4}#stage{position:relative;flex:1;min-height:180px;touch-action:none;overflow:hidden;cursor:grab;background:#faf6f0}#stage.dark{background:#302e38}#stage.checker{background:repeating-conic-gradient(#e8e3e9 0% 25%,#faf8fa 0% 50%) 0/24px 24px}#stage.dragging{cursor:grabbing}canvas{width:100%;height:100%;display:block}#status{position:absolute;bottom:10px;right:10px;left:10px;pointer-events:none;background:#fffaf5dd;color:#88738d;padding:7px 9px;border-radius:7px;font-size:11px;line-height:1.5}label{font-size:12px;white-space:nowrap}
+</style>
+<header><h1>血管内部通道 · 原图对齐高清版</h1>
+<nav><button id="whole">全身</button><button id="chest">胸部</button><button id="abdomen">腹部分叉</button><button id="hand">手指</button><button id="compare" aria-pressed="false">对照原图</button><button id="minus" aria-label="缩小">−</button><span id="pct">100%</span><button id="plus" aria-label="放大">＋</button><button id="native">高清原生</button><select id="bg" aria-label="背景"><option value="">米白</option><option value="checker">透明棋盘格</option><option value="dark">深色</option></select><label><input id="outline" type="checkbox">原图边界</label><a href="channels-8192.png" download>下载 8192 PNG</a></nav>
+<p>滚轮缩放 · 按住拖动 · 双击放大。<span class="swatch s1"></span>动脉内部 <span class="swatch s2"></span>静脉内部 <span class="swatch s3"></span>交换段<br>203 条原始轮廓固定；局部与全图来自同一套分块。只更新通道材质，尚未替换游戏地图。</p></header>
+<div id="stage"><canvas id="map" aria-label="可缩放的血管内部通道"></canvas><div id="status">载入高清通道…</div></div>
+<script>
+const stage=document.querySelector('#stage'),canvas=document.querySelector('#map'),ctx=canvas.getContext('2d'),status=document.querySelector('#status');
+const original=new Image(),overview=new Image(),outline=new Image(),cache=new Map();let spec=null,s=7,x=0,y=0,drag=null,compare=false,raf=0,initial=true,viewW=0,viewH=0;
+const dpr=()=>window.devicePixelRatio||1;const maxScale=()=>32/dpr();
+original.onload=drawSoon;original.src='../vessels-only.png';overview.onload=drawSoon;overview.src='overview.png';outline.onload=drawSoon;outline.src='source-outline.svg';
+function drawSoon(){if(!raf)raf=requestAnimationFrame(()=>{raf=0;draw()})}
+function loadTile(level,t){const key=level+'/'+t.name;if(cache.has(key))return cache.get(key);const im=new Image();im.onload=drawSoon;im.onerror=()=>{im.failed=true};im.src='l'+level+'/'+t.name;cache.set(key,im);return im}
+function draw(){const w=stage.clientWidth,h=stage.clientHeight,d=dpr();if(canvas.width!==Math.round(w*d)||canvas.height!==Math.round(h*d)){canvas.width=Math.round(w*d);canvas.height=Math.round(h*d)}ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,canvas.width,canvas.height);ctx.setTransform(d*s,0,0,d*s,d*x,d*y);ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';
+let ready=0,wanted=0,level=4;if(compare){if(original.complete&&original.naturalWidth)ctx.drawImage(original,0,0,1024,1536)}else{if(overview.complete&&overview.naturalWidth)ctx.drawImage(overview,0,0,1024,1536);if(spec){level=spec.levels.find(n=>n>=s*d)||32;const box=[-x/s,-y/s,(w-x)/s,(h-y)/s];for(const t of spec.tiles){if(t.x+t.w<box[0]||t.y+t.h<box[1]||t.x>box[2]||t.y>box[3])continue;wanted++;const im=loadTile(level,t);if(im.complete&&im.naturalWidth){ctx.drawImage(im,t.x,t.y,t.w,t.h);ready++}}}}
+if(document.querySelector('#outline').checked&&outline.complete&&outline.naturalWidth)ctx.drawImage(outline,0,0,1024,1536);
+document.querySelector('#pct').textContent=Math.round(s*100)+'%';status.textContent=compare?'原始独立图层 · 同坐标对照':`原图轮廓固定 · ${level} px/源坐标 · ${ready}/${wanted} 块就绪${s*d>=32?' · 已到高清原生像素':''}`;}
+function focus(cx,cy,zoom){s=Math.max(.1,Math.min(maxScale(),zoom));x=stage.clientWidth/2-cx*s;y=stage.clientHeight/2-cy*s;drawSoon()}
+function zoom(next,cx=stage.clientWidth/2,cy=stage.clientHeight/2){next=Math.max(.1,Math.min(maxScale(),next));x=cx-(cx-x)*next/s;y=cy-(cy-y)*next/s;s=next;drawSoon()}
+document.querySelector('#whole').onclick=()=>focus(512,768,Math.min((stage.clientWidth-30)/1024,(stage.clientHeight-30)/1536));
+document.querySelector('#chest').onclick=()=>focus(510,375,Math.min(stage.clientWidth/130,stage.clientHeight/150));
+document.querySelector('#abdomen').onclick=()=>focus(512,579,Math.min(stage.clientWidth/42,stage.clientHeight/70));
+document.querySelector('#hand').onclick=()=>focus(204,831,Math.min(stage.clientWidth/45,stage.clientHeight/100));
+document.querySelector('#compare').onclick=()=>{compare=!compare;document.querySelector('#compare').setAttribute('aria-pressed',String(compare));drawSoon()};
+document.querySelector('#minus').onclick=()=>zoom(s/1.4);document.querySelector('#plus').onclick=()=>zoom(s*1.4);document.querySelector('#native').onclick=()=>zoom(maxScale());
+document.querySelector('#bg').onchange=e=>stage.className=e.target.value;document.querySelector('#outline').onchange=drawSoon;
+stage.addEventListener('wheel',e=>{e.preventDefault();const r=stage.getBoundingClientRect();zoom(s*Math.exp(-e.deltaY*.002),e.clientX-r.left,e.clientY-r.top)},{passive:false});
+stage.addEventListener('dblclick',e=>{const r=stage.getBoundingClientRect();zoom(s*1.5,e.clientX-r.left,e.clientY-r.top)});
+stage.addEventListener('pointerdown',e=>{if(e.button!==0)return;drag={id:e.pointerId,x:e.clientX,y:e.clientY,ox:x,oy:y};stage.setPointerCapture(e.pointerId);stage.classList.add('dragging')});
+stage.addEventListener('pointermove',e=>{if(!drag||drag.id!==e.pointerId)return;x=drag.ox+e.clientX-drag.x;y=drag.oy+e.clientY-drag.y;drawSoon()});
+function release(){drag=null;stage.classList.remove('dragging')}stage.addEventListener('pointerup',release);stage.addEventListener('pointercancel',release);
+new ResizeObserver(()=>{const w=stage.clientWidth,h=stage.clientHeight;if(initial){initial=false;focus(512,579,Math.min(w/42,h/70))}else{x+=(w-viewW)/2;y+=(h-viewH)/2;drawSoon()}viewW=w;viewH=h}).observe(stage);
+fetch('manifest.json').then(r=>{if(!r.ok)throw Error('高清清单未就绪');return r.json()}).then(m=>{spec=m;drawSoon()}).catch(()=>{status.textContent='高清分块仍在生成，请稍后刷新'});
+</script></html>

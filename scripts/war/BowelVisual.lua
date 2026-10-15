@@ -12,7 +12,8 @@ local function polygon(points,x,y)
  return inside
 end
 function B.unitDepth(lane,x,y)
- if not D.ownedLanes[lane]then return nil,false end
+ -- Historical JSON authoring stored owned IDs as strings; runtime uses numbers.
+ if not(D.ownedLanes[lane]or D.ownedLanes[tostring(lane)])then return nil,false end
  local sx,sy=x*.5,(y-512)*.5
  for _,ring in ipairs(D.frontPipeRings[lane]or{})do
   if polygon(ring.outer,sx,sy)then

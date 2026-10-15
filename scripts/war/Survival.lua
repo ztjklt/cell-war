@@ -8,9 +8,7 @@ function V.update(s,dt)
  local _,fraction,season=V.clock(s);local night=fraction>=.75
  local climate=D.climate[season];local ambient=climate.temperature;local rain=climate.rain and math.sin(s.time*.004)>.1
  for _,b in pairs(s.entities) do if U.alive(b) and b.category=="building" and b.complete and b.faction>0 then
-  if b.kind=="fire" then local fa=s.factions[b.faction];local use=dt*(night and .025 or .01)*(season==2 and 1.4 or 1)
-   b.lit=fa.stock.fuel>=use;if b.lit then fa.stock.fuel=fa.stock.fuel-use end
-  end
+  if b.kind=="fire" then b.lit=true end -- Lipid upkeep is suspended with that resource.
   if b.fire>0 then require("war.Combat").damage(s,nil,b,dt*(rain and .8 or 4),{cause="fire",raw=true});b.fire=math.max(0,b.fire-dt*(rain and .1 or .008)) end
   if climate.fireRisk and b.kind~="fire" and b.kind~="wall" and U.rand(s)<dt*climate.fireRisk then b.fire=1;U.message(s,"胞群发生灼伤！选择红细胞灭火",b.faction) end
  end end

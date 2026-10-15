@@ -45,47 +45,36 @@ function I.pick(g,x,y)
  local best,dd=false,math.huge
  for _,e in pairs(g.state.entities) do if U.alive(e) and (e.faction==1 or W.visible(g.state,1,e)) then
   local wx,wy=HeartDisplay.displayPosition(g,e);local px,py=R.project(g,wx,wy);local size=(e.category=="building" and BodyArt.radius(e.kind) or Cells.radius(e.kind)+5)*g.zoom
+  if e.checkpointId then size=6.6*32*g.zoom end
   if g.zoom<.14 then size=6 end
   local d=((px-x)^2+(py-y)^2)^.5
   if d<size and d<dd then best,dd=e,d end
  end end return best
 end
--- A visible cardiac blood floor can lie over lung/heart tissue in projection.
--- Use the existing display-depth contract for clicking that visible floor;
--- Commands still validates the chosen lane with the real collision geometry.
-function I.visibleCardiacLane(g,x,y)
+-- Screen clicks use the same layer choice as direct Commands execution.
+-- This only chooses a destination; movement crosses real organ interfaces.
+function I.commandLane(g,x,y)
  local Art=require('war.FullBodyMapArt');if not Art.enabled(g.state)then return nil end
- local b=require('war.HeartVisualData').sourceBox;local sx,sy=x*.5,(y-512)*.5
- if sx<b[1]or sx>b[3]or sy<b[2]or sy>b[4]then return nil end
  ---@type table|nil
  local profile
+ ---@type integer|nil
+ local preferred
  for _,id in ipairs(I.ids(g))do
   local e=g.state.entities[id]
-  if e.category=='unit'and(not profile or require('war.CellCollision').radius(e)>require('war.CellCollision').radius(profile))then profile=e end
- end
- if not profile then return nil end
- local O=require('war.OrganBattlefield');local current=O.lane(g.state,profile,x,y)
- if current and current~=0 then return nil end -- Existing cavity/valve selection wins.
- local net=O.net(g.state)
- ---@type integer|nil
- local best
- local nearest=math.huge
- for lane=1,#net.edges do
-  local distance=net.distance(lane,x,y,true)
-  if distance<nearest and distance<=net.edges[lane].width*.5
-   and O.pointAllowed(g.state,profile,x,y,lane)
-   and Art.unitDepth(g.state,{vesselLane=lane},x,y)~='under-foreground'then
-   best,nearest=lane,distance
+  if e.category=='unit'then
+   if not profile then preferred=e.vesselLane elseif preferred~=e.vesselLane then preferred=nil end
+   if not profile or require('war.CellCollision').radius(e)>require('war.CellCollision').radius(profile)then profile=e end
   end
  end
- return best
+ if not profile then return nil end
+ return require('war.OrganBattlefield').commandLane(g.state,profile,x,y,preferred)
 end
 function I.issue(g,kind,x,y,target)
  if Perspective.original(g)then return false end
  if g.state.campaign and x and y and not require("war.Campaign").allowed(g.state,x,y) then U.message(g.state,"这片组织尚未开放");return false end
  local ids=I.ids(g)
  if #ids==0 then U.message(g.state,"先选择单位再下达命令");return false end
- local lane=(kind=='move'or kind=='attackmove')and x and y and I.visibleCardiacLane(g,x,y)or nil
+ local lane=(kind=='move'or kind=='attackmove')and x and y and I.commandLane(g,x,y)or nil
  C.submit(g.state,{kind=kind,faction=1,ids=ids,x=x,y=y,target=target,lane=lane,append=g.append or input:GetKeyDown(KEY_LSHIFT)})
  if x and y then g.marker={x=x,y=y,born=g.realTime,kind=kind} end
  if g.audio then g.audio("command") end
@@ -120,12 +109,15 @@ function I.tap(g,x,y,secondary)
   elseif picked.category=="building" then kind=picked.fire>0 and "extinguish" or (not picked.complete and "build" or (picked.kind=="farm" and "farm" or "repair"));target=picked.id end
  else
   local key=U.key(U.clamp(wx,1,D.width(s)),U.clamp(wy,1,D.height(s)));local r=s.resources[key]
+  if r and not D.resourceEnabled(r.kind) then r=nil end
   if not r then
-   for dy=-1,1 do for dx=-1,1 do local k=U.key(math.floor(wx)+dx,math.floor(wy)+dy);local v=s.resources[k];if not r and v and v.amount>0 and s.factions[1].seen[k] then r=v;key=k end end end
+   for dy=-1,1 do for dx=-1,1 do local k=U.key(math.floor(wx)+dx,math.floor(wy)+dy);local v=s.resources[k];if not r and v and D.resourceEnabled(v.kind) and v.amount>0 and s.factions[1].seen[k] then r=v;key=k end end end
   end
-  if r and r.amount>0 and not g.mode then
+  -- The full-body walkthrough has no supply base: a red-cell click is a
+  -- movement command even over decorative/generated resources.
+  if r and r.amount>0 and not g.mode and not require('war.FullBodyBattlefield').enabled(s)then
    local resourceName=D.names[r.kind] or r.kind
-   local resourceForm=({wood="蛋白束",stone="钙晶",flint="盐晶",fiber="胶原束",metal="铁质矿",food="葡萄糖团",fuel="脂滴",relic="基因片段"})[r.kind] or "资源"
+   local resourceForm=({wood="蛋白束",oxygen="氧气团",food="葡萄糖团"})[r.kind] or "资源"
    local hasWorker=false
    for _,id in ipairs(I.ids(g)) do if s.entities[id].kind=="worker" then hasWorker=true;break end end
    if hasWorker then

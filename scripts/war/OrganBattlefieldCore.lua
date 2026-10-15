@@ -208,7 +208,7 @@ local function bloodPoint(s,e,p,x,y,lane)
  if own then return inside(own.domain,x,y) end
  local net=G.net(s);local edge=net and net.edges[lane]
  if not edge then return false end
- return net.distance(lane,x*2,y*2+512)<=edge.width*.5-G.radius(e)*2-.04
+ return net.distance(lane,x*2,y*2+512,true)<=edge.width*.5-G.radius(e)*2-.04
 end
 local function point(s,e,p,x,y,lane)
  if lane==0 then return inside(p.tissue,x,y) end
@@ -219,6 +219,9 @@ local function transitGate(p,t)
  for _,g in ipairs(p.gates) do
   if g.id==t.gateId and g.lane==(t.fromLane>0 and t.fromLane or t.toLane) then return g end
  end
+end
+local function gateAllowed(s,e,g)
+ return not config.gateAllowed or config.gateAllowed(s,e,g.id)
 end
 function G.pointAllowed(s,e,x,y,lane)
  if not G.enabled(s) then return nil end
@@ -238,7 +241,10 @@ local function exteriorSweep(s,e,x,y,tx,ty,lane)
  if not edge then return false end
  local radius=edge.width*.5-G.radius(e)*2-.04
  if radius<=0 then return false end
- local function clearance(px,py)return radius-net.distance(lane,px*2,py*2+512)end
+ -- The small buckets include every segment within half-width + 6 world units.
+ -- Every possible legal nearest segment is therefore indexed here; scanning
+ -- the whole long limb curve at every recursive clearance probe is unnecessary.
+ local function clearance(px,py)return radius-net.distance(lane,px*2,py*2+512,true)end
  local function check(ax,ay,bx,by,ca,cb,depth)
   checkpoint()
   local length=math.sqrt((bx-ax)^2+(by-ay)^2)*2
@@ -261,7 +267,7 @@ local function transition(s,e,p,x,y,tx,ty,lane,nextLane)
  if lane==0 or nextLane==0 then
   local blood=lane>0 and lane or nextLane;local own=p.blood[blood]
   if not own then return false end
-  for _,g in ipairs(p.gates) do if g.lane==blood then
+  for _,g in ipairs(p.gates) do if g.lane==blood and gateAllowed(s,e,g)then
    if segmentIn({p.tissue,own.domain,g.domain},x,y,tx,ty) then
     local cuts={0,1};crosses(g.domain.boundary,x,y,tx,ty,function(t)cuts[#cuts+1]=t end);table.sort(cuts)
     for i=2,#cuts do local t=(cuts[i]+cuts[i-1])*.5
@@ -300,6 +306,7 @@ function G.sweep(s,e,x,y,tx,ty,fromLane,toLane)
  local transit=e.gastricTransit;local active=transitGate(p,transit)
  if active and lane~=transit.fromLane and lane~=transit.toLane then active=nil end
  local function through(g,from,to)
+  if not gateAllowed(s,e,g)then return false end
   local blood=from>0 and from or to;local own=p.blood[blood]
   if not own or not segmentIn({p.tissue,own.domain,g.domain},sx,sy,ax,ay) then return false end
   if point(s,e,p,ax,ay,to) then return true,to,nil end
@@ -318,7 +325,7 @@ function G.sweep(s,e,x,y,tx,ty,fromLane,toLane)
  if lane==0 or target==0 then
   if not point(s,e,p,sx,sy,lane) then return false end
   local blood=lane>0 and lane or target
-  for _,g in ipairs(p.gates) do if g.lane==blood then
+  for _,g in ipairs(p.gates) do if g.lane==blood and gateAllowed(s,e,g)then
    local touched=inside(g.domain,sx,sy) or inside(g.domain,ax,ay)
    crosses(g.domain.boundary,sx,sy,ax,ay,function()touched=true end)
    if touched then local ok,actual,proposal=through(g,lane,target)
