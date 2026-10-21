@@ -1,0 +1,61 @@
+{
+  "generator": "built-in image_gen",
+  "style": "新结构主义 / simplified 2D polygonal anatomy",
+  "references": "user supplied style reference + existing project character identities + actual organ atlas",
+  "prompts": {
+    "background": "为《细胞战争》新生成一张可分层动画游戏封面的底层环境。宽幅16:9。参考图1只是整体配色与排版留白的风格参考；参考图2是现有游戏的人体地图，用于借鉴生物血管走向、颜色和形态。请从零创作，采用新结构主义 + 简化2D动画背景 + 大块多面体几何切面，精致但少细节。米白纸色占大面积，朱红/浅珊瑚红、深藏青和少量灰钴蓝。不要照片级，不要3D模型质感，不要复杂纹理，不要写实医学细节。\n\n内容是真正有机的红蓝血管：柔软弯曲的红色动脉和蓝紫色静脉在画面中下部横向延伸，从左右边缘向中央心肺位置汇合。血管是生物的中空圆管，有不规则圆润分叉、简化的厚管壁、少量三角多边形色块表现管腔，横向主血管通过剖面展示宽阔有机管腔，里面将另加细胞。血管不是道路，不要道路/跑道/桥梁/高架桥，不要建筑承重柱，不要交通箭头标线，不要水平路面，不要城市，不要山脉。中央留出上方肺部（约x40%-60%,y20%-48%）与心脏（约x45%-55%,y43%-65%）的空位，心肺会由其他透明图层叠上，因此这里不画任何器官；仅有上下贯通的红蓝主干血管与左右分叉。中央背后可有一个大米色圆形和极少黑色/红色矩形构成主义图形衬托。不要像真实地图一样把全身都画上。\n\n保留左上方和右上方干净米白留白，以便叠加游戏标题。画面最下方25%中央为米白干净区域用于独立的菜单UI，边角少量朱红和墨黑几何楔形。少量细线与红圆点。不要字、不要标题、不要按钮、不要角色、不要细胞、不要水印。要求是全新2D分层插画中的环境图层，简练、平面、有机血管、几何切面感。",
+    "organs": [
+      {
+        "key": "lungs_v2",
+        "prompt": "生成单独一对肺的透明素材，用作2D游戏封面动画图层。采用新结构主义和极简低多边形2D动画美术。平面色块，多面体三角切面，每片肺仅用8到15个大色块。不写实，不要细纹理，不要油画笔触，不要3D渲染，不要光晕，不要背景，不要阴影，不要细碎密集的肺泡。外形参考人类真实肺：两片珊瑚粉色肺叶，上面短短的米白气管分为左右粗支气管，各肺仅4到6条简练的白色分叉线。左右前视，完整未裁切，两肺间空隙清楚。边缘干净自然圆润，米白/珊瑚粉/少量朱红三角形。必须透明背景，没有心脏，没有文字，没有角色。透明PNG，可在米白底上直接叠加。横幅3:2，主体占80%。"
+      },
+      {
+        "key": "heart_v2",
+        "prompt": "生成单独一个人类解剖心脏的透明素材，用作2D游戏封面动画图层。新结构主义，简化的2D低多边形动画美术。平面色块、多面体大三角切面，总共20个左右清晰大切面，精致但简练。真实心脏的自然外形和大动脉弓，顶端红色主动脉和蓝紫色血管，心尖向右下，前视。朱红、珊瑚红、深红、少量米白和蓝紫色，温暖的干净色块。不要卡通爱心符号，不写实，不要细碎纹理，不要油画笔触，不要复杂冠脉网，不要3D质感，不要复杂光照或光晕。边缘干净。必须真正透明背景，无肺、无文字、无角色、无阴影。完整主体居中占画面80%。正方形PNG。"
+      }
+    ],
+    "characters": [
+      {
+        "key": "red-cell",
+        "ref": "assets/image/red-cell-backpack-20261016/walk/frame-001.png",
+        "prompt": "Use case: stylized-concept, identity-preserve. Reference image is the exact identity of our existing red blood cell protagonist. Re-illustrate this SAME character as premium newly drawn game cover art: a glossy coral red biconcave round disc with darker red central depression, straight deep-red eyebrows, small black eyes, friendly smile, little arms, and the distinctive translucent light-cyan rounded delivery backpack. Preserve face, silhouette and backpack identity. A confident energetic three-quarter pose walking toward the right, arms slightly lifted, entire character visible and unclipped. More refined crisp faceted editorial / neo-constructivist vector-like shading, warm scarlet, ivory highlights, deep ink red contours, controlled polish, no realistic texture. Transparent background, no floor or separate shadow, no text, no props other than its backpack, no watermark. One character only, large centered 85% fill of square canvas. For layering over an ivory red and cobalt anatomical stage."
+      },
+      {
+        "key": "neutrophil",
+        "ref": "assets/image/neutrophil-cartoon-v2-20261016/character.png",
+        "prompt": "Use case: stylized-concept, identity-preserve. Reference is the exact identity of our existing NEUTROPHIL warrior. Newly re-illustrate this SAME creamy white softly scalloped round cell with lavender granules, a very clear large purple lobed U-shaped nucleus visible through the body, thick plum eyebrows and determined eyes, little violet arms, holding the SAME compact cyan-and-purple granule blaster aiming toward the RIGHT (mirror pose as needed, retain character identity). Full unclipped single character, confident defender, slight three-quarter view. Premium polished neo-constructivist/editorial vector-like rendering with crisp faceted shading, clean outer dark plum contours and warm ivory highlights. True transparent background. No human armor, no helmet, no shields, no text, no floor or cast shadow, no extra characters, no watermark. Large centered 85% fill of square canvas."
+      },
+      {
+        "key": "influenza",
+        "ref": "assets/image/influenza-cartoon-v2-20261020/character.png",
+        "prompt": "Use case: stylized-concept, identity-preserve. Reference is the exact identity of our existing INFLUENZA virus enemy. Newly draw the SAME mischievous cyan and cobalt-blue round virus, distinct mushroom-tipped rounded spikes all around, dark navy thick eyebrows, small dark eyes and one-toothed grin, facet patterns and bubble spots. Full unclipped single virus, slightly turned toward the LEFT to face the defenders. Premium game cover neo-constructivist/editorial vector-like crisp faceted shading with glossy ivory highlights, ink navy outlines, expressive face, playful not scary. Preserve actual identity; do not turn into purple spiky monster. Transparent background, centered 85% canvas fill. No text, no floor, no cast shadow, no background, no watermark."
+      }
+    ]
+  },
+  "layers": [
+    {
+      "key": "stage_v2",
+      "path": "/Users/jitian/.codex/generated_images/01a158a5-c982-7ee1-8329-cf5a7f8c1822/exec-d8015426-5cee-4c26-8d52-a890ab374be9.png"
+    },
+    {
+      "key": "lungs_v2",
+      "path": "/Users/jitian/.codex/generated_images/01a158a5-c982-7ee1-8329-cf5a7f8c1822/exec-5efd4730-fa27-4010-ae71-a4ca53f2700b.png"
+    },
+    {
+      "key": "heart_v2",
+      "path": "/Users/jitian/.codex/generated_images/01a158a5-c982-7ee1-8329-cf5a7f8c1822/exec-803747de-9f7c-40f1-9054-9d62cd822f06.png"
+    },
+    {
+      "key": "red-cell",
+      "path": "/Users/jitian/.codex/generated_images/01a158a5-c982-7ee1-8329-cf5a7f8c1822/exec-7303694a-9479-49e3-8034-4428029e9902.png"
+    },
+    {
+      "key": "neutrophil",
+      "path": "/Users/jitian/.codex/generated_images/01a158a5-c982-7ee1-8329-cf5a7f8c1822/exec-adea3207-903a-4e60-8d3a-51b26c86526c.png"
+    },
+    {
+      "key": "influenza",
+      "path": "/Users/jitian/.codex/generated_images/01a158a5-c982-7ee1-8329-cf5a7f8c1822/exec-ebde3be4-4880-4b72-8665-d827628c7503.png"
+    }
+  ]
+}

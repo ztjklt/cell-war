@@ -1,0 +1,16 @@
+后续多药品供给扩展方案（设计，未改公共代码）
+日期：2026-10-21
+范围：以后将已开放退烧止痛药与疫苗接进同一供给链；当前只交付疫苗独立候选。
+
+1. 注册表按medicineId显式列出definition、unitKind、helper/profile、effectAdapter和release gate。只支持当前已注册并逐项验收的条目，不从图鉴动作数量推导“可售”。保留fever现有默认行为和固定1.2秒节拍；疫苗是被动受击掉落，绝不套用自动开火分支。
+2. 购买接口现有queue_purchase(medicineId,quantity)可保留，但定义/价格/库存/上限都按该ID读取。部署新增清楚的多药方法，再用原queue_deployment(actor_id)包装fever以兼容现有HUD；不要让旧第二参数selected_ids突然被当medicineId。
+3. stock/purchased/deployed改为每药独立计数；建议medicineSupply v2的inventory与counters字典。旧v1存档只把原fever库存与标量计数迁移到fever，vaccine初始化0，不赠送、不清空原库存、不换runId或重发序号。两次加载迁移幂等。
+4. 继续共用世界runId和全局供给request sequence，回执记录并绑定action/medicineId/quantity/actor/expectedPrice等稳定请求指纹；一个ID换药或换动作不再扣款/创建。现有fever回执/receiptFloor保留，旧重复请求不得因为v2迁移复活。
+5. 暂停购买/派遣还是submit_player队列；UI预留预算跨药累加，库存和待派遣预留按药区分，同时计活跃助手限制。取消请求、余额变化、选中红细胞死亡/换层、附近落点占满都在执行时重验；原子“创建成功后扣库存”维持。
+6. 疫苗helper真实配置候选hp90、speed2.0、life90、price120，仍在所选己方活红细胞当前实际组织附近部署。需另做瓶身静态接触凸包、逐帧选中轮廓和正立朝向；不能复用红细胞或退烧药轮廓。死亡只退helper，不删地面抗体。
+7. 在战斗实际正扣血点增加已保存的combatHitSerial和完整post-damage事件；原attack/projectile/collision三类显式允许，环境/DOT/0伤害/同盟排除。独立服务分类绑定WarData.is_virus，几何绑定原同层点/段及建筑阻挡；没有合法点时不补发。
+8. medicineRuntime以后增加vaccineAntibodies子快照，保留旧bubbles完整状态；先validate所有子模块/供给v2/新hitSerial，再替换整世界。存档只在固定步完成后，服务lastHitId/lastStepId/源冷却/原地抗体/剩余寿命和对应世界HP一起提交。
+9. 每步提供原导航确认的真实移动分段（含lane与相对时间），不能以画面投影或无lane的renderTrail臆造换层；退烧弹体适配保持原有边界。
+10. 角色释放素材中有两枚示意抗体，与首版真实1枚不一致，必须先完成角色本体隔离方案和原生画面检查；地面仅画服务真实对象。动画/重播从不触发效果。
+11. 再按正常无staging流程专项验收：同钱包跨药预算/库存不串、请求不串、旧v1保存迁移、双药同场、疫苗致死掉落后helper退场但抗体留地、virus快速踩中、细菌/同盟不误触、暂停倍速和坏档事务、原生选中/移动/受击/释放/碎瓶死亡、现有fever110与玩家UI149回归。
+12. 全部通过后仅把vaccine加入enabledMedicineIds并打开其独立canSell/canDeploy；其他药品仍关闭。该方案本身不授权修改现有目录状态或开放扣费。

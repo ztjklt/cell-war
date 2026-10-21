@@ -1,0 +1,199 @@
+{
+  "schema": "cell-war-godot-validation/2",
+  "recordedAt": "2026-10-20T14:54:17.070536+08:00",
+  "tested_engine": "4.6.3-stable (official)",
+  "platform": "macOS arm64",
+  "acceptance": "audit revision; full original parity NOT accepted",
+  "rules": {
+    "engine": "4.6.3-stable (official)",
+    "failures": [],
+    "passed": 52,
+    "total": 52
+  },
+  "mode_start_and_save_checks": {
+    "errors": [],
+    "modes": 10
+  },
+  "presentation_point_oracle": {
+    "checks": 4962,
+    "failures": [],
+    "maxHeartSourceError": 0.0,
+    "nativeVisualParityAccepted": false,
+    "oracle": "current Lua HeartDisplayTransform / CellAnimation / VesselChannelsArt"
+  },
+  "layer_compositor": {
+    "approvedUnderlayRepair": true,
+    "drawsChecked": 1579,
+    "failures": [],
+    "independentLayerChecks": 11,
+    "isolatedImageSha256": {
+      "BloodVessels": "066695fbdd53fef5305da1ff30bda81ee3dff9533d7af5556ce6cd3057b7a187",
+      "BodyBase": "9db984c536a1cb500fb8fbfdfed2af8b3ec5b9b21aea93d448a31e61723c191c",
+      "ConnectionUnderlay": "1771c17bdd3def6b04df29f36b0ad4ee31c4f74a006177a2022c2206c1950c84",
+      "Organs": "2604ef2e30a6fbf0a3b85428f177a93dd88ead1be89276b866bce39382058b52"
+    },
+    "nativeEvidence": "actual successful draw submissions from independent layer canvases",
+    "oracle": "production Lua ReferenceArt.draw with approved native underlay repair when present",
+    "pixelIdenticalClaim": false,
+    "screenshots": "test-output/original-layers"
+  },
+  "route_oracle": {
+    "passed": 6,
+    "total": 6,
+    "segments": 11115,
+    "max_float32_normalization_world_units": 0.00012693654077284297
+  },
+  "systemic_encounter": {
+    "courier": "氧气运往心脏",
+    "damageEvents": 54,
+    "deaths": 5,
+    "delivered": 16.0,
+    "glucose": 5.75,
+    "milliseconds": 3872,
+    "oxygen": 80.0,
+    "seconds": 149.999999999996,
+    "shots": 37
+  },
+  "ui": {
+    "failures": [],
+    "physicalInputTested": true,
+    "windowSizes": [
+      [
+        720,
+        450
+      ],
+      [
+        1280,
+        800
+      ],
+      [
+        1440,
+        900
+      ],
+      [
+        1920,
+        1200
+      ],
+      [
+        360,
+        780
+      ],
+      [
+        430,
+        932
+      ]
+    ]
+  },
+  "teammate_alignment_checks": {
+    "checks": 105,
+    "failures": [],
+    "oracle": "current BrainUI.split / BrainAdvisor.reply",
+    "runtimeLuaAdded": false
+  },
+  "legacy_static_art_checks": {
+    "checks": 2142,
+    "failures": [],
+    "oracle": "production ReferenceArt static trial compositor",
+    "pixelIdenticalClaim": false
+  },
+  "sandbox_progress_checks": {
+    "checks": 64,
+    "failures": [],
+    "oracle": "original Simulation.lua sandbox outcome/tutorial block; native integration"
+  },
+  "underlay_repair_checks": {
+    "checks": 358,
+    "failures": [],
+    "intentionalArtRepair": true,
+    "lods": [
+      4,
+      8,
+      16,
+      32
+    ],
+    "originalNavigationChanged": false,
+    "tiles": 41
+  },
+  "cell_entry_checks": {
+    "checks": 19,
+    "failures": [],
+    "source": "original LungSkirmish.setup metadata; native camera/selection/render visibility"
+  },
+  "asset_integrity": {
+    "files": 1818,
+    "bytes": 293284714,
+    "missing": [],
+    "mismatches": [],
+    "sourceAssetMismatches": [],
+    "sourceLuaFiles": 203,
+    "sourceLuaMismatches": [],
+    "manifestTotalsMatch": true
+  },
+  "native_visual_checks": [
+    "Seven 512x768 fullbody captures inspected against original Lua compositor with approved native underlay correction",
+    "Native 1280x800 liver-notch and bladder-fringe closeups inspected after full underlay repair",
+    "Live native right-lung entry inspected: three selected allied cells and three viruses visible",
+    "Four independent native anatomy layer captures inspected after Node2D separation",
+    "1280x800 gastric/organ trial static captures inspected against original Lua painter",
+    "360x780 sandbox tutorial panel capture inspected",
+    "1280x800 systemic window and original home inspected",
+    "1280x800 and 360x780 trachea campaign inspected"
+  ],
+  "legacy_lua_matches_export_baseline": true,
+  "full_original_parity_accepted": false,
+  "limits": [
+    "Legacy perfusion/heart shading and cell-test terrain details still differ",
+    "Full sidebar, production/build previews and campaign warning animations incomplete",
+    "Sandbox tutorial conditions tested; complete natural economy/tutorial replay not accepted",
+    "Decorative circulation, minimap deformation and baked background animation differ",
+    "Full sweep/slide, idle yielding and OrganTraffic not aligned",
+    "No complete original/native replay acceptance for AI, combat and long-term economy",
+    "No Maker cloud-save migration; independent native saves",
+    "No Android/iOS hardware acceptance or release package export"
+  ],
+  "native_source_sha256": {
+    "scripts/advisor_dialogue.gd": "882ba4c8626786307f84a24354aa3d569ccbe006ee5589f6a154b7124fc824c7",
+    "scripts/advisor_rules.gd": "e9b992c9ef5192abfaff3764ea525548b995ba6ebba5c0bc019f46f0e5066fcb",
+    "scripts/audio.gd": "2e4b5c7833375fc9da05913a22c35857e13225ae3930c6ef4ff67b6e4f313a86",
+    "scripts/battle_hud.gd": "7b66622d9e2f217b81e40126df86ea51c170bfbcbb9ca0b238b93f413c593c9f",
+    "scripts/brain_rig.gd": "a90ad9e6eb8715053a9358686cd574b5c5e02047e05abf9b66c9ed0bba0c28a6",
+    "scripts/cell_shape.gd": "2ad44e7750f5dd7767a42c5cbfc9719d84baeb67140ae6d5cd84794cf2f4b8c6",
+    "scripts/combat.gd": "9286ab5e9b65be5073337c092794f4a6e9c91740174a827bc38e2b500e669e5c",
+    "scripts/economy.gd": "d4d3840a4c17a022bc68a212f93c08c8a9d04feb5328b689538e4e0a60d8be9c",
+    "scripts/game_data.gd": "dce29db95b8f27d89cf6e2b64f5d1d3a95579ebcfab5f110fee68d6cd5dfd4d6",
+    "scripts/heart_display.gd": "e089445b111864c9f44758e78da5f2b8a0d3697b11b49bf9335083c8fac327fa",
+    "scripts/hud.gd": "ead13a41a939c64bd8546f65d5829e69306b0c93c5f61f2b603a0f61ea4a085b",
+    "scripts/legacy_art.gd": "ab6f4ab0d54a3c0f408d870b238252953bbed8ee882ad6dcb7419aca007ff232",
+    "scripts/legacy_surface.gd": "c3d886bca6ce149e352e540cb933ac5a27633f2bd2b8db24907dbb65dbc5e1d5",
+    "scripts/main.gd": "e2f8ebda30c0805691197215ef1a22e711bd7d4824d692bcfcee3f1b3a8bd1e6",
+    "scripts/minimap.gd": "3ec8cdc8bc384998b207759c33bcdfeed7f799eac09a7b01038047e065fdd0e7",
+    "scripts/navigation.gd": "b35d4995a9591295bd0fbc62c8359f342abc699383f49e224e3b946024eae500",
+    "scripts/navigation_grid.gd": "d28f772ca1203589370d800ccd4b24163cb147e85875364d2d1f6a1b428fb8ad",
+    "scripts/progress.gd": "ad8cc89335cc11f9eca974a2dd0973df534069fb5c087f0d89073b21b4b43bf7",
+    "scripts/resource_generation.gd": "4c97382f76fe65e323a7a14068fd77f9ab056efa2cb46bb5054ddade793f9670",
+    "scripts/resource_icon.gd": "0a63c094641b91aa226bb133ff46f01c540ec2acdf2341533c76c8bc7e0dc361",
+    "scripts/save_game.gd": "ef8db9715ad650aa76d92637f97331c2540724c7ac312b57bb03015776e22e9f",
+    "scripts/scenarios.gd": "0632833371e8cb4b5cf0ccfb2e0712deab10872957ba434439d910748050da51",
+    "scripts/simulation.gd": "cbee0ac74acda20f2adaef33e5ff010ff0548f2f4f2789d5e96cdf564186a9cb",
+    "scripts/survival.gd": "5b5e573be5c9eccebfe98001654651c47f5685a81e127de9bab5caa2f21fd18c",
+    "scripts/texture_stream.gd": "4978ac624940808a07739b7182eed18eb928f932444c146ba6a3e530fc2ee198",
+    "scripts/vision_eye.gd": "be27bfb416464f90e4d59b5be1679a9e4b7d34cbfa27d3e56cf1e03e930dfe21",
+    "scripts/world_layer.gd": "3d671588678e25c7861d489ce9de90100858fc2b088cdb9a33ea87dece976ee8",
+    "scripts/world_view.gd": "de4f1412d3668b0521c98d2c4dd83672ba27808857c98ce8111d5a19b81d27e8",
+    "scenes/main.tscn": "73f71bbdb5bc66e611d35021857b019b293b09d35c10e4bdd9cc3494ad76defd",
+    "scenes/world.tscn": "759ce75c0e629d12f1fce019909ef5768b372ab6bef68f488cfe2ee30ed6e8c3",
+    "tests/alignment.gd": "d91ec678021139df74d8431444fbdacf381cc8d514bf5379662ad47882b7d33f",
+    "tests/capture.gd": "12a720c13cd791c98c19f9758bd7182a00f6d9229b3338f78760cf0e46c41712",
+    "tests/cell_entry.gd": "f026438cd0999621f5d9094f1496fdf4bd9ec4999d06385bca378094c0677c5f",
+    "tests/encounter.gd": "c9a64b5c667169527aec95403ba843e5927eb37184548daa8e7b1c46c40de265",
+    "tests/legacy_art.gd": "5ebbeb532eee3b627422d45d337f7ebd0e701156dec0a69007c81426c360b976",
+    "tests/modes.gd": "9bcde0360a177b80411e2133c4aeefd019c97763493f4651443a4cd83bd2a3d5",
+    "tests/presentation_parity.gd": "0f2adc1d46f1d64aae127dbfde0ee0e95e27d7b2039be715c56cf2fc1facce47",
+    "tests/progress.gd": "93dfba5f10152626b1c21a199fe1c8bc192666cd44e223786e5e63adad7af7ed",
+    "tests/render_layers.gd": "87c780e3883d69949c23405f3f4abbff1921e011b74385ea38a2ed1490fe8586",
+    "tests/routes.gd": "fd3c25dfad90cb6a88bff5e44c91d2a5a874958aa9fdf5156233c82c3a39ba70",
+    "tests/run_tests.gd": "21455a260db5c1106278995d833910088b1572e5759111b78150e7d10f813836",
+    "tests/ui_flow.gd": "982a5d2d3032d1a5ab544eb4f0a69490bb8bc23ecd33349523aebd65b5cc1ead",
+    "tests/underlay_repair.gd": "148fa9d2d21d4388b72b2ff4785995973b0d25d8701d8e87edd2c433e3a3b9ff"
+  }
+}

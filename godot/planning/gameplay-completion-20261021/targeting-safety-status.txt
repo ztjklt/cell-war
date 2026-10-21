@@ -1,0 +1,19 @@
+战斗锁定与同一帧死亡复核 · 2026-10-21
+
+真实失败1：树突状细胞停止侦察后，已锁定的隐蔽敌人仍能直接fight追打，已进入前摇的普通弹丸仍会释放。
+enemy()的新目标搜索会检查可见性，但旧目标ID和cellShot释放没有同样复核。
+独立基线targeting_safety 10/12；修复fight和释放点检查后12/12。
+保持原中立阵营行为；已有发射弹丸按原真实轨迹/碰撞命中，不新增地下无敌。
+
+真实失败2：contacts开始取得一次活单位列表后，前一个接触者可能击杀后面的接触者；后者仍在旧数组内，
+因此死后还能反击。本测试让两名敌对herpes通过真实damage各剩2HP，接触循环第一个击杀第二个，
+旧实现第二个又把第一个打死。该独立基线13/14，循环内复核源hp后14/14。
+循环开始前已死亡单位本来就由units过滤，未把这种本来通过的负例误记为旧bug。
+
+新增tests/targeting_safety.gd，使用原cell_test组织、明确生成的测试单位/隐藏标志，
+真实树突命令/侦察、fight前摇、update_projectiles、combat.damage和contacts；不伪称自动疱疹埋伏已实装。
+已发射弹丸可以继续命中隐藏敌人的断言通过，树突重新揭示仍能正常发射。
+源码只小补丁combat.fight/update_projectiles/contacts，不改战斗数值、导航或新药模块。
+
+最终14/14；关联dendritic_cells49/49、b_cells39/39、life_building_attack60/60通过。
+日志.tmp/targeting-*，机器结果test-output/targeting-safety/checks.json。

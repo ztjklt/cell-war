@@ -1,0 +1,22 @@
+状态：真实新局专项完成。新增独立 godot/tests/opening_flow.gd，未改 main/simulation/navigation/economy。
+原生窗口79项通过；早一版最终逻辑headless79项也通过。最终原生日志无 ERROR / SCRIPT ERROR / Parse Error。
+全程通过封面、地图、菜单和指令徽章的实际窗口按下/松开，不注入资源/单位。
+实际完成：封面开始 → 1红细胞 + 初始160蛋白质/125葡萄糖 → 原红细胞移动到旁边组织 → 建核心胞巢 → 建分裂兵巢 → 训练/取消/75%退款 → 重新训练出第一枚白细胞 → 点选新生单位 → 指令轮盘移动并到达。
+核心在71.1秒时完成，兵巢108.3秒，首白135.7秒，移动到达143.7秒；剩余36蛋白质/110葡萄糖，人口2/10。
+白细胞59出生于(990.5,1905.5)，实际到达(992.6074,1907.608)，目标(992.6213,1907.621)。
+首次训练扣15蛋白/12葡萄糖；取消返11蛋白/9葡萄糖；重排再次按原价扣费。没有资源死锁或白细胞生产按钮缺失。
+步骤等待由测试驱动 .05 固定步 game.update 与导航调度加速；main日常_process停用，不代表实际墙钟等待143.7秒。相机通过实际点击+6次Q，菜单滚动暴露由测试驱动，选址只读取既有地形，不改地形/单位位置。
+所有存档目录均为user://test-saves/opening-flow-独立编号；原生JSON记录具体目录。没有覆盖正式存档。
+
+原生已复现一个具体位置问题，不能外推为开局完全死锁：
+红细胞原点(996.7009,1907.7375)，先用真实移动到(994.0,1907.5)，随后在(987.5,1905.5)建核心胞巢，合法放置且扣65，但75秒后progress=0、红细胞未动，提示“组织通路受阻”。
+可行路径是同一枚红细胞先移动到上述旁边组织，再将核心胞巢放在(981.5,1905.5)，真实63秒内完成；继而(987.5,1905.5)可以建成分裂兵巢。
+最近位置失败证据：test-output/opening-flow/nearest-construction-native.json、nearest-construction-blocked-native.png。
+原始六格导航component不能直接断言出生点被困：实际窗口移动确实能从component2到旁边component1，已保留成功轨迹。
+
+先前中途并行器官资源接入出现large_intestine.wood落点启动错误，最新代码已修正；最终原生从封面重跑79项且无该错误。
+
+证据：test-output/opening-flow-native.log；test-output/opening-flow/opening-flow-native.json。
+截图：start-overview.png、starting-tissue.png、initial-red-move.png、built-core.png、built-barracks.png、cancelled-training.png、newborn-moved.png。
+既有cover_flow仅覆盖封面进入；ui_reliability注入生产夹具；life_integration注入防守白细胞。因此本测试补上原始资源/单红开局至实际首白移动的独立缺口，不与旧夹具重复。
+局限：此项证明首白链路存在且可操作，未证明任意合法建筑点都可施工，也未替代长时平衡、资源持续运输、手机版与云存档验收。

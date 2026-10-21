@@ -1,0 +1,777 @@
+{
+  "schema": 1,
+  "id": "cell_war_medicines",
+  "dateLocal": "2026-10-21",
+  "purpose": "药品机制、确认边界与逐条开放状态。首版退烧止痛药已接实际购买、库存、派遣与战斗；其他药品仅按各自状态展示。authoring 仅为离线来源。",
+  "authority": {
+    "file": "res://data/medicines.json",
+    "scope": "mechanic confirmation, display copy, purchase-plan status and pending balance defaults",
+    "sourceNotes": "已有用户确认以 confirmedRules 为准；draftRules 和 balanceDefaults 不表示用户已确认。根目录 assets 的 mechanics.json 保留完整制作记录。"
+  },
+  "runtime": {
+    "purchasingImplemented": true,
+    "inventoryImplemented": true,
+    "deploymentImplemented": true,
+    "medicineEffectsImplemented": true,
+    "canSell": true,
+    "reason": "仅退烧止痛药通过实际购买、派遣、命中减速、存读档和原生渲染验证。其他条目未开放。首版数值可调。",
+    "enabledMedicineIds": [
+      "fever_pain_relief"
+    ]
+  },
+  "purchaseChain": {
+    "confirmed": [
+      {
+        "id": "event_money",
+        "description": "外部角色/生活事件产生的金钱可用于购买药品。",
+        "evidence": "用户：外部角色事件给的金钱就可以买。"
+      },
+      {
+        "id": "animated_helper",
+        "description": "药品以独立动态角色作为细胞助手。",
+        "evidence": "用户逐项确认药品角色并要求制作移动、攻击/释放、受击、死亡动作。"
+      }
+    ],
+    "existingIntegration": {
+      "currencyState": "lifeRun.money",
+      "earnedStat": "lifeRun.earned",
+      "spentStat": "lifeRun.spent",
+      "event": "life_choice",
+      "currentOwner": "res://scripts/life_run.gd",
+      "state": "fever_pain_relief_implemented"
+    },
+    "proposedStages": [
+      {
+        "id": "purchase",
+        "status": "draft",
+        "from": "available_money",
+        "to": "medicine_inventory",
+        "operation": "校验稳定 transactionId、条目开放状态、数量和余额；金钱扣减、spent 统计和库存增加原子提交。",
+        "failure": "不扣钱、不加库存；重复 transactionId 返回原结果。"
+      },
+      {
+        "id": "select_and_deploy",
+        "status": "draft",
+        "from": "medicine_inventory",
+        "to": "pending_deployment",
+        "operation": "选择已有合法部署/注入口和通行层，预检合法落点、容纳空间、模式和活跃助手上限。",
+        "failure": "取消、非法位置或找不到空间时不消耗库存。"
+      },
+      {
+        "id": "spawn",
+        "status": "draft",
+        "from": "pending_deployment",
+        "to": "active_helper",
+        "operation": "成功创建一个有实体 ID、阵营、位置、通行层、生命和剩余时长的助手后，才扣一件库存。",
+        "failure": "实体创建失败回滚库存；一个 deploymentId 只创建一次。"
+      },
+      {
+        "id": "effect",
+        "status": "draft",
+        "from": "active_helper",
+        "to": "resolved_attack_or_drop",
+        "operation": "效果由模拟命中、受击和碰撞事件触发；图鉴、预览、逐帧播放和重播都不触发伤害或掉落。",
+        "failure": "目标失效、离开合法作用范围或被阻挡时不凭动画结算命中。"
+      },
+      {
+        "id": "expiry",
+        "status": "draft",
+        "from": "active_helper",
+        "to": "removed",
+        "operation": "生命归零或剩余模拟时长归零时退场；已产生的独立弹体/抗体按自己的规则收尾。",
+        "failure": "取消未部署订单保留库存；部署后死亡/到期是否返还仍是草案。"
+      },
+      {
+        "id": "save_restore",
+        "status": "draft",
+        "from": "simulation_state",
+        "to": "restored_state",
+        "operation": "保存库存、已提交事务 ID、活跃助手、位置/通行层、生命、剩余时长、目标、冷却、弹体和抗体剩余状态。",
+        "failure": "读档不再次扣钱、不重放生成事件、不重复增加伤害或掉落。"
+      }
+    ],
+    "proposedLifecycle": {
+      "status": "draft",
+      "inventoryConsumed": "成功派遣时消耗一件；购买本身只入库存。",
+      "timer": "使用模拟秒；暂停冻结，倍速随模拟推进；与外部联络使用的 activeElapsed 分开。",
+      "expiryRefund": "部署后死亡/到期不自动退款（草案）。",
+      "modeBoundary": "先限定 lifeRun；旧战役/沙盒不自动获得药品。",
+      "transport": "仅使用已登记的合法入口和通行层；未接入注入运输前，界面使用‘派遣’，不展示假注射过程。",
+      "noEffectShop": "尚未实现或不可在当前关卡产生效果的条目仅展示，不扣费销售。"
+    },
+    "implementedMedicineIds": [
+      "fever_pain_relief"
+    ],
+    "firstRelease": {
+      "medicineId": "fever_pain_relief",
+      "status": "implemented_first_pass",
+      "supply": "res://scripts/medicine_supply.gd",
+      "helper": "res://scripts/medicine_helpers.gd",
+      "projectiles": "res://scripts/medicine_bubbles.gd",
+      "deployment": "选中的己方存活红细胞，附近3单位内，同一实际器官组织层的合法不重叠落点；原地到落点须同时通过组织段与建筑阻挡检查。",
+      "inventory": "成功派遣时消耗一件；取消或执行失败保留。",
+      "lifetime": "90模拟秒；暂停冻结、倍速按模拟推进；死亡或到期不退款。",
+      "requestIdentity": "世界runId与已分配sequence；重复返回原回执，跨世界拒绝。",
+      "save": "库存、付款回执、待执行请求、助手与弹体/减速一起保存恢复。"
+    }
+  },
+  "entries": [
+    {
+      "id": "antibiotic",
+      "order": 1,
+      "name": "抗生素",
+      "role": "胶囊重锤兵",
+      "displayName": "抗生素 · 胶囊重锤兵",
+      "confirmation": {
+        "character": "accepted",
+        "animations": "accepted",
+        "mechanic": "partial"
+      },
+      "confirmedRules": [
+        "手实际握住锤柄，平时扛在身后。",
+        "提起重锤向前敲，伤害相对较高。",
+        "无脚轻跳移动；独立受击；倒地后甩动两下死亡。"
+      ],
+      "draftRules": [],
+      "unknowns": [
+        "目标阵营和类型",
+        "单体或范围命中",
+        "伤害、射程、攻击间隔",
+        "生命、持续时间、价格"
+      ],
+      "balanceDefaults": {
+        "status": "draft_pending_balance",
+        "confirmedValues": false,
+        "units": "abstract game currency, simulation seconds and game-map units; not real medicine units",
+        "values": {
+          "purchasePrice": 100,
+          "quantityPerPurchase": 1,
+          "helperLifetimeSeconds": 90
+        },
+        "note": "仅作为后续联调起点，不能显示为用户已确认数值或用于现有商店扣费。"
+      },
+      "purchase": {
+        "canSell": false,
+        "canDeploy": false,
+        "currency": "lifeRun.money",
+        "flowRef": "purchaseChain",
+        "gates": [
+          "目标与单次命中规则未确认",
+          "实际战斗效果未实现"
+        ]
+      },
+      "actualEffect": {
+        "runtimeImplemented": false,
+        "confirmedDescription": "手实际握住锤柄，平时扛在身后。 提起重锤向前敲，伤害相对较高。 无脚轻跳移动；独立受击；倒地后甩动两下死亡。",
+        "draftDescription": ""
+      },
+      "lifecycle": {
+        "status": "draft",
+        "lifetimeDefaultRef": "balanceDefaults.values.helperLifetimeSeconds",
+        "exitConditions": [
+          "生命归零（草案）",
+          "剩余模拟时长归零（草案）"
+        ],
+        "independentObjects": "无已确认的独立地面对象。"
+      },
+      "assets": {
+        "runtimePortrait": "res://assets/image/antibiotic-character-20261021/antibiotic-concept-v4-hand-grip.png",
+        "animations": [
+          {
+            "id": "move",
+            "frameCount": 16,
+            "authoringAnimation": "assets/image/antibiotic-character-20261021/move-16/animation.json",
+            "runtimeAtlas": "res://assets/image/antibiotic-character-20261021/move-16/spritesheet.png",
+            "type": "character"
+          },
+          {
+            "id": "hit",
+            "frameCount": 16,
+            "authoringAnimation": "assets/image/antibiotic-character-20261021/hit-16/animation.json",
+            "runtimeAtlas": "res://assets/image/antibiotic-character-20261021/hit-16/spritesheet.png",
+            "type": "character"
+          },
+          {
+            "id": "attack",
+            "frameCount": 16,
+            "authoringAnimation": "assets/image/antibiotic-character-20261021/attack-16/animation.json",
+            "runtimeAtlas": "res://assets/image/antibiotic-character-20261021/attack-16/spritesheet.png",
+            "type": "character"
+          },
+          {
+            "id": "death",
+            "frameCount": 16,
+            "authoringAnimation": "assets/image/antibiotic-character-20261021/death-16/animation.json",
+            "runtimeAtlas": "res://assets/image/antibiotic-character-20261021/death-16/spritesheet.png",
+            "type": "character"
+          }
+        ],
+        "stills": [],
+        "authoring": {
+          "portrait": "assets/image/antibiotic-character-20261021/antibiotic-concept-v4-hand-grip.png",
+          "mechanics": "assets/image/antibiotic-character-20261021/mechanics.json",
+          "manifest": "assets/image/antibiotic-character-20261021/animations.json"
+        }
+      },
+      "gallery": {
+        "status": "重锤方向已确认 · 目标与数值待定",
+        "summary": "青黄胶囊手握锤柄，将重锤从背后提起向前敲。",
+        "mechanics": [
+          "手实际握住锤柄，平时扛在身后。",
+          "提起重锤向前敲，伤害相对较高。",
+          "无脚轻跳移动；独立受击；倒地后甩动两下死亡。"
+        ],
+        "note": "已确认高伤害重锤方向；不能自行增加细菌专杀、范围伤害或击退。"
+      },
+      "animationEvents": {
+        "visualContactFrames": [
+          8,
+          9
+        ],
+        "runtimeRuleStatus": "draft",
+        "integrationNote": "一个 attackId 对同一目标最多结算一次；接触窗口两帧不能变成双倍伤害。具体单体/范围规则未确认。"
+      }
+    },
+    {
+      "id": "antiviral",
+      "order": 2,
+      "name": "抗病毒药",
+      "role": "病毒封锁员",
+      "displayName": "抗病毒药 · 病毒封锁员",
+      "confirmation": {
+        "character": "accepted",
+        "animations": "accepted",
+        "mechanic": "visual_only"
+      },
+      "confirmedRules": [
+        "双手握钳，向前伸出并夹合。",
+        "移动、前伸夹击、受击、倒地死亡各16帧。"
+      ],
+      "draftRules": [],
+      "unknowns": [
+        "具体作用对象与命中方式",
+        "伤害与攻击间隔",
+        "是否附带控制及控制规则",
+        "生命、持续时间、价格"
+      ],
+      "balanceDefaults": {
+        "status": "draft_pending_balance",
+        "confirmedValues": false,
+        "units": "abstract game currency, simulation seconds and game-map units; not real medicine units",
+        "values": {
+          "purchasePrice": 100,
+          "quantityPerPurchase": 1,
+          "helperLifetimeSeconds": 90
+        },
+        "note": "仅作为后续联调起点，不能显示为用户已确认数值或用于现有商店扣费。"
+      },
+      "purchase": {
+        "canSell": false,
+        "canDeploy": false,
+        "currency": "lifeRun.money",
+        "flowRef": "purchaseChain",
+        "gates": [
+          "战斗效果未确认",
+          "实际战斗效果未实现"
+        ]
+      },
+      "actualEffect": {
+        "runtimeImplemented": false,
+        "confirmedDescription": "双手握钳，向前伸出并夹合。 移动、前伸夹击、受击、倒地死亡各16帧。",
+        "draftDescription": ""
+      },
+      "lifecycle": {
+        "status": "draft",
+        "lifetimeDefaultRef": "balanceDefaults.values.helperLifetimeSeconds",
+        "exitConditions": [
+          "生命归零（草案）",
+          "剩余模拟时长归零（草案）"
+        ],
+        "independentObjects": "无已确认的独立地面对象。"
+      },
+      "assets": {
+        "runtimePortrait": "res://assets/image/antiviral-character-20261021/antiviral-concept-v1.png",
+        "animations": [
+          {
+            "id": "move",
+            "frameCount": 16,
+            "authoringAnimation": "assets/image/antiviral-character-20261021/move-16/animation.json",
+            "runtimeAtlas": "res://assets/image/antiviral-character-20261021/move-16/spritesheet.png",
+            "type": "character"
+          },
+          {
+            "id": "attack",
+            "frameCount": 16,
+            "authoringAnimation": "assets/image/antiviral-character-20261021/attack-16/animation.json",
+            "runtimeAtlas": "res://assets/image/antiviral-character-20261021/attack-16/spritesheet.png",
+            "type": "character"
+          },
+          {
+            "id": "hit",
+            "frameCount": 16,
+            "authoringAnimation": "assets/image/antiviral-character-20261021/hit-16/animation.json",
+            "runtimeAtlas": "res://assets/image/antiviral-character-20261021/hit-16/spritesheet.png",
+            "type": "character"
+          },
+          {
+            "id": "death",
+            "frameCount": 16,
+            "authoringAnimation": "assets/image/antiviral-character-20261021/death-16/animation.json",
+            "runtimeAtlas": "res://assets/image/antiviral-character-20261021/death-16/spritesheet.png",
+            "type": "character"
+          }
+        ],
+        "stills": [],
+        "authoring": {
+          "portrait": "assets/image/antiviral-character-20261021/antiviral-concept-v1.png",
+          "mechanics": "assets/image/antiviral-character-20261021/mechanics.json",
+          "manifest": "assets/image/antiviral-character-20261021/animations.json"
+        }
+      },
+      "gallery": {
+        "status": "动作已确认 · 战斗效果待定",
+        "summary": "淡紫色药片握住薄荷绿钳子，向前伸出并夹合。",
+        "mechanics": [
+          "双手握钳，向前伸出并夹合。",
+          "移动、前伸夹击、受击、倒地死亡各16帧。"
+        ],
+        "note": "钳子动作已确认；定身、减速、眩晕、阻止复制等能力均未确认。"
+      },
+      "animationEvents": {
+        "visualContactFrames": [
+          8,
+          9,
+          10
+        ],
+        "runtimeRuleStatus": "undefined",
+        "integrationNote": "前伸夹合的三帧视觉窗口；尚未定义伤害、定身或减速，不从画面推导控制能力。"
+      }
+    },
+    {
+      "id": "vaccine",
+      "order": 3,
+      "name": "疫苗",
+      "role": "免疫教官",
+      "displayName": "疫苗 · 免疫教官",
+      "confirmation": {
+        "character": "accepted",
+        "animations": "accepted",
+        "mechanic": "core_confirmed"
+      },
+      "confirmedRules": [
+        "受到敌方主动攻击后掉落抗体。",
+        "抗体作为独立对象落在地图落点；不随疫苗移动或随释放动画结束而消失。",
+        "病毒踩中抗体时受到伤害。",
+        "当前不增加挥旗直接伤害技能。",
+        "死亡为瓶身破碎，碎片和装备散落。"
+      ],
+      "draftRules": [
+        {
+          "id": "antibody_contact_policy",
+          "status": "draft",
+          "description": "为首版可复现验证，可采用一次接触消耗一枚；用户尚未确认。",
+          "proposedValue": "consume_on_first_valid_contact"
+        },
+        {
+          "id": "lethal_hit_drop",
+          "status": "draft",
+          "description": "致死攻击是否掉落、零伤害/格挡攻击是否触发，均需明确；本目录不自动选择。",
+          "proposedValue": null
+        }
+      ],
+      "unknowns": [
+        "每次掉落数量",
+        "抗体伤害、触发冷却、存续时间",
+        "一次性或持续接触伤害",
+        "致死击和零伤害击触发规则",
+        "助手生命、持续时间、价格"
+      ],
+      "balanceDefaults": {
+        "status": "draft_pending_balance",
+        "confirmedValues": false,
+        "units": "abstract game currency, simulation seconds and game-map units; not real medicine units",
+        "values": {
+          "purchasePrice": 120,
+          "quantityPerPurchase": 1,
+          "helperLifetimeSeconds": 90,
+          "antibodyDamage": 8,
+          "antibodyDropCount": 1,
+          "antibodyDropCooldownSeconds": 1,
+          "antibodyLifetimeSeconds": 12
+        },
+        "note": "仅作为后续联调起点，不能显示为用户已确认数值或用于现有商店扣费。"
+      },
+      "purchase": {
+        "canSell": false,
+        "canDeploy": false,
+        "currency": "lifeRun.money",
+        "flowRef": "purchaseChain",
+        "gates": [
+          "独立抗体接触/消耗/存续规则待收敛",
+          "受击触发与实际抗体伤害未实现"
+        ]
+      },
+      "actualEffect": {
+        "runtimeImplemented": false,
+        "confirmedDescription": "受到敌方主动攻击后掉落抗体。 抗体作为独立对象落在地图落点；不随疫苗移动或随释放动画结束而消失。 病毒踩中抗体时受到伤害。 当前不增加挥旗直接伤害技能。 死亡为瓶身破碎，碎片和装备散落。",
+        "draftDescription": "为首版可复现验证，可采用一次接触消耗一枚；用户尚未确认。 致死攻击是否掉落、零伤害/格挡攻击是否触发，均需明确；本目录不自动选择。"
+      },
+      "lifecycle": {
+        "status": "draft",
+        "lifetimeDefaultRef": "balanceDefaults.values.helperLifetimeSeconds",
+        "exitConditions": [
+          "生命归零（草案）",
+          "剩余模拟时长归零（草案）"
+        ],
+        "independentObjects": "抗体按自身的存续/接触规则结束；这些参数待确认。"
+      },
+      "assets": {
+        "runtimePortrait": "res://assets/image/vaccine-character-20261021/vaccine-concept-v1.png",
+        "animations": [
+          {
+            "id": "move",
+            "frameCount": 16,
+            "authoringAnimation": "assets/image/vaccine-character-20261021/move-16/animation.json",
+            "runtimeAtlas": "res://assets/image/vaccine-character-20261021/move-16/spritesheet.png",
+            "type": "character"
+          },
+          {
+            "id": "hit",
+            "frameCount": 16,
+            "authoringAnimation": "assets/image/vaccine-character-20261021/hit-16/animation.json",
+            "runtimeAtlas": "res://assets/image/vaccine-character-20261021/hit-16/spritesheet.png",
+            "type": "character"
+          },
+          {
+            "id": "release",
+            "frameCount": 16,
+            "authoringAnimation": "assets/image/vaccine-character-20261021/release-16/animation.json",
+            "runtimeAtlas": "res://assets/image/vaccine-character-20261021/release-16/spritesheet.png",
+            "type": "character"
+          },
+          {
+            "id": "death",
+            "frameCount": 16,
+            "authoringAnimation": "assets/image/vaccine-character-20261021/death-16/animation.json",
+            "runtimeAtlas": "res://assets/image/vaccine-character-20261021/death-16/spritesheet.png",
+            "type": "character"
+          }
+        ],
+        "stills": [
+          {
+            "id": "antibody",
+            "name": "独立地面抗体",
+            "authoringAsset": "assets/image/vaccine-character-20261021/antibody/asset.json",
+            "authoringImage": "assets/image/vaccine-character-20261021/antibody/sprite.png",
+            "runtimeImage": "res://assets/image/vaccine-character-20261021/antibody/sprite.png",
+            "size": [
+              256,
+              256
+            ],
+            "type": "independent_ground_drop"
+          }
+        ],
+        "authoring": {
+          "portrait": "assets/image/vaccine-character-20261021/vaccine-concept-v1.png",
+          "mechanics": "assets/image/vaccine-character-20261021/mechanics.json",
+          "manifest": "assets/image/vaccine-character-20261021/animations.json"
+        }
+      },
+      "gallery": {
+        "status": "机制已确认 · 待接入",
+        "summary": "受到敌方主动攻击后，掉落独立地面抗体供病毒踩中。",
+        "mechanics": [
+          "受到敌方主动攻击后掉落抗体。",
+          "抗体作为独立对象落在地图落点；不随疫苗移动或随释放动画结束而消失。",
+          "病毒踩中抗体时受到伤害。",
+          "当前不增加挥旗直接伤害技能。",
+          "死亡为瓶身破碎，碎片和装备散落。",
+          "草案：为首版可复现验证，可采用一次接触消耗一枚；用户尚未确认。",
+          "草案：致死攻击是否掉落、零伤害/格挡攻击是否触发，均需明确；本目录不自动选择。"
+        ],
+        "note": "释放动画中两枚抗体仅是视觉示意，不能据此把掉落数量设为已确认的2。"
+      },
+      "animationEvents": {
+        "visualAntibodyFrames": [
+          4,
+          8
+        ],
+        "visualDropCount": 2,
+        "runtimeRuleStatus": "partly_confirmed",
+        "integrationNote": "受敌方主动攻击触发独立地面抗体已确认；动画两次显现只是示意，实际数量、延迟和冷却待确定。"
+      }
+    },
+    {
+      "id": "fever_pain_relief",
+      "order": 4,
+      "name": "退烧止痛药",
+      "role": "降温消防员",
+      "displayName": "退烧止痛药 · 降温消防员",
+      "confirmation": {
+        "character": "accepted",
+        "animations": "accepted",
+        "mechanic": "core_confirmed"
+      },
+      "confirmedRules": [
+        "远程逐颗发射淡蓝色、带白雪花的降温泡泡。",
+        "泡泡作为独立对象飞行、碰撞并破裂。",
+        "命中造成少量伤害和短暂减速。",
+        "连续命中刷新减速时间；减速程度保持固定。",
+        "适用于各种病毒；无特定现实病毒种类的专属伤害加成。"
+      ],
+      "draftRules": [],
+      "unknowns": [
+        "伤害、射程、攻击间隔、弹速",
+        "减速比例和持续时间",
+        "助手生命、持续时间、价格"
+      ],
+      "balanceDefaults": {
+        "status": "draft_pending_balance",
+        "confirmedValues": false,
+        "units": "abstract game currency, simulation seconds and game-map units; not real medicine units",
+        "values": {
+          "purchasePrice": 80,
+          "quantityPerPurchase": 1,
+          "helperLifetimeSeconds": 90,
+          "health": 60,
+          "moveSpeed": 2.3,
+          "damage": 4,
+          "range": 7,
+          "attackCooldownSeconds": 1.2,
+          "projectileSpeed": 14,
+          "slowRatio": 0.3,
+          "slowDurationSeconds": 2
+        },
+        "note": "首轮实装可调默认值，现用于购买和战斗联调；不表示用户已确认最终平衡数值。"
+      },
+      "purchase": {
+        "canSell": true,
+        "canDeploy": true,
+        "currency": "lifeRun.money",
+        "flowRef": "purchaseChain",
+        "gates": [
+          "仅完整生活模式",
+          "余额和库存合法",
+          "选择本阵营存活红细胞",
+          "同一实际器官组织层附近存在合法不重叠落点"
+        ]
+      },
+      "actualEffect": {
+        "runtimeImplemented": true,
+        "confirmedDescription": "远程逐颗发射淡蓝色、带白雪花的降温泡泡。 泡泡作为独立对象飞行、碰撞并破裂。 命中造成少量伤害和短暂减速。 连续命中刷新减速时间；减速程度保持固定。 适用于各种病毒；无特定现实病毒种类的专属伤害加成。",
+        "draftDescription": "",
+        "runtimeScope": "当前已存在的 virus / herpes 病毒单位，须敌对、存活、可见、同通行层、在射程且无组织墙/建筑阻挡。独立泡泡调用原战斗伤害并施加固定减速。"
+      },
+      "lifecycle": {
+        "status": "implemented_first_pass",
+        "lifetimeDefaultRef": "balanceDefaults.values.helperLifetimeSeconds",
+        "exitConditions": [
+          "生命归零",
+          "剩余模拟时长归零"
+        ],
+        "independentObjects": "已发射泡泡在来源死亡后继续按独立命中、阻挡、射程和寿命规则收尾。"
+      },
+      "assets": {
+        "runtimePortrait": "res://assets/image/fever-pain-relief-character-20261021/fever-pain-relief-concept-v1.png",
+        "animations": [
+          {
+            "id": "move",
+            "frameCount": 16,
+            "authoringAnimation": "assets/image/fever-pain-relief-character-20261021/move-16/animation.json",
+            "runtimeAtlas": "res://assets/image/fever-pain-relief-character-20261021/move-16/spritesheet.png",
+            "type": "character"
+          },
+          {
+            "id": "attack",
+            "frameCount": 16,
+            "authoringAnimation": "assets/image/fever-pain-relief-character-20261021/attack-16/animation.json",
+            "runtimeAtlas": "res://assets/image/fever-pain-relief-character-20261021/attack-16/spritesheet.png",
+            "type": "character"
+          },
+          {
+            "id": "hit",
+            "frameCount": 16,
+            "authoringAnimation": "assets/image/fever-pain-relief-character-20261021/hit-16/animation.json",
+            "runtimeAtlas": "res://assets/image/fever-pain-relief-character-20261021/hit-16/spritesheet.png",
+            "type": "character"
+          },
+          {
+            "id": "death",
+            "frameCount": 16,
+            "authoringAnimation": "assets/image/fever-pain-relief-character-20261021/death-16/animation.json",
+            "runtimeAtlas": "res://assets/image/fever-pain-relief-character-20261021/death-16/spritesheet.png",
+            "type": "character"
+          },
+          {
+            "id": "projectile",
+            "frameCount": 16,
+            "authoringAnimation": "assets/image/fever-pain-relief-character-20261021/projectile-16/animation.json",
+            "runtimeAtlas": "res://assets/image/fever-pain-relief-character-20261021/projectile-16/spritesheet.png",
+            "type": "independent_effect"
+          }
+        ],
+        "stills": [],
+        "authoring": {
+          "portrait": "assets/image/fever-pain-relief-character-20261021/fever-pain-relief-concept-v1.png",
+          "mechanics": "assets/image/fever-pain-relief-character-20261021/mechanics.json",
+          "manifest": "assets/image/fever-pain-relief-character-20261021/animations.json"
+        }
+      },
+      "gallery": {
+        "status": "已实装 · 可购买派遣",
+        "summary": "发射独立降温泡泡，造成少量伤害并短暂减速。",
+        "mechanics": [
+          "远程逐颗发射淡蓝色、带白雪花的降温泡泡。",
+          "泡泡作为独立对象飞行、碰撞并破裂。",
+          "命中造成少量伤害和短暂减速。",
+          "连续命中刷新减速时间；减速程度保持固定。",
+          "适用于各种病毒；无特定现实病毒种类的专属伤害加成。"
+        ],
+        "note": "完整生活模式可用生活事件金钱购买；选中己方存活红细胞后派遣到其附近组织空位。首版80金钱、生命60、90模拟秒；伤害4、减速30%持续2秒，可调。"
+      },
+      "animationEvents": {
+        "visualProjectileSpawnFrame": 7,
+        "flightLoopFrames": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "projectileImpactFrames": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "runtimeRuleStatus": "draft_timing",
+        "integrationNote": "第7帧是已制作的发射画面，建议据此安排单次射击事件；命中由独立弹体碰撞结算，逐帧预览不创建实体。"
+      }
+    },
+    {
+      "id": "expectorant",
+      "order": 5,
+      "name": "化痰药",
+      "role": "清痰清道夫",
+      "displayName": "化痰药 · 清痰清道夫",
+      "confirmation": {
+        "character": "accepted",
+        "animations": "not_created",
+        "mechanic": "draft"
+      },
+      "confirmedRules": [
+        "绿色药滴、多边形、无脚造型。",
+        "双手握住宽口吸头，软管连接侧挂收集罐。"
+      ],
+      "draftRules": [
+        {
+          "id": "cone_cleanup",
+          "status": "draft",
+          "description": "中近程扇形吸除敌方异常黏液地块。"
+        },
+        {
+          "id": "ally_cleanse",
+          "status": "draft",
+          "description": "解除范围内友军的黏液附着减速。"
+        },
+        {
+          "id": "mucus_shield_removal",
+          "status": "draft",
+          "description": "优先削除敌人的黏液护盾。"
+        },
+        {
+          "id": "light_channel_damage",
+          "status": "draft",
+          "description": "对普通敌人保留少量持续伤害。"
+        }
+      ],
+      "unknowns": [
+        "整套清理/去盾/伤害机制尚未确认",
+        "黏液地块、黏液减速和黏液护盾尚未实现",
+        "全部动作尚未生成",
+        "全部战斗与经济参数"
+      ],
+      "balanceDefaults": {
+        "status": "draft_pending_balance",
+        "confirmedValues": false,
+        "units": "abstract game currency, simulation seconds and game-map units; not real medicine units",
+        "values": {},
+        "note": "仅作为后续联调起点，不能显示为用户已确认数值或用于现有商店扣费。"
+      },
+      "purchase": {
+        "canSell": false,
+        "canDeploy": false,
+        "currency": "lifeRun.money",
+        "flowRef": "purchaseChain",
+        "gates": [
+          "机制未确认",
+          "依赖系统不存在",
+          "缺少角色动作",
+          "实际战斗效果未实现"
+        ]
+      },
+      "actualEffect": {
+        "runtimeImplemented": false,
+        "confirmedDescription": "",
+        "draftDescription": "中近程扇形吸除敌方异常黏液地块。 解除范围内友军的黏液附着减速。 优先削除敌人的黏液护盾。 对普通敌人保留少量持续伤害。"
+      },
+      "lifecycle": {
+        "status": "draft",
+        "lifetimeDefaultRef": "balanceDefaults.values.helperLifetimeSeconds",
+        "exitConditions": [
+          "生命归零（草案）",
+          "剩余模拟时长归零（草案）"
+        ],
+        "independentObjects": "无已确认的独立地面对象。"
+      },
+      "assets": {
+        "runtimePortrait": "res://assets/image/expectorant-character-20261021/expectorant-concept-v2.png",
+        "animations": [],
+        "stills": [],
+        "authoring": {
+          "portrait": "assets/image/expectorant-character-20261021/expectorant-concept-v2.png",
+          "mechanics": "assets/image/expectorant-character-20261021/mechanics.json",
+          "manifest": null
+        }
+      },
+      "gallery": {
+        "status": "立绘已确认 · 机制草案",
+        "summary": "绿色药滴，双手持宽口吸头，侧挂收集罐。",
+        "mechanics": [
+          "绿色药滴、多边形、无脚造型。",
+          "双手握住宽口吸头，软管连接侧挂收集罐。",
+          "草案：中近程扇形吸除敌方异常黏液地块。",
+          "草案：解除范围内友军的黏液附着减速。",
+          "草案：优先削除敌人的黏液护盾。",
+          "草案：对普通敌人保留少量持续伤害。"
+        ],
+        "note": "当前只读展示立绘；不将黏液地块、黏液护盾或持续伤害列为用户已确认能力。"
+      },
+      "animationEvents": {
+        "runtimeRuleStatus": "draft",
+        "integrationNote": "只有立绘，尚无角色动作或可绑定事件。"
+      }
+    }
+  ],
+  "backlog": {
+    "status": "names_only_no_new_designs",
+    "source": "assets/image/medicine-design-workflow.json",
+    "names": [
+      "胃药",
+      "补液盐",
+      "靶向药",
+      "化疗药",
+      "抗过敏药",
+      "止泻药",
+      "驱虫药"
+    ],
+    "note": "仅保留已列举类别；本轮不创建这些药品的造型、能力或商店条目。"
+  }
+}

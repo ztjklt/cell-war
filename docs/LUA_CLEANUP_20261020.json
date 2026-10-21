@@ -1,0 +1,3264 @@
+{
+  "schema": "cell-war-lua-retirement/1",
+  "createdAt": "2026-10-20T19:42:55.373123+08:00",
+  "archive": "/Users/jitian/Documents/ChatGPT/细胞战争真-archives/lua-20261020-194255/legacy-lua.tar.gz",
+  "archiveSha256": "538058f5f1ef9ec3ffbd9b57c367164fb52861215910637b6e43e0ac4c44c7c0",
+  "removedFiles": [
+    {
+      "path": "scripts/.luarc.json",
+      "bytes": 1882,
+      "sha256": "3932c5f5eba857bf344dec2d9f8d30bdd6fb482f95d575275301805edab8ff3f"
+    },
+    {
+      "path": "scripts/godot_tools/__pycache__/export_game.cpython-314.pyc",
+      "bytes": 21266,
+      "sha256": "4a8b97caeb2177d29550a8af72d3730732a9e5aabe39a938fb8761ec6bb6de76"
+    },
+    {
+      "path": "scripts/godot_tools/check_legacy_art.py",
+      "bytes": 2221,
+      "sha256": "6a846717058d58242b2536d2e56b8f5bd720d6917dde5c4554b90d74410e4b60"
+    },
+    {
+      "path": "scripts/godot_tools/check_original_layers.py",
+      "bytes": 4952,
+      "sha256": "7ce02bec2dde7d1519e74542a3e912c190a40839ab450c65ffc0640e3cfcfb03"
+    },
+    {
+      "path": "scripts/godot_tools/compare_teammate.py",
+      "bytes": 5317,
+      "sha256": "3f1247bfa6bb84ae89c2cc3a2a84cb28d3605bd3a27e3dd723aab130d0f62295"
+    },
+    {
+      "path": "scripts/godot_tools/export_campaign_art.py",
+      "bytes": 5429,
+      "sha256": "91604a06a05740e659dde170c954e8f6498ef0b3ce3b4bec3938bd9b3e7aa498"
+    },
+    {
+      "path": "scripts/godot_tools/export_extra.py",
+      "bytes": 4152,
+      "sha256": "08f05352594c6b0e84bd6339bb16a4534a2d41d4df9a209fdcab8ba73c0cea1c"
+    },
+    {
+      "path": "scripts/godot_tools/export_game.py",
+      "bytes": 11957,
+      "sha256": "e5a1e07c15e4ddf2f528e40b03c566583cfb21353525d9c51b8b361f33f03dc0"
+    },
+    {
+      "path": "scripts/godot_tools/export_legacy_art.py",
+      "bytes": 5398,
+      "sha256": "bb3542be27d6a7fe5d6284150eb56b2a272e4280f3707df2bc0c41753a51a6fe"
+    },
+    {
+      "path": "scripts/godot_tools/export_lung_entry.py",
+      "bytes": 1046,
+      "sha256": "475742be67dde9b31448d154a9da23772397e85f2a6a24d37d1e5c10ba62ae6e"
+    },
+    {
+      "path": "scripts/godot_tools/export_presentation.py",
+      "bytes": 9043,
+      "sha256": "29b8cf503f9d599a404ea5185617d60afb27a024342731a836c9d4249ef3c36a"
+    },
+    {
+      "path": "scripts/godot_tools/export_progress.py",
+      "bytes": 2691,
+      "sha256": "08ca3c33f0dbad988113aed236ea078f2b9fe12e9e1422970b22df5d9f744924"
+    },
+    {
+      "path": "scripts/godot_tools/export_ui.py",
+      "bytes": 5425,
+      "sha256": "c9ceeff74155e98841ec821b3bb204a11bf3aeb3b1681eaf94c6bdc74990f456"
+    },
+    {
+      "path": "scripts/godot_tools/repair_underlay.py",
+      "bytes": 7938,
+      "sha256": "9e60f7d1f88fa476aeed7966b2968c78c0c1c7f7f3deee13317b9df7f50b8a35"
+    },
+    {
+      "path": "scripts/godot_tools/verify_routes.py",
+      "bytes": 2295,
+      "sha256": "a9010d81e5d9fcc0a701e2e9780d08ba459fe928fdabf0f5e2470c3dde882335"
+    },
+    {
+      "path": "scripts/main.lua",
+      "bytes": 10980,
+      "sha256": "29799fe97c51b5ffc1d26c6cd7e88ee0a1ab7e7bdab59ac38ec44d1d198dd1ac"
+    },
+    {
+      "path": "scripts/main.lua.meta",
+      "bytes": 40,
+      "sha256": "22947659b6f17497348e905cb2f8216bf25f02f7ed3f26cad6697eca3abc1de6"
+    },
+    {
+      "path": "scripts/qa/BodyLifeNativeBenchmark.lua",
+      "bytes": 2265,
+      "sha256": "e0fc5ce84c4a259c9cb0ed6e5766ee44f5ea627e70a5d78378b6bfe7e4b46f1e"
+    },
+    {
+      "path": "scripts/qa/BodyLifeNativeProbe.lua",
+      "bytes": 2424,
+      "sha256": "3b6f2fb55a6d8af9ba3899f0df834898af2084dfb1bfabe1c44b858a569c6976"
+    },
+    {
+      "path": "scripts/qa/FullBodyMapNativeIdlePreparation.lua",
+      "bytes": 616,
+      "sha256": "0f296338e2d3139e95b909227e3e903b9194d27682727d1749fde6d650e9b86e"
+    },
+    {
+      "path": "scripts/qa/FullBodyMapNativeMovement.lua",
+      "bytes": 17998,
+      "sha256": "9f77d55b084458afd5332e7338bb1abada4f87973faa70833018209330064d0a"
+    },
+    {
+      "path": "scripts/qa/FullBodyMapNativeMovementData.lua",
+      "bytes": 2495,
+      "sha256": "d5082b890a90796d0fee40ea12783a6c25d2d2e4bc498a76c0648e2433606f08"
+    },
+    {
+      "path": "scripts/qa/FullBodyMapNativePerformance.lua",
+      "bytes": 3295,
+      "sha256": "83ebac1659ce941f6fd160fce34f53c96d1d47f9f7afc04a3798085d3499b97c"
+    },
+    {
+      "path": "scripts/qa/FullBodyMapNativeSeamProbe.lua",
+      "bytes": 1562,
+      "sha256": "8b8e3412f72f6c5c9ef84db8e453c7bd63e40d2456c7537ac0b5e94f9bdb5bbd"
+    },
+    {
+      "path": "scripts/qa/FullBodyMapNativeTrafficMovement.lua",
+      "bytes": 706,
+      "sha256": "f3286b82c619f445b40df9384dd8df51919c827c6fa6138a3490e6661dbdf6cc"
+    },
+    {
+      "path": "scripts/qa/FullBodyMapNativeTrafficMovement016.lua",
+      "bytes": 814,
+      "sha256": "e933b6649e5821b1ee3843d3399691105f8372fa6c4d70fecdf991f81d959827"
+    },
+    {
+      "path": "scripts/qa/FullBodyMapNativeViews.lua",
+      "bytes": 7880,
+      "sha256": "54b30cc9ffd403c22dcd197ffd1773e1d3997b5d5ee24bb48b407ef02d2dfea5"
+    },
+    {
+      "path": "scripts/qa/FullBodyMapVisibleCells.lua",
+      "bytes": 2728,
+      "sha256": "ca665e6f01a12f608a4e40b5a1769cfd14368cc4ed02eda9408bfec4c96778fd"
+    },
+    {
+      "path": "scripts/qa/HeartMotionAcceptance.lua",
+      "bytes": 8868,
+      "sha256": "ca2d89221eb2a3a7c9d8deefd32cc11107cdf9d64e246416565e98f5396f8a92"
+    },
+    {
+      "path": "scripts/qa/HeartNativeGameplay.lua",
+      "bytes": 13545,
+      "sha256": "cb65d173d4b3b7b5342fc7eb1f3aa87c38e6ba314e01f1f5f1ec298cc8dfcb2f"
+    },
+    {
+      "path": "scripts/qa/HeartNativePerformance.lua",
+      "bytes": 13358,
+      "sha256": "d43ab12f77920a3ed27c4dd60c142db7b3a4231e7cf6b71742d9c1875db78a42"
+    },
+    {
+      "path": "scripts/qa/HeartNativeProbe.lua",
+      "bytes": 7161,
+      "sha256": "aaa2ab05b5e2c07e5209337534c02a811784eab4917793056d11919f79e6dda5"
+    },
+    {
+      "path": "scripts/qa/NativeIdlePreparationCases.lua",
+      "bytes": 1337,
+      "sha256": "e88da06486ae3555ab4deb4de36b22449aeadee5f5f4a16e10aceb2e2d8cc4ba"
+    },
+    {
+      "path": "scripts/qa/NativeIdlePreparationPopulation.lua",
+      "bytes": 483,
+      "sha256": "6ccccaea1c2bed307a2991050c1e32e4d999ff9bcf7620150679864b7cf99f07"
+    },
+    {
+      "path": "scripts/qa/NativeScreenshotRetry.lua",
+      "bytes": 4868,
+      "sha256": "320b4cdd0c6b2e189050e49b258b8c2a3178665f0109cea71a754f287f3c7cb0"
+    },
+    {
+      "path": "scripts/qa/NativeScreenshotViews.lua",
+      "bytes": 5351,
+      "sha256": "628f5f5a5528be62ac1fda36ac7f054273a9a0c08cbbf24a158bb3143ba9fe35"
+    },
+    {
+      "path": "scripts/qa/NativeTrafficMovementCases.lua",
+      "bytes": 1710,
+      "sha256": "525869989288c69df8e5ee1cc53b88bf97ed92a8c38ba9dd0343c246f899aef4"
+    },
+    {
+      "path": "scripts/qa/NativeTrafficMovementCases016.lua",
+      "bytes": 2387,
+      "sha256": "9e4e63da402ad257f764c37b6690094ac42f15902394c5d59d395acbc6b74696"
+    },
+    {
+      "path": "scripts/qa/OrganAtlasNativeHarness.lua",
+      "bytes": 8228,
+      "sha256": "96b0b5dc167f9b6ceac21c53f79d26cd0ed9a7317e70cef4a4a1992409c82fda"
+    },
+    {
+      "path": "scripts/qa/OrganAtlasNativeProbe.lua",
+      "bytes": 21832,
+      "sha256": "c614158979f686e2a019e8a0b6d2ada3529661f89301a7d0d292fd05ee05b4ce"
+    },
+    {
+      "path": "scripts/qa/RedCellNativeObservation.lua",
+      "bytes": 1211,
+      "sha256": "7f982457465bcce9da6484f5a805ec12ecb0e7e1c38fc9b0fc2affd035ace70c"
+    },
+    {
+      "path": "scripts/qa/VascularMaterialNativeViews.lua",
+      "bytes": 5566,
+      "sha256": "d200311e4b7b615bc27b8c78949619cf3c12baf1b8fefea61d7527db0c2a4a04"
+    },
+    {
+      "path": "scripts/qa/__pycache__/apply_reviewed_organ_obstacles.cpython-314.pyc",
+      "bytes": 8116,
+      "sha256": "d3ec498c88e219685e09b3d5aac73bf87a0d77b5d3b98f94c0c83e29e7cdcebd"
+    },
+    {
+      "path": "scripts/qa/__pycache__/body_life_backend.cpython-313.pyc",
+      "bytes": 26567,
+      "sha256": "d6af03b238c2939d5aba646f911994b6ce6c212b06298e3be272f8dda74f5fe3"
+    },
+    {
+      "path": "scripts/qa/__pycache__/body_life_backend.cpython-314.pyc",
+      "bytes": 27765,
+      "sha256": "3523fa5a167189b204a3321cce6af50441faef8f1c04d7eadf9a216199591fbc"
+    },
+    {
+      "path": "scripts/qa/__pycache__/build_body_coverage.cpython-313.pyc",
+      "bytes": 20116,
+      "sha256": "d72a89035e0f3b7263b7f51d2b16e05b29d3e4a6a7c0ec22d104a3a785658c03"
+    },
+    {
+      "path": "scripts/qa/__pycache__/build_body_coverage.cpython-314.pyc",
+      "bytes": 23200,
+      "sha256": "72f7abfd4a2c145b6bf8bd525c58b594763295668b1576c79a2fa47ac9677046"
+    },
+    {
+      "path": "scripts/qa/__pycache__/build_cava_transition.cpython-314.pyc",
+      "bytes": 13091,
+      "sha256": "d56718e5545b410c85bfb879dae527d0b42fc5a1f0f82369b1b4c6fb1a604e5a"
+    },
+    {
+      "path": "scripts/qa/__pycache__/build_fullbody_vascular_material.cpython-314.pyc",
+      "bytes": 166456,
+      "sha256": "74d21298056b8bf7bd0d4c0129d6944d17f60e540a8e642d44ca131fde1b447b"
+    },
+    {
+      "path": "scripts/qa/__pycache__/build_gastric_battlefield_art.cpython-314.pyc",
+      "bytes": 7876,
+      "sha256": "66fb66d10b8b4c922150383ff62a0b32f70b74e90c3557f5ccd64b205e293346"
+    },
+    {
+      "path": "scripts/qa/__pycache__/build_gastric_organic_terrain.cpython-314.pyc",
+      "bytes": 22229,
+      "sha256": "d9a3fdf1d9402faa14ec4d1d46eba760f1858745dd399493623d0f689a665a4c"
+    },
+    {
+      "path": "scripts/qa/__pycache__/build_heart_margin.cpython-314.pyc",
+      "bytes": 15033,
+      "sha256": "c76025f4496240255764df483de43f7f51f55a53d56b5f094b10fe5107f51969"
+    },
+    {
+      "path": "scripts/qa/__pycache__/build_heart_perimeter.cpython-314.pyc",
+      "bytes": 19054,
+      "sha256": "54069ce75fac8d5f1c51e9babfff725690d984d2e5d55c08204d980a247b1c60"
+    },
+    {
+      "path": "scripts/qa/__pycache__/build_left_vessels.cpython-314.pyc",
+      "bytes": 24541,
+      "sha256": "ccac30f011efd8661b8d7874c6a74892a0b099e70de4d52eac15a233e9ef4bec"
+    },
+    {
+      "path": "scripts/qa/__pycache__/build_organ_battlefield_art.cpython-314.pyc",
+      "bytes": 28680,
+      "sha256": "5f3bb6479c3c59feeec705dee6b10ccd85fc21673aa8906e897cb1c3424160eb"
+    },
+    {
+      "path": "scripts/qa/__pycache__/build_organ_layers.cpython-314.pyc",
+      "bytes": 4389,
+      "sha256": "55d1d933a77559fccec166d10d500648562c5b34d6c2911dce9fbd52a18d9d74"
+    },
+    {
+      "path": "scripts/qa/__pycache__/build_other_vascular_review_report.cpython-314.pyc",
+      "bytes": 11758,
+      "sha256": "bcef4aa86247cde0b66ef4029e7fbf891b0b79c7f12533b47c66f5ead9024b22"
+    },
+    {
+      "path": "scripts/qa/__pycache__/build_pulmonary_return.cpython-314.pyc",
+      "bytes": 18888,
+      "sha256": "3fd9c35675facb3a8e8fdd6e47da9236ca05c60d2fa1f649e72d9a73f9d4b013"
+    },
+    {
+      "path": "scripts/qa/__pycache__/build_standalone_vessel_channels.cpython-314.pyc",
+      "bytes": 28176,
+      "sha256": "61b8c8ca9277771673f89d9dc143589aaca76870a20bd6fcce612fcf5efa94c0"
+    },
+    {
+      "path": "scripts/qa/__pycache__/build_stomach_pilot.cpython-313.pyc",
+      "bytes": 11747,
+      "sha256": "c1222b089f2450fc9685d02f45998980c4abac22580ddd291309b41ade16bf36"
+    },
+    {
+      "path": "scripts/qa/__pycache__/build_vascular_limb_v15.cpython-313.pyc",
+      "bytes": 12976,
+      "sha256": "3b8cfe67a50cc4eef45226b22d5877538a5e9050fef28d53e8cb64dac3bb2c67"
+    },
+    {
+      "path": "scripts/qa/__pycache__/build_vascular_route_repair_report.cpython-314.pyc",
+      "bytes": 8210,
+      "sha256": "97e35eda7c2a5afe823278ccc404f86bdff0d549b6664027a5e925fd70bdf1b1"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_body_life_integration.cpython-313.pyc",
+      "bytes": 20442,
+      "sha256": "ef3a85ec8dc168aa9458a4cb9cc92e04445ff6a69fb9761819a5898bf1cfc03b"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_body_life_visibility.cpython-313.pyc",
+      "bytes": 10945,
+      "sha256": "20998ea4bde9d29222816d3a2ea4e409dc100e68073c9ac4a3537b76fc22a35f"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_body_region_routes.cpython-314.pyc",
+      "bytes": 13960,
+      "sha256": "a0ce7787041eed59a86a0517fadfa610ee8a0f3ce6286f8ebd7458d1ebb5a9b4"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_closeup_backend.cpython-313.pyc",
+      "bytes": 9167,
+      "sha256": "79e547e08862bd0b4bdeb25a0c620f23f925654cbd18b270e121b5f6ffa0ad06"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_closeup_data_compatibility.cpython-313.pyc",
+      "bytes": 6911,
+      "sha256": "0da5b806949ac2759a12140da97a8ad16791ce0fa71a512a88a77e2e55ad405f"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_dev_package.cpython-314.pyc",
+      "bytes": 3814,
+      "sha256": "e8ee745eea4b474c50da7290f1a78ed24ab3b83fbf2a345cc2d516e1c2770271"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_fullbody_015.cpython-314.pyc",
+      "bytes": 242175,
+      "sha256": "c4ee21166685069379e04b7ddb7a3b3b5f4c8293f278245e0d5e412233c267c4"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_fullbody_foreground_semantics.cpython-314.pyc",
+      "bytes": 27256,
+      "sha256": "3a5c1f87b318dea9eebf12dfcfdb2fe58685356e9bce70fce50c89f88b01d7db"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_fullbody_resource_budget.cpython-314.pyc",
+      "bytes": 23545,
+      "sha256": "24862b35231855e7a9813417fdb854e62462d56eadc64c56282095c03a627ddd"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_gastric_battlefield.cpython-313.pyc",
+      "bytes": 78291,
+      "sha256": "aea49e3bafb3fd844dd5140368d45e26cdce7fcb1234a6a69bd4dde2bfac96ae"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_gastric_battlefield.cpython-314.pyc",
+      "bytes": 86717,
+      "sha256": "938df0c9e3d9f56ef8e83f958234389b1261c7a67ed4d499b73ebda9f0128849"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_gastric_play_art.cpython-314.pyc",
+      "bytes": 11870,
+      "sha256": "2629be2f52ee8dc0813530b3baacb3986b9c90adfcb8ccee4362b055d0adf02e"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_heart_battlefield.cpython-314.pyc",
+      "bytes": 17802,
+      "sha256": "2af47ccf00313a7b222cec48872229877414f5d6be4f47dbaa5c7d3e8d0be301"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_heart_v1_save_runtime.cpython-314.pyc",
+      "bytes": 10731,
+      "sha256": "1eac036e804c9f429683ad1262305869e7fb95fc62729ba58b1917edb87f35c5"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_navigation_closure.cpython-314.pyc",
+      "bytes": 24907,
+      "sha256": "542242f77f9cfb11cb1380e6dcae6cafa3a4d23ea3bd83eee3e8314237aa6f40"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_organ_atlas_art.cpython-314.pyc",
+      "bytes": 35530,
+      "sha256": "5437de0c1e67c2ac20d0166818729de9aac5479d23d51477d897981ed3c7794b"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_organ_atlas_browser_api.cpython-314.pyc",
+      "bytes": 6914,
+      "sha256": "426937eab03ca2dc3966760e35ce6b40a849b691bd9c2ca2d546d0fbea14be19"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_organ_atlas_render.cpython-314.pyc",
+      "bytes": 15537,
+      "sha256": "95d496c7e345ad5b0380f474a0904a5dfb17b431f644b1ec2b27415c4cbf35a2"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_organ_battlefield_atlas.cpython-314.pyc",
+      "bytes": 118070,
+      "sha256": "86fe0677011d153a9a71c49a122e5ebf2a615e86752abdf10def32c6df0e937a"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_organ_battlefield_runtime.cpython-314.pyc",
+      "bytes": 7027,
+      "sha256": "5f5cefdbe82d9965c9755a757595daa781c664ea64f4e62a1ea26959d2d65e1f"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_organ_closeups.cpython-313.pyc",
+      "bytes": 26333,
+      "sha256": "f126ed72b6ff92ff81c2f5436809fb604799e3be459845f99d207ccdd24203b9"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_organ_layer_commands.cpython-313.pyc",
+      "bytes": 12644,
+      "sha256": "700f16385445bf00bf2d7474519f163c1dd138aeb8d1ec69297fad2921c60ba7"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_organ_layer_commands.cpython-314.pyc",
+      "bytes": 12807,
+      "sha256": "6aea4fbe5c9d4e017f4092fe3efd9011f25bd7989b2f5db7ade5709de061bf76"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_organ_routes.cpython-314.pyc",
+      "bytes": 13595,
+      "sha256": "c8c0a0038540c0215c818b5918aaf0d50a596054949f278a85db0384213af180"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_other_vascular_crossings.cpython-314.pyc",
+      "bytes": 5172,
+      "sha256": "89c610e277bce9e803dca9fb7dc8aa137d17cbacb436d5f278a66b2d6d940ea2"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_other_vascular_routes.cpython-314.pyc",
+      "bytes": 10972,
+      "sha256": "1e3ffbfc830dd906d7574c8a48bea3cb88e1f331b80dee0f16b92f70f357628b"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_passage_clearance.cpython-313.pyc",
+      "bytes": 16623,
+      "sha256": "9c99f1a89e821d8d446ca4f727b615f39d9ae03154c453a4b94087dbb025f372"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_passage_navigation.cpython-314.pyc",
+      "bytes": 9835,
+      "sha256": "e0ee1564289168021d8ab93766af76472f147ed81b60cf0b00464011a80d5eef"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_regional_vascular_refinement.cpython-314.pyc",
+      "bytes": 16542,
+      "sha256": "ccca1e7a2f6ae18ad1ab4ecff8c1e3b10404dabf88881ab7c6346eed5a92cb0a"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_reviewed_vascular_navigation.cpython-313.pyc",
+      "bytes": 11132,
+      "sha256": "ac06bd331720d9c8b94cb6537a0067c8ba29b12c343d15c6e4ea79f30027ebb4"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_startup.cpython-314.pyc",
+      "bytes": 7314,
+      "sha256": "9aa880f49969af1438b307a830b096a06db7aaa164c8aedab28d9aa94f1db270"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_stomach_battlefield.cpython-313.pyc",
+      "bytes": 28025,
+      "sha256": "40912ac06876d8ab6a488c4c60a1648a7a8264d73db4b1e1e8d82dae9793306a"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_stomach_connectivity.cpython-313.pyc",
+      "bytes": 24868,
+      "sha256": "b1984e28926672e2a15cb684a62e28f71d6170acd07a59fbdd6c6e3f8fe32463"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_stomach_connectivity.cpython-314.pyc",
+      "bytes": 26870,
+      "sha256": "3bb18ee5a93a1f75f67050b4552676593cd878664f839237fd19ec711a212d87"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_vascular_index_clearance.cpython-314.pyc",
+      "bytes": 2733,
+      "sha256": "9fce36aa0ea5e2b900fe17c2f9da46272d4a2a1a49582f80913c0947124c5e34"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_vascular_material_pilot.cpython-314.pyc",
+      "bytes": 34439,
+      "sha256": "e4438bcb29d1dac64276d6aa8dac7bc623d94b4310a640d275d1207e744775f0"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_vascular_route_repair.cpython-314.pyc",
+      "bytes": 9876,
+      "sha256": "26308fbcc24772438a6dfba73f04b48d1754f7c0bd17bd58249e682b5733aa27"
+    },
+    {
+      "path": "scripts/qa/__pycache__/check_vascular_route_repair_render.cpython-314.pyc",
+      "bytes": 3716,
+      "sha256": "a6c3cacad5ae7e304b0fe9d1b086202c0f2539f3277f0b29d65e01a7a8d9b8b2"
+    },
+    {
+      "path": "scripts/qa/__pycache__/export_body_life_video.cpython-313.pyc",
+      "bytes": 4132,
+      "sha256": "2f30729a04a8b2204493b9342e55de09c8e4f764c24194396c28108a2757e08e"
+    },
+    {
+      "path": "scripts/qa/__pycache__/export_dev_changes.cpython-314.pyc",
+      "bytes": 7496,
+      "sha256": "6c60030932f019bf7efecadb2ecaabc4bcd8fa0413a18d2d45a4d397ea6c9a68"
+    },
+    {
+      "path": "scripts/qa/__pycache__/export_reviewed_vascular_layout.cpython-313.pyc",
+      "bytes": 9626,
+      "sha256": "2354081814888cfdab9591f531048d89cabc3f359d2dc399e0da1cd1e95177ab"
+    },
+    {
+      "path": "scripts/qa/__pycache__/gastric_play_server.cpython-314.pyc",
+      "bytes": 10888,
+      "sha256": "0b230ead2edfb8e51ba95b28cc0693a7deba8cf55924280b4a78081024fbaa85"
+    },
+    {
+      "path": "scripts/qa/__pycache__/left_vessels_support.cpython-314.pyc",
+      "bytes": 2208,
+      "sha256": "d9758b784db2d0ffedbf2af8bd7bd213200c4d2f1874da7e9b3a7797e1c46e7c"
+    },
+    {
+      "path": "scripts/qa/__pycache__/make_teammate_dev_package.cpython-314.pyc",
+      "bytes": 16752,
+      "sha256": "b87e585152e64da309f89334d531a96817aabc50218167dc12e13448c326f888"
+    },
+    {
+      "path": "scripts/qa/__pycache__/make_teammate_package.cpython-314.pyc",
+      "bytes": 11612,
+      "sha256": "f25c4058c2fe57ff883594529282c692dc13244f73fab47d444a6d1cdb9ebca6"
+    },
+    {
+      "path": "scripts/qa/__pycache__/organ_play_server.cpython-314.pyc",
+      "bytes": 10714,
+      "sha256": "b34ad975b5a6ec10f1b52e528947d2721494f69531fa81c69c032bfef009cf94"
+    },
+    {
+      "path": "scripts/qa/__pycache__/prepare_anatomy_foundation.cpython-314.pyc",
+      "bytes": 28469,
+      "sha256": "855b1bcc1857c93e736343793e873e519704b74ba124611a89c876f7baa48c31"
+    },
+    {
+      "path": "scripts/qa/__pycache__/prepare_bowel_remodel.cpython-314.pyc",
+      "bytes": 11340,
+      "sha256": "95f98144b1424b148881cd342103572639db9190e4f1631d78aad55b60cec203"
+    },
+    {
+      "path": "scripts/qa/__pycache__/prepare_fullbody_map_art.cpython-314.pyc",
+      "bytes": 8783,
+      "sha256": "7d5806474777e5c1fd7ffa4a1467e959fbbdf5013b4904c808fdb65be65b6fd5"
+    },
+    {
+      "path": "scripts/qa/__pycache__/prepare_fullbody_quiet_base.cpython-314.pyc",
+      "bytes": 21311,
+      "sha256": "60eed0d9dbd2b1fe1aab5f48e3a9fef48b70f0de663b005329d8e4bebd0fd82d"
+    },
+    {
+      "path": "scripts/qa/__pycache__/prepare_fullbody_v4_guides.cpython-314.pyc",
+      "bytes": 61356,
+      "sha256": "b9adf9eb42e575ad9518a48ac88365c25379d4ea787ebfdb6dace322ebee7037"
+    },
+    {
+      "path": "scripts/qa/__pycache__/prepare_gastric_inlet.cpython-314.pyc",
+      "bytes": 7479,
+      "sha256": "0ae554af813c7725411c386f486586d4f5c5f6c71046675cdbd861738e0b99d4"
+    },
+    {
+      "path": "scripts/qa/__pycache__/prepare_heart_battlefield.cpython-314.pyc",
+      "bytes": 24994,
+      "sha256": "ea97088602bb8c5af7ed76038bcf920226e82789087050d5e5fe4207c51633e9"
+    },
+    {
+      "path": "scripts/qa/__pycache__/prepare_left_vessels.cpython-314.pyc",
+      "bytes": 21481,
+      "sha256": "b68bc09bf0075c9b71590f6d036285cabbbbeb5ce1bf34a724b92078548fc1ff"
+    },
+    {
+      "path": "scripts/qa/__pycache__/prepare_organ_battlefield_runtime.cpython-314.pyc",
+      "bytes": 16657,
+      "sha256": "5331f5762fd093e0f2917437fc7832644821559d1e9f0c68575ee15c40d3b0fc"
+    },
+    {
+      "path": "scripts/qa/__pycache__/prepare_organ_blood_ports.cpython-314.pyc",
+      "bytes": 15451,
+      "sha256": "d8ecee4bea8df8daaf445dd6ac21d746bcd7d52877e917eefb3590260dacd09e"
+    },
+    {
+      "path": "scripts/qa/__pycache__/prepare_registered_vascular_layers.cpython-314.pyc",
+      "bytes": 19581,
+      "sha256": "3c0d717f95b924fbd857e223f8a5dfe87127b3970ff968c7362227b410f6f0e2"
+    },
+    {
+      "path": "scripts/qa/__pycache__/prepare_styled_organ_obstacles.cpython-314.pyc",
+      "bytes": 16032,
+      "sha256": "a3dfdcbccc0c44008d9bd1170b47cf7933666a7da84854879bd7cd5b86a69c27"
+    },
+    {
+      "path": "scripts/qa/__pycache__/prepare_vascular_route_repair.cpython-314.pyc",
+      "bytes": 35021,
+      "sha256": "4758e34d59ed6b18144cc71f1ec3f37f61c0b0048487bce67f99b2da99dbb374"
+    },
+    {
+      "path": "scripts/qa/__pycache__/prepare_vessel_channels_runtime.cpython-314.pyc",
+      "bytes": 10360,
+      "sha256": "d85889599cbc0f65dcc2238ef91d85f4d9e94648af37d34041550d8dd5a76b0c"
+    },
+    {
+      "path": "scripts/qa/__pycache__/preview_fullbody_vascular_material.cpython-314.pyc",
+      "bytes": 9349,
+      "sha256": "72e5129d7bc9e09a0915395e1e6313443ff5b6b582bc66bcf274eaaccbc31060"
+    },
+    {
+      "path": "scripts/qa/__pycache__/publish_fullbody_015.cpython-314.pyc",
+      "bytes": 152388,
+      "sha256": "ab17022f1d77574a0b0a24c628a5752bee224b23aba52de3dd35dc37174ffddd"
+    },
+    {
+      "path": "scripts/qa/__pycache__/publish_gastric_organic_terrain.cpython-314.pyc",
+      "bytes": 2475,
+      "sha256": "91f3ab1ffd0082f65ac480638ce5194d67a1bcce9848495af1546dcab564ae3d"
+    },
+    {
+      "path": "scripts/qa/__pycache__/publish_navigation_review.cpython-314.pyc",
+      "bytes": 11970,
+      "sha256": "68cf095a55cba4f71fbe5b17db92fc8d2f25005c305de3a92730018bf9465340"
+    },
+    {
+      "path": "scripts/qa/__pycache__/publish_organ_atlas_delivery.cpython-314.pyc",
+      "bytes": 15879,
+      "sha256": "c6309f8f0385fb5e1290509c9ccbbb615a39e1368e18d7e316d15942d21ef568"
+    },
+    {
+      "path": "scripts/qa/__pycache__/publish_organ_refinement.cpython-314.pyc",
+      "bytes": 10081,
+      "sha256": "422bbd0fd6fc69fafd9aadb822478ba95ea6caa7d38bf38ace4fd6400c5a11b2"
+    },
+    {
+      "path": "scripts/qa/__pycache__/publish_organ_routes.cpython-314.pyc",
+      "bytes": 8663,
+      "sha256": "3262ab6d284c63cb5f4b4d0d8b5c77f5cf943fffb2cb21a75fe604fc68db5134"
+    },
+    {
+      "path": "scripts/qa/__pycache__/publish_passage_clearance.cpython-313.pyc",
+      "bytes": 2324,
+      "sha256": "15fb86e4f0ba62e9e3d4921ede59a657414b059f690bf78fd9962883cc879c1c"
+    },
+    {
+      "path": "scripts/qa/__pycache__/publish_passage_navigation.cpython-314.pyc",
+      "bytes": 3175,
+      "sha256": "80b78c4614d8ab9bccf3ec3919a4bc286a6a760d82e5f9d6dce301783c816be0"
+    },
+    {
+      "path": "scripts/qa/__pycache__/publish_stomach_study.cpython-313.pyc",
+      "bytes": 3032,
+      "sha256": "84bca4f469a9e66c58e4d82345a73d846258325fddcb4efb45490598f29dc8d5"
+    },
+    {
+      "path": "scripts/qa/__pycache__/publish_vascular_material_pilot.cpython-314.pyc",
+      "bytes": 26467,
+      "sha256": "edab6d6571592e7f373bf784f9acb0c39c3e99416fa59df0d31d298af9de2a41"
+    },
+    {
+      "path": "scripts/qa/__pycache__/rebuild_heart_connections.cpython-314.pyc",
+      "bytes": 36230,
+      "sha256": "a6df5b312e280070d5c4adce457d7412bf99cea313c49c671f2acff9a3314c53"
+    },
+    {
+      "path": "scripts/qa/__pycache__/register_fullbody_junctions_v4.cpython-314.pyc",
+      "bytes": 7482,
+      "sha256": "b729143b6f403a60f1e303d0ed0f4ad881dd1601d32f9c5c5c8b62a48fead5ae"
+    },
+    {
+      "path": "scripts/qa/__pycache__/register_heart_port_connections.cpython-314.pyc",
+      "bytes": 24999,
+      "sha256": "b0848eb81209adad6b263f78be3fa087e41596a6fd990fa2c33956a07f1d253f"
+    },
+    {
+      "path": "scripts/qa/__pycache__/register_simple_heart.cpython-314.pyc",
+      "bytes": 18770,
+      "sha256": "c2bcff3ccb194efbb8cae7e48e87b74e4b34ff805ac60963adbbe7b343f28072"
+    },
+    {
+      "path": "scripts/qa/__pycache__/render_body_closeups.cpython-313.pyc",
+      "bytes": 22132,
+      "sha256": "905304fc7a71a0b8fc911b068e32c54d29c47f083fe07449554b0dcb00f29449"
+    },
+    {
+      "path": "scripts/qa/__pycache__/render_body_life.cpython-313.pyc",
+      "bytes": 10464,
+      "sha256": "41ab2169ffd1499e9197618059e89d1b5c30761228e61c0372ffb8d74a6c71eb"
+    },
+    {
+      "path": "scripts/qa/__pycache__/render_other_vascular_review.cpython-314.pyc",
+      "bytes": 4263,
+      "sha256": "9492e0e79f1edcde9aa3e56456ec72c7e63bc96fe8c4a0102d9286d85f379386"
+    },
+    {
+      "path": "scripts/qa/__pycache__/render_practical_fill.cpython-313.pyc",
+      "bytes": 5708,
+      "sha256": "e5e6c25f2401289cd7d8462d0d1c6c9577b5c096ece697f524f213e54ba7654f"
+    },
+    {
+      "path": "scripts/qa/__pycache__/render_vascular_route_repair.cpython-314.pyc",
+      "bytes": 4449,
+      "sha256": "62204dbe3817028da009aabef6bcb821a246f70d03b81c668a33bc16ebb9d59b"
+    },
+    {
+      "path": "scripts/qa/__pycache__/restore_heart_overview.cpython-314.pyc",
+      "bytes": 10439,
+      "sha256": "408e9ca12ba323c6af1da0e567c12e4fd5cd2d2e95d7d1847af9d88152ccc5e6"
+    },
+    {
+      "path": "scripts/qa/__pycache__/revise_organ_atlas_spaces.cpython-314.pyc",
+      "bytes": 53584,
+      "sha256": "656629fcee7d81527bf2652e1f13f2ce6db4c6196ed71fcbb19181e7b6b1e5d0"
+    },
+    {
+      "path": "scripts/qa/__pycache__/run_body_life.cpython-313.pyc",
+      "bytes": 3773,
+      "sha256": "2e9688331277f4c7f64f5326bfc06a1565aaa51f9a7d6baf709a262fa079939e"
+    },
+    {
+      "path": "scripts/qa/__pycache__/split_stomach_handover.cpython-313.pyc",
+      "bytes": 3685,
+      "sha256": "7320177cfebca775afb920c02d2dbf9c0f994f9eead99c20fbac46380eea2277"
+    },
+    {
+      "path": "scripts/qa/__pycache__/summarize_closeup_delivery.cpython-313.pyc",
+      "bytes": 9008,
+      "sha256": "e9faa94ec0f1b74700743ade092e9c91a89d8ac4b64a2481bb52d45621ee34b7"
+    },
+    {
+      "path": "scripts/qa/__pycache__/vascular_plan_revision.cpython-313.pyc",
+      "bytes": 19390,
+      "sha256": "2ef7054abfcbff1985c658a8999631efcfc07ec063e68b05b847a4fea26b8f99"
+    },
+    {
+      "path": "scripts/qa/apply_reviewed_organ_obstacles.py",
+      "bytes": 4646,
+      "sha256": "c2583362c01d4db1c927cbacceb15b9fb009e3db0d5a0527681bc387bf0a19ba"
+    },
+    {
+      "path": "scripts/qa/audit_fullbody_015_contract.py",
+      "bytes": 19911,
+      "sha256": "89ab5bafa7d318cbfeffc5dccfb5c0ebb46a2a3e55e502acc56a26e6a0da5d22"
+    },
+    {
+      "path": "scripts/qa/audit_registered_vascular_depth.py",
+      "bytes": 51654,
+      "sha256": "ec383e58f9a88e6274c264808f2d7913731df0cff534b2480212cf990548c9b5"
+    },
+    {
+      "path": "scripts/qa/audit_whole_body_connections.py",
+      "bytes": 16993,
+      "sha256": "47fbdcbc5a265f3bd9e80137ac3880154281103b64a61e8411626f9d38c67f69"
+    },
+    {
+      "path": "scripts/qa/bake_cell_silhouettes.py",
+      "bytes": 2797,
+      "sha256": "608a442f477f51db9c2b119657c702b076f3cd2d04ab197163c51b1bf00eb025"
+    },
+    {
+      "path": "scripts/qa/body_life_backend.py",
+      "bytes": 13673,
+      "sha256": "112da582a0ebff26ac0d8060f9186751344f10fb36270d7398d29c63d015fa9c"
+    },
+    {
+      "path": "scripts/qa/build_abdomen_join_art.py",
+      "bytes": 7330,
+      "sha256": "d2759d4af128bb450a0796d72de35324ae8edd3c62c73204440d4d177a5e7a34"
+    },
+    {
+      "path": "scripts/qa/build_body_coverage.py",
+      "bytes": 12322,
+      "sha256": "7d323bcb6a216f21e1ab418f47ed466a135c8c85bb32332b534baf1a9a815e85"
+    },
+    {
+      "path": "scripts/qa/build_body_passages.py",
+      "bytes": 12649,
+      "sha256": "4a14c795db0a2077d4fa5f5e1786afed412d129b289699efb8451c879c48cd1b"
+    },
+    {
+      "path": "scripts/qa/build_body_region_candidates.py",
+      "bytes": 13515,
+      "sha256": "d4bdd845c3425c611d0860021edc0825c38b3e068a92e2d8a78f092efeb6d19c"
+    },
+    {
+      "path": "scripts/qa/build_bowel_remodel.py",
+      "bytes": 10587,
+      "sha256": "b1bc841edf5bda09ad665669aec1fe08147ba27ce747f86e801e56afcc1f3573"
+    },
+    {
+      "path": "scripts/qa/build_cava_junction.py",
+      "bytes": 7448,
+      "sha256": "58dac5d9527ac3dd1cede853daf15a5847c9a519a496d4456a626e55f759a0d1"
+    },
+    {
+      "path": "scripts/qa/build_cava_transition.py",
+      "bytes": 6731,
+      "sha256": "fca4b6653582ccf68c8e97853ddac9e3828eca13a2664fc62ffc8c94816e3948"
+    },
+    {
+      "path": "scripts/qa/build_final_stomach_art.py",
+      "bytes": 8898,
+      "sha256": "60fe1205f7be17b4b3d726431c8e7d7722cd6c882ad0dc8a659609442c889310"
+    },
+    {
+      "path": "scripts/qa/build_fullbody_vascular_material.py",
+      "bytes": 108065,
+      "sha256": "0efacdc4e4edc562b76e39f9aedecfe38a6597d355f1161c710460a92da70bc8"
+    },
+    {
+      "path": "scripts/qa/build_gastric_battlefield_art.py",
+      "bytes": 4948,
+      "sha256": "50e203cef601d00258a5363b39c7d076d485a55e5c61f669da4b8e39280d64da"
+    },
+    {
+      "path": "scripts/qa/build_gastric_organic_terrain.py",
+      "bytes": 11863,
+      "sha256": "9b932587609b53df5b8e26f72d55f4f8ee8edfe2117a7066a93e0c7818184d6b"
+    },
+    {
+      "path": "scripts/qa/build_gastric_quiet_terrain.py",
+      "bytes": 8864,
+      "sha256": "5c488a226fed4181606ba7355db5d1af62616f02455b8b3202938d99eb107393"
+    },
+    {
+      "path": "scripts/qa/build_heart_margin.py",
+      "bytes": 8091,
+      "sha256": "17e4f4c50b2cfb915fddefc8fcb35ac0e1adf6b81b2b263229dc7d7707a7f582"
+    },
+    {
+      "path": "scripts/qa/build_heart_perimeter.py",
+      "bytes": 8344,
+      "sha256": "5b3fa7e81e214ca99c7743a68ba285a24dc9ff1cf49237504bd8727cf8f12858"
+    },
+    {
+      "path": "scripts/qa/build_heart_v1_interface_contract.py",
+      "bytes": 14007,
+      "sha256": "a7d5486ddb1e40025632461e5b5e65d003475e985255e005c35535e921fb42a2"
+    },
+    {
+      "path": "scripts/qa/build_left_vessels.py",
+      "bytes": 11463,
+      "sha256": "5075097e001d87b437f6848fe7436f98e17894eaae4c685e48a6f69bc9c398f1"
+    },
+    {
+      "path": "scripts/qa/build_organ_battlefield_art.py",
+      "bytes": 16040,
+      "sha256": "c5bd92a2e3441e50b467514b4e8ce7ee94871c863b6db6af287cba528fe22e10"
+    },
+    {
+      "path": "scripts/qa/build_organ_layers.py",
+      "bytes": 1953,
+      "sha256": "7d6545050981d01250978ec92c8045cb83af75be2f20595b7d95b25bcc4e67d4"
+    },
+    {
+      "path": "scripts/qa/build_other_vascular_review_report.py",
+      "bytes": 7350,
+      "sha256": "79554e36428f95dad2954e666eb7c4dcb64eec201553f2df33a86f2183ea0e5c"
+    },
+    {
+      "path": "scripts/qa/build_pulmonary_return.py",
+      "bytes": 9427,
+      "sha256": "4b422c2b0f5bdbb6924f439d9517c9dd860189547d7f7bf5c09e30d7bb81edf4"
+    },
+    {
+      "path": "scripts/qa/build_registered_vascular_art.py",
+      "bytes": 13175,
+      "sha256": "59b646b7027b5418199a04895d4c49cc993e827293da1cec161452681fb65cb0"
+    },
+    {
+      "path": "scripts/qa/build_standalone_vessel_channels.py",
+      "bytes": 13210,
+      "sha256": "6bc4f58ac8243bd1c216ee433d4f60967b8efa2735a2a30510645423214dc983"
+    },
+    {
+      "path": "scripts/qa/build_stomach_pilot.py",
+      "bytes": 5341,
+      "sha256": "0577759fe4460ca2496612f40d43ae0ce9f0c930f1dfbc400f3a79a182ac71e6"
+    },
+    {
+      "path": "scripts/qa/build_unified_cardiac_art.py",
+      "bytes": 20156,
+      "sha256": "82c87baa44dd6f20babf7cd96fe711acd1464f94c0ab2c81cae06e894fb3feed"
+    },
+    {
+      "path": "scripts/qa/build_upper_abdomen_gpt_sample.py",
+      "bytes": 14527,
+      "sha256": "2e724bac718d8f256db3b3e7236ab450f60538710473c88d1152a2ccc71fb3a2"
+    },
+    {
+      "path": "scripts/qa/build_vascular_art_layers.py",
+      "bytes": 8622,
+      "sha256": "4ba65069e24cc10e9a89af0bcc60bf5d7dbd3aed5bf44124afb92410c811e680"
+    },
+    {
+      "path": "scripts/qa/build_vascular_final_reference.py",
+      "bytes": 18682,
+      "sha256": "f77b87e9b2d23914ced16dd95f6ef0d05601493f0f27d651857b9d7a4d93e02e"
+    },
+    {
+      "path": "scripts/qa/build_vascular_limb_layers.py",
+      "bytes": 10328,
+      "sha256": "0a720e50418eb5df608c5aa2a44c6a520881f277aec45df3543318438162c626"
+    },
+    {
+      "path": "scripts/qa/build_vascular_limb_v14.py",
+      "bytes": 6769,
+      "sha256": "c1baca66eb5e8c993869afd85047d0b9c6d18c1a8d9893e0f49d0d6b45b64d5b"
+    },
+    {
+      "path": "scripts/qa/build_vascular_limb_v15.py",
+      "bytes": 8174,
+      "sha256": "d94ece2bc6a3db400484fcb97b08f9903a6450af2839eeb841b22bba11e23e19"
+    },
+    {
+      "path": "scripts/qa/build_vascular_material_pilot.py",
+      "bytes": 13892,
+      "sha256": "20f7e1aee22b34e7406a44726a3168a1b15bb3c88133d1d2b72a3b3340b86d31"
+    },
+    {
+      "path": "scripts/qa/build_vascular_overlap_review.py",
+      "bytes": 19028,
+      "sha256": "4862f52ee304808e1ff32f74d4712eb2c1dd2ed5bc1ee4fbbab9045e2402a569"
+    },
+    {
+      "path": "scripts/qa/build_vascular_route_repair_report.py",
+      "bytes": 5313,
+      "sha256": "9f70f48abb437b98b51857ae4625eb01310671324cdcfd84bcb946725f0f802d"
+    },
+    {
+      "path": "scripts/qa/build_vascular_sketch.py",
+      "bytes": 11413,
+      "sha256": "b23f4c934c1dee20f140106812d1e724db3b0cfff179a2231461041f67e86e24"
+    },
+    {
+      "path": "scripts/qa/build_whole_body_connections.py",
+      "bytes": 32696,
+      "sha256": "462f2df9f102ce71a572ee1f4c427531f435204010644cac1f0cb3f9e4f49f8c"
+    },
+    {
+      "path": "scripts/qa/check_abdominal_display_repair.py",
+      "bytes": 4160,
+      "sha256": "4fc15f1451d550f4ebb5597752082db60f7212ae1222433592d5260275406c83"
+    },
+    {
+      "path": "scripts/qa/check_anatomy_foundation_runtime.py",
+      "bytes": 6152,
+      "sha256": "05276be34eaffe91e9c144f46d8916d23bd72cbb6e21994137c0755f9fd45630"
+    },
+    {
+      "path": "scripts/qa/check_anatomy_perspective.py",
+      "bytes": 7285,
+      "sha256": "628a9ec6e80ecd3cff5ba81ffb7e0acafd47feed0c274c40f738599111682a99"
+    },
+    {
+      "path": "scripts/qa/check_bladder_additional_gate.py",
+      "bytes": 10789,
+      "sha256": "68ed2091d1aa2ed5faf6481667034235485f81a08fbc1b6c998df881bd9d3ac9"
+    },
+    {
+      "path": "scripts/qa/check_bladder_urethra_runtime.py",
+      "bytes": 4660,
+      "sha256": "0b40dc44380162f377e898a4d607dbba07c35dfa53f100e09c5f501c786bf762"
+    },
+    {
+      "path": "scripts/qa/check_body_life_fullbody.py",
+      "bytes": 9033,
+      "sha256": "f52821e2d2d90f1c09d95dc44bfff2674ae5823f44dc6bcf70054f8eb3dcb090"
+    },
+    {
+      "path": "scripts/qa/check_body_life_integration.py",
+      "bytes": 13308,
+      "sha256": "65561e627ba81ee8e4e356e31309f3e509615910bc583343dec9e54d8a9c7cb4"
+    },
+    {
+      "path": "scripts/qa/check_body_life_resources.py",
+      "bytes": 5456,
+      "sha256": "e7e90091811e17bf73fbb3a73f07f732ad5e431b9c1ffc13c7d8dbea1e4647cf"
+    },
+    {
+      "path": "scripts/qa/check_body_life_visibility.py",
+      "bytes": 5268,
+      "sha256": "536ab356d6e8d96f8653f2119ef089c7b2f100c5b52471230b841e84f1470dc9"
+    },
+    {
+      "path": "scripts/qa/check_body_region_gate_negatives.py",
+      "bytes": 4922,
+      "sha256": "059ebcdfa578f662e115a18fee06c1f222f7db7c0bbd6c5dd26cd9a012c0efc4"
+    },
+    {
+      "path": "scripts/qa/check_body_region_navigation.py",
+      "bytes": 10909,
+      "sha256": "cb08601fa20555279553a649e6fc6eff0dcde00c44a5f1e9be7f57166dba6bee"
+    },
+    {
+      "path": "scripts/qa/check_body_region_routes.py",
+      "bytes": 10863,
+      "sha256": "c9aae400022ef672dbf73bb0fb89acfc5ee6543351492b6b5464576b05d97b0b"
+    },
+    {
+      "path": "scripts/qa/check_body_region_scheduler.py",
+      "bytes": 3277,
+      "sha256": "b39e6acb108ec802c023533978a86d1fbbd4e852819da1111cba3ac799cc2264"
+    },
+    {
+      "path": "scripts/qa/check_bowel_art.py",
+      "bytes": 6535,
+      "sha256": "93e726ce33abf0bb8365330fd7c9223424fa311801f33c12bbb779a95ceeaa7b"
+    },
+    {
+      "path": "scripts/qa/check_bowel_remodel.py",
+      "bytes": 8139,
+      "sha256": "5af752dceb649c7b9e1f560ff8d187ea88c2263459b8c9fd08e7568ddd3799d1"
+    },
+    {
+      "path": "scripts/qa/check_cava_junction.py",
+      "bytes": 4586,
+      "sha256": "e5baf2354267fc3a9f81b69ebcb919a367252ebfb7516b427be0cdb6b7c15098"
+    },
+    {
+      "path": "scripts/qa/check_cava_transition.py",
+      "bytes": 4292,
+      "sha256": "2d8ae4fcee3a2de5527aa07c48178fdf45780532818a59fa45a8bcafa570eed6"
+    },
+    {
+      "path": "scripts/qa/check_central_vessel_connections.py",
+      "bytes": 4745,
+      "sha256": "523bc821d1f9ab3bd6cdabe3aea162f640c1c314e83efe1e8c8cc6abfa8ac4db"
+    },
+    {
+      "path": "scripts/qa/check_closeup_backend.py",
+      "bytes": 3437,
+      "sha256": "d90d2710adaef6a3d62846e1c089446ae2dcd2ce52a516772c0ee1e9780e3647"
+    },
+    {
+      "path": "scripts/qa/check_closeup_data_compatibility.py",
+      "bytes": 2913,
+      "sha256": "7e86936d2c73b75818400a4bbf2eaec3dce76bfbdba8f8b4ec2721240f70ef7b"
+    },
+    {
+      "path": "scripts/qa/check_dev_package.py",
+      "bytes": 2196,
+      "sha256": "5d8c56a06c4c2d6baec74c4975b05f73350cc550fab9003796e371ecb9cb5cb7"
+    },
+    {
+      "path": "scripts/qa/check_final_stomach_navigation.py",
+      "bytes": 15721,
+      "sha256": "e29d0282a90b208745c03316b741fb38b6fdd6bbe95d096d90441cf6debabefe"
+    },
+    {
+      "path": "scripts/qa/check_fullbody_015.py",
+      "bytes": 150922,
+      "sha256": "5fe6d15888208625b7038466bd27461dc14eecad44712ad18eecb2f97da97987"
+    },
+    {
+      "path": "scripts/qa/check_fullbody_foreground_semantics.py",
+      "bytes": 17015,
+      "sha256": "98e756e048a83eab2eb603b4199deb0d0e2b2ee03c4ef46abff8bc6ce794d7bd"
+    },
+    {
+      "path": "scripts/qa/check_fullbody_incremental_c.py",
+      "bytes": 6261,
+      "sha256": "bd1bab8a20b704c32ff151e2633eeb58d9b7407bd1a9b7e4fcef2aa050c43298"
+    },
+    {
+      "path": "scripts/qa/check_fullbody_native_terminal_protocol.py",
+      "bytes": 11519,
+      "sha256": "0b09f0657757977ccc901292b2a8107521a6f6c965e04b3e54f01cbc464044fc"
+    },
+    {
+      "path": "scripts/qa/check_fullbody_native_terminal_protocol_005.py",
+      "bytes": 15416,
+      "sha256": "9ac90bcf5795012fa086327f30de77d8ca4fc227ba40edf3931d7c254f4748c8"
+    },
+    {
+      "path": "scripts/qa/check_fullbody_native_terminal_protocol_007.py",
+      "bytes": 17831,
+      "sha256": "785d0959b7312907ec1a5ce3ac6b8f9ce72eda104a1d54bd14d49ffa44db5595"
+    },
+    {
+      "path": "scripts/qa/check_fullbody_resource_budget.py",
+      "bytes": 17254,
+      "sha256": "c1de55e5a363b55a4d9f727720635a84c77bc2a156c54edad48d630df280d68a"
+    },
+    {
+      "path": "scripts/qa/check_fullbody_v8_depth_preflight.py",
+      "bytes": 9619,
+      "sha256": "53da6181bfc4249de7c5672c684c17edf7110a02961597318f30124a120d0a69"
+    },
+    {
+      "path": "scripts/qa/check_gastric_battlefield.py",
+      "bytes": 55161,
+      "sha256": "b243a38fbb4fc04b1cf025aaeee545cee397a5f1824dfe44cd7c34534ac68591"
+    },
+    {
+      "path": "scripts/qa/check_gastric_organic_terrain.py",
+      "bytes": 11096,
+      "sha256": "2eff1eba73a2ffd794340f9166d6f8dd34a25d2b1fe71ef49a49b196e0968a29"
+    },
+    {
+      "path": "scripts/qa/check_gastric_play_art.py",
+      "bytes": 7535,
+      "sha256": "414da23333aa0e5f2ebda90f465679c046a79ca885c677f38ce50721e3f9914e"
+    },
+    {
+      "path": "scripts/qa/check_gastric_quiet_boundary.py",
+      "bytes": 10317,
+      "sha256": "776bf9dcdfceeb12bee25507a3fc4154df72022c96da9013d2dcf343453fc773"
+    },
+    {
+      "path": "scripts/qa/check_gpt_lung_pixels.py",
+      "bytes": 9624,
+      "sha256": "f862a67fbff5c71fefffcb2ac0a4db0af9b2791584dd2120f31f58171513082e"
+    },
+    {
+      "path": "scripts/qa/check_heart_battlefield.py",
+      "bytes": 10053,
+      "sha256": "962b5dd500ed1f37f4904a2dfd8bb5b7bcb14c62f1a8d7792b736758b5efa6a9"
+    },
+    {
+      "path": "scripts/qa/check_heart_flow_only.py",
+      "bytes": 2148,
+      "sha256": "e7152c05357addf8f1031d3be0296114651f7ebf6088d343e5637de132df033a"
+    },
+    {
+      "path": "scripts/qa/check_heart_main_routes.py",
+      "bytes": 4465,
+      "sha256": "271e0a3660cf0175ea0769770457d99e828f96eff44a5cec95da7b06dcd18f32"
+    },
+    {
+      "path": "scripts/qa/check_heart_margin.py",
+      "bytes": 4994,
+      "sha256": "bb9c2a81c34e24135557ad62c9a57a44b68fc5986dc0b42dc54c3318a2efc2a1"
+    },
+    {
+      "path": "scripts/qa/check_heart_mouse_commands.py",
+      "bytes": 3707,
+      "sha256": "c83d1b46e727a4684a025fd0330fa4d534adb1a403db859dddf109ee9c5ca526"
+    },
+    {
+      "path": "scripts/qa/check_heart_perimeter.py",
+      "bytes": 6385,
+      "sha256": "b633b457648abdbb7b744fb8501cbac16734ab57b99fb9db91a661370b7a684f"
+    },
+    {
+      "path": "scripts/qa/check_heart_v1_interface_contract.py",
+      "bytes": 12278,
+      "sha256": "76f2814e24605c556ced9e0e69c2a8ed32a9d89a79817d8c0efab73bb4dc7068"
+    },
+    {
+      "path": "scripts/qa/check_heart_v1_save_runtime.py",
+      "bytes": 8442,
+      "sha256": "8f512170e912eaaba7f9ff3ae952983ad869a3117b99fe0b93ac60b83aef2b28"
+    },
+    {
+      "path": "scripts/qa/check_left_vessel_art.py",
+      "bytes": 5712,
+      "sha256": "d084c897a84883af201e4d09fc4644c5b45a180dc9184dabc9dd81b63c8ffb49"
+    },
+    {
+      "path": "scripts/qa/check_left_vessel_navigation.py",
+      "bytes": 7262,
+      "sha256": "f9d533a37a1a80504726f42a193b81c50f33a8093ceb0cd4a00c03db22337875"
+    },
+    {
+      "path": "scripts/qa/check_liver_additional_gate.py",
+      "bytes": 10716,
+      "sha256": "1ca0b921720c550d13a633a45cb9f93b5255ff45c6643ef068bac6f7e16eceda"
+    },
+    {
+      "path": "scripts/qa/check_navigation_boundaries.py",
+      "bytes": 9355,
+      "sha256": "8b2ff8418f683be8a45b3f749c6b536a1efbebaafb581c4254633c96426aada9"
+    },
+    {
+      "path": "scripts/qa/check_navigation_closure.py",
+      "bytes": 9871,
+      "sha256": "563a68bcdd218e003d3d30550ed1dfc8d0aa74673dea64920498766e55bd4d93"
+    },
+    {
+      "path": "scripts/qa/check_organ_art_loading.py",
+      "bytes": 5140,
+      "sha256": "e81bfdc91b53f8397a98bcf4386d77ba896cc32ffdf1b1e6d09e5bd94537176d"
+    },
+    {
+      "path": "scripts/qa/check_organ_atlas_art.py",
+      "bytes": 16713,
+      "sha256": "98d8b5df2c042f36791332614860db65155e163d53b283315804acf042cc735a"
+    },
+    {
+      "path": "scripts/qa/check_organ_atlas_browser_api.py",
+      "bytes": 4246,
+      "sha256": "3f8a8c35d870cd598606764ecde4f85a6ff7dc2f04d5ac6c0c3dd303b0175ca3"
+    },
+    {
+      "path": "scripts/qa/check_organ_atlas_palette.py",
+      "bytes": 6936,
+      "sha256": "7e1e08a9dc7400844de3153fd82fee113f476a3f649d3a3fc7fb2e4062848102"
+    },
+    {
+      "path": "scripts/qa/check_organ_atlas_render.py",
+      "bytes": 9431,
+      "sha256": "e7477c83b90465ca3f563fc912e20a146338fe87cd16e7c88c4ea86d5132f9ba"
+    },
+    {
+      "path": "scripts/qa/check_organ_battlefield_atlas.py",
+      "bytes": 80318,
+      "sha256": "f901d4559f5323f309bcbe20398d2278202634a2138e6503ce95602df99df08e"
+    },
+    {
+      "path": "scripts/qa/check_organ_battlefield_runtime.py",
+      "bytes": 4643,
+      "sha256": "7b97662419ac4d9be0b38fcf1fa201d0dd26a29b873d64ab83332c7bbb3fa3a1"
+    },
+    {
+      "path": "scripts/qa/check_organ_blood_ports.py",
+      "bytes": 3904,
+      "sha256": "aa7d98d6e9b3cf7a0a5339db83e7e937e613418dbba58c29a34f7b0614076220"
+    },
+    {
+      "path": "scripts/qa/check_organ_closeups.py",
+      "bytes": 13828,
+      "sha256": "32b0cbc3d9a024332ac6f304bd9d5a261f59c7223caa3ce2594f0e0d5392f543"
+    },
+    {
+      "path": "scripts/qa/check_organ_command_readability.py",
+      "bytes": 5110,
+      "sha256": "646019b5e8ad9a946de85775ffc05c3b9f57e5c335cb62f4e895af75bc8c9427"
+    },
+    {
+      "path": "scripts/qa/check_organ_gate_geometry.py",
+      "bytes": 4056,
+      "sha256": "ad219c1dd8911b94566b80732a86a0e52f67a6b99d6dda9406b4fa8f6120837a"
+    },
+    {
+      "path": "scripts/qa/check_organ_gate_traffic.py",
+      "bytes": 16224,
+      "sha256": "ab6ddb7e07e0b294c9cbe2cc1615bf71ee36d68ada4e02cec56c7e3d2e13bad5"
+    },
+    {
+      "path": "scripts/qa/check_organ_grid_connectors.py",
+      "bytes": 7669,
+      "sha256": "729761ee6356c3d3d2a8790739792c0175840c8f2f8d8dc63844309fa3f901e0"
+    },
+    {
+      "path": "scripts/qa/check_organ_layer_commands.py",
+      "bytes": 10752,
+      "sha256": "33c3df5b211c27d0e7c35755b004ce0e7f581f18ffbb261e6756595e98f43641"
+    },
+    {
+      "path": "scripts/qa/check_organ_layer_geometry.py",
+      "bytes": 7159,
+      "sha256": "76b7013798e8195f5d5a77e21ce72fcb2f54079af842d790e1398af7b1b6cf31"
+    },
+    {
+      "path": "scripts/qa/check_organ_route_crowds.py",
+      "bytes": 12892,
+      "sha256": "63df65253d1daedd3d5bd6d7bd1225cb5e19fd872bf76ed679c3bd75c2c890bd"
+    },
+    {
+      "path": "scripts/qa/check_organ_route_layer_membrane_probe.py",
+      "bytes": 7190,
+      "sha256": "832e9034c547c733d2d348a67402c81c8449a9ee0c206d7738e65b92ff7ac5e0"
+    },
+    {
+      "path": "scripts/qa/check_organ_route_membrane_probe.py",
+      "bytes": 6439,
+      "sha256": "e3fee51f3e1bd9dd8b5f1baa1e578618113ae270f4d7e9bd9acf2585dee6c761"
+    },
+    {
+      "path": "scripts/qa/check_organ_route_navigation_probe.py",
+      "bytes": 6590,
+      "sha256": "929a9d3e003236743828464aec0fe4eed78e09e58c87d5913621c02b977f19e1"
+    },
+    {
+      "path": "scripts/qa/check_organ_route_solitary.py",
+      "bytes": 8650,
+      "sha256": "5a9185a2ee1abb0c79acc930e08d275e05ccc4ca25476b0e6a7b47d561f409c0"
+    },
+    {
+      "path": "scripts/qa/check_organ_route_solitary_grid.py",
+      "bytes": 8974,
+      "sha256": "d29bc06bbebbaa037d650162f1817db880fc16a06a67a46ddd752c6b3ffc2626"
+    },
+    {
+      "path": "scripts/qa/check_organ_route_vascular_probe.py",
+      "bytes": 6617,
+      "sha256": "c067a673ee4cfc3f49b2f35466bba86267738def96be6a8e0b386bb060768e42"
+    },
+    {
+      "path": "scripts/qa/check_organ_routes.py",
+      "bytes": 8033,
+      "sha256": "bb3c10baaf24382cf7844ccf4679759553bca985eb31fe2639fe394cffc15ec4"
+    },
+    {
+      "path": "scripts/qa/check_organ_sortie_contracts.py",
+      "bytes": 9884,
+      "sha256": "04d29b94d70738d55b879ccb2114a940f113a229fb7c2b8dc322dbfceb8d998f"
+    },
+    {
+      "path": "scripts/qa/check_organ_sorties.py",
+      "bytes": 10172,
+      "sha256": "b1954aa42596a16567ce692b2b829c74ba7cfb53907d1cc4555c0856f94baa81"
+    },
+    {
+      "path": "scripts/qa/check_other_vascular_crossings.py",
+      "bytes": 2985,
+      "sha256": "4285a47f3c1b657f76cbe3dcace3f86eaddd730b0301917d1e1fbf3ae5632ddb"
+    },
+    {
+      "path": "scripts/qa/check_other_vascular_routes.py",
+      "bytes": 7147,
+      "sha256": "10558860cc2a1c3f5d3e9d17830cde602a36fb8841e919d0bf87452c7f3c4e78"
+    },
+    {
+      "path": "scripts/qa/check_passage_clearance.py",
+      "bytes": 11435,
+      "sha256": "adf9e6275ff6b51ca5879df13e4af8d0c98ea75868b9642fc1c74cbdc109c9c5"
+    },
+    {
+      "path": "scripts/qa/check_passage_navigation.py",
+      "bytes": 6236,
+      "sha256": "c41e6bf6a8a802a991ebaa1aa758d363b1cd01bc9d39169741207d3ad19c7080"
+    },
+    {
+      "path": "scripts/qa/check_practical_fill.py",
+      "bytes": 3131,
+      "sha256": "6dcab16482c0e4ae1ad72a3d984c322158013592487d3c7e8aa169fe806a4c96"
+    },
+    {
+      "path": "scripts/qa/check_pulmonary_return.py",
+      "bytes": 7243,
+      "sha256": "e7a0edbb85d3a74c09a2c5566aee5caf3135ed94ddeea9214f37473d1bd44c8a"
+    },
+    {
+      "path": "scripts/qa/check_regional_vascular_refinement.py",
+      "bytes": 9063,
+      "sha256": "78b76b3598b2951a27ffcef770774f10aaa1d1b28041e5f2aada6778fe85a629"
+    },
+    {
+      "path": "scripts/qa/check_registered_vascular_art.py",
+      "bytes": 5044,
+      "sha256": "747564e1be9223f6d3b14bab47fe4c84eec9b3df0411d332cd27f8ebd0041f5d"
+    },
+    {
+      "path": "scripts/qa/check_registered_vascular_game_art.py",
+      "bytes": 23030,
+      "sha256": "b5bb93ffefb15f396d6d9c1837657b2688345641c3ae8d4ccec5cb562531fed0"
+    },
+    {
+      "path": "scripts/qa/check_reviewed_organ_obstacles.py",
+      "bytes": 7969,
+      "sha256": "e213ba3fa44fdbe9faf47da94d9c46b730c6ae415f323e58b5298d898f2933eb"
+    },
+    {
+      "path": "scripts/qa/check_reviewed_vascular_navigation.py",
+      "bytes": 5789,
+      "sha256": "bcf48cc7aac3977bdc41a577cd1f5f32aa886fdcfc461f327e486bf6ead89d49"
+    },
+    {
+      "path": "scripts/qa/check_simple_heart_art.py",
+      "bytes": 6333,
+      "sha256": "5d05a1571332f958944afb3900951241832947e9e342ec369d96fc5047da8786"
+    },
+    {
+      "path": "scripts/qa/check_small_intestine_additional_gate.py",
+      "bytes": 11128,
+      "sha256": "0c87b7e7c8e2011ff955b2d27aef0ef6d80045b07c6c39369b613e9f032a65ec"
+    },
+    {
+      "path": "scripts/qa/check_standalone_vessel_channels.py",
+      "bytes": 2972,
+      "sha256": "872411a891393f9e9e41e936121e0ef2ea129cf712f2a1cb893e660f5333d539"
+    },
+    {
+      "path": "scripts/qa/check_startup.py",
+      "bytes": 6599,
+      "sha256": "6d512f719160ce221826a5ffddff9d73058ea7aedca1f01323bde53163831c3b"
+    },
+    {
+      "path": "scripts/qa/check_stomach_015_art.py",
+      "bytes": 5266,
+      "sha256": "83b5e8e4cc5e9909a348189dc7cde74930368f857d66178882bc4f31f75f0cb4"
+    },
+    {
+      "path": "scripts/qa/check_stomach_battlefield.py",
+      "bytes": 16137,
+      "sha256": "1646f8fe710c6fdadc366eda95c112a85a8ae3d281b3007e38d05e4a5a211284"
+    },
+    {
+      "path": "scripts/qa/check_stomach_connectivity.py",
+      "bytes": 15281,
+      "sha256": "48fbedc5392e3e8fa515e27d8b168f381b8b8f5f9cc572feda97f706348ef335"
+    },
+    {
+      "path": "scripts/qa/check_styled_organ_obstacles.py",
+      "bytes": 6934,
+      "sha256": "97cb78bd37b2ce7edcc20032227307d377a9433dde7db976be4c7a2f4ca8c44c"
+    },
+    {
+      "path": "scripts/qa/check_styled_organs_runtime.py",
+      "bytes": 4204,
+      "sha256": "d4ed9ded53bb59e863d0fb250278d2fd2f953ff83353da6576318d6692c744d8"
+    },
+    {
+      "path": "scripts/qa/check_tissue_geometry.py",
+      "bytes": 2766,
+      "sha256": "7b4b96058cf195321cd05f93b1a1ebe095bb1fce52b748ec48856123a1fef496"
+    },
+    {
+      "path": "scripts/qa/check_unified_cardiac.py",
+      "bytes": 7635,
+      "sha256": "9bc21122fdb78dc78b7221f520733d0deae82791429d7066adff1ef57b5dcdba"
+    },
+    {
+      "path": "scripts/qa/check_vascular_checkpoint_boundaries.py",
+      "bytes": 3306,
+      "sha256": "9bb939d510f6875fb408e23297b784d4b07f6eb6c502647fa88653b6fc87fed1"
+    },
+    {
+      "path": "scripts/qa/check_vascular_checkpoints.py",
+      "bytes": 7852,
+      "sha256": "5faa619ecf25a65754a20e05939652bc7a3d7c3f0f40d560c7cb4dda2efb6b82"
+    },
+    {
+      "path": "scripts/qa/check_vascular_curves.js",
+      "bytes": 3041,
+      "sha256": "5d7cdd1c65528d66b38d7a6862d9684669f5cf44828fa6147abfe75cce20d846"
+    },
+    {
+      "path": "scripts/qa/check_vascular_final_reference.py",
+      "bytes": 7760,
+      "sha256": "ef94392155152597bd6f8e802ce3d067009258061ac712da9e7bdcd84ab07b32"
+    },
+    {
+      "path": "scripts/qa/check_vascular_index_clearance.py",
+      "bytes": 1758,
+      "sha256": "9bd0ed8959cdaf9c5337ff62a4d3654638b5dc9989518542aca4e66be4c0ef93"
+    },
+    {
+      "path": "scripts/qa/check_vascular_material_pilot.py",
+      "bytes": 22702,
+      "sha256": "b5d1d1d7e0c74061070fdb8d61b13004f8353838e57256338e476d3830f3d02a"
+    },
+    {
+      "path": "scripts/qa/check_vascular_node_navigation.py",
+      "bytes": 3763,
+      "sha256": "c6aa9cc82c9f9b45eaadd7f950079d4028badc6225fbefbb23ae3ab00cf0d618"
+    },
+    {
+      "path": "scripts/qa/check_vascular_overlap_review.py",
+      "bytes": 5487,
+      "sha256": "ad8f1d631770a304f0cd7947d96d670a2e94a1828da5f10a473770f9e509f7e1"
+    },
+    {
+      "path": "scripts/qa/check_vascular_route_repair.py",
+      "bytes": 5206,
+      "sha256": "0f87b45f2b96c4ab9f18d9abefca90ef7cc57007f44265a88fcdde3b7989ed4b"
+    },
+    {
+      "path": "scripts/qa/check_vascular_route_repair_render.py",
+      "bytes": 2533,
+      "sha256": "11fe0ee3463df77f96ec2bad97f7d5b7e5c6e938cf8cffcac804965f589528fc"
+    },
+    {
+      "path": "scripts/qa/check_vascular_user_draft.js",
+      "bytes": 11802,
+      "sha256": "49ee142fc0abdc583a7429990235808847a8c80b3fb7f60d01740d3c1ade67b4"
+    },
+    {
+      "path": "scripts/qa/check_vascular_zoom_contract.py",
+      "bytes": 4841,
+      "sha256": "7d8b98e4bb8e55811019b41b65f628b01fec91524ceca5f2cb5f9b5ee45529fe"
+    },
+    {
+      "path": "scripts/qa/check_vessel_channels_runtime.py",
+      "bytes": 3824,
+      "sha256": "7451da29e8e42fc78cfea7d219453ec0bbfa1e7e3011cdc547a767cca56490d1"
+    },
+    {
+      "path": "scripts/qa/compare_organ_foreground.py",
+      "bytes": 1768,
+      "sha256": "418013aa8991e9d04c76d5b2d5e72bd5c180502f0d5f701b1b2e234e3d63a19f"
+    },
+    {
+      "path": "scripts/qa/export_body_life_video.py",
+      "bytes": 1857,
+      "sha256": "55dd9e6286d60aa8a98fbee20e12535d3ac59fc5aff69b9dd209ef1a9c973298"
+    },
+    {
+      "path": "scripts/qa/export_dev_changes.py",
+      "bytes": 3715,
+      "sha256": "3a871245fb237bb9cc990a9ea0382d94b3c732ac7b993144a16fcef158c61637"
+    },
+    {
+      "path": "scripts/qa/export_reviewed_vascular_layout.py",
+      "bytes": 5607,
+      "sha256": "10eb64c435536a7d4a8cb4745fe3ae070fd00b5cc0dbcadf19ddbb8be93de9ef"
+    },
+    {
+      "path": "scripts/qa/export_standalone_vessels.py",
+      "bytes": 12594,
+      "sha256": "816c3e775dc0f3fd398e83be314be0a1b4f8365bcba2aad541db938e6cdcbf84"
+    },
+    {
+      "path": "scripts/qa/gastric_play_server.py",
+      "bytes": 4830,
+      "sha256": "aaae2ae318290f567e5f5d7ac9d21fc286390d890b0bcbfb230fe101a99bf36a"
+    },
+    {
+      "path": "scripts/qa/inspect_heart_v1_generated_registration.py",
+      "bytes": 4659,
+      "sha256": "db807fe72e274efaa00b419378560398f3f17d006b6fe7f73db2e69e2f048387"
+    },
+    {
+      "path": "scripts/qa/left_vessels_support.py",
+      "bytes": 938,
+      "sha256": "1abef07c2beeabdbe0c0fffa8eaa1711da3b127a361caaacfa678fa560c707db"
+    },
+    {
+      "path": "scripts/qa/make_teammate_dev_package.py",
+      "bytes": 12096,
+      "sha256": "c4041c90654bfe2fde0c887a476d69898f463dedc22b70e16f4ca244cdc9c65a"
+    },
+    {
+      "path": "scripts/qa/make_teammate_package.py",
+      "bytes": 7843,
+      "sha256": "028c1144f6924a4d4e0fa5a86d84c7522f585b88732973a61c9a1c3e24c87530"
+    },
+    {
+      "path": "scripts/qa/measure_body_flow.py",
+      "bytes": 3783,
+      "sha256": "4f0e081674cfb335f0acfacddab51c47c4e888e74feb5957ba8a994d83ff39c8"
+    },
+    {
+      "path": "scripts/qa/organ_play_server.py",
+      "bytes": 5007,
+      "sha256": "132c6a1460d2ea09f38b0cad997121c32618d1fe14b6c3cf9277ff2f3c9b6177"
+    },
+    {
+      "path": "scripts/qa/performance_checks.py",
+      "bytes": 4041,
+      "sha256": "a950860a5b884a79435b6bc892c4535346be651600f9971178640152f64cc689"
+    },
+    {
+      "path": "scripts/qa/prepare_abdominal_display_repair.py",
+      "bytes": 8661,
+      "sha256": "c26ad56528c3122c1085820251ef06b796e55438a5c89457db820978a986aa56"
+    },
+    {
+      "path": "scripts/qa/prepare_anatomy_foundation.py",
+      "bytes": 12540,
+      "sha256": "51de3d10276cff4bb91206a12d8c40ed9b040e581834efaeb56e67495d5a12b3"
+    },
+    {
+      "path": "scripts/qa/prepare_body_flow.py",
+      "bytes": 5080,
+      "sha256": "a1a7a8e97872f3b4537848c8195698519c1d4d82eaada729ec5dab7af03f99bd"
+    },
+    {
+      "path": "scripts/qa/prepare_body_life.py",
+      "bytes": 2080,
+      "sha256": "4ba336b5898933fa6841b6bd56aa5022bee2aafe5e097a3110f062436e4db7b2"
+    },
+    {
+      "path": "scripts/qa/prepare_body_regions.py",
+      "bytes": 4622,
+      "sha256": "9fc8e3d6521e1706efd6d2f38b1ba7ffb27ac96e82addbf53f68d791789e6280"
+    },
+    {
+      "path": "scripts/qa/prepare_bowel_remodel.py",
+      "bytes": 6375,
+      "sha256": "1fa977cb769887c788ce80aa13c21631a1ef2aa6cfdfff0dddf48def5b0cf8ed"
+    },
+    {
+      "path": "scripts/qa/prepare_final_stomach_art.py",
+      "bytes": 4516,
+      "sha256": "bbf3bb8bc3cb98d98f07b35c2901011998c3e6b29aeb144fb90586ac4e91bd03"
+    },
+    {
+      "path": "scripts/qa/prepare_fullbody_map_art.py",
+      "bytes": 5333,
+      "sha256": "9e45d4a0f3696f27e18462667c87b8fce254c4f2883a0c3bdde71ea2fbb7f5c0"
+    },
+    {
+      "path": "scripts/qa/prepare_fullbody_quiet_base.py",
+      "bytes": 13719,
+      "sha256": "9f046966f31226635c77e1d3ac2daf61ae2e032e4d5a4e88c98d5693eed41a28"
+    },
+    {
+      "path": "scripts/qa/prepare_fullbody_v4_guides.py",
+      "bytes": 33490,
+      "sha256": "69051933c62812ffdcba688bf2d30726e53f2ac8eef9baa4688adfff833b135b"
+    },
+    {
+      "path": "scripts/qa/prepare_gastric_battlefield.py",
+      "bytes": 19179,
+      "sha256": "272964017b013fc200e9700d1b9f16d52f9fb815956ef9a195b5bf76a709f8f7"
+    },
+    {
+      "path": "scripts/qa/prepare_gastric_inlet.py",
+      "bytes": 3038,
+      "sha256": "4fdd2da13f2f32e7ea37fceb6d3afacd02116121b6a142b3dfc7dd21da738712"
+    },
+    {
+      "path": "scripts/qa/prepare_gastric_quiet_terrain.py",
+      "bytes": 6399,
+      "sha256": "b187694caba8b66f8c6b10dab99396e730fedad44a12319fc302e418fc187b3d"
+    },
+    {
+      "path": "scripts/qa/prepare_heart_battlefield.py",
+      "bytes": 14468,
+      "sha256": "8aa291e7e77e095802ef1fca0f90a9ef0b5f40a91e19d0ca097e1961f40b45fd"
+    },
+    {
+      "path": "scripts/qa/prepare_left_vessels.py",
+      "bytes": 10460,
+      "sha256": "f8ac8e1c4fb473417b2e597abd84f00e3062783e7416c73060b25b951ba55047"
+    },
+    {
+      "path": "scripts/qa/prepare_organ_battlefield_atlas.py",
+      "bytes": 23763,
+      "sha256": "5b721b4dffd38df8df57d837f35cee26e8328b55e34436979f7e109147014146"
+    },
+    {
+      "path": "scripts/qa/prepare_organ_battlefield_runtime.py",
+      "bytes": 7154,
+      "sha256": "9c711c830f00bdb4a06764badf9d3b314d58a61cbb8083034a721d017c852410"
+    },
+    {
+      "path": "scripts/qa/prepare_organ_blood_ports.py",
+      "bytes": 8603,
+      "sha256": "31dd79adaac9dbc7b47d2fedd8dd76074994d34c64f9dad22389793613d06f5d"
+    },
+    {
+      "path": "scripts/qa/prepare_organ_boundaries.py",
+      "bytes": 9460,
+      "sha256": "8c486901a60cfecc515ceaab3cf39348be5de0a7256d3a9fbf48bab592245f3d"
+    },
+    {
+      "path": "scripts/qa/prepare_organ_foreground.py",
+      "bytes": 3770,
+      "sha256": "e94a31d3085bafc6d6fb635c0e326f4a7eefe05d5e93c5684c50c2d1e85b585c"
+    },
+    {
+      "path": "scripts/qa/prepare_organ_style_review.py",
+      "bytes": 2818,
+      "sha256": "64686fb7719fd950099d995280f2f581d87daa5a3321cf212c9d00040d5e70fe"
+    },
+    {
+      "path": "scripts/qa/prepare_reference_fill.py",
+      "bytes": 4866,
+      "sha256": "145df88ed3c0cccde312fc1d723f705a6544398cc43127f8a2521d919e7c4973"
+    },
+    {
+      "path": "scripts/qa/prepare_registered_vascular_layers.py",
+      "bytes": 9881,
+      "sha256": "e5ac65e482d59067ff08a6b4478f1fc4f6c57eeba4b069619f5568a41e773e35"
+    },
+    {
+      "path": "scripts/qa/prepare_remaining_vascular_art.py",
+      "bytes": 3152,
+      "sha256": "a4043b936de74883580ae40910a84e54bde38f7de83af79613ab5611f2ca1252"
+    },
+    {
+      "path": "scripts/qa/prepare_styled_organ_obstacles.py",
+      "bytes": 8271,
+      "sha256": "cf5cdc450f01f91d31982d374b7e855e489829279fab68cc9d46b2458354372e"
+    },
+    {
+      "path": "scripts/qa/prepare_styled_organs_runtime.py",
+      "bytes": 3065,
+      "sha256": "6571ac073258c831cfc6a43bfb82f15bd611cd1a3569245756515955f1f0b2f7"
+    },
+    {
+      "path": "scripts/qa/prepare_upper_abdomen_gpt_sample.py",
+      "bytes": 3588,
+      "sha256": "c0c3c55620533786bbe643685fee0186cbd2be2f7108e46723676903c0a9ce79"
+    },
+    {
+      "path": "scripts/qa/prepare_vascular_checkpoints.py",
+      "bytes": 6754,
+      "sha256": "38b64d4a402752b538194afb4ad4bc1842854e934fbcab0019476c0ddf51dd19"
+    },
+    {
+      "path": "scripts/qa/prepare_vascular_occlusion_repairs.py",
+      "bytes": 2172,
+      "sha256": "69408f22b4acc086b54ebe1e20998f730708841d85cdd78c7e202450c323d784"
+    },
+    {
+      "path": "scripts/qa/prepare_vascular_route_repair.py",
+      "bytes": 14742,
+      "sha256": "f8bdb43f09eb0d00cac8f692391c06225db7e799925d5007829be8f7af6a303b"
+    },
+    {
+      "path": "scripts/qa/prepare_vessel_channels_runtime.py",
+      "bytes": 4526,
+      "sha256": "70a5aa22a590e14e3c9b801c96a5c571293b1a8deec427df94b6f6a97bab06ef"
+    },
+    {
+      "path": "scripts/qa/preview_fullbody_vascular_material.py",
+      "bytes": 4572,
+      "sha256": "581b7dc439ba9934c6d32c15055006477e4cb2c9e1256a8c1d5b73ad5a6f0418"
+    },
+    {
+      "path": "scripts/qa/profile_performance.py",
+      "bytes": 2479,
+      "sha256": "63fc301cd30bccb166c7a589bfa58c1596980922497c261bc29ba74ff27eb4d1"
+    },
+    {
+      "path": "scripts/qa/publish_body_base_style_review.py",
+      "bytes": 6185,
+      "sha256": "ae2cec7bf82af8528e16d3830b1262fc9836edd7640c53ddedde2134555c2fce"
+    },
+    {
+      "path": "scripts/qa/publish_fullbody_015.py",
+      "bytes": 106350,
+      "sha256": "088968f4aa7cf0f5a9242c8fc77bd81d53699fe8f21abf9cd493ca41ee4110ce"
+    },
+    {
+      "path": "scripts/qa/publish_gastric_organic_terrain.py",
+      "bytes": 1148,
+      "sha256": "1f2d8d948c954ca28e67c3649f34e79c85a6e5644459e19c1aa96011178b520f"
+    },
+    {
+      "path": "scripts/qa/publish_gastric_quiet_terrain.py",
+      "bytes": 1357,
+      "sha256": "f95b78b7b0143a5b792a44c0cd12603d3078f8c5fe741635e44b645a91800a76"
+    },
+    {
+      "path": "scripts/qa/publish_navigation_review.py",
+      "bytes": 10697,
+      "sha256": "9b78977a7abf4607c381946170672e2f01d11453ff6fda4048774d586adbae4a"
+    },
+    {
+      "path": "scripts/qa/publish_organ_atlas_delivery.py",
+      "bytes": 28811,
+      "sha256": "bf82d2e7d39e52fc195d7b3a8386197507416440995cdd38c62bf6d922358894"
+    },
+    {
+      "path": "scripts/qa/publish_organ_refinement.py",
+      "bytes": 11413,
+      "sha256": "b6e104b42d6b759740f5e0a1c922aae32898fff8185ded26bbf842a495d51924"
+    },
+    {
+      "path": "scripts/qa/publish_organ_routes.py",
+      "bytes": 4642,
+      "sha256": "b72930f533e32258c82e94e33024f2ad644a04992fc353ca1add13e211fbb2b9"
+    },
+    {
+      "path": "scripts/qa/publish_organ_style_review.py",
+      "bytes": 8236,
+      "sha256": "aa6682e189ab7d8112acc2a5cb808d65b53b60eaeb098f516de3d15325de3370"
+    },
+    {
+      "path": "scripts/qa/publish_organ_underlay_review.py",
+      "bytes": 2742,
+      "sha256": "29f0f5570682c59b6f9d90ecfe9ca536c80b3024da234dd6fedd7afb12442a06"
+    },
+    {
+      "path": "scripts/qa/publish_passage_clearance.py",
+      "bytes": 1139,
+      "sha256": "629c5f544260b0c1ffe904476d1749a17ede0e656c8fbfab32fbf9d295ff2064"
+    },
+    {
+      "path": "scripts/qa/publish_passage_navigation.py",
+      "bytes": 1293,
+      "sha256": "fcc95de5825386405eccd4aac1ee30b61ab2858875832f7399a0f56495dd3906"
+    },
+    {
+      "path": "scripts/qa/publish_registered_vascular_art.py",
+      "bytes": 2920,
+      "sha256": "21cacf518d3293733beb2726124fcf8789fd5ea88adf5ea6d27bae9cfc743ed2"
+    },
+    {
+      "path": "scripts/qa/publish_remaining_vascular_art.py",
+      "bytes": 4665,
+      "sha256": "b270ffec3b41fb6e96283b1a6d208d9f2c4c5593f634e05d8f83c0576d3e664a"
+    },
+    {
+      "path": "scripts/qa/publish_stomach_015_art.py",
+      "bytes": 8097,
+      "sha256": "6660803d577270033e0c05b7b9a334ef5ac817a7a3ebe302072945a74d0959a2"
+    },
+    {
+      "path": "scripts/qa/publish_stomach_connectivity.py",
+      "bytes": 1344,
+      "sha256": "f8bf5ae62bc232d080415b077694cdf4ef3e6758ca28168efc3dcd6124abe380"
+    },
+    {
+      "path": "scripts/qa/publish_stomach_study.py",
+      "bytes": 1641,
+      "sha256": "71c66e440f4ce376cefb4967f20e9ee5231a1c875c4e6f3dddb3d2a46cadf266"
+    },
+    {
+      "path": "scripts/qa/publish_true_015_review.py",
+      "bytes": 8819,
+      "sha256": "839e32963778d5d0466536f1fb5776e295d8a050940226329e43ff8a33912880"
+    },
+    {
+      "path": "scripts/qa/publish_upper_abdomen_gpt_sample.py",
+      "bytes": 5468,
+      "sha256": "8766d08108b2535d82d14d6f7d85837f27136c4a8dc7b56da4a41c35ae3530f9"
+    },
+    {
+      "path": "scripts/qa/publish_vascular_final_reference.py",
+      "bytes": 2096,
+      "sha256": "fe21482997ef701818bca7e9569a3b0a23fb0e3ede60a62582134fb256a1df99"
+    },
+    {
+      "path": "scripts/qa/publish_vascular_material_pilot.py",
+      "bytes": 23413,
+      "sha256": "c64c64c38293776f5e514f207e9946735fc8853edfa40254c110637b4b9bfe63"
+    },
+    {
+      "path": "scripts/qa/publish_vascular_navigation_review.py",
+      "bytes": 3131,
+      "sha256": "4cea8b510ac047b9c19a90a1842e07115747c5452bc2f7ba01752a5c922ff1b4"
+    },
+    {
+      "path": "scripts/qa/publish_vascular_revision_review.py",
+      "bytes": 4652,
+      "sha256": "751fde67264a7bc1690f971859991740cf3afe8e4f9436890371b29bc072e5a3"
+    },
+    {
+      "path": "scripts/qa/rebuild_heart_connections.py",
+      "bytes": 19360,
+      "sha256": "c7fc8891db5c81006a74cf3cea840f9807a51779c47524a3719ca77b4d70857a"
+    },
+    {
+      "path": "scripts/qa/register_fullbody_junctions_v4.py",
+      "bytes": 5295,
+      "sha256": "dea027c4de9d2ebaa7d80f976518eaca5e16f07d22581daf6034a8ca5f8827cf"
+    },
+    {
+      "path": "scripts/qa/register_fullbody_pipe_materials_v4.py",
+      "bytes": 1610,
+      "sha256": "38995582d824bbfd2e418073557a0f147e6437725481ddae762688dc2c3f2f6a"
+    },
+    {
+      "path": "scripts/qa/register_gpt_celiac_helper_cleanup.py",
+      "bytes": 4148,
+      "sha256": "9928937b4c427c4bfaf328a604de1aac5717a2f174d11e4b7bf242573df0d015"
+    },
+    {
+      "path": "scripts/qa/register_heart_port_connections.py",
+      "bytes": 12604,
+      "sha256": "aaf33e4a6ea0fb2368bc3b713a58a02a2df21d679a5579ff52afe9f1f43b75e6"
+    },
+    {
+      "path": "scripts/qa/register_heart_port_depth.py",
+      "bytes": 2165,
+      "sha256": "35433bffe1cef63aaf007f85e38bcac2eb54448909637002f8d3d1f685132bb0"
+    },
+    {
+      "path": "scripts/qa/register_organ_underlay.py",
+      "bytes": 4220,
+      "sha256": "db23d03d1b7f96466aa2b510f0d5cff8c25e30ea2e01715527038aebe859b4dc"
+    },
+    {
+      "path": "scripts/qa/register_simple_heart.py",
+      "bytes": 9462,
+      "sha256": "de82f81cc925aa0769e53703ee4fbbb1b02ddeca56e5765a837320d2e1387020"
+    },
+    {
+      "path": "scripts/qa/register_straight_spine.py",
+      "bytes": 6825,
+      "sha256": "ff71d25a26a44c54d74a939a5988e18bda3325dff8a9577a6fa28b66456394d5"
+    },
+    {
+      "path": "scripts/qa/register_upper_abdomen_refinement.py",
+      "bytes": 10215,
+      "sha256": "35367d3d356999a9ac1f17babc0851c82f4e65fe2b44348562b582d93745e685"
+    },
+    {
+      "path": "scripts/qa/register_vascular_material_refinements.py",
+      "bytes": 11700,
+      "sha256": "bae544e2040b3fdefb2b64d1533eee32733c22ebf42f46df2fa2c6e624886d35"
+    },
+    {
+      "path": "scripts/qa/register_vascular_node_banks.py",
+      "bytes": 16042,
+      "sha256": "9ca484f82422ec55ad2e34b2e8e0337eb90a0b4393a3ac598443b4917c84d2dd"
+    },
+    {
+      "path": "scripts/qa/render_anatomy.py",
+      "bytes": 5719,
+      "sha256": "36903a108f46db596173e3ad6132bd52be14fce6357d90cfbaabd98ef6d3bf71"
+    },
+    {
+      "path": "scripts/qa/render_body_closeups.py",
+      "bytes": 9649,
+      "sha256": "0175c112b91eca78cbfc55577646545adf28cdc186e4797276ab9477f200eb57"
+    },
+    {
+      "path": "scripts/qa/render_body_life.py",
+      "bytes": 5953,
+      "sha256": "c37aea5a43e6a173bd0f06f725ab2a2f818ee039882a45017962df5f18d9cbd6"
+    },
+    {
+      "path": "scripts/qa/render_contract.py",
+      "bytes": 2759,
+      "sha256": "a3463fb575e434d943ab4ca11fefdf401952feef9ebb49571f6173976470b546"
+    },
+    {
+      "path": "scripts/qa/render_other_vascular_review.py",
+      "bytes": 1871,
+      "sha256": "12c933b3e459fb4ed17128c5df13ece2d55bb708573884d184e18b222ef6d8f3"
+    },
+    {
+      "path": "scripts/qa/render_practical_fill.py",
+      "bytes": 3503,
+      "sha256": "c80226bc44836213877e6dcb1dd2a205721fb2b73bbded5cf4759aed789d6c86"
+    },
+    {
+      "path": "scripts/qa/render_reference.py",
+      "bytes": 10127,
+      "sha256": "401542317003e58148dbf4337c789d51ab577a89128436aec97f688aab2e89ea"
+    },
+    {
+      "path": "scripts/qa/render_vascular_checkpoints.py",
+      "bytes": 2343,
+      "sha256": "d99384f2967be0cb7a5eea226d4c4d7361f61b29d5317aedef21d46754371ae4"
+    },
+    {
+      "path": "scripts/qa/render_vascular_route_repair.py",
+      "bytes": 2055,
+      "sha256": "51dd4f64b3152fb4563ca154eb4a1c180773c84375b7b59ab6d94d81d261a711"
+    },
+    {
+      "path": "scripts/qa/repair_stomach_food_outline_candidate.py",
+      "bytes": 9730,
+      "sha256": "930255e6955026e46a9f3e0554dbc305622e59356bd1d40b04ad1379f8076e00"
+    },
+    {
+      "path": "scripts/qa/repair_stomach_foreground_helper_candidate.py",
+      "bytes": 4955,
+      "sha256": "4bd1f1cfb00645ababfcf0d3eac26875cb387a8d22e091a8402e2921ed042bb5"
+    },
+    {
+      "path": "scripts/qa/requirements.txt",
+      "bytes": 75,
+      "sha256": "a29f3c256eac75cd204a185577d014ac8fb208642e62535dd746d7802ad5ed4b"
+    },
+    {
+      "path": "scripts/qa/restore_heart_overview.py",
+      "bytes": 5599,
+      "sha256": "e8e143904e7401ea41395cd3596d23e49105f2afd8506edfbf916954152d497e"
+    },
+    {
+      "path": "scripts/qa/revise_organ_atlas_spaces.py",
+      "bytes": 26481,
+      "sha256": "8d09aac0c44550317f3130a5ad3ca9bef3485253cd6c2a35faf74477215617b4"
+    },
+    {
+      "path": "scripts/qa/run_anatomy.py",
+      "bytes": 1183,
+      "sha256": "bb8cffc8d7a28fdf05c7e46bfdfca8bfe0db64aa458b8ca1bc0a7d30b7e44159"
+    },
+    {
+      "path": "scripts/qa/run_body_life.py",
+      "bytes": 1834,
+      "sha256": "795fee423faa612ae5666ae64aeb8da8e51b909cc99784397977562bcbc25979"
+    },
+    {
+      "path": "scripts/qa/run_integration.py",
+      "bytes": 4606,
+      "sha256": "5541d0b2a0c3d9a263d4ce5b9650db79e44c1d09502d1663408d8829d700d542"
+    },
+    {
+      "path": "scripts/qa/run_reference.py",
+      "bytes": 1849,
+      "sha256": "0f7810fde134737959f97bdfe6f29356b60c9aba2c3d516cfc6888c1ccf8a6fa"
+    },
+    {
+      "path": "scripts/qa/split_stomach_handover.py",
+      "bytes": 1755,
+      "sha256": "c49eb65d9ef33416e78a84314147ef1df6cda7f08ce54f45304ee02da41cc85c"
+    },
+    {
+      "path": "scripts/qa/summarize_closeup_delivery.py",
+      "bytes": 4607,
+      "sha256": "9dd5238e00cd674d9fbd294edf0256ab9c64c71d7a60bee6b6982af4f1263b99"
+    },
+    {
+      "path": "scripts/qa/summarize_organ_sorties.py",
+      "bytes": 2711,
+      "sha256": "1a3ce9eef8688752d29fc243a24d9fb71144f66e0f4c4733ceb021bb8acb6e75"
+    },
+    {
+      "path": "scripts/qa/trace_fullbody_015_strokes.py",
+      "bytes": 6544,
+      "sha256": "39834c38f81d0963e9ccfb38c0e0dad3af8b4bba8140fc0ad9e16ed230b7c998"
+    },
+    {
+      "path": "scripts/qa/trace_fullbody_native007_portal.py",
+      "bytes": 6623,
+      "sha256": "a8fc81e8e0100ede8e0cd6d61fabf7ceb10cc6a0627e30816f043c14c93c42ea"
+    },
+    {
+      "path": "scripts/qa/trace_organ_style.py",
+      "bytes": 1637,
+      "sha256": "d0da074254cb88cfaeeec2fa82be5fc40d8a50b09c232b3e1e706eb0511d5c31"
+    },
+    {
+      "path": "scripts/qa/trace_reference.py",
+      "bytes": 3256,
+      "sha256": "2bc2441962ad4463cc836d974ba4cc187811f817b32531774f09e3904eed90c9"
+    },
+    {
+      "path": "scripts/qa/vascular_plan_revision.py",
+      "bytes": 13335,
+      "sha256": "ffc58cfadb949369041c037d6a63c47fd3a1645ae5e6adf621b4ab8e676b65e5"
+    },
+    {
+      "path": "scripts/qa/verify_vascular_revision.py",
+      "bytes": 13002,
+      "sha256": "93590465392d09f0e8e80d8716b2b798495d463732b2530cdad66bdb0b54c6b1"
+    },
+    {
+      "path": "scripts/war/AI.lua",
+      "bytes": 8599,
+      "sha256": "3a5e0b8647f7d158ac66f936ce438fc40226e226c26972ce2bf80f26cc214360"
+    },
+    {
+      "path": "scripts/war/AI.lua.meta",
+      "bytes": 40,
+      "sha256": "939ee4a0ed0fe45e2edb73860fe0af281993eb532d97da8cdca99dd0d23640a3"
+    },
+    {
+      "path": "scripts/war/AbdominalVesselDisplay.lua",
+      "bytes": 2424,
+      "sha256": "6d8f1b3cea9c51f1c9d9d56a8a769773517b2ca72e7f9e47f09d0bb4f58a2f5a"
+    },
+    {
+      "path": "scripts/war/AbdominalVesselDisplayData.lua",
+      "bytes": 107633,
+      "sha256": "83f1eafbc081673580d21d10a50ecb3103b883b3af3daa691758b3bc66ce4238"
+    },
+    {
+      "path": "scripts/war/Acceptance.lua",
+      "bytes": 26002,
+      "sha256": "49e984105aa64b3ba5b1c5de722101a91b0ef35aa36f8f2686016b3f78ab8317"
+    },
+    {
+      "path": "scripts/war/Acceptance.lua.meta",
+      "bytes": 40,
+      "sha256": "429df26266b05cf81374a0262f62d3ee38c0a2a2d6bd89588dc143ff9706f41c"
+    },
+    {
+      "path": "scripts/war/Anatomy.lua",
+      "bytes": 4325,
+      "sha256": "f17520cccddd1948380a2d7d25404fc789d528b6fee06eee51e29583f17f4e38"
+    },
+    {
+      "path": "scripts/war/Anatomy.lua.meta",
+      "bytes": 40,
+      "sha256": "6b29207ac9a99fb955f18b2c71e909022f2394f77d2b45b57758034c8959703b"
+    },
+    {
+      "path": "scripts/war/AnatomyAcceptance.lua",
+      "bytes": 7663,
+      "sha256": "801318074907761d8e03116671bd1547492e12d2b5f513f3d1376193875e5908"
+    },
+    {
+      "path": "scripts/war/AnatomyAssets.lua",
+      "bytes": 214,
+      "sha256": "4ab3e37352da9a27eec8754f33547ec362756a963e9c1107a922665a72e22a81"
+    },
+    {
+      "path": "scripts/war/AnatomyFoundationArt.lua",
+      "bytes": 7379,
+      "sha256": "659df4ff4246e55ada07b8adcbb6d7713a975f24f4288a5dfef95cf766346c28"
+    },
+    {
+      "path": "scripts/war/AnatomyFoundationData.lua",
+      "bytes": 187718,
+      "sha256": "95de297fc91fa0f2e396907edf2e3866e62cb048d2eb367ce1a3c381b986a2e1"
+    },
+    {
+      "path": "scripts/war/AnatomyPerspective.lua",
+      "bytes": 3596,
+      "sha256": "c090d0c35fefff56348b45f19624ac92c6d625b71cd0b93a953eaff07e010d6d"
+    },
+    {
+      "path": "scripts/war/AnatomyV2.lua",
+      "bytes": 2741,
+      "sha256": "c50fac0813e9e2203a6a302cdf5e39aa05659509c4ba500c5315dafa49348031"
+    },
+    {
+      "path": "scripts/war/AnatomyV3.lua",
+      "bytes": 3078,
+      "sha256": "743f90694677f8d75815dd92d7f2dae0950cd5df68c367b67a99e40d03b21b53"
+    },
+    {
+      "path": "scripts/war/Assets.lua",
+      "bytes": 335,
+      "sha256": "a5b98f10676e3ff294180b2d7c02891378bbdab938bb1413e35c61a26642f0c2"
+    },
+    {
+      "path": "scripts/war/Assets.lua.meta",
+      "bytes": 40,
+      "sha256": "356b1fe25338cb0fe8a4420100ff5da6d5a060d7b773daf313755622463fe672"
+    },
+    {
+      "path": "scripts/war/Audio.lua",
+      "bytes": 669,
+      "sha256": "a18aa772eebbdd0d4b0b560894c7232568cf505a6c59cf6483a0f2f18fbece88"
+    },
+    {
+      "path": "scripts/war/Audio.lua.meta",
+      "bytes": 40,
+      "sha256": "8a089db9e1bdf8800fe771dfccd7e7b4fb87aa750082afaaa0f789db724a859a"
+    },
+    {
+      "path": "scripts/war/BattleHUD.lua",
+      "bytes": 26447,
+      "sha256": "1016ca0832c6e50370ef4007c817b9a73f185be3cfa1707f9639b6512ea46863"
+    },
+    {
+      "path": "scripts/war/BattleHUDAcceptance.lua",
+      "bytes": 4548,
+      "sha256": "6f22063dc4dbcc81e5f00279ef7e2f5b9f6aa7b7aa193be204306c6f48c1a30b"
+    },
+    {
+      "path": "scripts/war/Bloodstream.lua",
+      "bytes": 5647,
+      "sha256": "fa1e193c7af3ee171c98ab705bdab9aa1604baa182a8e88410e2f7431b3ef86d"
+    },
+    {
+      "path": "scripts/war/Bloodstream.lua.meta",
+      "bytes": 40,
+      "sha256": "d5feb8f6dc5034a55d0ab238d5500afbeb9c50eea38a9179010315aac427228d"
+    },
+    {
+      "path": "scripts/war/BodyArt.lua",
+      "bytes": 9042,
+      "sha256": "4e85611576c2134e40a0d59bcef5735d40ad13548d5ce815592c57266a4fb6f9"
+    },
+    {
+      "path": "scripts/war/BodyArt.lua.meta",
+      "bytes": 40,
+      "sha256": "d929c1be950e7a0741e557d6790859a7db8af9a013db286c2a8b589f8e02a4be"
+    },
+    {
+      "path": "scripts/war/BodyLife.lua",
+      "bytes": 9138,
+      "sha256": "2a6a5570822e732ebff5008aa20cd64501b1c40d932ce1bbea2faefea24906df"
+    },
+    {
+      "path": "scripts/war/BodyLifeAcceptance.lua",
+      "bytes": 3769,
+      "sha256": "f6815ce8227c4bf27e325ee4aa30e1f989a31b859a3252e5d52f3d6c4dc7cfff"
+    },
+    {
+      "path": "scripts/war/BodyLifeAssets.lua",
+      "bytes": 240,
+      "sha256": "1b762b0766f655ed057245427522c99b45decac45cb7e52fb0ef844f825a47b0"
+    },
+    {
+      "path": "scripts/war/BodyLifeFlow.lua",
+      "bytes": 12170,
+      "sha256": "d6d93e33c8e5209e183807666e5a1cd5a7b47ed32f02d7aea88d03b8519efffe"
+    },
+    {
+      "path": "scripts/war/BodyLifeFlowAcceptance.lua",
+      "bytes": 8597,
+      "sha256": "c13d0464162e9977a779a7adec7410de8ac747501b71301cdfa822c444e5a311"
+    },
+    {
+      "path": "scripts/war/BodyLifeFlowData.lua",
+      "bytes": 12518,
+      "sha256": "d2633631896be97ca0faf108eab06430b3bfdb894dc0a63466e43c16298db0c2"
+    },
+    {
+      "path": "scripts/war/BodyLifeLightingRegions.lua",
+      "bytes": 5284,
+      "sha256": "65823f35d8fbe95db2a56d70954a73822829ceb52a5f705c0163587456ee8218"
+    },
+    {
+      "path": "scripts/war/BodyLifeMasks.lua",
+      "bytes": 7717,
+      "sha256": "5e2e46c586aaf1ee5ee3f33a7aac96e0374a16b2463192dc9f19076c8103ef88"
+    },
+    {
+      "path": "scripts/war/BodyLifeMotion.lua",
+      "bytes": 6165,
+      "sha256": "8a97783cf7f42770ae63ba4f6937342843bd4c2d44bc1f332c69a8367d93da51"
+    },
+    {
+      "path": "scripts/war/BodyLifeMotionAcceptance.lua",
+      "bytes": 4793,
+      "sha256": "975b646a1e35d4bbf41f6fa3a5dca4b076e809d2cb0d45e22684ef245cc1f343"
+    },
+    {
+      "path": "scripts/war/BodyLifeRegions.lua",
+      "bytes": 15590,
+      "sha256": "4ff4a2ddd96af6030d60e0d43afc15f500542ceff614d61fd469022f6b86cfab"
+    },
+    {
+      "path": "scripts/war/BodyLifeShading.lua",
+      "bytes": 6407,
+      "sha256": "acac07c2be8577fbecf9a6edd6307fe9acdea25e919a2ce24ce568615436c745"
+    },
+    {
+      "path": "scripts/war/BodyRegionAccessStudy.lua",
+      "bytes": 1349,
+      "sha256": "cd1598566751ec1df1a9935fd8d52dd577806d5be6f1937a18b610ba3642e37f"
+    },
+    {
+      "path": "scripts/war/BodyRegionNavigationStudy.lua",
+      "bytes": 8555,
+      "sha256": "3150952cc05eb938f75883064a3bf18ff03e45855b7a6fc2682457e135757427"
+    },
+    {
+      "path": "scripts/war/BowelBattlefield.lua",
+      "bytes": 4074,
+      "sha256": "dbea5f6d33d2b0eba6edf014882ac7a83b48a2833d81fd9fa2776cb2747e47ba"
+    },
+    {
+      "path": "scripts/war/BowelBattlefieldData.lua",
+      "bytes": 2304810,
+      "sha256": "25786a3e46670834b4c041b759d0b2884a5dfba49bde857ab3c244ceabe676a6"
+    },
+    {
+      "path": "scripts/war/BowelVisual.lua",
+      "bytes": 971,
+      "sha256": "b5033ee2500b0b64e0d5b62f1c33db91a767d865737c0fdc8540b5b4272a1772"
+    },
+    {
+      "path": "scripts/war/BowelVisualData.lua",
+      "bytes": 92756,
+      "sha256": "65591cd90c148023ff8d6c496ed05ad83649f7575ee5ac2c03548ca66cc1c028"
+    },
+    {
+      "path": "scripts/war/BrainAdvisor.lua",
+      "bytes": 6795,
+      "sha256": "42ebc687e0fce9047f953f5488b18ba671163dd6528d26983d7b19d769b3e25a"
+    },
+    {
+      "path": "scripts/war/BrainRig.lua",
+      "bytes": 8471,
+      "sha256": "98c9f4eb9f193eddefc114654e79c6e6b10b7b21ca985922667f53d02f3fa7a7"
+    },
+    {
+      "path": "scripts/war/BrainRigData.lua",
+      "bytes": 2770,
+      "sha256": "580f4beec4234a074e46d755e93ddecb04d7f8a4689fba540382d03bd172312a"
+    },
+    {
+      "path": "scripts/war/BrainUI.lua",
+      "bytes": 9655,
+      "sha256": "5520453d6b727791f0fe4987406ebb4e4b842f5576cd84cef421f02e86a137ab"
+    },
+    {
+      "path": "scripts/war/Campaign.lua",
+      "bytes": 11222,
+      "sha256": "c3d45c383acca9726e16aebbf0ce1daf7d0af31c7b4f0ff11ba6a6657f48d9ee"
+    },
+    {
+      "path": "scripts/war/CampaignData.lua",
+      "bytes": 957,
+      "sha256": "70124cbad380b67f26173d5ecebe179c2f137634b594573e4c3fcdecbd783bfe"
+    },
+    {
+      "path": "scripts/war/CellAim.lua",
+      "bytes": 993,
+      "sha256": "4672c02e892cf00dffc9670f5d0b8cacf7b159da9576319d4cf9053956a9dff2"
+    },
+    {
+      "path": "scripts/war/CellAnimation.lua",
+      "bytes": 3160,
+      "sha256": "9f3c3129797fe97f1ce26023b0a2626fa2817cdadc6717152f4c3f9ad042d8be"
+    },
+    {
+      "path": "scripts/war/CellAnimationAcceptance.lua",
+      "bytes": 4521,
+      "sha256": "eca1014cab8c94985653e3ed42f39aac249aacfbfa5cba024da62268cdf2fe55"
+    },
+    {
+      "path": "scripts/war/CellAnimationData.lua",
+      "bytes": 2470,
+      "sha256": "2b12df7464271334c06e4dc72cb398d241ff65881a85c8794d14d7734296dbc4"
+    },
+    {
+      "path": "scripts/war/CellCollision.lua",
+      "bytes": 10624,
+      "sha256": "0ecbcc93042c627fbfdecb6b75ec527eedf54a0d46c67535e5c827ac303249f3"
+    },
+    {
+      "path": "scripts/war/CellFrames.lua",
+      "bytes": 710,
+      "sha256": "49f6f77db22eeaa566db3f106090f1ffd6a46136cf8b2bfc366dd59f901e318b"
+    },
+    {
+      "path": "scripts/war/CellMapDisplay.lua",
+      "bytes": 1418,
+      "sha256": "bd9fac1db6b6b08c827dd153b118be22b8e892d26ad50b81411f604cbec0e94e"
+    },
+    {
+      "path": "scripts/war/CellPlaytest.lua",
+      "bytes": 3171,
+      "sha256": "82b392c94acbef29b8c33b679bbb233d46056fd376229f3ebb5e0110fc47de8a"
+    },
+    {
+      "path": "scripts/war/CellSilhouette.lua",
+      "bytes": 5877,
+      "sha256": "0abdfc85826ce09ab66cbdc7f2a80436cf63cafd2cb8281cd1d56f9358a98dd0"
+    },
+    {
+      "path": "scripts/war/CellSilhouetteAcceptance.lua",
+      "bytes": 2085,
+      "sha256": "4f033e763c4b631780e0d9718f2e87aea0faa100b93d72bd820e0c579d9a33c3"
+    },
+    {
+      "path": "scripts/war/CellSilhouetteData.lua",
+      "bytes": 139341,
+      "sha256": "ce006daa6150bce87981958d72f1a5a88e7d432f5609ad8c5dbf8675afc06dd0"
+    },
+    {
+      "path": "scripts/war/Cells.lua",
+      "bytes": 5539,
+      "sha256": "050827eb14a5921bdf9caa5a424986480e6ff1e16107b9b4a9bffc1464b8b8df"
+    },
+    {
+      "path": "scripts/war/Cells.lua.meta",
+      "bytes": 40,
+      "sha256": "7a395f5f1a7eb6adf9d69d6a8bea42d1d5432fcc327b80b089b78a868803f1c2"
+    },
+    {
+      "path": "scripts/war/ChangeLevel.lua",
+      "bytes": 2602,
+      "sha256": "83b2b4186a786f2d92a663f9a275138edd9a8ca5546fa10a4b329f2903347b28"
+    },
+    {
+      "path": "scripts/war/Combat.lua",
+      "bytes": 11225,
+      "sha256": "5dbb55bc6db0fe318f390c91d0fb034cf5e88c7c30886febdc533a175a5d0a86"
+    },
+    {
+      "path": "scripts/war/Combat.lua.meta",
+      "bytes": 40,
+      "sha256": "232a420382b995e71871d407a0c9475eea36b28d94c1ac3e0b98dfb4dedf0a2f"
+    },
+    {
+      "path": "scripts/war/CombatAcceptance.lua",
+      "bytes": 13690,
+      "sha256": "fe96c61335974b8e503b98734e4531d8024f869172b7bc03fde43dfbba106ab1"
+    },
+    {
+      "path": "scripts/war/CombatConfig.lua",
+      "bytes": 1516,
+      "sha256": "e1f2ff495bfa499aa5ce63515c170b0b6ffcd554bc99efa207fb1d2aaa6eb70e"
+    },
+    {
+      "path": "scripts/war/CombatEvents.lua",
+      "bytes": 788,
+      "sha256": "880956995b12ea0af2817e192ae1d390e879ec18263dbdf7472d3318cf2706ad"
+    },
+    {
+      "path": "scripts/war/CombatPresentation.lua",
+      "bytes": 684,
+      "sha256": "972a961741ac4198ffe18166970c5760cca8e1b0db5a00965815b67ec5b68b45"
+    },
+    {
+      "path": "scripts/war/CombatStatus.lua",
+      "bytes": 1757,
+      "sha256": "7ac83e64940cef3db519493701419fa8ea2bbed92d8a2dc7f2b65079eef40272"
+    },
+    {
+      "path": "scripts/war/Commands.lua",
+      "bytes": 15590,
+      "sha256": "f879bb410b747e12e6250433162fdb525c839bf2865e7b01c81f3d89e62d1458"
+    },
+    {
+      "path": "scripts/war/Commands.lua.meta",
+      "bytes": 40,
+      "sha256": "f6df2f2d78baf2ce82f725faf50ef83445afc20320ac77c8e14e7bfec70ddb97"
+    },
+    {
+      "path": "scripts/war/Contour.lua",
+      "bytes": 3176,
+      "sha256": "0f9a55ec38ab26aa4691cbb3032850ee181011209f67b06ab4006313894a389e"
+    },
+    {
+      "path": "scripts/war/CurvedVesselArt.lua",
+      "bytes": 7794,
+      "sha256": "ef8abc0d28d59a2eec37a111f984897631f6e340a98c2110a0c6773cff4dfb65"
+    },
+    {
+      "path": "scripts/war/Data.lua",
+      "bytes": 10534,
+      "sha256": "4d15c6bae485829cfa344cd633f8bd3f4fbcc88cdbba2df5a74cb21a987e9f5b"
+    },
+    {
+      "path": "scripts/war/Data.lua.meta",
+      "bytes": 40,
+      "sha256": "4a79d0076000723ad477f2075d3943ccad59ec0c507033d9e17e9c42aa6430b1"
+    },
+    {
+      "path": "scripts/war/Economy.lua",
+      "bytes": 3360,
+      "sha256": "d773ee67edf5e1dc9b856b07ffb7172ede3526a85865289a775bcf081abf2b92"
+    },
+    {
+      "path": "scripts/war/Economy.lua.meta",
+      "bytes": 40,
+      "sha256": "d992c3d988f255cadc5072c80c9f395b7313643e0e518044deda75705a489f1e"
+    },
+    {
+      "path": "scripts/war/FinalStomachArtData.lua",
+      "bytes": 88972,
+      "sha256": "3b9bf6aa8777318d9f25528ce4a8e66ebec1a4e92f35e8a37b72b47c6ee963de"
+    },
+    {
+      "path": "scripts/war/FinalStomachArtStudy.lua",
+      "bytes": 1320,
+      "sha256": "ab574c422bd2eb8909158d3af0c6b7048318162c9e149aca8ca41cd2473290e5"
+    },
+    {
+      "path": "scripts/war/FinalStomachNavigationStudy.lua",
+      "bytes": 2590,
+      "sha256": "a270ea12a9e96a8ae20f73e19d32b63bbee0b9247e321841efb49aca605a65f4"
+    },
+    {
+      "path": "scripts/war/FinalVascularStudyData.lua",
+      "bytes": 3935992,
+      "sha256": "ccc7eeef4f3df0e669854b7776e62b6672831318b107697b6f319669dadb328e"
+    },
+    {
+      "path": "scripts/war/FullBodyBaseFillData.lua",
+      "bytes": 774156,
+      "sha256": "ba3fe0f9dc2c46ffd9cc6aab7ad91c4b7ba102afb831357fc19fd5a4bc5f757a"
+    },
+    {
+      "path": "scripts/war/FullBodyBattlefield.lua",
+      "bytes": 2265,
+      "sha256": "185fe02b3088e732024ea93a15741ee021af50b2d7b011ce85d4e46b4b2281a7"
+    },
+    {
+      "path": "scripts/war/FullBodyMapArt.lua",
+      "bytes": 9544,
+      "sha256": "c050cf5440826111dc4704f99db5b7f194f3e13e4d1c4a2b09ccc1873c2482e4"
+    },
+    {
+      "path": "scripts/war/FullBodyMapArtData.lua",
+      "bytes": 105395,
+      "sha256": "6e474d14ac212bca2c64893d6269d3a2adb929d9a339930c9b8b841f0c515e75"
+    },
+    {
+      "path": "scripts/war/GameplayUpdateAcceptance.lua",
+      "bytes": 6813,
+      "sha256": "4271325b8bd5c54cee0af49726fc3567d0cad0a4d36d9dc5585fd5c3095499f4"
+    },
+    {
+      "path": "scripts/war/GastricArt.lua",
+      "bytes": 1708,
+      "sha256": "0f9ab51468be76bcdb61bf4a173abfe659e379f0a3a8652452175d9f3e1c42a0"
+    },
+    {
+      "path": "scripts/war/GastricBattlefield.lua",
+      "bytes": 31817,
+      "sha256": "789066936c29437cfcbc47490a7527288700e82c02b88b3e19458f69906b2b46"
+    },
+    {
+      "path": "scripts/war/GastricBattlefieldData.lua",
+      "bytes": 2768782,
+      "sha256": "81cbe1eedd29506a13fa19a7edd079d7f93b3eb58b4a9e4282e98277854b279d"
+    },
+    {
+      "path": "scripts/war/GastricTraffic.lua",
+      "bytes": 17238,
+      "sha256": "d04b89128fedb033d67b9eef01a72f5c2733b5942a0e87656e00d9b883ee3e6d"
+    },
+    {
+      "path": "scripts/war/GastricTrial.lua",
+      "bytes": 1802,
+      "sha256": "d1307a43eb50babd54477e57fea0924ba7eb753af86c33f3f109bb3450491a3b"
+    },
+    {
+      "path": "scripts/war/HUD.lua",
+      "bytes": 54573,
+      "sha256": "b148e583305ae847b44b5e89026bffc57eff73c55e5ee507ad396337c120c254"
+    },
+    {
+      "path": "scripts/war/HUD.lua.meta",
+      "bytes": 40,
+      "sha256": "859718492b58c514c69b635496027aad744d2b8d5413cf0f191e0c125d2fe5a3"
+    },
+    {
+      "path": "scripts/war/HeartArt.lua",
+      "bytes": 9558,
+      "sha256": "d98bc58153354fe99641c134d10f0b0d53781c88251ed6d73868450f60821afc"
+    },
+    {
+      "path": "scripts/war/HeartBattlefield.lua",
+      "bytes": 8420,
+      "sha256": "e07e12aee37b25fa5ad1bd7f8f80359e27909e34a2ae9e3cf623a9e0aa9dfebc"
+    },
+    {
+      "path": "scripts/war/HeartBattlefieldData.lua",
+      "bytes": 8490196,
+      "sha256": "fa4b5ffadda24f9569808bbe821ee678e295acc24a2994cf344e50385baf2c47"
+    },
+    {
+      "path": "scripts/war/HeartDisplayTransform.lua",
+      "bytes": 10066,
+      "sha256": "56010c358ecc5e9d613b599b0a351ba9d8b0b67454bf85957fda150863673c95"
+    },
+    {
+      "path": "scripts/war/HeartMotion.lua",
+      "bytes": 6030,
+      "sha256": "1692d958b11036b08a84fa495880ba6a7f33142e00bd67173c9e44d08b0ca421"
+    },
+    {
+      "path": "scripts/war/HeartVisualData.lua",
+      "bytes": 202427,
+      "sha256": "7a47802609c04c7f1019fb5a40a5f502c4c345cb1c837d96b97a1a8109b2dcbd"
+    },
+    {
+      "path": "scripts/war/Input.lua",
+      "bytes": 12041,
+      "sha256": "dcc12b792ee6350f39e10931741abe1e6be54d4f19b2da526043d037926ff04f"
+    },
+    {
+      "path": "scripts/war/Input.lua.meta",
+      "bytes": 40,
+      "sha256": "83febfb764b8e9e2c9dd8f09472cbcc7b0d5b8fe72263797793367a3e6c08249"
+    },
+    {
+      "path": "scripts/war/LegacyCampaignData.lua",
+      "bytes": 1778,
+      "sha256": "7bb2e9714752e14a7487e67165d47d79cd0cf019d16b89c2d3a24cb1d88d2e9b"
+    },
+    {
+      "path": "scripts/war/LegacyReferenceArtV3.lua",
+      "bytes": 11936,
+      "sha256": "237e5884e2d235ecb5ccbedf1b4dea401ff6216222984a20e0cf1b5c582bd08f"
+    },
+    {
+      "path": "scripts/war/LegacyReferenceMapV3.lua",
+      "bytes": 5430,
+      "sha256": "9eec2da7db0d297042a3ec61c48e5f931c482fdaf8c91df4249c448441eb36e9"
+    },
+    {
+      "path": "scripts/war/LegacyReferenceTraceV3.lua",
+      "bytes": 1251364,
+      "sha256": "096122e4fdb6199e909b475413b05274f4d1c57671b84c691b8efa74733329e1"
+    },
+    {
+      "path": "scripts/war/LegacyReferenceVesselsV3.lua",
+      "bytes": 7391,
+      "sha256": "465f564841efefab6e0ab4ba02798c0908ccc323c0fc7a47d040f4cc7b84c4a1"
+    },
+    {
+      "path": "scripts/war/LegacyTracheaTerrainV3.lua",
+      "bytes": 2951,
+      "sha256": "f1d17721bc4ae53fe9bbedc6c73dcb3919a08fdf5c41da5c526cb89004a9e116"
+    },
+    {
+      "path": "scripts/war/LungSkirmish.lua",
+      "bytes": 3959,
+      "sha256": "2d50b1daac23b78c66ac23ba94f012c73cac7cdaa2711cabe57b8a4aca60f4b6"
+    },
+    {
+      "path": "scripts/war/LungSkirmishAcceptance.lua",
+      "bytes": 2046,
+      "sha256": "5a6a0d083d11d0c7173cbf73779d49837e92510b7631bf06a22d76f5313a2c61"
+    },
+    {
+      "path": "scripts/war/LungsArt.lua",
+      "bytes": 3391,
+      "sha256": "2103439445326b4902efc74620eba21784168022213247a0b3b5e6743414a8f9"
+    },
+    {
+      "path": "scripts/war/LungsTerrain.lua",
+      "bytes": 2054,
+      "sha256": "e5f6881c37fdbce592e04bc4c9aecb4d8f15cb71cd291e2c7dfe0c58b4378b7b"
+    },
+    {
+      "path": "scripts/war/MapPalette.lua",
+      "bytes": 246,
+      "sha256": "0193eff31b3ba015ac43d4f8275256ff6813319fb2c276665e4b00601bb3dbc0"
+    },
+    {
+      "path": "scripts/war/MapRegistry.lua",
+      "bytes": 5458,
+      "sha256": "5c7c741b1d465b661089d5980d328abaccdbea987ac936b03db528d74694cb3d"
+    },
+    {
+      "path": "scripts/war/Motion.lua",
+      "bytes": 3096,
+      "sha256": "5bf0fbc5bd1856544f57380c77e72dc8e5a9a94ea3c1b7e4efcd97d156a7a6e7"
+    },
+    {
+      "path": "scripts/war/Motion.lua.meta",
+      "bytes": 40,
+      "sha256": "f62e0bd695b23c823dccc7d0d08f19d36f909537d2dbee1ce9d7ddcb6755ec00"
+    },
+    {
+      "path": "scripts/war/NasalAcceptance.lua",
+      "bytes": 9718,
+      "sha256": "20522b0041f4f5b61d6e42cc93dfc1b40f477070212d38eee47b11bea9c504ef"
+    },
+    {
+      "path": "scripts/war/NasalArt.lua",
+      "bytes": 7904,
+      "sha256": "b279d11cb8478b00473b92e34919e04932476f31c298dd0a8f8de069c0c4c07f"
+    },
+    {
+      "path": "scripts/war/NasalArtLegacy.lua",
+      "bytes": 2376,
+      "sha256": "a9023ea9da741724c3d54836337f36e2211a0c809a97db1a5f0e02babdca9171"
+    },
+    {
+      "path": "scripts/war/NasalTerrain.lua",
+      "bytes": 4691,
+      "sha256": "b92f3c6087c454246d6216050558eac7af8b1c2ccd53f2aebd5fd21a1daf1e1f"
+    },
+    {
+      "path": "scripts/war/NasalTerrainAcceptance.lua",
+      "bytes": 6480,
+      "sha256": "2250b6fda35b5291dc6208dc267319fe2acc1183d63e9ef3ada8660add8bfaa3"
+    },
+    {
+      "path": "scripts/war/OrganAccessStudy.lua",
+      "bytes": 1141,
+      "sha256": "e6beebbfc5b2bcae9c11a5a416cb1b70b2acc3e46d5da2a588d017c8d598f272"
+    },
+    {
+      "path": "scripts/war/OrganArt.lua",
+      "bytes": 5308,
+      "sha256": "554d08cb3411cb5bdbf42f3714e989b0b80a93e9e70a120571cd77978adb75e3"
+    },
+    {
+      "path": "scripts/war/OrganAtlasArt.lua",
+      "bytes": 3947,
+      "sha256": "2ed4c58a970303a17a584500f46466291ab3d24c9e8c5ee8ad3a1bb966ce1808"
+    },
+    {
+      "path": "scripts/war/OrganAtlasArtData.lua",
+      "bytes": 2064,
+      "sha256": "0158ab97daa71c1ae7f55dc067133602f19195c9c90fba69f5a73e783063eb77"
+    },
+    {
+      "path": "scripts/war/OrganBattlefield.lua",
+      "bytes": 16634,
+      "sha256": "6f35f2d2d5915ca7e3c0fef40f5db33c4fdf9a2bf21b81ead9f20d8cd6934bff"
+    },
+    {
+      "path": "scripts/war/OrganBattlefieldCore.lua",
+      "bytes": 34179,
+      "sha256": "09711e42c2fb800528102d34162c757c5abfe9ed585d1856d40a97c2bb13eeed"
+    },
+    {
+      "path": "scripts/war/OrganBattlefieldData.lua",
+      "bytes": 18685239,
+      "sha256": "047dce28da8aa19d893a9116258631cf71c039ecb44b7c63478d40043cd9c273"
+    },
+    {
+      "path": "scripts/war/OrganBloodPorts.lua",
+      "bytes": 1162,
+      "sha256": "77ade1ebeb1c75e1707297b836d28b77c6a27c6bd9f5d499d378acd219121202"
+    },
+    {
+      "path": "scripts/war/OrganBloodPortsArt.lua",
+      "bytes": 2831,
+      "sha256": "6db5e1cf8d72724c8641e3255984aa139041e3807c680d43c11d2db39d2a3543"
+    },
+    {
+      "path": "scripts/war/OrganBloodPortsData.lua",
+      "bytes": 72433,
+      "sha256": "982271b738111d55dfeb8d9f07df55bf4a1634d0514ee8a36d26e4547a6c21f2"
+    },
+    {
+      "path": "scripts/war/OrganBoundaries.lua",
+      "bytes": 4704,
+      "sha256": "2ed755f869951fba0805374c7cc814211329d01961668aa5fd217cd25e19dbf7"
+    },
+    {
+      "path": "scripts/war/OrganBoundariesAcceptance.lua",
+      "bytes": 6247,
+      "sha256": "eed26bfd9462b4a89e19d33d38752d829f85cecdfde541adbdbfa94ec6e7c0ed"
+    },
+    {
+      "path": "scripts/war/OrganBoundariesData.lua",
+      "bytes": 316587,
+      "sha256": "b4617ba302f4deab54ffdb9a7be0750b1ab63000a50a8395e151456ad2e34e24"
+    },
+    {
+      "path": "scripts/war/OrganDetail.lua",
+      "bytes": 11038,
+      "sha256": "bd7f566670bb137fa9c67dfc691f7a2e757e53855566f3133cb13f7eced64ee9"
+    },
+    {
+      "path": "scripts/war/OrganForeground.lua",
+      "bytes": 2343,
+      "sha256": "fa0abbec69438fc0940b733c8f027dcce6f3d505491911a239f00d89cf5cb5df"
+    },
+    {
+      "path": "scripts/war/OrganForegroundAcceptance.lua",
+      "bytes": 2673,
+      "sha256": "db82651dd9b1096059f2f5e0b34744a40f744c5abaee1fa160889acec3f52be0"
+    },
+    {
+      "path": "scripts/war/OrganForegroundData.lua",
+      "bytes": 41657,
+      "sha256": "41e802820b87a58481964f772b8351c8f6f13e6a81414a03ee66ddeafac3ea63"
+    },
+    {
+      "path": "scripts/war/OrganGateTrafficStudy.lua",
+      "bytes": 14443,
+      "sha256": "ddd966a81a642b301aab53b4ed81015d0a89d3959c858acd03077df8a97c7ff7"
+    },
+    {
+      "path": "scripts/war/OrganRegions.lua",
+      "bytes": 1046,
+      "sha256": "e2962077f0153376f69dae43a21c0f7c8985c4dcf53419583caffad79da2949c"
+    },
+    {
+      "path": "scripts/war/OrganRouteCollisionStudy.lua",
+      "bytes": 4156,
+      "sha256": "82e80251492a26de7915e61333047e30bef2a57b8d5e7d7cb0f3cf912820bc30"
+    },
+    {
+      "path": "scripts/war/OrganRouteGridConnectorStudy.lua",
+      "bytes": 2667,
+      "sha256": "0bddd20317314495bd4bc6cf56c460eab8d539b53f39e1449f7cbd394e65da76"
+    },
+    {
+      "path": "scripts/war/OrganRouteNavigationStudy.lua",
+      "bytes": 5039,
+      "sha256": "ce6de9cee78a48d4ddb4c542863546ec9af7848e735e43798145c47701c1cabc"
+    },
+    {
+      "path": "scripts/war/OrganRules.lua",
+      "bytes": 3874,
+      "sha256": "f6cd140761f739f9f74dd784a807685c03e64eeb481e3dc9c464e68109236be7"
+    },
+    {
+      "path": "scripts/war/OrganSortieNavigationStudy.lua",
+      "bytes": 18709,
+      "sha256": "5cd2e54ff79d56b652628522a2604d46cc40cd09c16e6944012fc5db161fe93e"
+    },
+    {
+      "path": "scripts/war/OrganTraffic.lua",
+      "bytes": 35058,
+      "sha256": "1a697c02db73c8f43b051c0600ee271e89f6eb35bf02af1c7cd7d883399c2b39"
+    },
+    {
+      "path": "scripts/war/OrganTrial.lua",
+      "bytes": 2587,
+      "sha256": "b95a103680b9df644d2733a5e13411c52b40b12f162e951a1803db13c8758e98"
+    },
+    {
+      "path": "scripts/war/Organs.lua",
+      "bytes": 3827,
+      "sha256": "2d5288f554073cb56f9042e3c85a5714cf7fdd1cfe95ca25797501ae34beb216"
+    },
+    {
+      "path": "scripts/war/PassageCollisionStudy.lua",
+      "bytes": 3232,
+      "sha256": "b81f3fc1e72a56036fc71b73dd12c15433c1b70726db92e85b88b0c0f6441f9d"
+    },
+    {
+      "path": "scripts/war/PassageNavigationStudy.lua",
+      "bytes": 3840,
+      "sha256": "f2b342dfe79a9cb1b264be4fb1e7e278646e85530c3e2f0c4273f12e9e9638f4"
+    },
+    {
+      "path": "scripts/war/Path.lua",
+      "bytes": 12110,
+      "sha256": "c8eb23b1f625faa494dfefeae9928efb055f51ae7637480b7e58ac1afd3d9cf3"
+    },
+    {
+      "path": "scripts/war/Path.lua.meta",
+      "bytes": 40,
+      "sha256": "2aabd9d6d9697cfb8cf91f97a1c7a3640757d46dbf9e227dad9f2656617200fa"
+    },
+    {
+      "path": "scripts/war/Production.lua",
+      "bytes": 1638,
+      "sha256": "3cca5bfc29db5190fcf668d6725e2ecbca431443c876fb7c56ef3434d8b15213"
+    },
+    {
+      "path": "scripts/war/Production.lua.meta",
+      "bytes": 40,
+      "sha256": "fbdaa557dd46a817f4dfaedc5700d410c9c5e4af6eb8de2df8b5d4cb8555a51f"
+    },
+    {
+      "path": "scripts/war/ReferenceAcceptance.lua",
+      "bytes": 11911,
+      "sha256": "f11a7f1816a3fb01783347ce2045dfb4fc64d278e86d36998dc8e8738761497d"
+    },
+    {
+      "path": "scripts/war/ReferenceArt.lua",
+      "bytes": 7438,
+      "sha256": "a35286bc2d46d11442270ab66f9937baa1fe346222451e30e748d062e13e1ece"
+    },
+    {
+      "path": "scripts/war/ReferenceFill.lua",
+      "bytes": 946200,
+      "sha256": "d4287cd705c2c6b8a54f7ed192d56e61ffc7750586395d3075898baeea681ae6"
+    },
+    {
+      "path": "scripts/war/ReferenceMap.lua",
+      "bytes": 6470,
+      "sha256": "f4de806b2f5f2f75299561478945ddc0ca8289b0088bcaa571219cb126ba3007"
+    },
+    {
+      "path": "scripts/war/ReferenceMaps.lua",
+      "bytes": 323,
+      "sha256": "9cc5175e6d67d79503dba9b39913015d56005f103dca7ce3dde0e2b8d9f17cc3"
+    },
+    {
+      "path": "scripts/war/ReferenceRenderAcceptance.lua",
+      "bytes": 5140,
+      "sha256": "03c62a9cf066ce3629bbbda8b08b4b2bcb030d3c6cd69d5177ebe04fc28f3e9f"
+    },
+    {
+      "path": "scripts/war/ReferenceTrace.lua",
+      "bytes": 1256267,
+      "sha256": "79943529511e57e8a05b29a872f8dfb02ab682b2eea86f5bc23b7dabface607b"
+    },
+    {
+      "path": "scripts/war/ReferenceVessels.lua",
+      "bytes": 8756,
+      "sha256": "e015d6f00f2d723d5d14561190e3b21998aab42188e6571590c17956cb0f43d6"
+    },
+    {
+      "path": "scripts/war/Reinforcements.lua",
+      "bytes": 2000,
+      "sha256": "dd5ed867c26201de837a330b7c8ae277d4a89c3417b03bb5b34ca7f38e4fba3a"
+    },
+    {
+      "path": "scripts/war/Render.lua",
+      "bytes": 26788,
+      "sha256": "a097ef24decde9ff9a191e7de38aa0c25705a5912ffbdb4bce421d4cb3ee98e4"
+    },
+    {
+      "path": "scripts/war/Render.lua.meta",
+      "bytes": 40,
+      "sha256": "1e4cc9cc8f92bea844600f37f321981462d43680a2f82bab5b749f42115f1fdd"
+    },
+    {
+      "path": "scripts/war/ResourceAcceptance.lua",
+      "bytes": 5183,
+      "sha256": "51ca3da3fd8a59ea2128b3a0bff464ac11aeabf786d8f453ef18940402233e06"
+    },
+    {
+      "path": "scripts/war/ResourcePointAcceptance.lua",
+      "bytes": 4153,
+      "sha256": "4f828e9043c8e575e53b042e291643ad5871521de0ebcc8be14eabe46d8d6bb6"
+    },
+    {
+      "path": "scripts/war/ResourcePointArt.lua",
+      "bytes": 1667,
+      "sha256": "9f17efb89bad9be658189f55b38b63bf4e91a5e6d4d6102c0ba65670aa4e1f5b"
+    },
+    {
+      "path": "scripts/war/ResourcePoints.lua",
+      "bytes": 3305,
+      "sha256": "aa3b3b37a8b5bb4cfe7957b165728475a976da40a9748bcec2a3634579c08e51"
+    },
+    {
+      "path": "scripts/war/ReviewedVascularAcceptance.lua",
+      "bytes": 8691,
+      "sha256": "5bb120bbfbd5e06c1c73664e7b4d32ec3ba2ee44d26a2a2b681a630cefe36ba8"
+    },
+    {
+      "path": "scripts/war/ReviewedVascularLayout.lua",
+      "bytes": 78794,
+      "sha256": "279af3926876d151e6faece15df56270485c410ddc46684a630f648d3220ef1a"
+    },
+    {
+      "path": "scripts/war/Save.lua",
+      "bytes": 26365,
+      "sha256": "c5c2bef592f31ce54caa35421fe9f87555236fec10ec109e4844d45f7efd781a"
+    },
+    {
+      "path": "scripts/war/Save.lua.meta",
+      "bytes": 40,
+      "sha256": "cedc316b82c2cd0d39cf3b0ced81f5b9682d6d25fc80fc98e5123e4715840280"
+    },
+    {
+      "path": "scripts/war/Simulation.lua",
+      "bytes": 9954,
+      "sha256": "842cf1d04c5df42734e16fe536f21424dcb33c881ce8a7f524318298aa725e1c"
+    },
+    {
+      "path": "scripts/war/Simulation.lua.meta",
+      "bytes": 40,
+      "sha256": "dfe54f69935a5d06d6ced9d6d9613795a49a0749e42460cf03fd773260148a05"
+    },
+    {
+      "path": "scripts/war/SmoothAcceptance.lua",
+      "bytes": 3582,
+      "sha256": "bc4fea71f8186b13843520ff45fc3e5eadac8580905d3b35b272e09ab3cc1f64"
+    },
+    {
+      "path": "scripts/war/SmoothTerrain.lua",
+      "bytes": 9159,
+      "sha256": "c121ffdd36ec822f3b905ee763039fe780840bedf10696959ca06d5dd0c35c20"
+    },
+    {
+      "path": "scripts/war/Startup.lua",
+      "bytes": 2978,
+      "sha256": "67859cca64f2bd08c5ad411c32e71725f3c71bae0467355d831686cb9f6e5d1c"
+    },
+    {
+      "path": "scripts/war/StomachBattlefieldData.lua",
+      "bytes": 46005,
+      "sha256": "95060b9d7d9ad96678f9600ef59a88196501e917a0f38a75db10be48e6010943"
+    },
+    {
+      "path": "scripts/war/StomachBattlefieldStudy.lua",
+      "bytes": 3135,
+      "sha256": "e7dbc0cf8d835d9bfb71aecc61dff0984149faa4dc03cae5d6c7242ddc92c0c7"
+    },
+    {
+      "path": "scripts/war/StomachConnectivityStudy.lua",
+      "bytes": 4971,
+      "sha256": "a033e365cb3712acc101dbac24e1d4bb39261135207800e771a39badf22697c7"
+    },
+    {
+      "path": "scripts/war/StyledOrganObstacles.lua",
+      "bytes": 1611,
+      "sha256": "5c4d8a1bc26a064b6be8d2e3916f5906766ba3e36b3cdb5fa6c985d2f80dfea3"
+    },
+    {
+      "path": "scripts/war/StyledOrganObstaclesData.lua",
+      "bytes": 21633792,
+      "sha256": "17ca1e35d1ee28edc85558cbeaa7b4c5a3205a2382262d46d15c3c643f4f986e"
+    },
+    {
+      "path": "scripts/war/StyledOrgansArt.lua",
+      "bytes": 6981,
+      "sha256": "eeef2ee99714c80c78836ffe59e766a6231129dd3c1323d5dcc2cf3ff728d462"
+    },
+    {
+      "path": "scripts/war/StyledOrgansData.lua",
+      "bytes": 45044,
+      "sha256": "ea6ccaf8beccb7027ea5ebac8268419d504eeb8e092b02d67f178868a220e054"
+    },
+    {
+      "path": "scripts/war/Survival.lua",
+      "bytes": 3347,
+      "sha256": "844152b51c24c2a17f8c8f549c590731dead31b83b9bc4ec067f2feb2f67efba"
+    },
+    {
+      "path": "scripts/war/Survival.lua.meta",
+      "bytes": 40,
+      "sha256": "6e45dec4dc0f421eec084833c8f7ba4ca0f1ef9ad7da630f182209bdea1423fe"
+    },
+    {
+      "path": "scripts/war/SystemicAcceptance.lua",
+      "bytes": 7079,
+      "sha256": "1a6fab6ffb30bee14b77b1ac7e8b9dc37ca8a8a96852a1c046353cf68724cc23"
+    },
+    {
+      "path": "scripts/war/SystemicBattle.lua",
+      "bytes": 12940,
+      "sha256": "6f73e4e23c2bd058ccc44d7402275b22ba36c6312539ecb71fa351812d9cb6e1"
+    },
+    {
+      "path": "scripts/war/SystemicConfig.lua",
+      "bytes": 479,
+      "sha256": "ef141f3b70764c99d5b2523ad125cdbd340d3c770dcfc1d018474b9df9b19dd0"
+    },
+    {
+      "path": "scripts/war/SystemicHUD.lua",
+      "bytes": 5888,
+      "sha256": "d0f7592d93c555d38b565659d71d6e594687a259034db2785339024c33a709db"
+    },
+    {
+      "path": "scripts/war/TerrainArt.lua",
+      "bytes": 6011,
+      "sha256": "e7bf353e1fe3d6c916607663a14ad19c9358bba63cdf761486e653ad215a556a"
+    },
+    {
+      "path": "scripts/war/TerrainArt.lua.meta",
+      "bytes": 40,
+      "sha256": "5a4ebd99a57618b80f1cd62278312e26176347af3ed151cff3509bcd06f1465e"
+    },
+    {
+      "path": "scripts/war/Territory.lua",
+      "bytes": 2111,
+      "sha256": "be9e9570f9a910b19c1b4ee66c5b53a1c9546446056950e0f989f1dceb128b4a"
+    },
+    {
+      "path": "scripts/war/TissueGeometry.lua",
+      "bytes": 3997,
+      "sha256": "a012978451ba5195c4d747e36afa4da3319c9e62fc62a3d3f3e3269759b7ec6f"
+    },
+    {
+      "path": "scripts/war/TracheaArt.lua",
+      "bytes": 1373,
+      "sha256": "823c12cdfbbbf2a48ff307f85296f928a91d887421483d94f2e017194339495b"
+    },
+    {
+      "path": "scripts/war/TracheaTerrain.lua",
+      "bytes": 2992,
+      "sha256": "26a1f02e1b9d8545d6e6d99a33b44d0bf9fc79d703fa1f6d5304bd68c7bdf56a"
+    },
+    {
+      "path": "scripts/war/UIArt.lua",
+      "bytes": 2672,
+      "sha256": "ea2f04641fbf8a3639ed82dd1ff13cca28b29cf6003e57fa2f5a39d1351599f9"
+    },
+    {
+      "path": "scripts/war/UIModel.lua",
+      "bytes": 7565,
+      "sha256": "56f32a4a84ba13ddc25666056e5e5acdea0feae300d6f9dbd442c5e2e89e7bf0"
+    },
+    {
+      "path": "scripts/war/UIMotion.lua",
+      "bytes": 2280,
+      "sha256": "95e42c7180c26e727b6cb6104f032a477ab74d4310b482c6ef7191ba3e3656ae"
+    },
+    {
+      "path": "scripts/war/UITheme.lua",
+      "bytes": 3970,
+      "sha256": "2513b7c40ea115e9ad03384fb9d6f1caee2f1bfcf3a9e145f699fcc4a545331b"
+    },
+    {
+      "path": "scripts/war/Util.lua",
+      "bytes": 1627,
+      "sha256": "bd35c4e904854a00b98825fe2cc422eaa74d4f87308c8a336f25f9cd76131c0d"
+    },
+    {
+      "path": "scripts/war/Util.lua.meta",
+      "bytes": 40,
+      "sha256": "ecf292343d62b67ed924931b1b689c47557479fd11f39cbccdbe1d08e1907981"
+    },
+    {
+      "path": "scripts/war/VascularCheckpointArt.lua",
+      "bytes": 2400,
+      "sha256": "d9fbe9ee012da472f56f85ba2f73286a7710f43bf209a6aaabd0c3c35bb9025c"
+    },
+    {
+      "path": "scripts/war/VascularCheckpoints.lua",
+      "bytes": 5427,
+      "sha256": "b8216abe696c5d9cd44e22f5bc4c549656c69f26e1eddc183a00a6c09378481c"
+    },
+    {
+      "path": "scripts/war/VascularCheckpointsData.lua",
+      "bytes": 188922,
+      "sha256": "17265a4db452259fd9ae1fb65fbc92f0ff6e4ae057439bf675c153c426fe4222"
+    },
+    {
+      "path": "scripts/war/VascularMaterialArt.lua",
+      "bytes": 2732,
+      "sha256": "ec1fbc8f5381beeac427e0eb9ed1cf7f910bda427af55fbba556d52d76344ac4"
+    },
+    {
+      "path": "scripts/war/VascularRouteRepair.lua",
+      "bytes": 4609,
+      "sha256": "0cf3a93980bcf997bf82d87e854a5fd016fcab369054b01229cc8b2e618a9eae"
+    },
+    {
+      "path": "scripts/war/VascularRouteRepairArt.lua",
+      "bytes": 4419,
+      "sha256": "434c9c49cb57f9d0b386efbee297196c261b39488053ee909fcc46bc2ffdcb72"
+    },
+    {
+      "path": "scripts/war/VascularRouteRepairData.lua",
+      "bytes": 7186452,
+      "sha256": "91da844c2914fd0affccaf7620e00383065e27db939c0f17d1eab76d8becfe34"
+    },
+    {
+      "path": "scripts/war/VascularRouteRepairVisualData.lua",
+      "bytes": 857730,
+      "sha256": "dc2ede5028870f88f509a9cf410c577925a44f96badbddc2710f93da4c9681bd"
+    },
+    {
+      "path": "scripts/war/VesselAcceptance.lua",
+      "bytes": 5328,
+      "sha256": "0166d9cb3aa6219b7309d39e4bce7a98aba6fe02516affac267acb100268a94e"
+    },
+    {
+      "path": "scripts/war/VesselArt.lua",
+      "bytes": 9133,
+      "sha256": "66c68aa50c12834e86ddfbf6e3bc6ca641ef2d61a40a492cf520d6c86a1a7122"
+    },
+    {
+      "path": "scripts/war/VesselChannelsArt.lua",
+      "bytes": 7928,
+      "sha256": "710814fb066351b21fc3b6eae9f7f3184aca746b7f39d3bab2be05c820d1f299"
+    },
+    {
+      "path": "scripts/war/VesselChannelsData.lua",
+      "bytes": 471358,
+      "sha256": "740ac829ea778d9dd50f415b3689a5ab306d919dfc10ed5641dad4e0942215f7"
+    },
+    {
+      "path": "scripts/war/VesselCurves.lua",
+      "bytes": 1958,
+      "sha256": "419aa451fc3586e9107c42cb8509d05d6c0e6636f4f7d20599a41668a30b5834"
+    },
+    {
+      "path": "scripts/war/VesselLayout.lua",
+      "bytes": 18669,
+      "sha256": "5afd05dc32515450785594619f5e363c7cde56fe0081ab29f689fd9210c2a59c"
+    },
+    {
+      "path": "scripts/war/VesselLayoutV2.lua",
+      "bytes": 8654,
+      "sha256": "53d356512244ee4d4765e44abad93e724d91852ad73b8488a6b85870081d0105"
+    },
+    {
+      "path": "scripts/war/Vessels.lua",
+      "bytes": 16239,
+      "sha256": "30b136497f7c698264b5ca42cc362a627cc951302f711fe1e6c1ea58c6b636c6"
+    },
+    {
+      "path": "scripts/war/View.lua",
+      "bytes": 1920,
+      "sha256": "1cc45b37f309eec3eb0f3b5615dcc82a91287c6500075f585cd9f338ebcc096e"
+    },
+    {
+      "path": "scripts/war/VisionHUD.lua",
+      "bytes": 5589,
+      "sha256": "eb72ee14c5c78dbc77f634f7d496a3b5c5295574eb61623d1696ec36995cdbdf"
+    },
+    {
+      "path": "scripts/war/VisionSettings.lua",
+      "bytes": 1243,
+      "sha256": "96f6842b8ccf45a3ee929c338192c0f86fba927144cf809588eaf9888cd8d877"
+    },
+    {
+      "path": "scripts/war/Workers.lua",
+      "bytes": 8106,
+      "sha256": "b429911cd5991ea1c8cbccd8c52b97c3468feaf55392690ab91169187ade76ae"
+    },
+    {
+      "path": "scripts/war/Workers.lua.meta",
+      "bytes": 40,
+      "sha256": "c95e09cb90d886ddbe71b0fadb6fb3922bbd2a1096d9fd1f663a0dfeb52d6feb"
+    },
+    {
+      "path": "scripts/war/World.lua",
+      "bytes": 13105,
+      "sha256": "6ef341b746895afe73c8d16c6069cd68fd851741bc2336774f30ac0eba0c120a"
+    },
+    {
+      "path": "scripts/war/World.lua.meta",
+      "bytes": 40,
+      "sha256": "bdca5ee141250ebc2d1d63a6445e2a6f78c07c17803ce1bdb80a7c6118fd478d"
+    },
+    {
+      "path": "scripts/war/ZoneGauge.lua",
+      "bytes": 6961,
+      "sha256": "d1464d3a6b6c9945d923d5aa6eed97fedf35b49b5f7a81f6ad986535a360022e"
+    },
+    {
+      "path": "scripts/war/ZoomAcceptance.lua",
+      "bytes": 6121,
+      "sha256": "5f573a884fe340a2cc5f12d6090310729856fc048e6288c34de79f81ce2b8b17"
+    }
+  ],
+  "beforeCleanupIntegrity": {
+    "files": 1828,
+    "bytes": 310430246,
+    "missing": [],
+    "mismatches": [],
+    "sourceAssetMismatches": [],
+    "sourceLuaFiles": 203,
+    "sourceLuaMismatches": [],
+    "manifestTotalsMatch": true
+  },
+  "gitHead": "b9a64e1dd42e60738da9027ba8c63a00fec82886",
+  "removedCount": 633,
+  "removedBytes": 78679730,
+  "retained": [
+    "godot/",
+    "assets/",
+    "docs/ historical evidence",
+    "scripts/qa/check_repository_hygiene.py",
+    "scripts/godot_tools/ independent tools",
+    "scripts/sprite_preview/",
+    "read-only engine references and Maker configuration"
+  ],
+  "frozenFixtures": [
+    {
+      "path": "godot/tests/fixtures/legacy-art.json",
+      "sha256": "c21326ef3f9c589fcc522a67184bdf5e8a5ae2b552b67aabf1ec524e74dfaa34"
+    },
+    {
+      "path": "godot/tests/fixtures/original-layers.json",
+      "sha256": "da5dcc384d24c72a5a9acc9dd5007fb52390e5653e3729bb3ded40eae995b819"
+    }
+  ],
+  "verification": {
+    "godotVersion": "4.6.3.stable.official.7d41c59c4",
+    "rules": {
+      "engine": "4.6.3-stable (official)",
+      "failures": [],
+      "passed": 52,
+      "total": 52
+    },
+    "modes": {
+      "errors": [],
+      "modes": 10
+    },
+    "legacyArt": {
+      "passed": 2141,
+      "total": 2142,
+      "failure": "organ_trial overlay fixture excludes lung_l/battlefield.png; current painter includes it",
+      "beforeCleanupOriginalTest": {
+        "exitCode": 1,
+        "passed": 2141,
+        "total": 2142,
+        "sameFailure": true
+      },
+      "changedGameplayToHideFailure": false
+    },
+    "archivedSourcesAndAssetIntegrity": {
+      "files": 1828,
+      "bytes": 310430246,
+      "missing": [],
+      "mismatches": [],
+      "sourceAssetMismatches": [],
+      "sourceAssetStatus": "checked",
+      "sourceLuaFiles": 203,
+      "sourceLuaMismatches": [],
+      "sourceLuaStatus": "checked",
+      "manifestTotalsMatch": true
+    },
+    "remainingUserLuaFiles": 0,
+    "frozenFixtureCopiesMatchOriginals": true,
+    "retainedPythonSyntax": "PASS",
+    "ciRepositoryCheckerRetained": true,
+    "godotHandoff": {
+      "archiveCrcAndSha256Readback": "PASS",
+      "extractedPackageVerifierFailures": [],
+      "independentAssetAudit": "PASS",
+      "containsLua": false,
+      "filesChecked": 3984
+    },
+    "makerPreview": {
+      "state": "stopped",
+      "processAlive": false
+    },
+    "godotParseAndImport": "PASS",
+    "nativeRenderLayers": {
+      "status": "UNDETERMINED",
+      "reason": "No completion after approximately two minutes; only the test process launched for this cleanup was terminated",
+      "exitCode": 143
+    },
+    "gitDiffWhitespaceCheck": "PASS"
+  }
+}

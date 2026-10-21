@@ -1,0 +1,199 @@
+{
+  "schema": 1,
+  "medicineId": "vaccine",
+  "releaseEnabled": false,
+  "runtimeStage": "independent_candidate_only",
+  "tuningStatus": "first_pass_adjustable",
+  "helperProposal": {
+    "price": 120,
+    "health": 90,
+    "moveSpeed": 2.0,
+    "helperLifetimeSeconds": 90
+  },
+  "rules": {
+    "dropCooldownSeconds": 1.0,
+    "antibodyLifetimeSeconds": 12.0,
+    "contactRadius": 0.45,
+    "damage": 8.0,
+    "searchRadius": 1.25,
+    "searchStep": 0.25,
+    "searchDirections": 16,
+    "maxPerHelper": 12,
+    "maxAntibodies": 128,
+    "maxSourceRecords": 256,
+    "maxTrackedActors": 8192,
+    "maxSegmentsPerActor": 128,
+    "maxEvents": 256
+  },
+  "activeAttackCauses": [
+    "attack",
+    "projectile",
+    "collision"
+  ],
+  "classification": {
+    "currentVirusKinds": [
+      "virus",
+      "herpes"
+    ],
+    "extension": "Host is_virus callback explicitly opts future virus kinds in; never use all pathogens."
+  },
+  "clips": {
+    "move": {
+      "path": "image/vaccine-character-20261021/move-16/spritesheet.png",
+      "columns": 4,
+      "rows": 4,
+      "frameSize": 512,
+      "anchorX": 256.260851128,
+      "anchorY": 334.926725112,
+      "occupancy": 0.40114830453125,
+      "durations": [
+        0.08,
+        0.08,
+        0.08,
+        0.08,
+        0.08,
+        0.08,
+        0.08,
+        0.08,
+        0.08,
+        0.08,
+        0.08,
+        0.08,
+        0.08,
+        0.08,
+        0.08,
+        0.08
+      ],
+      "duration": 1.28,
+      "loop": true
+    },
+    "hit": {
+      "path": "image/vaccine-character-20261021/hit-16/spritesheet.png",
+      "columns": 4,
+      "rows": 4,
+      "frameSize": 512,
+      "anchorX": 256.17213453976797,
+      "anchorY": 338.179871600144,
+      "occupancy": 0.38911385539531246,
+      "durations": [
+        0.065,
+        0.06,
+        0.055,
+        0.08,
+        0.075,
+        0.065,
+        0.055,
+        0.055,
+        0.06,
+        0.06,
+        0.065,
+        0.07,
+        0.07,
+        0.075,
+        0.085,
+        0.15
+      ],
+      "duration": 1.145,
+      "loop": false
+    },
+    "release": {
+      "path": "image/vaccine-character-20261021/release-16/spritesheet.png",
+      "columns": 4,
+      "rows": 4,
+      "frameSize": 512,
+      "anchorX": 255.77887142857142,
+      "anchorY": 328.44006285714283,
+      "occupancy": 0.4263453125,
+      "durations": [
+        0.085,
+        0.075,
+        0.085,
+        0.085,
+        0.085,
+        0.085,
+        0.09,
+        0.09,
+        0.1,
+        0.1,
+        0.11,
+        0.1,
+        0.1,
+        0.1,
+        0.12,
+        0.2
+      ],
+      "duration": 1.61,
+      "loop": false,
+      "embeddedAntibodyIllustrationCount": 2,
+      "worldRenderingStatus": "body isolation needed before battlefield wiring; illustrated antibodies must not appear as extra persistent drops"
+    },
+    "death": {
+      "path": "image/vaccine-character-20261021/death-16/spritesheet.png",
+      "columns": 4,
+      "rows": 4,
+      "frameSize": 512,
+      "anchorX": 255.86894930781457,
+      "anchorY": 328.03005918543045,
+      "occupancy": 0.40114830453125,
+      "durations": [
+        0.09,
+        0.085,
+        0.095,
+        0.1,
+        0.105,
+        0.085,
+        0.08,
+        0.075,
+        0.08,
+        0.085,
+        0.1,
+        0.14,
+        0.18,
+        0.2,
+        0.22,
+        0.45
+      ],
+      "duration": 2.17,
+      "loop": false
+    }
+  },
+  "antibodyVisual": {
+    "path": "image/vaccine-character-20261021/antibody/sprite.png",
+    "frameSize": 256,
+    "columns": 1,
+    "rows": 1,
+    "anchorX": 128,
+    "anchorY": 128,
+    "spriteSide": 0.9,
+    "fixedWorldPosition": true
+  },
+  "provenance": {
+    "method": "Metadata only. Bottle body center from authored registration; existing atlases and antibody copied byte-for-byte; no new images.",
+    "clips": [
+      {
+        "path": "assets/image/vaccine-character-20261021/move-16/spritesheet.png",
+        "sha256": "84c0983e81ad63372c198f5895d04c0b7bfd13d23b4cebcc3caa3ee6900b4fbf",
+        "metadata": "assets/image/vaccine-character-20261021/move-16/animation.json"
+      },
+      {
+        "path": "assets/image/vaccine-character-20261021/hit-16/spritesheet.png",
+        "sha256": "e745b0cbc7adbf057acdf9e9cb9809300cf399f11ee36e5a85115e94880f76e8",
+        "metadata": "assets/image/vaccine-character-20261021/hit-16/animation.json"
+      },
+      {
+        "path": "assets/image/vaccine-character-20261021/release-16/spritesheet.png",
+        "sha256": "97e8e9f76e1f609be7602467f977d9f113ec65dc78933c1976b0ea4f0dabdf3d",
+        "metadata": "assets/image/vaccine-character-20261021/release-16/animation.json"
+      },
+      {
+        "path": "assets/image/vaccine-character-20261021/death-16/spritesheet.png",
+        "sha256": "91a6f5233bc43824d73e6e8d4a34b4785b27f8c261b085c8e5a9d4a47c866030",
+        "metadata": "assets/image/vaccine-character-20261021/death-16/animation.json"
+      }
+    ],
+    "antibody": {
+      "path": "assets/image/vaccine-character-20261021/antibody/sprite.png",
+      "sha256": "42ecd46ea9a2634d4b6afc42805cc08d25cebd54f8ba8b34c1686e8b3dd7f909"
+    }
+  }
+}

@@ -1,0 +1,75 @@
+2026-10-21 状态：左肺4施工故障已修复，局部与完整固定步链路复核通过。
+
+已独立读取生活联调报告，用真实 WarSimulation.update + 种子39462 + 自然首个
+crowded_party付费索引1复现同一 lung_l.patch.4、13病毒、69号要塞。
+基线：226.2秒感染；348.2秒仍progress=0，要塞在(1232.2555,1226.9105)，
+距源(1256.2555,1306.9105)约83.5；多工人堵在(1246,1291)，仅2人施工。
+现场已独立保留 test-output/influenza-construction/baseline-checks.json、
+baseline-snapshot.json，不覆盖生活对话的存档。
+
+根因1：_start_site按照器官placements数组顺序选第一块，没优先本次感染中心。
+根因2：原unit()只要距要塞4.5以内就停下施工，无需到自己的fluBuildSlot。
+先到的工人会把后来工人/其他工位路线堵住；只改选址仍复现，只有5人build。
+仅要求到准确工位后，8人到达、2人去远侧工位的直线又被先到同事挡住。
+
+局部修复仅在influenza_colonies.gd：
+- 候选按离本感染源距离排序，优先已预留的本地空地；扩建也由近到远。
+- 建筑外预留4.2工位圈和6.2进场圈；认证进场圈各段属于本器官组织平面。
+- 施工者先沿外圈走到自己工位对应方向，再向内进入该工位。
+- 必须实际走到分配工位0.18以内才计为施工；不允许远程施工/跳过碰撞。
+- 本群未分工病毒穿过未来工位是暂时拥堵，不使整个初始工地跳到别处，
+  但实际进场继续经过game.go和原位置碰撞检查；其他敌友/建筑仍照常阻挡。
+- 后续查到3个未分工病毒实际堵在进场环，故增加本巢群施工期间的局部让路：
+  未分工者通过真实game.go退到半径8.2的合法外侧点，等到要塞完工；不算入
+  施工人数，遇敌仍优先战斗。若缺员被接替为工人则清理让路状态。
+- 十人同tick施工、8秒工期、遇敌优先战斗、30秒孵化和配额均未改。
+
+目前不需要navigation.gd、simulation.gd补丁，也没有编辑它们；不会传送/搬动
+工人或建筑，不会绕过地形/堵塞，不扩大测试超时来代替修复。
+原始自然种子39462（同一付费项、同一实际风险）复跑：感染仍226.2秒，
+要塞现在坐落本感染点(1256.2555,1306.9105)，约11.9秒后实际完工；没有修改
+任何真实病毒的hp/progress/速度/路径数据。未分工病毒让路也是实际移动。
+最终验证：
+- tests/influenza_construction.gd：24/24。
+  含原种子、自然首联系和付费分支、同一感染点真实施工；首次要塞与源重合；
+  十名工人同tick实际到各自工位；13个原病毒全部存活；左肺八个认证落点
+  各自完成；故意阻塞工位时不推进（九人不能假算十人），移除仅测试注入的
+  障碍后继续实际施工；施工半途原生写/读档，十工人和部分进度保留并完工。
+- tests/influenza_fortress.gd：39/39，十人施工、配额、遇敌作战、孵化不变。
+- tests/life_integration.gd：完整真实 WarSimulation.update 链路101项，无失败。
+  使用生活联调对话的原测试，未改动其源码。自然感染226.2秒，施工238.1秒
+  完成，268.1秒出生第一个新病毒（相差30秒）。真实白细胞攻击摧毁实际要塞
+  和病原，联合净化在340.4秒完成，recovered=1；没有人为删除感染方hp。
+  角色布置、受控危机边界等仍以生活测试原有fixture声明为准。
+- 净化专项81/81、基础规则52/52：本次施工修复后再次复核。
+- --headless --editor --import --quit：成功，无脚本错误。
+- 原生 tests/influenza_fortress_capture.gd：真实施工45%和完工截图成功，
+  已实际读取两张图，十名工人围各自工位钻探；沿用原要塞与地表资源。
+
+最终代码范围：只补充 scripts/influenza_colonies.gd（此前净化接入所在文件），
+新增 tests/influenza_construction.gd 及其.uid；沿用此前只更新末项期待的
+tests/influenza_fortress.gd。没有改navigation/simulation/scenarios/combat/
+world_view/main/hud/life_run/life_integration/README；无需主流程补丁。
+未生成新美术、未改流感数据或原生碰撞、未增加病原或跳过正常命令流程。
+
+复现命令（仓库根目录）：
+./godot/run.sh --headless --script res://tests/influenza_construction.gd
+./godot/run.sh --headless --script res://tests/influenza_construction.gd -- --natural-only
+./godot/run.sh --headless --script res://tests/life_integration.gd
+./godot/run.sh --script res://tests/influenza_fortress_capture.gd
+
+本机输出：
+test-output/influenza-construction/checks.json（最终24项）
+test-output/influenza-construction/natural-snapshot.json（修复后实际自然现场）
+test-output/influenza-construction/baseline-checks.json、baseline-snapshot.json
+  （修复前原始现场；供调查，不自动移动旧存档中已经存在的建筑）
+test-output/life-integration.json（本次原测试101项，运行ms=43565）
+test-output/influenza-fortress/construction.png、completed.png
+仓库.tmp/influenza-construction.log、influenza-construction-life.log、
+influenza-construction-fortress.log、influenza-construction-purification.log、
+influenza-construction-rules.log、influenza-construction-native.log、
+influenza-construction-import.log。
+
+验收边界：不把固定步墙钟加速当成长期原生试玩或手机性能验收；不宣称所有
+器官/长期多要塞拥堵和全部历史存档里的交通问题已完毕。当前所报左肺4
+自然链路及左肺全部认证落点施工卡死已通过真实移动回放复核。

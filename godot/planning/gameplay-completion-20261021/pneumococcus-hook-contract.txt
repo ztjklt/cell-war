@@ -1,0 +1,103 @@
+肺炎链球菌共享接线合同 · 2026-10-21
+
+当前交付边界
+独立脚本和数据完成，公共入口均未修改，Data.units中尚无pneumococcus。
+数据候选来源为WarPneumococcus.data()（godot/data/pneumococcus.json），不是从旧通用病毒kind改名。
+首次注册使用data.unit原样并登记Data.cellRadii.pneumococcus=0.72。unit.pathogen=true已经明确提供；只有正式注册后才会由WarData.is_pathogen识别。
+图鉴预览及素材目录本身不触发单位注册或生成。不要将其计入流感10个建造者，也不要让流感要塞自动生产它。
+六张原图集已经在Godot，data/pneumococcus.json仍需主线程加入asset/source manifest；本模块没有写共享清单。
+
+宿主协议与初始化
+var pneumococcus = WarPneumococcus.new(game)
+game.state必须为Dictionary，含单调模拟时钟time；game.paused为暂停状态。
+game.entity(id)->Dictionary：找不到返回{}；game.entities()->Array：必须包含所有单位和建筑，不能只传敌人或单位。
+game.navigation.clear_segment(a,b,lane,"pneumococcus")->bool：同平面完整地形/墙体合法性。
+game.combat.damage(source,target,amount,false,"projectile",direction)：唯一实际伤害入口，保留护甲/科技/状态倍率，只应用一次。
+可选game.combat.multiplier(actor,"attackSpeedMultiplier")->float：攻击开始时捕获，范围0.01至32，该次动作/冷却不在中途重新计速。
+可选game.event(kind,fields)：调试/反馈事件；不能用这些事件再次扣血、发弹或重新恢复动作。
+现役WarCombat已有_target_geometry(target,source_lane)；服务发现此方法即使用它提供的point/lane/radius。
+  这使同一checkpoint在组织侧/血管侧使用当前发射平面的真实端点；不通过绘制投影推断连接。
+  未提供该方法时，只支持实体自身x/y/vesselLane及建筑size；真实双侧checkpoint接线不得省略此适配。
+  适配输出必须为point:Vector2、lane:int、radius:float（建筑半边长）。普通单位仍使用其真实物理半径。
+
+唯一模拟顺序
+1. 未暂停模拟步正常推进game.state.time；暂停时模拟时钟也必须停止。
+2. 处理既有状态/命令/受击/死亡，必要时调用notify_hit/notify_death/cancel_for_unit。
+3. 肺炎链球菌自己的fight分支查找可见目标并调用try_attack(actor,target)。该分支完全代替通用fight的即时damage、cellShot和launch。
+   try_attack返回false表示未开始攻击，宿主仍按既有寻路/追击规则处理；is_casting(actor)为true时建议停下移动，避免边走边播吐核。
+   若新命令需要立即取消，增加orderToken并调用cancel_for_unit(actor,"order")；仅改token也会在下次step撤销待发。
+4. 每个固定模拟步仅pneumococcus.step(dt)一次，时间来自state.time，dt不再另外累计。推荐安排在单位命令处理后、尸体移除前。
+5. 在整个模拟步和所有伤害回调结束后统一存档；宿主世界和服务区块必须在同一边界保存。
+   step有重入保护；同一时间重复step也不会重发或二次推进。不要依赖这些保护故意同时接两套更新循环。
+
+攻击权威与打断
+try_attack检查角色kind/hp、同层、7单位射程、地形直线、冷却、受击锁和队列上限。
+冷却字段为actor.pneumoNextAttackAt（绝对模拟时刻），默认开始后1.8秒；不要再让通用cooldown覆盖或缩放这一个时刻。
+actor.attackDamage可覆盖基础12，仍经宿主damage处理其他实际伤害倍率。
+待发状态捕获source/target/orderToken/lane/started/releaseAt/shotSpeed/damage；0.667秒除以捕获倍率后释放一发。
+释放时复核存活、目标、命令、平面和地形，以此时目标位置决定固定dx/dy；不是开始瞄准后持续追踪的弹体。
+notify_hit(actor,push_direction=Vector2.ZERO)：只在实际正伤害成立时调用；push_direction为攻击者指向受击者。
+  x方向按画面/角色水平基准解释，内部结合pneumoFacingLeft选择pnHitLeft/pnHitRight；如宿主投影改变横轴，应由宿主先转换一次。
+  1秒受击动作内再次受击会更新打断时刻，不重复重启动画或改变本次来袭侧；该秒内不能开始新攻击。
+notify_death(actor)：在复制尸体/移除实体前调用，死亡时刻只记录一次；取消尚未出嘴的弹体。
+cancel_for_unit(actor,reason="order")：只取消待发，保留该次冷却；已经飞出的弹体独立继续，发射者移除后仍能命中。
+本服务自己的弹体击中肺炎链球菌时会在宿主damage之后提供一次幂等受击/死亡补通知；共享damage里的统一通知仍应接好其他攻击来源。
+不要从采样帧号、旧shotTime、cellShot或动画循环重建伤害事件。
+
+飞行与挡隔
+弹体储存在game.state.pneumococcusCombat.projectiles，以独立单调shot ID标识。
+projectiles()返回深拷贝供绘制；不要将其放进通用combatProjectiles，也不要由绘制器推进或消费。
+弹速12、半径0.10、寿命0.85秒；按绝对lastUpdatedAt推进，分段扫掠单位圆与建筑方框，地形段碰撞加二分定位。
+仅同一lane参与接触；其他平面投影重叠不会拦截。合法checkpoint的本侧端点由上述几何适配提供。
+友方单位可穿过，友方建筑/门挡弹但不受伤；最近敌方单位/建筑被命中后弹体消失，不穿透。
+同距离接触按实体ID排序。门被夺取/重置由宿主damage既有规则决定，弹体已消费，不会穿过门接着打下一个目标。
+地形/关闭通路必须由真实navigation拒绝；几何接口不能用“看起来相连”或无条件true代替。
+伤害调用之前已经消费ID并归并完成游标；宿主伤害回调内再次step不会二次命中。
+事件pneumococcus_hit表示该弹体已终止；它在damage调用之前发出，不能当作世界伤害事务已完成的存档边界。
+
+纯动画采样
+WarPneumococcusAnimation.sample(actor,time,moving,dead)->Dictionary
+  返回key/clip/frame/family="pneumococcus"/mirror/angle；angle固定0，本体保持直立，仅水平镜像。
+  宿主在普通移动时按画面横向更新pneumoFacingLeft；正在受击/吐核时保持这一朝向，避免动作中途翻转来袭侧。
+  优先级死亡 > 受击 > 未取消的射击 > 移动；静止时移动帧取第1帧，不自动走路。
+  返回hidden=true时不画本体；死亡1.6秒后持续隐藏，不能循环复活。
+projectile_sample(projectile,time)只播放独立pnProjectile，不产生发射或伤害。
+standing_hull(actor,world_position)返回23点静态本体凸包×0.72，并按镜像变换；取自原move第1帧主体透明轮廓，不包含吐核、拖尾或整张透明画布。
+corpse_duration(STEP)=1.6+STEP，尸体至少保留完整死亡动作及一个模拟步。
+
+六组原帧与坐标
+pnMove / pnShoot / pnProjectile / pnHitRight / pnHitLeft / pnDeath，全部4×4、每帧512×512、各16帧。
+时长分别1.333/1.333/1.000/1.000/1.000/1.600秒；使用clip.durations累计采样，不将非均匀时长改成简单等分。
+本体锚点：move/hit/hit-left/death=(256,275)，shoot=(218,275)；occupancy=0.79508262。
+预览使用地面锚点y370，运行使用身体中心y275。不要把运行锚点重新改成370，也不要逐帧重新居中。
+本体绘制像素比例为radius/203.54115063052976，等价于(2*radius)/(512*occupancy)；绘制原atlas当前512方格，目的左上为-anchor*scale。
+outlines各有16个槽，受击/移动/吐核取主体连通轮廓；死亡与独立弹体不作为单位选择/物理轮廓。
+独立弹体锚点=(320,256)，画布世界宽0.65；按dx/dy在画面中的方向旋转。原弹体朝右，使用angle，不沿用朝左飞刀的+PI修正。
+原pnShoot第9–10帧自身画有短暂出嘴核体；不可再把这部分作为第二发有伤害的弹体。
+保留原图的前提下，独立弹体与原嘴边核体短暂衔接的画面仍需原生验收；本次没有删除像素、做新图或裁出未经确认的替代图。
+
+规范快照与恢复
+服务区块：version=1、nextShotId、resolvedThrough、casts、projectiles、finished、recent。
+casts/projectiles/finished合计最多128条；recent最多64条。finished只保留被更早待发/在途ID挡住的乱序结果，连续完成后合并到resolvedThrough。
+pending/flying/terminal互斥，所有已发行但未归并编号连续存在；已归并编号、历史已完成编号都不能恢复为活动弹体。
+snapshot()->Dictionary为纯JSON规范值的深拷贝；restore(value)->String返回空串才成功，校验失败保持原状态。
+validate_state(value)->String是共享存档预检入口；应在替换整个世界之前调用，不能先部分覆盖世界再检查。
+完整存档还必须保留实体pneumoShotAt/ShotSpeed/ShotId/ShotCancelled/CastState/NextAttackAt/LastHitAt/HitAt/HitSide/FacingLeft/DeathAt字段及同一state.time。
+这些字段在实际实体上的完整名字均带pneumo前缀（如pneumoNextAttackAt）；未出现的可选时刻不要伪填0导致新局自动播放受击。
+旧存档没有本区块时使用fresh_state()；不会从旧动画时间重建任何弹体。恢复本区块不会立即发射或扣血，等待下一次真实step。
+宿主先校验所有共享世界字段，再恢复同一模拟时钟与本服务；不得将旧弹体坐标配上倒退/不对应的世界时钟。
+所有存档事务以模拟步边界为准。伤害回调完成后快照已验证不重放，但不要在“已消费、尚未实际扣血”的hit事件中拆开保存世界和服务。
+
+公开API速查
+data() / fresh_state() / validate_state(value) 为静态函数。
+try_attack(actor,target)->bool；is_casting(actor)->bool；step(dt=0)；
+notify_hit(actor,push_direction=Vector2.ZERO)；notify_death(actor)；cancel_for_unit(actor,reason="order")；
+projectiles()->Array（副本）；snapshot()->Dictionary；restore(value)->String。
+state()只供服务内部/专项诊断，宿主不能绕过restore任意改账本。
+
+验证与验收边界
+./godot/run.sh --headless --script res://tests/pneumococcus.gd：207/207。
+证据：godot/test-output/pneumococcus/independent-service.json。
+六张运行atlas与根目录原atlas、源动画JSON均已核哈希一致；本次没有改PNG或alpha。
+独立宿主中墙/关口端点/友方建筑挡隔、前摇打断、单发直线、存档不重放已覆盖；没有把夹具通过写成真实地图接入或完整画面通过。
+主线程完成注册/资源登记、实际入侵来源、共享攻击/伤害/绘制/存档接线及原生验收后，才能改为现役。

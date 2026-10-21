@@ -1,0 +1,31 @@
+退烧止痛药玩家接口（HUD归UI线程，此文件不改HUD）
+日期：2026-10-21
+实现中，先按本合同接按钮；本轮仅退烧止痛药。最终开售状态见medicine-integration-status.txt。
+
+服务：game.medicine_supply；稳定药品ID：fever_pain_relief。
+查询只读：quote_purchase("fever_pain_relief",1)；count()；
+          quote_deployment(actor_id)（需要当前选中的本阵营存活红细胞）。
+报价含ok/reason、unitPrice=80、cost、inventory、money（购买）；
+派遣报价含ok/reason、actor、inventory、organ、x/y（成功时）。
+暂停仍可报价与排队，不在HUD直接调用purchase/deploy扣费。
+
+玩家按钮必须调用：
+  var result = game.medicine_supply.queue_purchase("fever_pain_relief",1)
+  var result = game.medicine_supply.queue_deployment(selected_worker_id)
+返回result.ok/result.reason；成功排队返回result.request={runId,sequence}。
+取消尚未执行的请求：game.medicine_supply.cancel_queued(result.request)；
+取消或落点失败不扣库存，不退款已成功执行的购买。
+
+产生的模拟命令（通常不要HUD手写，优先上面的queue方法）：
+  {action:"medicine_buy",medicine:"fever_pain_relief",quantity:1,unitPrice:80,
+   request:{runId:<当前世界ID>,sequence:<已由服务分配的序号>},ids:<提交时选择>}
+  {action:"medicine_deploy",medicine:"fever_pain_relief",actor:<红细胞ID>,
+   request:{runId:<当前世界ID>,sequence:<已由服务分配的序号>},ids:<提交时选择>}
+
+队列执行时重新验证余额、库存、所选红细胞存活/阵营、实际器官组织、附近合法不重叠落点。
+不提供任意地图坐标派遣，不允许从血管投影或远处组织隔空落地。
+一次成功派遣消耗一件库存；助手生命60、移速2.3、时长90模拟秒，为首轮可调数值。
+库存与请求状态随整体存档；新世界清空，旧世界UI请求不能在新世界扣费。
+其他药品保持未开放，不能根据有图鉴素材就生成购买按钮。
+
+本文件是API合同，不表示HUD已完成；由UI线程负责布局、点击、暂停提示和原生窗口验收。

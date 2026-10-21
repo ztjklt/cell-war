@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "name": "流感要塞",
+  "kind": "flu_fortress",
+  "texture": "image/influenza-fortress-20261020/fortress-simple-v2.png",
+  "occupancy": 0.85,
+  "anchor": [
+    0.5,
+    0.78
+  ],
+  "rules": {
+    "waveMin": 10,
+    "waveMax": 20,
+    "builders": 10,
+    "consumeBuilders": false,
+    "buildSeconds": 8.0,
+    "spawnPeriod": 30.0,
+    "size": 4.0,
+    "hp": 500.0,
+    "minimumSpacing": 8.0
+  },
+  "generator": "built-in image_gen",
+  "source": "/Users/jitian/.codex/generated_images/01a1587d-2487-7982-af7f-934c90397ed0/exec-14066602-fb4d-4fd3-8b72-a4227a1b9e69.png",
+  "prompt": "prompt-simple-v2.txt",
+  "constructionRule": "要塞名额=floor(本群存活病毒/10)，已建成和在建要塞都占名额；施工者保留，遇敌优先攻击。",
+  "revision": "simplified after user feedback"
+}

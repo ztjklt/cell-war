@@ -1,0 +1,203 @@
+流感 / 肺炎链球菌 / 腺病毒：素材交付审核与机制接入方案
+日期：2026-10-21（Asia/Shanghai）
+状态：素材可复现交付完成；肺炎链球菌、腺病毒仍为图鉴预览，未接入战斗。
+
+一、范围与实际改动
+本轮只新增独立离线交付工具、审核报告、候选登记数据与本文件。
+没有编辑 simulation.gd、combat.gd、world_view.gd、HUD、config.json、
+asset_manifest.json、source_manifest.json 或 character_catalogue.json。
+没有新增造型、生成视频、提交、推送或运行远端构建。
+
+独立工具：scripts/godot_tools/install_pathogen_delivery.py
+它默认 dry-run；--apply 仅允许拷贝到新的独立暂存目录，拒绝当前 godot/
+和原素材 assets/。不会自动更新公共配置、全局资源清单或游戏脚本。
+暂存包是待接入的素材/数据包，不是可单独运行的游戏，也不等于战斗已接入。
+
+二、现状：图鉴有图不等于战斗有单位
+
+角色             Godot战斗kind   现状                         已交付动作 / 帧数
+流感病毒         virus          战斗美术与群落/要塞已接入     5组×20=100
+肺炎链球菌       无             图鉴预览，kind字段为空        6组×16=96
+腺病毒           无             图鉴预览，kind字段为空        5组×16=80
+合计：16组，276帧。没有把已确认的流感20帧改成16帧。
+
+Data.units 只有现有 virus，没有 pneumococcus 或 adenovirus。
+WarSimulation.spawn 会在 WarData.spec(kind) 为空时直接返回空字典。
+不能将这两套新美术直接覆盖到 wolf、shadow、herpes 或 helicobacter 上。
+这些既有单位具有各自数值、通路、目标与行为，不是两个新病原的别名。
+
+三套角色的图集已经由图鉴工作复制到 godot/assets/image/，当前与根目录图集
+逐字节一致。肺炎链球菌的静态 projectile-v1.png 尚未复制，但16帧飞行动画
+图集已存在且哈希一致；这个静态概念图的缺席不是弹丸机制已经接入的证据。
+本轮安装计划包含该静态图，但只在独立暂存目录补齐，没有改写游戏资源。
+
+三、动画交付清单与时间
+
+流感，assets/image/influenza-cartoon-v2-20261020/
+  move-20      移动          20帧 / 2000ms / 循环
+  attack-20    夸张啃咬      20帧 / 2000ms / 单次
+  hit-20       受击          20帧 / 1250ms / 单次
+  death-20     灰飞烟灭      20帧 / 2000ms / 单次，末帧完全透明
+  build-20     电钻施工      20帧 / 2000ms / 循环
+
+肺炎链球菌，assets/image/pneumococcus-cartoon-v2-20261021/
+  move-16        移动          16帧 / 1333ms / 循环
+  shoot-16       鼓腮吐核      16帧 / 1333ms / 单次
+  projectile-16  独立弹丸飞行  16帧 / 1000ms / 循环，原画朝右
+  hit-16         右侧来袭受击  16帧 / 1000ms / 单次
+  hit-left-16    左侧来袭受击  16帧 / 1000ms / 单次
+  death-16       死亡消散      16帧 / 1600ms / 单次，末帧完全透明
+  发射帧是第9帧，其开始时间为667ms，不以帧号/名义fps反推成另一个时刻。
+
+腺病毒，assets/image/adenovirus-cartoon-v2-20261021/
+  move-16       正面跳跃移动  16帧 / 1333ms / 循环
+  slam-16       蓄力重砸      16帧 / 1400ms / 单次，使用逐帧变时长
+  hit-right-16  右侧来袭受击  16帧 / 1000ms / 单次
+  hit-left-16   左侧来袭受击  16帧 / 1000ms / 单次
+  death-16      死亡消散      16帧 / 1600ms / 单次，末帧完全透明
+  正面直视和原有六个圆头突起是最新确认基础造型；移动是跳跃，不是行走。
+
+每个动作包含512×512 RGBA逐帧PNG、图集PNG、animation.json和WebP预览。
+全部按作者原帧、透明轮廓、锚点和毫秒时长交付；没有新增镜像帧或插值帧。
+图鉴/网页会重播单次动作供查看，这不表示死亡或攻击在战斗中应该循环触发。
+
+四、检查结果与轮廓约定
+
+已检查全部276帧：
+  - 每组帧数、逐帧PNG数量、WebP实际帧数一致；组内无重复帧。
+  - PNG均为512×512 RGBA；图集对应矩形与逐帧PNG字节内容一致。
+  - 所有帧时长为正，累计时长等于durationMs；锚点合法且组内稳定。
+  - 画布外沿没有非透明像素，记录实际alpha边界；死亡末帧alpha全为0。
+  - 来源图哈希在有source字段的元数据中逐一核对；原始素材保持不变。
+  - 按alpha>=80、2像素采样提取视觉轮廓，保留分离碎片与内部孔洞，
+    用1.5像素容差简化并校验多边形有效性；报告保存每帧边界、轮廓数和哈希。
+  - 饱和绿色杂边启发式检查无警告；这项数值检查不替代原生画面验收。
+
+肺炎链球菌左右受击没有互相镜像：来袭侧、反向形变及第7帧重心偏移一致。
+  右侧来袭：重心X相对首帧 -18.027px；左侧来袭：+39.100px。
+腺病毒同样保留正面和原光照：右侧来袭 -42.077px；左侧来袭 +23.974px。
+这些是当前绘制反应的校验值，不是未来游戏的物理击退距离。
+
+候选登记中的 visualAlphaContoursPx 是视觉/选取轮廓，可能包含命中星、冲击波、
+圆头突起和死亡碎片，禁止直接作为每帧物理碰撞体。
+流感继续保留现有站立接触外壳；新病原须审阅静止主体hull与radius，避免冲击波
+扩大碰撞体或死亡碎片阻路。视觉跳跃仅改变贴图偏移，不改变通行平面或越过障碍。
+
+五、机制映射及未接入项
+
+A. 流感：现役 virus
+  WarInfluenzaAnimation.sample 已选择 fluMove/fluAttack/fluHit/fluDeath/fluBuild。
+  WarWorldView.animation 对 virus 使用该采样器；WarCombat.damage 启动受击时间；
+  死亡优先于受击，播放2000ms后隐藏，尸体保留期由专用函数管理。
+  当前普通啃咬是 WarCombat.fight 的即时单体近战伤害；2000ms攻击原画会被采样器
+  压缩到现有1200ms攻击间隔内播放。它不是腺病毒的蓄力延迟范围重砸，也没有独立
+  “牙齿接触帧”伤害事件；将来若要求严格命中帧同步，应单独排期，不在本轮改动。
+  现有Data.units.virus为生命100、伤害11、射程1.5、移速2.7、间隔1.2秒。
+  这些是当前代码值，不把它们认定为新角色已确认的平衡参数。
+
+  WarInfluenzaColonies 已实现每批10–20、每10个存活病毒一个要塞名额，
+  10名共同施工者保留，遇敌优先作战，建成每30秒产生1个virus。
+  要塞使用已简化 fortress-simple-v2.png；新角色不得改变该孵化种类与名额规则。
+  当前方向缺口：流感只有一套受击画，渲染镜像跟随武器/移动朝向，没有根据
+  来袭侧锁定受击方向。动作可播放，但不能宣称所有来袭方向的反馈都已接好。
+
+B. 肺炎链球菌：拟新增独立 kind=pneumococcus
+  已确认：鼓腮吐核远程攻击，独立弹丸形象及飞行动画，左右来袭受击。
+  当前图鉴能播放6套动作；WarCombat、WorldView及Data.units没有该战斗单位。
+  接入时以第9帧667ms发射一次独立弹丸，复用现有延迟发射/分段碰撞框架，
+  但使用独立style与图集。弹丸美术朝右，旋转角基于投影后的飞行向量，不能
+  直接套用原画朝左的granule偏移“-PI”。飞行16帧只负责表现，不重复生成实体。
+  射击原画已画了小型出膛弹核，需在原生画面检查独立弹丸与该出膛画面是否重叠，
+  避免看到两颗弹；本轮不修改已确认造型或移除原画内容。
+  伤害、射程、间隔、弹速、寿命、碰撞半径尚未确认，机制映射中保留null。
+
+C. 腺病毒：拟新增独立 kind=adenovirus
+  已确认：正面直视、跳跃移动，攻击仅采用蓄力重砸。
+  不能复用通用即时近战分支，否则伤害会在蓄力开始时发生。
+  依据当前逐帧时长给出表现时间线：
+    蓄力2–4帧 80–490ms；起跳5–6帧 490–615ms；顶点7帧 615–695ms；
+    下坠8–9帧 695–820ms；落地第10帧从820ms开始；
+    冲击波10–13帧 820–1160ms；恢复14–16帧 1160–1400ms。
+  将来由模拟层在820ms的唯一落地事件应用一次范围伤害/短促击退，
+  表现层只采样，不能随循环、重复渲染、读档或高低帧率重复结算。
+  使用确认方案中的可读蓄力与落点预警；落点锁定方式、范围、伤害、冷却、
+  击退数值、受击中断策略尚待确定，本轮不写入默认战斗数值。
+  保持正面、不继承通用病原体的持续旋转和呼吸缩放，不用向右瞟的旧立绘。
+
+六、下一接入批次要修改的精确位置（本轮均未修改）
+
+新增专用文件的建议：
+  scripts/pneumococcus_animation.gd：6组图集采样、发射帧/死亡/双向受击。
+  scripts/adenovirus_animation.gd：5组图集采样、正面跳跃与重砸时间线。
+  scripts/adenovirus_attack.gd：蓄力/腾空/落地/恢复状态、唯一落地事件及取消规则。
+  data/pneumococcus.json、data/adenovirus.json：经审阅后从本次候选描述转换，
+    采用Godot内部res://资源，不读根目录Python、Lua、Maker或网络。
+
+公共文件需要由接入任务按最新快照合并，不能整文件覆盖：
+  data/config.json：Data.units、Data.cellRadii、CellFrames.kinds/assets，
+    以及明确确认后的弹丸/攻击数值；不把未知角色回退到现有红细胞图。
+  scripts/simulation.gd：新攻击模块生命周期、单位置步进/优先级、死亡保留时间。
+  scripts/combat.gd：肺炎延迟发射入口、新style、真实来袭侧记录与重砸唯一伤害事件；
+    保留血小板抗击退、B细胞增益、树突状细胞与本轮其他并发机制。
+  scripts/world_view.gd：新采样分支/贴图预载、专用弹丸16帧渲染；当前只给granule
+    使用图集，其他style走通用弹丸表现，不能仅填一张PNG就算新弹丸接入。
+  scripts/cell_shape.gd：新角色保持直立、静止主体hull与逐帧选取轮廓；
+    不能让新kind落入“angle=heading+time*.16+id*.37”的旧旋转分支。
+  scripts/navigation.gd：病原体名单/关口准入补入两个新kind；当前明确名单只有
+    virus/wolf/shadow/herpes/helicobacter，漏加可能绕过未失守关口的限制。
+  scripts/scenarios.gd：同一病原名单、关口扩散与场景投放；新单位不能靠预览表部署。
+  scripts/save_game.gd：明确新单位/施法状态/弹丸字段的验证与恢复，测试取消和
+    已触发落地事件不重放。若选择不持久化施法，需明确读档时的取消边界。
+  scripts/influenza_colonies.gd、infection_purification.gd：与净化任务协同，只在
+    新病原确实加入感染投放时扩展归属；不要把两种新角色误计为流感施工人口。
+  data/asset_manifest.json、data/source_manifest.json：仅在最终接入时登记精确资源
+    哈希和统计；character_catalogue.json 的预览状态也在战斗验证通过后才更新。
+  HUD如需角色数值/指令介绍，由当前界面任务合并；本轮不抢改。
+
+统一方向规则：在命中时把来袭向量转到当前渲染的局部坐标，再决定hit-left/right，
+并锁定至该次受击结束。若角色整体镜像，局部左右也要反转，不能仅按世界X判断。
+腺病毒正面不镜像时直接沿相同投影约定选左右；垂直来袭需稳定回退规则，
+不新增未确认的上下方向美术。状态/持续伤害没有真实来袭向量时也需明确回退。
+
+七、可复现交付与安装预演
+
+从仓库根目录执行（图像依赖沿用本机保留的离线目录，无需安装旧引擎）：
+  PYTHONPATH=.tmp/vascular-refinement-python python3 scripts/godot_tools/install_pathogen_delivery.py --dry-run --report godot/planning/bug-audit-20261021/pathogens-delivery.json
+
+结果：16组/276帧、复制0文件、素材警告0、审计窗口内监测到的公共文件变化0。
+--report 只写本次审核JSON与旁边的候选登记JSON，拒绝写入原素材和游戏data/scripts。
+可部署前的候选描述位于 pathogens-delivery-candidates/，每份明确 battleEnabled=false。
+它们保留逐帧矩形、毫秒时长、像素锚点、事件、视觉轮廓和资源内部路径。
+流感额外保留现有 battleRegistration，不盲目用源预览420px锚点替换现役275px锚点；
+锚点、occupancy与轮廓坐标必须成套使用。
+
+可选的独立暂存命令，目录必须不存在：
+  PYTHONPATH=.tmp/vascular-refinement-python python3 scripts/godot_tools/install_pathogen_delivery.py --apply --stage-dir .tmp/pathogens-audit-20261021/staged-delivery --report .tmp/pathogens-audit-20261021/stage-report.json
+本轮已在该目录实做：23个源资源/数据文件+3个生成候选登记，逐一校验SHA-256，
+检查所有候选图集依赖都落在暂存包内；另有delivery-manifest.json记录交付。
+26个计划内现役目标的存在性/哈希保持不变（含尚不存在的候选登记）。
+负向验证：--apply --stage-dir godot 被明确拒绝，没有进入游戏安装。
+再次暂存请使用新的目录名；工具拒绝覆盖已有交付目录。
+
+证据：
+  pathogens-delivery.json                    全帧/源哈希/轮廓/时长/现役对照与copyPlan
+  pathogens-mechanism-map.json               已接入与待接入机制、事件时刻、待定数值
+  pathogens-staging-verification.json        独立暂存哈希与现役资源未变证明
+  pathogens-installer-guard.json             禁止直接写入当前Godot的保护验证
+  pathogens-targeted-runtime-evidence.json   定向测试与并发净化语义说明
+
+八、定向运行检查与并发说明
+
+本对话执行 tests/influenza.gd：202/202通过，涵盖所有20帧可到达、命中启动受击、
+死亡隐藏、建造动作、左右朝向和实际渲染分派。没有把它称为原生全画面验收。
+首次执行旧 tests/influenza_fortress.gd：38/39，旧断言要求“杀光即cleared=true”。
+隔离探针确认杀光后再经过60秒：存活病毒0、存活要塞0、pending=0、produced仍4，
+purification=waiting_red、cleared=false，没有继续出生。
+这是正在并行接入的红白驻守20秒净化语义造成的旧测试冲突，归净化任务处理，
+本轮没有修公共代码或原测试。其最新共享测试报告已为39/39；本对话读取该结果，
+没有把它表述成本轮额外重跑的验收。详见独立证据JSON。
+
+后续接入至少验证：左右来袭与镜像组合、正面跳跃、667ms只生成一颗弹、
+820ms只结算一次重砸、遮挡/关口/同平面、暂停/换令/死亡取消、读档不重放，
+以及1600ms尸体完整播放后持续隐藏。最后再做Godot导入、定向规则回归和原生画面。
+本轮未部署新战斗kind，未完成这两种新角色的战斗、手机、全量玩法或全量画面验收。

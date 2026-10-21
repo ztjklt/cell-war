@@ -1,0 +1,116 @@
+腺病毒独立候选模块交付
+日期：2026-10-21（Asia/Shanghai）
+状态：独立攻击服务、原帧动画采样、候选数据与隔离验收完成；未接入生活入侵。
+
+本分工文件
+- godot/data/adenovirus.json
+- godot/scripts/adenovirus_attack.gd（WarAdenovirusAttack）
+- godot/scripts/adenovirus_animation.gd（WarAdenovirusAnimation）
+- godot/tests/adenovirus_attack.gd
+- scripts/godot_tools/prepare_adenovirus.py
+- godot/planning/bug-audit-20261021/adenovirus-registration-candidate.json
+- 本状态文件（同时是接入契约）
+
+本分工未修改 config、simulation、combat、world_view、navigation、save、HUD、
+场景准入、图鉴或全局资产/来源清单。共享工程中其他聊天正在修改这些文件，
+不能把它们的变化归于本分工。没有生成美术、复制资产、提交、推送或远端构建。
+
+一、数值与动作
+初始候选：hp=180，speed=1.8，vision=9，damage=18，radius=2.4，
+cooldown=2.4s，普通存活单位击退0.35。unitSpec 已有 pathogen:true；
+仍须由主集成注册到 Data.units 后才会被中央病原判定纳入。
+range/castReach 暂按2.4，pop=0 为候选配置；不修改现役流感建造与人口。
+落点在起手锁定；最远起手距离2.4，不把视野9当远距离跳跃范围。
+攻击不移动本体，宿主须在起手前寻路接近并在蓄力/恢复期间停止移动。
+单次冲击820ms，恢复结束1400ms，冷却从起手计时；取消不会返还冷却。
+以目标逻辑中心是否在半径内判定区域，不把alpha碎片/冲击波当命中外壳。
+
+保留现有5组×16=80帧，无新美术、镜像或程序呼吸：
+move 1333ms循环、slam 1400ms单次、hit-right/hit-left各1000ms单次、
+death 1600ms单次结束隐藏。slam第10帧起点恰为820ms；按原逐帧时长采样。
+全部正面、rotation=0、mirror=false，跳跃仅由原贴图表现。
+锚点稳定为(256,440)，原图集与路径均已存在于 godot/assets/image/。
+离线 prepare_adenovirus.py 从原交付候选重建精简定义与5张图集哈希清单，
+只写上述独立JSON，不修改原始候选、图鉴、公共配置或全局清单。
+
+二、宿主API契约
+service = WarAdenovirusAttack.new()
+service.bind_world(damage_callback, geometry_callback, knockback_callback)
+三个回调都必须绑定；缺失时禁止起手/推进活动攻击，绝不降级直接扣hp。
+
+geometry(from:Vector2,to:Vector2,lane:int,source:Dictionary,
+         target:Dictionary,purpose:String) -> bool
+purpose为cast/impact/target/push；cast和impact时target为空。
+只接受严格bool true。适配器必须检查真实地形孔洞、墙、门、平面身份和
+真实可达关系，同点查询也必须检查。不得以距离或画面重叠代替拓扑。
+target阶段应允许攻击目的关口本身的合法近侧表面，但不得忽略其后方遮挡。
+有多个通道口的关口须由宿主提供当前lane的真实目标点；每步每id唯一。
+如使用几何代理，damage回调必须映射到真实actor并同步返回hp/存活状态。
+service自身先筛选同lane，再检查锁定点到目标的几何；不执行通道转换。
+冲击发生时先确定全部目标和遮挡，再调用伤害；本次击破的门仍遮挡本次冲击。
+
+damage(source:Dictionary,target:Dictionary,amount:float,info:Dictionary) -> void
+source/target为宿主提供的实时actor，info包含cause=adenovirus_slam、castId、
+point、lane、impactAt。宿主应调用已有伤害系统保留护甲/科技/死亡/关口逻辑。
+建议使用独立cause，避免 WarCombat 的普通攻击自动击退与本服务击退叠加。
+
+knockback(source:Dictionary,target:Dictionary,displacement:Vector2,
+          info:Dictionary) -> void
+只对伤害后存活普通unit调用，building不击退。服务按0.05步长检查几何并
+裁短至最多0.35；宿主仍须应用队形/占位与血小板抗推修正，并保持原lane。
+不会通过改变画面偏移强行写入新导航位置。
+
+begin(source,aim:Vector2,sequence:int) -> castId，失败返回0。
+actor必须含id/kind/category/faction/hp/x/y/vesselLane，orderToken默认0。
+sequence由宿主对每个actor递增；重复、越界、冷却中或无效调用不消耗序号。
+IDs在同一会话/存档内不可重用。最多4096个来源记录，满额安全拒绝新来源。
+未改公共构造器；当前正式游戏不能直接spawn未注册的adenovirus。
+
+advance_simulation(delta,entities) 或 advance(real_delta,entities,paused,time_scale)
+二者选一，不得重复推进。entities包含施法者和当前单位/建筑字典，每id唯一。
+碰到死亡、缺失、换orderToken、换lane、换阵营或本体位移，取消当前攻击。
+hitTime高于起手记录也会取消，作为未显式通知受击时的后备保护。
+渲染不得调用推进、扣血或击退；警告圆的位置、lane、半径与剩余时间来自
+presentation(id).warning，锁定目标可以在820ms前离开该区域躲避。
+
+notify_hit(actor,toward_attacker:Vector2) 接真实受击事件；输入是宿主投影后的
+局部“受击者指向攻击者”向量。x正选hit-right，负选hit-left；垂直沿用前侧。
+一个受击动作中再次受击不切换方向、不倒回帧；起手前被打断不产生冲击。
+damage回调可直接notify_hit/notify_death打断另一个蓄力者；时间推进、begin、
+bind_world、snapshot/restore仍禁止重入。几何回调应只读世界状态。
+notify_death(actor) 要求hp<=0，重复通知不重播死亡。
+cancel(id,reason)供外部显式取消（冲击回调中不得重入cancel）。
+
+animation = WarAdenovirusAnimation.new()
+animation.sample(service.presentation(id),moving) 返回clip名、frame、原图path、
+rect、anchor、rotation、mirror、scale、hidden。此采样是纯显示，没有动画事件
+驱动伤害。宿主world_view仍需适配该返回结构，并提供独立死亡保留时间。
+
+三、存档契约
+snapshot()输出纯JSON数据；restore(dict)事务性校验后替换，不执行事件/伤害。
+保存clock、nextCastId、来源序号、冷却、受击侧/开始时刻、死亡时刻和活动cast。
+规则必须与当前定义一致；未知字段、重复castId、无效时间/坐标/整数、过期仍
+未结算的冲击及提前标记resolved的冲击均拒绝。拒绝后服务原状态不变。
+在冲击/几何回调中snapshot返回空字典，restore返回false，避免半次扣血存档。
+宿主须在同一个固定步边界原子保存世界actor与服务，不能混用不同时刻快照。
+载入前冲击会在剩余时间到达后结算一次；载入已结算冲击不会重放。
+回调不序列化，新服务恢复后必须重新bind_world；没有绑定时不推进活动cast。
+本分工未接入WarSave。正式存档schema登记、公共验证和恢复顺序仍由主集成完成。
+
+四、验证结果
+./godot/run.sh --headless --editor --import --quit：退出0。
+./godot/run.sh --headless --script res://tests/adenovirus_attack.gd：160项通过。
+证据 godot/test-output/adenovirus/results.json（本机缓存，不提交）。
+覆盖819/820ms边界、固定落点躲避、敌我/层/单位/建筑/死亡筛选、单次伤害、
+普通击退与墙边裁短、真实WarNavigation段查询的孔洞与门、同击破门后遮挡、
+所有取消原因、同一固定步互相打断、暂停/倍速/大步长、回调重入隔离、
+起手/冲击后/冷却/左右受击/死亡的JSON往返、畸形存档事务性拒绝和80帧采样。
+./godot/run.sh --headless --script res://tests/run_tests.gd：52/52通过。
+python3 scripts/godot_tools/audit_integrity.py：1928文件、479365948字节，
+无missing/mismatches，manifestTotalsMatch=true；默认未重查根目录source assets。
+
+五、仍需主集成
+Data.units登记及站立主体hull/radius/occupancy审核；真实几何/关口适配；
+战斗调度与起手时机；hit/death事件；world_view警告与原帧采样；
+WarSave校验/恢复；场景准入与生活入侵；原生画面、手机与完整玩法验收。
+以上未完成项不因160项隔离检查通过而标为已完成。

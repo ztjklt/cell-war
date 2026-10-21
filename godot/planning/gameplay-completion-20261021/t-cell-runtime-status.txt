@@ -1,0 +1,110 @@
+T细胞独立运行模块交付 · 2026-10-21
+
+素材阶段更新：install_t_cell_assets.py已将4张原图集、原立绘和data/t_cell.json共6项运行资源安装/登记；56帧、GPT原稿哈希和原版6帧ZIP字节一致。
+本次只新增data/t_cell.json清单项，其余5张图片此前已在Godot。来源核对见t-cell-assets-installed.json及素材目录runtime-install-audit.json。
+仍未注册单位或接共享入口，runtimeIntegrated=false。下文接线步骤1中的素材/清单登记现已完成，后续只需做角色注册及实际玩法接线。
+
+状态：独立规则、实际56帧采样、素材数据与安装候选完成；85/85专项通过。
+没有注册Data.units.t_cell，没有开放训练，没有改simulation/combat/world_view/config/save共享入口；素材安装阶段仅更新asset/source清单。不能写成“已经能在实战训练和瞬移”。
+没有改回普通走路，没有修改B细胞，也没有新生图或更改原图/逐帧时长。
+
+交付：
+- godot/scripts/t_cells.gd：class_name WarTCells，独立服务与采样、规范快照/原子恢复。
+- godot/data/t_cell.json：首轮单位/武器/瞬身参数、4组56帧、锚点/轮廓/碰撞体、刀的原图区域。
+- assets/image/t-cell-cartoon-20261021/runtime.json：同一数据的来源副本。
+- scripts/godot_tools/prepare_t_cell_runtime.py：离线数据准备、已有运行图片字节校验、安装候选生成；不修改共享文件。
+- scripts/godot_tools/install_t_cell_assets.py：使用已经准备好的runtime.json安装并更新asset/source清单；不隐式重新生成数据而重置后续平衡数值。
+- godot/planning/gameplay-completion-20261021/t-cell-install-candidate.json：单位定义、半径、CellFrames及6项清单候选。
+- godot/tests/t_cells.gd：独立小型规则、全部帧时长/图集、实际飞刀像素、原生已批准组织导航适配测试。
+
+首轮自主默认
+独立t_cell；barracks tier2；生命105，人口2；蛋白25/葡萄糖20/氧气5；训练22秒；视野11；半径0.65。
+普通移动预算速度3.0世界单位/秒，表现只用已确认的瞬身16帧，不增设行走循环。
+投刀damage14/range6/cooldown1.4/speed16；飞刀碰撞半径0.08。
+投刀原图从第8帧（零基7）首次出现独立飞刀，前7帧累计550毫秒；真实出手点据此设为0.55秒。
+投刀总1.26秒、瞬身总0.945秒、受击0.845秒、死亡1.44秒，逐帧时长逐项照原动画JSON保留。
+原投刀预览loop=true只用于美术审查；运行投刀是一次施放，恢复后不会自行循环出刀。
+
+瞬身安全与预算
+- set_route只接收宿主已经批准的路径，包含真实x/y/lane或原导航p:Vector2/lane；内部转换为普通JSON坐标。
+- 每份路径有单调递增sequence；旧sequence拒绝。宿主orderToken改变会中断旧路径/未出手动作。
+- 准备0–240ms、快速推进240–415ms、随后落地恢复至945ms；没有垂直跳跃。
+- 每个完整945ms节拍只获得speed×cycle×移动倍率的距离额度，最大不超过5.5个身位。
+  默认额度2.835世界单位，而不是把美术演示5.5身位硬搬到175ms里。首次可前置使用一轮额度，长期平均受节拍限制。
+  本轮4.745秒实际位移14.174995；不会按飞身阶段的瞬时速度连续跑。
+- stop/重下命令保留nextBlinkAt，不能额外刷额度；不累计站桩储能。减速缩短跳距，新减速可降低途中剩余额度。
+- 每跳选择路径同层前缀中的最远可用点，起点到落点完整直线及落点都必须合法。
+  路径拐弯若不能直连，会停在此前合法节点；没有用动画跨墙或穿洞。
+- 推进途中继续复核剩余完整段、下一小段和落点；动态阻挡/落点被占/预算下降时停在最后安全位置并请求重新寻路。
+- 不自动执行任何跨lane瞬移。遇到下一路径点lane不同，发t_route_required(reason=lane_transition_required)，原地等待宿主已认证的关口交接。
+  本阶段故意没有猜测关口是否失守或实现隐式跨层传送。未接关口交接时，T会停下，不会偷偷跨过去。
+- 8个以内、330ms以内的拖影来自真实历史位置，不是凭空拉出的假坐标；第7、8帧只隐藏当前身体，拖影应继续绘制。
+
+投刀规则
+- begin_attack检查存活、同层、射程、几何和冷却，进入真实前摇；没有即时扣血。
+- 前摇/动作进度和冷却统一用宿主倍率接口推进；B×2、脑×1.15、树突×0.7可直接相乘为1.61。
+- 释放时再次核查目标与几何，方向按该时刻目标位置确定；出手后dx/dy固定，不追踪移动目标。
+- 飞刀具有独立ID、位置、出生时间、剩余射程；16单位/秒的真实直线运动，上限6单位后消失。
+- 每段使用扫掠圆/方框接触，解决薄目标与大dt漏判；同一飞刀最多命中一次。
+- 友方单位可穿过而不伤害；友方建筑挡刀不伤害；敌方建筑和敌方单位按最近接触消耗飞刀。
+  不同lane的投影目标不命中。blocksProjectiles=false可表达宿主已经确认打开的门，不能未经规则擅自设为false。
+- 地形/关闭关口必须由宿主几何接口拒绝；未绑定几何时发射失败，不能默认视为通畅。
+- 受击和死亡打断尚未出手的攻击；已出手飞刀独立继续飞行。命令token变化也会打断旧前摇。
+- 已命中飞刀在伤害/事件回调前从活跃列表消费；快照保存fired提交位与独立飞刀ID，恢复不立即出刀/扣血，不重放已消费命中。
+
+素材与渲染合同（避免两把刀重影）
+全部原图、透明alpha、锚点、56张原帧、四张原图集保持不变，运行副本逐字节一致。
+原投刀第8–11帧内已经画了脱手刀。tThrow.bodyRects[frame]给出角色主体局部矩形，角色渲染必须只画这个矩形。
+源矩形 = 当前atlas帧左上角 + bodyRect；目的矩形 = (-anchor + bodyRect.xy)×原scale，尺寸bodyRect.wh×scale；不能重新居中。
+独立飞刀用data.projectileArt.atlasRect从同一原atlas取像素，原图朝左，所以按flightDirection.angle()+PI旋转。
+实际原刀区域x1936/y1035/w139/h74；保留透明边缘。该区域只是显示，不替代0.08的物理碰撞半径。
+outlines取最大主体连通轮廓，不把脱手刀算进角色选择轮廓；hull是独立椭圆本体，避免整张透明画布变成碰撞体。
+T应正面保持upright，只按朝向水平镜像；不能继承旧兜底单位的整身旋转。
+sample返回hidden时仍先画afterimages，再决定是否画当前身体；否则瞬身两帧会连拖影一起消失。
+
+公开API
+bind_world(geometry, landing, damage=Callable(), radius=Callable(), multiplier=Callable())
+  geometry(from:Vector2,to:Vector2,lane:int,actor:Dictionary,purpose:String)->bool，purpose为blink或knife。
+    blink必须包含原导航clear_segment、建筑movement_clear等，不能只看图片投影；关闭关口也必须被拒绝。
+    knife检查地形与门；实体建筑的扫掠碰撞由本服务执行，不能让目标建筑中心使整条瞄准线无条件失败。
+  landing(point,lane,actor)->bool：完整地形与真实单位/建筑净空检查，包含本体半径/轮廓。
+  damage(source,target,amount,direction)：接game.combat.damage(...,false,"t_knife",direction)，既有伤害/防御倍率只应用一次。
+  radius(target)->float：建筑返回半边长，单位返回真实物理半径；T用data.radius。
+  multiplier(actor,field)->float：moveMultiplier需要包括实际地形/流向/状态；attackSpeedMultiplier接现有B/脑/树突的统一入口。
+
+set_route(actor,approved_path,sequence)->bool
+stop(actor)：取消当前路径/前摇，保留移动节拍门槛。
+begin_attack(actor,target)->bool
+notify_hit(actor,at=-1)：宿主对T造成实际伤害后调用，包括死亡；打断前摇/在途瞬身，并准备受击/死亡采样。
+advance_simulation(dt,all_entities)->bool：固定模拟步唯一入口；必须传全部实体（包括建筑），否则建筑挡刀无法工作。
+advance(real_dt,entities,paused,time_scale)：只用于独立/墙钟适配；与advance_simulation二选一，不得同帧调用两次。
+sample(actor,time=-1)：返回key/clip/frame/bodyRect/hidden/afterimages，时间默认服务模拟时钟。
+sample_state(state,time)：纯采样器，专项逐帧检查使用。
+state_for(id)、projectiles()：只读副本。
+snapshot()、restore(dictionary)、validate_snapshot(dictionary)：规范数据，无Callable/对象/Vector2持久化。
+drain_events()：一次性消费t_attack_start/t_knife_spawn/t_knife_impact/t_knife_blocked/t_blink_depart/t_blink_arrive/t_route_required。
+
+后续共享接线顺序（本阶段均未实施）
+1. 核对t-cell-install-candidate.json，将unitDefinition/radius/CellFrames/顺序加入config；将新增data副本加入asset_manifest/source_manifest并核哈希。
+   原4张atlas和立绘已在Godot且已核对，只有数据/注册是新增。prepare脚本不直接写共享清单。
+2. simulation持有一个WarTCells，绑定上述回调；每个未暂停模拟步只advance一次，保持独立clock与宿主state.time一致。
+   新局空状态从clock=0开始；旧存档没有T区块时可restore空schema/clock=载入的state.time/nextProjectileId=1/actors={}/projectiles=[]。
+3. T单位分支必须完全代替普通go/fight/launch，防止一边瞬身一边普通走路，或同时即时伤害/双飞刀。
+   仍执行原状态持续伤害/器官状态；T自己的冷却与投刀进度由服务权威管理。
+   不把本服务飞刀再塞入combatProjectiles，避免通用弹丸循环再次处理。
+4. 原导航回调批准后set_route，sequence使用单调导航请求/路径代号；needsRoute时从当前位置申请新路，不能把T直接挪到终点。
+   下一阶段必须实现并测试已批准路径上的真实关口handoff，逐个检查开关/失守/邻接；未实现时保持停止。
+5. combat.damage对T的实际伤害接notify_hit，包括致死；渲染接专用sample、bodyRect/afterimages/独立刀，T尸体保留1.44秒。
+6. 单位/服务状态一起原子存档，先validate_snapshot再替换宿主状态，恢复后重新绑定回调；读档不调用任何伤害/出刀事件。
+   仅在模拟步边界保存宿主+服务，不能在一个伤害回调执行到一半时拆开保存世界和服务。
+7. 完成真实训练、地图移动/关口、投刀命中与打断、B/脑/树突联动、渲染和存读档专项后，才能将runtimeIntegrated与图鉴状态改成现役。
+
+验证
+python3 scripts/godot_tools/prepare_t_cell_runtime.py：56帧、出手第8帧/0.55秒、5张原素材字节一致，共享文件未写。
+./godot/run.sh --headless --script res://tests/t_cells.gd：85/85。
+  覆盖全部56帧的实际采样与逐帧时间、刀区域实际透明像素、位移预算/重下命令/减速/暂停/途中阻挡/落点/跨层拒绝；
+  真实飞刀前摇/飞行/单次命中/可闪避/地形与友敌建筑/薄目标/稳定接触排序/攻击倍率/受击死亡打断；
+  前摇、已出手和已命中存档、途中瞬身JSON往返、重复ID/坏方向/坏fired位/伪造预算原子拒绝；
+  原生已批准胃组织nav segment适配及跨层边界停止。该导航测试使用现役spear的同siege profile作为保守几何代理，未伪称已注册T碰撞集成。
+实际证据：godot/test-output/t-cells/checks.json（本机忽略缓存）。
+本阶段没有改共享hooks、提交、推送、远端构建、其他器官机制或新美术。

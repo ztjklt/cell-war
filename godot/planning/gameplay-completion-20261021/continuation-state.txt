@@ -1,0 +1,76 @@
+持续目标仍active，完整要求见requirements.txt，当前证据矩阵completion-evidence.txt。
+本回合分类progress：新增真实玩家培养闭环、格点偏移修复、病原关口身份和旧目标/死亡接触bug修复；接收药品正式闭环并继续派工。不要将这些局部完成当作全目标完成。
+
+根本回合已经完成（不重做、不重生图）
+1. WarData.is_pathogen统一旧五身份与显式Data.units.pathogen:true；navigation/scenarios/combat五处接线。
+   测试初7/10，最终pathogen_identity13/13，真实右肺门击败/收复/开闭，不自动注册新病原。
+2. 培养床原有farm任务没有UI，根补command_wheel/main/执行合法性/图标。
+   原生真实原红160蛋白125糖→建store30/farm15→点击培育、暂停排队/继续→两个实际交付，糖141、蛋白115。
+   farming_ui根58/58，UI线程追加说明/培育运输显示断言后61/61，无资源单位注入。
+3. 上述原生发现菜单建造逆镜头坐标985变984.99994，错误floor左移一格，导致后续路线卡死。
+   economy.build_point统一恢复.0005内整数边界，移除radial重复代码，两入口同规则；实际固定落点验证。
+4. combat.fight和cellShot释放点复核隐藏/可见、存活/阵营；不影响已飞出弹丸命中隐藏目标。
+   contacts外层数组中后继攻击者被前者杀死后曾死后反击，现每个源执行前复核hp。
+   targeting_safety原隐藏基线10/12、接触基线13/14，最终14/14；dendritic49、B39、building_attack60通过。
+5. 根最终editor/import完成无ERROR；资产+原稿1928/479365948字节全部一致，见.tmp/root-round-final-*。
+   基础52、玩法18通过；最后再跑modes和正式medicine110见各log，下一次先读结果勿盲目复跑。
+   farming最终截图已目视，均test-output本机缓存；未提交/推送/远端构建。
+
+此前稳定交付
+- 三资源5站规则35/原生7/资源UI27；五站各两轮真实运输与载货保存116。
+- organ_functions独立78、真实集成45、器官UI103；原红真实抵达7类器官58+持续经济合计71。
+- 原红建仓/采蛋白/农床到1101秒，新糖320，原糖1080过期；路线分支隔离lifeRun，不代替整局。
+- core/barracks/store/lab/clinic/house六张GPT原始透明图已接，不改alpha；原生26；3类资源站图已接。
+- clinic同层/地形/孤儿弹丸来源层修复15；原始单红首白79；自然左右肺life101、life_run701。
+
+已有七个聊天，hostId都local。用户明确授权持续派任务，继续用现有聊天，不新建。
+01a15a67-ce29-7013-b5c1-e37fedec4c29 UI：
+  药品UI显式149已完成，药品负责人还独立正式无staging149通过（medicine-integration-status）。
+  根已告知无需重复相同149；当前培养文案/状态61已过，正在补沙盒extinguish缺按钮和原生专项。
+  拥有hud/command_wheel/main火灾相关小块。后续新角色真正集成后再补玩家训练/说明。
+  cursor 8c49c640-3827-4988-bcb1-1a27a0631b1a:13。
+01a15817-fc76-7bb2-aebe-1877b122d39b T/细胞：
+  T独立85、56帧源与6资源登记已完；t-cell-runtime-status/t-cell-assets-installed报告。
+  已获明确药品SHARED_HOOKS_RELEASED，当前正式T宿主适配与公共simulation/combat/save/world_view/config/cell_shape接线。
+  先前还只读完成疱疹计划（herpes-ambush-plan/read-only-audit），交病原线程实施，不占该实现。
+  T沿原认证跨层连接按真实预算分段瞬身，不能只改lane跳4~8单位；正式训练/关口/投刀/原图刀分离/保存/原生待验。
+  cursor 68f07f0c-3230-4d16-b90f-921ca2c69b2f:15。
+01a15816-34ca-7bc0-b362-e20009060d96 导航战斗：
+  占地64、初对角工作点44、construction_access9、opening79通过；building_approach在navigation、go仅小块。
+  继续解决真实bootstrap的核心987.5/1905.5→兵巢981.5/1905.5布局：march-4新进程仍卡，preferred点合法但被核心隔断可能是原因。
+  根已给具体快照/log，要求保留原失败布局而非仅绕开；不改红位置/范围/图层，施工候选要实际可达。
+  cursor 7af9a2d1-f678-4812-9dbc-a1856def9726:18。
+01a15a2f-1e6b-7130-9aa2-ca586ed98d4b 生活/整局：
+  bootstrap_battle用原单红/160蛋白125糖/seed39462、真实life风险和生活选择，正常训练spear150HP15伤害。
+  曾误把neutrophil4/1草案当正常生产，现已更正报告；不能恢复这个误认。
+  第1-4轮紧凑布局/拥堵保留失败快照，已交导航修；当前开阔合法基地真实采4批蛋白→core/barracks/farm→2红+spear，正在赴肺。
+  未通过完整净化/康复前不要写自然开局通关。没禁疫情/没传送/没加资源。
+  cursor b328b1eb-c49d-4193-aa7e-1f414670bf96:15。
+01a15a42-388c-76a0-be14-27d8b437373c 药品：
+  退烧止痛药正式完成并释放hooks：medicine-integration-status SHARED_HOOKS_RELEASED/FEVER_RUNTIME_RELEASED/NORMAL_PLAYER_UI_VERIFIED=true。
+  正式模拟110、泡泡112、原生18、图鉴同步57、玩家无staging149。根审查墙/形状/脑加速/attackmove/guard都已修。
+  已派下一项独立vaccine_antibodies/data/采样/测试，公共hooks仍让T独占。
+  根首轮默认price120/hp90/speed2/lifetime90；敌方正攻击1秒CD掉1枚，致死可最后掉落，12秒固定地面，伤8半径.45一次消耗，单助手12全场128，源死不删抗体。
+  不接受环境/状态/自己/同盟/零伤；回调分类当前病毒virus/herpes、未来腺病毒显式扩展；暂停/去重/保存/扫掠接触。
+  化痰药保留该聊天最新用户待确认提案，本批不擅改，不新生图。
+  cursor efd5c98d-1790-4444-9e24-93becd66549c:18（后续疫苗已dispatch）。
+01a1587d-2487-7982-af7f-934c90397ed0 病原/建筑：
+  肺炎链球菌独立207已报通过，报告收尾。曾被用户最新腺病毒预览请求打断，已完成预览后根续派，勿重复生成80帧。
+  肺炎保持hp120/dmg12/range7/cool1.8/speed2.1，667ms吐核、左右受击、96帧，pathogen:true，未共享集成。
+  已安排肺炎报告完成后接独立herpes_ambush服务/data/采样/测试，沿只读计划，原herpes身份，3秒静止→1秒入地，2.5触发→1秒出土，1.5范围/12伤/4CD/400ms提交/强推3，真实几何和血小板抗推。
+  旧远程/contact未来启用要互斥；本批无共享hooks，不自动自然感染，不生图。
+  cursor fab12603-eec0-46a9-b670-88200b296531:12。
+01a15ac5-2288-7763-a327-bd2f10d0a14c 图鉴/独立敌人：
+  腺病毒独立160完成，报告在planning/bug-audit-20261021/adenovirus-runtime-status.txt，不是gameplay目录。
+  当前已派巨噬macrophage独立服务/data/采样/专项：现役siege（不是heavy），保留380HP/50伤/3.5CD/55蛋白25糖/workshop tier3/肝心限制；吞噬改近身range2.2为自主默认。
+  沿当前v5 34帧3140ms动作，实际940ms咬合一次50伤，不直接删除满血敌人、不吸血/送资源；击杀归属确认后才吞噬成功，不吞建筑；其他move16/hit12/death16闪两下原样。
+  先独立，不改公共hooks/训练/图鉴现役；候选安装合同待交。
+  cursor ac6e5ced-f6aa-4d1b-9478-301236e95a96:10。
+
+下一步优先
+读当前wait_threads/report确认新进展；接收T实战/原生/存档证据，再释放公共入口给病原真实接线。
+药品第一种正式结果已完成，第二种疫苗仍独立，不把它与其他四药都标成开售。
+资源/器官/建筑图不重生成；新病原需要明确病毒/细菌分类接药物判定，现泡泡只识别virus/herpes，腺病毒正式注册时必须补。
+继续处理bootstrap真实施工/拥堵阻塞并验完整净化；随后合理规模性能、旧模式与保存回归。
+当前无根长运行任务需等待；有根测试PTY可能已完成，读.tmp/root-round-final-*即可。
+已有10分钟heartbeat沿现有聊天监看，无需新建。不得因轮次结束把goal标complete或blocked。

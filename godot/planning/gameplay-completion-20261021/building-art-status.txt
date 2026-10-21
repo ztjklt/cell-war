@@ -1,0 +1,112 @@
+首批友军建筑静态美术交付
+日期：2026-10-21（Asia/Shanghai）
+状态：三张静态美术已选用并安装运行副本；渲染器与总清单待协调任务统一接入。
+
+一、已交付
+核心胞巢(core)：红粉色单大育胞舱，单一大穹顶、粗暗红轮廓、简洁前入口。
+分裂兵巢(barracks)：奶白色双分裂舱，相连双腔、淡紫阴影、小薄荷色收口。
+储运囊(store)：橙色低矮物资收发站，宽收发口、短接收托板、两个内嵌储物隔间。
+三张各自独立、透明背景，无文字/人物/面孔/场景，无新增动画。
+采用现有简化流感要塞与红/白/B细胞参考的粗深色轮廓、圆润几何、明快平涂和有限高光。
+没有使用旧membrane-buildings的写实发光组织纹理，没有重画已确认角色。
+
+原稿、选用图、提示词与来源：
+  assets/image/friendly-buildings-20261021/
+  source-core-v1.png / source-barracks-v1.png / source-store-v1.png：原始GPT PNG，保留原字节。
+  core-v1.png / barracks-v1.png / store-v1.png：选用PNG，仅把alpha<4/255的几乎不可见杂边归零。
+  不裁切、不缩放、不重绘原画；画布和主要轮廓保持不变。
+  generation.json：内置image_gen模式、每张原始工具输出路径、参考哈希、原稿与选用图哈希。
+  prompt-*-v1.txt及generation-prompts.json：全部最终提示词。
+  references.json：流感要塞、当前红白/B细胞原画来源与SHA-256。
+
+运行副本：
+  godot/assets/image/friendly-buildings-20261021/{core,barracks,store}-v1.png
+  godot/data/friendly_buildings.json
+四个副本与选用原稿/独立描述文件逐字节匹配；运行只需Godot工程内资源。
+
+二、锚点、大小与轮廓
+全部1254×1254 RGBA，alpha范围0..255，四边全透明，主连通形体比例100%。
+已逐张查看原图及64px、96px缩略图，单舱/双舱/低矮收发站在缩小时可区分。
+锚点按三分之四俯视的可见基座中心人工审阅，并检查点位alpha与轮廓合法性。
+visualOutlinePx由alpha>=80的320×320采样提取，再按3原图像素容差简化；
+仅供视觉检查/可选选取轮廓，绝不能直接用作物理碰撞体。
+
+core: 核心胞巢
+  texture=image/friendly-buildings-20261021/core-v1.png
+  anchor=[0.5, 0.70175439]，基座像素锚点=[627, 880]
+  occupancy=0.9784689，原版size=3
+  非零alpha边界=[13, 178, 1240, 1104]，视觉轮廓点数=205
+
+barracks: 分裂兵巢
+  texture=image/friendly-buildings-20261021/barracks-v1.png
+  anchor=[0.5, 0.66985646]，基座像素锚点=[627, 840]
+  occupancy=0.97448166，原版size=3
+  非零alpha边界=[17, 329, 1239, 1001]，视觉轮廓点数=224
+
+store: 储运囊
+  texture=image/friendly-buildings-20261021/store-v1.png
+  anchor=[0.5, 0.67783094]，基座像素锚点=[627, 850]
+  occupancy=0.91786284，原版size=2
+  非零alpha边界=[52, 280, 1203, 1075]，视觉轮廓点数=180
+
+渲染契约与现有流感要塞一致：
+  spec = WarData.read("friendly_buildings").buildings[e.kind]
+  side = WarData.spec(e.kind).size / spec.occupancy
+  p = display_point(WarData.point(e))
+  rect = Rect2(p - Vector2(spec.anchor[0],spec.anchor[1])*side, Vector2.ONE*side)
+  textures.request(spec.texture) / textures.get_texture(spec.texture)
+贴图是直立静态sprite；不是把1254px图片当成1254单位碰撞体。
+core、barracks仍是原版size=3，store仍是size=2；kind、碰撞、hp、训练/交付规则未改。
+existingCollisionSize是安装一致性检查快照，不是新的物理尺寸配置来源。
+
+三、可复现工具与已执行验证
+准备选用图、锚点/轮廓数据与本地缩略图（无生图请求）：
+  PYTHONPATH=.tmp/vascular-refinement-python python3 scripts/godot_tools/prepare_friendly_buildings.py
+安装工具只需现有Pillow，不引入运行期Python或旧引擎依赖：
+  python3 scripts/godot_tools/install_friendly_buildings.py --dry-run --report assets/image/friendly-buildings-20261021/install-dry-run.json
+  python3 scripts/godot_tools/install_friendly_buildings.py --apply --report assets/image/friendly-buildings-20261021/install-apply.json
+  python3 scripts/godot_tools/install_friendly_buildings.py --dry-run --report assets/image/friendly-buildings-20261021/install-postcheck.json
+结果：dry-run复制0；首次apply写入4文件；后检查4文件全部哈希一致；再次apply写入0文件。
+工具只写三个归属明确的PNG与data/friendly_buildings.json，不修改公共脚本、配置或总清单。
+检查了非法report目标不能覆盖data/config.json或原稿generation.json。
+安装前后world_view.gd、presentation.json、config.json、asset_manifest.json、source_manifest.json哈希不变。
+证据在art-validation.json、install-*.json；64/96px检查图与幂等验证保留在.tmp/friendly-building-art-20261021/。
+两份新增离线Python工具已通过语法检查。
+
+四、留给协调任务的统一接入
+当前world_view.gd的core/barracks/store仍进入presentation.buildings旧图集分支。
+本轮没有修改world_view、presentation、config、asset_manifest或source_manifest。
+请在普通建筑旧图集分支前增加这三个kind的静态贴图分派与预载，保留其施工透明度、
+生命条、地图图层、投影和现有size；不要向其他建筑/角色替换美术。
+保留data/friendly_buildings.json的runtimeRendererConnected=false，直到真实渲染接入及验证完成。
+本文件与数据就绪不代表新图已经出现在真实战场。
+未运行最终Godot导入/完整世界场景渲染回归，由统一接入任务在合并后执行。
+本轮没有新增造型确认门、视频、角色动画、游戏机制数值或远端提交。
+
+统一资源清单需登记以下4条（工具未自行写入总清单）：
+[
+  {
+    "source": "assets/image/friendly-buildings-20261021/core-v1.png",
+    "path": "assets/image/friendly-buildings-20261021/core-v1.png",
+    "bytes": 1021959,
+    "sha256": "541443056ff0825e4e47b04542d84c7056558bab2b8b22fa5bb7b71d48d4d446"
+  },
+  {
+    "source": "assets/image/friendly-buildings-20261021/barracks-v1.png",
+    "path": "assets/image/friendly-buildings-20261021/barracks-v1.png",
+    "bytes": 890890,
+    "sha256": "9177fcf4ab4a5a5a27e17d8b5f8bfcffe28bdee7d1ec6d549a346caf22fb5f5e"
+  },
+  {
+    "source": "assets/image/friendly-buildings-20261021/store-v1.png",
+    "path": "assets/image/friendly-buildings-20261021/store-v1.png",
+    "bytes": 934029,
+    "sha256": "4aa980d7ff681c82e4b988f47fb44166aee17b8301294e7d55616db08e3b1a57"
+  },
+  {
+    "source": "assets/image/friendly-buildings-20261021/friendly_buildings.json",
+    "path": "data/friendly_buildings.json",
+    "bytes": 37851,
+    "sha256": "45692d27f2bcbbc9afce2455a6668c71029922b6d30b10a02067a136efc915e8"
+  }
+]

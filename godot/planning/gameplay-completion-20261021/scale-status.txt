@@ -1,0 +1,50 @@
+R9 合理规模压力验证 · 2026-10-21（进行中）
+
+独立入口 tests/gameplay_scale.gd 与 tests/fixtures/gameplay_scale_fixture.gd。
+真实life/fullbody地形，原红25留在原出生点；显式注入39友军、80既有病原和4座完成储运囊。
+目标总数：8红、20正常生产spear、4B、4树突、4血小板；56virus、8wolf、8herpes、8helicobacter。
+四战场：左右肺、肝、小肠；所有出生点按原器官/组织层、原通行多边形、建筑净空和非重叠距离选取。
+隔离lifeRun/medicineSupply/medicineRuntime与自然疫情导演，保留5资源站、地形/关口/经济/正常战斗数值。
+属于明确注入的压力夹具，不代替原单红自然疫情闭环或平衡验收。
+
+已跑2秒pilot、120秒真实固定步；前60秒移动/采集，60秒实际写文件和读取后继续60秒普通交战。
+game.update(.1)保持正常3500微秒寻路预算，不附加navigation.update加速。统计中排除验证、报告、存读盘开销。
+记录每步median/P95/max、队列/active、实体/弹丸/尸体/特效峰值、自然伤亡、停滞与错误数值、实际存档大小/耗时。
+不编辑公共simulation/combat/save/world_view/navigation；起止记录源码哈希，若并行更新则不冒称冻结最终基准。
+保留worker3灭火碰撞和bootstrap紧凑交通历史，不挪单位、删敌或降规模掩盖。
+
+优化前120秒结果：初始40友军+80病原、4完成仓库；全程1200个真实game.update(.1)。
+中位527.096ms、P95 582.715ms、最大1078.056ms、均值514.598ms；墙钟617.664秒。
+敌方自然死亡13，友军仍40，实际伤害132次、弹丸出生100/命中99，采集交付168；
+采样峰值实体154、弹丸2、尸体2、效果2、寻路队列120、pathPending120，未观察pathFailed或坏数值。
+120秒进程源码起止哈希相同；结果在test-output/gameplay-scale/checks.json和checks-snapshot.json。
+
+中途实际存盘110179字节、写5.248ms、读4.738ms、两者均返回OK。
+原夹具12项中的两项误判：直接比较orders Dictionary时整数lane=0读盘后变为数值0.0，内容相同但Variant类型不同。
+独立2秒save/restore-probe先记录首12个原始差异，再改夹具数值比较；目前9/9通过，所有154个实体的
+位置/层/HP/命令/货物与时钟一致。旧checks.json的10/12保留原始证据，不重跑十分钟120秒。
+最小回归入口：./godot/run.sh --headless --script res://tests/gameplay_scale.gd -- --restore-probe
+结果：test-output/gameplay-scale/restore-probe.json。无需修改公共save/simulation。
+
+独立包含式计时诊断（test-output/gameplay-scale/profile.json）：移动阶段10步，wall 4921.829ms，
+unitDispatch 4680.127ms；其中visible 33600次/4371.874ms，约89%墙钟。
+交战阶段10步，wall 6102.669ms，unitDispatch 5715.080ms；其中visible 48000次/5456.412ms，约89%墙钟。
+unitSeparation约13ms/步，移动约16–21ms/步，非主要热点。包含式计时有插桩开销，不能当作正式帧率。
+combat.enemy原先对所有敌实体调用game.visible，再判断是否进入reach；game.visible逐一搜索所有友军视野，
+在120单位下造成大量跨器官无效遍历。根已将combat.enemy单函数分配本线程；现先算距离，只有能胜出
+（含is_equal_approx边界/低ID平手）的候选才执行原visible，其他原条件和更新顺序逐行保留。
+旧函数参考差分 tests/combat_enemy_equivalence.gd 145/145；含死亡、同盟、faction0、隐身、建筑、边界及120组位置变化。
+其余targeting_safety14/14、B细胞39/39、树突49/49通过。
+
+优化后同一夹具120秒重新实跑：12/12，median 51.126ms、P95 61.113ms、max 356.136ms、均值52.966ms，
+墙钟63.697秒；相对原median约10.31倍、P95约9.54倍。60秒真实存读档110179字节/OK，
+位置、通行层、HP、命令、货物和时钟全一致。伤害132、死亡13、弹丸出生100/命中99与旧回放完全一致，
+终局仍40友军/67病原、寻路队列73、pathFailed0；起止源码哈希相同。
+保留原始test-output/gameplay-scale/checks-before-enemy.json及新checks.json、profile.json、pilot.json。
+新单独插桩profile：移动10步wall409.447ms、战斗10步566.666ms；visible调用不再出现，
+unitDispatch约19–20ms/步，unitSeparation约13ms/步，说明后续重点为移动/拥堵分离而非继续可见性扫描。
+这些包含式插桩数字有额外开销；正式优化幅度以未插桩的两次120秒夹具为准。
+
+原生窗口未启动；用户目前查看已打开游戏。待允许隔离窗口测量后再安排60秒真实渲染帧时；
+不会擅自关闭其它窗口或将无界面结果外推手机/无限单位。
+不会擅自关闭其它聊天窗口或将本轮结果外推手机/无限单位。

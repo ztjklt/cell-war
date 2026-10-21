@@ -1,0 +1,79 @@
+角色动作与机制接入核对 · 2026-10-21
+
+本轮完成树突状细胞。以下为当前共享工作区的真实接入状态，不代表整局或手机验收完成。
+
+1. 血小板：已接入 Godot 战斗。
+   身份 scout，黄色梯形新版。行走16、伸手连接12、牵手防御12、受击8、死亡12。
+   静止防御，邻近同阵营同通行层自动左右牵手，单侧最多一个连接，可继续从两端接长。
+   移动/死亡断链；连接检查地形与建筑；不主动追敌离队。
+   普通击退权重：移动45%、单体防御22%、牵手5%；碰撞分离使用对应权重。
+   数据 godot/data/platelet.json；机制 godot/scripts/platelets.gd；安装 scripts/godot_tools/install_platelet.py。
+   素材 assets/image/platelet-cartoon-v2-20261021/animations.json。三只成墙是额外预览，运行时由真实个体连接。
+   当前专项 tests/platelets.gd：38/38，通过。请求的五组运行图集均存在，无缺图。
+
+2. B细胞：已接入 Godot 战斗。
+   独立身份 b_cell，由现有白细胞生产建筑训练；没有射击或追敌。
+   当前有效动作：移动16、原版摇花6（每帧150毫秒）、重绘侧倒死亡12（每帧120毫秒）。
+   旧16帧摇花与旧死亡原稿保留，不是现行播放动作。用户已撤销射击要求，不应补射击。
+   停下自动摇花，半径6内同阵营同通行层且无遮挡的作战单位攻速×2，不叠加，单次伤害不变。
+   冷却、开火前摇、白细胞射击动画均同步加速；移动/死亡/离开覆盖即解除。
+   数据 godot/data/b_cell.json；机制 godot/scripts/b_cells.gd；安装 scripts/godot_tools/install_b_cell.py。
+   素材 assets/image/b-cell-cartoon-20261021/animations.json。
+   当前专项 tests/b_cells.gd：39/39，通过；6秒攻击次数6→12。原生显示检查此前41/41。
+   请求的三组运行图集均存在，无缺图。
+
+3. T细胞：动作美术可预览，尚未接入 Godot 战斗身份与机制。
+   当前有效动作：瞬身前进16、投掷小刀16、受击12、侧倒死亡12，共56帧。
+   用户最新指示用瞬身替代行走；旧走路原稿保留。
+   预览器使用起步→短时间位移→落地，约5.5个身位、175毫秒位移、330毫秒长拖影。
+   这些位移/拖影目前是预览器演示参数，不是正式地图传送规则。
+   素材 assets/image/t-cell-cartoon-20261021/animations.json；提示词 generation-actions.json、blink-revision-v2.json。
+   Godot已保存静态立绘及四张图集作为素材目录资源，但 Data.units 中没有 t_cell，world_view 无T专用动画派发。
+   因此“已复制素材/可在图鉴播放”不等于“已能训练并在地图瞬移、投刀”。
+   待接入：独立身份/生产参数、瞬身路径与落点安全、地图拖影、投刀命中和打断、存读档及专项测试。
+   用户要求的四组图均存在；缺的是运行机制及其测试，不是要求中的图。
+
+4. 树突状细胞：本轮已接入 Godot 战斗，四组动作可本地连播。
+   独立身份 dendritic_cell，由现有白细胞生产建筑训练，不攻击、不追敌。
+   移动16（1440毫秒循环）、侦察原版6（1200毫秒循环）、受击12（845毫秒）、侧倒死亡12（1440毫秒）。
+   原版侦察六张PNG、图集、WebP与根目录树突状细胞json+动画.zip逐字节一致；首尾重复是原版内容，6帧有5个唯一图像。
+   三组新动作每帧均为GPT绘制姿势，16/12/12个唯一帧；已检查拆分边距、透明背景、图集与运行副本。
+   停下自动侦察，同通行层、未被地形或建筑隔断的敌方单位被精确标记。
+   首轮平衡默认值：半径8，移动速度×0.7，攻击速度×0.7，多只不叠加，单次伤害不变。
+   移动、受击、死亡或目标离开覆盖后解除；受击结束可恢复；暂停冻结播放与模拟。
+   burrowed/concealed目标可被标记，显示地下精确位置并允许队友获取目标；不强制出土，不改写入地标志。
+   边界：疱疹完整自动入地/出土埋伏状态机仍未接入。本轮用明确设置burrowed的疱疹目标验证通用侦测接口。
+   数据 godot/data/dendritic_cell.json；机制 godot/scripts/dendritic_cells.gd。
+   安装 scripts/godot_tools/install_dendritic_cell.py；离线制作/校验 scripts/sprite_preview/package_dendritic_cell.py、audit_dendritic_cell.py。
+   原画及提示词 assets/image/dendritic-cell-cartoon-20261021/；animations.json共4组46帧，无缺图。
+   tests/dendritic_cells.gd：规则49/49；原生显示增加3项共52/52。
+   实测20秒攻击次数20→13；移动距离0.11740875→0.08218384，约70%（坐标float精度容差0.00001）。
+   初版攻击计数0→0是cell_test刻意冻结非玩家单位导致的fixture问题；测试现已反转阵营，让受减速射手走真实活跃战斗循环。
+   没有为配合fixture修改go、_position_free、formation或新局开局。
+   存读档、生产、双减速、同层边界、建筑遮挡、地下识别、无攻击命令菜单及4组运行图集均已覆盖。
+
+附：巨噬细胞原画有伪足移动16、受击12、死亡16并闪两下、嚼残体16、夸张吞噬接咀嚼联动；素材声明机制待接入。
+    目前 siege 仍是旧重型单位的远距离伤害规则，CellFrames映射为white。尚不能称新版吞噬/闭嘴嚼的战斗已接入。
+
+共享文件交接：
+- simulation.gd 仅局部增加 dendritic 服务创建、刷新、销毁、侦察状态、死亡时长与可见性接入；没有覆盖整文件。
+- combat.gd 增加双减速倍率、受击时点，以及非攻击支援身份保护。
+- world_view.gd/cell_shape.gd/command_wheel.gd 局部接入动画、轮廓、精确标记及无攻击菜单。
+- hud.gd 的最小侦察信息改动已在收到UI任务协调消息前加入；当前保留，并未继续修改按钮或布局：
+  STATES: scanning→侦察标记；选中侦察细胞显示范围与标记数，说明敌方移速/攻速均降低30%；被标记目标显示移速×0.7/攻速×0.7。
+  请HUD任务继续保留这三处信息；后续若平衡数据调整应从dendritic_cell.json取数，避免显示常量失配。
+
+本轮实际验证：
+./godot/run.sh --headless --editor --import --quit：通过，无解析错误。
+./godot/run.sh --headless --script res://tests/dendritic_cells.gd：49/49。
+./godot/run.sh --script res://tests/dendritic_cells.gd -- --capture：52/52。
+./godot/run.sh --headless --script res://tests/run_tests.gd：52/52。
+./godot/run.sh --headless --script res://tests/b_cells.gd：39/39。
+./godot/run.sh --headless --script res://tests/platelets.gd：38/38。
+python3 scripts/sprite_preview/audit_dendritic_cell.py：46帧，原版侦察字节一致，新图集及运行副本一致。
+python3 scripts/godot_tools/audit_integrity.py：1917项，无缺失或哈希差异，清单总量一致。
+
+证据：godot/test-output/dendritic-cells.json、dendritic-native.png（本机忽略缓存）；
+assets/image/dendritic-cell-cartoon-20261021/animation-audit.json、animation-review.json、player-actions-preview.png、player-scan-preview.png、player-death-final-preview.png。
+本地预览：http://127.0.0.1:8765/?view=gallery&group=树突状细胞。
+没有提交、推送、远端构建或自动开始设计下一个角色。

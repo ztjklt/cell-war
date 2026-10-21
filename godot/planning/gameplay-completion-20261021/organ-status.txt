@@ -1,0 +1,108 @@
+器官功能独立模块交付 · 2026-10-21
+
+更新：第二阶段已完成主模拟、经济、战斗状态、转运和存档接线，实际命令集成45/45。最新交接见同目录organ-integration-status.txt。
+以下保留第一阶段独立服务的设计和接线依据；其中“尚未接线”的历史边界已由第二阶段替代。HUD仍由UI任务负责原生验收。
+
+交付文件：
+- godot/scripts/organ_functions.gd，class_name WarOrganFunctions。
+- godot/data/organ_functions.json，12个当前organ key的分工，6个付费主动操作及全部首轮参数。
+- godot/tests/organ_functions.gd，独立服务合同与原规则对照。
+
+首轮玩法参数（自主决策，可通过JSON调整）
+1. 肝营养加工：停下的红细胞在真实肝组织主动操作；20葡萄糖+4氧气→8蛋白质，阵营冷却15秒。
+2. 肝糖原储备：20葡萄糖+1氧气→20糖原，最多120，阵营冷却10秒。糖原不经过food保质期过滤。
+   释放20糖原→18普通葡萄糖，冷却10秒；释放时使用source=liver，不能伪造胃部专用葡萄糖。
+   满仓/不足/冷却/位置不合法均在付款前失败，不隐性扣费，不允许多个红细胞绕过阵营冷却。
+3. 肝强细胞培育：复用当前heavy/siege真实训练成本、tier、人口、队列和38/50秒训练时长。
+   strong_training_allowed增加真实肝组织lane0限制；非强细胞返回true，其他普通经济校验仍由原train执行。
+   原economy完成训练时设置requiresHeart=true的逻辑保留，不新加重叠培育加成或第二套队列。
+4. 肾休整净化：提取并复用CombatConfig.kidney的2秒准备/1.1生命每秒。
+   在左右任一真实肾组织内，清除配置clearOrgan=kidney的状态（当前toxin/fatigue）与impurities。
+   其他slow状态不顺带清掉。准备结束后继续驻留可持续净化；离开肾组织或进入血管层会重置准备。
+   不额外扣资源，代价仍是路程与组织内停留时间；没有叠加第二次恢复。
+   新增净化杂质账本：实际清除的impurities加每次清除toxin的1单位进入本阵营waste，最多200，溢出丢弃并写事件。
+5. 心脏：复用当前转运放置与目标限制。can_transfer要求真实心脏组织lane0，避免只进入心脏包围盒/投影血管就解锁。
+   update_unit同样只在真实心脏组织解除requiresHeart。原go的“先肝→心脏”路径限制不动。
+   原transfer禁止的heart/pancreas/bladder目标仍禁止，没有增加绕过组织通道的新传送捷径。
+6. 脑研究：已完成的脑组织lab，原有科技队列速率×1.25；成本/tier/完成/取消/科技旗标仍复用原经济系统。
+   例：营养封存原45秒，脑研究站有效预算36秒。普通细胞训练队列不受此倍率影响。
+   脑指挥：停下的脑组织红细胞或完整lab，在已有tier2研究后，主动消耗8氧气。
+   本阵营作战单位攻速×1.15，持续20秒，冷却60秒，不增加单次伤害、不叠加、不作用于红/B/树突状细胞。
+   此指挥收益明确是阵营范围，可作用于其他器官或血管中的己方作战单位；发令入口必须为真实脑组织，投影血管无法发令。
+7. 胰腺：停下的红细胞主动消耗5葡萄糖+4氧气，90秒内新排入本阵营训练队列的food成本×0.8，冷却120秒。
+   蛋白质/氧气成本不变，已有队列不追溯退款。生产建筑也必须在真实组织lane0；不支持投影血管中的生产折扣。
+8. 膀胱：停下的红细胞主动消耗10净化杂质+2氧气→2蛋白质，冷却15秒。杂质来自实际肾净化，无空账本收益。
+9. 肺左右、胃、大小肠：JSON明确交由resource_generation/organ_resources承接供氧、葡萄糖及蛋白质链，本服务没有重复生成资源点或自动产出。
+
+位置、性能和时间：
+- organ(e)先检查原生全身模式、存活、vesselLane==0，再调用navigation.organ_at的真实polygon/hole判定；不是用sourceBox直接当器官。
+- 同一id/kind/坐标缓存查询；100次静止查询只执行1次真实器官查找。缓存最多4096项，restore/map切换时reset_cache。
+- 服务没有逐帧game.entities()/game.units()扫描。update_unit由原本已在执行的单位状态循环传入当前单位。
+- 更新及直接request均尊重game.paused；主动操作不自动执行。冷却和有效期是game.state.time下的绝对deadline，自然冻结并支持倍速。
+- quote/available_actions只查询，不扣资源；request是唯一主动付款入口，使用原economy.pay/add，没有新货币栏。
+
+最小接线合同（由总协调局部修改，不要整文件替换）：
+A. simulation.gd
+   var organ_functions: WarOrganFunctions
+   _init内创建：organ_functions = WarOrganFunctions.new(self)
+   restore完成state替换与navigation模式设置后：organ_functions.reset_cache()
+   新人体生存需要初始账本时调用organ_functions.state()；旧快照缺少该字段可懒初始化，保留冻结起始JSON。
+   dispose内：organ_functions.dispose()
+   不加第二个全单位循环；不加全图organ刷新。
+
+B. combat.gd update_status
+   保留状态持续时间推进/持续伤害等既有逻辑。
+   删除原函数开头以heart.sourceBox为依据解除requiresHeart的两行；否则血管投影仍会先被旧逻辑错误解除。
+   将原来的整个器官块（not campaign and lane0，organ_at、e.organ、heart、kidneyProgress/净化/治疗）替换为：
+       game.organ_functions.update_unit(e,dt)
+   这个替换必须互斥，不能在原肾恢复块之后再调用服务；会导致2秒变1秒、治疗和杂质重复入账。
+   服务会保留e.organ字段，并自行处理离开组织/血管层时重置kidneyProgress。
+   multiplier最终再乘：value *= game.organ_functions.multiplier(e,field)
+   该倍率只回应attackSpeedMultiplier，按现有冷却/前摇/白细胞射击动画的shotSpeed路径生效。
+
+C. economy.gd
+   train内已有building/tier/pop/at/queue校验保留。
+   对原heavy/siege肝位置判断，原生全身模式采用organ_functions.strong_training_allowed(building,kind)；sandbox保留既有biome规则。
+   付款前：var cost := game.organ_functions.training_cost(building,kind)
+   pay使用cost，排队项目q.cost也必须保存这个实际cost，而非spec.cost；取消生产才能按实际付款的75%退款，避免折扣套利。
+   默认cost返回spec原成本。只有胰腺已主动激活、本阵营且组织生产时减少food。
+   update内每个既有队列只将 q.remaining-dt 改为 q.remaining-dt*organ_functions.production_rate(e,q)。不要把整个economy.update的dt乘倍率。
+   原完成生产requiresHeart旗标、research完成及取消流程不另建副本。
+
+D. scenarios.gd transfer
+   将origin的heart.sourceBox校验替换为organ_functions.can_transfer(e,organ)；其后原安全房间选择、_position_free、位置/通行层/路径重置及transfer事件保留。
+   不要仅在旧bbox条件后追加调用，否则旧逻辑其它位置的提前解锁仍可能发生。
+
+E. 玩家入口/HUD
+   当前选中单位用organ_functions.available_actions(id,1)展示本地操作的name/description/quote与冷却原因。
+   数值优先读取JSON结构字段，说明中的首轮数字调整时同步更新。
+   通过原命令队列提交，例如：
+       game.submit_player({"action":"organ_action","organAction":"liver_process","actor":id})
+   _process_player_commands新增分支，恢复模拟后的命令步调用：
+       var result := organ_functions.request(str(command.organAction),int(command.actor),1)
+   result.ok为false显示result.reason；成功显示data.actions[...].name。不要在绘制/查询函数里直接request。
+   暂停期间可沿用已有命令队列排队，恢复后执行；service.request在直接暂停调用时明确拒绝，不能先扣费再排队。
+   不需要重复制作训练/研究按钮，继续沿用原生产入口即可。
+
+F. 存档与事件
+   全部持久字段在game.state.organFunctions={schema:1,factions:[...]}下，因此现有snapshot深拷贝自动携带。
+   每阵营保存glycogen/waste/cooldowns/commandUntil/pancreasUntil；既有单位kidneyProgress也在原单位快照。
+   WarSave.validate入口追加WarOrganFunctions.validate_state(state)，失败时保留现有存档原子拒绝流程。
+   缺少organFunctions的旧存档接受；新增验证拒绝负数、NaN/Inf、越容量、未知冷却和异常kidneyProgress/impurities。
+   organ_action事件含source/faction/action/organ/cost；organ_purified含target/faction/organ/cleared/wasteAccepted/wasteDiscarded。
+   不每帧发送治疗事件，避免日志洪泛。只在首次准备完成或实际清除了状态/杂质时发净化事件。
+   运行只依赖godot目录。无需安装离线图像工具、Maker、网络或Lua。
+
+专项实际执行结果：
+- ./godot/run.sh --headless --editor --import --quit：通过，无解析错误。
+- ./godot/run.sh --headless --script res://tests/organ_functions.gd：78/78。
+  包含12器官真实组织、血管投影隔离、固定帧缓存、原规则肾4秒恢复结果对照、左右肾、毒/疲劳/slow区别、杂质容量；
+  实际付费加工/储存/释放、原葡萄糖保质期与糖原保护、胃来源不可伪造、阵营与暂停/冷却；
+  脑研究的实际原生产队列/费用及36秒速率预算、指挥攻速倍率；胰腺折扣实际支付精确9.6葡萄糖合同；
+  原经济系统实际训练出heavy并带requiresHeart；心脏真实组织与投影对照；
+  JSON往返、实际user://test-saves/organ-functions独立本地文件写入/恢复、损坏状态拒绝与结构化事件。
+- 专项证据：godot/test-output/organ-functions/checks.json（本机忽略缓存）。
+- 没有生成美术、修改共用文件、提交、推送、远端构建或运行无关测试。
+
+接线后仍需总协调验收：原生按钮、排队命令、真实训练成本/取消退款、脑研究完成节奏、攻速前摇联动、肾只调用一次、
+真实肝/肾/脑/胰腺/膀胱到达路线、完整人体生存保存恢复及长期平衡。独立合同测试不替代这些验收。

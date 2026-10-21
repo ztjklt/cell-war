@@ -1,0 +1,18 @@
+状态：培养床HUD说明/状态与沙盒灭火玩家入口均完成，原生专项通过。
+告知根：本报告即按要求预先登记所有权；请根暂不改command_wheel worker entries中extinguish相关小块、main _radial_command extinguish验证与对应专项。培养床代码保留，只做追加。
+先完成培养床HUD操作说明和展示状态（不改combatState或动画），药品HUD/发布守门保持。
+培养床说明已加到器官补给与建设页；_display_state仅替换文字，farm工作显示“培育”、delivering显示“运输”。不改变combatState=build或既有动画。
+沿根farming_ui的真实原红/原始资源/建仓与培养床/两次交付全程，新增本机展示观察后原生61项通过，培育/运输均实际出现；food125→141、wood160→115保持。证据farming-ui/display-native.log与display-check.json，截图display-cultivating.png、display-transporting.png。
+灭火静态审计确认：survival.think只为AI阵营分配extinguish，玩家轮盘没有按钮；simulation/economy已有任务，economy已有活体/建筑/同阵营校验。正在记录缺入口基线并补最小轮盘/主控验证，不改既有经济机制。
+基线实际52专项尚未加按钮时8项中缺按钮失败，证据extinguish-ui-before.log。
+已局部追加sandbox燃烧己方建筑的“灭火”轮盘项与水滴/水桶图标；保留维修和培养选择，8徽章时只增大现有轮盘半径以避免挤叠。
+main仅在原radial分支补extinguish target与worker校验，重新检查模式/存活/建筑/阵营/火势并只提交worker ids；未编辑economy/simulation/navigation。
+headless52/52、原生52/52通过：原沙盒worker4实际6秒到场并清除fire1→0，库存160蛋白/125葡萄糖保持；原核心受自然火伤但未被维修；暂停/过期火势/所有权/非worker/8徽章/无关模式均检查。原生日志无ERROR/SCRIPT ERROR/Parse Error/WARNING。
+已目视检查burning-farm-commands.png：维修、培育、灭火8个徽章清楚，水滴/水桶图标与提示可辨；原有修复/培育没有被遮掉。
+正式药品无staging新进程也已149/149，无错误；最终证据已写medicine-ui-status，药品HUD保持。
+最终验证：editor/import退出0且无ERROR；基础run_tests52/52；audit_integrity退出0，missing/mismatches为空、manifestTotalsMatch=true。
+运行与缓存证据：test-output/extinguish-ui-before.log（缺入口基线）；extinguish-ui-headless.log；extinguish-ui-native.log；extinguish-ui/extinguish-ui-native.json、import.log、core-regression.log、integrity.json。
+本轮代码文件：hud.gd（说明与纯展示状态）、command_wheel.gd（灭火项/燃烧提示/8项半径）、main.gd（仅radial灭火验证）、command_icon.gd（水滴/水桶），新增tests/extinguish_ui.gd。没有修改经济、火灾衰减、起火概率、导航、单位或药品。
+边界：本专项使用明确的fire=1及损伤5作为受控火灾夹具，不冒称验证自然随机起火；另有密集菜单培养床夹具。真实扑灭由既有原沙盒worker4、核心及完整模拟执行，未补资源/新红细胞或挪动单位。
+状态“培育/运输/灭火”完全为HUD文字；combatState=build与现有工作动画保留。燃烧建筑选中状态显示“燃烧”；轮盘区分灭火阻止损失、维修恢复生命。
+初次选择worker3会被初始友军队形挡住，未改导航或挪走任何单位；改为玩家可直接选择的前排原始worker4后正常到场。本专项证明原始部队存在真实可操作灭火链，不声称所有拥挤单位都能自动绕行。

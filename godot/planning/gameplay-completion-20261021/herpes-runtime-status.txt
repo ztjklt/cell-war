@@ -1,0 +1,53 @@
+疱疹病毒自动埋伏独立模块交付 · 2026-10-21
+
+状态：独立状态机、六组96帧/膜囊采样、规范快照/原子恢复、素材安装候选及282项专项完成。
+runtimeIntegrated=false。没有修改公共config/simulation/combat/world_view/navigation/save/manifest，没有改自然感染或菌落调度，没有新增单位kind。
+原现役CellFrames.kinds.herpes="platelet"的错误映射仍由后续共享接线修复，本次没有伪称战场已经换成正确角色。
+公共combat已锁定目标隐藏后复核的工作由主线程完成，本模块未重复修改。
+
+交付
+- godot/scripts/herpes_ambush.gd：WarHerpesAmbush，自动埋伏、感知、出土、范围爆发、打断、冷却、规范快照和原子恢复。
+- godot/scripts/herpes_ambush_animation.gd：WarHerpesAmbushAnimation，六组原16帧及静态膜囊的纯采样器，支持模拟步之间的显示采样，不产生伤害事件。
+- godot/data/herpes_ambush.json：首轮平衡、原herpes身份、原素材路径/锚点/逐帧时长、固定中立轮廓和8张图片哈希。
+- assets/image/herpes-ambusher-20261020/runtime.json：相同数据的来源副本。
+- scripts/godot_tools/prepare_herpes_ambush_runtime.py：只读图片生成数据和安装候选，不写图片、不改alpha、不写共享文件；旧定义取已冻结只读审计。
+- godot/planning/gameplay-completion-20261021/herpes-install-candidate.json：现有herpes替换候选、错误CellFrames映射修正候选、8张已存在图片核验及1项新增JSON清单候选。
+- godot/tests/herpes_ambush.gd：独立状态/时序/伤害/存档专项，另有现役树突标记及原生强推/抗推/建筑几何适配验证。
+- 同目录herpes-hook-contract.txt：主线程未来接线顺序、回调、旧规则互斥、存档和渲染合同。
+
+首轮自主默认（不是用户逐项确认的数值）
+保留kind=herpes、hp100、speed0.35、vision12、pop0和原radius0.5625；不改变病原/病毒识别。
+组织lane0合法位置静止3秒、2.5内无同层无遮挡活敌单位，播放1秒入地后休眠。
+休眠每0.2模拟秒检测2.5范围；合格近敌触发1秒可见出土，开始出土即清除burrowed/concealed。
+出土后1.5内仍有可命中单位则爆发，否则回active；活动态近敌也可直接爆发。
+爆发damage12/radius1.5/cooldown4秒，原第9帧即400ms一次结算，强推3交给宿主既有安全队列。
+攻速倍率每个模拟步作用于爆发进度、恢复和冷却；入地/出土的1秒形变不受攻速减速影响。
+移动仍由宿主原安全go处理，本模块只提供允许移动的phase，保持真实坐标/lane，不钻地穿墙或传送。
+
+已完成验证
+- 3秒准备、1秒入地、静态休眠、同层2.5感知、1秒可见出土、1.5爆发完整路径；移动/错误组织/血管/墙/死敌/建筑不会错误触发。
+- 实际伤害在休眠中触发出土；出土受击不重启动作；活动/入地/提交前爆发被受击中断；死亡最高优先且2秒后隐藏。
+- 树突标记字段和原burrowed/concealed接口保留，标记不会强制出土；原生树突同时保留移动/攻速70%及离开后恢复。
+- 400ms之前无伤害，单次结算/强推，冷却从起手开始；取消不退冷却，离开范围可躲避，低频大步长保留正确合法攻击次数。
+- 在任何伤害回调前固定完整目标集合和提交位；模拟门被同次回调打开不会让后方新目标补入；重入advance不能重复结算。
+- 必需回调缺失时完全不推进；几何/合法落点必须明确返回bool true，异常结果不当成许可；非法攻速结果冻结攻击。
+- 各阶段JSON往返覆盖准备、入地、休眠、出土、提交前后爆发、受击取消和死亡；不重放伤害、强推或旧反馈事件。
+- 坏阶段、进度/时钟、重复命中ID、提交位、非法地下lane、非JSON数据、坏cast序号均拒绝，失败恢复不改变原状态。
+- 原生强推队列：普通单位约3单位，血小板墙约0.15，建筑阻挡后停下并保持原lane；没有直接写目标坐标实现推人。
+- 原六组96帧、原(384,512)锚点、非均匀时长及8张运行图片与原图哈希一致；固定本体轮廓不随膜囊/辉光变大。
+- 死亡末帧原alpha最高2/255，保持原图，采样在2秒后强制隐藏，没有批量清理低alpha辉光。
+
+验证
+PYTHONPATH=.tmp/vascular-refinement-python python3 scripts/godot_tools/prepare_herpes_ambush_runtime.py
+  输出96帧、8项原图哈希、18个固定轮廓点、radius0.5625、sharedFilesWritten=false。
+./godot/run.sh --headless --script res://tests/herpes_ambush.gd
+  HERPES_AMBUSH 282/282，退出0，无SCRIPT ERROR。
+本机证据：godot/test-output/herpes-ambush/checks.json（忽略缓存，不提交）。
+
+共享接线仍待完成
+保持herpes身份，应用候选近身数值/正确美术映射，停用旧1/8/2.5远程及旧contact自动伤害/推人。
+接唯一模拟推进、允许移动约束、实际伤害/死亡通知、同层完整地形/建筑/关口几何、显式强推3队列适配、整体存档和可见性渲染。
+新候选移除了旧projectile/contact，不能在应用后继续用旧spec.contact读取强推；需要显式strength参数的共享安全队列适配，见合同。
+实际地图关口、埋伏点合法性、地下碰撞卡住情况、正确皮肤/逐帧显示及自然生成入口均需主线程后续原生验收。
+
+本批独立服务与现役接口专项通过，不代表自动埋伏已在正式战场启用。没有生成图片或视频，没有提交、推送或远端构建。

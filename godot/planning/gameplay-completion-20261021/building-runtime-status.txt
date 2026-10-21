@@ -1,0 +1,38 @@
+两批友军建筑渲染接入 · 2026-10-21
+状态：核心胞巢、分裂兵巢、储运囊、核酸研究站、葡萄糖增益所、栖息泡的GPT静态原画已真实接入world_view，并完成原生检查。
+原美术交接building-art-status.txt保留制作阶段记录；其中“渲染器/总清单待接”的状态由本文件更新。
+
+实际选图
+直接使用source-core-v1.png、source-barracks-v1.png、source-store-v1.png的GPT原始像素和alpha。
+制作对话的alpha<4清理版本留作过程记录，不参与当前正式渲染。
+原图、提示词、生成记录在assets/image/friendly-buildings-20261021/；完整运行副本在同名godot/assets/image子目录。
+锚点、alpha80视觉轮廓和occupancy沿用制作对话的人工审核值；不把它们作为物理碰撞体。
+data/friendly_buildings.json由原稿旁runtime_buildings.json复制，已标明runtimeRendererConnected=true及原像素选择。
+第二批原始图为phase2/source-lab-v1.png、source-clinic-v1.png、source-house-v1.png，
+各自提示词、生成来源/哈希、alpha审核和独立登记保留在phase2目录。
+总协调逐图查看了原稿，并逐字节复制原PNG；未清理低alpha边缘，也未生成派生重绘。
+统一运行登记合并两批6项，第一批条目sha256已校正为实际选择的source原图，
+不会沿用未选用的alpha清理中间版哈希。phase2源交付记录保持其制作时状态。
+
+运行接线
+world_view.setup读取统一登记；预载六图，普通建筑按kind选择新原图。
+原有core/barracks size3，store/lab/clinic/house size2，kind、生产与交付、生命和导航占地不变。
+施工沿用透明进度表现，完成显示原色；没有把其它建筑或游戏地图覆盖成一张图。
+未纳入这两批的建筑继续原图集，流感要塞与检查站保持专用分支。
+
+可重建
+PYTHONPATH=.tmp/vascular-refinement-python python3 scripts/godot_tools/install_resource_stations.py --friendly-buildings
+此工具原样复制三种采集站及这六栋建筑、登记7条建筑资源(含合并JSON)并更新总清单统计，不编辑图像。
+第二批metadata存在时自动合并，重新执行不会丢掉已接入的lab/clinic/house。
+原制作工具的prepare/install仍可重现中间交付；正式接入后应最后运行上述统一安装命令选回原alpha版本。
+
+证据
+Godot editor/import无解析错误。
+tests/friendly_buildings_capture.gd 最终原生26/26：六建筑合法组织放置、原占地尺寸、原基座选取、实际纹理加载、暂停不推进。
+test-output/friendly-buildings/six-buildings.png及six-construction.png已生成；总协调实际查看六栋成品及施工状态在人体地图中的截图。
+旧三图的13项证据保留。扩展为两排时首次fixture第二排落入真实肺孔洞，lab/clinic无法spawn；
+现由测试搜索两排都合法的现有组织坐标，不修改地图或spawn限制。最终26项通过无错误。
+第二批首次导入恰遇药品线程medicine_supply.gd:100的临时类型推断错误；后续原生和最终导入通过，
+不能将首次editor进程退出0当作干净结果。
+视觉测试明确使用人工摆放夹具，不冒充经济建设流程；UI线程另有原始资源首白开局原生79项通过。
+本批完整性含原稿对照1927项、479145872字节通过，missing/mismatches/sourceAssetMismatches均为空。

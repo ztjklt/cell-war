@@ -1,0 +1,65 @@
+共享接线释放标记：SHARED_HOOKS_RELEASED=true
+药品实装发布标记：FEVER_RUNTIME_RELEASED=true
+日期：2026-10-21
+范围：仅 fever_pain_relief（退烧止痛药 · 降温消防员）。其他药品 canSell/canDeploy 仍为 false。
+
+完成的实际闭环
+1. 原生活事件 WarLifeRun.choose 的收入进入既有 lifeRun.money；购买从同一钱包扣钱并增加 lifeRun.spent。没有第二套钱包。
+2. 买入持久库存，成功派遣时才消耗1件；取消/执行失败不扣库存。派遣后死亡/到期不退款。
+3. 派遣锚点为提交时选中的己方存活红细胞。执行时重新检查其当前实际位置、器官组织层与附近3单位内合法空位；不接受远程落点坐标。
+4. 组织点/线检查和 navigation.movement_clear 建筑段检查均通过，且落点不与现有单位或建筑重叠。找不到位置时原子失败。
+5. 独立助手有真实实体、生命、阵营、层、剩余模拟时长、当前指令、目标、冷却与序号；实际单位AI自动攻击同层、可见、可达、射程内的现有 virus/herpes。固定1.2秒武器节拍。
+6. windup对应已批准攻击动画第7帧时机；发射时再检查目标。命中用原 WarCombat.damage 结算；普通unit战斗分支不重复造成伤害。
+7. 独立泡泡按实际模拟推进、扫掠碰撞、组织墙/建筑阻挡、射程及寿命收尾。来源死亡不删除已发射弹体。
+8. 固定减速在 WarCombat.multiplier(moveMultiplier) 接入一次，实际 go 位移对照验证0.7；连续命中刷新时长、不乘成0.49。
+9. 真正暂停冻结交易执行、助手寿命、弹体与减速；倍速按模拟时间推进。90秒到期或死亡播放已有死亡动作后退场。
+10. 库存、世界runId/sequence、回执、待执行命令、助手、蓄力、弹体和减速进入整体存档；加载不二次扣款或重放伤害，新世界隔离旧请求。
+
+首轮可调默认值（不是用户已确认的最终平衡）
+价格80；生命60；移动2.3；助手90模拟秒；伤害4；射程7；攻击间隔1.2秒；弹速14；减速30%持续2秒。
+库存上限99，单次购买最多10，活跃助手最多12，待执行操作最多32，回执保留256并以receiptFloor拒绝过期重放。
+脑部指挥加速不作用于独立固定节拍助手；其配置damage=0，也不会领取B细胞攻击者攻速。减速仍可与原有非药品状态按既有规则组合。
+
+玩家指令
+- 实际issue/advance已验证：无敌人时attackmove继续到指定终点并结束；guard到守点后保留指令并实际射击，有敌人时沿用战斗/追击、无敌人时回守；move/retreat/supplyroute只移动。
+- 新移动命令、原生受击中断未释放蓄力；stop/hold清掉旧medicineAttack，不删除已发出的泡泡。固定1.2秒节拍不因指令重发缩短。
+
+API（HUD已由UI线程接入，本轮没有编辑HUD）
+查询：game.medicine_supply.quote_purchase("fever_pain_relief",1)
+      game.medicine_supply.count()
+      game.medicine_supply.quote_deployment(red_id)
+动作：queue_purchase("fever_pain_relief",1) / queue_deployment(red_id)
+取消：cancel_queued(result.request)
+请求由服务分配{runId,sequence}并进入submit_player队列；HUD不调用底层purchase/deploy/spawn，不手改钱包/库存。
+完整合同：godot/planning/gameplay-completion-20261021/medicine-ui-contract.txt。
+发布门：medicine_helpers.json.releaseEnabled=true，medicines.json仅第一种purchase.canSell/canDeploy=true。普通玩家接口默认staging=false；测试显式staging与生产门区分。
+
+画面与轮廓
+复用已批准4组×16帧以及独立泡泡16帧。没有新生成图片、视频或网络素材。
+静态接触凸包从药片本体提取，64张逐帧选中轮廓从对应原图提取；保留来源SHA，不再走红细胞代用轮廓。接触和显示保持正立，可左右镜像。
+原生窗口通过实际购买派遣后点击选中角色，检查move/attack/flight/impact/hit/death的真实绘制路径。
+已目视检查native-flight.png、native-hit.png、native-death-end.png：选中线贴合角色，武器在手、泡泡独立，受击/倒地动作正确。非全量画面/手机验收。
+
+验证证据
+- ./godot/run.sh --headless --editor --import --quit：成功，editor-import.log无ERROR/SCRIPT ERROR/Parse Error/WARNING。
+- medicine_integration.gd -- --released：110/110，staging=false；真实外部事件收入、付款、库存、重复/取消/余额不足/负数/小数命令、选中阵营/层/死亡、满落点、实际发射和伤害、真实减速位移、进攻驻守、中断、来源死亡后弹体命中、存读档及坏档拒绝、新世界隔离、暂停/倍速/到期。
+- medicine_bubbles.gd：112/112；包含斜向飞行JSON往返恢复到引擎Vector2精度。
+- medicine_render.gd -- --released：原生18/18，explicitServiceStaging=false；native-render-released.log无引擎错误/警告。
+- catalogue_sync.gd：原生57/57；仅已实装条目开放，另4种关闭；保留19个非药品目录条目。更新了原先写死“所有药品关闭”的两项断言以匹配逐条发布。
+- run_tests52/52，organ_functions_integration45/45，organ_resources35/35，clinic_support15/15，gameplay_regressions18/18。
+- audit_integrity.py：1928文件、manifestTotalsMatch=true、missing/mismatches为空；sourceAsset未额外复验，旧Lua按归档状态未重跑。不据此宣称全量玩法/云存档/手机验收。
+以上日志/JSON在godot/test-output/medicines/，缓存与截图仅本机。
+
+原生UI正式发布复核已完成
+- ./godot/run.sh --script res://tests/medicine_ui.gd：149/149，staging=false，explicitServiceStaging=false，独立新进程。
+- 原始封面进入life：原钱包300、库存0、原红细胞通过实际指令移动；暂停购买预留/取消、真实付款80、派遣确认取消/排队取消/恢复生成、余额不足/错误单位/非法层、保存和读取恢复待执行请求均通过。没有赠金钱、库存或助手。
+- 证据：godot/test-output/medicine-ui/native-released.log、medicine-ui-native.json。日志无ERROR/SCRIPT ERROR/Parse Error/WARNING；UI状态合同无需改动。
+- 第一次与另一个原生测试并行时，封面点击没有进入life，仅3项并失败，未计为通过。独立窗口重跑149项全部通过；没有修改发布门或UI绕过。
+- 已看purchases-reserved.png和restored-medicine-supply.png，预算、实际库存和待执行请求清楚；本次只作药品闭环专项，不扩称全量原生/手机验收。
+
+最终状态：BACKEND_COMPLETE=true；NORMAL_PLAYER_UI_VERIFIED=true；SHARED_HOOKS_RELEASED=true。可以继续其它子系统接线。
+
+所有权与边界
+新增medicine_supply/helpers及medicine_helpers.json、专项测试；仅给simulation/combat/save_game/world_view/cell_shape/organ_functions加入所需药品钩子，保留器官、建造、既有战斗修复。
+没有改simulation.go、economy.construct/can_place，没有改HUD/main，没有提交、推送或远端构建。
+其他药品的确认/草案边界保留；化痰药仍只有已确认立绘与待确认机制，不开放扣费。

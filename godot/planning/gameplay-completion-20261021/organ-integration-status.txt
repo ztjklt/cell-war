@@ -1,0 +1,85 @@
+器官功能第二阶段 · 主流程接入完成 · 2026-10-21
+
+共享文件接线已完成并释放；药品及战斗任务可继续局部接入simulation/economy/combat/save_game，保留本报告列出的器官hooks即可。
+
+完成范围：WarOrganFunctions已接入simulation/economy/combat/scenarios/save_game；原organ_resources代码保留。
+本交付覆盖实际模拟命令、经济/研究/恢复及本地存档。没有修改HUD/config/美术，也没有替其他未完成药品、病原、建筑或全图运输宣称验收完成。
+
+实际改动（全部为局部patch）
+1. simulation.gd
+   新增organ_functions服务创建/新life账本初始化/restore缓存重置/dispose。
+   _process_player_commands新增organ_action分支，读取organAction和actor，固定controller=1，执行时重新校验，并反馈成功/失败原因。
+   保留organ_resources.begin/advance、原三种资源链、新局入口、移动/formation/go等全部接线。
+   有效命令：game.submit_player({"action":"organ_action","organAction":"liver_process","actor":id})。
+   同理其余五项：liver_store、liver_release、brain_command、pancreas_regulate、bladder_recycle。
+
+2. organ_functions.gd
+   quote第四个可选参数allow_paused_preview，默认false；available_actions仅做菜单预检时传true。
+   因此暂停菜单能显示满足资源/位置/科技/冷却条件的“可排队”，request仍拒绝暂停直接付款。
+   恢复后从模拟命令步request，逐条重新检查费用、容量和冷却；同一项重复排队只执行一次，不重复收益。
+   胰腺训练报价按千分位给出稳定数值，修复12×0.8得到9.600000000000001导致余额9.6买不了的实际错误。
+
+3. economy.gd
+   原train验证/队列/人口/tier不变；原生强细胞培育由服务检查真实肝组织lane0，sandbox保留原biome规则。
+   付款和q.cost均用training_cost的实际报价；取消仍按floor(实际付款×0.75)逐资源退还，不按原价套利。
+   例：白细胞food实际支付9.6，取消退7；wood支付15，取消退11。第二次取消空项目不再退款。
+   每个队列的remaining只减dt×production_rate，未缩放整次economy.update，也未增加第二套研究队列。
+   stock/stomach_glucose查询只清理距千分位不超过1e-9的二进制尾差；真正的连续小数不取整。
+   此处同时使UI读取的余额与实际支付一致，避免精确57.6预算连续排6个9.6项目时最后一项被尾差误拒绝。
+
+4. combat.gd
+   只局部改multiplier和update_status，没有改生活线程的_firing_solution等射程修复。
+   multiplier追加器官攻速倍率，沿原cooldown、cellShot前摇、shotSpeed/动画路径生效。
+   移除旧开头requiresHeart+heart.sourceBox提前解除，旧器官恢复整块替换为一次organ_functions.update_unit(e,dt)。
+   状态持续时间和毒伤仍先按原逻辑推进。肾停留2秒不会因双调用变成1秒，治疗仍仅1.1HP/秒。
+
+5. scenarios.gd
+   transfer以can_transfer验证真实心脏组织与lane0，保留原安全房间选择、_position_free、路径/通行层重置和事件。
+   没有改go中的强细胞先到心脏路径约束，也没有扩大原先禁止的转运器官目标。
+
+6. save_game.gd
+   在原organ_resources验证之后加入WarOrganFunctions.validate_state，保留life/influenza等全部原验证。
+   真实文件读写验证账本、有效期、冷却、肾进度和暂停命令；容量损坏会在替换live state前拒绝。
+   不含organFunctions字段的既有存档仍可通过验证。恢复时清空坐标缓存，不复用旧机关位置判断。
+
+7. 本地仓库回归
+   _delivery_point保留同器官、己方、完整core/store、组织lane0条件。
+   候选接受“相同有效grid.component”或“原navigation.clear_segment认可的组织直连”，没有增加血管或跨器官连接。
+   真实出生红细胞(996.7009277,1907.7375488)的component2与几步外(992.7009277,1907.7375488)的component1直连有效，现能选本地仓库。
+   若红细胞处于血管lane，则不进入这条组织本地仓库捷径，仍走既有交付逻辑。
+
+专项与验证结果
+- tests/organ_functions_integration.gd：45/45（通过WarSimulation.update(.1)、submit_player和正常WarSave文件入口）。
+  暂停菜单预检、暂停重复排队、恢复扣费一次、失败不扣费；真实肝加工/储存/释放；
+  胰腺实际9.6费用可支付、实际队列费用持久化、原75%向下取整退款/重复取消、57.6预算真实六连训；
+  真正分数采集余额0.123456789仍完整保留；
+  脑storage研究35.9秒未完、36秒完成且支付40蛋白质，对照肝lab在36秒仍剩9秒；
+  脑指挥实际shotSpeed=1.15、前摇0.35/1.15、下一tick真实cooldown=0.885；
+  肾19tick仍中毒、20tick净化、3秒后hp=99.1（初始100，2秒毒伤后98，再1秒恢复1.1），杂质10且只发一次净化事件；
+  暂停整个模拟冻结；血管层立即停止净化并重置准备；膀胱命令实际消费肾杂质；
+  心脏包围盒内但血管层的强细胞不偷解锁，真实心组织可安全转运，肝投影血管不能开始付费强细胞训练；
+  暂停3条未付款命令实际文件保存/恢复；激活后的有效期/肾1秒准备实际文件保存/恢复；
+  已提交付款不会被读档重播，损坏waste=201的真实文件被拒绝且live snapshot不变；本地仓库component回归。
+- tests/organ_functions.gd：78/78，已使用game.organ_functions实例，不再另建第二个服务。
+  旧肾对照改为冻结数值4秒新增2.2HP，避免原入口已接线后拿同一实现互相比对；脑加速完成营养封存后的food保质期测试也已适配6天。
+- tests/organ_resources.gd：35/35，原五个器官采集站、资源恢复、交付、存档与冻结旧资源保留。
+- tests/run_tests.gd：52/52。
+- tests/gameplay_regressions.gd：18/18。
+- headless editor import：通过，无解析错误。
+- audit_integrity.py --asset-source-root .：1924项，无缺失、哈希差异或来源差异，清单总量一致。
+
+复现命令
+./godot/run.sh --headless --script res://tests/organ_functions_integration.gd
+./godot/run.sh --headless --script res://tests/organ_functions.gd
+./godot/run.sh --headless --script res://tests/organ_resources.gd
+./godot/run.sh --headless --script res://tests/run_tests.gd
+./godot/run.sh --headless --script res://tests/gameplay_regressions.gd
+
+证据：godot/test-output/organ-functions/integration.json、checks.json（本机忽略缓存）。
+集成fixture在各器官合法组织内创建已有角色/建筑，并为受控经济测试增加库存；没有伪称完成真实单红开局经济或全身往返运输。
+训练/器官/研究通过命令队列执行；取消生产按当前真实HUD所用的economy.cancel_production入口验证，没有另造不一致的取消协议。
+
+UI任务合同保持：available_actions(id,1)用于暂停菜单预检，成功后仅submit_player；不要直接在暂停菜单request付款。
+当前已读到UI线程使用_training_cost连接训练显示及待执行资源预留，与本服务报价一致；本线程没有覆盖或修改HUD。
+原生UI操作、全部器官实际到达路线、长期资源平衡与全目标收尾，仍由对应任务及总协调继续验收。
+没有提交、推送、部署、远端构建或改写其他角色美术。

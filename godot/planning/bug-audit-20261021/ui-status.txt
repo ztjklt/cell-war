@@ -1,0 +1,39 @@
+状态：完成，可进行总验收。
+本轮文件：godot/scripts/hud.gd；godot/tests/alignment.gd；新增 godot/tests/ui_reliability.gd；本交接文件及本机 test-output。
+没有编辑 main.gd / simulation.gd / navigation.gd / economy.gd / advisor_dialogue.gd / README。保留当前桌面与镜头设计。
+
+1. 存档按钮：首次保存后原位更新对应读取按钮，不重建整页、不要求重开菜单。空槽保存、立即读取及按钮实例保持已通过。
+   手动槽读取 life 状态时改发 overview_requested，与自动 life 槽一致；普通模式保留 focus_requested(home,18)。
+   实测 cell_test→手动 life 槽恢复金钱 777，确认发出 overview 信号。autosave_at 重排留给总验收的 main 修改。
+
+2. 模式操作：下一波、挂机指挥仅战役显示；下一波在战役结束、仍在出场、尚有病毒或已出完波次时禁用并有说明。
+   隔离/开放右肺、恢复循环运输仅 systemic 数据存在时显示；挂机与隔离按钮显示具体的开启/关闭动作。
+   已验证 cell_test、fullbody、systemic、trachea_01，真实点击的适用操作能提交指令或切换状态。
+
+3. 暂停菜单生产：菜单内显示即时反馈、待执行总数和各按钮的待执行数量，消息不再只藏在模态菜单后面。
+   UI 检查计入待执行训练/研究已占用的资源、人口和队列空间；重复研究、缺资源、研究忙、科技及肝脏训练限制有明确反馈。
+   UI 不提前扣款或生产，仍经 submit_player，在恢复时间后由既有 economy 执行。
+   实测两项训练排队、第三次缺蛋白质提示、恢复后精确扣费并执行两项、保留项目最终生成细胞；研究缺资源、重复请求、恢复扣费与 tier2 完成均通过。
+
+4. 队列取消：不再把 remaining 的变化作为整组按钮重建条件。行按实体与项目 Dictionary 引用保留，倒计时只更新文本，真正增删项目才增删行。
+   取消时按项目引用重新定位索引，避免索引过时误取消；当前执行中的行动明确禁用，后续行动和生产保留取消。
+   实测按下取消按钮，推进生产时间并等待 0.4 秒跨过多次 HUD 刷新，再于原坐标松开：按钮实例保持，取消原项目，75% 退款仅一次。
+   读档/换世界会使行状态失效，空选择无旧按钮残留。重构中间态的 _selection_key 未声明问题已消除。
+
+5. alignment 103/105：两项均为旧测试前提，而非顾问运行逻辑 bug。
+   当前启动封面会阻止战术阅读，旧测试未进入战场；测试现先 start(systemic)。介绍文案按用户已确认的“我是你的参谋小脑…行动由你决定”断言。
+   advisor_dialogue.gd 未修改。修正后 105/105，保留基线与结果。
+
+最终验证：
+   editor/import 退出 0，import.log 无 ERROR / Parse Error / Compile Error。
+   ui_reliability.gd：headless 66/66；原生窗口 66/66，使用真实窗口坐标按下/松开，存档隔离。
+   当前 66 项比总验收较早运行的 61 项多出手动 life 槽读取的 5 项检查。
+   alignment.gd 105/105；progress.gd 64/64；ui_flow.gd 无失败；run_tests.gd 52/52。
+   audit_integrity.py：1917 个运行素材，missing/mismatches 为空，manifestTotalsMatch=true。
+
+本机证据目录：godot/test-output/bug-audit-ui/
+   ui-reliability-native.json、ui-reliability.json、alignment-before.json、alignment-after.json、progress.json、import.log。
+   截图：save-enabled.png、production-pending.png、queue-cancelled.png、research-pending.png；已目视检查保存页与生产反馈，按钮和文字未裁切。
+   本轮原生测试目录 user://test-saves/bug-audit-ui-501046，其他运行也用独立测试目录，未触碰正式用户存档。
+
+交接：所分配 UI 项目无剩余阻塞；其余原生回归采用总验收已完成的证据，无需重复运行。

@@ -1,0 +1,225 @@
+{
+  "date": "2026-10-20",
+  "status": "planning_only",
+  "assets": [
+    {
+      "package": "疱疹病毒json+动画-狠怒版.zip",
+      "sha256": "19fe7e529a0104c0c4d0ddd07f236e0e24d2acf3539ee12cc8aac746de0977f1",
+      "states": {
+        "attack": {
+          "path": "frames/attack",
+          "start": 1,
+          "end": 6,
+          "loop": true
+        }
+      },
+      "png_files_by_state_directory": {
+        "attack": 6
+      },
+      "missing_independent_states": [
+        "move",
+        "hit",
+        "death"
+      ],
+      "visual_notes": [],
+      "runtime_mapping": "未在当前 Godot 角色配置中确认接入；下一阶段建立独立映射，不套用旧 wolf 图像",
+      "audit_scope": "读取包内状态与帧文件，并查看静态图/技能图；尚未逐帧播放验收"
+    },
+    {
+      "package": "流感病毒json+动画.zip",
+      "sha256": "c4c86ba2b1196b7a7431b1f9ba7c981ceaee09544d09203226d7cda1d804eb38",
+      "states": {
+        "idle": {
+          "path": "frames",
+          "start": 1,
+          "end": 1,
+          "loop": true
+        },
+        "devour": {
+          "path": "frames",
+          "start": 1,
+          "end": 6,
+          "loop": true
+        }
+      },
+      "png_files_by_state_directory": {
+        "idle": 6,
+        "devour": 6
+      },
+      "missing_independent_states": [
+        "move",
+        "hit",
+        "death"
+      ],
+      "visual_notes": [],
+      "runtime_mapping": "未在当前 Godot 角色配置中确认接入；下一阶段建立独立映射，不套用旧 wolf 图像",
+      "audit_scope": "读取包内状态与帧文件，并查看静态图/技能图；尚未逐帧播放验收"
+    },
+    {
+      "package": "幽门螺杆菌json+动画.zip",
+      "sha256": "113b24060605b187210878ef1e29b96909fb7a94977649f3f4b401a058490bf4",
+      "states": {
+        "whip": {
+          "path": "frames/whip",
+          "start": 1,
+          "end": 6,
+          "loop": true
+        }
+      },
+      "png_files_by_state_directory": {
+        "whip": 6
+      },
+      "missing_independent_states": [
+        "move",
+        "hit",
+        "death"
+      ],
+      "visual_notes": [],
+      "runtime_mapping": "未在当前 Godot 角色配置中确认接入；下一阶段建立独立映射，不套用旧 wolf 图像",
+      "audit_scope": "读取包内状态与帧文件，并查看静态图/技能图；尚未逐帧播放验收"
+    },
+    {
+      "package": "腺病毒json+动画.zip",
+      "sha256": "5a38550d6778f9421e664322f6dd4dd21939f32d686c0fafe5474f05088fe55f",
+      "states": {
+        "slam": {
+          "path": "frames/slam",
+          "start": 1,
+          "end": 6,
+          "loop": true
+        }
+      },
+      "png_files_by_state_directory": {
+        "slam": 6
+      },
+      "missing_independent_states": [
+        "move",
+        "hit",
+        "death"
+      ],
+      "visual_notes": [],
+      "runtime_mapping": "未在当前 Godot 角色配置中确认接入；下一阶段建立独立映射，不套用旧 wolf 图像",
+      "audit_scope": "读取包内状态与帧文件，并查看静态图/技能图；尚未逐帧播放验收"
+    },
+    {
+      "package": "猪带绦虫json+动画.zip",
+      "sha256": "7a8e383ef35ff6c47dca9fc3c6a2ce2658d7a486a4b157f46c01872390108b21",
+      "states": {
+        "吞噬": {
+          "path": "png/吞噬",
+          "start": 1,
+          "end": 6,
+          "loop": true
+        }
+      },
+      "png_files_by_state_directory": {
+        "吞噬": 6
+      },
+      "missing_independent_states": [
+        "move",
+        "hit",
+        "death"
+      ],
+      "visual_notes": [
+        "查看的技能图含矩形深色背景，透明度和画幅须修复或补图后再用于地图角色"
+      ],
+      "runtime_mapping": "未在当前 Godot 角色配置中确认接入；下一阶段建立独立映射，不套用旧 wolf 图像",
+      "audit_scope": "读取包内状态与帧文件，并查看静态图/技能图；尚未逐帧播放验收"
+    },
+    {
+      "package": "肺炎链球菌json+动画.zip",
+      "sha256": "4ad4ac53d349b560356e4d03a069dd5e9d6f788e2fc80a70a03ecdb0bc580dca",
+      "states": {
+        "idle": {
+          "path": "frames/skill1",
+          "start": 1,
+          "end": 1,
+          "loop": true
+        },
+        "skill1": {
+          "path": "frames/skill1",
+          "start": 1,
+          "end": 6,
+          "loop": true
+        }
+      },
+      "png_files_by_state_directory": {
+        "idle": 6,
+        "skill1": 6
+      },
+      "missing_independent_states": [
+        "move",
+        "hit",
+        "death"
+      ],
+      "visual_notes": [],
+      "runtime_mapping": "未在当前 Godot 角色配置中确认接入；下一阶段建立独立映射，不套用旧 wolf 图像",
+      "audit_scope": "读取包内状态与帧文件，并查看静态图/技能图；尚未逐帧播放验收"
+    },
+    {
+      "package": "蛔虫json+动画.zip",
+      "sha256": "8cc4e218c60543a5a417a3e52d391b230c4aade90bae4360e77473859be046f1",
+      "states": {
+        "constrict": {
+          "path": "frames",
+          "start": 1,
+          "end": 12,
+          "loop": true
+        },
+        "idle": {
+          "path": "frames",
+          "start": 1,
+          "end": 1,
+          "loop": true
+        },
+        "wrap": {
+          "path": "frames",
+          "start": 2,
+          "end": 6,
+          "loop": false
+        },
+        "tighten": {
+          "path": "frames",
+          "start": 7,
+          "end": 8,
+          "loop": false
+        },
+        "release": {
+          "path": "frames",
+          "start": 9,
+          "end": 12,
+          "loop": false
+        }
+      },
+      "png_files_by_state_directory": {
+        "constrict": 12,
+        "idle": 12,
+        "wrap": 12,
+        "tighten": 12,
+        "release": 12
+      },
+      "missing_independent_states": [
+        "move",
+        "hit",
+        "death"
+      ],
+      "visual_notes": [
+        "动作画面含木桶道具，不能直接作为自由移动角色；需要无道具独立角色动作"
+      ],
+      "runtime_mapping": "未在当前 Godot 角色配置中确认接入；下一阶段建立独立映射，不套用旧 wolf 图像",
+      "audit_scope": "读取包内状态与帧文件，并查看静态图/技能图；尚未逐帧播放验收"
+    }
+  ],
+  "first_batch": [
+    "流感病毒",
+    "疱疹病毒",
+    "腺病毒",
+    "幽门螺杆菌",
+    "肺炎链球菌"
+  ],
+  "later_batch": [
+    "蛔虫",
+    "猪带绦虫"
+  ],
+  "handoff": "先补首批五类独立移动、受击、死亡动作；保留原角色外形、配色、锚点和已有攻击动作。疱疹远程攻击/弹丸如启用则另核对。"
+}

@@ -1,0 +1,70 @@
+2026-10-21 状态：两个已捕获施工卡点均修复，真实固定步与原生首白流程复核通过。
+最终文件边界：仅修改navigation.gd，新增tests/construction_access.gd及.uid，
+完善既有本任务tests/organ_resource_routes.gd的诊断与回归。
+没有编辑simulation.go/economy、器官线程的organ_functions hooks、train/update、
+HUD或放置坐标数据。两个现场都真正可达，不用拒绝正常放置来掩盖寻路问题。
+
+已确认第一个卡死的精确原因：store(990,1906)的实际靠近点
+(991.6588745,1906.4301758)在真实小肠组织内，然而WarGrid.begin将目标
+吸附到(991.5,1906.5)，该网格点落入新蓝图的膨胀碰撞框。A*无法到达。
+同时same-organ端点的component2/1不同使_plan强制绕到远方关口，未使用已有
+精确polygon attachment连接本地窄廊。没有按component标签认定永久不通。
+
+已在navigation.gd局部修复：
+1. 同器官两端有原有精确attachment时直接安排本地组织搜索，不多绕关口。
+2. 网格端点落在建筑内时，选择附近空闲网格点；真实目标仍保留在路径末尾，
+   新增两端连接必须通过原真实polygon和movement_clear，不传送/不改地形。
+3. 原direct作业优先队列完整保留。
+
+复现与结果（同一原始出生红25、原始资源、真实submit_player和update，删除lifeRun
+调度以隔离新疫情/寿命，未移动红/改HP/进度/资源；额外给寻路离线预算）：
+1. 出生(996.700932,1907.7375)直接place store(990,1906)。
+   旧基线120秒progress0；修后28.2秒完成，红实际走到(991.965454,1906.942383)，
+   精确支付30蛋白一次，演员每tick位移不超过原移动预算。
+2. 原红先正常move到(994,1907.5)，实到(994.0428,1907.504)；
+   再place core(987.5,1905.5)。旧原生现场progress0；修后58.8秒完成，
+   红实际走到(990.116882,1906.116821)，精确支付65蛋白一次。
+3. 两个真实靠近点最终均在合法小肠组织；这里不是目标落洞后必须换施工边缘，
+   而是目标点四舍五入后的网格/可达分量处理不当。无需改simulation.go朝向算法。
+4. 路径末尾保留原精确点；被选作网格连接点的点必须不在建筑碰撞框内，
+   且真实连接段经polygon和movement_clear认证。不越墙/跨投影，也不全盘拒绝
+   component不同的目标。找不到这种连接点仍回报“目标附近被建筑阻挡”，不返回
+   伪路径；没有把所有合法放置位置视为已穷举通过。
+
+实际执行：
+- tests/construction_access.gd：9/9（以上两个原现场、原红实际移动、原费用）。
+- tests/organ_resource_routes.gd：116/116，导航修复后重跑；五站各实际两轮
+  取14→交14，及真实小肠建store→两轮交付；载货暂停/原生存读档/命令保持。
+- tests/influenza_construction.gd：24/24，原自然左肺4、八落点、工位阻挡等待及
+  半施工存读档没有被本次导航变更破坏。
+- tests/routes.gd：6条跨器官路径全部返回，原有层/器官/关口身份保留；
+  该项是路径回归，不能代替上述红细胞实际两轮运输。
+- tests/run_tests.gd：52/52。
+- --headless --editor --import --quit：通过，无解析错误。
+- audit_integrity.py：1924个登记资源，无缺失/哈希差异，统计相符；历史原稿/
+  归档Lua没有另行对照，未将其写成已检查。
+- tests/opening_flow.gd：原生79项通过，0注入资源/单位，真窗口按钮与真实固定步
+  完成原红移出出生片区、核心/兵巢、首白培育/取消退款/再培育/新生白实际移动。
+  这个现有UI测试自动选址core(981.5,1905.5)、barracks(987.5,1905.5)；
+  不把它的自动选址冒充上面两个精确坐标的UI点击复现，精确坐标由本专项覆盖。
+
+本机证据：
+- test-output/construction-access/checks.json、core-snapshot.json、store-snapshot.json。
+- test-output/organ-resource-routes/local-build-stall-state/snapshot.json（首次原始现场）。
+- test-output/organ-resource-routes/baseline-blocked-site-diagnostic-state/snapshot.json
+  （修复前，记录目标点合法但grid goalBlocked=true及远关口中转）。
+- test-output/organ-resource-routes/blocked-site-diagnostic-state/snapshot.json
+  （修后10秒，已经真实行走且progress>0；与固定坐标专项结果对应）。
+- test-output/opening-flow/opening-flow-native.json及原生截图。
+  已实际读取built-core.png和newborn-moved.png，确认核心/新生白及原HUD实际显示；
+  此处不评价/改动其他线程正在接入的建筑美术。
+- 仓库.tmp/construction-access.log、construction-access-opening-native.log、
+  construction-access-routes.log、construction-access-rules.log、construction-access-flu.log、
+  construction-access-import.log、organ-resource-routes-final.log。
+
+命令：
+./godot/run.sh --headless --script res://tests/construction_access.gd
+./godot/run.sh --headless --script res://tests/organ_resource_routes.gd
+./godot/run.sh --script res://tests/opening_flow.gd
+
+当前无需总协调合并simulation/economy补丁。没有生成美术、提交、推送或远端构建。

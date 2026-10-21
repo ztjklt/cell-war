@@ -1,0 +1,32 @@
+状态：器官HUD完成，已随实际服务接线进行原生窗口验收。
+所有权：仅改hud.gd、command_wheel.gd和UI专项；没有编辑simulation/economy/combat/main/service。
+已接：选中面板“器官协作”按钮、轮盘同名入口、现有暂停菜单入口；服务通过game.get("organ_functions")取得，服务缺失时安全不展示主动入口。
+器官页读取available_actions、实际结构化成本/收益/冷却、糖原/净化杂质储备；只通过submit_player organ_action排队，未直接request/pay。
+待执行器官操作与训练/研究共享资源预留，重复器官操作提前禁用；糖原与杂质也计待执行占用。
+现有指挥手册新增“器官分工与补给”子页，12器官数据驱动，不把肺/胃/肠道说成自动入库。
+生产菜单现读取service.training_cost，显示胰腺折扣后的实际金额（保留9.6等小数），预留计算也使用实际成本。
+
+接线线程已加入quote允许暂停的纯查询，available_actions调用该预览；实际request仍尊重paused。本HUD没有临时修改game.paused来绕过预检。
+新增tests/organ_ui.gd：最终headless103/103、原生窗口103/103。两个最终日志均无ERROR / SCRIPT ERROR / Parse Error / WARNING。
+真实窗口已覆盖：地图点选本地红细胞及脑lab、侧栏按钮、轮盘“器官协作”徽章、手册子页、排队按钮与返回恢复。
+具体付款/效果均由simulation处理organ_action，再由服务唯一request入口结算：
+  肝加工：暂停时未扣费；恢复后40葡萄糖/4氧/100蛋白→20葡萄糖/0氧/108蛋白，仅一次。
+  同一操作待执行时按钮禁用并说明已排队；另一项封存操作因氧气已预留而禁用；无糖原时释放禁用。
+  加工后显示真实阵营冷却与剩余秒数。
+  封存→糖原20，侧栏页显示20/120；实际释放后糖原0，20葡萄糖→38葡萄糖。
+  脑lab未研究时显示稳定生产研究条件并禁用；提供明确研究夹具后可实际排队，10氧→2氧，commandUntil真实启动。
+  胰腺实际操作100糖/10氧→95糖/6氧；随后生产菜单显示9.6葡萄糖，只有9.6库存可排一项，第二次明确预留不足；实际queue.cost.food=9.6、库存精确归零。
+  膀胱无杂质时禁用并显示条件；提供10杂质夹具后恢复执行，10杂质+2氧→2蛋白，账本归零。
+  十二器官手册标题与数据一一对应，并明确采集站需要红细胞运输，不是全图自动入库。
+
+测试边界：器官UI专项是独立夹具，明确提供合法器官落点/本地lab/人口建筑/兵巢/研究/资源与杂质；不把它当作初始单红可自行走到所有器官的证明。
+所有主动操作通过实际窗口按钮提交，等待执行仅由一次正常game.update推进；没有HUD直接扣款或调用service.request。主循环_process停用，相机和滚动暴露由测试驱动。
+独立测试存档都位于user://test-saves/organ-ui-编号；没有正式存档写入。
+
+证据：test-output/organ-ui-native.log、organ-ui-headless.log、organ-ui/organ-ui.json（最终103项末次运行摘要）。
+脚本末尾已改为按native/headless分开输出并标注displayServer，供后续并行复跑避免覆盖；该序列化小改后以editor/import做解析检查，不重跑整套交互。
+原生截图已目视检查：liver-pending.png、brain-command-pending.png、organ-command-wheel.png；另有liver-cooldown.png、bladder-recycle-pending.png、pancreas-discounted-training.png、organ-handbook.png。
+按钮、费用和条件文字在现有滚动菜单内清楚显示；未增加全屏浮层或新主题。
+器官HUD修改后ui_reliability仍66/66且日志无ERROR；资源UI在器官菜单初次接入后headless27/27；最终editor/import结果见organ-ui/import.log。
+最终必需校验：run_tests.gd 52/52；audit_integrity.py退出0，missing/mismatches为空、manifestTotalsMatch=true；来源Lua按归档记录未复核，不作全量还原声明。
+尚未替代：器官真实远距离移动/采集路线、长期平衡、手机版与云存档总验收。出生点最近核心施工卡住的问题仍保留opening-status历史复现，不因本专项通过宣称任意放置点可达。

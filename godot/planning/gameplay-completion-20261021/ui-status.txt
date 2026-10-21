@@ -1,0 +1,20 @@
+状态：资源入口、首白与器官操作HUD专项已完成；器官细节见organ-ui-status.txt。
+独占修改：scripts/hud.gd、scripts/command_wheel.gd；新增tests/opening_flow.gd、tests/organ_resource_ui.gd。
+未编辑main.gd、simulation.gd、economy.gd、navigation.gd；main两处空站门槛由总协调已修改，无待应用补丁。
+
+首白：原生79项通过，无新增资源/单位；全过程与施工位置限制见bug-audit-20261021/opening-status.txt。
+
+资源HUD：
+1. command_wheel::_target_context识别库存为0的organSource，普通耗尽资源保留旧规则；仍用既有2.2半径，不扩大到透明站图整张画布。
+2. 站点轮盘实时显示站名、器官、站内库存/容量、恢复速率、安全补充/敌占停工，以及空站可等候。反馈框单独扩高并在桌面窗口内定位，不挤入徽章。
+3. 现有暂停菜单新增“器官补给与运输”，逐站信息与观察定位按钮，说明红细胞采集、空站等候、安全恢复、本地核心/储运囊优先交付、否则心脏。
+4. 选中采集红细胞的侧栏显示当前站点与装满后的目的地，交付中改“运输中”。目的地读取economy既有_delivery_point，不另实现运输规则；预测装满后目的地时只复制Courier字典用于查询，不改变单位位置。
+5. 顶部资源卡提示其数量为已入库物资，另列站点与携带库存，避免被误认为全图自动入库。
+
+验证：organ_resource_ui headless27、原生27通过，原生日志无ERROR/SCRIPT ERROR/Parse Error。
+实际窗口点选空站→采集→main提交unit_order→原模拟接收持久harvest，确认等待入口闭环；验证2.4距离不被当作站点点击，实际菜单打开/观察定位成功。
+该专项是明确的UI夹具：人为设置空库存/占用标志、一个已建核心和携带物以检查显示；不声称它是原始首白或真实敌占/运输机制验收。
+截图已目视检查：test-output/organ-resource-ui/empty-station-wheel.png、occupied-station-wheel.png、resource-overview.png，文字未裁切到按钮，概览使用正常滚动。
+证据：test-output/organ-resource-ui-native.log、organ-resource-ui/organ-resource-ui-native.json；保存隔离目录见JSON。
+回归：ui_reliability headless66通过且日志无ERROR；radial_commands headless85/85但dummy renderer有texture_2d_initialize t=null错误；随后原生补验85/85，无ERROR，但有ObjectDB退出泄漏WARNING，未宣称退出无警告。editor/import通过且无ERROR。
+资源站大肠落点中间态错误已由总协调修正；新进程的最终原生opening79及资源UI27均无该错误，历史证据保留。

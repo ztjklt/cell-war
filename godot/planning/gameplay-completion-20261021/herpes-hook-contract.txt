@@ -1,0 +1,109 @@
+疱疹自动埋伏共享接线合同 · 2026-10-21
+
+边界与身份
+独立WarHerpesAmbush和WarHerpesAmbushAnimation已完成；runtimeIntegrated=false。
+沿用现有kind=herpes，不注册herpes_ambusher。hp100/speed0.35/vision12/pop0/radius0.5625保持；病原、病毒、药品识别沿用主线程中央接口。
+herpes-install-candidate.json给出单位替换/正确CellFrames候选与新增data/herpes_ambush.json的清单项；8张既有图片已经在Godot，无需再生成或重写。
+数据数值为本轮自主平衡默认，不表述为用户逐项确认。旧远程/接触定义保存在data.legacyDefinition和原只读审计内。
+本次没有修改自然感染/菌落调度，也没有碰公共hooks。
+
+初始化与必需回调
+var ambush = WarHerpesAmbush.new()
+ambush.bind_world(geometry,burrow_allowed,damage,push,multiplier=Callable(),nearby=Callable())->bool
+四个必需回调缺一则ready=false，advance_simulation返回false且不改变时钟/阶段；新服务和读档后的新实例都必须先绑定。
+geometry(from:Vector2,to:Vector2,lane:int,source:Dictionary,target:Dictionary,purpose:String)->bool
+  purpose为sense或burst；必须同时检查真实同层地形、关闭通路、所有遮挡建筑/门和适用目标可见性。
+  普通nav.clear_segment只是地形，不能当作已含建筑/关口；movement_clear允许的友方门也不自动等于爆发可穿过。
+  实际checkpoint应取当前lane的真实端点/阻挡面；投影交叉不产生新路，不穿墙、跨未失守门或另一条血管。
+  必须明确返回bool true才表示允许；null/字符串/数值等不是几何许可。
+burrow_allowed(point:Vector2,lane:int,actor:Dictionary)->bool
+  仅允许原组织lane0的合法稳定位置；包括真实point_allowed、原实体/建筑净空、出入口/关口安全区排除及本体落点。
+  不可仅检查lane==0或图片像素；入口邻域、非法组织、血管内、移动中不能埋伏。
+damage(source,target,amount,direction)->void
+  调game.combat.damage(source,target,amount,false,"herpes_burst",direction)，既有护甲/科技/状态伤害倍率只应用一次。
+  cause用herpes_burst，不能用会自动排普通受击推的attack/projectile/collision，避免与下面显式强推叠加。
+push(source,target,direction,strength)->void
+  strength默认3，必须进入原安全击退队列，由原resolve_knockback分段地形/实体净空校验，并保留WarPlatelets.push_scale。
+  只对本次确实损血且仍存活的目标调用一次；不直接改target.x/y，不另补contact伤害或普通受击推。
+  现有queue_knockback(...,collision=true)从旧spec.contact.knockback读取3。本轮原生适配测试使用未改旧spec验证了普通3、血小板墙0.15、建筑挡停。
+  安装新unitDefinition后已无旧contact：共享接线必须增加/使用显式strength参数的原队列入口或等效安全队列适配，不能继续依赖已移除字段而静默降成普通0.38推。
+  本模块将3作为参数交付，未为此修改公共combat；应用候选与完成此适配必须同次合并。
+multiplier(actor,field)->float（可选）
+  本服务使用attackSpeedMultiplier，每步读取0..32有限数值；非法结果按0冻结攻击，缺省1。
+  侦察的0.7同时作用于爆发前摇/恢复/冷却。移动仍由宿主原go乘现有moveMultiplier；不要再额外乘一次0.7。
+  入地/出土各1秒和受击0.8秒、死亡2秒沿原动画时长，不受攻速倍率缩放。
+nearby(actor,radius,all_entities)->Array（可选空间索引优化）
+  可返回附近候选；服务仍逐项验证存活/敌对/同lane/真实半径/geometry，并按ID去重排序。
+  缺省或索引返回非Array时使用宿主传入的完整all_entities，仍逐项要求geometry许可。不是从渲染函数扫描场景。
+
+唯一模拟时钟与共享分支
+advance_simulation(dt,all_entities)->bool：固定模拟步唯一入口；全体实体要完整，包含建筑以供回调遮挡检查。
+advance(real_dt,entities,paused,time_scale)->bool仅供墙钟适配，与advance_simulation二选一，不得同帧双调。
+内部clock必须与宿主state.time一致，暂停时都停止；host先记录本步已确认的实际受击/死亡，再推进埋伏状态，确保击杀/打断优先。
+若在已有游戏中首次启用，restore({version:1,clock:host_time,nextCastId:0,actors:{}})后再绑定推进，不能从0时钟重走已发生时间。
+服务不移动角色、不改lane。allows_movement(actor)仅在活体active时为true；其他阶段宿主必须停用go/普通位移。
+真实位置/命令改变会重置静止准备；入地途中改变命令取消，已休眠的新命令不强制出土，需等既定近敌/受伤规则。
+notify_hit(actor)只在实际正伤害后调用；致死会转notify_death(actor)。notify_death在尸体复制/移除前调用。
+cancel_for_order(actor)用于立即取消入地/提交前爆发并保留冷却；宿主同时更新orderToken。
+死亡优先，活动/入地/爆发未提交被受击转hit，休眠被实际伤害转emerging；已经emerging受击不重启动作，也不隐藏回地下。
+新模块正式启用的herpes分支必须完全互斥旧combat.fight/launch/projectile以及contacts，避免旧远程或contact又扣血/推人。
+本模块不会生成旧弹丸；旧存档仍在飞的旧弹丸如何保留/清理由主线程统一迁移规则决定，不在本模块偷偷删除共享弹丸。
+
+状态机与范围结算
+phase: active -> burrowing -> dormant -> emerging -> burst -> active；另有hit/death。
+active合法组织静止3秒且2.5内无同层无遮挡活敌，入地1秒后dormant。
+dormant每0.2模拟秒感知；合格近敌即开始emerging并清除concealed/burrowed，提供完整1秒可见预警。
+出土结束仍有1.5内可命中的敌单位且冷却允许才起burst，否则active；活动态也可直接burst。
+burst基准0.8秒，400ms/第9帧提交，damage12/radius1.5/cooldown4从起手开始。被取消不退冷却。
+提交前一次收集全部同层无遮挡敌活单位及方向，提交位和目标ID集合先写入，再逐项回调damage/push。
+后续回调即使打破/打开门，也不会补入初始遮挡目标；每个ID仅结算一次，不在循环中按改变后的几何追加敌人。
+已经提交的同一次范围事务会处理其预定集合；提交后的受击不倒回重放。死亡会阻止尚未提交动作和任何后续新动作。
+_busy防止重入advance或事务中restore/bind；渲染采样和drain_events没有伤害副作用。
+
+原树突标记与可见性
+权威phase决定actor.burrowed和actor.concealed：仅dormant为true，emerging开始即false。
+保留WarDendriticCells.concealed/marked/multiplier；服务不清除标记，也没有“被标记就出土”的条件。
+标记只揭示精确地下位置并减慢移动/攻速；休眠受到实际伤害可出土，致死直接播死亡。
+宿主必须继续使用已有敌方可见性/精确地下框规则；静态膜囊是己方/图鉴/开发预览素材，不等于取消敌方隐身。
+主线程已修已锁敌人后来隐藏时的起手/释放复核，本模块不重复修改公共combat。
+
+原图与渲染采样
+WarHerpesAmbushAnimation.sample(actor,state_for(id),render_time,moving)->Dictionary。
+返回key/clip/frame/family="herpes_ambush"、angle=0、mirror；正面角色保持直立，不能走旧兜底整身旋转。
+六组haMove/haBurrow/haEmerge/haBurst/haHit/haDeath各16帧，原图768×768、4×4；原锚点(384,512)及每帧注册像素保持。
+原时长1/1/1/0.8/0.8/2秒，按各durations累计取帧，不把62/63ms改成统一等分。
+render_time可用服务clock+宿主accumulator作显示插值；progress基于updatedAt补采样，burst乘当前rate，其余形变按真实秒。
+插值只改变显示帧，不提前提交伤害/感知/状态转换；paused时不能继续增加render_time。
+haDormant返回原静态dormant-preview.png、concealed=true、requiresVisibilityGate=true；调用者必须先执行已有敌方可见性。
+死亡2秒后返回hidden=true，即使原末帧还有2/255 alpha也不无限留尸；corpse_duration(STEP)=2+STEP。
+standing_hull(actor,position)返回原中立move第1帧的18点固定轮廓×原radius0.5625，可水平镜像。
+clip.occupancy统一由原锚点和中立轮廓归一化；绘制side=2*radius/occupancy，目的左上=-anchor*side/768。
+本体轮廓不随入地、出土、burst辉光或死亡消散变大，不以整张画布作为碰撞/选择区域。
+8张原图、96帧、低alpha紫红辉光均未改；禁止为修“白边”自动删除原稿像素。
+共享CellFrames.kinds.herpes当前仍错误指向platelet，必须与专用animation/cell_shape接线一起修成候选herpes_ambush，不能只安装data就宣称皮肤生效。
+
+存档与恢复
+snapshot()为纯JSON深拷贝：version=1/clock/nextCastId/actors；每actor包含phase/progress/stationary/cooldown/nextSenseAt/castId/committed/hits/x/y/lane/orderToken/rate/updatedAt/deathAt。
+最多512个角色记录，单次最多512个目标ID；castId单调递增且当前角色间唯一。
+validate_snapshot(value)->String先校验版本、纯JSON、有限数、完整步边界、阶段/进度、合法地下lane、提交位、命中唯一集合和编号上限。
+restore(value,entities=[])->String空串才成功；先全部校验，再替换自身状态/清空旧反馈，并按phase重建实体burrowed/concealed，不清除树突标记。
+宿主须先整体验证世界和服务、保留同一时钟；不能只保存phase或只保存实体burrowed而丢失committed位。
+旧档缺本区块使用空actors及当前host_time；活体从active初始化，不根据旧shotTime/contactHits重放任何攻击。
+保存必须在所有模拟推进及damage/push回调完成后的统一边界，advancing()==false；禁止在范围事务中分开保存世界与服务。
+提交前保存恢复后只提交一次，提交后保存恢复不再伤害/强推；取消和死亡阶段不会恢复旧burst。
+恢复不会调用damage/push或重放反馈事件。drain_events()仅消费调试/表现事件，不能用来再次结算。
+
+公开API
+bind_world(...) / ready() / clock() / advancing()
+advance_simulation(dt,all_entities) 或 advance(real_dt,all_entities,paused,time_scale)
+state_for(id)（副本）/ allows_movement(actor) / cancel_for_order(actor)
+notify_hit(actor) / notify_death(actor) / drain_events()
+snapshot() / restore(value,entities) / static validate_snapshot(value)
+Sampler.frame_at/sample/standing_hull/corpse_duration均为纯函数。
+
+专项与未完成验收
+./godot/run.sh --headless --script res://tests/herpes_ambush.gd：282/282，无SCRIPT ERROR。
+独立夹具覆盖全部96帧、各状态/时序、同层几何、门打开后的目标快照、异常回调、打断/击杀/暂停/倍速/大步长、提交前后存档。
+现役接口测试覆盖树突真实标记/双70%、原生普通强推约3/血小板墙约0.15/建筑挡停及既有herpes病毒身份。
+尚未接实际入侵、地图关口的完整burrow_allowed/geometry、显式strength共享队列入口、正确战场皮肤、真实存档入口或地下碰撞卡住验收。
+主线程完成这些共享接线并原生验收后，才能修改runtimeIntegrated或图鉴现役状态；本文件不是战场接入完成证明。

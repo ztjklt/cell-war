@@ -1,0 +1,43 @@
+肺炎链球菌独立运行模块交付 · 2026-10-21
+
+状态：独立战斗服务、六组96帧采样、规范快照/原子恢复及专项测试完成，207/207通过。
+runtimeIntegrated=false；Data.units.pneumococcus尚未注册。没有新增入侵/菌落刷怪入口，没有修改公共simulation/combat/world_view/navigation/save/config或共享manifest。
+腺病毒独立模块由图鉴线程负责，本次没有重写。
+
+交付文件
+- godot/scripts/pneumococcus.gd：WarPneumococcus，延迟吐核、固定直线弹体、同层扫掠碰撞、打断、终止账本及存读档验证。
+- godot/scripts/pneumococcus_animation.gd：WarPneumococcusAnimation，原六组96帧的纯采样器、静态本体轮廓与尸体时长。
+- godot/data/pneumococcus.json：单位/弹体候选、六张已有图集的路径/哈希、逐帧时长、锚点和轮廓；显式unit.pathogen=true。
+- godot/tests/pneumococcus.gd：独立宿主夹具、素材/规则/存档/回调重入/乱序账本专项。
+- 同目录pneumococcus-hook-contract.txt：共享接线的API、顺序、持久化和渲染合同。
+
+首轮参数
+hp120、damage12、range7、cool1.8秒、speed2.1、vision10、pop0、本体radius0.72。
+弹速12、ttl0.85秒、碰撞半径0.10、画布世界宽0.65、出嘴偏移0.50。
+第9帧（零基8）在667ms释放一发；释放前没有伤害。攻速倍率在开始时捕获，统一缩放该次前摇、射击采样与冷却。
+弹体出手后不追踪；一次接触只消费一次。命中前先消费弹体ID，再调用宿主伤害接口，嵌套step不会二次命中。
+
+已验证边界
+- 六组各16帧全部可被采样，逐帧时长与图集布局完整；死亡第16帧全透明，结束后保持隐藏。
+- 667ms之前无出手、667ms恰好一发、同一时间重复step不重发；射程/冷却和攻击速度倍率。
+- 固定直线、移动目标可躲避、TTL消失、大步长扫掠不穿过首个目标；最近敌方单位/建筑只受一次伤害。
+- 同层墙、友方建筑和友方门挡弹；友方单位与其他平面建筑不拦截。关口端点适配不会产生跨层通路。
+- 受击、死亡、命令token改变或目标死亡在出手前取消；已出手弹体不随发射者移除而消失。
+- 左右来袭×角色镜像四种受击选择；受击优先于射击，死亡优先于受击；取消动作不会恢复旧射击。
+- JSON往返分别覆盖待发、飞行、命中、取消及伤害完成回调内快照；完成命中不会在读档后重放。
+- 非法已完成ID、缺口、坏方向、非有限伤害、越界时刻、非JSON值、活动ID与终止历史冲突均拒绝；失败恢复不替换当前状态。
+- 128项上限同时计入待发/飞行/乱序完成记录；127发先完成、首发慢蓄力的JSON存档恢复后只继续首发，不重放127次命中。
+- 六张Godot图集、根目录同名原图集及所记录源动画JSON逐项SHA256一致；未改原图、alpha、96帧或时长。
+
+验证命令
+./godot/run.sh --headless --script res://tests/pneumococcus.gd
+输出：PNEUMOCOCCUS 207/207；退出码0，无SCRIPT ERROR。
+本机证据：godot/test-output/pneumococcus/independent-service.json（忽略缓存，不提交）。
+
+剩余共享接线
+1. 由主集成线程注册候选unit与radius，并将新增data/pneumococcus.json登记到既有资源/来源清单；六张原图集已存在并登记。
+2. 接独立攻击分支、唯一step、实际伤害/死亡通知、专用采样和弹体绘制、整体存档验证；不能和通用即时攻击/cellShot/combatProjectiles重复执行。
+3. 明确真实入侵/菌落来源后接刷怪；不要加入流感十个建造者或流感要塞生产白名单。
+4. 完成原生战场、真实关口、存读档与画面验收后再标记现役。
+
+本次207项为独立服务与适配夹具验证，不代表完整战场已经接入或通过全量验收。没有提交、推送或远端构建。

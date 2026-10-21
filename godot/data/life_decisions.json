@@ -1,0 +1,1759 @@
+{
+  "version": 1,
+  "events": [
+    {
+      "id": "late_work",
+      "category": "作息",
+      "speaker": "林主管",
+      "role": "工作消息",
+      "title": "今晚要加班吗",
+      "line": "项目还差最后一点，今晚能不能留下来赶一赶？",
+      "own": "又到下班时间了，我得想想今晚怎么安排。",
+      "options": [
+        {
+          "label": "准时下班",
+          "money": 0,
+          "function": 2,
+          "reply": "今天先到这里，明天精神好些再继续。",
+          "effect": {
+            "ratePerMinute": 0.3,
+            "duration": 240
+          }
+        },
+        {
+          "label": "再加班一会儿",
+          "money": 60,
+          "function": -3,
+          "reply": "我再做一会儿，尽量早点回去。",
+          "effect": {
+            "ratePerMinute": -0.15,
+            "duration": 240
+          },
+          "flags": {
+            "overwork": 1
+          }
+        },
+        {
+          "label": "通宵赶完",
+          "money": 140,
+          "function": -6,
+          "reply": "今晚我来赶完，明天得找机会缓一缓。",
+          "effect": {
+            "ratePerMinute": -0.55,
+            "duration": 240
+          },
+          "flags": {
+            "overwork": 2,
+            "lateNight": 1
+          }
+        }
+      ],
+      "requires": {}
+    },
+    {
+      "id": "weekend_orders",
+      "category": "作息",
+      "speaker": "接单平台",
+      "role": "兼职邀请",
+      "title": "这个周末怎么过",
+      "line": "周末还有几个临时订单，接下后会有额外报酬。",
+      "own": "休息和收入，这次我得留出一点余地。",
+      "options": [
+        {
+          "label": "完整休息一天",
+          "money": 0,
+          "function": 3,
+          "reply": "这次不接了，先把状态养回来。",
+          "effect": {
+            "ratePerMinute": 0.35,
+            "duration": 240
+          }
+        },
+        {
+          "label": "只接半天",
+          "money": 55,
+          "function": -1,
+          "reply": "我只安排半天，剩下时间休息。"
+        },
+        {
+          "label": "把订单接满",
+          "money": 115,
+          "function": -4,
+          "reply": "这次多接一些，之后再安排休整。",
+          "effect": {
+            "ratePerMinute": -0.35,
+            "duration": 240
+          },
+          "flags": {
+            "overwork": 1
+          }
+        }
+      ],
+      "requires": {}
+    },
+    {
+      "id": "night_games",
+      "category": "作息",
+      "speaker": "阿乐",
+      "role": "朋友私信",
+      "title": "再玩一会儿吗",
+      "line": "今晚大家还在线，要不要再来几局？",
+      "own": "已经不早了，明天还得起床。",
+      "options": [
+        {
+          "label": "现在下线睡觉",
+          "money": 0,
+          "function": 3,
+          "reply": "我先睡了，改天一起玩。",
+          "effect": {
+            "ratePerMinute": 0.25,
+            "duration": 240
+          }
+        },
+        {
+          "label": "再玩一小会儿",
+          "money": 0,
+          "function": -1,
+          "reply": "最后一局，结束就下线。"
+        },
+        {
+          "label": "一起玩到天亮",
+          "money": 0,
+          "function": -5,
+          "reply": "今晚玩尽兴，明天得补休。",
+          "effect": {
+            "ratePerMinute": -0.4,
+            "duration": 240
+          },
+          "flags": {
+            "lateNight": 1
+          }
+        }
+      ],
+      "requires": {}
+    },
+    {
+      "id": "morning_after",
+      "category": "作息",
+      "speaker": "值班同事",
+      "role": "工作消息",
+      "title": "熬夜后的早晨",
+      "line": "你看起来没怎么休息，今天的班需要调整吗？",
+      "own": "昨晚欠下的休息，今天确实有点扛不住。",
+      "options": [
+        {
+          "label": "请半天假恢复",
+          "money": -25,
+          "function": 5,
+          "reply": "我请半天假，先好好睡一觉。",
+          "effect": {
+            "ratePerMinute": 0.4,
+            "duration": 240
+          },
+          "flags": {
+            "lateNight": -1
+          }
+        },
+        {
+          "label": "按正常节奏工作",
+          "money": 0,
+          "function": -1,
+          "reply": "先照常做，今天不额外加活。"
+        },
+        {
+          "label": "继续接紧急工作",
+          "money": 75,
+          "function": -5,
+          "reply": "紧急工作给我吧，休息再往后安排。",
+          "effect": {
+            "ratePerMinute": -0.4,
+            "duration": 240
+          },
+          "flags": {
+            "overwork": 1
+          }
+        }
+      ],
+      "requires": {
+        "flag": "lateNight"
+      }
+    },
+    {
+      "id": "lunch_break",
+      "category": "作息",
+      "speaker": "本人",
+      "role": "内心独白",
+      "title": "午间这段空闲",
+      "line": "午饭之后，还有一小段可以自由安排的时间。",
+      "own": "是歇一歇，还是顺手把事情办完？",
+      "options": [
+        {
+          "label": "安静休息一会儿",
+          "money": 0,
+          "function": 2,
+          "reply": "先放下手头的事，闭眼休息。",
+          "effect": {
+            "ratePerMinute": 0.2,
+            "duration": 240
+          }
+        },
+        {
+          "label": "出去办一件事",
+          "money": -8,
+          "function": 0,
+          "reply": "把事情办完，下午就不用惦记了。"
+        },
+        {
+          "label": "接一份午间小活",
+          "money": 30,
+          "function": -2,
+          "reply": "利用这段空档赚一点。",
+          "flags": {
+            "overwork": 1
+          }
+        }
+      ],
+      "requires": {}
+    },
+    {
+      "id": "bonus_project",
+      "category": "工作",
+      "speaker": "项目经理",
+      "role": "工作邀请",
+      "title": "临时奖金项目",
+      "line": "有个临时项目，工作量和奖金都可以自己选。",
+      "own": "额外收入很诱人，但最近的安排也不少。",
+      "options": [
+        {
+          "label": "这次不参加",
+          "money": 0,
+          "function": 1,
+          "reply": "我先把现有安排做好。"
+        },
+        {
+          "label": "分担一部分",
+          "money": 70,
+          "function": -2,
+          "reply": "我负责一部分，按时交付。",
+          "flags": {
+            "overwork": 1
+          }
+        },
+        {
+          "label": "整项都接下来",
+          "money": 155,
+          "function": -6,
+          "reply": "这项我来负责，后面要安排补休。",
+          "effect": {
+            "ratePerMinute": -0.4,
+            "duration": 240
+          },
+          "flags": {
+            "overwork": 2
+          }
+        }
+      ],
+      "requires": {}
+    },
+    {
+      "id": "shift_swap",
+      "category": "工作",
+      "speaker": "小周",
+      "role": "同事私信",
+      "title": "能帮忙换个班吗",
+      "line": "家里临时有事，能不能帮我顶一个班？后面我给你补回来。",
+      "own": "可以帮忙，但自己的休息也得算进去。",
+      "options": [
+        {
+          "label": "保留原来的休息",
+          "money": 0,
+          "function": 2,
+          "reply": "这次实在排不开，抱歉啦。"
+        },
+        {
+          "label": "帮忙换一次",
+          "money": 45,
+          "function": -2,
+          "reply": "我帮你一次，之后记得换我休息。",
+          "flags": {
+            "owedRest": 1,
+            "overwork": 1
+          }
+        },
+        {
+          "label": "连着顶两个班",
+          "money": 95,
+          "function": -4,
+          "reply": "这两次我都顶上，之后一起补休。",
+          "effect": {
+            "ratePerMinute": -0.25,
+            "duration": 240
+          },
+          "flags": {
+            "owedRest": 2,
+            "overwork": 1
+          }
+        }
+      ],
+      "requires": {}
+    },
+    {
+      "id": "business_trip",
+      "category": "工作",
+      "speaker": "行政同事",
+      "role": "行程安排",
+      "title": "出差机会",
+      "line": "有普通差旅和高补贴长途任务，你愿意选哪种？",
+      "own": "路上的奔波和接触，也要算进这份补贴里。",
+      "options": [
+        {
+          "label": "留在本地",
+          "money": 0,
+          "function": 1,
+          "reply": "这次我留在本地处理工作。"
+        },
+        {
+          "label": "普通短途出差",
+          "money": 65,
+          "function": -2,
+          "reply": "短途任务我可以去。",
+          "exposure": {
+            "kind": "respiratory",
+            "multiplier": 1.3,
+            "duration": 240
+          },
+          "flags": {
+            "travel": 1
+          }
+        },
+        {
+          "label": "接高补贴长途",
+          "money": 150,
+          "function": -5,
+          "reply": "长途任务给我吧，回来再休整。",
+          "effect": {
+            "ratePerMinute": -0.25,
+            "duration": 240
+          },
+          "exposure": {
+            "kind": "respiratory",
+            "multiplier": 1.8,
+            "duration": 240
+          },
+          "flags": {
+            "travel": 2
+          }
+        }
+      ],
+      "requires": {}
+    },
+    {
+      "id": "work_arrangement",
+      "category": "工作",
+      "speaker": "林主管",
+      "role": "工作沟通",
+      "title": "下一阶段的工作",
+      "line": "稳定排班和短期高压项目都有空缺，你更想选哪个？",
+      "own": "这次的安排，会影响接下来一段时间。",
+      "options": [
+        {
+          "label": "保持稳定排班",
+          "money": 15,
+          "function": 1,
+          "reply": "我先保持稳定的工作节奏。",
+          "effect": {
+            "ratePerMinute": 0.1,
+            "duration": 240
+          }
+        },
+        {
+          "label": "短期增加任务",
+          "money": 65,
+          "function": -2,
+          "reply": "可以短期多承担一些。",
+          "effect": {
+            "ratePerMinute": -0.25,
+            "duration": 240
+          },
+          "flags": {
+            "overwork": 1
+          }
+        },
+        {
+          "label": "冲刺高薪项目",
+          "money": 125,
+          "function": -4,
+          "reply": "我来冲刺这一段，之后再减负。",
+          "effect": {
+            "ratePerMinute": -0.65,
+            "duration": 240
+          },
+          "flags": {
+            "overwork": 2
+          }
+        }
+      ],
+      "requires": {}
+    },
+    {
+      "id": "ill_delivery",
+      "category": "工作",
+      "speaker": "客户",
+      "role": "交付消息",
+      "title": "身体不适还要赶吗",
+      "line": "这份任务今天能交吗？如果确实不舒服，也可以重新安排。",
+      "own": "身体的信号已经很明显了。",
+      "options": [
+        {
+          "label": "延期并休息",
+          "money": -20,
+          "function": 5,
+          "reply": "我需要延后一点，恢复好再交。",
+          "effect": {
+            "ratePerMinute": 0.4,
+            "duration": 240
+          }
+        },
+        {
+          "label": "只交必要部分",
+          "money": 25,
+          "function": 0,
+          "reply": "今天先完成最必要的部分。"
+        },
+        {
+          "label": "硬撑着全部交付",
+          "money": 90,
+          "function": -5,
+          "reply": "我今天全部交完，之后必须缓一缓。",
+          "effect": {
+            "ratePerMinute": -0.4,
+            "duration": 240
+          },
+          "flags": {
+            "overwork": 1
+          }
+        }
+      ],
+      "requires": {
+        "maxFunction": 65
+      }
+    },
+    {
+      "id": "lunch_choice",
+      "category": "饮食",
+      "speaker": "饭店老板",
+      "role": "午餐安排",
+      "title": "今天午饭吃什么",
+      "line": "午饭时间到了，想吃一份正常套餐，还是简单对付？",
+      "own": "下午还有事情，午饭不能一直拖着。",
+      "options": [
+        {
+          "label": "吃一份正常套餐",
+          "money": -24,
+          "function": 3,
+          "reply": "来一份正常套餐，慢慢吃。",
+          "effect": {
+            "ratePerMinute": 0.15,
+            "duration": 240
+          }
+        },
+        {
+          "label": "买便宜快餐",
+          "money": -10,
+          "function": 0,
+          "reply": "今天简单吃一点。"
+        },
+        {
+          "label": "先不吃，省下时间",
+          "money": 0,
+          "function": -3,
+          "reply": "这顿先省下来，晚点再安排。",
+          "effect": {
+            "ratePerMinute": -0.3,
+            "duration": 240
+          },
+          "flags": {
+            "missedMeal": 1
+          }
+        }
+      ],
+      "requires": {}
+    },
+    {
+      "id": "night_takeout",
+      "category": "饮食",
+      "speaker": "外卖商家",
+      "role": "夜间菜单",
+      "title": "要不要点夜宵",
+      "line": "店里还在营业，简单夜宵和重口味套餐都可以送。",
+      "own": "这个时间点，得考虑一下今晚的安排。",
+      "options": [
+        {
+          "label": "简单吃一点",
+          "money": -12,
+          "function": 1,
+          "reply": "少量吃一点，之后就休息。"
+        },
+        {
+          "label": "点重口味大餐",
+          "money": -30,
+          "function": -2,
+          "reply": "今晚想吃点重口味的。",
+          "effect": {
+            "ratePerMinute": -0.15,
+            "duration": 240
+          }
+        },
+        {
+          "label": "不点单，早点休息",
+          "money": 0,
+          "function": 2,
+          "reply": "先不点了，早点睡。",
+          "effect": {
+            "ratePerMinute": 0.2,
+            "duration": 240
+          }
+        }
+      ],
+      "requires": {}
+    },
+    {
+      "id": "meal_prep",
+      "category": "饮食",
+      "speaker": "室友",
+      "role": "生活聊天",
+      "title": "周末一起备餐吗",
+      "line": "要不要提前准备几顿饭？花点时间，之后几天省心些。",
+      "own": "准备一下，或许能让后面的生活规律一点。",
+      "options": [
+        {
+          "label": "花时间一起备餐",
+          "money": -28,
+          "function": 2,
+          "reply": "一起准备吧，后面按时吃饭。",
+          "effect": {
+            "ratePerMinute": 0.4,
+            "duration": 240
+          }
+        },
+        {
+          "label": "直接买现成餐",
+          "money": -48,
+          "function": 1,
+          "reply": "这次买现成的，省下准备时间。",
+          "effect": {
+            "ratePerMinute": 0.15,
+            "duration": 240
+          }
+        },
+        {
+          "label": "最近几餐都先对付",
+          "money": -5,
+          "function": -2,
+          "reply": "先简单对付，之后再调整。",
+          "effect": {
+            "ratePerMinute": -0.35,
+            "duration": 240
+          }
+        }
+      ],
+      "requires": {}
+    },
+    {
+      "id": "food_stall",
+      "category": "饮食",
+      "speaker": "阿乐",
+      "role": "朋友邀约",
+      "title": "路边摊的邀请",
+      "line": "这边有几家小摊，要不要过来一起吃？",
+      "own": "店铺和食物都可以选，我想找个合适的。",
+      "options": [
+        {
+          "label": "换家熟悉的店",
+          "money": -22,
+          "function": 2,
+          "reply": "我们换一家熟悉的店，正常吃一餐。"
+        },
+        {
+          "label": "正常点一份",
+          "money": -14,
+          "function": 0,
+          "reply": "我点一份，吃完就回去。"
+        },
+        {
+          "label": "边吃边聊到深夜",
+          "money": -32,
+          "function": -3,
+          "reply": "今晚多聊一会儿，晚点再回去。",
+          "effect": {
+            "ratePerMinute": -0.2,
+            "duration": 240
+          },
+          "exposure": {
+            "kind": "respiratory",
+            "multiplier": 1.5,
+            "duration": 240
+          },
+          "flags": {
+            "lateNight": 1
+          }
+        }
+      ],
+      "requires": {}
+    },
+    {
+      "id": "snack_sale",
+      "category": "饮食",
+      "speaker": "便利店店员",
+      "role": "促销消息",
+      "title": "零食促销",
+      "line": "零食正在促销，要不要多带一些回去？",
+      "own": "便宜是便宜，也要想想会不会总拿它顶正餐。",
+      "options": [
+        {
+          "label": "这次不买",
+          "money": 0,
+          "function": 1,
+          "reply": "先不买，家里还有正常食材。"
+        },
+        {
+          "label": "买少量尝尝",
+          "money": -10,
+          "function": 0,
+          "reply": "少买一点，偶尔吃。"
+        },
+        {
+          "label": "囤一大袋当加餐",
+          "money": -35,
+          "function": -1,
+          "reply": "这段时间图方便，先买一袋。",
+          "effect": {
+            "ratePerMinute": -0.3,
+            "duration": 240
+          }
+        }
+      ],
+      "requires": {}
+    },
+    {
+      "id": "commute",
+      "category": "活动",
+      "speaker": "出行助手",
+      "role": "通勤安排",
+      "title": "今天怎么去上班",
+      "line": "今天时间还算充裕，可以自己安排通勤方式。",
+      "own": "花费、路程和状态，选个平衡一点的。",
+      "options": [
+        {
+          "label": "步行一段再出发",
+          "money": 0,
+          "function": 2,
+          "reply": "留点时间走一走。",
+          "effect": {
+            "ratePerMinute": 0.15,
+            "duration": 240
+          }
+        },
+        {
+          "label": "坐公共交通",
+          "money": -6,
+          "function": 0,
+          "reply": "今天按平时的路线走。",
+          "exposure": {
+            "kind": "respiratory",
+            "multiplier": 1.2,
+            "duration": 240
+          }
+        },
+        {
+          "label": "打车省下时间",
+          "money": -28,
+          "function": 1,
+          "reply": "今天打车，少一点奔波。"
+        }
+      ],
+      "requires": {}
+    },
+    {
+      "id": "evening_activity",
+      "category": "活动",
+      "speaker": "运动搭子",
+      "role": "晚间邀请",
+      "title": "今晚活动一下吗",
+      "line": "晚上有空，要轻松活动，还是参加高强度训练？",
+      "own": "得按今天的状态来安排。",
+      "options": [
+        {
+          "label": "轻度活动",
+          "money": 0,
+          "function": 2,
+          "reply": "今天轻松活动一下。",
+          "effect": {
+            "ratePerMinute": 0.25,
+            "duration": 240
+          }
+        },
+        {
+          "label": "留在家里休息",
+          "money": 0,
+          "function": 1,
+          "reply": "今天先休息，状态好了再来。",
+          "effect": {
+            "ratePerMinute": 0.15,
+            "duration": 240
+          }
+        },
+        {
+          "label": "报名高强度训练",
+          "money": -20,
+          "function": -3,
+          "reply": "这次挑战一下，结束后安排恢复。",
+          "effect": {
+            "ratePerMinute": -0.25,
+            "duration": 240
+          }
+        }
+      ],
+      "requires": {}
+    },
+    {
+      "id": "desk_break",
+      "category": "活动",
+      "speaker": "办公提醒",
+      "role": "工作间隙",
+      "title": "已经坐了很久",
+      "line": "手头的任务还没结束，不过你已经很久没有起身了。",
+      "own": "这几分钟的空档，我可以自己安排。",
+      "options": [
+        {
+          "label": "起身活动一会儿",
+          "money": 0,
+          "function": 2,
+          "reply": "先起来走几步，再回来。",
+          "effect": {
+            "ratePerMinute": 0.2,
+            "duration": 240
+          }
+        },
+        {
+          "label": "按原节奏做完",
+          "money": 15,
+          "function": -1,
+          "reply": "先把这一小段做完。"
+        },
+        {
+          "label": "跳过休息继续赶",
+          "money": 40,
+          "function": -3,
+          "reply": "现在赶进度，稍后再休息。",
+          "effect": {
+            "ratePerMinute": -0.2,
+            "duration": 240
+          },
+          "flags": {
+            "overwork": 1
+          }
+        }
+      ],
+      "requires": {}
+    },
+    {
+      "id": "holiday",
+      "category": "活动",
+      "speaker": "假期安排",
+      "role": "休假通知",
+      "title": "假期怎么安排",
+      "line": "接下来有一段空闲，是休整、出游，还是继续接活？",
+      "own": "休假也有不同的过法。",
+      "options": [
+        {
+          "label": "在家低成本休整",
+          "money": -8,
+          "function": 4,
+          "reply": "把生活节奏调回来。",
+          "effect": {
+            "ratePerMinute": 0.4,
+            "duration": 240
+          }
+        },
+        {
+          "label": "花钱轻松出游",
+          "money": -85,
+          "function": 5,
+          "reply": "安排一次轻松的假期。",
+          "effect": {
+            "ratePerMinute": 0.5,
+            "duration": 240
+          }
+        },
+        {
+          "label": "利用假期接活",
+          "money": 110,
+          "function": -4,
+          "reply": "先多存一点钱，再安排休假。",
+          "effect": {
+            "ratePerMinute": -0.3,
+            "duration": 240
+          },
+          "flags": {
+            "overwork": 1
+          }
+        }
+      ],
+      "requires": {}
+    },
+    {
+      "id": "recovery_trip",
+      "category": "活动",
+      "speaker": "同行朋友",
+      "role": "行程确认",
+      "title": "恢复期间还出行吗",
+      "line": "你最近正在恢复，我们的行程要不要改一改？",
+      "own": "刚缓过来一点，安排得留些余地。",
+      "options": [
+        {
+          "label": "取消，留在家中",
+          "money": 0,
+          "function": 4,
+          "reply": "这次先不去了，等状态稳一些。",
+          "effect": {
+            "ratePerMinute": 0.4,
+            "duration": 240
+          }
+        },
+        {
+          "label": "改成短行程",
+          "money": -18,
+          "function": 1,
+          "reply": "缩短一点，早点回来。"
+        },
+        {
+          "label": "照原计划走完",
+          "money": -35,
+          "function": -3,
+          "reply": "这次按原计划，回来再休息。",
+          "effect": {
+            "ratePerMinute": -0.2,
+            "duration": 240
+          },
+          "exposure": {
+            "kind": "respiratory",
+            "multiplier": 1.4,
+            "duration": 240
+          }
+        }
+      ],
+      "requires": {
+        "maxFunction": 75
+      }
+    },
+    {
+      "id": "crowded_party",
+      "category": "接触",
+      "speaker": "阿乐",
+      "role": "聚会邀请",
+      "title": "今晚人会很多",
+      "line": "大家约了个很热闹的聚会，你要不要来？",
+      "own": "可以聚一聚，也能选择早点回家。",
+      "options": [
+        {
+          "label": "这次不参加",
+          "money": 0,
+          "function": 2,
+          "reply": "这次先不去了，留点时间休息。",
+          "effect": {
+            "ratePerMinute": 0.15,
+            "duration": 240
+          },
+          "exposure": {
+            "kind": "respiratory",
+            "multiplier": 0.85,
+            "duration": 240
+          }
+        },
+        {
+          "label": "短暂见面就走",
+          "money": -20,
+          "function": -1,
+          "reply": "我去见见大家，待一会儿就回。",
+          "exposure": {
+            "kind": "respiratory",
+            "multiplier": 1.6,
+            "duration": 240
+          }
+        },
+        {
+          "label": "一起热闹到深夜",
+          "money": -45,
+          "function": -4,
+          "reply": "今晚尽兴一点，回头再补休。",
+          "effect": {
+            "ratePerMinute": -0.25,
+            "duration": 240
+          },
+          "exposure": {
+            "kind": "respiratory",
+            "multiplier": 2.2,
+            "duration": 240
+          },
+          "flags": {
+            "lateNight": 1
+          }
+        }
+      ],
+      "requires": {}
+    },
+    {
+      "id": "unwell_colleague",
+      "category": "接触",
+      "speaker": "小周",
+      "role": "同事沟通",
+      "title": "同事身体不适",
+      "line": "我今天状态不太好，工作和见面安排可能得改一下。",
+      "own": "先把接触和工作都安排好。",
+      "options": [
+        {
+          "label": "改为远程沟通",
+          "money": 0,
+          "function": 1,
+          "reply": "我们远程把事情说清楚。",
+          "exposure": {
+            "kind": "respiratory",
+            "multiplier": 0.75,
+            "duration": 240
+          }
+        },
+        {
+          "label": "照常近距离交接",
+          "money": 20,
+          "function": 0,
+          "reply": "按原计划交接，我会早点结束。",
+          "exposure": {
+            "kind": "respiratory",
+            "multiplier": 1.7,
+            "duration": 240
+          }
+        },
+        {
+          "label": "到现场帮忙代班",
+          "money": 70,
+          "function": -2,
+          "reply": "我去现场帮你，之后自己也休整。",
+          "exposure": {
+            "kind": "respiratory",
+            "multiplier": 2.1,
+            "duration": 240
+          },
+          "flags": {
+            "overwork": 1
+          }
+        }
+      ],
+      "requires": {}
+    },
+    {
+      "id": "season_trip",
+      "category": "接触",
+      "speaker": "行程联系人",
+      "role": "换季安排",
+      "title": "换季出行",
+      "line": "下一段时间有好几个外出安排，需要现在确认。",
+      "own": "能不能把奔波安排得更从容一点？",
+      "options": [
+        {
+          "label": "减少外出安排",
+          "money": 0,
+          "function": 2,
+          "reply": "能线上处理的先在线上处理。",
+          "exposure": {
+            "kind": "respiratory",
+            "multiplier": 0.8,
+            "duration": 240
+          }
+        },
+        {
+          "label": "维持原计划",
+          "money": 35,
+          "function": -1,
+          "reply": "就按已经定好的安排走。",
+          "exposure": {
+            "kind": "respiratory",
+            "multiplier": 1.3,
+            "duration": 240
+          }
+        },
+        {
+          "label": "把行程全部排满",
+          "money": 85,
+          "function": -4,
+          "reply": "这一段尽量把事情跑完。",
+          "effect": {
+            "ratePerMinute": -0.2,
+            "duration": 240
+          },
+          "exposure": {
+            "kind": "respiratory",
+            "multiplier": 1.9,
+            "duration": 240
+          },
+          "flags": {
+            "travel": 1
+          }
+        }
+      ],
+      "requires": {}
+    },
+    {
+      "id": "bad_weather",
+      "category": "接触",
+      "speaker": "出行助手",
+      "role": "天气提醒",
+      "title": "突发天气",
+      "line": "路上的天气变差了，现在调整出行还来得及。",
+      "own": "要不要花点时间或金钱换个安排？",
+      "options": [
+        {
+          "label": "推迟出发",
+          "money": 0,
+          "function": 2,
+          "reply": "先等等，调整一下时间。"
+        },
+        {
+          "label": "换一种通勤方式",
+          "money": -20,
+          "function": 1,
+          "reply": "多花一点，减少路上的奔波。"
+        },
+        {
+          "label": "照原计划赶路",
+          "money": 20,
+          "function": -2,
+          "reply": "我照原计划赶过去。",
+          "effect": {
+            "ratePerMinute": -0.15,
+            "duration": 240
+          }
+        }
+      ],
+      "requires": {}
+    },
+    {
+      "id": "return_trip",
+      "category": "接触",
+      "speaker": "行政同事",
+      "role": "返程消息",
+      "title": "刚回来就继续忙吗",
+      "line": "差旅结束了，你想先恢复，还是马上接下一段任务？",
+      "own": "回到家后，终于可以重新安排节奏。",
+      "options": [
+        {
+          "label": "先休整一段时间",
+          "money": 0,
+          "function": 4,
+          "reply": "我先缓一缓，再恢复工作。",
+          "effect": {
+            "ratePerMinute": 0.35,
+            "duration": 240
+          },
+          "flags": {
+            "travel": -1
+          }
+        },
+        {
+          "label": "直接正常上班",
+          "money": 35,
+          "function": -1,
+          "reply": "先正常上班，不再加额外任务。"
+        },
+        {
+          "label": "紧接下一段差旅",
+          "money": 120,
+          "function": -5,
+          "reply": "下一段我也接下，回来再休息。",
+          "effect": {
+            "ratePerMinute": -0.35,
+            "duration": 240
+          },
+          "exposure": {
+            "kind": "respiratory",
+            "multiplier": 1.8,
+            "duration": 240
+          },
+          "flags": {
+            "travel": 1
+          }
+        }
+      ],
+      "requires": {
+        "flag": "travel"
+      }
+    },
+    {
+      "id": "full_schedule",
+      "category": "压力",
+      "speaker": "日程助手",
+      "role": "排期提醒",
+      "title": "这一周排得太满",
+      "line": "你的日程已经很密集，还有新的事情想排进来。",
+      "own": "需要给自己留出喘口气的时间。",
+      "options": [
+        {
+          "label": "取消一部分任务",
+          "money": -15,
+          "function": 4,
+          "reply": "先减少一些，重要的慢慢做。",
+          "effect": {
+            "ratePerMinute": 0.35,
+            "duration": 240
+          }
+        },
+        {
+          "label": "保持现有安排",
+          "money": 25,
+          "function": -1,
+          "reply": "暂时不新增，按现在的计划走。"
+        },
+        {
+          "label": "再加几项任务",
+          "money": 85,
+          "function": -4,
+          "reply": "这一段多做一些。",
+          "effect": {
+            "ratePerMinute": -0.35,
+            "duration": 240
+          },
+          "flags": {
+            "overwork": 1
+          }
+        }
+      ],
+      "requires": {}
+    },
+    {
+      "id": "friend_invite",
+      "category": "压力",
+      "speaker": "老朋友",
+      "role": "私人邀请",
+      "title": "好久没见了",
+      "line": "要不要找个时间聊聊天？简单聚聚也很好。",
+      "own": "见朋友也可以是放松，不一定非得折腾。",
+      "options": [
+        {
+          "label": "低成本短聚",
+          "money": -10,
+          "function": 3,
+          "reply": "简单坐坐，聊一会儿。",
+          "effect": {
+            "ratePerMinute": 0.2,
+            "duration": 240
+          }
+        },
+        {
+          "label": "安排一场大聚会",
+          "money": -70,
+          "function": 1,
+          "reply": "这次好好聚一聚，不过早点结束。",
+          "exposure": {
+            "kind": "respiratory",
+            "multiplier": 1.25,
+            "duration": 240
+          }
+        },
+        {
+          "label": "留在家中休息",
+          "money": 0,
+          "function": 2,
+          "reply": "最近想静一静，我们改天见。",
+          "effect": {
+            "ratePerMinute": 0.15,
+            "duration": 240
+          }
+        }
+      ],
+      "requires": {}
+    },
+    {
+      "id": "study",
+      "category": "压力",
+      "speaker": "课程老师",
+      "role": "学习机会",
+      "title": "要不要进修一下",
+      "line": "有一门短期课程，可以按自己的节奏学习。",
+      "own": "这会占用一些时间，也可能带来后面的机会。",
+      "options": [
+        {
+          "label": "适度安排学习",
+          "money": -25,
+          "function": 0,
+          "reply": "每天安排一点，不挤占睡眠。",
+          "flags": {
+            "study": 1
+          }
+        },
+        {
+          "label": "压缩睡眠突击学",
+          "money": -25,
+          "function": -4,
+          "reply": "这一段集中学完，之后再休整。",
+          "effect": {
+            "ratePerMinute": -0.3,
+            "duration": 240
+          },
+          "flags": {
+            "study": 1,
+            "lateNight": 1
+          }
+        },
+        {
+          "label": "暂缓，先稳住状态",
+          "money": 0,
+          "function": 2,
+          "reply": "等安排宽松些再开始。",
+          "effect": {
+            "ratePerMinute": 0.15,
+            "duration": 240
+          }
+        }
+      ],
+      "requires": {}
+    },
+    {
+      "id": "family_errand",
+      "category": "压力",
+      "speaker": "家人",
+      "role": "家庭消息",
+      "title": "家里有些事要办",
+      "line": "家里有几件事情需要安排，你能抽出一些时间吗？",
+      "own": "可以一起分担，也要把工作和休息协调好。",
+      "options": [
+        {
+          "label": "请假集中处理",
+          "money": -25,
+          "function": 2,
+          "reply": "我请一点假，把事情好好办完。"
+        },
+        {
+          "label": "和家人分担",
+          "money": -10,
+          "function": 1,
+          "reply": "我们分开安排，别都挤在一个人身上。"
+        },
+        {
+          "label": "工作之余全部包下",
+          "money": 35,
+          "function": -3,
+          "reply": "工作照做，其他时间我来处理。",
+          "effect": {
+            "ratePerMinute": -0.25,
+            "duration": 240
+          },
+          "flags": {
+            "overwork": 1
+          }
+        }
+      ],
+      "requires": {}
+    },
+    {
+      "id": "after_holiday",
+      "category": "压力",
+      "speaker": "林主管",
+      "role": "工作安排",
+      "title": "假期后的第一周",
+      "line": "假期结束了，下一周的工作节奏可以提前沟通。",
+      "own": "状态恢复了，也不必一下子排满。",
+      "options": [
+        {
+          "label": "循序恢复工作",
+          "money": 15,
+          "function": 2,
+          "reply": "先按稳定的节奏回来。",
+          "effect": {
+            "ratePerMinute": 0.2,
+            "duration": 240
+          }
+        },
+        {
+          "label": "直接正常负荷",
+          "money": 45,
+          "function": 0,
+          "reply": "恢复正常安排就好。"
+        },
+        {
+          "label": "立刻满负荷冲刺",
+          "money": 100,
+          "function": -4,
+          "reply": "这一周把进度赶上去。",
+          "effect": {
+            "ratePerMinute": -0.35,
+            "duration": 240
+          },
+          "flags": {
+            "overwork": 1
+          }
+        }
+      ],
+      "requires": {}
+    },
+    {
+      "id": "tight_budget",
+      "category": "预算",
+      "speaker": "本人",
+      "role": "账本记录",
+      "title": "这周预算有点紧",
+      "line": "看了看余额，接下来一段时间得仔细安排开支。",
+      "own": "基本生活、休息和收入都得照顾到。",
+      "options": [
+        {
+          "label": "减少娱乐，保留正餐",
+          "money": 0,
+          "function": 2,
+          "reply": "先缩减不必要的支出。",
+          "effect": {
+            "ratePerMinute": 0.15,
+            "duration": 240
+          }
+        },
+        {
+          "label": "安排一份短工",
+          "money": 55,
+          "function": -1,
+          "reply": "接一点工作，不把时间排满。"
+        },
+        {
+          "label": "连续加班补足预算",
+          "money": 115,
+          "function": -5,
+          "reply": "先把资金补上，再安排恢复。",
+          "effect": {
+            "ratePerMinute": -0.4,
+            "duration": 240
+          },
+          "flags": {
+            "overwork": 1
+          }
+        }
+      ],
+      "requires": {
+        "maxMoney": 200
+      }
+    },
+    {
+      "id": "extra_income",
+      "category": "预算",
+      "speaker": "财务同事",
+      "role": "到账消息",
+      "title": "收到一笔额外收入",
+      "line": "前期那笔奖励已经到账，这次可以自己安排。",
+      "own": "是先存下来，还是改善接下来的生活？",
+      "options": [
+        {
+          "label": "留作储备",
+          "money": 60,
+          "function": 0,
+          "reply": "先把这笔钱存好。"
+        },
+        {
+          "label": "改善近期生活",
+          "money": 25,
+          "function": 3,
+          "reply": "留一部分钱，把生活安排得舒服些。",
+          "effect": {
+            "ratePerMinute": 0.25,
+            "duration": 240
+          }
+        },
+        {
+          "label": "拿出一部分休整",
+          "money": 0,
+          "function": 5,
+          "reply": "这一段给自己放松一下。",
+          "effect": {
+            "ratePerMinute": 0.4,
+            "duration": 240
+          }
+        }
+      ],
+      "requires": {
+        "minDecisions": 3
+      }
+    },
+    {
+      "id": "low_function_rest",
+      "category": "预算",
+      "speaker": "休整联系人",
+      "role": "生活安排",
+      "title": "现在需要缓一缓",
+      "line": "最近看起来很疲惫，要不要调整一下接下来的安排？",
+      "own": "钱不多也有办法慢慢恢复，先别继续透支。",
+      "options": [
+        {
+          "label": "低成本在家休息",
+          "money": 0,
+          "function": 4,
+          "reply": "先按时吃饭休息，慢慢恢复。",
+          "effect": {
+            "ratePerMinute": 0.45,
+            "duration": 240
+          }
+        },
+        {
+          "label": "花钱安排充分休整",
+          "money": -65,
+          "function": 7,
+          "reply": "这次给恢复留出更好的条件。",
+          "effect": {
+            "ratePerMinute": 0.65,
+            "duration": 240
+          }
+        },
+        {
+          "label": "继续工作攒钱",
+          "money": 75,
+          "function": -4,
+          "reply": "我先再做一段，之后一定调整。",
+          "effect": {
+            "ratePerMinute": -0.35,
+            "duration": 240
+          },
+          "flags": {
+            "overwork": 1
+          }
+        }
+      ],
+      "requires": {
+        "maxFunction": 70
+      }
+    },
+    {
+      "id": "prevention",
+      "category": "预算",
+      "speaker": "行程联系人",
+      "role": "活动准备",
+      "title": "提前做些准备吗",
+      "line": "这段时间外出较多，可以花一点时间调整接触和行程。",
+      "own": "提前安排好，也许能让接下来更从容。",
+      "options": [
+        {
+          "label": "减少不必要的接触",
+          "money": 0,
+          "function": 1,
+          "reply": "能减少的行程先减少。",
+          "exposure": {
+            "kind": "respiratory",
+            "multiplier": 0.8,
+            "duration": 240
+          }
+        },
+        {
+          "label": "花钱调整出行安排",
+          "money": -30,
+          "function": 2,
+          "reply": "换个更轻松、接触少些的安排。",
+          "exposure": {
+            "kind": "respiratory",
+            "multiplier": 0.6,
+            "duration": 240
+          }
+        },
+        {
+          "label": "保持现有节奏",
+          "money": 25,
+          "function": -1,
+          "reply": "先照原计划执行。",
+          "exposure": {
+            "kind": "respiratory",
+            "multiplier": 1.4,
+            "duration": 240
+          }
+        }
+      ],
+      "requires": {}
+    },
+    {
+      "id": "emergency_reserve",
+      "category": "预算",
+      "speaker": "本人",
+      "role": "账本记录",
+      "title": "要留多少应急钱",
+      "line": "药品助手还没有开放，但生活中的应急储备可以先安排。",
+      "own": "手里的钱，怎样才能帮到接下来的自己？",
+      "options": [
+        {
+          "label": "保留现有储备",
+          "money": 0,
+          "function": 1,
+          "reply": "先保留现金，同时减少额外安排。"
+        },
+        {
+          "label": "先用于当前休整",
+          "money": -35,
+          "function": 4,
+          "reply": "现在的状态更需要照顾。",
+          "effect": {
+            "ratePerMinute": 0.35,
+            "duration": 240
+          }
+        },
+        {
+          "label": "再接一份短工",
+          "money": 50,
+          "function": -2,
+          "reply": "多留一点钱，但这次不通宵。",
+          "flags": {
+            "overwork": 1
+          }
+        }
+      ],
+      "requires": {}
+    },
+    {
+      "id": "compensatory_leave",
+      "category": "后续",
+      "speaker": "林主管",
+      "role": "补休确认",
+      "title": "之前的加班可以补休",
+      "line": "之前辛苦了，这次可以选补休，也可以换成奖金。",
+      "own": "终于可以决定怎样补回这段付出。",
+      "options": [
+        {
+          "label": "兑现补休",
+          "money": 0,
+          "function": 5,
+          "reply": "这次我选补休，好好恢复一下。",
+          "effect": {
+            "ratePerMinute": 0.45,
+            "duration": 240
+          },
+          "flags": {
+            "overwork": -2,
+            "owedRest": -1
+          }
+        },
+        {
+          "label": "补休和奖金各一半",
+          "money": 40,
+          "function": 2,
+          "reply": "分一部分时间休息，剩下换奖金。",
+          "effect": {
+            "ratePerMinute": 0.15,
+            "duration": 240
+          },
+          "flags": {
+            "overwork": -1,
+            "owedRest": -1
+          }
+        },
+        {
+          "label": "全部换成奖金",
+          "money": 95,
+          "function": -2,
+          "reply": "这次先换成奖金。",
+          "flags": {
+            "overwork": -1,
+            "owedRest": -1
+          }
+        }
+      ],
+      "requires": {
+        "anyFlags": [
+          "overwork",
+          "owedRest"
+        ]
+      }
+    },
+    {
+      "id": "observation",
+      "category": "后续",
+      "speaker": "同行朋友",
+      "role": "后续消息",
+      "title": "接触之后怎么安排",
+      "line": "前几天聚会的人里有人不舒服，我们接下来少跑动一点？",
+      "own": "先调整接下来的安排，不用提前猜结果。",
+      "options": [
+        {
+          "label": "减少活动并休息",
+          "money": 0,
+          "function": 3,
+          "reply": "先减少活动，照顾好状态。",
+          "effect": {
+            "ratePerMinute": 0.25,
+            "duration": 240
+          },
+          "exposure": {
+            "kind": "respiratory",
+            "multiplier": 0.65,
+            "duration": 240
+          }
+        },
+        {
+          "label": "保持正常生活",
+          "money": 20,
+          "function": 0,
+          "reply": "维持正常安排，避免再透支。"
+        },
+        {
+          "label": "继续密集外出",
+          "money": 65,
+          "function": -2,
+          "reply": "还有些事要办，我会继续外出。",
+          "exposure": {
+            "kind": "respiratory",
+            "multiplier": 1.7,
+            "duration": 240
+          }
+        }
+      ],
+      "requires": {
+        "exposed": true
+      }
+    },
+    {
+      "id": "after_infection",
+      "category": "后续",
+      "speaker": "工作同事",
+      "role": "恢复沟通",
+      "title": "感染清除后的安排",
+      "line": "听说这次感染已经控制住了，后面的工作可以慢慢恢复。",
+      "own": "刚守住身体，先给恢复留出一点时间。",
+      "options": [
+        {
+          "label": "循序恢复工作",
+          "money": 15,
+          "function": 3,
+          "reply": "慢慢恢复，先不加班。",
+          "effect": {
+            "ratePerMinute": 0.3,
+            "duration": 240
+          }
+        },
+        {
+          "label": "花钱多休整一段",
+          "money": -40,
+          "function": 6,
+          "reply": "再休整一段，让状态稳下来。",
+          "effect": {
+            "ratePerMinute": 0.5,
+            "duration": 240
+          }
+        },
+        {
+          "label": "立刻赶回全部进度",
+          "money": 95,
+          "function": -3,
+          "reply": "先把积下来的事赶完。",
+          "effect": {
+            "ratePerMinute": -0.25,
+            "duration": 240
+          },
+          "flags": {
+            "overwork": 1
+          }
+        }
+      ],
+      "requires": {
+        "recovered": true
+      }
+    },
+    {
+      "id": "study_opportunity",
+      "category": "后续",
+      "speaker": "合作联系人",
+      "role": "新机会",
+      "title": "进修带来了新机会",
+      "line": "之前学到的东西正好用得上，这里有个适合你的任务。",
+      "own": "前面的投入开始有回报，也要选好工作节奏。",
+      "options": [
+        {
+          "label": "选择稳定增收",
+          "money": 70,
+          "function": 1,
+          "reply": "我选稳定安排，把新技能慢慢用起来。",
+          "flags": {
+            "study": -1
+          }
+        },
+        {
+          "label": "接短期高报酬任务",
+          "money": 145,
+          "function": -3,
+          "reply": "我来做这段短期任务。",
+          "effect": {
+            "ratePerMinute": -0.25,
+            "duration": 240
+          },
+          "flags": {
+            "study": -1,
+            "overwork": 1
+          }
+        },
+        {
+          "label": "暂缓，先恢复状态",
+          "money": 10,
+          "function": 4,
+          "reply": "谢谢，我想先把状态恢复好。",
+          "effect": {
+            "ratePerMinute": 0.35,
+            "duration": 240
+          },
+          "flags": {
+            "study": -1
+          }
+        }
+      ],
+      "requires": {
+        "flag": "study"
+      }
+    },
+    {
+      "id": "decline_warning",
+      "category": "后续",
+      "speaker": "家人",
+      "role": "关心消息",
+      "title": "最近的状态一直在下降",
+      "line": "你这段时间太累了，能不能先把安排减下来？",
+      "own": "身体已经在提醒我，这次得认真决定。",
+      "options": [
+        {
+          "label": "立即减负休息",
+          "money": 0,
+          "function": 6,
+          "reply": "先停下额外任务，好好恢复。",
+          "effect": {
+            "ratePerMinute": 0.6,
+            "duration": 240
+          },
+          "flags": {
+            "overwork": -1
+          }
+        },
+        {
+          "label": "安排充分休整",
+          "money": -55,
+          "function": 8,
+          "reply": "拿出一点积蓄，先照顾身体。",
+          "effect": {
+            "ratePerMinute": 0.75,
+            "duration": 240
+          }
+        },
+        {
+          "label": "再坚持最后一段",
+          "money": 85,
+          "function": -5,
+          "reply": "我再坚持一段，之后必须停下来。",
+          "effect": {
+            "ratePerMinute": -0.5,
+            "duration": 240
+          },
+          "flags": {
+            "overwork": 1
+          }
+        }
+      ],
+      "requires": {
+        "maxFunction": 40
+      }
+    }
+  ]
+}

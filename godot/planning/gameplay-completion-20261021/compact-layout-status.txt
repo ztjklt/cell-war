@@ -1,0 +1,49 @@
+2026-10-21 状态：原互换布局已独立复现并修通；同一原红/原坐标真实10/10，相关回归通过。
+
+接收现场：bootstrap-battle/march-4-checks/final-snapshot及
+.tmp/bootstrap-battle-march-4.log。未修改生活线程的策略/布局/测试源码。
+独立tests/construction_compact_layout.gd：原life单红25先正常走至994/1907.5，
+真实建core987.5/1905.5，再真实建barracks981.5/1905.5；只隔离生活/药品调度，
+不spawn单位、改位置/资源/HP/进度/size或原道路连接。
+
+失败证据：test-output/construction-compact-layout/baseline.json、baseline-snapshot.json；
+旧2/3，兵巢180秒进度0。36个地形/建筑占地合法的工作点，原A*全部回报组织通路受阻。
+
+精确根因：不是只能凭preferred点合法就假定可达，也不能据A*失败声称布局永久不通。
+核心膨胀碰撞下沿y1907.59375之下仍有真实组织通道，约0.25的外侧余量内可走；
+粗网格y1907.5被建筑挡住，下一行又不在组织内，漏采了窄路。
+已直接认证原红→核心右下拐点→左下拐点→兵巢工作点的三段：
+在margin .002/.01/.02/.05/.12/.25时，每段原clear_segment与movement_clear均true。
+核心上沿的相同证据均地形false，所以不能从上面伪穿墙。
+
+修复只在navigation.gd：
+- 原组织网格搜索失败后，最多收集路线附近16座建筑的膨胀方框外角点。
+- 拐点仅加.01数值净空，不缩减任何单位半径/建筑尺寸；必须在同器官lane0。
+- 临时可视图每一条边都通过原组织polygon和原建筑sweep，连通后提供实际
+  步行路径；不是新建血管/投影连接，不改变全局AStar网络。
+- 路径末端保留原next的gate/component元数据。原direct队列和正常网格路径均保留。
+- 找不到精确安全路线仍失败/重试，不让单位忽略建筑。
+没有继续改simulation/economy/main、T/药品hooks或生活策略。
+
+当前实际结果：
+- core按原65蛋白，约58.8秒完工，红到990.116882/1906.116821。
+- 隔着已建core的原barracks仍用981.5/1905.5，约44.5秒真实绕核心下方完工，
+  扣原40蛋白一次，红到984.114441/1906.126465。
+- 每个实际renderTrail运动段均断言原地形/建筑净空，lane0不变，逐tick位移
+  不超原移动速度*STEP；不把仅有path数组当实际走通。
+
+复跑：./godot/run.sh --headless --script res://tests/construction_compact_layout.gd
+输出test-output/construction-compact-layout/checks.json及checks-snapshot.json；
+日志.tmp/construction-compact-final.log。额外明确验证：拐点fallback面对建筑内部
+目标返回空路径，不能把本修复当成无视碰撞的捷径。
+
+本批回归：construction_approach44/44、building_placement64/64、run_tests52/52；
+导入解析无ERROR/SCRIPT。旧direct队列、建筑工作点与占地保护均保留。
+日志.tmp/compact-approach.log、compact-placement.log、compact-rules.log、compact-import.log。
+完整生活链路仍由生活线程复跑，未声称该全链已完成；未改其策略/布局以绕过现场。
+
+适用范围：fallback仅在原网格搜索失败且附近有建筑时触发，最多16个附近障碍；
+每条线真实净空认证。未穷举任意大规模迷宫/数百建筑与长期交通性能，不声称全导航验收。
+本批仅navigation.gd与独立测试/交接文字，无新美术、无提交、推送或远端构建。
+本批导航代码已冻结，可由生活线程在新进程复跑原compact-layout，避免长回放
+启动后源码继续变动造成changedDependencies；不需要再换建筑位置。

@@ -1,6 +1,15 @@
 {
   "max_changed_file_bytes": 10485760,
-  "large_file_exceptions": {},
+  "large_file_exceptions": {
+    "godot/assets/fonts/MiSans-Regular.ttf": {
+      "max_bytes": 25000000,
+      "reason": "Bundled Chinese UI font required by Godot scenes"
+    },
+    "godot/data/legacy_base.bin": {
+      "max_bytes": 18000000,
+      "reason": "Frozen contour mesh required by native painter and parity test"
+    }
+  },
   "local_only_patterns": [
     "(^|/)(node_modules|__pycache__|\\.pytest_cache|\\.venv)/",
     "^(\\.maker|\\.maker-mcp|\\.project|\\.tmp|\\.build|dist|logs)/",

@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "scope": "Authored full-body organ functions; tissue lane 0 only. Resource-point production is owned by resource_generation.",
+  "organs": {
+    "brain": {"name": "脑", "functions": ["研究加速", "主动指挥"], "researchRate": 1.25},
+    "heart": {"name": "心脏", "functions": ["强细胞转运"], "existingTransfer": true},
+    "liver": {"name": "肝", "functions": ["营养加工", "糖原储备", "强细胞培育"], "strongKinds": ["heavy", "siege"]},
+    "kidney_l": {"name": "左肾", "functions": ["净化", "休整"], "sharedRules": "kidney"},
+    "kidney_r": {"name": "右肾", "functions": ["净化", "休整"], "sharedRules": "kidney"},
+    "pancreas": {"name": "胰腺", "functions": ["葡萄糖利用调控"]},
+    "bladder": {"name": "膀胱", "functions": ["代谢杂质回收"]},
+    "lung_l": {"name": "左肺", "functions": ["供氧"], "owner": "resource_generation"},
+    "lung_r": {"name": "右肺", "functions": ["供氧"], "owner": "resource_generation"},
+    "stomach": {"name": "胃", "functions": ["葡萄糖供给"], "owner": "resource_generation"},
+    "small_intestine": {"name": "小肠", "functions": ["营养吸收"], "owner": "resource_generation"},
+    "large_intestine": {"name": "大肠", "functions": ["营养回收"], "owner": "resource_generation"}
+  },
+  "limits": {"glycogen": 120.0, "waste": 200.0},
+  "kidney": {
+    "timingSource": "CombatConfig.kidney",
+    "statusSource": "CombatConfig.statuses.*.clearOrgan == kidney",
+    "wastePerToxinClear": 1.0,
+    "cost": "停留在真实肾组织，累计原规则2秒后净化；恢复生命仍按原规则1.1/秒，没有额外资源扣费。"
+  },
+  "actions": {
+    "liver_process": {"name": "营养加工", "organ": "liver", "actorKinds": ["worker"], "cost": {"food": 20.0, "oxygen": 4.0}, "gain": {"wood": 8.0}, "cooldown": 15.0, "description": "消耗葡萄糖和氧气，合成游戏中的蛋白质资源。"},
+    "liver_store": {"name": "封存糖原", "organ": "liver", "actorKinds": ["worker"], "cost": {"food": 20.0, "oxygen": 1.0}, "glycogenGain": 20.0, "cooldown": 10.0, "description": "将葡萄糖转为不受食物保质期影响的糖原储备，最多120。"},
+    "liver_release": {"name": "释放糖原", "organ": "liver", "actorKinds": ["worker"], "cost": {}, "glycogenCost": 20.0, "gain": {"food": 18.0}, "cooldown": 10.0, "description": "消耗20糖原，释放18普通葡萄糖；不冒充胃部专用葡萄糖。"},
+    "brain_command": {"name": "协调进攻", "organ": "brain", "actorKinds": ["worker", "lab"], "requiredTech": "tier2", "cost": {"oxygen": 8.0}, "cooldown": 60.0, "duration": 20.0, "attackSpeedMultiplier": 1.15, "description": "完成稳定生产研究后，在脑组织主动发令，使本阵营作战单位攻速提高15%，持续20秒，不能叠加。指令收益为阵营范围，启动位置必须在脑组织。"},
+    "pancreas_regulate": {"name": "调控葡萄糖利用", "organ": "pancreas", "actorKinds": ["worker"], "cost": {"food": 5.0, "oxygen": 4.0}, "cooldown": 120.0, "duration": 90.0, "trainingFoodMultiplier": 0.8, "description": "90秒内本阵营新排入训练队列的细胞消耗葡萄糖减少20%；不改变蛋白质和氧气代价，不返还既有队列费用。"},
+    "bladder_recycle": {"name": "回收代谢杂质", "organ": "bladder", "actorKinds": ["worker"], "cost": {"oxygen": 2.0}, "wasteCost": 10.0, "gain": {"wood": 2.0}, "cooldown": 15.0, "description": "消耗肾净化累计的10单位杂质与2氧气，回收2蛋白质；上限与冷却按阵营计。"}
+  }
+}

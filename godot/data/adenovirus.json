@@ -1,0 +1,238 @@
+{
+  "schema": 1,
+  "name": "腺病毒",
+  "unitKind": "adenovirus",
+  "battleEnabled": false,
+  "scope": "Independent opt-in service only; no public registration, life invasion or rendering dispatch.",
+  "unitSpec": {
+    "name": "腺病毒",
+    "hp": 180,
+    "speed": 1.8,
+    "vision": 9,
+    "damage": 18,
+    "range": 2.4,
+    "cool": 2.4,
+    "pop": 0,
+    "sprite": "adenovirus",
+    "pathogen": true,
+    "pathogenFamily": "virus",
+    "attackStyle": "adenovirus_slam"
+  },
+  "rules": {
+    "damage": 18.0,
+    "radius": 2.4,
+    "castReach": 2.4,
+    "cooldown": 2.4,
+    "impactDelay": 0.82,
+    "recoveryEnd": 1.4,
+    "knockback": 0.35,
+    "hitDuration": 1.0,
+    "deathDuration": 1.6
+  },
+  "clips": {
+    "move": {
+      "path": "image/adenovirus-cartoon-v2-20261021/move-16/spritesheet.png",
+      "frameSize": 512,
+      "columns": 4,
+      "rows": 4,
+      "anchorX": 256.0,
+      "anchorY": 440.0,
+      "duration": 1.333,
+      "durations": [
+        0.083,
+        0.084,
+        0.083,
+        0.083,
+        0.084,
+        0.083,
+        0.083,
+        0.084,
+        0.083,
+        0.083,
+        0.084,
+        0.083,
+        0.083,
+        0.084,
+        0.083,
+        0.083
+      ],
+      "loop": true,
+      "events": {
+        "bodyFacing": "front",
+        "baseGaze": "forward",
+        "mirrored": false
+      }
+    },
+    "slam": {
+      "path": "image/adenovirus-cartoon-v2-20261021/slam-16/spritesheet.png",
+      "frameSize": 512,
+      "columns": 4,
+      "rows": 4,
+      "anchorX": 256.0,
+      "anchorY": 440.0,
+      "duration": 1.4,
+      "durations": [
+        0.08,
+        0.1,
+        0.13,
+        0.18,
+        0.06,
+        0.065,
+        0.08,
+        0.07,
+        0.055,
+        0.1,
+        0.07,
+        0.08,
+        0.09,
+        0.085,
+        0.08,
+        0.075
+      ],
+      "loop": false,
+      "events": {
+        "chargeFrames": [
+          2,
+          3,
+          4
+        ],
+        "apexFrame": 7,
+        "impactFrame": 10,
+        "shockwaveFrames": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "bodyFacing": "front",
+        "baseGaze": "forward",
+        "mirrored": false,
+        "apexAtMs": 615,
+        "impactAtMs": 820
+      }
+    },
+    "hit-right": {
+      "path": "image/adenovirus-cartoon-v2-20261021/hit-right-16/spritesheet.png",
+      "frameSize": 512,
+      "columns": 4,
+      "rows": 4,
+      "anchorX": 256.0,
+      "anchorY": 440.0,
+      "duration": 1.0,
+      "durations": [
+        0.062,
+        0.063,
+        0.063,
+        0.062,
+        0.062,
+        0.063,
+        0.063,
+        0.062,
+        0.062,
+        0.063,
+        0.063,
+        0.062,
+        0.062,
+        0.063,
+        0.063,
+        0.062
+      ],
+      "loop": false,
+      "events": {
+        "impactSide": "right",
+        "recoilDirection": "left",
+        "bodyFacing": "front",
+        "baseGaze": "forward",
+        "mirrored": false
+      }
+    },
+    "hit-left": {
+      "path": "image/adenovirus-cartoon-v2-20261021/hit-left-16/spritesheet.png",
+      "frameSize": 512,
+      "columns": 4,
+      "rows": 4,
+      "anchorX": 256.0,
+      "anchorY": 440.0,
+      "duration": 1.0,
+      "durations": [
+        0.062,
+        0.063,
+        0.063,
+        0.062,
+        0.062,
+        0.063,
+        0.063,
+        0.062,
+        0.062,
+        0.063,
+        0.063,
+        0.062,
+        0.062,
+        0.063,
+        0.063,
+        0.062
+      ],
+      "loop": false,
+      "events": {
+        "impactSide": "left",
+        "recoilDirection": "right",
+        "bodyFacing": "front",
+        "baseGaze": "forward",
+        "mirrored": false
+      }
+    },
+    "death": {
+      "path": "image/adenovirus-cartoon-v2-20261021/death-16/spritesheet.png",
+      "frameSize": 512,
+      "columns": 4,
+      "rows": 4,
+      "anchorX": 256.0,
+      "anchorY": 440.0,
+      "duration": 1.6,
+      "durations": [
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1
+      ],
+      "loop": false,
+      "events": {
+        "bodyFacing": "front",
+        "baseGaze": "forward",
+        "mirrored": false
+      }
+    }
+  },
+  "portrait": "res://assets/image/adenovirus-cartoon-v2-20261021/character-v4.png",
+  "renderPolicy": {
+    "rotation": 0,
+    "mirror": false,
+    "proceduralBreathing": false,
+    "jumpIsVisual": true,
+    "hitSideInput": "local projected vector from victim toward attacker"
+  },
+  "integrationPending": [
+    "unit registration",
+    "standing hull/radius/occupancy review",
+    "geometry/gate adapter",
+    "combat and render dispatch",
+    "save validation",
+    "scenario admission"
+  ],
+  "sourceCandidate": {
+    "path": "godot/planning/bug-audit-20261021/pathogens-delivery-candidates/adenovirus.json",
+    "sha256": "4768753d5cd1d2d049acfd066a9d9a07d131ba808bffe9806c29d85cd23ebdf7"
+  }
+}

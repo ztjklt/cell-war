@@ -1,0 +1,37 @@
+角色图鉴完成 · 2026-10-21
+
+内容：24 个角色（10 细胞 / 9 病原体含两种原型寄生虫 / 5 药物），88 组动作及附属图形。
+界面：复用 WarUISkin；横屏列表+详情，竖屏/矮横屏列表→详情；分类、中文名称/定位/机制搜索、空结果、角色循环切换、全动作循环、单动作循环、立绘、动作前后切换、暂停、重播、地图、返回、键盘焦点闭环。
+现役单位全部覆盖，数值取 WarData.spec；树突状细胞已同步当前侦察标记规则；药物使用当前 medicines.json 的确认边界。没有增加药物购买、部署或战斗效果。
+
+验证结果：
+- --headless --editor --import --quit：通过。
+- tests/cover_preview.gd：原生窗口 328/328；1280×800、360×780、844×390；24 立绘、88 组帧矩形/时长及完整循环；隐藏停止并释放流式纹理。
+- tests/cover_flow.gd：通过；固定六角色断言改为当前真实目录；浏览药物、播放与地图后 game.state 逐字不变；返回封面和继续进入游戏正常。
+- tests/run_tests.gd：末轮 52/52。中途共享 HUD 编译与路径断言问题已由对应任务修复，末轮无此阻塞。
+- audit_integrity.py --asset-source-root .：1917 项，无缺失、哈希差异或来源差异，清单总量一致。
+
+证据：godot/test-output/cover/preview-checks.json、game-flow.json 与同目录原生截图；缓存和截图均被 Git 忽略。
+交互查看：./godot/run.sh --script res://tests/catalogue_review.gd（关闭图鉴返回真实封面）。
+本任务没有修改 hud.gd、main.gd、simulation.gd 或 README，没有提交、推送或远端构建。
+边界：这是图鉴自身闭环验收，不代表所有预览角色机制已接入战斗，也不代表手机真机或完整游戏验收。
+
+资料同步复核 · 2026-10-21（首轮完成后的局部跟进）
+- 已阅读最新 cells-status.txt 和 medicines-status.txt。pathogens-status.txt 仍未生成，列为唯一待交接项；其完成后再核对病原体正式机制，不提前改为现役。
+- 树突状细胞已为现役 dendritic_cell；移动16/侦察6/受击12/死亡12与 Godot 当前 clips 的路径、矩形和逐帧时长一致。
+- 为树突状细胞补充 runtimeDefinition=res://data/dendritic_cell.json 及来源链接。图鉴安装工具从当前 scan 数据生成半径和双减速文案，当前为8地图单位、移动和攻击速度各降低30%。未修改战斗数值。
+- 增补地下标记边界：不会强制出土，疱疹自动埋伏仍待接入。移动/受击/死亡中断侦察、同层无遮挡、多只不叠乘等文案与实现一致。
+- 核对血小板、B细胞、T细胞和巨噬细胞交接：现役与新动作预览的状态正确，无需再次修改。B细胞无射击菜单；T为瞬身动作预览而非可训练战斗单位；巨噬仍区分旧 siege 机制和新版吞噬动作。
+- 5种药物与 medicines.json 的完整图鉴投影逐项一致，稳定ID、来源mechanics.json及catalogue.entryId双向链接均有效。canPurchase/canDeploy全部false；化痰药只有立绘且保留机制草案。
+- 本轮只修改树突状细胞图鉴元数据/文案及其离线生成逻辑，另外23个条目保留不变。未改主循环、HUD、战斗或README。
+- 针对性验证 tests/catalogue_sync.gd：57/57（原生窗口及最终headless检查通过）；未重复完整328项，也未重新跑无关战斗验收。
+- 证据：test-output/cover/catalogue-sync.json、catalogue-sync-sources.json、dendritic-synchronized.png。
+
+最终交接差异核对 · 2026-10-21
+- pathogens-status.txt 已到位并读完；此前唯一待交接项已解除，细胞/药物/病原三份交接均完成核对。
+- 流感仍为现役 virus，保留5组20帧；肺炎链球菌6组、腺病毒5组仍为动作预览，kind为空且 Data.units 无对应身份。
+- T细胞仍为4组动作预览，kind为空且未加入 Data.units。未误标为可训练/部署单位。
+- 五种药物状态与 medicines.json 一致，购买、库存、派遣、实际效果仍未开放，未把已确认设计误写为已实装战斗。
+- 当前图鉴文案与新交接一致，无需修改页面、数据、安装工具或公共运行文件。
+- 本轮仅执行12项状态/目录元数据差异断言，全部通过；未重跑328项、未重复图像逐帧审计。证据：catalogue-handoff-final.json。
+- 本批图鉴资料同步结束，无待同步交接项。后续新角色战斗接入属于下一批工作。

@@ -1,0 +1,78 @@
+状态：本任务已完成并可供总验收复核；2026-10-21。
+
+实现文件：
+- scripts/infection_purification.gd（独立规则、兼容读档、净化状态校验）
+- scripts/influenza_colonies.gd（沿现有 after_step 调用净化；停刷、停止重建）
+- scripts/infection_surface.gd（实际疫情多点地表、独立淡出、复用既有材质）
+- scripts/infection_zones.gd（读存档取得认证小块；辅助视野显示净化进度）
+- tests/infection_purification.gd、tests/purification_capture.gd（新增专项）
+- tests/influenza_fortress.gd（只更新末项“杀光即清除”的旧期待）
+同时包含新脚本对应的 Godot .uid。
+
+本对话没有编辑 simulation.gd、navigation.gd、main.gd、hud.gd、world_view.gd、
+README、life_run.gd 或 life_integration.gd。无需总验收补主模拟调用：净化通过
+既有 influenza.after_step(dt) 接入。没有重做流感施工/孵化，没有生成或修改美术。
+
+本次最小可玩默认值，不是用户确认的最终平衡：
+- 1 worker 红细胞 + 1 spear 或 neutrophil 白细胞，连续驻守 20 模拟秒。
+- 采用 infection_zones.json 中现有认证小块矩形，双方中心需在该块内，
+  且实际位于同一器官的组织平面 0；投影重叠的血管单位不参与。
+- 敌军（任意敌方阵营的存活单位/建筑）进入时重置计时；缺红、缺白、
+  待生队列非空、该巢群仍有任何存活要塞（包括扩建到块外的）也重置计时。
+- 先摧毁本巢群要塞，再驻守净化。净化不消耗防守细胞。
+- 完成后 cleared=true、pending=0，巢群不再出生/重建；既已逃到块外的
+  病毒不被凭空删除，仍走现有作战与扩散规则。
+- 感染地表从完成时起用 3 模拟秒淡出；暂停不推进驻守和淡出。
+- 新的显式 start_outbreak 可以在同一认证落点重新感染，batches 增加，
+  净化进度和地表重置；这与“旧感染点不得自行恢复刷怪”区分。
+
+存档契约：group.purification 保存 version/elapsed/fadeElapsed/status 和人数。
+没有 purification 字段的旧群落 v1 档可读取：未清除者等待新驻守；旧已清除者
+保持清除和无地表，不自动重新感染。暂停、半途占领和半途淡出均走原生存读档。
+新字段的非有限/负进度、人数、认证坐标和完成状态不一致会拒绝载入。
+净化模块用 WeakRef 持有模拟，不要求修改 simulation.dispose，也不引入循环引用。
+
+与生活联调边界：
+- 本模块只在完成时设置已有 cleared=true；不直接修改 recovered/clearedGroups。
+- 已收到总验收通知：未净化空区域仍占感染名额，由生活联调对话处理。
+- 生活联调对话已经修改 tests/life_run.gd 的旧康复期待。本对话未双写该文件，
+  已在其新版本上独立复跑：701 项全部通过。
+- 新专项另覆盖杀光但未驻守时 recovered=0、实际固定步驻守完成后康复对话
+  解锁、重复刷新不重复记康复、人体生活存档保存净化状态。
+
+本机验证（Godot 4.6.3 macOS；生成报告、缓存和截图留本机）：
+- 导入/脚本解析 --headless --editor --import --quit：成功，无脚本错误。
+- tests/infection_purification.gd：81/81。
+  覆盖缺员、死亡/离开、敌军/异层、待生/要塞、真实固定步、暂停、
+  原生写档/读档、半途淡出/旧档、停刷/不重建、重新感染、生活康复、
+  多点独立、五种旧模式隔离、十二器官认证小块、损坏档拒绝。
+- tests/purification_capture.gd：原生 14/14。
+  实际既有贴图/Shader、独立 InfectionGround 节点、普通视野保留地表、
+  半淡出/完全消失、两个疫情的独立材质、美术预览与旧模式独立。
+- tests/influenza_fortress.gd：39/39，施工与 30 秒孵化流程继续通过。
+- tests/infection_preview.gd：headless 4802/4802，原预览保持只读。
+- tests/run_tests.gd：52/52。
+- tests/life_run.gd：701/701（生活联调对话更新后的共享树版本）。
+- scripts/godot_tools/audit_integrity.py：1917 个登记素材，无缺失/哈希差异，
+  清单统计相符；未执行历史原稿/归档 Lua 对照。
+
+可复跑命令（仓库根目录）：
+./godot/run.sh --headless --script res://tests/infection_purification.gd
+./godot/run.sh --script res://tests/purification_capture.gd
+./godot/run.sh --headless --script res://tests/influenza_fortress.gd
+
+本机报告：test-output/purification/checks.json、native-checks.json。
+本机截图，已经实际读取：test-output/purification/active-50-percent.png、
+fading-half.png、purified.png、multiple-infections.png；额外普通视野
+active-pure-view.png 由同一原生测试生成。
+日志：仓库 .tmp/purification-test.log、purification-native.log、
+purification-fortress.log、purification-preview-regression.log、
+purification-rules.log、purification-life-existing.log、purification-integrity.log、
+purification-import-final.log。
+
+验收边界：这是净化闭环的局部可玩接入和受控原生截图，不声称完整自然通关、
+手机性能/手感、全部病原净化或最终平衡已完成。不承接其他新病原。
+
+总验收追加的左肺4施工阻塞已随后局部修复，详见同目录construction-status.txt。
+施工专项24/24，生活完整固定步集成101项全部通过；本净化专项81/81和基础
+规则52/52也已在施工修复后再次通过。没有双写生活集成或主模拟/导航文件。

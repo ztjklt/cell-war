@@ -1,0 +1,96 @@
+巨噬细胞共享接线合同（独立候选；2026-10-21）
+
+1. 身份与职责
+WarMacrophageAttack仅处理siege的近身单目标咬合；heavy不变。
+data/macrophage.json与macrophage-registration-candidate.json提供候选。
+正式共享入口尚未改；主集成确认接线时再应用range2.2并替换原远程分派。
+不要同时保留原siege即时/远程命中和本服务命中，否则会双伤害。
+肝训练、心转运、cost/pop/train/tier/workshop沿用既有公共逻辑。
+
+2. 三个强制回调与一个统一攻速回调
+service = WarMacrophageAttack.new()
+service.bind_world(damage_callback, geometry_callback, radius_callback, speed_callback)
+前三个均必须有效；缺失时起手/有状态推进安全拒绝，绝不直接降级扣hp。
+
+geometry(from:Vector2,to:Vector2,lane:int,source:Dictionary,
+         target:Dictionary,phase:String) -> bool
+phase="windup"或"bite"；只接受严格bool true。
+必须检查真实导航同层、孔洞、墙、其他建筑与未破关口；不能靠投影近邻或纯距离。
+目的建筑本身应允许打其合法近侧表面，但不能忽略其他阻挡或打到门后目标。
+多端口关口先规范到来源lane的真实目标坐标；每步同id只能有一个规范目标。
+几何代理如用于关口，伤害回调须映射回真实actor并同步hp/lastAttacker。
+源/目标实体均要求id/kind/category/faction/hp/x/y/vesselLane；orderToken缺省0。
+
+radius(actor:Dictionary) -> finite nonnegative float
+提供原站立物理半径，不能使用每帧嘴、拳、残体的alpha范围。
+源和目标半径都必须有效；单位射程按已有中心距离2.2，建筑加目标半径。
+不要把source radius再加到射程上，避免产生另一种隐藏远程增益。
+导航实际外壳/占位继续由宿主已有WarData.radius/WarCellShape负责。
+
+damage(source:Dictionary,target:Dictionary,amount:float,info:Dictionary) -> Dictionary
+只调用一次，amount=50，info包含cause="macrophage_bite"、castId、sourceId、
+targetId、biteAt、lane、allowSwallow。必须同步执行原伤害/死亡记录并返回：
+{ "castId":info.castId, "sourceId":source.id, "targetId":target.id,
+  "actualDamage":本次真实生命减少值, "killedBySource":本次伤害是否确实致死 }
+还必须让真实target.lastAttacker保留本次来源ID；没有可证归属就返回false。
+不可把早已死亡或他人/异步事件击杀的目标写成本次击杀。
+服务会比对调用前后hp、actualDamage、三个ID与lastAttacker，并仅允许中央
+WarData.is_pathogen(kind)认可的unit触发吞噬；building永远不吞噬成功。
+模块只发swallow_success与显示状态，不删除目标、不发资源、不回血、不造残体。
+damage回调可notify_hit/notify_death处理另一个施法者；其余查询回调应保持只读。
+
+关键兼容点：现有WarCombat.damage对siege打建筑会再乘2.4。本候选建筑基础伤害
+应为50，不能无条件沿用该旧分支变成120。主集成须按macrophage_bite这个cause
+明确排除旧siege建筑倍伤，并继续正常死亡/归属逻辑；本分工没有编辑combat。
+不要临时把source.kind伪装成heavy，也不要为了躲旧倍率吞掉其他真实伤害规则。
+
+speed(source:Dictionary) -> float
+接宿主现有combat.multiplier(source,"attackSpeedMultiplier")，包括B细胞、
+脑指令、树突及既有状态的统一结果；不要在适配器或本服务另叠同一增益。
+可省略供隔离验证默认1；正式接线必须绑定统一接口。非有限/负数/超过100拒绝。
+起手shotSpeed=max(.01,rate)锁定，动画与940ms咬合使用同一时标；冷却随当前
+rate动态消耗，与现有公共cooldown做法一致，不重复扣两份冷却。
+
+3. 调度
+begin(source,target,sequence:int) -> 正castId；无效返回0，序号不消耗。
+同来源sequence严格递增；id不可复用。最多4096来源记录，满额安全拒绝新来源。
+宿主先寻路接近，然后锁定当前targetId，起手后冻结来源位置直到恢复或取消。
+begin不自动追击、跨层、瞬移或改命令。不能用heavy身份调用。
+advance_simulation(delta,entities) 或 advance(real_delta,entities,paused,time_scale)
+二选一；每步真实实体id唯一。暂停和倍速只应用一次。
+咬合时重新查原targetId，验证身份/阵营/category、同lane、距离、LOS，失效落空。
+不转移目标、不范围攻击、不吸附逃离者；主循环不得继续移动这个来源。
+notify_hit(source)、notify_death(source)、cancel(id,reason)处理宿主事件。
+hitTime、死亡、换orderToken/lane/faction、来源位移/缺失另有推进时后备检查。
+取消不返还冷却；咬合后不会再次命中，反复受击/死亡通知不重播动作。
+
+4. 渲染
+view = service.presentation(id)
+frame = WarMacrophageAnimation.new().sample(view,moving)
+采样器实例应由宿主缓存；返回key/frame/path/rect/anchor/hidden/finished及固定
+rotation=0、mirror=false、scale=(1,1)。仅消费模拟状态，不在动画事件里扣血。
+成功吞噬完整播放v5原34帧；未成功时咀嚼段保持同图集无残体第13帧，再恢复。
+目标是否隐藏/移除只由真实hp与宿主死亡系统处理，不能在张嘴/闭嘴时提前隐藏。
+死亡使用原21显示帧共2515ms：1675–1795隐藏、1795–1945显示、
+1945–2065隐藏、2065–2215显示、2215起清空；2515ms才finished=true。
+hidden只是这帧的透明状态，不能在第一次hidden就销毁尸体，必须等finished。
+move16、hit12、death21、chew16、swallow34一共99显示帧，固定原锚点(256,440)。
+
+5. 存档
+snapshot()返回schema/clock/nextCastId/rules/sources的纯JSON；来源含序号、
+剩余冷却、受击/死亡时间、活动攻击及其固定targetId、shotSpeed、resolved、
+swallowed/outcome。restore事务性校验，拒绝未知字段、异常数值、重复id、
+过时未结算攻击、提前resolved、建筑/非病原吞噬等不一致；拒绝不改变旧状态。
+规则定义必须完全一致。尚未接入公共WarSave，主集成须登记并做实体关联校验。
+回调不序列化；恢复到新服务后必须重新bind_world。restore不发命中/成功事件。
+咬合前存档恢复剩余动作一次；咬合后只恢复咀嚼/恢复/冷却，不再次扣血。
+damage/geometry/speed/radius回调期间snapshot为空、restore/推进/begin被拒绝，
+宿主只可在固定步边界原子保存实体和服务，不能拼接不同时刻世界与服务状态。
+事件队列为临时消费通知，不序列化重播；表现状态swallowed则保存在cast中。
+
+6. 离线准备与验收
+python3 scripts/godot_tools/prepare_macrophage.py
+工具读取当前animations.json，拒绝旧动作目录，校验帧矩形、时长、既有5张
+Godot图集与原稿哈希，只重建独立定义和登记候选；不复制图或写公共清单。
+./godot/run.sh --headless --script res://tests/macrophage_attack.gd
+当前218项通过，不代替公共战斗、原生画面、手机、训练转运和生活入侵验收。

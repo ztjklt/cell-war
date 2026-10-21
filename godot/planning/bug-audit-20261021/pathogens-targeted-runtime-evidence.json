@@ -1,0 +1,33 @@
+{
+  "scope": "Targeted runtime evidence observed during concurrent purification integration, not full-game acceptance.",
+  "directlyExecuted": {
+    "influenza": {
+      "checks": 202,
+      "failures": []
+    },
+    "influenza_fortress_initial": {
+      "checks": 39,
+      "passed": 38,
+      "failedAssertion": "destroyed colony stays cleared and stops births"
+    }
+  },
+  "isolatedProbe": {
+    "file": ".tmp/pathogens-audit-20261021/fortress_probe.gd",
+    "sourceSHA256": "8d6037db239585d06be77726789a15936f6bd341a78913bad43e4e6efb9ba8ae",
+    "afterClearAnd60Seconds": {
+      "liveViruses": 0,
+      "livingFortresses": 0,
+      "pending": 0,
+      "produced": 4,
+      "cleared": false,
+      "purificationStatus": "waiting_red"
+    },
+    "conclusion": "No continuing births in this reproduction. Old cleared=true assertion conflicts with newly confirmed joint purification semantics."
+  },
+  "ownership": "Purification integration task handles the changed assertion and runtime semantics; no changes made here.",
+  "latestObservedSharedFortressReport": {
+    "checks": 39,
+    "failures": []
+  },
+  "latestObservedSharedReportIsNotAnAdditionalRunByThisAudit": true
+}

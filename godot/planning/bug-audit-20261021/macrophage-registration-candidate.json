@@ -1,0 +1,64 @@
+{
+  "unitKind": "siege",
+  "battleEnabled": false,
+  "proposedUnit": {
+    "at": "workshop",
+    "cool": 3.5,
+    "cost": {
+      "food": 25,
+      "wood": 55
+    },
+    "damage": 50,
+    "hp": 380,
+    "name": "巨噬细胞",
+    "pop": 2,
+    "range": 2.2,
+    "speed": 1.3,
+    "sprite": "store",
+    "tier": 3,
+    "train": 50,
+    "vision": 11
+  },
+  "proposedChanges": {
+    "range": {
+      "from": 9,
+      "to": 2.2,
+      "authority": "root autonomous first-round mechanic default; not applied globally"
+    }
+  },
+  "runtimeDefinition": "res://data/macrophage.json",
+  "existingAtlasFiles": [
+    {
+      "path": "assets/image/macrophage-cartoon-v2-20261020/move-16/spritesheet.png",
+      "sha256": "19282cb4b77199b223c1bfef85843188639eaa4010c18419c70fce6629b09054",
+      "bytes": 2886423
+    },
+    {
+      "path": "assets/image/macrophage-cartoon-v2-20261020/hit-12/spritesheet.png",
+      "sha256": "b5ff531c5fd6161dc6a0f7b89008fdfbf03e7fb7e1108028343e9192ad4521a0",
+      "bytes": 2129156
+    },
+    {
+      "path": "assets/image/macrophage-cartoon-v2-20261020/death-16/spritesheet.png",
+      "sha256": "d0d37328320f25c061f30fdf2373e5aa3567e94957f2d7533e1377f98641833e",
+      "bytes": 2661390
+    },
+    {
+      "path": "assets/image/macrophage-cartoon-v2-20261020/chew-remnant-16/spritesheet.png",
+      "sha256": "830b1c854a1142265fd68bdd0d56ce34eca0ef526172de60df2217fe5ba40c01",
+      "bytes": 991730
+    },
+    {
+      "path": "assets/image/macrophage-cartoon-v2-20261020/swallow-chew-linked-v5/spritesheet.png",
+      "sha256": "1da3720e5f5b25259ca81afb1f223e937ca0ea864336f4367236a2239f142586",
+      "bytes": 3768824
+    }
+  ],
+  "changesAppliedToPublicFiles": [],
+  "preserve": [
+    "liver training",
+    "heart transfer",
+    "existing heavy unit",
+    "all non-range siege numbers"
+  ]
+}

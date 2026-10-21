@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>细胞战争 · 序列帧预览</title>
+  <link rel="stylesheet" href="preview.css">
+  <script src="preview.js" defer></script>
+</head>
+<body>
+  <header><div><span class="eyebrow">CELL WAR / ANIMATION LAB</span><h1>序列帧预览</h1></div><span class="local">本地运行 · 原图只读</span></header>
+  <section id="gallery" class="gallery" hidden aria-label="全部动作预览">
+    <div class="gallery-heading"><p id="gallery-summary">正在加载动作…</p><button id="gallery-toggle" class="secondary">全部暂停</button></div>
+    <nav id="gallery-nav" class="gallery-nav" aria-label="跳转到动作"></nav>
+    <div id="gallery-cards" class="gallery-cards"></div>
+    <p id="gallery-status" role="status" aria-live="polite"></p>
+  </section>
+  <div class="layout">
+    <aside>
+      <div class="section-title">动作列表 <button id="reload" class="text-button" title="重新扫描项目动作">刷新</button></div>
+      <div id="clips" aria-label="动作列表"></div>
+      <div class="import-panel">
+        <h2>导入新动作</h2>
+        <p>选择图集和 JSON，或多张按顺序命名的图片。也可以直接拖到页面。</p>
+        <button id="import-button">选择文件</button>
+        <button id="folder-button" class="secondary">选择文件夹</button>
+        <input id="files" type="file" multiple accept="image/*,.json" hidden>
+        <input id="folder" type="file" multiple webkitdirectory hidden>
+        <details id="grid-options">
+          <summary>没有 JSON？按网格拆图集</summary>
+          <div class="grid-options">
+            <label>列数<input id="columns" type="number" min="1" max="128" value="4"></label>
+            <label>行数<input id="rows" type="number" min="1" max="128" value="2"></label>
+            <label>帧数<input id="count" type="number" min="1" max="16384" value="8"></label>
+          </div>
+          <button id="apply-grid" class="secondary">应用网格</button>
+        </details>
+      </div>
+    </aside>
+    <main>
+      <div class="clip-heading"><div><h2 id="clip-name">正在加载动作…</h2><p id="clip-info">支持项目图集、TexturePacker JSON 和散帧图片</p></div><span id="frame-label">—</span></div>
+      <div id="stage" class="stage checker">
+        <canvas id="canvas" aria-label="当前动画预览"></canvas>
+        <div id="empty" hidden>导入图片，开始检查动作</div>
+        <span class="stage-hint">空格 播放 / 暂停　← → 逐帧</span>
+      </div>
+      <div class="transport">
+        <div class="buttons"><button id="restart" title="回到第一帧">↤</button><button id="previous" title="上一帧">←</button><button id="play" class="primary">播放</button><button id="next" title="下一帧">→</button></div>
+        <label>播放方式<select id="mode"><option value="loop">循环</option><option value="once">单次</option><option value="pingpong">往返</option></select></label>
+        <label>速度<select id="speed"><option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label>
+      </div>
+      <div class="timeline"><input id="scrub" type="range" min="0" max="0" value="0" aria-label="帧进度"><span id="duration-label">—</span></div>
+      <div class="options">
+        <label class="check"><input id="fixed-fps" type="checkbox">统一帧率 <input id="fps" type="number" min="1" max="120" value="8" aria-label="统一帧率"> FPS</label>
+        <label>缩放<select id="zoom"><option value="0.5">50%</option><option value="1" selected>100%</option><option value="1.5">150%</option><option value="2">200%</option></select></label>
+        <label>背景<select id="background"><option value="checker">透明棋盘</option><option value="light">浅色</option><option value="dark">深色</option></select></label>
+        <label class="check"><input id="onion" type="checkbox">前帧叠影</label>
+        <label class="check"><input id="mirror" type="checkbox">水平镜像</label>
+      </div>
+      <div id="strip" class="strip" aria-label="逐帧缩略图"></div>
+      <p id="status" role="status" aria-live="polite"></p>
+    </main>
+  </div>
+</body>
+</html>

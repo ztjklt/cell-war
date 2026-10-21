@@ -1,0 +1,79 @@
+2026-10-21 状态：真实对角施工接近已修复，独立专项及指定回归全部通过。
+
+精确改动范围：
+- navigation.gd 新增building_approach(entity,building,reach)。
+- simulation.gd 仅go中的原建筑靠近点选择块，调用该方法；无合法点时3秒重试并提示。
+- 新增tests/construction_approach.gd及.uid。
+- tests/building_placement.gd将append控制恢复为原来会卡死的store(112,110)，
+  不再用轴向(112,99)替代；原完整cell_test其他单位也保留，64项再次通过。
+没有编辑economy.construct农场、economy.build_point、main/_show_orders、药品/存档hooks。
+原direct队列和此前精确polygon网格端点修复保留。
+
+独立失败基线（test-output/construction-approach/baseline.json）：
+在保留原cell_test红1出生点和地形的隔离夹具中，移除其它测试单位，避免把军队
+交通/攻击混进施工接近结论。未搬红、未补资源、未写HP/进度、未改地图或碰撞。
+store(112,110)的报告场景先真实move至(104,99)，再真实place；其余四个方向/
+core/侧方障碍均通过实际place付费与WarSimulation.update驱动。
+修复前41项中7个完工断言失败：四象限store、core、一侧阻挡后换边、移除封堵后
+的正常重试都不能完成。既有building-placement/diagonal-access-state也保留。
+
+根因：旧go按“半边长+单位半径+.12”的圆半径取朝向点，但实际是建筑膨胀方框。
+例如store(112,110)的靠近点(110.988754,108.616409)仍在自身碰撞框内，
+地形合法但movement_clear(point,point)=false；不是组织/血管投影或资源不足。
+
+局部规则：
+1. 原靠近点只要真实地形和建筑净空可用就原样保留，不改变已通过的普通路线。
+2. 原点不可用时，沿建筑膨胀方框四边提供最多36个外侧工作点；普通施工点
+   落在原reach内。不得进入自身或其他建筑，也不得换到另一器官/血管平面。
+3. 优先原平面实际直线净空的候选；其他候选仍交原图规划/异步寻路，不能传送。
+4. 友方gate原有可通行特例保留。战斗追击reach比碰撞尺寸小时，候选只到实际
+   外侧，不伪造到达；go原实际距离/平面完成条件与combat射程判断不改。
+5. 无候选则保留目标、按既有节奏重试，不在远处施工；障碍移开后可正常恢复。
+
+当前44/44实际回放：
+- 报告store(112,110)，约29.1模拟秒完成；红实际到(110.738708,108.198074)。
+- 另外三象限store约30.3、30.3、30.7秒完成。
+- core(112.5,110.5)约61.3秒完成，保留真实65蛋白成本。
+- 另一真实付费蓝图挡住优先侧，正常换至另一侧约30.3秒完成；障碍未被删除/自动完工。
+- 四侧围住时progress保持0、不穿墙；仅移除一个受控障碍后，实际走入开放侧完工。
+- 逐tick断言lane0、movement_clear和原移动预算；没有强制改变坐标。
+- 报告案例施工中真实暂停、隔离文件写/读档、位置/部分进度保持，随后实际完工。
+
+测试目录user://test-saves/construction-approach，结束移除测试槽，不触碰玩家存档。
+复跑：./godot/run.sh --headless --script res://tests/construction_approach.gd
+初始失败日志.tmp/construction-approach-baseline.log，修复日志.tmp/construction-approach.log。
+
+最终相关回归：
+- construction_access：9/9，原出生store990/1906和移出后core987.5/1905.5仍完工。
+- building_placement：64/64，包括原完整场景的store112/110对角远程append真正完成。
+- opening_flow：原生79/79，真按钮、原红/原资源→核心/兵巢→培育/取消退款→
+  首白真实移动完整保留，未改该UI测试源码。
+- run_tests：52/52。
+- 导入 --headless --editor --import --quit：通过，无脚本解析错误。
+- audit_integrity.py：1928登记项，无缺失/哈希差异，清单统计一致；未重验历史来源。
+指定回归日志均无ERROR/SCRIPT/Parse Error。无提交、推送或远端构建。
+
+此外按原building-placement独立诊断入口复跑，不删除任何其它cell_test单位：
+20秒时原红已实际到(110.738708,108.198074)，pathFailed=false，目标蓝图进度
+0.4875；不再是原来(103.960236,99)停住/进度0。该文件现在是修复后现场，
+独立修复前失败应读取construction-approach/baseline.json（41项、7失败），
+不要把覆盖后的同名snapshot误说成仍是旧现场。
+--baseline以后重跑会写baseline-rerun.json，不覆盖已冻结的首次失败记录。
+
+证据路径（均本机忽略目录）：
+- test-output/construction-approach/baseline.json、checks.json及各完工snapshot。
+- test-output/building-placement/diagonal-access-state.json、diagonal-access-snapshot.json。
+- .tmp/approach-construction-access.log、approach-building-placement-original.log、
+  approach-opening-native.log、approach-rules.log、approach-import.log、approach-integrity.log、
+  approach-original-fixture.log。
+
+边界：这是施工目标点选择修复。候选实际移动仍经原异步路径与碰撞；本测试未
+穷举任意迷宫拥堵或所有建筑放置策略。四侧围住的负例是受控既有蓝图布局，
+验证不可穿墙/远程施工与开放后的正常重试，不冒充放置前全局可达性审查。
+不把隔离固定步验收当作全部长期拥堵、自然人生或手机通关。
+
+后续接收bootstrap-battle/march-4互换布局失败，已进一步在navigation.gd补上
+动态建筑造成的“真实窄通道被粗网格漏采”精确拐点fallback；不是改布局或尺寸。
+同原红先core987.5/1905.5后barracks981.5/1905.5，实际绕core下沿完工，
+10项真实运动/净空/付款检查通过；本专项44/44、占地64/64、基础52/52复核。
+详细新旧现场、36个网格失败探针和真实polygon净空证明见compact-layout-status.txt。

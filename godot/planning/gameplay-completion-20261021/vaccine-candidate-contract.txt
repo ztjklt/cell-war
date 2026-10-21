@@ -1,0 +1,74 @@
+疫苗独立候选适配合同（本轮不接公共入口）
+日期：2026-10-21
+CANDIDATE_ONLY=true；SHARED_HOOKS_RELEASED=false；VACCINE_SALES_RELEASED=false。
+文件：godot/scripts/vaccine_antibodies.gd、godot/data/vaccine_antibodies.json。
+
+确认与默认值边界
+用户已确认：敌方主动攻击命中后掉独立地面抗体，病毒踩上受伤；不跟随疫苗或随动画结束消失；无挥旗直接攻击。
+本轮负责人给的首轮可调值：price120、hp90、speed2.0、helper90模拟秒；正伤害敌方直接命中且1秒冷却已好时掉1枚，致死命中也可最后掉1枚；每枚固定原地same lane、12模拟秒、接触半径0.45、伤害8；每helper12/全场128，满额不覆盖。
+服务仅管理抗体，尚未创建生命90的真实疫苗助手、扣费、库存、派遣、原生世界图层或公共存档钩子。helperProposal仅为以后接线的数据。
+
+必需绑定（四项全部具备才能推进/掉落，谓词必须返回bool true，不能返回字符串或空值）
+var service = WarVaccineAntibodies.new()
+service.bind_world(
+  func(owner,target,amount,cause,contact_id): <同步调用真实战斗伤害，不排成另一个不持久队列>,
+  func(point,lane,owner,radius): <该层真实合法地面，检查0.45接触圆所需地形许可>,
+  func(from,to,lane,actor): <原组织/血管通行层和建筑段检查；不得按投影连线>,
+  func(actor): return WarData.is_virus(str(actor.kind)))
+service.begin(<持久世界runId>, game.state.time)
+回调不保存在快照中；恢复后仍须绑定宿主。实例dispose释放回调。
+分类明确接新WarData.is_virus；不使用is_pathogen，不按图鉴或名字猜病毒，不把细菌算进来。
+
+真实命中入口
+service.notify_hit({
+ worldId:<当前世界runId>, hitId:<真实全局递增伤害序号>,
+ source:<实际攻击来源身份快照>, target:<本次伤害刚结算后的疫苗快照>,
+ hpBefore:<本次伤害前正生命>, damage:<本次实际扣掉的正生命>,
+ cause:<attack/projectile/collision>
+}) -> 新抗体ID，失败或不触发返回0；last_error说明原因。
+source/target要求id、kind、category、faction、hp、x、y、vesselLane；target.kind=vaccine、category=unit；source.category=unit，双方不同正阵营且非同ID。
+允许攻击者已死亡但其已发出的真实projectile此刻命中；必须来自原弹体的实际所有者身份，不能把空字典/环境伤害伪装成单位。
+目标hp是该次命中结算后的值，可为0；hpBefore-damage须与hp相符。目标死亡不妨碍最后一次合法掉落。
+
+原因白名单来自现有combat.gd真实调用：
+- attack：原fight/cellShot近战释放；
+- projectile：独立战斗弹体实际碰撞；
+- collision：原contacts实际单位接触攻击。
+其他cause均不触发，含burn/bleed/poison等持续状态、环境、过期、自身/同盟、medicine_bubble、vaccine_antibody；0实际伤害不触发。不能监听hit动画帧或damage_requested代替真实扣血。
+
+hitId契约（未来宿主适配必须补）
+在真实damage正扣血结算点分配一次全局单调序号；同一次命中所有监听器拿同一ID。建议state.combatHitSerial由整体存档保存，不能用tick/source/target拼接而忽略同tick多次命中，也不能每次重播通知重新编号。
+服务lastHitId保存高水位，因此同世界旧序号/重复序号一律拒绝，且要求按真实结算顺序通知。不能乱序投递后再补旧事件。
+合法正伤害敌方主动命中即提交hitId，包括处于CD/满额/落点失败的命中；不能过1秒重放同一事件补发抗体。失败不覆盖或搬走已有抗体，CD只在成功掉落后开启。
+不合法事件/缺绑定不提交序号；宿主不能伪造后重新提交。世界runId隔离旧局通知。
+
+落点与独立对象
+从本次真实目标位置开始，至多搜索1.25单位、0.25间距、16方向，固定原层；点合法且原点到点的真实段通过才掉落。原点合法时可在原地叠放，多枚是不同ID。
+地面对象记录其自身位置/层、owner身份、born/expiresAt；不引用可移动的疫苗实体作为位置父节点。来源死亡/消失不清理抗体，只有12秒到期或首次合法敌方病毒接触消耗。
+相同接触时刻按抗体ID、目标ID确定顺序；另一个抗体已杀死目标后会跳过死目标，保留机会给下一次合法接触。
+
+模拟与快速移动
+正常固定步只调用advance_simulation(dt, actors, tick_id, motion)。或者只调用advance(real_dt,actors,tick_id,paused,time_scale,motion)，两者不得叠加。
+actors为本次真实单位字典引用，damage回调修改同一个target；服务内部保存上次提交位置并对同层位移扫掠圆接触。半径0.45按病毒中心的真实运动路径测试，没有擅自额外膨胀一个未定义半径。
+同层直线路径可以省略motion。真实弯折/换层必须传motion["entity_id"]，数组每段：
+ {from:Vector2,to:Vector2,lane:int,start:0..1,end:0..1}
+各段时间/位置连续、覆盖完整0..1，最终点/层与actors相符；起点与上次提交位置相符。层转换发生在相同物理点的段界，必须来自原导航确认。
+不能拿含投影交叉的屏幕点串充当通行路径，也不能将renderTrail中缺失lane的信息推定为换层。
+未提供换层路径时仅测试最终层终点，不连接旧层到新层的投影；弯路被省略时保守的直线检查可能拒绝，不得据此改地形或穿墙。
+服务检查到接触点前的真实段和抗体到接触点的局部段，拒绝来自墙后或先经过非法段的轨迹。快速完整跨过0.9单位触发圆仍会被扫掠命中。
+大dt先按接触发生时刻与12秒寿命比较；在到期前穿过仍命中，到期时刻及之后不命中。0模拟秒不允许输入移动位移。
+
+结算/存档提交
+每枚消费先从活动对象移除，再同步调用damage(owner,target,8,"vaccine_antibody",worldId+":antibody:"+id)。这个contact_id稳定，宿主若另有伤害去重机制可使用。
+同一host tick_id只能提交一次，lastStepId与lastHitId一起持久化；重复推进不会再次老化或伤害。回调期间阻止递归advance/notify/restore，snapshot返回空字典，拒绝半完成状态导出。
+调用snapshot()只能在完整固定步末尾。整体保存必须原子包含服务快照和对应实际世界生命/位置/时钟/tick/hitSerial；不能把新服务快照配旧目标HP，也不能只重放damage事件。
+推荐未来宿主：收集真实post-damage快照和hitSerial，单位移动/碰撞完成后以真实轨迹推进一次抗体服务，再按原顺序flush这些命中通知；通知掉落在当前服务时钟，下一合法固定步处理接触。
+注意宿主damage函数若即时回调service而服务正在结算抗体伤害，此cause已被排除；不要绕过busy门另发虚构attack。
+validate_snapshot先校验；restore成功才替换服务状态，不触发掉落/伤害/动画事件；坏数据保持原状态。加载后的首次tick必须大于已提交lastStepId，保存的上次位置防止漏掉真实跨越而不重扫旧位移。
+
+角色/地面采样与已知美术门
+sample_actor(actor,time,moving,dead)：复用move/hit/release/death各16帧；真实hitTime选受击，成功掉落后安排受击clip结束再显示release，死亡优先且播完隐藏。采样不生成抗体、不造成伤害。被后续受击/死亡打断的释放画面不反向撤销地面抗体。
+sample_antibody(id)：固定x/y/lane、age/remaining、既有256px antibody/sprite.png；不存在ID返回hidden。
+采样时钟须与begin的宿主模拟时钟一致。不可用墙钟使暂停时继续掉落/过期。
+重要：原release-16/frame-008.png等帧本身画了两枚示意抗体，且部分与图鉴/角色运动线连接；不能直接把整张release画面加一枚独立地面sprite后声称画面中只有一枚实际对象。
+数据clips.release.worldRenderingStatus与sample.containsIllustratedDrops明确标记这个尚待角色本体隔离的门。当前没有重画/改图/裁切资产或改公共world_view；以后接线应单独确定保留角色本体、隐藏帧内示意抗体的呈现方案，再做原生画面验收。本轮不开放销售。

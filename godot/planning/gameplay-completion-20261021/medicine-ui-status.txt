@@ -1,0 +1,53 @@
+状态：药品UI完成；正式开售后的无staging原生149/149通过。
+本轮文件：godot/scripts/hud.gd、godot/tests/medicine_ui.gd、本报告与本机test-output。
+未编辑medicine_supply/helpers/bubbles、simulation、main、combat、save_game、cell_shape、world_view、发布数据；未重跑旧328图鉴。
+
+已接真实合同 medicine-ui-contract.txt：
+- 入口为现有life暂停菜单“药品补给”，沿用当前卡片与滚动布局；退烧止痛药在前，另外4种明确“尚未实装”禁用。
+- 只读报价：game.medicine_supply.quote_purchase / quote_deployment / count；实际动作调用queue_purchase / queue_deployment / cancel_queued。
+- 交易ID由服务分配；HUD不手写ID、不调用purchase/deploy/pay/spawn，也不直接改变lifeRun金钱、spent或库存。
+- 购买显示实际80金钱/份、生活钱包和待执行购买预留。待执行购买unitPrice×quantity计预算；库存/助手名额也计待派遣占用，不把未执行购买提前当库存。
+- 派遣只针对当前唯一己方存活红细胞；服务在其附近3单位内找同器官组织空位，界面不提供任意坐标入口。
+- 派遣确认页显示器官、消耗1库存与90模拟秒；确认取消不发请求。待执行购买/派遣有独立取消按钮，经服务取消，不动实际钱包/库存。
+- 失败条件在卡片内清楚显示，不能只在菜单后方提示；正常玩家UI始终以released()守门，没有UI测试开关或后台绕过。
+
+实际专项：
+- medicine_ui.gd -- --medicine-ui-staging：headless149/149；原生窗口149/149。
+- native-staging.log无ERROR / SCRIPT ERROR / Parse Error / WARNING。
+- headless虽149通过，但出现Godot dummy renderer texture_2d_initialize t=null（life_dialogue::_animate）；用原生干净结果补验，未将headless称为无引擎错误。
+- 仅测试脚本显式参数设置服务既有staging=true；正常UI没有staging路径。数据当前releaseEnabled=false，canSell/canDeploy=false，所以实际玩家购买/派遣仍禁用。
+- 第一版未接服务时的只读关闭页面亦原生18项通过，不把它当作买用闭环。
+
+原始新局链路（未赠金钱、药品、助手或移动单位）：
+1. 从实际封面进入life，原钱包300，库存0，原红细胞1。
+2. 原红经实际地图+轮盘移动出狭窄出生位置，再通过约半单位的实际移动腾出一个合法助手落点。几何查询只为自动鼠标选点，没有改地形或单位坐标。
+3. 暂停连买3次，预留240，第四次被预算禁用；实际取消其中2项后恢复，实际付款80，库存1，钱包220。
+4. 打开派遣确认再取消，未扣库存/未排队；确认排队后库存仍1，重复派遣因预留禁用；取消待执行请求仍库存1。
+5. 再确认并恢复，由原模拟实际生成1助手，库存0，助手真实组织层0、同器官、剩余时长在89到90秒之间。
+6. 实际再买1份，钱包140，库存1。点选已派遣助手作为错误单位，界面禁用且说明需要活红细胞。
+7. “非法点”按合同测试非法红细胞锚点：唯一负例夹具把其vesselLane临时设为1，真实quote拒绝，库存1保持；之后恢复原层，不伪造任意坐标派遣接口。
+8. 实际暂停后排第三次购买并保存槽1。恢复执行后钱包60、库存2，钱不足按钮禁用，实际点击也不提交/扣钱。
+9. 实际读取独立槽1，钱包恢复140、库存1、助手1、原待执行购买的runId/sequence保留；页面正确显示预留80。实际取消恢复的原请求，无重扣或新增助手。
+
+测试驱动边界：main日常_process停用；移动等待用原始.05固定步，交易只用正常game.update(.15)执行；相机/滚动暴露由测试驱动。除了显式staging服务门和一项血管层负例，没有注入资源/药品/助手/金钱。
+所有保存目录是user://test-saves/medicine-ui-独立编号，具体见JSON；未触碰正式存档。
+
+证据：godot/test-output/medicine-ui/native-staging.log、medicine-ui-native-staging.json；headless-staging.log、medicine-ui-headless-staging.json。
+截图已目视检查：purchases-reserved.png、restored-medicine-supply.png、helper-deployed.png；另有illegal-deployment-anchor.png、insufficient-money.png。
+菜单预算、库存、条件文字清楚，原助手真实出现于原红细胞身旁；整体桌面/镜头规则保持。
+
+联调发现与处置：
+- 第一版点击助手曾在cell_shape.gd:58因旧cell_silhouettes没有move键而报错。后端已补药品独立轮廓；新进程149与实际点选助手通过。未由UI改共享形状文件。
+- JSON把请求sequence读为float，测试改按runId+整型sequence比较逻辑身份，不把数字类型差异误报为重复交易。
+- 此处没有将仅几格的component直接判为出生被困，实际窗口移动可通；没有改变部署半径或平衡绕过空间约束。
+
+保持既有功能：药品UI后原生organ_ui再跑103/103，无ERROR/SCRIPT ERROR/Parse Error/WARNING，日志organ-ui-native-regression.log；器官功能保持通过。
+最终必需校验：editor/import退出0且无ERROR；run_tests.gd 52/52；audit_integrity退出0，missing/mismatches为空、manifestTotalsMatch=true。证据final-import.log、core-regression.log、integrity.json。
+
+正式发布复核：
+负责人已完成medicine-integration-status并开放真实released()，使用不带任何staging参数的新进程：
+  ./godot/run.sh --script res://tests/medicine_ui.gd
+该路径默认绝不自动打开staging；正式结果已写medicine-ui-native.json且explicitServiceStaging=false。
+药品模块已发布，见medicine-integration-status.txt的SHARED_HOOKS_RELEASED=true / FEVER_RUNTIME_RELEASED=true；正式发布数据由药品负责人修改。
+已新开原生进程执行不带任何staging参数的medicine_ui.gd，149/149通过，explicitServiceStaging=false；native-released.log与medicine-ui-native.json均无失败，原生日志无ERROR/SCRIPT ERROR/Parse Error/WARNING。
+该轮是UI线程已开始的正式复核结果，随后收到负责人也完成同样149的记录；未再重复跑相同药品专项。生产门未被UI绕过。

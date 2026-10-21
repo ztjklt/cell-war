@@ -1,0 +1,95 @@
+{
+  "schema": 1,
+  "scope": "Review mapping only; does not register battle units or balance values.",
+  "influenza": {
+    "existingKind": "virus",
+    "battleIntegrated": true,
+    "actions": {
+      "move": "fluMove",
+      "attack": "fluAttack",
+      "hit": "fluHit",
+      "death": "fluDeath",
+      "build": "fluBuild"
+    },
+    "currentAttack": "immediate single-target melee damage; 2s bite art resampled into current 1.2s attack interval",
+    "construction": {
+      "builders": 10,
+      "consumeBuilders": false,
+      "spawnPeriodSeconds": 30
+    },
+    "directionGap": "render mirror follows weapon/move heading, not incoming impact side; only one authored hit clip",
+    "physics": "preserve existing standing contact hull"
+  },
+  "pneumococcus": {
+    "existingKind": null,
+    "proposedKind": "pneumococcus",
+    "battleIntegrated": false,
+    "cataloguePreview": true,
+    "confirmedAttack": "鼓腮吐核远程射击、独立弹丸动态",
+    "releaseFrame": 9,
+    "releaseAtMs": 667,
+    "projectileLoopMs": 1000,
+    "deathMs": 1600,
+    "directionPolicy": "retain two distinct left/right hit clips; map incoming direction into rendered sprite local coordinates before choosing clip",
+    "pendingBalance": {
+      "damage": null,
+      "range": null,
+      "cooldown": null,
+      "projectileSpeed": null,
+      "ttl": null,
+      "collisionRadius": null
+    },
+    "visualCaveat": "shoot sheet already includes muzzle kernel pixels; check overlap with independent projectile at release"
+  },
+  "adenovirus": {
+    "existingKind": null,
+    "proposedKind": "adenovirus",
+    "battleIntegrated": false,
+    "cataloguePreview": true,
+    "confirmedMovement": "front-facing hopping, left/right world travel independent of gaze",
+    "confirmedAttack": "蓄力高跳重砸；落地冲击波、范围伤害与短暂击退的已选方案",
+    "attackTimelineMs": {
+      "charge": [
+        80,
+        490
+      ],
+      "launch": [
+        490,
+        615
+      ],
+      "apex": [
+        615,
+        695
+      ],
+      "descent": [
+        695,
+        820
+      ],
+      "impact": [
+        820,
+        920
+      ],
+      "shockwave": [
+        820,
+        1160
+      ],
+      "recovery": [
+        1160,
+        1400
+      ]
+    },
+    "impactFrame": 10,
+    "damageApplicationPolicy": "one authoritative impact event per cast at 820ms; rendering repeats must never apply damage",
+    "directionPolicy": "upright frontal art; do not inherit generic continuous spin/pulse; choose left/right hit by locked incoming side",
+    "deathMs": 1600,
+    "pendingBalance": {
+      "damage": null,
+      "radius": null,
+      "cooldown": null,
+      "knockbackDistance": null,
+      "targetLockPolicy": null,
+      "hitInterruptPolicy": null
+    },
+    "navigationPolicy": "painted leap is a render offset, not permission to cross lanes, holes, walls or gates"
+  }
+}

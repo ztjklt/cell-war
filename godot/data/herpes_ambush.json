@@ -1,0 +1,413 @@
+{
+  "schema": 1,
+  "unitKind": "herpes",
+  "name": "单纯疱疹病毒·自动埋伏",
+  "runtimeIntegrated": false,
+  "balanceStatus": "First autonomous defaults approved for implementation, not individually user-confirmed statistics.",
+  "unitDefinition": {
+    "cool": 4.0,
+    "damage": 12.0,
+    "hp": 100,
+    "name": "单纯疱疹病毒",
+    "pop": 0,
+    "range": 1.5,
+    "speed": 0.35,
+    "sprite": "herpes_ambush",
+    "vision": 12,
+    "pathogen": true
+  },
+  "legacyDefinition": {
+    "contact": {
+      "cool": 1,
+      "damage": 2,
+      "knockback": 3
+    },
+    "cool": 2.5,
+    "damage": 1,
+    "hp": 100,
+    "name": "单纯疱疹病毒",
+    "pop": 0,
+    "projectile": {
+      "speed": 8,
+      "targetKinds": {
+        "neutrophil": true,
+        "spear": true
+      },
+      "ttl": 3
+    },
+    "range": 8,
+    "speed": 0.35,
+    "sprite": "virus",
+    "vision": 12
+  },
+  "radius": 0.5625,
+  "character": "image/herpes-ambusher-20261020/character.png",
+  "dormant": {
+    "path": "image/herpes-ambusher-20261020/dormant-preview.png",
+    "frameSize": 768,
+    "columns": 1,
+    "rows": 1,
+    "frameCount": 1,
+    "anchorX": 384,
+    "anchorY": 512,
+    "occupancy": 0.7655762810463073,
+    "duration": 1.0,
+    "durations": [
+      1.0
+    ]
+  },
+  "clips": {
+    "haMove": {
+      "path": "image/herpes-ambusher-20261020/move/spritesheet.png",
+      "frameSize": 768,
+      "columns": 4,
+      "rows": 4,
+      "frameCount": 16,
+      "anchorX": 384,
+      "anchorY": 512,
+      "occupancy": 0.7655762810463073,
+      "duration": 1.0,
+      "durations": [
+        0.062,
+        0.063,
+        0.063,
+        0.062,
+        0.062,
+        0.063,
+        0.063,
+        0.062,
+        0.062,
+        0.063,
+        0.063,
+        0.062,
+        0.062,
+        0.063,
+        0.063,
+        0.062
+      ],
+      "loop": true
+    },
+    "haBurrow": {
+      "path": "image/herpes-ambusher-20261020/burrow/spritesheet.png",
+      "frameSize": 768,
+      "columns": 4,
+      "rows": 4,
+      "frameCount": 16,
+      "anchorX": 384,
+      "anchorY": 512,
+      "occupancy": 0.7655762810463073,
+      "duration": 1.0,
+      "durations": [
+        0.062,
+        0.063,
+        0.063,
+        0.062,
+        0.062,
+        0.063,
+        0.063,
+        0.062,
+        0.062,
+        0.063,
+        0.063,
+        0.062,
+        0.062,
+        0.063,
+        0.063,
+        0.062
+      ],
+      "loop": false
+    },
+    "haEmerge": {
+      "path": "image/herpes-ambusher-20261020/emerge/spritesheet.png",
+      "frameSize": 768,
+      "columns": 4,
+      "rows": 4,
+      "frameCount": 16,
+      "anchorX": 384,
+      "anchorY": 512,
+      "occupancy": 0.7655762810463073,
+      "duration": 1.0,
+      "durations": [
+        0.062,
+        0.063,
+        0.063,
+        0.062,
+        0.062,
+        0.063,
+        0.063,
+        0.062,
+        0.062,
+        0.063,
+        0.063,
+        0.062,
+        0.062,
+        0.063,
+        0.063,
+        0.062
+      ],
+      "loop": false
+    },
+    "haBurst": {
+      "path": "image/herpes-ambusher-20261020/burst/spritesheet.png",
+      "frameSize": 768,
+      "columns": 4,
+      "rows": 4,
+      "frameCount": 16,
+      "anchorX": 384,
+      "anchorY": 512,
+      "occupancy": 0.7655762810463073,
+      "duration": 0.8,
+      "durations": [
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05
+      ],
+      "loop": false
+    },
+    "haHit": {
+      "path": "image/herpes-ambusher-20261020/hit/spritesheet.png",
+      "frameSize": 768,
+      "columns": 4,
+      "rows": 4,
+      "frameCount": 16,
+      "anchorX": 384,
+      "anchorY": 512,
+      "occupancy": 0.7655762810463073,
+      "duration": 0.8,
+      "durations": [
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05
+      ],
+      "loop": false
+    },
+    "haDeath": {
+      "path": "image/herpes-ambusher-20261020/death/spritesheet.png",
+      "frameSize": 768,
+      "columns": 4,
+      "rows": 4,
+      "frameCount": 16,
+      "anchorX": 384,
+      "anchorY": 512,
+      "occupancy": 0.7655762810463073,
+      "duration": 2.0,
+      "durations": [
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125
+      ],
+      "loop": false
+    }
+  },
+  "body": {
+    "radius": 0.5625,
+    "anchorPx": [
+      384,
+      512
+    ],
+    "normalizerPx": 293.981291921782,
+    "hull": [
+      [
+        -0.081638,
+        -0.996662
+      ],
+      [
+        -0.12926,
+        -0.979654
+      ],
+      [
+        -0.336756,
+        -0.84019
+      ],
+      [
+        -0.459213,
+        -0.670111
+      ],
+      [
+        -0.49663,
+        -0.547654
+      ],
+      [
+        -0.513638,
+        -0.32315
+      ],
+      [
+        -0.404788,
+        -0.119055
+      ],
+      [
+        -0.384378,
+        -0.098646
+      ],
+      [
+        -0.125858,
+        0.003402
+      ],
+      [
+        0.098646,
+        0.003402
+      ],
+      [
+        0.255118,
+        -0.061228
+      ],
+      [
+        0.394583,
+        -0.132662
+      ],
+      [
+        0.425197,
+        -0.159874
+      ],
+      [
+        0.49663,
+        -0.309544
+      ],
+      [
+        0.513638,
+        -0.449008
+      ],
+      [
+        0.384378,
+        -0.77556
+      ],
+      [
+        0.336756,
+        -0.829985
+      ],
+      [
+        -0.023811,
+        -0.989859
+      ]
+    ],
+    "source": "move/frame-001.png",
+    "alphaThreshold": 96,
+    "policy": "One fixed neutral body hull; never resize physics with cyst, burst glow, or death alpha."
+  },
+  "ambush": {
+    "stationarySeconds": 3.0,
+    "burrowSeconds": 1.0,
+    "emergeSeconds": 1.0,
+    "senseInterval": 0.2,
+    "senseRadius": 2.5,
+    "tissueLane": 0
+  },
+  "burst": {
+    "damage": 12.0,
+    "radius": 1.5,
+    "cooldown": 4.0,
+    "commitAt": 0.4,
+    "releaseFrame": 9,
+    "duration": 0.8,
+    "knockback": 3.0,
+    "cause": "herpes_burst"
+  },
+  "limits": {
+    "actors": 512,
+    "targets": 512,
+    "events": 256,
+    "maxStep": 60.0
+  },
+  "assets": [
+    {
+      "source": "assets/image/herpes-ambusher-20261020/move/spritesheet.png",
+      "path": "assets/image/herpes-ambusher-20261020/move/spritesheet.png",
+      "bytes": 2226787,
+      "sha256": "5aa6ff6c85b8a1c88b82a05f0394f41e59fd2ba1a874ddbe95314dae52fcef1e",
+      "sourceAnimation": "assets/image/herpes-ambusher-20261020/move/animation.json",
+      "sourceMetadataSHA256": "b4cc816abf1c9979caacc109941fcda11dc5bf366eae536795364a5778f9c7a1"
+    },
+    {
+      "source": "assets/image/herpes-ambusher-20261020/burrow/spritesheet.png",
+      "path": "assets/image/herpes-ambusher-20261020/burrow/spritesheet.png",
+      "bytes": 1753103,
+      "sha256": "4d375a8ec702e51af1a71d38bdbb978d56b32d55dad102fd08dd2cbb16b44aee",
+      "sourceAnimation": "assets/image/herpes-ambusher-20261020/burrow/animation.json",
+      "sourceMetadataSHA256": "121f5777f88f7534d2bc4619c65971c6ca95fb82d16c5d36ccf7549e9c7e4b43"
+    },
+    {
+      "source": "assets/image/herpes-ambusher-20261020/emerge/spritesheet.png",
+      "path": "assets/image/herpes-ambusher-20261020/emerge/spritesheet.png",
+      "bytes": 1851150,
+      "sha256": "e1a1a5b3b447fcd5975bafece9193d1aa98e0015e5f21bde21e5cd5956c58f41",
+      "sourceAnimation": "assets/image/herpes-ambusher-20261020/emerge/animation.json",
+      "sourceMetadataSHA256": "af56bb52d302e4373ce982f595271eba314785f42b7b7f051d67ec0b1d5c26bb"
+    },
+    {
+      "source": "assets/image/herpes-ambusher-20261020/burst/spritesheet.png",
+      "path": "assets/image/herpes-ambusher-20261020/burst/spritesheet.png",
+      "bytes": 3556193,
+      "sha256": "67c3f9b290abddc4970030db030e10b7a80b0dcbc87e7cec86f0d59ca86a236b",
+      "sourceAnimation": "assets/image/herpes-ambusher-20261020/burst/animation.json",
+      "sourceMetadataSHA256": "c8794e7a89bd34e714128d527ad480b0837544202222b312134a769761a711c3"
+    },
+    {
+      "source": "assets/image/herpes-ambusher-20261020/hit/spritesheet.png",
+      "path": "assets/image/herpes-ambusher-20261020/hit/spritesheet.png",
+      "bytes": 2256234,
+      "sha256": "a8282c9679841b0ebc13192a0a49fc771b26ca71a0706f4897ef669e1c4f4eb2",
+      "sourceAnimation": "assets/image/herpes-ambusher-20261020/hit/animation.json",
+      "sourceMetadataSHA256": "57bc04819482fcfb7daed5cbbff6870c44d994e817f0142bf86a853e1345b410"
+    },
+    {
+      "source": "assets/image/herpes-ambusher-20261020/death/spritesheet.png",
+      "path": "assets/image/herpes-ambusher-20261020/death/spritesheet.png",
+      "bytes": 1503481,
+      "sha256": "23e9cfb36b5f6c39e02614f1cff1d4f2d0378f3c907145ba9d8a7197980eaab0",
+      "sourceAnimation": "assets/image/herpes-ambusher-20261020/death/animation.json",
+      "sourceMetadataSHA256": "bb81b20f9dd1787a5c5a53436432cd10c8a978977e7ca2ad4e3f34cefe95b3ec"
+    },
+    {
+      "source": "assets/image/herpes-ambusher-20261020/character.png",
+      "path": "assets/image/herpes-ambusher-20261020/character.png",
+      "bytes": 1224597,
+      "sha256": "52a2855cce82c26396a822ddb09f10232d49a282b62b6fffb9ecde728e0072a1"
+    },
+    {
+      "source": "assets/image/herpes-ambusher-20261020/dormant-preview.png",
+      "path": "assets/image/herpes-ambusher-20261020/dormant-preview.png",
+      "bytes": 60193,
+      "sha256": "dcdcba584ba7d3073aaa0f159ff9ef8d263f79ab08c980f08b08120cba1654a6"
+    }
+  ],
+  "artPolicy": "All six original atlases/96 frames, original anchor(384,512), per-frame timing and raw alpha retained. No image generated or edited. Death final alpha max2; explicitly hide at 2s."
+}

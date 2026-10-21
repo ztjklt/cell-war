@@ -1,0 +1,92 @@
+2026-10-21 状态：本次占地审计已完成并局部修复，专项及相关回归通过。
+
+代码所有权：仅修改 scripts/economy.gd 的 can_place 占地循环，未改器官函数
+hooks、训练/生产/付款实现、simulation/medicine/combat/save/navigation。
+新增 tests/building_placement.gd及.uid，使用实际economy.place和实际排队place，
+读取真实库存、实体、nextId和原命令；没有mock付款或强制搬走单位。
+
+真实旧基线：
+- cell_test原始红(100,99)上直接place store(100,99)成功，从160蛋白扣到130，
+  新建蓝图1个；随后正常move到(104,99)，实际10秒仍原地，actualTrapped=true。
+- 覆盖活友军白、活敌军病原、红细胞边缘，也都被允许扣费/建蓝图。
+- 原始已建store(96.5,98.5)上新建store(98,100)，中心距sqrt(4.5)>2，
+  但两个size2方形实际有0.5x0.5正面积重叠，旧判定仍扣费成功。
+- 预览时空地随后友军真正走入，排队place仍照扣费/建蓝图。
+旧基线文件：test-output/building-placement/baseline.json。
+旧基线41/64中有22条相关拒绝/提交断言失败，另1条是独立的旧对角施工接近
+问题（见下方边界），并不是将这些都算作本次can_place引入的回归。
+
+局部修复：
+1. hp<=0的实体不占用存活占地；未完成且hp>0的蓝图与已建建筑同等保留空间。
+2. 建筑-建筑改为两轴严格正面积重叠判定，使用各自真实size半边长；不再用
+   中心距离圆来近似方形，因此非网格对齐旧建筑/流感建筑也不会漏掉对角交叠。
+3. 建筑-单位仅检查存活且lane0的单位；以原移动系统使用的建筑膨胀方框和
+   WarData.radius一致。另一真实血管平面的投影单位不会误挡组织建造。
+4. 所有拒绝在原pay之前；原因分别为“建筑占地与现有建筑重叠”或
+   “这里有[真实单位名称]，无法放置建筑”。失败不扣资源/建蓝图/占nextId/改工人命令。
+5. 没有自动移动任何人，也没有增加额外spacing。严格<保留边缘/角点无穿入的触碰。
+
+源规则边界：
+只读查看外部归档 scripts/war/World.lua 213-225及Commands.lua 59-73，未恢复旧源码。
+原规则先逐建筑占用格检查walkable，再做严格中心距<检查，付款也在验证后。
+没有发现允许正面积建筑交叠的特例；严格边界允许不重叠的共享边/角，因此保留。
+原版缺少活单位放置检查，但用户本次明确授权至少修掉覆盖施工者卡死，因此
+新增活单位检查属于本次玩法修复，不冒充原版像素/规则完全不变。
+
+已通过专项64/64：
+- 自己/活友军/活敌军/单位边缘、队列提交时再次占地检查。
+- 拒绝不付款、不生成实体、不递增id、不改原命令；明确提示。
+- 实际合法血管/组织投影点：白细胞在真实血管域，组织blueprint仍正常付费生成。
+- 已建对角重叠、实际付费未完成蓝图重叠、毁坏实体不占地。
+- 两座实际付费方形蓝图的合法共边、共角；单位膨胀边界刚好触碰可放。
+- 合法远距离place与append保留原move，随后真实move完成后实际建好储运囊。
+
+已执行相关回归：
+- tests/construction_access.gd：9/9，前两个实际卡死坐标仍正常建好并精确付款。
+- tests/opening_flow.gd：原生79/79，原红/原资源、合法核心/兵巢、首白取消/退款/
+  培育/实际移动；日志无ERROR/SCRIPT/Parse Error。
+- tests/organ_resources.gd：35/35。
+- tests/run_tests.gd：52/52。
+- --headless --editor --import --quit：通过，无脚本错误。
+- tests/radial_commands.gd：原生85/85，日志无ERROR/SCRIPT/Parse Error。
+- tests/organ_resource_routes.gd：完整五站两轮+本地仓116/116，当前药品接线后复跑。
+  初次复跑短循环23/24的失败来自隔离夹具删除lifeRun却仍保留新接入的药品库存/
+  运行状态，验档正确拒绝“药品库存缺少生活模式”；不是本次占地或运输退化。
+  本任务自己的运输/建造隔离夹具已同步删除不运行的medicineSupply和medicineRuntime，
+  然后完整116项通过，未修改药品服务或其校验规则。
+- audit_integrity.py：1927项，无缺失/哈希差异，清单统计一致；历史原稿/Lua来源未重验。
+
+最终运行代码只改economy.can_place的占地循环。测试额外只对本任务已有的
+organ_resource_routes.gd、construction_access.gd及building_placement.gd隔离夹具
+补充药品字段清理，以适应共享树中新落地的验档合同；不更改正常life新局状态。
+测试输出/缓存留本机，没有提交。
+
+另一个独立旧问题（本次审计时保留；随后已由续派修复，见construction-approach-status）：
+最初用于append控制的cell_test store(112,110)也在没有占地冲突时无法走去施工。
+这是既有go只选一个朝向施工点的对角接近问题，基线就失败；本次append保护
+使用同样远距离但轴向且基线可正常完成的store(112,99)，确认新放置判定没有
+破坏原正常远程/追加流程。若总协调续派该独立go问题，可用原始move(104,99)
+后追加store(112,110)真实复现；本次没有继续修改刚验收的navigation或药品线程的simulation。
+已新增只读复现入口：
+  ./godot/run.sh --headless --script res://tests/building_placement.gd -- --inspect-access
+20秒后红实际在(103.9602356,99)，build命令仍在、pathFailed=true；go计算靠近点
+(110.9887543,108.6164093)，真实地形合法但movement_clear(point,point)=false，
+因为它仍在store(112,110)膨胀碰撞方框内（extent=1+0.59375）。
+这不是本次单位/建筑占地重叠，新蓝图本身没有压住单位，也不是层连接问题。
+现场：test-output/building-placement/diagonal-access-state.json、
+diagonal-access-snapshot.json。若续派，建议只在simulation.go发现旧靠近点
+不满足真实建筑碰撞/地形净空时，尝试其它真实可达施工边缘；不增加资源或搬人。
+
+本任务本机证据/复跑：
+  ./godot/run.sh --headless --script res://tests/building_placement.gd
+  test-output/building-placement/checks.json（64项）及baseline.json。
+  .tmp/building-placement-baseline.log、building-placement.log、
+  placement-construction-access.log、placement-organ-resources.log、placement-rules.log、
+  placement-opening-native.log、placement-import.log、building-placement-final.log、
+  placement-radial-native.log、placement-resource-routes-full.log、placement-integrity.log。
+测试在独立仿真中进行，不读写玩家存档，没有美术、提交、推送或远端构建操作。
+
+后续对角施工接近修复完成后，已把本专项append控制恢复为原卡死点store(112,110)，
+不再以(112,99)替代；当前完整64/64，真正完成原对角追加施工。
+原--inspect-access现在显示20秒目标已施工48.75%，新旧现场以
+construction-approach/baseline.json和checks.json区分，避免误读覆盖后的snapshot。

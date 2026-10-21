@@ -1,0 +1,79 @@
+{
+  "dateLocal": "2026-10-21",
+  "authoritativeFile": "godot/data/medicines.json",
+  "entries": [
+    {
+      "id": "antibiotic",
+      "name": "抗生素 · 胶囊重锤兵",
+      "mechanicStatus": "partial",
+      "characterClips": 4,
+      "effectClips": 0,
+      "staticDrops": 0,
+      "runtimeImages": 5,
+      "brokenReferences": []
+    },
+    {
+      "id": "antiviral",
+      "name": "抗病毒药 · 病毒封锁员",
+      "mechanicStatus": "visual_only",
+      "characterClips": 4,
+      "effectClips": 0,
+      "staticDrops": 0,
+      "runtimeImages": 5,
+      "brokenReferences": []
+    },
+    {
+      "id": "vaccine",
+      "name": "疫苗 · 免疫教官",
+      "mechanicStatus": "core_confirmed",
+      "characterClips": 4,
+      "effectClips": 0,
+      "staticDrops": 1,
+      "runtimeImages": 6,
+      "brokenReferences": []
+    },
+    {
+      "id": "fever_pain_relief",
+      "name": "退烧止痛药 · 降温消防员",
+      "mechanicStatus": "core_confirmed",
+      "characterClips": 4,
+      "effectClips": 1,
+      "staticDrops": 0,
+      "runtimeImages": 6,
+      "brokenReferences": []
+    },
+    {
+      "id": "expectorant",
+      "name": "化痰药 · 清痰清道夫",
+      "mechanicStatus": "draft",
+      "characterClips": 0,
+      "effectClips": 0,
+      "staticDrops": 0,
+      "runtimeImages": 1,
+      "brokenReferences": []
+    }
+  ],
+  "runtimeImplemented": false,
+  "purchaseEnabled": false,
+  "galleryProjectionMatches": true,
+  "offlineInstallersParse": true,
+  "totals": {
+    "medicines": 5,
+    "characterClips": 16,
+    "effectClips": 1,
+    "animatedFrames": 272,
+    "staticDropSprites": 1,
+    "runtimeImages": 23
+  },
+  "validation": {
+    "godotImport": "passed",
+    "coverFlow": "passed; failures=[]",
+    "assetIntegrity": {
+      "files": 1917,
+      "missing": 0,
+      "mismatches": 0,
+      "manifestTotalsMatch": true
+    },
+    "scope": "Medicine data and offline projection; runtime purchases/effects remain unimplemented."
+  }
+}

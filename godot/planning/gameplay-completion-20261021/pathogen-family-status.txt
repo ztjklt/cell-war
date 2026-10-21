@@ -1,0 +1,13 @@
+病原分类与药品命中接线 · 2026-10-21
+状态：现役退烧止痛药的动态病毒分类修复完成；未据此开放新病原自然入侵。
+
+原问题：药品助手和泡泡各自只认写死的virus/herpes。后续病原即使在Data.units正式注册为病毒，也不会成为目标或受到泡泡伤害。
+WarData.pathogen_family/is_virus/is_bacterium统一身份：旧virus/herpes为病毒，wolf/helicobacter为细菌；shadow保留病原关口身份但不猜测药物类别。
+新种类必须同时在正式Data.units声明pathogen:true与pathogenFamily:virus或bacterium。单独分类标签、名字包含病毒、只有图鉴预览都不获得机制。
+medicine_helpers._valid_target、medicine_bubbles._eligible与调试tuning目标清单使用同一判断。伤害4、减速30%、持续2秒等原规则未改。
+
+tests/pathogen_family.gd使用进程内临时注册的病毒和细菌夹具，调用真实spawn、助手选敌与泡泡绑定的WarCombat伤害回调：
+基线8/10（新病毒不能获取/命中），修复并扩展后17/17；新病毒实际掉4血并变为0.7移动倍率，细菌不掉血不减速，未注册预览不获取。
+关联回归medicine_bubbles112/112、正式medicine_integration110/110、真实关口pathogen_identity13/13通过。
+本机证据.tmp/pathogen-family-fixed.log、.tmp/family-bubbles-regression.log、.tmp/family-medicine-regression.log、.tmp/family-gate-regression.log及test-output/pathogen-family/checks.json。
+临时注册在进程结束前移除，没有写入全局config；肺炎链球菌/腺病毒候选由病原接线聊天各自声明正确类别，疫苗模块复用这一API。

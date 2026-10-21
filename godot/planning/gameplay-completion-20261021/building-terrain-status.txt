@@ -1,0 +1,17 @@
+建筑完整占地边界 · 2026-10-21
+状态：修复完成，新增专项48/48；原占地64/64、紧凑布局10/10通过。
+
+复现：economy.can_place只检查方形四角。真实脑barracks(1093.5,638.5)、胰腺store(990,1680)、右肾barracks(851.5,1668.5)、大肠barracks(1040.5,1809.5)的四角均合法，但方形边缘穿过原始组织凹边；原实现仍扣蛋白并放置蓝图。
+另外，完全包在建筑内的小孔洞和沙盒内部阻挡格也绕过四角检查。
+
+修复只在economy.gd：预览和付费执行共用_footprint_allowed。
+组织模式要求中心及四角属于同一器官，四边按原始多边形精确扫过，并拒绝完全包含在占地内的孔洞；保留既有合法ring并集。
+地面网格模式逐格检查整个覆盖矩形，坐标取整与campaign_clear一致。
+没有重画地图、改变孔洞、扩大道路、添加跨层连接或挪动原有建筑。
+
+tests/building_terrain.gd基线21/48，修复后48/48。
+含四个真实凹边、原开局合法储运囊点、明确注入的极小多边形孔洞/网格孔洞，并验证执行队列时重新检查；拒绝不扣费、不产生实体ID、不破坏红细胞原任务。
+新增孔洞仅为独立测试夹具，不写冻结地图，不冒称自然生成地形。
+tests/building_placement.gd64/64保留建筑接边/接角、活单位占地、不同血管层投影与实际追加施工。
+tests/construction_compact_layout.gd10/10：原红原资源仍能走到紧凑核心/兵巢点完成施工，真实路径及预算通过。
+证据为.tmp/building-terrain-{baseline,fixed}.log、.tmp/terrain-{placement,compact}-regression.log与test-output/building-terrain/。

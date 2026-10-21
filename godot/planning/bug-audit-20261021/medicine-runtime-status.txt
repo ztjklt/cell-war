@@ -1,0 +1,191 @@
+退烧止痛药独立服务 · 接口与接入交接
+日期：2026-10-21
+状态：独立原生 GDScript 服务和专项测试已完成；没有接入正式战斗、商店、库存或派遣。
+本轮只新增独立脚本、专项测试和本说明，没有改 simulation/main/combat/HUD/config 共用入口。
+没有生成美术、视频、病原或药品造型，没有联网、提交、推送或远端构建。
+
+一、文件
+- 服务：godot/scripts/medicine_bubbles.gd
+  类名：WarMedicineBubbles，继承 RefCounted；没有 _process、自动注册实例或场景副作用。
+- 专项测试：godot/tests/medicine_bubbles.gd
+- 本机测试报告：godot/test-output/medicine-bubbles.json
+- 既有权威设计目录：godot/data/medicines.json，只读取 fever_pain_relief 条目。
+- 全药品目录交接：同目录 medicines-status.txt。本轮没有修改其他药品能力或目录状态。
+- Godot 生成的相邻 .gd.uid 为资源标识，不是公共运行入口的改动。
+
+二、已实现的独立逻辑
+1. launch 创建带稳定ID的独立泡泡状态：来源快照、x/y、固定方向、剩余距离和飞行时长。
+   不是绑在角色图上的装饰；方向在发射时固定，目标移动可以躲开。
+   当前只是逻辑飞行物记录，不自动创建 Sprite2D/Area2D 或渲染节点。
+2. advance_simulation 真实推进位置和剩余状态，使用线段与目标圆的连续碰撞。
+   在碰撞路径上查询几何；先遇到的合法目标优先，同位置时按实体ID稳定排序。
+   同阵营、非病毒、死亡目标和不同 vesselLane 均不会被命中。
+3. 当前只识别已有运行种类 virus 和 herpes，不创建新病原、无现实病毒种类专属倍率。
+4. 只有几何查询通过，实际命中才伤害一次，之后移除该泡泡。
+   墙在目标前会挡弹；目标在墙前可先命中；射空到达范围或飞行时限后消失。
+5. 伤害可交给宿主 WarCombat.damage；未绑定伤害回调时使用直接修改目标hp的独立后端。
+   正式接线必须绑定原生伤害回调以保留命中反馈、死亡事件等既有行为。
+6. 减速由服务自己的状态表保存，不写入公共 CombatConfig.statuses、不覆盖基础速度。
+   speed_multiplier(target) 返回固定倍率，默认0.7；重复命中只刷新截止时间，不变成0.49。
+   大dt按该步内真实命中时刻计算时限，避免把已经经过的时间错误补成一整段新减速。
+7. 目标死亡/移出世界时清理减速；死亡目标查询倍率为1。
+   已经发出的泡泡独立于来源实体存活，来源死亡不把它强行删除。
+8. 发射源用单调shot sequence防重复，冷却和序号随快照保存。
+   同一次攻击事件重复请求不会多发弹。冷却/容量失败不消费序号。
+9. 事件仅用于观察：bubble_spawn、bubble_impact、bubble_blocked、bubble_expired。
+   drain_events取走一次；读取状态、观察事件、保存和加载不会重放伤害。
+10. 还没有自动选敌、药品助手AI、助手生命/时长、购买或派遣；这些不由本服务暗中补齐。
+
+三、参数来源与确认边界
+构造器从 res://data/medicines.json 的 balanceDefaults.values 读取以下参数：
+- damage=4
+- range=7
+- attackCooldownSeconds=1.2
+- projectileSpeed=14
+- slowRatio=0.3
+- slowDurationSeconds=2
+
+服务的可调工程默认值：
+- projectileRadius=0.1
+- targetRadius=0.35（只有未绑定原生半径查询时使用）
+- geometryStep=0.2
+- projectileMaxLifetimeSeconds=2.0
+- maxProjectiles=128
+- maxSourceRecords=256
+- maxEvents=256
+
+所有上述数字均是待平衡默认值，不是用户已确认的最终数值。
+tuning() 明确返回 status=draft_pending_balance、confirmedValues=false。
+构造器可传覆盖字典，例如 WarMedicineBubbles.new({"damage":3.0,"slowRatio":0.25})。
+未知参数、NaN、非正速度/范围、无效时长或slowRatio>=1会拒绝配置，避免暗中增加冻结能力。
+现有1.52秒攻击动画时长与1.2秒间隔默认值并不等同，后续应共同联调，不能依画面循环次数加射击。
+价格、库存、助手生命、移动速度和助手90秒时长都不在本服务中实施。
+
+四、公开接口
+WarMedicineBubbles.new(overrides: Dictionary = {})
+  只读取退烧止痛药已有确认方向。ready()表示服务配置有效，不表示正式战斗已可用。
+  last_error()用于了解无效参数、重复序号、冷却或缺少几何绑定等拒绝原因。
+
+bind_world(damage_callback: Callable, geometry_callback: Callable, radius_callback: Callable = Callable())
+  damage_callback(source:Dictionary,target:Dictionary,amount:float,cause:String)
+    必须同步对宿主真实目标结算伤害。cause固定为medicine_bubble。
+  geometry_callback(from:Vector2,to:Vector2,lane:int,source:Dictionary)->bool
+    必须验证真实地形/通行层，缺少该回调时launch失败。
+    读档后有飞行物但未重新绑定时advance返回false，保留原状态，不穿墙、不悄悄丢弹。
+  radius_callback(target:Dictionary)->float
+    正式接线建议返回WarData.radius(target.kind)，使用当前单位真实碰撞半径。
+
+launch(source:Dictionary,aim:Vector2,sequence:int)->int
+  成功返回泡泡ID；失败返回0，不收钱、不消费药品，也不消费该次失败序号。
+  source使用宿主真实活体字典，至少有id/kind/hp/x/y/faction，vesselLane默认为0。
+  sequence是每个发射源的单调正整数。来源ID必须遵循宿主实体ID不复用约定。
+
+advance_simulation(delta:float,entities:Array)->bool
+  delta已是模拟秒。entities要包含全部世界实体和发射源，不能只传可见对象。
+  移除/死亡对象的状态在推进时清理；不能把离屏实体误当成已移出世界。
+
+advance(real_delta:float,entities:Array,paused:bool=false,time_scale:float=1.0)->bool
+  供独立宿主/测试使用的真实时间适配器。暂停不推进任何时钟或状态。
+  倍速在此只乘一次；与advance_simulation二选一，不要双重推进。
+
+speed_multiplier(target:Dictionary)->float
+slow_remaining(target_id:int)->float
+  返回该服务独立减速的当前倍率/剩余模拟秒，不修改宿主速度、配置或其他状态。
+
+projectiles()->Array
+drain_events()->Array
+  均返回独立副本，可用于后续渲染。事件缓冲有上限，不是可重复执行的战斗命令。
+
+snapshot()->Dictionary
+restore(data:Dictionary)->bool
+static validate_snapshot(data:Dictionary)->String
+  验证成功返回空字符串；失败给出错误，供整体存档在替换世界前检查。
+  restore是事务式的：非法数据不替换有效服务状态，不重放伤害或发射事件。
+  格式cell-war-medicine-bubbles/v1，固定medicineId=fever_pain_relief。
+  保存规则快照、服务时钟、下一泡泡ID、飞行物、减速截止时间、来源冷却/序号。
+  整数编号和规则数值在JSON恢复时规范化，避免同一状态因数字类型变化而不一致。
+  事件队列和Callable不序列化。宿主世界的位置、生命等仍由宿主存档负责。
+
+五、供协调任务接线的准确位置（本轮未修改）
+1. 独立模块所有者/统一药品系统
+   完成购买→库存→合法派遣后，再建立真实助手实体并持有一个WarMedicineBubbles实例。
+   当前没有药品单位模板、注册的导航档案或合法入场流程，不能仅靠本服务宣称已派遣。
+   建议只有一份全局服务管理同一种减速，避免多实例分别消费后再相乘。
+
+2. WarSimulation.step(dt)，建议在移动循环前统一推进
+   当前WarSimulation.update(delta)已经按暂停、倍速和固定步长决定调用step。
+   因此在step内只用：
+     medicine_bubbles.advance_simulation(dt, entities())
+   不再乘game.speed，也不另调用advance。
+   建议放在state.time推进之后、units移动循环之前，让本步命中的减速可供本步go查询。
+   在后面的助手攻击阶段发出的新泡泡从下一次服务推进开始飞行，避免回填一整个旧时间步。
+   统一时序应由协调任务确定并测试，本服务没有主动改动step。
+
+3. WarSimulation.go(e,...)内的velocity计算点
+   现有基础速度乘combat.multiplier(e,"moveMultiplier")。
+   后续只在移动速度链中乘一次medicine_bubbles.speed_multiplier(e)，保留其他既有状态和地形倍率。
+   或由公共状态负责人在moveMultiplier适配处统一乘一次，二者只能选其一。
+   这一步尚未接线，当前正式单位不会自动减速；专项测试验证的是独立倍率接口。
+
+4. 已确认退烧止痛药攻击动作的发射事件
+   现有素材第7帧是发射画面。由模拟攻击状态产生稳定shot sequence，并调用launch一次。
+   不在HUD、播放器_process、逐帧回放、预览或每次循环时创建正式弹体。
+   本服务没有自动选敌，源/目标合法性和攻击动作调度仍由统一药品助手模块负责。
+
+5. 绑定既有伤害和导航（模板，仅在注册了真实助手/导航档案后使用）
+   bubbles.bind_world(
+     func(source,target,amount,cause):
+       game.combat.damage(source,target,amount,true,cause),
+     func(a,b,lane,source):
+       return game.navigation.clear_segment(a,b,lane,source.kind),
+     func(target):
+       return WarData.radius(target.kind)
+   )
+   source.kind必须已有合法导航档案，不可把未注册的药品kind当成现成单位。
+   raw=true避免默认草案伤害被其他兵种科技再次改写；medicine_bubble原因不会触发既有普通攻击击退。
+   本服务没有追加击退、冰冻、范围溅射或其他未确认能力。
+
+6. 存档：WarSimulation.snapshot/restore 与 WarSave.validate
+   协调任务可在整体snapshot中增加独立medicineBubbles字段，写入service.snapshot()。
+   整体读档替换世界前，先调用validate_snapshot验证该字段。
+   替换世界后恢复服务并重新bind_world，回调必须绑定新世界而不是旧实体引用。
+   旧档没有该字段时应保持空服务/旧模式，不自动赠药、发弹或增加减速。
+   当前WarSave没有对此字段做正式校验，也没有创建药品助手；本轮未改这些公共入口。
+
+7. 渲染
+   读取projectiles和drain_events，复用既有泡泡图集的1–4帧飞行与5–16帧破裂。
+   逻辑位置、命中与存活属于服务，画面动画不拥有或重新触发效果。
+   没有渲染接线或新美术，本服务测试不等于已有正式泡泡画面。
+
+六、专项测试与证据
+运行：
+  ./godot/run.sh --headless --script res://tests/medicine_bubbles.gd
+结果：111/111，无失败。
+本机报告：godot/test-output/medicine-bubbles.json。
+
+覆盖：
+- 从权威目录读取数值、待平衡标志、覆盖值及无效/未知配置拒绝。
+- 独立飞行、非瞬时命中、真实目标hp变化、一次碰撞一次伤害。
+- 固定减速、多次命中刷新、同一时间多弹不叠乘、正常失效及大dt真实命中时刻。
+- 细小目标的连续碰撞、先近后远、同位置稳定排序、墙前/墙后判定、射空/射程/飞行到期。
+- 同阵营、非病毒、死亡目标、不同通行层过滤；目标移动躲避，不进行追踪。
+- 致死伤害、外部目标死亡后的状态清理、来源死亡后已发泡泡继续独立飞行。
+- 暂停飞行/冷却/服务时钟，暂停已有减速，2倍速与等量模拟推进一致。
+- 飞行中JSON读档、减速中读档、伤害不重放、发射序号/冷却保留。
+- 损坏版本、错误药品ID、方向、生命、重复弹ID、未知规则、过长减速等拒绝；失败读档不改现状。
+- 恢复后几何回调未绑定时保留状态，绑定后正常继续；事件队列和容量上限。
+- 真实WarSimulation cell_test实体、原生导航、WarCombat.damage反馈和伤害。
+  测试用现有中性粒细胞作为显式发射源，不表示正式药品助手已经生成/派遣。
+  实际移动速度的正式接线仍缺失，不能据此把测试称为完整战斗药品验收。
+
+其他验证：
+- Godot 4.6.3 headless editor import成功，无脚本解析错误。
+- 既有tests/run_tests.gd：52/52。
+- audit_integrity.py：1917项素材，无缺失/哈希不符/总量不符；未重新比对外部Lua归档。
+- 本轮没有修改公共运行入口，不代表其他并行任务期间整个工程没有变化。
+- 没有进行正式购买、派遣、长局平衡或手机实机验收。
+
+七、下一轮尚未完成的闭环
+协调任务再安排：购买事务→库存→合法入口与助手实体→发射调度→服务推进→正式移动倍率
+→独立渲染→整体存读档→死亡/到期退场→实际效果通过后开放销售。
+本轮交付独立服务，medicines.json的canSell/canDeploy与正式runtimeImplemented状态仍保持false。

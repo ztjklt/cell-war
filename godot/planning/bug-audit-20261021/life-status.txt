@@ -1,0 +1,84 @@
+生活机制全模拟联调 · 2026-10-21
+状态：本项完成。建筑射程卡死与生活感染名额提前释放均已修复；左右肺自然感染到实际施工、孵化、战斗、联合净化、康复和存读档均通过。
+
+本对话代码范围
+- scripts/life_run.gd：未净化区域保留活跃感染名额和负担。
+- scripts/combat.gd：经协调任务明确授权的小范围建筑射程修复。
+- tests/life_run.gd：把“击杀解锁恢复”改为实际联合净化解锁。
+- tests/life_integration.gd：新增真正 WarSimulation.update 固定步集成。
+- tests/life_building_attack.gd：新增隔离建筑攻击及三阶段拒绝专项。
+未改 UI、hud、life_dialogue、main、simulation、navigation、README、感染/净化模块、器官资源或药品；施工问题由感染负责人在 influenza_colonies.gd 修复。
+combat 仅局部 patch 目标几何、fight、launch、前摇释放和实际碰撞候选；没有重写文件、没有改 update_status 或 multiplier，后续器官接线可保留其独立改动。
+
+修复1：生活感染名额提前释放
+红白净化接入后，旧 _refresh_load 只按待出生量及活病原/要塞计算活跃源。
+病毒和要塞已死但区域尚未净化时，会提前释放名额和区域负担。
+已先复现失败，再改成未 cleared 的区域始终计入 active；逃出源区且仍活着的病原仍会计入负担。
+旧测试也已明确：单纯杀完不解锁 after_infection，红白联合驻守完成后才结算 recovered，且只结算一次。
+
+修复2：攻击建筑不断前摇但不发射
+独立合法组织 fixture，500HP 流感要塞；spear / neutrophil 均提交真实 attack 指令并跑完整固定步，无直接 damage 或 hp 覆盖。
+修复前：距离5时两者都有8发/8命中；距离7时都是8次前摇、0发射、0命中，目标仍500HP。
+根因：fight 使用距离 <= 武器range6 + 建筑半径2；前摇释放却仅允许中心距离 <= range6。
+细胞在7处认定已经够近而不追近，释放时又永久取消。
+当前共用 _target_geometry / _firing_solution：同lane、原 clear_segment 和建筑自身物理半径，用于起手、释放和新投射物的实际碰撞候选。
+单位仍保持原先按中心的武器射程；不扩大所有射程、不改伤害/冷却/弹速/ttl。
+新投射物记录发射点和原武器射程，命中时据此检查；旧存档无这些字段的投射物保留兼容。
+只在已碰到目标半径的候选上追加命中几何检查，不在每个投射物小步中给所有单位额外做地形线段查询。
+
+最终专项与回归（均无失败）
+- life_building_attack：60/60。两种细胞在距离5、7、精确边界8均实际发射并伤害；准备/释放/命中三阶段分别拒绝超范围、跨lane、遮挡的9个场景，目标均无错误伤害。
+- life_run：701/701。当前器官资源站修复后又复核一次。
+- life_integration：完整101/101，包括4种真实计时配置。
+- 左肺最新数据再次实际 journey：73/73。
+- 右肺最新数据再次实际 journey：72/72。
+- run_tests：52/52；camera_and_knockback：65/65；B细胞39/39；血小板38/38；树突状细胞49/49；流感要塞39/39。
+- encounter：真实150模拟秒正常输出28发、44次伤害、4死亡和16氧气交付。
+- --headless --editor --import --quit：成功，无脚本错误。
+- audit_integrity.py：1920文件，missing=[]，mismatches=[]，manifestTotalsMatch=true；旧Lua/仓库外原素材未检查，不据此宣称完整画面验收。
+
+计时与选择的真实结果
+固定步走完整 simulation.update，不直接 life.advance，不修改风险阈值、随机种子推进或侵入条件。
+1×、2×、1/60秒输入帧以及中途1×转2×：首次联系都在180.0～180.1167有效输入秒；2×时模拟时间360秒，但不会把外部联系压缩到90秒。
+暂停30秒输入不推进联系、年龄、金钱、机能；后续间隔抽取130.671818秒，实际130.7秒，不早于配置120～180秒。
+自然首个事件 crowded_party；工资80减基本开支60后320钱。
+免费选项0不扣钱；付费选项1扣20且机能-1；同一token不能重复收费，钱不够原子拒绝。
+免费风险约0.0784803/分钟，付费约0.1561276/分钟；同一真实pending文件分叉，保持RNG与token，未强制hazard。
+
+左右肺完整链路
+左肺种子39462：免费分支272.0秒自然感染，付费分支226.2秒自然感染，13个实际病毒。
+本源真实要塞238.1秒完工，268.1秒首次孵化，跨存读档仍为30秒；正常攻击约22.9秒摧毁实际要塞、清掉本地区病原。
+真实红白驻守达到5.1秒时保存并恢复，暂停保持原值，20秒联合净化在311.0秒完成，recovered=1；重复更新不重复结算。
+右肺种子36604：免费330.0秒、付费255.1秒自然感染，12个实际病毒；267.0秒完工，297.0秒孵化，约21.4秒实际作战，338.4秒联合净化完成，recovered=1。
+两次最终本源均 cleared=true，局部病原和本源要塞均清除；本次两种子均无逃逸存活成员。
+施工移动、十工人同tick施工、真实射弹、命中、死亡、孵化和净化事件都实际运行；不直接清hp、改progress或搬动感染单位。
+施工基线故障及修复证据详见同目录 construction-status.txt；它不是生活或射程修复替代出来的假进度。
+
+存档和危机边界
+每次使用 user://test-saves/bug-audit-life-integration 下全新 run-时间戳-pid 子目录；补充种子另有 seed-36604。
+仅测试自己的目录；没有读写用户正常存档。保留老slot0，生活自动存档独立；本轮pending写入失败即停止依赖分支，不会读旧测试文件冒充成功。
+实际待办、token、RNG、扣费、活感染、施工/孵化和部分净化都经过文件写/读。
+危机是明确的边界fixture：真实pending恢复后仅将机能置0.5，再选原来的-1选项进入危机；实际60模拟秒未救回则结束，年龄冻结、只结算一次并可保存。
+救援分支只把机能/阶段/剩余时间置于危机边界，用原有待办的免费+2回复救回，之后正常推进；不宣称从健康自然模拟到寿终。
+
+证据与复现
+当前JSON：test-output/life-integration.json（完整101）、life-integration-seed-39462.json（最新左73）、life-integration-seed-36604.json（最新右72）、life-building-attack.json（60）。
+JSON包括用到的脚本/生活数据/器官资源站数据哈希、保存目录和实际事件轨迹。
+完整101测试后，另一个负责人继续调整了器官资源站落点；因此随后用最新数据重新跑左73/右72，生活、战斗、感染、导航及该资源数据依赖在两轮完成后核对哈希一致。
+本轮新模块暂时出现过large_intestine.wood落在非法组织点，导致生活snapshot校验123项失败及全联调3个写档失败；由资源站负责人修正后，当前701和两条fresh目录集成均通过。
+当前最新大肠点[896.1436,1851.85]已由两轮独立新进程实际读取，最新左73/右72的资源数据哈希均与当前文件一致。
+该中间失败保留为 life-integration-resource-invalid.json 和 life-integration-seed-36604-resource-invalid.json；123项中间失败的已观察摘要存 life-run-resource-invalid-observed.txt（明确为观察摘要，不冒充完整原始日志）；右肺最初施工/攻击7失败保留 life-integration-seed-36604-before-fixes.json，施工原始快照由感染负责人独立保留。
+日志：.tmp/life-unit-final.log、life-building-final.log、life-integration-final.log、life-integration-left-latest.log、life-integration-right-final.log、life-combat-*.log、life-import-final.log、life-integrity-final.log。
+
+命令
+./godot/run.sh --headless --script res://tests/life_run.gd
+./godot/run.sh --headless --script res://tests/life_building_attack.gd
+./godot/run.sh --headless --script res://tests/life_integration.gd
+./godot/run.sh --headless --script res://tests/life_integration.gd -- --journey-only --seed=39462
+./godot/run.sh --headless --script res://tests/life_integration.gd -- --journey-only --seed=36604
+
+验收边界
+这是无画面、墙钟加速的完整固定步模拟，覆盖真实寻路和战斗；不等于数小时原生渲染试玩或寿命平衡验收。
+十枚守军是显式部署的可生产spear测试细胞，保持150HP/15伤害；占领红细胞也是显式fixture。没有把直接部署宣称为新局赠送或玩家生产/跨器官运输已完成。Data.unitOrder实际生产位为spear，独立neutrophil4HP/1伤害草案不在生产列表，此前普通白细胞数值的混同已纠正。
+不认证药品、其他病原、随后另行接入的器官功能服务、离线结算、云同步、手机实机或全部游戏无bug。
+未提交、推送或远端构建；各新模块接线由其负责人继续验证，当前combat几何方法不需再改。

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "scope": "人体生存新局；原始旧模式及未迁移旧存档保持原资源规则",
+  "contestRadius": 8.0,
+  "refreshSeconds": 0.5,
+  "capacityPerRedCell": 14.0,
+  "collectionSeconds": 0.7,
+  "collectionAmount": 2.0,
+  "description": "安全时采集站补充库存；同器官组织层附近出现敌军时停工。资源必须由红细胞运到同器官的核心或储运囊，没有本地仓库则运到心脏。",
+  "balanceStatus": "用户授权自主制定的首轮可调默认值，尚待长时间平衡试玩",
+  "art": {
+    "oxygen": {"texture": "image/organ-resource-stations-20261021/oxygen-station-v1.png", "anchor": [0.5, 0.76], "occupancy": 0.85, "name": "肺泡集氧站"},
+    "food": {"texture": "image/organ-resource-stations-20261021/glucose-station-v1.png", "anchor": [0.5, 0.76], "occupancy": 0.85, "name": "胃糖分解站"},
+    "wood": {"texture": "image/organ-resource-stations-20261021/protein-station-v1.png", "anchor": [0.5, 0.76], "occupancy": 0.85, "name": "肠道蛋白站"}
+  },
+  "sources": [
+    {"id": "lung_r.oxygen", "organ": "lung_r", "kind": "oxygen", "point": [809.8651693446275, 1282.9209425148558], "capacity": 300.0, "refillPerSecond": 1.5},
+    {"id": "lung_l.oxygen", "organ": "lung_l", "kind": "oxygen", "point": [1213.7357457285038, 1283.6395794292855], "capacity": 300.0, "refillPerSecond": 1.5},
+    {"id": "stomach.food", "organ": "stomach", "kind": "food", "point": [1166.1382040880449, 1625.049270193081], "capacity": 300.0, "refillPerSecond": 0.8},
+    {"id": "small_intestine.wood", "organ": "small_intestine", "kind": "wood", "point": [990.700932039546, 1904.7375], "capacity": 300.0, "refillPerSecond": 1.0},
+    {"id": "large_intestine.wood", "organ": "large_intestine", "kind": "wood", "point": [896.1436, 1851.85], "capacity": 200.0, "refillPerSecond": 0.5}
+  ]
+}

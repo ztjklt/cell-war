@@ -1,0 +1,71 @@
+{
+  "unitKind": "t_cell",
+  "unitDefinition": {
+    "name": "T细胞",
+    "desc": "沿合法通路瞬身前进，投掷独立小刀；受击可打断未出手攻击。",
+    "at": "barracks",
+    "tier": 2,
+    "hp": 105,
+    "pop": 2,
+    "cost": {
+      "wood": 25,
+      "food": 20,
+      "oxygen": 5
+    },
+    "train": 22,
+    "damage": 14,
+    "range": 6,
+    "cool": 1.4,
+    "speed": 3.0,
+    "vision": 11,
+    "sprite": "t_cell",
+    "tCellRole": true
+  },
+  "cellRadius": 0.65,
+  "cellFramesAsset": {
+    "path": "image/t-cell-cartoon-20261021/character-refined-v1.png",
+    "occupancy": 0.6
+  },
+  "cellFramesKind": "t_cell",
+  "unitOrderAfter": "dendritic_cell",
+  "assetManifestCandidates": [
+    {
+      "source": "assets/image/t-cell-cartoon-20261021/blink-16/spritesheet.png",
+      "path": "assets/image/t-cell-cartoon-20261021/blink-16/spritesheet.png",
+      "bytes": 2464355,
+      "sha256": "1b332950192de2819a0a00ff9db51734e1cf6a109084a5f34e5442e11d607fd7"
+    },
+    {
+      "source": "assets/image/t-cell-cartoon-20261021/throw-16/spritesheet.png",
+      "path": "assets/image/t-cell-cartoon-20261021/throw-16/spritesheet.png",
+      "bytes": 2528761,
+      "sha256": "7499f300259bbeb97d4aa599d44254a208366625ae5bf9b586eb9de4f192d175"
+    },
+    {
+      "source": "assets/image/t-cell-cartoon-20261021/hit-12/spritesheet.png",
+      "path": "assets/image/t-cell-cartoon-20261021/hit-12/spritesheet.png",
+      "bytes": 2006916,
+      "sha256": "ea2f8f029c412bdc47be4b10edb230542d8bd765ce9b1fef84dde01a088e0279"
+    },
+    {
+      "source": "assets/image/t-cell-cartoon-20261021/death-12/spritesheet.png",
+      "path": "assets/image/t-cell-cartoon-20261021/death-12/spritesheet.png",
+      "bytes": 1740144,
+      "sha256": "aece4326921864ddbd40f1c6f93a23bcf5433e5300000d594c6701bf3c5e6780"
+    },
+    {
+      "source": "assets/image/t-cell-cartoon-20261021/character-refined-v1.png",
+      "path": "assets/image/t-cell-cartoon-20261021/character-refined-v1.png",
+      "bytes": 734518,
+      "sha256": "c29117a52ddb311f25e5d5b20678f0aaa5b65edd658a6bba733ea2b1f4fa81c2"
+    },
+    {
+      "source": "assets/image/t-cell-cartoon-20261021/runtime.json",
+      "path": "data/t_cell.json",
+      "bytes": 220076,
+      "sha256": "44027df45a95bdf564237b4e29dda20a1e0f422931ba3143dc9ebf250a11649b"
+    }
+  ],
+  "sharedFilesWritten": false,
+  "hooksRequiredBeforeTraining": true
+}
