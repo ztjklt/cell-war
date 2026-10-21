@@ -283,7 +283,10 @@ func _update_unit(e: Dictionary, dt: float) -> void:
 	if can_attack:
 		var target := entity(int(order.get("target",0))) if kind == "attack" else {}
 		if target.is_empty() or target.hp <= 0:
-			target = combat.enemy(e,float(WarData.spec(e.kind).get("vision",10)),kind == "attackmove")
+			if kind == "guard":
+				target = guard_enemy(e,order)
+			else:
+				target = combat.enemy(e,float(WarData.spec(e.kind).get("vision",10)),kind == "attackmove")
 		if not target.is_empty() and combat.fight(e,target,dt,kind != "hold"):
 			return
 	if order.is_empty() or kind == "hold":
@@ -308,6 +311,11 @@ func order(e: Dictionary, command: Dictionary, append := false) -> void:
 		e.orderToken = int(e.get("orderToken",0))+1
 	e.orders.append(command.duplicate(true))
 	e.pathFailed = false
+
+func guard_enemy(e: Dictionary, order: Dictionary) -> Dictionary:
+	var point := Vector2(float(order.get("x",e.x)),float(order.get("y",e.y)))
+	var radius := float(order.get("guardRadius",maxf(3.0,minf(12.0,float(WarData.spec(e.kind).get("vision",10))))))
+	return combat.enemy_in_area(e,point,radius)
 
 func finish_order(e: Dictionary) -> void:
 	if not e.orders.is_empty():
@@ -552,6 +560,8 @@ func _execute_issue(kind: String, target := Vector2.ZERO, append := false, targe
 		var p := target
 		if kind == "retreat": p = scenarios.home()
 		var command := {"kind":kind,"x":p.x,"y":p.y,"target":target_id}
+		if kind == "guard":
+			command.guardRadius = maxf(3.0,minf(12.0,float(WarData.spec(e.kind).get("vision",10))))
 		if places.has(int(e.id)):
 			if places[int(e.id)].get("failed",false): order(e,{"kind":"stop"},false); continue
 			command.merge(places[int(e.id)],true)

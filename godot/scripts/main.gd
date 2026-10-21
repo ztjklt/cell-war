@@ -17,9 +17,11 @@ var infection_preview: WarInfectionPreview
 var map_frame: WarDeskMapFrame
 var camera_travel: WarCameraTravel
 var desk_layer: CanvasLayer
+var settings := WarSettings.new()
 
 func _ready() -> void:
-	Engine.max_fps = 60
+	settings.load_from_disk()
+	settings.apply(get_window())
 	# The world-space paper clip has a fractional origin. GUI pixel snapping
 	# rounds it before camera zoom, displacing the map by up to half a world unit.
 	get_viewport().gui_snap_controls_to_pixels = false
@@ -46,6 +48,7 @@ func _ready() -> void:
 	world.z_index = 0
 	map_frame.add_child(world)
 	world.setup(game,camera)
+	world.show_paths = settings.show_paths()
 	map_frame.bind_world(world,camera)
 	audio = WarAudio.new()
 	add_child(audio)
@@ -337,6 +340,7 @@ func _command(at: Vector2,append: bool) -> void:
 		p = game.economy.build_point(building,p)
 		if game.economy.can_place(building,p,game.selected):
 			game.submit_player({"action":"place","building":building,"x":p.x,"y":p.y,"append":append})
+			world.show_command_marker(p,"build")
 			command_mode = ""
 		return
 	if game.selected.is_empty():
@@ -362,14 +366,12 @@ func _command(at: Vector2,append: bool) -> void:
 					var e := game.entity(id)
 					if e.get("kind","") == "worker":
 						game.submit_player({"action":"unit_order","unit":int(e.id),"order":{"kind":"harvest","resource":key,"x":resource.x,"y":resource.y},"append":append})
-				world.marker = p
-				world.marker_time = world._time
+				world.show_command_marker(p,"move")
 				return
 	game.issue(kind,p,append,target_id)
 	audio.play("command")
 	command_mode = ""
-	world.marker = p
-	world.marker_time = world._time
+	world.show_command_marker(p,kind)
 
 func _key(event: InputEventKey) -> void:
 	var key := event.keycode
@@ -389,7 +391,10 @@ func _key(event: InputEventKey) -> void:
 			if not (event.ctrl_pressed or event.meta_pressed or event.alt_pressed): _zoom_selected(2.0 if key == KEY_Q else .5)
 		KEY_SPACE: game.paused = not game.paused
 		KEY_M: hud.show_map()
-		KEY_F: game.notify("全身地图始终可查看 · 敌人和未发现资源仍遵守迷雾")
+		KEY_F:
+			if not (event.ctrl_pressed or event.meta_pressed or event.alt_pressed): hud.focus_cell(false)
+		KEY_C:
+			if not (event.ctrl_pressed or event.meta_pressed or event.alt_pressed): hud.focus_cell(true)
 		KEY_R: game.issue("retreat")
 		KEY_H: hud.return_home()
 		KEY_B: hud.show_build()
@@ -473,8 +478,7 @@ func _radial_command(action: String,p: Vector2,append: bool,ids: Array,context: 
 		game.submit_player({"action":"issue","kind":action,"x":p.x,"y":p.y,"append":append,"target":target,"ids":workers if action in ["repair","build","farm","extinguish"] else live_ids})
 	hud.wheel.confirm(action)
 	audio.play("command")
-	world.marker = p
-	world.marker_time = world._time
+	world.show_command_marker(p,action)
 
 func status_message() -> String:
 	return hud.status.text

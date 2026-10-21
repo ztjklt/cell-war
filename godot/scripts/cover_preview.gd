@@ -11,8 +11,10 @@ var character_count := 0
 var close_button: Button
 var character_tab: Button
 var map_tab: Button
+var building_tab: Button
 var character_view: VBoxContainer
 var map_view: VBoxContainer
+var building_view: VBoxContainer
 var filters: HBoxContainer
 var search: LineEdit
 var count_label: Label
@@ -128,10 +130,12 @@ func _ready() -> void:
 	var tabs := HBoxContainer.new(); body.add_child(tabs)
 	character_tab = _button("角色预览",show_characters); character_tab.toggle_mode = true; _selected_style(character_tab); tabs.add_child(character_tab)
 	map_tab = _button("地图预览",show_maps); map_tab.toggle_mode = true; _selected_style(map_tab); tabs.add_child(map_tab)
+	building_tab = _button("建筑预览",show_buildings); building_tab.toggle_mode = true; _selected_style(building_tab); tabs.add_child(building_tab)
 	entries = WarData.read("character_catalogue").entries
 	character_count = entries.size()
 	_build_characters()
 	_build_maps()
+	_build_buildings()
 	resized.connect(_layout)
 	visibility_changed.connect(func(): set_process(is_visible_in_tree()))
 	_layout()
@@ -237,6 +241,32 @@ func _build_maps() -> void:
 	map_view.add_child(_label("观察真实地图 · 全身 / 心脏 / 双肺 / 小肠",13))
 	map_view.hide()
 
+func _build_buildings() -> void:
+	building_view = VBoxContainer.new(); building_view.size_flags_vertical = Control.SIZE_EXPAND_FILL; building_view.add_theme_constant_override("separation",10); body.add_child(building_view)
+	building_view.add_child(_label("建筑预览",18))
+	building_view.add_child(_label("查看建筑用途、耐久、建造时间与资源消耗。手机端可上下滑动浏览全部建筑。",13))
+	var scroll := ScrollContainer.new(); scroll.name = "BuildingPreviewScroll"; scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL; building_view.add_child(scroll)
+	var cards := VBoxContainer.new(); cards.size_flags_horizontal = Control.SIZE_EXPAND_FILL; cards.add_theme_constant_override("separation",10); scroll.add_child(cards)
+	var art: Dictionary = WarData.read("friendly_buildings").get("buildings",{})
+	var keys: Array = WarData.config().Data.buildings.keys(); keys.sort()
+	for id in keys:
+		var spec: Dictionary = WarData.config().Data.buildings[id]
+		var card := PanelContainer.new(); card.add_theme_stylebox_override("panel",WarUISkin.panel(WarUISkin.OAT,14,10)); cards.add_child(card)
+		var row := HBoxContainer.new(); row.add_theme_constant_override("separation",12); card.add_child(row)
+		var preview := TextureRect.new(); preview.custom_minimum_size = Vector2(92,76); preview.expand_mode = TextureRect.EXPAND_IGNORE_SIZE; preview.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		preview.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		var source: Dictionary = art.get(id,{})
+		if not source.is_empty(): preview.texture = load("res://assets/"+str(source.texture)) as Texture2D
+		row.add_child(preview)
+		var copy := VBoxContainer.new(); copy.size_flags_horizontal = Control.SIZE_EXPAND_FILL; copy.add_theme_constant_override("separation",4); row.add_child(copy)
+		copy.add_child(_label(str(spec.name),17))
+		copy.add_child(_label(str(spec.get("desc","暂无说明")),13))
+		var cost: Array[String] = []
+		for resource in spec.get("cost",{}): cost.append(str(WarData.config().Data.names.get(resource,resource))+" "+str(int(spec.cost[resource])))
+		copy.add_child(_label("耐久 %d · 建造 %d 秒 · %s" % [int(spec.get("hp",0)),int(spec.get("time",0))," / ".join(cost) if not cost.is_empty() else "无资源消耗"],12))
+	building_view.hide()
+
 func open() -> void:
 	show()
 	show_characters()
@@ -248,14 +278,20 @@ func close() -> void:
 
 func show_characters() -> void:
 	page = "characters"
-	character_view.show(); map_view.hide()
-	character_tab.set_pressed_no_signal(true); map_tab.set_pressed_no_signal(false)
+	character_view.show(); map_view.hide(); building_view.hide()
+	character_tab.set_pressed_no_signal(true); map_tab.set_pressed_no_signal(false); building_tab.set_pressed_no_signal(false)
 	_layout()
 
 func show_maps() -> void:
 	page = "maps"
-	character_view.hide(); map_view.show()
-	character_tab.set_pressed_no_signal(false); map_tab.set_pressed_no_signal(true)
+	character_view.hide(); map_view.show(); building_view.hide()
+	character_tab.set_pressed_no_signal(false); map_tab.set_pressed_no_signal(true); building_tab.set_pressed_no_signal(false)
+	_layout()
+
+func show_buildings() -> void:
+	page = "buildings"
+	character_view.hide(); map_view.hide(); building_view.show()
+	character_tab.set_pressed_no_signal(false); map_tab.set_pressed_no_signal(false); building_tab.set_pressed_no_signal(true)
 	_layout()
 
 func set_category(value: String) -> void:

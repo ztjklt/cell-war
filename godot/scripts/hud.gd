@@ -70,6 +70,8 @@ var tutorial_text: Label
 var goal_text: Label
 var tutorial_meter: ProgressBar
 var outcome_shown := ""
+var focus_button: Button
+var _focus_cycle_id := -1
 const PAPER := WarUISkin.INK
 const MUTED := WarUISkin.MUTED
 const TEAL := Color("668d73")
@@ -107,6 +109,7 @@ func setup(sim: WarSimulation,view: WarWorldView,view_camera: Camera2D) -> void:
 	life_dialogue = WarLifeDialogue.new()
 	root.add_child(life_dialogue)
 	life_dialogue.setup(self)
+	life_dialogue.incoming_message.connect(func(): dialogue.new_life_message())
 	root.move_child(life_dialogue,0)
 	_build_progress()
 	wheel = WarCommandWheel.new()
@@ -262,6 +265,8 @@ func _build_sidebar() -> void:
 		selection_health.add_theme_stylebox_override(key,skin)
 	column.add_child(selection_health)
 	selection_health.hide()
+	focus_button = button("定位下一枚细胞 · C",func(): focus_cell(not game.selected.is_empty()),column)
+	focus_button.tooltip_text = "F 定位当前选中细胞；C 选择并定位下一枚己方细胞"
 	var scroll := ScrollContainer.new()
 	scroll.custom_minimum_size.y = 32
 	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
@@ -410,17 +415,20 @@ func _build_menu() -> void:
 	menu_shade = ColorRect.new()
 	menu_shade.name = "ModalShade"
 	menu_shade.color = Color(.3,.22,.16,.25)
-	menu_shade.z_index = 99
+	menu_shade.z_index = 999
+	menu_shade.mouse_filter = Control.MOUSE_FILTER_STOP
 	menu_shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	menu_shade.hide()
 	root.add_child(menu_shade)
 	menu = PanelContainer.new()
 	menu.name = "Menu"
-	menu.z_index = 100
+	menu.z_index = 1000
+	menu.mouse_filter = Control.MOUSE_FILTER_STOP
 	menu.add_theme_stylebox_override("panel",style(WarUISkin.CREAM,18))
 	menu.visible = false
 	root.add_child(menu)
 	var scroll := ScrollContainer.new()
+	scroll.mouse_filter = Control.MOUSE_FILTER_STOP
 	scroll.custom_minimum_size = Vector2(450,470)
 	menu.add_child(scroll)
 	menu_body = VBoxContainer.new()
@@ -446,6 +454,10 @@ func _open_menu() -> void:
 	game.paused = true
 	menu.visible = true
 	menu_shade.show()
+	# Cover, HUD, and modal all share this Control tree. Keep the modal last so
+	# its controls receive pointer events even while the opaque cover is visible.
+	root.move_child(menu_shade,-1)
+	root.move_child(menu,-1)
 	_layout()
 
 func close_menu() -> void:
@@ -469,8 +481,7 @@ func toggle_menu() -> void:
 	button("本地存档",show_saves,menu_body)
 	button("开局指引",func(): show_original_copy("startGuide"),menu_body)
 	button("指挥手册",show_help,menu_body)
-	button("路线显示：开 / 关",func(): world.show_paths = not world.show_paths; close_menu(),menu_body)
-	button("声音：开 / 关",func(): AudioServer.set_bus_mute(0,not AudioServer.is_bus_mute(0)),menu_body)
+	button("显示与声音设置",show_cover_settings,menu_body)
 	_open_menu()
 
 func resource_station_name(resource: Dictionary) -> String:
@@ -522,6 +533,8 @@ func show_command_tools() -> void:
 	_clear_menu("细胞与编队")
 	button("选择红细胞",func(): _action("worker"); close_menu(),menu_body)
 	button("选择作战细胞",func(): _action("army"); close_menu(),menu_body)
+	button("定位当前选择 · F",func(): focus_cell(false); close_menu(),menu_body)
+	button("下一枚己方细胞 · C",func(): focus_cell(true); close_menu(),menu_body)
 	button("追加命令："+("开启" if append_orders else "关闭"),func(): append_orders = not append_orders; show_command_tools(),menu_body)
 	button("框选模式："+("开启" if box_mode else "关闭"),func(): box_mode = not box_mode; close_menu(),menu_body)
 	for i in 3:
@@ -535,6 +548,29 @@ func show_command_tools() -> void:
 				if not game.entity(int(id)).is_empty(): game.selected.append(int(id))
 			close_menu(),row)
 	_open_menu()
+
+func focus_cell(next := false) -> void:
+	var candidates: Array = game.units().filter(func(e): return int(e.faction) == 1 and float(e.hp) > 0)
+	candidates.sort_custom(func(a,b): return int(a.id) < int(b.id))
+	if candidates.is_empty():
+		game.notify("当前没有可定位的己方细胞")
+		return
+	var chosen: Dictionary = {}
+	if not next and not game.selected.is_empty():
+		var selected := game.entity(int(game.selected[0]))
+		if not selected.is_empty() and int(selected.faction) == 1 and selected.category == "unit" and selected.hp > 0:
+			chosen = selected
+	if chosen.is_empty():
+		for entity in candidates:
+			if int(entity.id) > _focus_cycle_id:
+				chosen = entity
+				break
+		if chosen.is_empty(): chosen = candidates[0]
+		game.selected.assign([int(chosen.id)])
+		game.state.selectedOnce = true
+	_focus_cycle_id = int(chosen.id)
+	focus_requested.emit(WarData.point(chosen),18)
+	game.notify("已定位 · "+str(WarData.spec(chosen.kind).name))
 
 func show_battlefields() -> void:
 	_clear_menu("选择战场")
@@ -1151,6 +1187,7 @@ func _process(delta: float) -> void:
 	selection.text = "胞群指挥" if selected_entities.is_empty() else (str(WarData.spec(selected_entities[0].kind).name) if selected_entities.size() == 1 else "已选择 %d 个细胞" % selected_entities.size())
 	selection_emblem.entities = selected_entities
 	compact_selection.text = selection.text
+	if focus_button != null: focus_button.text = "定位下一枚细胞 · C" if selected_entities.is_empty() else "定位选中 · F"
 	selection_health.visible = selected_entities.size() == 1
 	if selected_entities.is_empty(): details.text = "选择细胞后，点目标位置展开指令"
 	elif selected_entities.size() > 1: details.text = "点击目标位置选择指令\nCtrl / ⌘ + 数字保存编队"
@@ -1303,14 +1340,56 @@ func _cover_action(action: String) -> void:
 		"settings": show_cover_settings()
 
 func show_cover_settings() -> void:
-	_clear_menu("设置与游戏入口")
-	button("声音：开 / 关",func(): AudioServer.set_bus_mute(0,not AudioServer.is_bus_mute(0)),menu_body)
+	_clear_menu("设置")
+	var settings := _settings()
+	var sound_title := label("声音",16,PAPER)
+	menu_body.add_child(sound_title)
+	var volume_text := label("主音量：%d%%" % roundi(settings.volume()),13,MUTED)
+	menu_body.add_child(volume_text)
+	var volume := HSlider.new()
+	volume.min_value = 0; volume.max_value = 100; volume.step = 1; volume.value = settings.volume()
+	volume.custom_minimum_size = Vector2(360,32)
+	volume.value_changed.connect(func(value):
+		settings.set_volume(value)
+		volume_text.text = "主音量：%d%%" % roundi(value))
+	menu_body.add_child(volume)
+	var mute := CheckButton.new()
+	mute.text = "静音"; mute.button_pressed = settings.muted(); mute.focus_mode = Control.FOCUS_NONE
+	mute.toggled.connect(settings.set_muted)
+	menu_body.add_child(mute)
+	menu_body.add_child(HSeparator.new())
+	menu_body.add_child(label("显示",16,PAPER))
+	var fullscreen := button("全屏："+("开" if settings.fullscreen() else "关"),func():
+		settings.set_fullscreen(not settings.fullscreen(),get_window())
+		show_cover_settings(),menu_body)
+	fullscreen.tooltip_text = "切换窗口化与全屏显示"
+	var sync := button("垂直同步："+("开" if settings.vsync() else "关"),func():
+		settings.set_vsync(not settings.vsync())
+		show_cover_settings(),menu_body)
+	sync.tooltip_text = "开启后减少画面撕裂；关闭可降低输入延迟"
+	var fps := button("帧率上限：%d" % settings.fps(),func():
+		var targets := [30,60,120]
+		settings.set_fps(targets[(targets.find(settings.fps())+1)%targets.size()])
+		show_cover_settings(),menu_body)
+	fps.tooltip_text = "依次切换 30、60、120 帧"
+	var paths := button("路线显示："+("开" if settings.show_paths() else "关"),func():
+		settings.set_show_paths(not settings.show_paths())
+		world.show_paths = settings.show_paths()
+		show_cover_settings(),menu_body)
+	paths.tooltip_text = "显示或隐藏单位的移动路线"
+	button("恢复默认设置",func(): settings.reset(get_window()); world.show_paths = settings.show_paths(); show_cover_settings(),menu_body)
+	menu_body.add_child(HSeparator.new())
+	menu_body.add_child(label("游戏入口",16,PAPER))
 	button("本地存档 / 继续记录",show_saves,menu_body)
 	button("人体生存 · 小脑生活决策",func(): close_menu(); home.hide(); restart_requested.emit("life"),menu_body)
 	button("选择战场",show_battlefields,menu_body)
 	button("全身沙盒",func(): close_menu(); home.hide(); restart_requested.emit("sandbox"),menu_body)
 	button("指挥手册",show_help,menu_body)
 	_open_menu()
+
+func _settings() -> WarSettings:
+	var scene := get_tree().current_scene
+	return scene.settings as WarSettings
 
 func return_home() -> void:
 	close_menu()

@@ -29,6 +29,12 @@ var show_labels := true
 var _time := 0.0
 var marker := Vector2(INF,INF)
 var marker_time := -100.0
+var marker_kind := "move"
+const COMMAND_MARKERS := {
+	"move": preload("res://assets/command_markers/move_3d.png"),
+	"attack": preload("res://assets/command_markers/attack_3d.png"),
+	"guard": preload("res://assets/command_markers/guard_3d.png")
+}
 var _font: Font
 var legacy := WarLegacyArt.new()
 var legacy_surface: WarLegacySurface
@@ -60,7 +66,15 @@ func setup(sim: WarSimulation,view_camera: Camera2D) -> void:
 	friendly_buildings = WarData.read("friendly_buildings").get("buildings",{})
 	for spec in WarData.read("campaign_art"): campaign_art[spec.mode] = spec
 	_font = load("res://assets/fonts/MiSans-Regular.ttf")
-	game.state_replaced.connect(func(): marker = Vector2(INF,INF); infections.enabled = false)
+	game.state_replaced.connect(func(): marker = Vector2(INF,INF); marker_kind = "move"; infections.enabled = false)
+
+func show_command_marker(point: Vector2,order_kind: String) -> void:
+	if order_kind in ["stop","retreat","build"] or order_kind.begins_with("place:"):
+		marker = Vector2(INF,INF)
+		return
+	marker = point
+	marker_kind = "attack" if order_kind in ["attack","attackmove"] else ("guard" if order_kind in ["guard","hold"] else "move")
+	marker_time = _time
 
 func _process(delta: float) -> void:
 	if game == null or game.state.is_empty(): return
@@ -259,9 +273,14 @@ func _draw_orders() -> void:
 				var next: Vector2 = e.path[i].p
 				_canvas.draw_line(previous,next,Color(.45,.88,.77,.55),1.0/camera.zoom.x,true)
 				previous = next
-	if is_finite(marker.x) and _time-marker_time < .8:
-		var t := (_time-marker_time)/.8
-		_canvas.draw_arc(marker,(12.0+16.0*t)/camera.zoom.x,0,TAU,32,Color(.41,.92,.80,1-t),2.0/camera.zoom.x,true)
+	if is_finite(marker.x) and _time-marker_time < 2.4:
+		var age := _time-marker_time
+		var enter := clampf(age/.15,0,1)
+		var fade := clampf((2.4-age)/.48,0,1)
+		var side := (82.0+sin(age*8.0)*3.0)/camera.zoom.x*lerpf(.82,1.0,enter)
+		var texture: Texture2D = COMMAND_MARKERS.get(marker_kind,COMMAND_MARKERS.move)
+		var p := display_point(marker)
+		_canvas.draw_texture_rect(texture,Rect2(p-Vector2(side*.5,side*.78),Vector2.ONE*side),false,Color(1,1,1,fade))
 
 func _draw_spec(spec: Dictionary,alpha: float) -> void:
 	if alpha <= .001: return

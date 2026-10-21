@@ -28,6 +28,23 @@ func enemy(e: Dictionary, reach: float, buildings := false) -> Dictionary:
 			distance = d
 	return best
 
+func enemy_in_area(e: Dictionary, center: Vector2, radius: float, buildings := false) -> Dictionary:
+	# Guard orders are anchored to their assigned point.  Searching around the
+	# defender itself would let it chase a target away from its post forever.
+	var best: Dictionary = {}
+	var post_radius_squared := radius*radius
+	var best_distance := INF
+	for other in game.entities():
+		if other.hp <= 0 or other.faction == e.faction or (other.category != "unit" and not buildings): continue
+		var from_post := center.distance_squared_to(WarData.point(other))
+		if from_post > post_radius_squared: continue
+		if e.faction > 0 and not game.visible(other,e.faction): continue
+		var from_defender := WarData.point(e).distance_squared_to(WarData.point(other))
+		if best.is_empty() or from_defender < best_distance or (is_equal_approx(from_defender,best_distance) and other.id < best.id):
+			best = other
+			best_distance = from_defender
+	return best
+
 func multiplier(e: Dictionary, field: String) -> float:
 	var value := 1.0
 	for kind in e.get("statuses",{}):

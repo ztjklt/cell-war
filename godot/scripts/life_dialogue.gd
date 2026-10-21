@@ -1,6 +1,7 @@
 class_name WarLifeDialogue
 extends Control
 ## Live external conversations on the desk phone; presentation never advances time.
+signal incoming_message
 const INK := Color("151515")
 const MUTED := Color("747474")
 const ON_DESK := Color("14211b")
@@ -18,6 +19,7 @@ var toggle: Button
 var option_buttons: Array[Button] = []
 var expanded := true
 var preview_id := ""
+var preview_choice := -1
 var _key := ""
 var _view_key := ""
 var _seen := -1
@@ -47,7 +49,10 @@ class BubbleShell extends PanelContainer:
 func setup(owner: WarHUD) -> void:
 	hud = owner
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
-	z_index = -1
+	# A live reply pauses the simulation.  Keep the handset above the map and
+	# ordinary HUD panels so that its choices, rather than the map below, receive
+	# the pointer event.
+	z_index = 20
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	phone = WarDeskPhone.new(); phone.name = "DeskPhone"; add_child(phone)
 	# Layout-only content inside the phone's screen; only actual controls take input.
@@ -110,7 +115,7 @@ func _small_button(text: String,callback: Callable,parent: Node) -> Button:
 
 func reset_world() -> void:
 	_key = ""; _view_key = ""; _seen = -1; _owns_pause = false
-	preview_id = ""; expanded = true; _playback.clear(); _layout_width = 0
+	preview_id = ""; preview_choice = -1; expanded = true; _playback.clear(); _layout_width = 0
 	_settled_history_count = -1; _restart_preview = false
 
 func apply_desk_projection(projection: Transform2D) -> void:
@@ -130,7 +135,7 @@ func _release_pause() -> void:
 
 func _toggle() -> void:
 	if not preview_id.is_empty():
-		preview_id = ""; _key = ""; expanded = true; _release_pause()
+		preview_id = ""; preview_choice = -1; _key = ""; expanded = true; _release_pause()
 		if not hud.game.life.state().pending.is_empty(): _take_pause()
 		return
 	expanded = not expanded
@@ -139,14 +144,20 @@ func _toggle() -> void:
 
 func show_preview(id: String) -> void:
 	if WarLifeRun.definition(id).is_empty(): return
-	preview_id = id; expanded = true; _key = ""; _take_pause()
+	preview_id = id; preview_choice = -1; expanded = true; _key = ""; _take_pause()
 	_restart_preview = true
 
 func animation_finished() -> bool:
 	return _elapsed >= _sequence_end
 
 func submit_choice(token: int,index: int) -> bool:
-	if not preview_id.is_empty() or not _options_ready: return false
+	if not preview_id.is_empty():
+		var preview := WarLifeRun.definition(preview_id)
+		if index < 0 or index >= preview.get("options",[]).size(): return false
+		preview_choice = index
+		_key = ""
+		hud.game.notify("事件预览：已展示结果；不会改写本局记录")
+		return true
 	if not hud.game.life.choose(token,index): return false
 	_settled_history_count = int(hud.game.life.state().decisionCount)
 	_release_pause(); _key = ""
@@ -220,8 +231,12 @@ func _option(item: Dictionary,index: int,token: int) -> void:
 	if not affordable: effects += "\n余额不足"
 	body.add_child(_label(effects,11,MUTED))
 	button.tooltip_text = option.label+"\n"+effects
+	if not preview_id.is_empty(): button.tooltip_text += "\n\n事件预览：点击可查看回复，不会结算。"
 	button.custom_minimum_size = Vector2(0,ceilf(WarUISkin.BODY.get_height(14))+ceilf(WarUISkin.BODY.get_height(11))*(effects.count("\n")+1)+24)
-	button.disabled = true
+	# Hidden rows cannot receive clicks.  As soon as an option is on screen it
+	# is actionable; waiting for the whole chat animation previously made a
+	# paused live event look like a broken phone.
+	button.disabled = not hud.game.life.affordable(option)
 	button.pressed.connect(func(): submit_choice(token,index))
 	option_buttons.append(button)
 	_entry(button,_cursor,0,false,true)
@@ -252,10 +267,16 @@ func _rebuild() -> void:
 			_note(s.lastChange)
 	else:
 		_view_key = "preview:"+preview_id if not preview_id.is_empty() else "offer:"+str(s.pending.token)
+		if not preview_id.is_empty():
+			_note("事件预览 · 点击选项查看对应回复；不会结算金钱、机能或时间。点击「返回」回到实况。")
 		_messages(item.speaker,item.line,item.speaker == "本人")
 		_messages("本人",item.own,true)
 		_cursor += .15
 		for i in item.options.size(): _option(item,i,int(s.pending.get("token",-1)))
+		if not preview_id.is_empty() and preview_choice >= 0:
+			var chosen: Dictionary = item.options[preview_choice]
+			_note("预览结果 · "+WarLifeRun.effect_text(chosen))
+			_messages("本人",str(chosen.reply),true)
 	_elapsed = 0.0 if _restart_preview else float(_playback.get(_view_key,0))
 	_restart_preview = false; _follow_frames = 3
 	if _playback.size() > 64: _playback.erase(_playback.keys()[0])
@@ -284,7 +305,13 @@ func _animate(delta: float) -> void:
 	_options_ready = animation_finished() and preview_id.is_empty()
 	var item := WarLifeRun.definition(str(hud.game.life.state().pending.get("id","")))
 	for i in option_buttons.size():
-		option_buttons[i].disabled = not _options_ready or item.is_empty() or not hud.game.life.affordable(item.options[i])
+		if not preview_id.is_empty():
+			# The preview uses its own definition and remains interactive so that a
+			# player gets visible feedback before a real contact arrives.
+			var preview := WarLifeRun.definition(preview_id)
+			option_buttons[i].disabled = preview.is_empty() or not hud.game.life.affordable(preview.options[i])
+		else:
+			option_buttons[i].disabled = item.is_empty() or not hud.game.life.affordable(item.options[i])
 	scroll.mouse_filter = Control.MOUSE_FILTER_STOP if content.size.y > scroll.size.y+1 else Control.MOUSE_FILTER_IGNORE
 
 func layout() -> void:
@@ -313,6 +340,7 @@ func _process(delta: float) -> void:
 	var token := int(s.pending.get("token",-1))
 	if token > 0 and token != _seen and preview_id.is_empty():
 		_seen = token; expanded = true; _take_pause()
+		incoming_message.emit()
 		WarSave.write_life_auto(hud.game)
 	layout()
 	var key := "%s:%s:%s" % [s.revision,preview_id,s.phase]

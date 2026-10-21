@@ -108,6 +108,15 @@ func say(text: String,question := "") -> void:
 	while history.size() > 6: history.pop_front()
 	if not chatting: bubble_remaining = maxf(bubble_remaining,duration+3.5)
 
+func new_life_message() -> void:
+	# The life event pauses tactical time, so this must be driven by the event
+	# itself instead of the normal simulation-time advisor polling.
+	bubble = "你有一条新消息请查收。"
+	bubble_remaining = 12.0
+	if not chatting:
+		topic = ""
+		say(bubble)
+
 func _append_strip(text: String,user: bool) -> void:
 	var chip := PanelContainer.new(); chip.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	var skin := WarHUD.style(Color(43.0/255,52.0/255,69.0/255,244.0/255) if user else Color(16.0/255,18.0/255,23.0/255,244.0/255),12)

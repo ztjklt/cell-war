@@ -242,7 +242,7 @@ func unit(e: Dictionary,dt: float) -> bool:
 		return true
 	if command=="stop": stop_order(e,true); game.finish_order(e); return true
 	if command not in ["","attack","attackmove","guard","hold"]: game.finish_order(e); return true
-	var target := game.entity(int(order.get("target",0))) if command=="attack" else game.combat.enemy(e,float(WarTCells.data().unitDefinition.vision),command=="attackmove")
+	var target := game.entity(int(order.get("target",0))) if command=="attack" else (game.guard_enemy(e,order) if command=="guard" else game.combat.enemy(e,float(WarTCells.data().unitDefinition.vision),command=="attackmove"))
 	if not target.is_empty() and (float(target.hp)<=0 or target.faction==e.faction or not game.visible(target,int(e.faction))):
 		stop_order(e,false)
 		if command=="attack" and float(target.hp)<=0: game.finish_order(e)
