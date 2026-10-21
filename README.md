@@ -27,7 +27,7 @@ macOS / Linux 可从仓库根目录运行：
 | `scripts/godot_tools/` | 独立 Godot 校验、素材制作和交接工具 |
 | `scripts/sprite_preview/` | 当前序列帧制作、打包与预览工具 |
 | `scripts/qa/check_repository_hygiene.py` | GitHub CI 使用的仓库体积与本地输出检查 |
-| `docs/` | 设计、交接与历史验收资料；旧 Lua 文档按历史记录阅读 |
+| `docs/` | 设计、交接与精简后的历史验收资料；旧版生成输出已归档 |
 
 ## 验证
 
@@ -53,6 +53,10 @@ Godot 工程、原始美术与历史证据继续保留；两份绘制基准已�
 旧预览及构建产物，均迁入仓库外校验归档。精灵生成技能、Maker 素材映射及项目绑定、
 Godot 本机运行环境继续保留。范围与恢复说明见
 [引擎工具清理记录](docs/ENGINE_CLEANUP_20261020.md)。
+
+2026-10-22 又从当前 Git 文件树移除了旧 Lua 快照、浏览器预览及重复的候选验收输出。
+删除前已逐文件校验并归档；Godot 固定基准、来源清单、设计说明和素材原稿继续保留。
+范围与恢复方法见[仓库整理记录](docs/GODOT_REPOSITORY_CLEANUP_20261022.md)。
 
 ## 仓库提交检查
 

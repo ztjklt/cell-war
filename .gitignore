@@ -1,35 +1,14 @@
-# >>> TapTap Maker AI dev kit (local only) >>>
+# Local editor settings and retained art-production integration
 .DS_Store
-.agents/skills/custom-lobby/
-.agents/skills/materials/
-.agents/skills/nvg-resolution-mode/
-.agents/skills/online-system-notification/
-.agents/skills/setup-achievements/
-.agents/skills/setup-ads/
-.agents/skills/setup-fsm/
-.agents/skills/skill-creator/
-.agents/skills/sprite-gen/
-.agents/skills/ui-astroon/
-.agents/skills/ui-brawlforge/
-.agents/skills/ui-pixelforge/
+.agents/
 .claude/
-.cli/
 .codex/
 .cursor/
-.emmylua/
 .gemini/
 .installer/
 .maker/
 AGENTS.md
 CLAUDE.md
-engine-docs/
-examples/
-schemas/
-skills/
-templates/
-tools/
-urhox-libs/
-# <<< TapTap Maker AI dev kit (local only) <<<
 
 # Machine-specific configuration, credentials and generated output
 .maker-mcp/
@@ -55,6 +34,18 @@ node_modules/
 .pytest_cache/
 
 # Local evidence: keep source manifests and geometry, archive bulk captures.
+/docs/**/*.lua
+/docs/**/*.html
+/docs/**/*.js
+/docs/**/*.log
+/docs/**/*.patch
+/docs/body-life/vascular-art-study/fullbody-015/bake/
+/docs/body-life/vascular-art-study/fullbody-015/qa/
+/docs/body-life/vascular-art-study/fullbody-015/review/
+/docs/body-life/vascular-art-study/fullbody-015/quiet-base/
+/docs/body-life/vascular-art-study/organ-atlas/revision-v2/
+/docs/body-life/vascular-art-study/organ-atlas/qa/
+/docs/heart-v1/qa/
 /docs/**/preview-*.json
 /docs/**/preview_*.json
 /docs/**/preview-*.log
