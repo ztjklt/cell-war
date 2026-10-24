@@ -5,6 +5,8 @@ signal command_mode_changed(kind: String)
 signal focus_requested(point: Vector2,zoom: float)
 signal overview_requested
 signal zoom_requested(factor: float)
+signal new_save_requested
+signal continue_save_requested(source: String)
 signal restart_requested(mode: String)
 var game: WarSimulation
 var world: WarWorldView
@@ -70,8 +72,10 @@ var tutorial_text: Label
 var goal_text: Label
 var tutorial_meter: ProgressBar
 var outcome_shown := ""
+var defense_countdown: WarDefenseCountdown
 var focus_button: Button
 var _focus_cycle_id := -1
+const ButtonMotion = preload("res://scripts/catalogue_motion.gd")
 const PAPER := WarUISkin.INK
 const MUTED := WarUISkin.MUTED
 const TEAL := Color("668d73")
@@ -93,9 +97,8 @@ func setup(sim: WarSimulation,view: WarWorldView,view_camera: Camera2D) -> void:
 	_build_header()
 	_build_sidebar()
 	_build_bottom()
-	status.add_theme_color_override("font_color",Color("14211b"))
-	var note := WarUISkin.panel(Color(WarUISkin.CREAM,.96),3,6)
-	note.set_border_width_all(0)
+	status.add_theme_color_override("font_color",WarUISkin.INK)
+	var note := WarUISkin.painted_panel(Color.WHITE,12,6,"button")
 	note.content_margin_top = 2; note.content_margin_bottom = 2
 	status.add_theme_stylebox_override("normal",note)
 	_build_menu()
@@ -112,23 +115,30 @@ func setup(sim: WarSimulation,view: WarWorldView,view_camera: Camera2D) -> void:
 	life_dialogue.incoming_message.connect(func(): dialogue.new_life_message())
 	root.move_child(life_dialogue,0)
 	_build_progress()
+	defense_countdown = WarDefenseCountdown.new()
+	root.add_child(defense_countdown)
+	defense_countdown.setup(self)
 	wheel = WarCommandWheel.new()
 	root.add_child(wheel)
 	wheel.setup(self)
 	_apply_facets(root)
+	for control in toolbar.get_children():
+		if control is Button: ButtonMotion.attach(control)
+	ButtonMotion.attach(focus_button)
 	game.message_changed.connect(func(text):
 		status.text = text
 		if is_instance_valid(production_feedback): production_feedback.text = text
 		if is_instance_valid(organ_feedback): organ_feedback.text = text
 		if is_instance_valid(medicine_feedback): medicine_feedback.text = text)
-	game.state_replaced.connect(func(): _selection_rows_entity = -2; outcome_shown = "")
+	game.state_replaced.connect(_reset_readouts)
+	panel.resized.connect(_place_selection_panel)
 	get_viewport().size_changed.connect(_layout)
 	_layout()
 
 func _apply_facets(node: Node) -> void:
 	for child in node.get_children():
 		if child == home or child == life_dialogue or child == cover_preview: continue
-		if child is PanelContainer: WarUISkin.facet_panel(child)
+		if child is PanelContainer and not child is WarHUDPlate: WarUISkin.facet_panel(child)
 		_apply_facets(child)
 
 static func style(color: Color,radius: int) -> StyleBoxFlat:
@@ -187,7 +197,7 @@ func _pending_resource_costs(faction: int) -> Dictionary:
 	return reserved
 
 func _build_header() -> void:
-	var top := HBoxContainer.new()
+	var top := BoxContainer.new()
 	top.name = "Header"
 	top.add_theme_constant_override("separation",4)
 	root.add_child(top)
@@ -199,24 +209,28 @@ func _build_header() -> void:
 	title_box.visible = false
 	top.add_child(title_box)
 	for kind in ["wood","oxygen","food"]:
-		var card := PanelContainer.new()
+		var card := WarHUDPlate.new()
+		card.configure(true)
 		card.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		card.add_theme_stylebox_override("panel",style(WarUISkin.CREAM,18))
 		top.add_child(card)
 		var row := HBoxContainer.new()
+		row.add_theme_constant_override("separation",4)
 		card.add_child(row)
 		var icon := WarResourceIcon.new()
 		icon.kind = kind
 		icon.custom_minimum_size = Vector2(38,38)
+		icon.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 		row.add_child(icon)
 		var column := VBoxContainer.new()
+		column.add_theme_constant_override("separation",0)
+		column.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 		row.add_child(column)
 		var caption := label(RESOURCE_LABELS[kind],10,MUTED)
 		column.add_child(caption)
 		var value := label("0",15,PAPER)
 		value.add_theme_font_override("font",WarUISkin.BUTTON)
 		column.add_child(value)
-		resource_values[kind] = {"value":value,"caption":caption,"card":card}
+		resource_values[kind] = {"value":value,"caption":caption,"card":card,"icon":icon}
 	stats = label("",14,PAPER)
 	stats.visible = false
 	top.add_child(stats)
@@ -237,14 +251,16 @@ func _build_header() -> void:
 	root.add_child(advisor)
 
 func _build_sidebar() -> void:
-	panel = PanelContainer.new()
+	panel = WarHUDPlate.new()
+	(panel as WarHUDPlate).configure()
 	panel.name = "Sidebar"
-	panel.add_theme_stylebox_override("panel",style(WarUISkin.CREAM,18))
 	root.add_child(panel)
 	var column := VBoxContainer.new()
 	column.add_theme_constant_override("separation",4)
 	panel.add_child(column)
 	selection = label("胞群指挥",16,PAPER)
+	selection.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	selection.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	var identity := HBoxContainer.new()
 	identity.add_theme_constant_override("separation",10)
 	column.add_child(identity)
@@ -265,7 +281,7 @@ func _build_sidebar() -> void:
 		selection_health.add_theme_stylebox_override(key,skin)
 	column.add_child(selection_health)
 	selection_health.hide()
-	focus_button = button("定位下一枚细胞 · C",func(): focus_cell(not game.selected.is_empty()),column)
+	focus_button = button("定位下一枚细胞 · C",func(): focus_cell(false),column)
 	focus_button.tooltip_text = "F 定位当前选中细胞；C 选择并定位下一枚己方细胞"
 	var scroll := ScrollContainer.new()
 	scroll.custom_minimum_size.y = 32
@@ -356,7 +372,12 @@ func _build_sidebar() -> void:
 	button("重试防线",func(): restart_requested.emit("systemic"),controls)
 	button("定位运输队",func():
 		var q := game.scenarios.systemic()
-		if not q.is_empty(): focus_requested.emit(WarData.point(game.entity(int(q.courier))),.15*32),controls)
+		if q.is_empty(): return
+		var courier := game.entity(int(q.courier))
+		if courier.is_empty() or courier.hp <= 0:
+			game.notify("运输队已离场，当前没有可定位的运输细胞")
+			return
+		focus_requested.emit(WarData.point(courier),.15*32),controls)
 	var hint := label("清除感染灶与残余病毒；隔离会切断双向运输。",11,MUTED)
 	hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	body.add_child(hint)
@@ -449,11 +470,13 @@ func _clear_menu(title: String) -> void:
 	button("返回封面" if home != null and home.visible else "返回游戏",close_menu,menu_body)
 
 func _open_menu() -> void:
+	WarUISkin.skin_tree(menu)
 	if wheel != null: wheel.close()
 	if not menu.visible: _saved_pause = game.paused
 	game.paused = true
 	menu.visible = true
 	menu_shade.show()
+	WarUISkin.Motion.reveal(menu,.16)
 	# Cover, HUD, and modal all share this Control tree. Keep the modal last so
 	# its controls receive pointer events even while the opaque cover is visible.
 	root.move_child(menu_shade,-1)
@@ -550,17 +573,22 @@ func show_command_tools() -> void:
 	_open_menu()
 
 func focus_cell(next := false) -> void:
-	var candidates: Array = game.units().filter(func(e): return int(e.faction) == 1 and float(e.hp) > 0)
-	candidates.sort_custom(func(a,b): return int(a.id) < int(b.id))
-	if candidates.is_empty():
-		game.notify("当前没有可定位的己方细胞")
-		return
 	var chosen: Dictionary = {}
 	if not next and not game.selected.is_empty():
-		var selected := game.entity(int(game.selected[0]))
-		if not selected.is_empty() and int(selected.faction) == 1 and selected.category == "unit" and selected.hp > 0:
-			chosen = selected
+		for id in game.selected:
+			var selected := game.entity(int(id))
+			if not selected.is_empty() and int(selected.faction) == 1 and selected.hp > 0:
+				chosen = selected
+				break
+		if chosen.is_empty():
+			game.notify("选中的目标已离场，请重新选择")
+			return
 	if chosen.is_empty():
+		var candidates: Array = game.units().filter(func(e): return int(e.faction) == 1 and float(e.hp) > 0)
+		candidates.sort_custom(func(a,b): return int(a.id) < int(b.id))
+		if candidates.is_empty():
+			game.notify("当前没有可定位的己方细胞")
+			return
 		for entity in candidates:
 			if int(entity.id) > _focus_cycle_id:
 				chosen = entity
@@ -574,7 +602,7 @@ func focus_cell(next := false) -> void:
 
 func show_battlefields() -> void:
 	_clear_menu("选择战场")
-	for item in [["人体生存 · 生活决策","life"],["全身地图","fullbody"],["右肺交战","lung_skirmish"],["循环防线","systemic"],
+	for item in [["人体生存 · 生活决策","life"],["全身地图","fullbody"],["左肺防线 · 120秒准备","lung_defense"],["右肺交战","lung_skirmish"],["循环防线","systemic"],
 		["鼻腔战役","nasal_01"],["气管战役","trachea_01"],["双肺战役","lungs_01"],
 		["三阵营沙盒","sandbox"],["器官战场试验","organ_trial"],["胃部战场试验","gastric_trial"],["细胞动作测试","cell_test"]]:
 		var which: String = item[1]
@@ -584,10 +612,6 @@ func show_battlefields() -> void:
 			var task: String = entry[1]
 			button(entry[0],func(): close_menu(); game.scenarios.cell_action(task),menu_body)
 	if game.is_campaign():
-		var ev: Dictionary = game.state.campaign.event
-		var next_wave := button("下一波",func(): close_menu(); game.submit_player({"action":"skip_wave"}),menu_body)
-		next_wave.disabled = ev.status != "active" or int(ev.wave) >= game.navigation.campaign.waves.size() or int(ev.pendingViruses) > 0 or game.units().any(func(e): return e.kind == "virus")
-		next_wave.tooltip_text = "清除当前波次后可提前开始下一波" if ev.status == "active" else "本场战役已结束"
 		button("关闭挂机指挥" if game.state.campaign.get("autoplay",false) else "开启挂机指挥",func():
 			game.state.campaign.autoplay = not game.state.campaign.get("autoplay",false)
 			close_menu(),menu_body)
@@ -613,36 +637,45 @@ func show_battlefields() -> void:
 						focus_requested.emit(WarData.point(cell),18),menu_body)
 	button("开局指引",func(): show_original_copy("startGuide"),menu_body)
 	button("指挥手册",show_help,menu_body)
-	button("路线显示：开 / 关",func(): world.show_paths = not world.show_paths; close_menu(),menu_body)
-	button("声音：开 / 关",func(): AudioServer.set_bus_mute(0,not AudioServer.is_bus_mute(0)),menu_body)
+	button("路线显示："+("开" if _settings().show_paths() else "关"),func():
+		_settings().set_show_paths(not _settings().show_paths())
+		world.show_paths = _settings().show_paths()
+		show_battlefields(),menu_body)
+	button("声音："+("关" if _settings().muted() else "开"),func():
+		_settings().set_muted(not _settings().muted())
+		show_battlefields(),menu_body)
 	_open_menu()
 
 func show_saves() -> void:
-	_clear_menu("本地存档")
-	if FileAccess.file_exists(WarSave.life_auto_path()):
-		button("继续人体生存 · 独立自动存档",func():
-			if WarSave.read_life_auto(game) == OK:
-				close_menu(); home.hide(); _layout(); overview_requested.emit(),menu_body)
-	for slot in 4:
-		var index := slot
-		var row := HBoxContainer.new()
-		menu_body.add_child(row)
-		row.add_child(label("自动槽" if slot == 0 else "槽位 %d" % slot))
-		var load_btn := button("读取",func():
-			var result := WarSave.read_slot(game,index)
-			if result == OK:
-				close_menu()
-				home.hide()
-				_layout()
-				if game.life.enabled(): overview_requested.emit()
-				else: focus_requested.emit(game.scenarios.home(),18)
-			else: game.notify("读取失败："+error_string(result)),row)
-		var save_btn := button("保存",func():
-			var result := WarSave.write(game,index)
-			load_btn.disabled = not FileAccess.file_exists(WarSave.path(index))
-			if result != OK: game.notify("保存失败："+error_string(result)),row)
-		row.move_child(save_btn,1)
-		load_btn.disabled = not FileAccess.file_exists(WarSave.path(slot))
+	_clear_menu("选择存档")
+	var session: WarSaveSession = get_tree().current_scene.saves
+	var create := button("＋ 新建存档 · 左肺防线",func(): new_save_requested.emit(),menu_body)
+	accent_button(create)
+	var hint := label("每个新存档独立保存；继续存档会恢复细胞、建筑、资源、命令与准备进度。",13,MUTED)
+	hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART; menu_body.add_child(hint)
+	if not session.active_path.is_empty() and not home.visible:
+		button("保存当前进度",func():
+			if get_tree().current_scene.save_progress() == OK: show_saves()
+			else: show_save_error("当前进度未保存。请检查磁盘空间后重试。"),menu_body)
+	var records := WarSaveSession.records()
+	if records.is_empty(): menu_body.add_child(label("还没有存档，点击上方开始新的游戏。",14,MUTED))
+	for record in records:
+		var row := VBoxContainer.new(); menu_body.add_child(row)
+		var source: String = record.path
+		var resume := button("继续 · "+str(record.title),func(): continue_save_requested.emit(source),row)
+		resume.disabled = not record.valid
+		resume.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		resume.tooltip_text = "存档文件损坏，未覆盖原文件" if not record.valid else record.title
+		var info := "文件无法读取" if not record.valid else "游戏进度 %02d:%02d · 保存于 %s UTC" % [int(record.time)/60,int(record.time)%60,str(record.savedAt).replace("T"," ")]
+		var detail := label(info,12,MUTED); detail.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART; row.add_child(detail)
+	_open_menu()
+
+func show_save_error(message: String) -> void:
+	_clear_menu("存档未完成")
+	var text := label(message,15,MUTED); text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART; menu_body.add_child(text)
+	button("重试保存",func():
+		if get_tree().current_scene.save_progress() == OK: show_saves(),menu_body)
+	button("返回存档列表",show_saves,menu_body)
 	_open_menu()
 
 func show_life_events() -> void:
@@ -1069,11 +1102,19 @@ func _layout() -> void:
 	var status_width := maxf(80,minf(size.x-brain_size-reserve-36,550))
 	header.position = Vector2(size.x-status_width-reserve-12,10)
 	header.size = Vector2(status_width,58)
+	(header as BoxContainer).vertical = narrow
+	for kind in resource_values:
+		var refs: Dictionary = resource_values[kind]
+		refs.icon.custom_minimum_size = Vector2.ONE*(18 if narrow else 34)
+		refs.icon.size = refs.icon.custom_minimum_size
+		refs.caption.add_theme_font_size_override("font_size",10 if narrow else 12)
+		refs.value.add_theme_font_size_override("font_size",16 if narrow else 20)
 	toolbar.position = Vector2(size.x-minf(397,size.x-reserve-12)-reserve,top+18)
 	toolbar.size = Vector2(minf(397,size.x-reserve-12),44)
 	if narrow:
-		header.visible = false
-		toolbar.position = Vector2(12,map_height+76)
+		header.visible = game.state.has("lungDefense")
+		header.size.y = 0
+		toolbar.position = Vector2(12,map_height+(98 if game.state.has("lungDefense") else 76))
 		toolbar.size.x = size.x-24
 		toolbar.size.y = 70
 	else: header.visible = true
@@ -1082,16 +1123,15 @@ func _layout() -> void:
 		child.custom_minimum_size = Vector2((size.x-34)/3 if narrow else (92 if child == pause_button else 44),30 if narrow else 44)
 		child.add_theme_font_size_override("font_size",13 if narrow else 16)
 	panel.visible = true
-	panel.position = Vector2(16,size.y-(156 if narrow else 148))
-	panel.size = Vector2(size.x-32 if narrow else 300,140 if narrow else 132)
+	panel.position.x = 16
+	panel.size = Vector2(size.x-32 if narrow else 300,maxf(180,panel.get_combined_minimum_size().y))
+	_place_selection_panel()
 	root.get_node("Bottom").hide()
-	zoom_tools.position = Vector2(16,panel.position.y-106)
 	zoom_tools.visible = not narrow
 	systemic_panel.visible = not game.scenarios.systemic().is_empty()
 	systemic_panel.position = Vector2(12,maxf(top+18,brain_size+18))
 	systemic_panel.size = Vector2(minf(size.x-24,302),0)
 	if narrow: systemic_panel.visible = false
-	status.position = Vector2(16,size.y-(206 if narrow else 194))
 	status.size = Vector2(minf(470,size.x-32),42)
 	status.show()
 	menu.size = Vector2(minf(650,size.x-24),minf(760,size.y-24))
@@ -1108,14 +1148,20 @@ func _layout() -> void:
 			battle.layout(size,map_height+64,reserve)
 	if game.life.enabled(): _layout_life(size)
 
+func _place_selection_panel() -> void:
+	if panel == null or status == null or zoom_tools == null: return
+	panel.position.y = get_viewport().get_visible_rect().size.y-panel.size.y-12
+	status.position = Vector2(panel.position.x,panel.position.y-status.size.y-8)
+	zoom_tools.position = Vector2(16,status.position.y-52)
+
 func _layout_life(size: Vector2) -> void:
 	var narrow := size.x < 720
 	var width := minf(300,size.x-24)
 	# Commands stay on the left; outside-life messages occupy the right-hand phone.
-	panel.position = Vector2(12,size.y-156)
-	panel.size = Vector2(width,140)
-	status.position = Vector2(12,panel.position.y-54)
+	panel.position.x = 12
+	panel.size = Vector2(width,maxf(180,panel.get_combined_minimum_size().y))
 	status.size = Vector2(width,46)
+	_place_selection_panel()
 	systemic_panel.position.x = 12
 	zoom_tools.position = Vector2(16,panel.position.y-106)
 	if narrow:
@@ -1133,6 +1179,40 @@ func _layout_life(size: Vector2) -> void:
 		for child in toolbar.get_children(): child.show()
 	if life_dialogue != null: life_dialogue.layout()
 
+func _reset_readouts() -> void:
+	_selection_rows_entity = -2; outcome_shown = ""
+	for refs in resource_values.values():
+		if refs.has("tween"): refs.tween.kill()
+		refs.erase("last")
+		refs.card.reset_feedback()
+		refs.value.add_theme_color_override("font_color",PAPER)
+	_update_resources()
+
+func _update_resources() -> void:
+	if game.state.is_empty(): return
+	var systemic := game.scenarios.systemic()
+	var narrow := get_viewport().get_visible_rect().size.x < 720
+	for kind in resource_values:
+		var refs: Dictionary = resource_values[kind]
+		refs.card.visible = systemic.is_empty() or kind != "wood"
+		refs.caption.text = RESOURCE_LABELS[kind].trim_suffix("量") if narrow else RESOURCE_LABELS[kind]
+		refs.card.tooltip_text = "已运抵补给点的"+str(WarData.config().Data.names[kind])+"；采集站库存和红细胞携带物另计。" if game.organ_resources.enabled() else ""
+		var amount := int(systemic.get(kind,systemic.get("glucose",0)) if not systemic.is_empty() else game.economy.stock(1,kind))
+		if amount == refs.get("last",-1): continue
+		if refs.has("tween"): refs.tween.kill()
+		var value_label: Label = refs.value
+		if not refs.has("last"):
+			value_label.text = str(amount)
+			value_label.add_theme_color_override("font_color",PAPER)
+		else:
+			var previous := int(value_label.text)
+			var tint := TEAL if amount > int(refs.last) else Color("bd684c")
+			refs.card.pulse()
+			refs.tween = create_tween().set_parallel(true)
+			refs.tween.tween_method(func(value: float): value_label.text = str(roundi(value)),float(previous),float(amount),.22)
+			refs.tween.tween_method(func(weight: float): value_label.add_theme_color_override("font_color",tint.lerp(PAPER,weight)),0.0,1.0,.38)
+		refs.last = amount
+
 func _process(delta: float) -> void:
 	if systemic_panel != null and systemic_panel.visible: systemic_panel.size.y = systemic_panel.get_combined_minimum_size().y
 	if progress_panel != null and progress_panel.visible: progress_panel.size.y = progress_panel.get_combined_minimum_size().y
@@ -1140,6 +1220,9 @@ func _process(delta: float) -> void:
 	_timer += delta
 	if _timer < .15: return
 	_timer = 0
+	if game.state.get("lungDefense",{}).get("phase","") == "failed" and outcome_shown != "lung_failed" and not menu.visible and not home.visible:
+		outcome_shown = "lung_failed"
+		show_defense_failure()
 	progress_panel.visible = game.mode == "sandbox" and not home.visible and not (get_viewport().get_visible_rect().size.x < 720 and dialogue.active)
 	if game.mode == "sandbox":
 		var step := clampi(int(game.state.get("tutorial",1)),1,6)
@@ -1153,20 +1236,7 @@ func _process(delta: float) -> void:
 	pause_button.text = ("▶" if game.paused else "Ⅱ") if game.life.enabled() and get_viewport().get_visible_rect().size.x < 720 else ("▶ 继续" if game.paused else "Ⅱ 暂停")
 	speed_button.text = "%d×" % int(game.speed)
 	layer_button.tooltip_text = "视野设置 · "+WarWorldView.MODE_NAMES[world.layer]
-	var systemic := game.scenarios.systemic()
-	for kind in resource_values:
-		var refs: Dictionary = resource_values[kind]
-		refs.card.visible = systemic.is_empty() or kind != "wood"
-		refs.caption.text = RESOURCE_LABELS[kind]
-		refs.card.tooltip_text = "已运抵补给点的"+str(WarData.config().Data.names[kind])+"；采集站库存和红细胞携带物另计。" if game.organ_resources.enabled() else ""
-		var amount := int(systemic.get(kind,systemic.get("glucose",0)) if not systemic.is_empty() else game.economy.stock(1,kind))
-		if amount != refs.get("last",-1):
-			if refs.has("tween"): refs.tween.kill()
-			var value_label: Label = refs.value
-			var previous := int(value_label.text)
-			refs.last = amount
-			refs.tween = create_tween()
-			refs.tween.tween_method(func(value: float): value_label.text = str(roundi(value)),float(previous),float(amount),.22)
+	_update_resources()
 	if game.is_campaign():
 		var c: Dictionary = game.state.campaign
 		scenario.text = "%s\n第 %d 波 / %d · 补给 %d\n%s" % [game.navigation.campaign.name,int(c.event.wave),game.navigation.campaign.waves.size(),int(c.reinforcements.supply),{"active":"防守中","completed":"已夺回","failed":"防线失守"}.get(c.event.status,"")]
@@ -1175,11 +1245,14 @@ func _process(delta: float) -> void:
 		scenario.text = "人体地图 · %02d:%02d\n沿关口进入血管，前往其他器官" % [int(game.state.time)/60,int(game.state.time)%60]
 		if not q.is_empty():
 			scenario.text = "氧气量 %.0f · 葡萄糖量 %.0f\n心脏存粮 %.0f\n病毒 %d\n%s · 累计送达 %.0f" % [float(q.oxygen),float(q.glucose),float(q.heartGlucose),int(q.get("livingEnemies",3)),q.get("courierState","等待出发"),float(q.delivered)]
+		var defense: Dictionary = game.state.get("lungDefense",{})
+		if not defense.is_empty():
+			var remaining := maxi(0,ceili(float(defense.preparationSeconds)-float(defense.elapsed)))
+			scenario.text = game.scenarios.defense_name()+"防线 · 准备 %02d:%02d\n20 红细胞 → 分裂兵巢 → 白细胞" % [remaining/60,remaining%60] if defense.phase == "preparing" else (game.scenarios.defense_name()+"防线 · 已净化" if defense.phase == "defended" else game.scenarios.defense_name()+"感染 · 清除病毒并净化地板")
 	var key := str(game.selected)
 	if key != _visual_selection:
 		_visual_selection = key
-		var surface := panel.get_node("_FacetSurface") as WarFacetSurface
-		surface.pulse()
+		(panel as WarHUDPlate).pulse()
 	var selected_entities: Array = []
 	for id in game.selected:
 		var e := game.entity(id)
@@ -1334,7 +1407,7 @@ func _build_home() -> void:
 
 func _cover_action(action: String) -> void:
 	match action:
-		"start": home.hide(); restart_requested.emit("life")
+		"start": show_saves()
 		"preview": cover_preview.open()
 		"tutorial": show_original_copy("startGuide")
 		"settings": show_cover_settings()
@@ -1348,7 +1421,8 @@ func show_cover_settings() -> void:
 	menu_body.add_child(volume_text)
 	var volume := HSlider.new()
 	volume.min_value = 0; volume.max_value = 100; volume.step = 1; volume.value = settings.volume()
-	volume.custom_minimum_size = Vector2(360,32)
+	volume.custom_minimum_size = Vector2(0,32)
+	volume.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	volume.value_changed.connect(func(value):
 		settings.set_volume(value)
 		volume_text.text = "主音量：%d%%" % roundi(value))
@@ -1392,6 +1466,10 @@ func _settings() -> WarSettings:
 	return scene.settings as WarSettings
 
 func return_home() -> void:
+	var scene := get_tree().current_scene
+	if scene != null and scene.has_method("save_progress") and scene.save_progress() != OK:
+		show_save_error("返回首页前未能保存进度。请重试保存。")
+		return
 	close_menu()
 	if cover_preview != null: cover_preview.hide()
 	vision_menu.hide()
@@ -1399,3 +1477,12 @@ func return_home() -> void:
 	game.paused = true
 	game.selected.clear()
 	home.show()
+
+func show_defense_failure() -> void:
+	_clear_menu(game.scenarios.defense_name()+"防线失守")
+	var text := label("己方细胞与基地已全部失去活性。当前记录会保留这次进度，可以选择其他存档，或建立新的防线。",15,MUTED)
+	text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART; menu_body.add_child(text)
+	button("选择已有存档",show_saves,menu_body)
+	button("新建存档 · 重新开始",func(): new_save_requested.emit(),menu_body)
+	button("返回首页",return_home,menu_body)
+	_open_menu()

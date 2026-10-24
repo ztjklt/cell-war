@@ -3,6 +3,7 @@ extends Control
 ## Compact acknowledgement after the chosen badge reaches its actual target.
 var age := 0.0
 var caption: Label
+var frame := WarUISkin.painted_panel(Color("e2f3e7"),12,0,"compact")
 
 func configure(at: Vector2,action: String,queued := false) -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -28,12 +29,12 @@ func _process(delta: float) -> void:
 	if age > .72: queue_free()
 
 func _draw() -> void:
-	WarFacetSurface.paint(self,Rect2(Vector2(51,1),Vector2(38,36)),WarUISkin.SAGE,3,9,true)
+	draw_style_box(frame,Rect2(Vector2(51,1),Vector2(38,36)))
 	var progress := clampf(age/.16,0,1)
 	var a := Vector2(62,16)
 	var b := Vector2(69,23)
 	var c := Vector2(80,11)
-	if progress < .4: draw_line(a,a.lerp(b,progress/.4),WarUISkin.CREAM,2.5,true)
+	if progress < .4: draw_line(a,a.lerp(b,progress/.4),WarUISkin.INK,2.5,true)
 	else:
-		draw_line(a,b,WarUISkin.CREAM,2.5,true)
-		draw_line(b,b.lerp(c,(progress-.4)/.6),WarUISkin.CREAM,2.5,true)
+		draw_line(a,b,WarUISkin.INK,2.5,true)
+		draw_line(b,b.lerp(c,(progress-.4)/.6),WarUISkin.INK,2.5,true)

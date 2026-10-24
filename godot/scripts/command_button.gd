@@ -1,6 +1,6 @@
 class_name WarCommandButton
 extends Button
-## Polygonal command badge: real input, shallow faces and animated hover/press.
+## Painted membrane badge with native input and spring feedback.
 var action := ""
 var glyph: WarCommandIcon
 var caption: Label
@@ -19,7 +19,7 @@ func configure(title: String,kind: String,accent := "") -> void:
 	mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	fill = WarUISkin.CORAL if accent == "primary" else (WarUISkin.SAGE if accent == "sage" else WarUISkin.OAT)
 	WarUISkin.apply_button(self,accent,false)
-	for state in ["normal","hover","pressed","disabled","focus"]: add_theme_stylebox_override(state,StyleBoxEmpty.new())
+	for state in WarUISkin.STATES: add_theme_stylebox_override(state,WarUISkin.button_box(state,accent,14,"badge"))
 	glyph = WarCommandIcon.new()
 	glyph.kind = kind
 	add_child(glyph)
@@ -64,7 +64,7 @@ func settle(to: Vector2) -> void:
 	position = to; scale = Vector2.ONE; modulate.a = 1
 
 func _has_point(point: Vector2) -> bool:
-	return Geometry2D.is_point_in_polygon(point,WarFacetSurface.outline(Rect2(Vector2.ZERO,size),14,true))
+	return Rect2(Vector2(2,2),size-Vector2(4,4)).has_point(point)
 
 func _process(delta: float) -> void:
 	var next_hover := move_toward(hover_amount,1.0 if (is_hovered() or has_focus()) and not disabled else 0.0,delta*8)
@@ -83,7 +83,3 @@ func _process(delta: float) -> void:
 		glyph.modulate.a = .5 if disabled else 1.0
 		glyph.queue_redraw(); caption.add_theme_color_override("font_color",ink)
 		_layout()
-
-func _draw() -> void:
-	var color := Color("e3dbd0") if disabled else fill
-	WarFacetSurface.paint(self,Rect2(Vector2.ZERO,size),color,5,14,true,hover_amount,press_amount)

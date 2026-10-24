@@ -165,7 +165,7 @@ func run() -> void:
 	game.paused = false
 	var refused_during_damage: Array[bool] = []
 	var save_probe := func(e):
-		if e.kind == "damage" and int(e.source) == int(source.id): refused_during_damage.append(game.bridge.snapshot().is_empty()))
+		if e.kind == "damage" and int(e.source) == int(source.id): refused_during_damage.append(game.bridge.snapshot().is_empty())
 	game.combat_event.connect(save_probe)
 	ticks(game,7)
 	check(refused_during_damage == [true],"actual WarCombat callback cannot save a half-applied independent impact")

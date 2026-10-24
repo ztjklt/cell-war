@@ -1,6 +1,6 @@
 class_name WarCover
 extends Control
-## Static character artwork, frontal sculpted names and floating menu projections.
+## Static character artwork, frontal sculpted names and floating membrane menu cards.
 signal action_requested(action: String)
 const ART := "res://assets/image/cover-standoff-20261020/artwork-static-v2.png"
 const PAPER := Color("f5eddf")
@@ -61,7 +61,7 @@ func _layout() -> void:
 	compact = size.x < 720
 	for b in buttons:
 		b.compact = compact; b.scale = Vector2.ONE
-		b.custom_minimum_size = Vector2(120,122) if compact else Vector2(120,140)
+		b.custom_minimum_size = Vector2(120,122) if compact else Vector2(120,134)
 	art_scale = minf(size.x/1600.0,size.y/900.0) if not compact else size.x/1600.0
 	stage.scale = Vector2.ONE*art_scale
 	stage.position = (size-Vector2(1600,900)*art_scale)*.5 if not compact else Vector2(0,120+maxf(0,size.y-500)*.28)
@@ -70,8 +70,8 @@ func _layout() -> void:
 		if button_area.get_parent() != stage: button_area.reparent(stage,false)
 		button_area.position = Vector2.ZERO; button_area.size = Vector2(1600,900)
 		for i in buttons.size():
-			buttons[i].floor_skew = 1-float(i)*2/3
-			buttons[i].place_on_ground(Vector2(480+i*210,840),Vector2(800,600),785,190)
+			buttons[i].position = Vector2(385+i*210,716)
+			buttons[i].size = Vector2(190,134)
 		for i in titles.size():
 			if titles[i].get_parent() != stage: titles[i].reparent(stage,false)
 			titles[i].position = Vector2(32 if i == 0 else 978,48)
@@ -80,9 +80,8 @@ func _layout() -> void:
 		if button_area.get_parent() != self: button_area.reparent(self,false)
 		button_area.position = Vector2(14,size.y-292); button_area.size = Vector2(size.x-28,252)
 		for i in buttons.size():
-			buttons[i].floor_skew = .7 if i%2 == 0 else -.7
-			buttons[i].position = Vector2((i%2)*(size.x-28)*.5,floori(i/2.0)*126)
-			buttons[i].size = Vector2((size.x-28)*.5,122)
+			buttons[i].position = Vector2((i%2)*((size.x-36)*.5+8),floori(i/2.0)*126)
+			buttons[i].size = Vector2((size.x-36)*.5,122)
 		for i in titles.size():
 			if titles[i].get_parent() != self: titles[i].reparent(self,false)
 			titles[i].position = Vector2(0 if i == 0 else size.x*.52,18)

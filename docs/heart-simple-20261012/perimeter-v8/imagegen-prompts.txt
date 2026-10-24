@@ -1,0 +1,23 @@
+Mode: built-in image_gen image editing (two calls), opaque output.
+Generated outputs copied into assets/image/anatomy-reference/vascular-study/heart-simple-20261012/perimeter-v8/.
+
+Call 1 target: docs/heart-simple-20261012/perimeter-v8/perimeter-guide.png
+Saved raw result: perimeter-polish-raw-v1.png
+Prompt:
+Use case: precise-object-edit. Asset type: local repair of an existing registered 2D watercolor anatomy game map. Edit target: the supplied image, exact same framing and coordinates. Preserve the entire four-chamber heart, its internal watercolor floors and cream muscle rims, adjacent lungs and cream bronchial branches, and the exact routes, widths, positions and red/blue identities of ALL existing vascular trunks. Change only these local defects: (1) heal the conspicuous straight horizontal pasted-texture seam across the upper chest, about 12 percent down from the top, where both background colors and several red/blue pipes abruptly step. Give the background a continuous warm cream/peach tissue gradient and smoothly match each pipe's existing shading and outline across the seam; keep every pipe centerline and width exactly fixed. (2) remove the isolated narrow blue sliver down the right external edge of the heart, between the heart wall and the large curved red descending aorta; this pulmonary return is posterior and should remain hidden behind the opaque heart wall except its existing blue upper atrial inlet. Restore the surrounding warm heart wall and small cream gap seamlessly; preserve the large upper blue inlet and large red aorta. (3) gently seat the two short red arterial outlet collars immediately above the heart into the upper muscle wall with a tiny natural watercolor lip, so they do not look like blunt floating cut ends. They emerge from behind the atrial roof: do not draw long colored pipes across the heart chamber floors. (4) heal the similarly hard lower seam on the left blue vena cava where the local patch meets the original lower trunk. Make that pipe's material and border continuous, without changing its centerline or width. This is a restoration, not a redesign: no new blood routes, branches, chambers, holes, capsule/pill objects, labels, symbols or text. Do not move, resize, crop or rotate anything. Keep pixels and artwork outside these specific local defect regions visually unchanged. The result must fit over the same registered game map.
+
+Call 2 target: Call 1 output.
+Saved raw result: perimeter-clean-bed-raw-v1.png
+Prompt:
+Use case: precise-object-edit. This image is a registered 2D watercolor anatomy game map. Make a clean background underpainting for its vascular material restoration. Same framing, same organ coordinates. Remove ONLY the external long red and blue blood vessel tubes, including their red upper arch and blue vena cava. Fill their removed footprints with seamless pale warm cream connective tissue between the organs, or matching pink lung surface wherever the tube originally passed in front of a lung. Keep the entire four-chamber heart EXACTLY in place, with all chamber floors and watercolor muscle walls unchanged; preserve the short blue inlet attached directly to each upper atrium and the tiny red outlet collars attached directly to the heart. Preserve both lungs, their dark outer contours, cream branching bronchial structures, the trachea above, and lower visible liver/pancreas edges. This is solely clean tissue behind the external blood tubes; the exact red/blue routes will be restored by the game's registered geometry, so do not invent replacement blood tubes, spots, holes, nodules, capsules, labels or symbols. No rectangular seams; smooth warm connective tissue watercolor. Do not zoom, rotate, crop, resize, reposition or restyle the organ shapes.
+
+Integration:
+- Call 2 supplies only the tissue bed inside feathered upper/lower seam masks.
+- All vascular color is UV sampled from the approved original vascular material strips on the actual, unchanged runtime centerlines and widths.
+- The existing four-chamber cardiac artwork stays byte-exact outside the two posterior sliver components. Those components are removed with an exact coordinate mask and the original underlying heart tissue.
+- heart-perimeter-banks-v1.png replaces the previously fully hidden heart-venous-junction image slot. Resource count stays 43 per NanoVG context.
+- The whole-body original image and the explicit perspective button remain unchanged. No zoom-controlled art switch is introduced.
+
+Consumed assets:
+assets/image/anatomy-reference/vascular-study/heart-simple-20261012/perimeter-v8/heart-internal-map-v2.png
+assets/image/anatomy-reference/vascular-study/heart-simple-20261012/perimeter-v8/heart-perimeter-banks-v1.png

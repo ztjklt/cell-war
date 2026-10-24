@@ -1,0 +1,58 @@
+T细胞正式集成交接 · 2026-10-22
+STATUS=COMPLETE
+SHARED_HOOKS_RELEASED=true
+T_CELL_RUNTIME_RELEASED=true
+HERPES_RUNTIME_IMPLEMENTED=false
+
+用户最新树突要求已保留：侦查到的敌人移动、攻击速度同时乘0.7，原版6帧轮灯；移动16/受击12/死亡12。
+树突规则49/49、原生52/52，原版素材逐字节保留；四组46帧本地预览已于10月22日重新打开。
+T细胞正式接入后runtimeIntegrated=true，Data.units.t_cell已注册，角色图鉴也改为现役；B细胞仍只摇花、不射击。
+
+首轮默认：
+t_cell独立身份，barracks（骨髓造血巢），阵营tier2；hp105、pop2；蛋白25/糖20/氧5，训练22秒。
+普通移动预算speed3，瞬身945ms（准备240ms/到达415ms）、每轮预算2.835地图单位，上限5.5身位，不累计站桩储能。
+保留用户确认瞬身16、投刀16、受击12、死亡12，共56帧。没有新增美术，未改像素、alpha、锚点、逐帧时长。
+投刀damage14/range6/cool1.4/speed16；第8帧首次脱手，前摇0.55秒。受击845ms，死亡1440ms。
+
+正式宿主与公共入口：
+- scripts/t_cell_runtime.gd：WarSimulation适配器，调用原导航批准路径，组织/血管真实handoff、落点净空、命令与联动倍率、服务快照。
+- scripts/t_cells.gd：独立模拟服务；已飞行投刀先处理命中，未释放攻击后推进，避免同刻受击后仍出刀。
+- simulation.gd：创建/恢复/销毁T服务；保留生存更新，T专用go/unit；普通弹丸/接触/击退之后advance一次；快照加入tCellRuntime；尸体1.44秒。
+- combat.gd：T实际受伤调用hit（含致死）；fight派发专用投刀；launch拒绝通用重复飞刀。根既有可见性/存活/阵营及死亡来源防反击检查保留。
+- save_game.gd：先验证T服务/路径；旧档无T段仍可读；世界/服务时钟一致，非法状态在替换世界前拒绝。
+- world_view.gd：原图专用采样、真实位置拖影（先画拖影再处理hidden）、投刀bodyRect裁切及独立原刀像素，不重新居中；无T刀时不请求刀贴图。
+- cell_shape.gd：正面保持直立，仅水平镜像；独立本体椭圆碰撞与逐帧轮廓。
+- config.json：独立单位/顺序/半径/原画映射；asset/source_manifest仅合并T记录和最新总量。
+- character_catalogue.json、install_character_catalogue.py：只更新T现役文案/数值来源，其他角色及T全部56帧序列不变。
+
+真实关口：
+按原导航AStar实际相邻节点认证aNode/bNode，不能按投影重合伪造连接。
+跨层连接本身4至8单位，沿精确认证线使用同一瞬身预算，不能以lane切换直接瞬移；抵达真实端点才切换lane。
+每步复核节点位置/身份/实际邻接、器官启用、检查站存活/隔离/所有权或breached；途中关门停在安全处。
+stop/受击/改命令保留途中连接凭据；路径失效重新请求。普通落点要检查单位真实轮廓和建筑净空。
+实测肝关口liver.capillary.118.checkpoint.1，组织到lane118，长度约4；关闭前/途中拒绝、重新开放、多轮过门、途中存读档、伪造投影边界均通过。
+
+实战与存档证据：
+headless tests/t_cell_integration.gd：44/44（本轮最终状态，test-output/t-cells/integration.json）。
+涵盖真实训练扣费、普通命令/停止/驻守/撤退/边走边打恢复、独立投刀一次命中、实际受击取消前摇、出手后来源阵亡不撤刀、尸体时长。
+B×2、脑×1.15、树突×0.7实际投刀节奏=1.61；移动×0.7实测1.984483地图单位（2.835×0.7=1.9845）。
+该新增测量曾选到投影血管lane122，并沿用此前投刀打中侦查细胞的受击场景，导致0或可变预算；已改为独立场景、明确command_lane=0、整段与实际落点净空，不修改任何正式规则迁就测试。
+实际飞刀在途保存/恢复一次命中，已消费命中不重放，加载不立即伤害/出刀；旧档不含T段可验证；坏时钟/缺世界原子拒绝。
+沙盒使用原生生存/导航、选择实际空闲落点，T可移动；沙盒原生成器已有出生点附近氧资源，未注入正式新局资源。
+真实训练专项在cell_test控制资源夹具中通过；未伪称完整沙盒经济养成或全部战役已验收。
+
+验证：
+T独立规则85/85；T宿主44/44。
+原生窗口T集成41/41及两张实拍（10月21日，新增5项无画面回归前）：test-output/t-cells/native-blink.png、native-throw.png；已实际检查真实拖影和独立飞刀。
+10月22日按协调要求不新开/关闭用户游戏窗口；未把41原生冒称46。后续可自行用--capture复验增加的规则项。
+树突原生52/52（49规则+3显示），B39/39，血小板38/38，目标安全14/14，药品集成110/110，器官集成45/45，基础52/52。
+编辑器headless导入通过，无脚本解析错误。素材安装审计56帧/6项运行资源、四原图集/原立绘一致，原版6帧ZIP逐字节匹配。
+当前完整性1928项，无缺失或哈希差异、总量一致；来源比对状态以test-output/integrity.json为准。
+
+制作工具：prepare_t_cell_runtime.py在runtimeIntegrated=true时明确拒绝重置已启用数据；今后显式编辑来源runtime.json，再运行install_t_cell_assets.py合并清单。
+安装器的runtimeHooksWritten=false表示“该安装器不写公共接线”，不表示T机制未接入；正式接线在本交接与源码。
+旧t-cell-runtime-status.txt下方是独立模块阶段的历史记录，以本文件为准。美术animation-review.json保留原验收历史，新增runtime-review.json记录正式状态。
+
+共享hooks现已释放，后续病原接线可局部编辑simulation/combat/save/world_view/config/cell_shape，务必保留T专用分支。
+combat.enemy函数的性能筛选由导航线程独占优化，本任务没有改该函数。本轮没有实施疱疹埋伏；其只读方案仍在herpes-ambush-plan.txt。
+不再占用上述公共文件。没有提交、推送、远端构建，未宣称全量画面/玩法/手机/云存档验收。

@@ -33,7 +33,6 @@ func setup(owner: WarHUD) -> void:
 	row_b.add_theme_constant_override("separation",10)
 	pause = hud.button("Ⅱ 暂停",func(): hud.game.paused = not hud.game.paused,row_a)
 	speed = hud.button("1×",func(): hud.game.speed = 2 if hud.game.speed == 1 else 1,row_a)
-	hud.button("下一波",func(): hud.game.submit_player({"action":"skip_wave"}),row_a)
 	hud.button("挂机",func(): hud.game.state.campaign.autoplay = not hud.game.state.campaign.get("autoplay",false),row_a)
 	wave = hud.label("",11,WarHUD.PAPER); row_a.add_child(wave)
 	wave.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -143,8 +142,8 @@ func layout(view_size: Vector2,navigation_bottom: float,navigation_reserve: floa
 	tools.visible = rows == 1
 	row_a.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	row_b.size_flags_horizontal = Control.SIZE_EXPAND_FILL if rows == 2 else Control.SIZE_SHRINK_END
-	var widths := [64 if phone else 78,40,74 if phone else 82,60 if phone else 66]
-	for i in 4:
+	var widths := [64 if phone else 78,40,60 if phone else 66]
+	for i in 3:
 		var btn: Button = row_a.get_child(i)
 		btn.custom_minimum_size = Vector2(widths[i],(bar_rect.size.y-12)/2 if rows == 2 else bar_rect.size.y-8)
 		btn.add_theme_font_size_override("font_size",17)
@@ -197,7 +196,7 @@ func layout(view_size: Vector2,navigation_bottom: float,navigation_reserve: floa
 
 func _fit_button(btn: Button) -> void:
 	for key in ["normal","hover","pressed","focus"]:
-		var skin := btn.get_theme_stylebox(key).duplicate() as StyleBoxFlat
+		var skin := btn.get_theme_stylebox(key).duplicate() as StyleBox
 		skin.content_margin_left = 2; skin.content_margin_right = 2
 		skin.content_margin_top = 0; skin.content_margin_bottom = 0
 		btn.add_theme_stylebox_override(key,skin)

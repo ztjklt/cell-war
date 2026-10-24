@@ -7,6 +7,7 @@ signal state_replaced
 const STEP := 0.1
 var state: Dictionary = {}
 var navigation := WarNavigation.new()
+var local_avoidance := WarLocalAvoidance.new()
 var selected: Array[int] = []
 var groups: Array = [[],[],[]]
 var paused := false
@@ -52,7 +53,7 @@ func _init() -> void:
 	navigation.path_ready.connect(_path_ready)
 
 func start(which := "fullbody",seed := 73) -> void:
-	mode = "fullbody" if which == "life" else which
+	mode = "fullbody" if which in ["life","lung_defense"] else which
 	var data: Dictionary = WarData.read("starts/"+mode).duplicate(true)
 	if which == "sandbox":
 		data.seed = seed
@@ -70,10 +71,13 @@ func start(which := "fullbody",seed := 73) -> void:
 		organ_functions.state()
 		medicine_helpers.begin()
 		medicine_supply.begin()
+	if which == "lung_defense":
+		scenarios.begin_lung_defense()
 	paused = which == "systemic" or which == "lung_skirmish"
 	notify("点击地图选定观察坐标，Q 拉近 / E 拉远；右键展开指令，空格暂停。")
 
 func restore(data: Dictionary) -> void:
+	local_avoidance.jobs.clear()
 	state = data.duplicate(true)
 	state.entities = state.get("entities",{})
 	if state.entities is Array:
@@ -173,6 +177,8 @@ func update(delta: float) -> void:
 		count += 1
 
 func step(dt: float) -> void:
+	local_avoidance.remaining_usec = 3000
+	if state.get("lungDefense",{}).get("phase","") == "failed": return
 	if life.enabled() and life.state().phase == "ended": return
 	if mode == "sandbox" and state.get("outcome","") == "defeat": return
 	_process_player_commands()
@@ -323,6 +329,7 @@ func finish_order(e: Dictionary) -> void:
 	reset_path(e)
 
 func reset_path(e: Dictionary) -> void:
+	local_avoidance.jobs.erase(int(e.id))
 	if e.get("request",0) != 0:
 		navigation.cancel(int(e.request))
 		_requests.erase(int(e.request))
@@ -395,6 +402,19 @@ func go(e: Dictionary, target: Vector2, dt: float, reach := .05, target_lane := 
 		var step := minf(distance*flow,length)
 		var proposed := p.move_toward(next,step)
 		if not _position_free(e,proposed):
+			if int(waypoint.lane) == int(e.get("vesselLane",0)) and (local_avoidance.jobs.has(int(e.id)) or state.time >= float(e.get("avoidRetryAt",0))):
+				# Choose unoccupied ground on the remaining certified route. A short
+				# grid waypoint may itself be inside the cell we are trying to pass.
+				var rejoin := _avoidance_rejoin(e,p)
+				var detour: Array = []
+				if not rejoin.is_empty(): detour = local_avoidance.route(self,e,rejoin.point)
+				else: local_avoidance.jobs.erase(int(e.id))
+				if not detour.is_empty():
+					e.path = e.path.slice(0,int(e.pathIndex))+detour+e.path.slice(int(rejoin.index))
+					e.erase("blockedSince")
+					return false
+				if local_avoidance.jobs.has(int(e.id)): return false
+				e.avoidRetryAt = state.time+1.0
 			e.blockedSince = float(e.get("blockedSince",state.time))
 			if state.time-float(e.blockedSince) > 1.5:
 				reset_path(e)
@@ -420,6 +440,29 @@ func go(e: Dictionary, target: Vector2, dt: float, reach := .05, target_lane := 
 		e.path = []
 		e.pathIndex = 0
 	return p.distance_to(target) <= reach and (target_lane < 0 or int(e.get("vesselLane",0)) == target_lane)
+
+func _avoidance_rejoin(e: Dictionary,origin: Vector2) -> Dictionary:
+	var from := origin
+	var walked := 0.0
+	var lane := int(e.get("vesselLane",0))
+	for i in range(int(e.pathIndex),e.path.size()):
+		var waypoint: Dictionary = e.path[i]
+		if int(waypoint.lane) != lane: break
+		var target: Vector2 = waypoint.p
+		var length := from.distance_to(target)
+		var count := maxi(1,ceili(length))
+		for j in range(1,count+1):
+			var at := from.lerp(target,float(j)/count)
+			var distance := origin.distance_to(at)
+			if distance > 12: return {}
+			if walked+length*float(j)/count < 6 and i < e.path.size()-1: continue
+			if not _position_free(e,at): continue
+			# The final exact join must also certify its remainder; stepping near
+			# the route must never cut a terrain hole or create a lane transition.
+			if navigation.clear_segment(at,target,lane,e.kind) and (lane != 0 or navigation.movement_clear(at,target,e.kind,int(e.faction))):
+				return {"point":at,"index":i}
+		walked += length; from = target
+	return {}
 
 func _path_ready(request: int, path: Array, reason: String) -> void:
 	var e := entity(int(_requests.get(request,0)))
@@ -595,6 +638,7 @@ func formation(troops: Array,target: Vector2,lane: int) -> Dictionary:
 			for i in count:
 				var p := target+Vector2.from_angle(float(i)*TAU/count)*radius
 				if not navigation.point_allowed(p,lane,e.kind): continue
+				if lane == 0 and not navigation.movement_clear(p,p,e.kind,int(e.faction)): continue
 				var gap := largest*2+.2 if lane == 0 else .15
 				var free := true
 				for other in reserved+blockers:

@@ -1,0 +1,42 @@
+疫苗独立抗体候选已完成
+日期：2026-10-22
+INDEPENDENT_CANDIDATE_COMPLETE=true
+SHARED_HOOKS_RELEASED=false
+VACCINE_SALES_RELEASED=false
+
+本批新增（未改公共入口）：
+- godot/scripts/vaccine_antibodies.gd（WarVaccineAntibodies）及uid。
+- godot/data/vaccine_antibodies.json。
+- godot/tests/vaccine_antibodies.gd及uid。
+- scripts/godot_tools/prepare_vaccine_candidate.py：只从已有制作元数据提取4×16动作路径、时间、瓶身中心锚点、比例及SHA，验证Godot现有副本与原图一致；复用现有antibody/sprite.png。没有生成/改写图片。
+- vaccine-candidate-contract.txt、medicine-multitype-extension-proposal.txt与本报告。
+
+独立逻辑已实现
+真实post-damage事件+单调hitId触发；明确仅attack/projectile/collision正伤害敌方单位主动命中，环境/自身/同盟/DOT/0伤害不触发；致死命中可最后掉1枚。合法通知在CD/满额/找位失败时也提交高水位，不能稍后重放补掉。
+1秒CD、每次1枚；原层合法点/有限近邻搜索，点和真实段都需许可；地面对象自身保存位置/层、owner、出生/到期，来源移动/死亡/释放动画结束都不带走它。
+每枚12模拟秒、中心路径接触半径0.45、伤害8；首次合法敌方病毒接触先原子消耗再同步回调战斗伤害。每源12/全局128，满额不覆盖原对象。
+几何、伤害、病毒分类四项回调均必需，几何/分类严格bool true才许可。分类接WarData.is_virus，独立服务不硬编码病毒清单、不调用is_pathogen；测试含宿主注册未来virus身份，细菌和未分类病原不误伤。
+支持快速扫掠、真实分段转弯/层信息和接触时刻TTL比较；无换层轨迹不跨投影连线；未知新单位默认只观察帧末位置，明确出生比例可防止出生前误触到期对象。初始单位可begin种入位置，不制造假tick。
+暂停/倍速只有一个时间入口；保存lastStepId、lastHitId、源CD、对象和先前位置，恢复不重放事件。重复tick拒绝，已消费对象不复活；回调期间拒绝递归和半事务snapshot，要求宿主在固定步末尾原子保存匹配的世界HP与服务快照。
+move/hit/release/death采样复用现有16帧；受击后安排释放视觉，死亡优先。采样不生成对象或伤害，独立地面采样固定在地图点。
+
+首轮候选助手默认：价格120、生命90、移动2.0、90模拟秒。只是helperProposal；本服务未创建真实疫苗助手或处理其90秒生命。
+
+验证
+./godot/run.sh --headless --script res://tests/vaccine_antibodies.gd：144/144。
+证据：godot/test-output/vaccine/antibodies.log、antibodies.json。
+覆盖：配置拒绝、真实白名单/来源/正伤害、致死、CD与过后重放拒绝、坏命中身份、找位失败与墙/严格谓词、有限搜索、12/128上限、独立位置及来源消失、快速完整跨越、弯路和跨层、同盟/细菌/死目标/建筑排除、同刻多枚对新死目标跳过、暂停/倍速/TTL前后、大dt、出生时间、JSON往返/旧世界隔离/坏档不替换、提交位防二次效果、回调重入、未来显式病毒分类与素材采样。
+编辑器import本批成功，无ERROR/SCRIPT ERROR/Parse Error/WARNING；最终144脚本日志亦无引擎错误/警告。
+最初1项失败为JSON数字int/float的整字典相等断言，改为逐值比较后通过，未放宽效果条件。
+本批未做实际战场、购买、派遣、HUD、整世界存读档或原生窗口验收；144项是独立服务专项，不能称疫苗已实装/开售。
+
+接线前已识别画面门
+release-16/frame-008.png等原图含两枚蓝色示意抗体，部分与运动线连接；首版实际只掉1枚。clips.release.worldRenderingStatus / sample.containsIllustratedDrops显式标记需要角色本体隔离，不能把全幅释放图与一枚独立地面抗体直接叠加后当作数量正确。
+本批遵守不生图，不删除/重画/裁切原美术。未来角色本体隔离呈现、真实瓶身静态凸包/各帧选中轮廓与原生画面检查，留给独立接线阶段；没有拿红细胞或退烧药轮廓冒充疫苗。
+
+下一步合同与多药扩展
+vaccine-candidate-contract.txt明确回调签名、真实hitId来源与保存、固定步/出生/轨迹、消费事务和画面门。
+medicine-multitype-extension-proposal.txt提出供给v2逐药库存/计数、保持旧fever迁移幂等、共享runId/序号回执绑定药品请求、跨药预算预留、独立helper/effect注册表、整个世界快照原子验证和逐项release验收。
+公共supply/helpers/simulation/combat/save/world_view/config/HUD及medicines.json均未在本疫苗批次编辑；不会覆盖根/T正在进行的现役药物与战斗修复。
+化痰药保持既有待确认机制与单张立绘，未改设定/制作动画/开售。
+没有提交、推送、远端构建或外部消息。

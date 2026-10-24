@@ -5,6 +5,52 @@ var game: WarSimulation
 func _init(owner: WarSimulation) -> void:
 	game = owner
 
+func begin_lung_defense() -> void:
+	# This event uses the certified full-body lung, economy and infection patch.
+	# Keep the frozen fullbody start untouched for its existing entry and tests.
+	for e in game.units():
+		if e.faction == 1: game.state.entities.erase(str(e.id))
+	game.state.influenzaColonies = {"version":1,"groups":{}}
+	var home := Vector2.INF
+	var desired := Vector2(1232,1176)
+	for radius in 45:
+		for dx in range(-radius,radius+1,3):
+			for dy in range(-radius,radius+1,3):
+				var candidate := desired+Vector2(dx,dy)
+				if game.navigation.organ_at(candidate,"worker") != "lung_l": continue
+				if not game.economy._footprint_allowed(candidate,1.5): continue
+				if candidate.distance_to(Vector2(1232.25549,1226.91052)) < 45: continue
+				home = candidate
+				break
+			if home.is_finite(): break
+		if home.is_finite(): break
+	if not home.is_finite():
+		push_error("No certified left-lung base site for lung defense")
+		return
+	var base := game.spawn("core",1,home,"building")
+	if base.is_empty(): return
+	var workers: Array[int] = []
+	for radius in range(2,18):
+		for x in range(-radius,radius+1):
+			for y in range(-radius,radius+1):
+				if maxi(absi(x),absi(y)) != radius: continue
+				var point := home+Vector2(x,y)*2.4
+				if game.navigation.organ_at(point,"worker") != "lung_l" or not game.navigation.point_allowed(point,0,"worker"): continue
+				if point.distance_to(home) < 3.5 or workers.any(func(id): return WarData.point(game.entity(int(id))).distance_to(point) < 2.2): continue
+				var worker := game.spawn("worker",1,point)
+				if worker.is_empty() or int(worker.vesselLane) != 0:
+					if not worker.is_empty(): game.state.entities.erase(str(worker.id))
+					continue
+				workers.append(int(worker.id))
+				if workers.size() == 20: break
+			if workers.size() == 20: break
+		if workers.size() == 20: break
+	workers.sort_custom(func(a,b): return WarData.point(game.entity(int(a))).distance_squared_to(home) > WarData.point(game.entity(int(b))).distance_squared_to(home))
+	game.state.lungDefense = {"version":1,"phase":"preparing","elapsed":0.0,"preparationSeconds":120.0,
+		"base":int(base.id),"workers":workers,"populationBonus":20,"organ":"lung_l","placement":0,"waveCount":13,"colony":""}
+	game.navigation.blockers = game.entities().filter(func(e): return e.category == "building" and e.hp > 0 and not e.has("checkpointId"))
+	game.notify("左肺防线 · 120 秒准备：指挥红细胞建造分裂兵巢，再训练白细胞")
+
 func systemic() -> Dictionary:
 	return game.state.systemicBattle if game.state.get("systemicBattle") is Dictionary else {}
 
@@ -22,6 +68,15 @@ func home() -> Vector2:
 	return Vector2(1000,1900)
 
 func before_step(dt: float) -> void:
+	var defense: Dictionary = game.state.get("lungDefense",{})
+	if defense.get("phase","") == "preparing":
+		defense.elapsed = minf(float(defense.preparationSeconds),float(defense.elapsed)+dt/maxf(1.0,game.speed))
+	if defense.get("phase","") == "preparing" and float(defense.elapsed)+.000001 >= float(defense.preparationSeconds):
+		var group := game.influenza.start_outbreak(str(defense.get("organ","lung_r")),int(defense.placement),int(defense.waveCount))
+		if not group.is_empty():
+			defense.phase = "infected"
+			defense.colony = group.id
+			game.notify(defense_name()+"感染地板出现 · 流感病毒入侵！")
 	if game.is_campaign():
 		_campaign_before(dt)
 	var q := systemic()
@@ -64,7 +119,22 @@ func before_step(dt: float) -> void:
 				q.growth = 0
 				break
 
+func defense_name() -> String:
+	return "左肺" if game.state.get("lungDefense",{}).get("organ","") == "lung_l" else "右肺"
+
 func after_step(dt: float) -> void:
+	var defense: Dictionary = game.state.get("lungDefense",{})
+	if defense.get("phase","") in ["preparing","infected"] and not game.entities().any(func(e): return e.faction == 1 and e.hp > 0 and not e.has("checkpointId")):
+		defense.phase = "failed"
+		defense.finishedAt = game.state.time
+		game.paused = true
+		game.notify(defense_name()+"防线失守 · 可读取存档或重新开始")
+	if defense.get("phase","") == "infected":
+		var group: Dictionary = game.state.get("influenzaColonies",{}).get("groups",{}).get(defense.get("colony",""),{})
+		if not group.is_empty() and group.get("cleared",false):
+			defense.phase = "defended"
+			defense.finishedAt = game.state.time
+			game.notify(defense_name()+"防线稳固 · 感染地板已净化")
 	if game.is_campaign():
 		_campaign_after(dt)
 	var q := systemic()
@@ -161,8 +231,8 @@ func unit(e: Dictionary,dt: float) -> bool:
 	return false
 
 func _pathogen(e: Dictionary,dt: float) -> bool:
-	var defender := game.combat.enemy(e,3,false)
-	if not defender.is_empty() and game.combat.fight(e,defender,dt,false): return true
+	var defender := game.combat.enemy(e,float(WarData.spec(e.kind).get("vision",3)),false)
+	if not defender.is_empty() and int(defender.get("vesselLane",0)) == int(e.get("vesselLane",0)) and game.navigation.clear_segment(WarData.point(e),WarData.point(defender),int(e.get("vesselLane",0)),e.kind) and game.combat.fight(e,defender,dt,true): return true
 	var lane := int(e.get("vesselLane",0))
 	var ports: Array = WarData.read("checkpoints").ports
 	var port: Dictionary = {}

@@ -49,10 +49,9 @@ func setup(owner: WarHUD) -> void:
 	feedback.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	feedback.add_theme_font_size_override("font_size",13)
 	feedback.add_theme_color_override("font_color",WarUISkin.INK)
-	feedback.add_theme_stylebox_override("normal",StyleBoxEmpty.new())
+	feedback.add_theme_stylebox_override("normal",WarUISkin.painted_panel(Color.WHITE,12,6,"button"))
 	feedback.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(feedback)
-	WarFacetSurface.attach(feedback,WarUISkin.CREAM,3,10)
 	hide()
 
 func _center_pressed() -> void:

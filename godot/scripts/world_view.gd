@@ -341,7 +341,7 @@ func _draw_unit(e: Dictionary,dead: bool) -> void:
 		return
 	if camera.zoom.x/32.0 < .14:
 		if not dead:
-			if game.selected.has(int(e.id)): _canvas.draw_circle(p,4.0/camera.zoom.x,Color("eaebb8"))
+			if e.kind != "worker" and game.selected.has(int(e.id)): _canvas.draw_circle(p,4.0/camera.zoom.x,Color("eaebb8"))
 			_canvas.draw_circle(p,2.0/camera.zoom.x,faction_color(int(e.faction)))
 			_draw_scan_mark(e,p,radius)
 		return
@@ -698,7 +698,7 @@ static func _inside(p: Vector2,points: Array) -> bool:
 
 func _draw_hidden(e: Dictionary,p: Vector2) -> void:
 	var radius := maxf(3.2/camera.zoom.x,WarData.radius(e.kind))
-	var color := Color(105.0/255,235.0/255,203.0/255,210.0/255) if game.selected.has(int(e.id)) else Color(83.0/255,102.0/255,116.0/255,140.0/255)
+	var color := Color(105.0/255,235.0/255,203.0/255,210.0/255) if game.selected.has(int(e.id)) and e.kind != "worker" else Color(83.0/255,102.0/255,116.0/255,140.0/255)
 	for i in 6:
 		var a := i*PI/3
 		var b := a+PI/6
@@ -741,8 +741,11 @@ func _draw_selection(e: Dictionary,p: Vector2,radius: float,pose: Dictionary) ->
 		if rotation.mirror: point.x = -point.x
 		outline.append(p+point.rotated(rotation.angle)*radius*float(rotation.pulse))
 	outline.append(outline[0])
-	_canvas.draw_polyline(outline,Color(41.0/255,64.0/255,69.0/255,210.0/255),3/camera.zoom.x,true)
-	_canvas.draw_polyline(outline,Color("69ebcb"),1.5/camera.zoom.x,true)
+	if e.kind == "worker":
+		_canvas.draw_polyline(outline,Color(41.0/255,64.0/255,69.0/255,210.0/255),1.5/camera.zoom.x,true)
+	else:
+		_canvas.draw_polyline(outline,Color(41.0/255,64.0/255,69.0/255,210.0/255),3/camera.zoom.x,true)
+		_canvas.draw_polyline(outline,Color("69ebcb"),1.5/camera.zoom.x,true)
 
 func unit_position(e: Dictionary) -> Vector2:
 	var p := WarData.point(e)

@@ -16,6 +16,7 @@ func press(button: Button) -> void:
 	await create_timer(.28).timeout
 
 func run() -> void:
+	WarSave.directory = "user://test-saves/cover-flow-"+str(Time.get_ticks_usec())
 	var main: Node2D = load("res://scenes/main.tscn").instantiate()
 	root.add_child(main); current_scene = main
 	for i in 3: await process_frame
@@ -26,10 +27,12 @@ func run() -> void:
 	check(main.hud.menu.visible and cover.visible,"tutorial opens existing guide over cover")
 	main.hud.close_menu()
 	await press(cover.buttons[3])
-	check(main.hud.menu.visible and main.hud.menu_body.get_child(0).text == "设置与游戏入口","settings opens real settings")
+	check(main.hud.menu.visible and main.hud.menu_body.get_child(0).text == "设置","settings opens real settings")
 	main.hud.close_menu()
 	await press(cover.buttons[0])
-	check(not cover.visible and main.game.mode == "fullbody" and main.game.life.enabled(),"start retains the current authored life entry")
+	check(cover.visible and main.hud.menu.visible,"start opens save selection over cover")
+	await press(main.hud.menu_body.get_child(2))
+	check(not cover.visible and main.game.mode == "fullbody" and main.game.state.get("lungDefense",{}).get("organ","") == "lung_l","new save starts authored left-lung defense")
 	check(main.world.visible and main.world.process_mode == Node.PROCESS_MODE_INHERIT,"entering gameplay restores map compositor")
 	main.hud.return_home()
 	await process_frame

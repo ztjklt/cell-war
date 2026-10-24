@@ -9,7 +9,6 @@ var drag_start := Vector2.ZERO
 var drag_current := Vector2.ZERO
 var dragging := false
 var drag_box := false
-var autosave_at := 360.0
 var overlay: Node2D
 var audio: WarAudio
 var overview_active := false
@@ -18,10 +17,13 @@ var map_frame: WarDeskMapFrame
 var camera_travel: WarCameraTravel
 var desk_layer: CanvasLayer
 var settings := WarSettings.new()
+var saves := WarSaveSession.new()
 
 func _ready() -> void:
 	settings.load_from_disk()
 	settings.apply(get_window())
+	get_tree().auto_accept_quit = false
+	get_window().close_requested.connect(_close_game)
 	# The world-space paper clip has a fractional origin. GUI pixel snapping
 	# rounds it before camera zoom, displacing the map by up to half a world unit.
 	get_viewport().gui_snap_controls_to_pixels = false
@@ -59,11 +61,12 @@ func _ready() -> void:
 	hud.focus_requested.connect(focus)
 	hud.overview_requested.connect(return_overview)
 	hud.zoom_requested.connect(_zoom_selected)
-	hud.restart_requested.connect(start)
+	hud.restart_requested.connect(new_run)
+	hud.new_save_requested.connect(func(): new_run("lung_defense"))
+	hud.continue_save_requested.connect(continue_run)
 	hud.wheel.confirmed.connect(_radial_command)
 	game.state_replaced.connect(func():
 		hud.inspection.clear()
-		_schedule_autosave()
 		if game.is_campaign(): focus(game.scenarios.home(),2.4))
 	get_viewport().size_changed.connect(func():
 		if overview_active: call_deferred("overview")
@@ -105,11 +108,15 @@ func start(mode: String) -> void:
 	hud.inspection.clear()
 	hud.home.hide()
 	world.layer = 0
-	_schedule_autosave()
 	if game.mode == "fullbody":
-		for e in game.units():
-			if e.kind == "worker" and e.faction == 1:
-				game.selected.append(int(e.id)); focus(WarData.point(e),.25*32); break
+		var defense: Dictionary = game.state.get("lungDefense",{})
+		if not defense.is_empty():
+			var worker := game.entity(int(defense.workers[0]))
+			if not worker.is_empty(): game.selected.append(int(worker.id)); focus(WarData.point(worker),.25*32)
+		else:
+			for e in game.units():
+				if e.kind == "worker" and e.faction == 1:
+					game.selected.append(int(e.id)); focus(WarData.point(e),.25*32); break
 	else: focus(game.scenarios.home(),18 if not game.is_campaign() else 2.4)
 	if mode == "systemic":
 		var q := game.scenarios.systemic()
@@ -148,6 +155,11 @@ func focus(p: Vector2,zoom: float) -> void:
 
 func _camera_map_offset() -> void:
 	var view := get_viewport_rect().size
+	camera.zoom = Vector2.ONE*clampf(camera.zoom.x,minimum_zoom(),2.8*32)
+	camera.position = bounded_camera_point(camera.position,camera.zoom.x)
+	if camera_travel != null and camera_travel.active:
+		camera_travel.target_zoom = clampf(camera_travel.target_zoom,minimum_zoom(),2.8*32)
+		camera_travel.target_position = bounded_camera_point(camera_travel.target_position,camera_travel.target_zoom)
 	camera.offset = (view*.5-WarDeskMapFrame.rect_for(view).get_center())/camera.zoom
 	camera.force_update_scroll()
 	if map_frame != null: map_frame.sync_size()
@@ -177,22 +189,31 @@ func return_overview() -> void:
 	overview_active = true
 
 func _clamp_camera() -> void:
-	camera.position.x = clampf(camera.position.x,3,float(game.state.get("mapWidth",2048))-3)
-	camera.position.y = clampf(camera.position.y,3,float(game.state.get("mapHeight",4096))-3)
+	camera.position = bounded_camera_point(camera.position,camera.zoom.x)
+
+func bounded_camera_point(point: Vector2,zoom: float) -> Vector2:
+	var dimensions := Vector2(game.state.get("mapWidth",2048),game.state.get("mapHeight",4096))
+	if not game.is_fullbody(): return point.clamp(Vector2.ONE*3,dimensions-Vector2.ONE*3)
+	var view := get_viewport_rect().size
+	var field := WarDeskMapFrame.rect_for(view).get_center()
+	var desk := WarDeskMapFrame.overview_projection(view,dimensions).affine_inverse()*Rect2(Vector2.ZERO,view)
+	# Constrain the visible rectangle, including the desk outside the anatomy.
+	var lower := desk.position+field/zoom
+	var upper := desk.end-(view-field)/zoom
+	if zoom <= minimum_zoom()+.000001: return dimensions*.5
+	return point.clamp(lower,upper)
 
 func _process(delta: float) -> void:
 	if world.infections.enabled: game.paused = true
+	var defense_phase: String = game.state.get("lungDefense",{}).get("phase","")
 	game.update(delta)
-	if game.state.time >= autosave_at:
-		if game.life.enabled(): WarSave.write_life_auto(game)
-		else: WarSave.write(game,0)
-		_schedule_autosave()
+	if defense_phase != game.state.get("lungDefense",{}).get("phase","") and game.state.get("lungDefense",{}).get("phase","") in ["defended","failed"]:
+		save_progress()
+	if not saves.active_path.is_empty() and not hud.home.visible:
+		saves.since_save += delta
+		if saves.since_save >= WarSaveSession.INTERVAL: save_progress()
 	_update_camera_controls(delta)
 	queue_redraw()
-
-func _schedule_autosave() -> void:
-	var period := 180.0 if game.life.enabled() else 360.0
-	autosave_at = (floorf(float(game.state.time)/period)+1)*period
 
 func _update_camera_controls(delta: float) -> void:
 	if hud.menu.visible or hud.home.visible or hud.wheel.visible: return
@@ -204,10 +225,10 @@ func _update_camera_controls(delta: float) -> void:
 		# Keep the same travel speed on screen at every zoom level.
 		var position := camera_travel.target_position if camera_travel.active else camera.position
 		var zoom := camera_travel.target_zoom if camera_travel.active else camera.zoom.x
-		var bounds := Vector2(float(game.state.get("mapWidth",2048)),float(game.state.get("mapHeight",4096)))
-		position = (position+direction*600.0*delta/zoom).clamp(Vector2.ONE*3.0,bounds-Vector2.ONE*3.0)
-		camera_travel.aim(position,zoom)
-		overview_active = false
+		if not game.is_fullbody() or zoom > minimum_zoom()+.000001:
+			position = bounded_camera_point(position+direction*600.0*delta/zoom,zoom)
+			camera_travel.aim(position,zoom)
+			overview_active = false
 	var zoom_direction := Input.get_axis("camera_zoom_out","camera_zoom_in")
 	if zoom_direction != 0:
 		_zoom_selected(exp(zoom_direction*delta*2.2))
@@ -285,7 +306,7 @@ func _zoom(factor: float,at: Vector2,keep_center := false) -> void:
 	var point := camera_travel.target_position if camera_travel.active else camera.position
 	if not keep_center:
 		point = get_canvas_transform().affine_inverse()*at-(at-field.get_center())/zoom
-	point = point.clamp(Vector2.ONE*3,Vector2(game.state.get("mapWidth",2048),game.state.get("mapHeight",4096))-Vector2.ONE*3)
+	point = bounded_camera_point(point,zoom)
 	camera_travel.aim(point,zoom)
 
 func _zoom_selected(factor: float) -> void:
@@ -409,6 +430,68 @@ func _key(event: InputEventKey) -> void:
 func _exit_tree() -> void:
 	# Services hold typed references during play. Break their cycles on shutdown.
 	game.dispose()
+
+func _save_view() -> Dictionary:
+	var user_paused := hud._saved_pause if hud.menu.visible else game.paused
+	if hud.life_dialogue._owns_pause: user_paused = hud.life_dialogue._previous_pause
+	return {"x":camera.position.x,"y":camera.position.y,"zoom":camera.zoom.x,"layer":world.layer,
+		"paused":user_paused}
+
+func save_progress() -> Error:
+	if hud.home.visible: return OK
+	return saves.save(game,_save_view())
+
+func new_run(mode := "lung_defense") -> void:
+	if save_progress() != OK: hud.show_save_error("当前进度未保存，尚未开始新存档。请重试。"); return
+	var previous := game.snapshot()
+	var previous_mode := game.mode
+	var previous_selection := game.selected.duplicate()
+	var previous_groups := game.groups.duplicate(true)
+	var previous_speed := game.speed
+	var previous_view := _save_view()
+	var was_home := hud.home.visible
+	hud.close_menu()
+	start(mode)
+	game.speed = 1.0
+	var result := saves.create(game,"" if mode == "lung_defense" else mode+" · "+Time.get_datetime_string_from_system().replace("T"," "),_save_view())
+	if result != OK:
+		game.mode = previous_mode; game.restore(previous)
+		game.selected.assign(previous_selection); game.groups = previous_groups; game.speed = previous_speed
+		_apply_save_view(previous_view)
+		hud.home.visible = was_home
+		hud.show_save_error("新建存档失败："+error_string(result)+"；原进度已保留。")
+		return
+	game.notify("已新建独立存档 · 进度每 15 秒自动保存")
+
+func continue_run(source: String) -> void:
+	if save_progress() != OK: hud.show_save_error("当前进度未保存，尚未切换存档。请重试。"); return
+	var result := saves.resume(game,source)
+	if result != OK: hud.show_save_error("读取失败："+error_string(result)+"；当前游戏保持不变。"); return
+	if is_instance_valid(infection_preview): infection_preview.queue_free(); infection_preview = null
+	hud.close_menu(); hud.home.hide(); hud.wheel.close()
+	command_mode = ""; drag_button = 0; dragging = false
+	_apply_save_view(saves.view)
+	hud._layout()
+	game.notify("已继续 · "+saves.title)
+
+func _apply_save_view(view: Dictionary) -> void:
+	var point := game.scenarios.home()
+	var zoom := 8.0
+	if WarSave._number(view.get("x")) and WarSave._number(view.get("y")): point = Vector2(view.x,view.y)
+	if WarSave._number(view.get("zoom")): zoom = clampf(float(view.zoom),minimum_zoom(),2.8*32)
+	world.layer = clampi(int(view.layer),0,6) if WarSave._number(view.get("layer")) else 0
+	focus(point,zoom)
+	game.paused = bool(view.get("paused",false)) or game.state.get("lungDefense",{}).get("phase","") == "failed"
+	hud._saved_pause = game.paused
+
+func _close_game() -> void:
+	if save_progress() != OK:
+		hud.show_save_error("关闭前未能保存进度。请检查磁盘空间后重试；游戏仍保持打开。")
+		return
+	get_tree().quit()
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_APPLICATION_PAUSED and hud != null and not saves.active_path.is_empty(): save_progress()
 
 func minimum_zoom() -> float:
 	return WarDeskMapFrame.overview_zoom(get_viewport_rect().size,Vector2(game.state.get("mapWidth",2048),game.state.get("mapHeight",4096)))

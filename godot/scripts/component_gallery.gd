@@ -3,7 +3,7 @@ extends Control
 var notice: Label
 
 func _ready() -> void:
-	get_window().title = "细胞战争 · 多面体组件试用"
+	get_window().title = "细胞战争 · 细胞膜组件试用"
 	theme = WarUISkin.theme()
 	var background := ColorRect.new()
 	background.color = Color("fffbf4")
@@ -20,7 +20,7 @@ func _ready() -> void:
 	body.add_theme_constant_override("separation",20)
 	margin.add_child(body)
 	body.add_child(_label("细胞指挥 · 组件试用",34,true))
-	body.add_child(_label("奶油米色 / 可可棕 / 杏珊瑚 · 多面体切面与动态交互",16))
+	body.add_child(_label("奶油中心 / 珊瑚膜边 / 深梅色轮廓 · 原生动态交互",16))
 	var columns := HFlowContainer.new()
 	columns.add_theme_constant_override("h_separation",24)
 	columns.add_theme_constant_override("v_separation",24)

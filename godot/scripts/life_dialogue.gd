@@ -2,9 +2,9 @@ class_name WarLifeDialogue
 extends Control
 ## Live external conversations on the desk phone; presentation never advances time.
 signal incoming_message
-const INK := Color("151515")
-const MUTED := Color("747474")
-const ON_DESK := Color("14211b")
+const INK := WarUISkin.INK
+const MUTED := WarUISkin.MUTED
+const ON_DESK := WarUISkin.INK
 const ENTER_SECONDS := .34
 var hud: WarHUD
 var panel: MarginContainer
@@ -43,8 +43,8 @@ class BubbleShell extends PanelContainer:
 		var x := size.x if own else 0.0
 		var tip := 6.0 if own else -6.0
 		var points := PackedVector2Array([Vector2(x,11),Vector2(x+tip,16),Vector2(x,21)])
-		draw_colored_polygon(points,INK if own else Color.WHITE)
-		if not own: draw_polyline(points,Color("e2e2e2"),1,true)
+		draw_colored_polygon(points,Color("e5cbe5") if own else WarUISkin.CREAM)
+		if not own: draw_polyline(points,WarUISkin.LINE,1,true)
 
 func setup(owner: WarHUD) -> void:
 	hud = owner
@@ -92,24 +92,21 @@ func _label(text: String,font_size: int,color := INK) -> Label:
 	line.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	return line
 
-static func _white_box(fill := Color.WHITE) -> StyleBoxFlat:
-	var skin := StyleBoxFlat.new(); skin.bg_color = fill
-	skin.set_corner_radius_all(11); skin.set_border_width_all(1)
-	skin.border_color = Color("e2e2e2")
-	skin.content_margin_left = 12; skin.content_margin_right = 12
+static func _white_box(fill := Color.WHITE) -> StyleBoxTexture:
+	var skin := WarUISkin.painted_panel(fill,12,12,"button")
 	skin.content_margin_top = 9; skin.content_margin_bottom = 9
 	return skin
 
 func _small_button(text: String,callback: Callable,parent: Node) -> Button:
 	var button := Button.new(); button.text = text; button.focus_mode = Control.FOCUS_NONE
+	WarUISkin.apply_button(button)
 	button.custom_minimum_size = Vector2(0,24)
 	button.add_theme_font_override("font",WarUISkin.BODY); button.add_theme_font_size_override("font_size",12)
-	for state in ["normal","disabled","focus"]: button.add_theme_stylebox_override(state,StyleBoxEmpty.new())
-	for state in ["hover","pressed"]:
-		var skin := _white_box(Color("e3e8d9")); skin.set_border_width_all(0)
+	for state in WarUISkin.STATES:
+		var skin := WarUISkin.button_box(state,"",12,"compact")
+		skin.content_margin_left = 4; skin.content_margin_right = 4
 		skin.content_margin_top = 2; skin.content_margin_bottom = 2
 		button.add_theme_stylebox_override(state,skin)
-	for state in ["font_color","font_hover_color","font_pressed_color","font_focus_color"]: button.add_theme_color_override(state,ON_DESK)
 	button.pressed.connect(callback); parent.add_child(button)
 	return button
 
@@ -161,7 +158,7 @@ func submit_choice(token: int,index: int) -> bool:
 	if not hud.game.life.choose(token,index): return false
 	_settled_history_count = int(hud.game.life.state().decisionCount)
 	_release_pause(); _key = ""
-	WarSave.write_life_auto(hud.game)
+	_save_progress()
 	return true
 
 func _entry(widget: Control,start: float,side: int,own := false,option := false) -> void:
@@ -190,12 +187,9 @@ func _bubble(speaker: String,text: String,own: bool,start: float) -> void:
 		if own: name_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 		block.add_child(name_label); height += ceilf(WarUISkin.BODY.get_height(11))+5
 	var shell := BubbleShell.new(); shell.own = own; block.add_child(shell)
-	var skin := _white_box(INK if own else Color.WHITE)
-	if own: skin.set_border_width_all(0)
-	skin.corner_radius_top_right = 3 if own else 11
-	skin.corner_radius_top_left = 11 if own else 3
+	var skin := _white_box(Color("ebd4ec") if own else Color.WHITE)
 	shell.add_theme_stylebox_override("panel",skin)
-	shell.add_child(_label(text,15,Color.WHITE if own else INK))
+	shell.add_child(_label(text,15,INK))
 	row.custom_minimum_size.y = height
 	_entry(row,start,1 if own else -1,own)
 
@@ -216,11 +210,7 @@ func _option(item: Dictionary,index: int,token: int) -> void:
 	var option: Dictionary = item.options[index]
 	var button := Button.new(); button.focus_mode = Control.FOCUS_NONE
 	button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
-	for state in ["normal","disabled","focus","hover","pressed"]:
-		var fill := Color("f4f4f4") if state in ["hover","pressed"] else Color.WHITE
-		var skin := _white_box(fill)
-		if state == "focus": skin.border_color = INK
-		button.add_theme_stylebox_override(state,skin)
+	WarUISkin.apply_button(button)
 	var body := VBoxContainer.new(); body.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	body.add_theme_constant_override("separation",4); button.add_child(body)
 	body.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -318,6 +308,10 @@ func layout() -> void:
 	var size := get_viewport_rect().size
 	var narrow := size.x < 720
 	var frame := WarDeskPhone.rect_for(size,expanded)
+	if narrow and expanded:
+		# The native selection card can grow with its contents; keep the phone's
+		# scrollable screen above it instead of covering either set of controls.
+		frame.size.y = minf(frame.size.y,maxf(250,hud.panel.position.y-frame.position.y-12))
 	phone.position = frame.position; phone.size = frame.size
 	var screen := phone.content_rect()
 	panel.position = phone.position+screen.position
@@ -341,12 +335,12 @@ func _process(delta: float) -> void:
 	if token > 0 and token != _seen and preview_id.is_empty():
 		_seen = token; expanded = true; _take_pause()
 		incoming_message.emit()
-		WarSave.write_life_auto(hud.game)
+		_save_progress()
 	layout()
 	var key := "%s:%s:%s" % [s.revision,preview_id,s.phase]
 	if key != _key:
 		_key = key; _rebuild()
-		if s.phase == "ended": WarSave.write_life_auto(hud.game)
+		if s.phase == "ended": _save_progress()
 	summary.text = "金钱 %d  ·  机能 %.1f  ·  %.1f岁" % [int(s.money),float(s.function),float(s.age)]
 	var remaining := maxi(0,ceili(float(s.nextDecisionAt)-float(s.activeElapsed)))
 	summary.tooltip_text = "身体机能 %.1f / 100 · 已完成 %d 次选择\n下次联系约 %d分%02d秒" % [float(s.function),int(s.decisionCount),remaining/60,remaining%60]
@@ -357,3 +351,7 @@ func _process(delta: float) -> void:
 	elif not preview_id.is_empty(): clock.text = "事件预览 · 不结算"
 	else: clock.text = "待回复 · 收起可继续战斗" if not expanded else ""
 	_animate(delta)
+
+func _save_progress() -> void:
+	var scene := get_tree().current_scene
+	if scene != null and scene.has_method("save_progress"): scene.save_progress()

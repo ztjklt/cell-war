@@ -17,14 +17,14 @@ func setup(owner_node) -> void:
 	shell.theme = WarUISkin.theme()
 	add_child(shell)
 	panel = PanelContainer.new()
-	panel.add_theme_stylebox_override("panel",WarHUD.style(WarUISkin.CREAM,16))
+	panel.add_theme_stylebox_override("panel",WarUISkin.painted_panel(Color.WHITE,18,10))
 	shell.add_child(panel)
 	var column := VBoxContainer.new()
 	column.add_theme_constant_override("separation",9)
 	panel.add_child(column)
 	var title := Label.new(); title.text = "感染区域 · 地表预览"
 	title.add_theme_font_size_override("font_size",18); column.add_child(title)
-	selector = OptionButton.new(); column.add_child(selector)
+	selector = OptionButton.new(); WarUISkin.apply_button(selector); column.add_child(selector)
 	var zones: Array = main.world.infections.data.zones
 	for zone in zones: selector.add_item(zone.name)
 	selector.item_selected.connect(func(index): show_organ(zones[index].organ))
@@ -50,6 +50,7 @@ func setup(owner_node) -> void:
 
 func button(text: String,action: Callable,parent: Control) -> Button:
 	var node := Button.new(); node.text = text
+	WarUISkin.apply_button(node)
 	node.custom_minimum_size.y = 34
 	node.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	node.pressed.connect(action); parent.add_child(node)

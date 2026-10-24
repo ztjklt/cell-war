@@ -44,4 +44,49 @@
 ./godot/run.sh --script res://tests/catalogue_review.gd
 ```
 
-专项检查运行 `tests/cover_preview.gd`，覆盖 1280×800、360×780 与 844×390 原生窗口。`tests/cover_flow.gd` 另检查从真实封面进入图鉴、浏览药物和地图后返回，战局状态保持逐字一致。截图与报告仍写入本机 `test-output/cover/`，不代表手机真机或完整游戏验收。
+专项检查运行 `tests/catalogue_polish.gd`，覆盖 1280×800、360×780 与 844×390 原生窗口；`tests/cover_preview.gd` 仅检查建筑页签与滚动结构。`tests/cover_flow.gd` 另检查从真实封面进入图鉴、浏览药物和地图后返回，战局状态保持逐字一致。截图与报告仍写入本机 `test-output/cover/`，不代表手机真机或完整游戏验收。
+
+
+## 2026-10-24 · 收藏图鉴精修
+
+角色预览使用独立的 `catalogue_skin.gd`，保留奶油、可可、青绿配色及全部 24 角色、88 组原始动作。分类、搜索和缩略图归入左栏；右侧以角色名、档案编号、展示台、动作控制及机制数值构成清晰层级。窄屏保持列表/详情切换，844×390 矮横屏合并顶部页签与工具条，列表至少能完整显示一排角色。较矮桌面窗口缩小展示台，使动作菜单、暂停和重播无需滚动即可操作。暂停后重播会从头播放，自动循环中有原生可见的当前动作名。
+
+展示台以实际巨噬细胞、B细胞和既有米白可可 UI 为风格参考，使用内置 GPT imagegen 生成并按原生审阅修订为横向版本。原稿、v2、完整提示词、参考路径及哈希见仓库根目录 `assets/image/catalogue-stage-20261024/`，运行素材为 `assets/ui/catalogue/specimen-stage.png`。背景按比例绘制且圆角裁剪；角色、动态文字和交互均保持独立。
+
+卡片使用 24 张最长边 192px 的派生缩略图；离线生成器为根目录 `scripts/godot_tools/build_catalogue_thumbnails.gd`，裁剪边界和来源哈希保留于 `thumbnails.json`。详情仍读取原始立绘/动画，不改变时长或图集矩形。按基础 RGBA 尺寸估算，缩略图合计约3.13 MiB，原21个唯一立绘约110.99 MiB；此数值不是显存实测。
+
+验证入口：
+
+```sh
+./godot/run.sh --headless --editor --import --quit
+./godot/run.sh --headless --script res://tests/catalogue_polish.gd
+./godot/run.sh --script res://tests/catalogue_polish.gd
+./godot/run.sh --headless --script res://tests/catalogue_sync.gd
+./godot/run.sh --headless --script res://tests/cover_flow.gd
+./godot/run.sh --headless --script res://tests/run_tests.gd
+python3 scripts/godot_tools/audit_integrity.py
+```
+
+本轮独立代码审阅提出的矮横屏卡片裁剪、触控看不到当前动作名已修复并加入回归。原生审阅另修复切页后面板不回缩、首次选择滚动定位过早、桌面控制栏被折叠等问题。合成鼠标事件检查覆盖分类、中文搜索、清空、空结果、长动作切换、暂停重播、前后角色、地图建筑切页、滚轮、Tab与Esc；真实主场景检查确认预览不改变战局数据。原生截图和报告写在本机 `test-output/catalogue-polish/`，不提交。上述仅为本轮预览范围，不代表手机真机、云存档或全游戏验收。
+
+本轮最终结果：无界面模式514/514、原生535/535（含21张截图写入检查）、基础规则52/52、图鉴同步57/57与封面流程检查通过，1955个登记素材无缺失或哈希不符。headless多次快速开关/加载后的退出偶见 `ObjectDB` 的 `RefCounted` 警告（verbose显示reference count 0）；最终原生运行无此警告，尚不据此断言共享纹理系统不存在退出期泄漏。
+
+## 2026-10-24 · GPT 组件皮肤与交互动效
+
+预览里的主面板、按钮、页签、角色卡、数值卡、建筑卡、搜索框、动作下拉、进度条及滚动条统一使用 GPT 生成的细胞膜材质，播放、暂停、重播、搜索、清空、箭头和页签使用同批生成图标。通过原生 `StyleBoxTexture` 九宫格拉伸保留边缘与高光，原生状态色统一青绿选择态；原生文字、数值、进度和点击继续独立。绿色面板候选因中心 alpha 异常被淘汰，原稿仍留档，运行时使用合格奶油面板配原生染色。
+
+原稿、实际参考副本、完整提示词和来源哈希见根目录 `assets/image/catalogue-components-20261024/generation.json`，15 张运行素材在 `assets/ui/catalogue/components/`，合计 87,633 字节。离线打包脚本 `scripts/godot_tools/build_catalogue_components.gd` 只裁切、等比缩放与透明补边，裁框和输出哈希见 `components.json`。小尺寸 `track.png` 单独处理进度条和滚动条，避免大面板圆角被拉成长尖角。
+
+`catalogue_motion.gd` 为每个交互控件附加唯一控制器：悬停与键盘聚焦轻微放大，按住轻压，松开恢复；面板打开、页签、角色和详情切换淡入。动效使用可取消 Tween，仅更新显示缩放/颜色，不改变容器尺寸或文字布局；隐藏、禁用和释放会停止并恢复，关闭仍即时返回。动作播放与进度仍使用原始时间数据，无新增循环粒子。
+
+新增验证：
+
+```sh
+./godot/run.sh --headless --script res://tests/catalogue_motion.gd
+./godot/run.sh --headless --script res://tests/catalogue_components.gd
+./godot/run.sh --script res://tests/catalogue_components.gd
+```
+
+组件集成测试检查实际生成纹理与图标、文本区不透明度、真实鼠标按压/释放、输入清空、动态卡片、隐藏禁用、快速切页与释放后的 Tween；原生四状态截图写入忽略目录 `test-output/catalogue-components/`。继续运行上述三尺寸 `catalogue_polish.gd`、封面流程、基础规则与素材完整性检查。验收只覆盖本轮预览，不扩展为物理手机或全游戏验收。
+
+本轮最终验证：动效40/40、组件无界面363/363与原生367/367、正式三尺寸原生535/535、基础规则52/52与封面流程通过；最后完整性检查1972个登记素材无缺失或哈希不符。原生主场景审阅图为 `test-output/catalogue-components/final-native.png`。按更新规范复核保留原版红白细胞身体轮廓、手臂与装备，生成细胞图标没有新增腿或脚。计时探针证实低帧率下计时器可先于Tween更新返回，专项断言已改为有上限地等待渲染反馈。早期合成输入间歇失败在独立诊断和最终复验未复现，原始原因未确定；三尺寸回归退出偶见既有ObjectDB警告，组件关闭/释放后无孤立Tween。详细记录见根目录 `docs/superpowers/plans/2026-10-24-catalogue-components.md`。

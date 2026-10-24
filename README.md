@@ -1,68 +1,76 @@
-# 细胞战争
+<div align="center">
 
-当前版本使用 **Godot 4.6+ / GDScript / 2D**，入口为
-[`godot/project.godot`](godot/project.godot)。Godot 目录包含完整运行代码、场景、
-素材与数据。运行方式、玩法入口和已有验收边界见 [Godot 说明](godot/README.md)。
+# 细胞战争 · CELL WAR
 
-## 运行
+**在一个身体里，守住整个世界。**
 
-在 Godot 项目管理器中导入 `godot/project.godot`，等待资源导入后按 **F5**。
-macOS / Linux 可从仓库根目录运行：
+巨人体内的单人生存即时战略游戏
+
+Godot 4.6+ · GDScript · 2D
+
+[开始运行](#开始运行) · [开发文档](docs/README.md) · [当前进度](godot/PARITY.md)
+
+<img src="godot/assets/image/cover-standoff-20261020/artwork-static-v2.png" alt="细胞战争封面插画：红细胞与免疫细胞在器官和血管之间迎战病原体" width="100%">
+
+<sub>游戏内置封面插画 · 角色与人体构成的微观战场</sub>
+
+</div>
+
+《细胞战争》把器官、血管与细胞组成一个可以探索和指挥的世界。
+调度红细胞运输资源，组织免疫细胞守住关口，在不断扩散的感染中维持身体运转。
+
+## 一个身体，多种战局
+
+| 战略地图 | 细胞分工 | 生存与防线 |
+| --- | --- | --- |
+| 在全身与器官之间缩放观察，沿血管组织运输、调援和关口争夺。 | 红细胞采集与交付，免疫细胞参与作战；不同角色拥有各自的动作与定位。 | 进入人体生存、循环防线、呼吸道战役或三阵营沙盒，探索各模式的资源与作战规则。 |
+
+血管具有方向，顺流与逆流影响行进速度；投影中的交叉保持各自通行层。
+器官、血管、地形与游戏对象采用独立图层，让全身布局与局部交战共享同一张地图。
+
+游戏内的**角色预览**可以浏览细胞、病原体、药物角色与地图。
+已接入的机制和仅供预览的内容分别标注；模式与操作说明见 [Godot 开发指南](godot/README.md)。
+
+## 开始运行
+
+安装 **Godot 4.6 或更新的标准版**，导入 [`godot/project.godot`](godot/project.godot)，
+等待资源导入后按 **F5**。
+
+macOS / Linux 也可在仓库根目录执行：
 
 ```sh
 ./godot/run.sh
-./godot/run.sh --editor
 ```
 
-可用 `GODOT_BIN` 指定已安装的 Godot 程序。游戏运行无需 Lua、Python、Maker 或网络。
+使用 `./godot/run.sh --editor` 打开编辑器；也可通过 `GODOT_BIN` 指定本机 Godot 程序。
+Windows 可直接在 Godot 项目管理器中导入。
 
-## 目录
+`godot/` 包含运行所需的代码、场景、素材和数据。游戏可离线运行，无需额外的语言运行时或素材制作工具。
 
-| 目录 | 用途 |
+## 开发状态
+
+当前为持续开发的可运行版本，使用原生 GDScript 与 Godot 场景。
+存档保存在本机；旧版云存档尚未迁移。完整玩法回放、原版一致性、手机真机与发行包仍有待验收。
+已完成的检查和具体差异记录在 [PARITY.md](godot/PARITY.md)。
+
+## 阅读源码
+
+| 入口 | 内容 |
 | --- | --- |
-| `godot/scripts/`、`godot/scenes/` | 当前游戏逻辑、界面和场景 |
-| `godot/assets/`、`godot/data/` | 独立运行素材、迁移数据与来源清单 |
-| `godot/tests/` | Godot 回归检查，`fixtures/` 保存冻结的原版绘制基准 |
-| `assets/` | 素材原稿、动画帧和生成登记，供继续制作与修改 |
-| `scripts/godot_tools/` | 独立 Godot 校验、素材制作和交接工具 |
-| `scripts/sprite_preview/` | 当前序列帧制作、打包与预览工具 |
-| `scripts/qa/check_repository_hygiene.py` | GitHub CI 使用的仓库体积与本地输出检查 |
-| `docs/` | 设计、交接与精简后的历史验收资料；旧版生成输出已归档 |
+| [`godot/`](godot/) | 游戏代码、场景、运行资源与回归测试 |
+| [`assets/`](assets/) | 美术原稿、动画帧与制作记录；根目录 ZIP 保留角色动画原始交付 |
+| [`scripts/`](scripts/) | Godot 离线制作、素材校验与序列帧工具 |
+| [文档导航](docs/README.md) | 开发说明、素材来源、设计资料与历史归档 |
+| [更新记录](CHANGELOG.md) | 当前工程进展与明确标注的旧版历史 |
 
-## 验证
+基础验证在仓库根目录执行：
 
 ```sh
 ./godot/run.sh --headless --editor --import --quit
 ./godot/run.sh --headless --script res://tests/run_tests.gd
-./godot/run.sh --headless --script res://tests/modes.gd
 python3 scripts/godot_tools/audit_integrity.py
 ```
 
-更多检查见 [Godot 说明](godot/README.md)。详细测试输出与截图保存在
-`godot/test-output/`；游戏存档和测试存档相互独立。已有差异与验收范围见
-[PARITY.md](godot/PARITY.md)，清理旧代码不等于完成全量一致性或移动设备验收。
-
-## Lua 旧版清理
-
-2026-10-20 按用户要求，将 Lua 入口、203 个游戏模块、旧版 QA 和依赖 Lua 的
-迁移工具做仓库外校验归档后删除，共 633 个文件，约 75 MiB。归档包含未提交修改。
-Godot 工程、原始美术与历史证据继续保留；两份绘制基准已转为 Godot 固定测试数据。
-完整清单和恢复方式见 [清理记录](docs/LUA_CLEANUP_20261020.md)。
-
-随后清理了 Godot 不依赖的 UrhoX 引擎文档、示例、库、Lua 类型定义、安装工具、
-旧预览及构建产物，均迁入仓库外校验归档。精灵生成技能、Maker 素材映射及项目绑定、
-Godot 本机运行环境继续保留。范围与恢复说明见
-[引擎工具清理记录](docs/ENGINE_CLEANUP_20261020.md)。
-
-2026-10-22 又从当前 Git 文件树移除了旧 Lua 快照、浏览器预览及重复的候选验收输出。
-删除前已逐文件校验并归档；Godot 固定基准、来源清单、设计说明和素材原稿继续保留。
-范围与恢复方法见[仓库整理记录](docs/GODOT_REPOSITORY_CLEANUP_20261022.md)。
-
-## 仓库提交检查
-
-```sh
-python3 scripts/qa/check_repository_hygiene.py
-```
-
-默认检查暂存区；CI 检查 PR 修改。新增或修改文件默认不超过 10 MiB，例外需在
-`.repo-policy.json` 中记录。缓存、测试截图、批量预览和本机配置不应加入提交。
+更多专项检查见 [运行与测试说明](godot/README.md#验证与复现)。
+提交前运行 `python3 scripts/qa/check_repository_hygiene.py` 检查暂存区；
+缓存、测试截图、本机配置与批量预览保留在本机。

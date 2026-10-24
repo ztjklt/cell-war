@@ -2,6 +2,7 @@ class_name WarSave
 extends RefCounted
 const SCHEMA := "cell-war-godot/1"
 const MAX_BYTES := 16*1024*1024
+const MODES := ["fullbody","systemic","lung_skirmish","nasal_01","trachea_01","lungs_01","sandbox","organ_trial","gastric_trial","cell_test"]
 static var directory := "user://saves"
 
 static func path(slot: int) -> String:
@@ -18,8 +19,9 @@ static func life_auto_path() -> String:
 static func write_life_auto(game: WarSimulation) -> Error:
 	return _write_to(game,life_auto_path())
 
-static func _write_to(game: WarSimulation,destination: String) -> Error:
-	DirAccess.make_dir_recursive_absolute(destination.get_base_dir())
+static func _write_to(game: WarSimulation,destination: String,metadata := {}) -> Error:
+	var directory_error := DirAccess.make_dir_recursive_absolute(destination.get_base_dir())
+	if directory_error != OK: return directory_error
 	var snapshot := game.snapshot()
 	var error := validate(snapshot)
 	if not error.is_empty():
@@ -27,11 +29,14 @@ static func _write_to(game: WarSimulation,destination: String) -> Error:
 		return ERR_INVALID_DATA
 	var envelope := {"schema":SCHEMA,"mode":game.mode,"snapshot":snapshot,
 		"savedAt":Time.get_datetime_string_from_system(true)}
+	envelope.merge(metadata)
 	var file := FileAccess.open(destination+".tmp",FileAccess.WRITE)
 	if file == null: return FileAccess.get_open_error()
 	file.store_string(JSON.stringify(envelope,"",true,true))
 	file.flush()
+	var write_error := file.get_error()
 	file.close()
+	if write_error != OK: return write_error
 	var result := DirAccess.rename_absolute(destination+".tmp",destination)
 	return result
 
@@ -49,7 +54,7 @@ static func _read_from(game: WarSimulation,source: String) -> Error:
 	if parser.parse(file.get_as_text()) != OK or not parser.data is Dictionary:
 		return ERR_FILE_CORRUPT
 	var data: Dictionary = parser.data
-	if data.get("schema","") != SCHEMA or not data.get("snapshot") is Dictionary:
+	if data.get("schema","") != SCHEMA or not data.get("snapshot") is Dictionary or not data.get("mode","fullbody") in MODES:
 		return ERR_FILE_UNRECOGNIZED
 	var error := validate(data.snapshot)
 	if not error.is_empty():
@@ -62,6 +67,15 @@ static func _read_from(game: WarSimulation,source: String) -> Error:
 	return OK
 
 static func validate(state: Dictionary) -> String:
+	if state.has("lungDefense"):
+		var defense: Variant = state.lungDefense
+		if not defense is Dictionary or not defense.get("phase","") in ["preparing","infected","defended","failed"] or not defense.get("organ","") in ["lung_l","lung_r"]:
+			return "防线阶段或器官数据无效"
+		for field in ["elapsed","preparationSeconds","base","placement","waveCount"]:
+			if not _number(defense.get(field)): return "防线数值无效"
+		if defense.elapsed < 0 or defense.preparationSeconds <= 0 or defense.elapsed > defense.preparationSeconds or defense.base <= 0 or defense.placement < 0 or defense.placement > 7 or defense.waveCount < 1 or defense.waveCount > 64:
+			return "防线数值超出范围"
+		if not defense.get("workers") is Array or not defense.get("colony") is String: return "防线队伍无效"
 	var t_error := WarTCellRuntime.validate_state(state)
 	if not t_error.is_empty(): return t_error
 	var resources_error := WarOrganResources.validate(state)

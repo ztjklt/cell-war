@@ -72,12 +72,10 @@ func setup(owner: WarHUD) -> void:
 
 func _chat_button(text: String,callback: Callable) -> Button:
 	var btn := hud.button(text,callback,controls)
-	btn.custom_minimum_size.y = 28
+	btn.custom_minimum_size = Vector2(28,28)
 	btn.add_theme_font_size_override("font_size",13)
-	btn.add_theme_color_override("font_color",Color("e2e6ea"))
-	btn.add_theme_color_override("font_hover_color",Color("e2e6ea"))
-	for key in ["normal","hover","pressed","focus"]:
-		var skin := WarHUD.style(Color(30.0/255,32.0/255,37.0/255,245.0/255),12)
+	for key in WarUISkin.STATES:
+		var skin := WarUISkin.button_box(key,"",12,"compact")
 		skin.content_margin_left = 4; skin.content_margin_right = 4
 		skin.content_margin_top = 0; skin.content_margin_bottom = 0
 		btn.add_theme_stylebox_override(key,skin)
@@ -119,13 +117,13 @@ func new_life_message() -> void:
 
 func _append_strip(text: String,user: bool) -> void:
 	var chip := PanelContainer.new(); chip.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	var skin := WarHUD.style(Color(43.0/255,52.0/255,69.0/255,244.0/255) if user else Color(16.0/255,18.0/255,23.0/255,244.0/255),12)
+	var skin := WarUISkin.painted_panel(Color("eee0f3") if user else Color.WHITE,12,12,"button")
 	skin.content_margin_left = 12; skin.content_margin_right = 12
 	skin.content_margin_top = 0; skin.content_margin_bottom = 0
 	chip.add_theme_stylebox_override("panel",skin)
 	chip.size = Vector2(minf(feed_width(),ceilf(text_weight(text)*15+26)),32)
 	feed.add_child(chip)
-	var line := hud.label(text,11,Color("ebeef5")); line.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var line := hud.label(text,11,WarUISkin.INK); line.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	line.clip_text = true; chip.add_child(line)
 	var seconds := .65 if user else maxf(1.65,text_weight(text)*.09+.65)
 	strips.append({"widget":chip,"start":duration,"duration":seconds,"user":user,"y":0.0})

@@ -1,5 +1,5 @@
 疫苗独立候选适配合同（本轮不接公共入口）
-日期：2026-10-21
+日期：2026-10-22
 CANDIDATE_ONLY=true；SHARED_HOOKS_RELEASED=false；VACCINE_SALES_RELEASED=false。
 文件：godot/scripts/vaccine_antibodies.gd、godot/data/vaccine_antibodies.json。
 
@@ -15,7 +15,7 @@ service.bind_world(
   func(point,lane,owner,radius): <该层真实合法地面，检查0.45接触圆所需地形许可>,
   func(from,to,lane,actor): <原组织/血管通行层和建筑段检查；不得按投影连线>,
   func(actor): return WarData.is_virus(str(actor.kind)))
-service.begin(<持久世界runId>, game.state.time)
+service.begin(<持久世界runId>, game.state.time, <当前真实单位列表，可选>)
 回调不保存在快照中；恢复后仍须绑定宿主。实例dispose释放回调。
 分类明确接新WarData.is_virus；不使用is_pathogen，不按图鉴或名字猜病毒，不把细菌算进来。
 
@@ -52,9 +52,9 @@ hitId契约（未来宿主适配必须补）
 actors为本次真实单位字典引用，damage回调修改同一个target；服务内部保存上次提交位置并对同层位移扫掠圆接触。半径0.45按病毒中心的真实运动路径测试，没有擅自额外膨胀一个未定义半径。
 同层直线路径可以省略motion。真实弯折/换层必须传motion["entity_id"]，数组每段：
  {from:Vector2,to:Vector2,lane:int,start:0..1,end:0..1}
-各段时间/位置连续、覆盖完整0..1，最终点/层与actors相符；起点与上次提交位置相符。层转换发生在相同物理点的段界，必须来自原导航确认。
+既有单位各段时间/位置连续、覆盖完整0..1，最终点/层与actors相符；起点与上次提交位置相符。新出现单位可从其真实出生比例start>0开始，避免把出生前当作已站在地面。层转换发生在相同物理点的段界，必须来自原导航确认。
 不能拿含投影交叉的屏幕点串充当通行路径，也不能将renderTrail中缺失lane的信息推定为换层。
-未提供换层路径时仅测试最终层终点，不连接旧层到新层的投影；弯路被省略时保守的直线检查可能拒绝，不得据此改地形或穿墙。
+begin可种入真实初始位置而不消耗tick。首次观察到的新单位若没有出生/运动分段，只测试tick结束时终点，保守地不虚构其在到期前已存在。未提供换层路径时也仅测试最终层终点，不连接旧层到新层的投影；弯路被省略时保守的直线检查可能拒绝，不得据此改地形或穿墙。
 服务检查到接触点前的真实段和抗体到接触点的局部段，拒绝来自墙后或先经过非法段的轨迹。快速完整跨过0.9单位触发圆仍会被扫掠命中。
 大dt先按接触发生时刻与12秒寿命比较；在到期前穿过仍命中，到期时刻及之后不命中。0模拟秒不允许输入移动位移。
 

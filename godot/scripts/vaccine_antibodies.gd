@@ -48,12 +48,18 @@ func bind_world(damage: Callable, ground: Callable, segment: Callable, is_virus:
 	return true
 
 
-func begin(world_id: String, simulation_clock := 0.0) -> bool:
+func begin(world_id: String, simulation_clock := 0.0, initial_actors: Array = []) -> bool:
 	if _busy or not ready() or not _valid_world_id(world_id) or not _number(simulation_clock) or simulation_clock<0:
 		_error="invalid_begin"; return false
+	var positions: Dictionary={}
+	if initial_actors.size()>int(_rules.maxTrackedActors): _error="actor_capacity"; return false
+	for actor in initial_actors:
+		if not actor is Dictionary or not _actor(actor) or positions.has(str(int(actor.id))): _error="invalid_initial_actors"; return false
+		var p:=Vector2(actor.x,actor.y)
+		positions[str(int(actor.id))]={"x":p.x,"y":p.y,"vesselLane":int(actor.vesselLane)}
 	_world_id=world_id; _clock=float(simulation_clock)
 	_next_id=1; _last_hit_id=0; _last_step_id=0
-	_drops.clear(); _sources.clear(); _positions.clear(); _events.clear(); _error=""
+	_drops.clear(); _sources.clear(); _positions=positions; _events.clear(); _error=""
 	return true
 
 
@@ -202,7 +208,8 @@ func _paths(world: Dictionary,motion: Dictionary) -> Dictionary:
 		var previous: Dictionary=_positions.get(key,{"x":point.x,"y":point.y,"vesselLane":lane})
 		var origin:=Vector2(previous.x,previous.y)
 		if not motion.has(key):
-			result[key]=[{"from":origin if int(previous.vesselLane)==lane else point,"to":point,"lane":lane,"start":0.0 if int(previous.vesselLane)==lane else 1.0,"end":1.0}]
+			var known_same_lane: bool=_positions.has(key) and int(previous.vesselLane)==lane
+			result[key]=[{"from":origin if known_same_lane else point,"to":point,"lane":lane,"start":0.0 if known_same_lane else 1.0,"end":1.0}]
 			continue
 		var supplied: Variant=motion[key]
 		if not supplied is Array or supplied.is_empty() or supplied.size()>int(_rules.maxSegmentsPerActor): return {"ok":false}
@@ -212,6 +219,7 @@ func _paths(world: Dictionary,motion: Dictionary) -> Dictionary:
 			var a:=_point(segment.get("from")); var b:=_point(segment.get("to"))
 			if not a.is_finite() or not b.is_finite() or not _number(segment.get("start")) or not _number(segment.get("end")): return {"ok":false}
 			var lo:=float(segment.start); var hi:=float(segment.end)
+			if segments.is_empty() and not _positions.has(key): last_fraction=lo # Newly observed spawn may appear partway through the tick.
 			if lo<0 or hi>1 or hi<lo or absf(lo-last_fraction)>EPS or (not segments.is_empty() or _positions.has(key)) and a.distance_to(last_point)>.001: return {"ok":false}
 			if segments.is_empty() and _positions.has(key) and int(segment.lane)!=int(previous.vesselLane): return {"ok":false}
 			if hi==lo and a.distance_to(b)>.001: return {"ok":false}

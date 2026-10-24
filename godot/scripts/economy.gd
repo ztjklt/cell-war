@@ -75,6 +75,8 @@ func population(faction: int,queued := true) -> Vector2i:
 					count += int(WarData.spec(q.unit).get("pop",0))
 	if game.is_campaign():
 		cap = 40
+	if faction == 1 and game.state.get("lungDefense") is Dictionary:
+		cap += int(game.state.lungDefense.get("populationBonus",0))
 	return Vector2i(count,mini(cap,40))
 
 func train(building: Dictionary,kind: String) -> bool:
@@ -331,7 +333,7 @@ func harvest(e: Dictionary,order: Dictionary,dt: float) -> void:
 			game.reset_path(e)
 
 func _delivery_point(e: Dictionary) -> Vector2:
-	if game.organ_resources.enabled() and int(e.get("vesselLane",0)) == 0:
+	if game.is_fullbody() and int(e.get("vesselLane",0)) == 0:
 		var origin := WarData.point(e)
 		var organ := game.navigation.organ_at(origin,e.kind)
 		var local := Vector2(INF,INF)
